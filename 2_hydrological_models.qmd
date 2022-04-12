@@ -85,13 +85,13 @@ The object "V-Station" (which is associated with the coordinates X, Y, Z) allows
 +----------------------+---------+------------------------------------------------------------------------------------------+------------------+
 | Gradient P           | 1/m     | Precipitation gradient                                                                   | \-[^1]           |
 +----------------------+---------+------------------------------------------------------------------------------------------+------------------+
-| Gradient T           | °C/m    | Temperature gradient                                                                     | -0.007 to -0.004 |
+| Gradient T           | Â°C/m    | Temperature gradient                                                                     | -0.007 to -0.004 |
 +----------------------+---------+------------------------------------------------------------------------------------------+------------------+
 | Gradient ETP         | 1/m     | Evapotranspiration gradient                                                              | \-               |
 +----------------------+---------+------------------------------------------------------------------------------------------+------------------+
 | Coeff P              | \-      | Multiplying correction coefficient                                                       | 0.5 to 2         |
 +----------------------+---------+------------------------------------------------------------------------------------------+------------------+
-| Coeff T              | °C      | Adding correction coefficient                                                            | -2 to 2          |
+| Coeff T              | Â°C      | Adding correction coefficient                                                            | -2 to 2          |
 +----------------------+---------+------------------------------------------------------------------------------------------+------------------+
 | Coeff ETP            | \-      | Multiplying correction coefficient                                                       | 0.5 to 2         |
 +----------------------+---------+------------------------------------------------------------------------------------------+------------------+
@@ -120,7 +120,7 @@ $$
 ETP_s=CoeffETP_s \cdot\big( 1 + GradETP_s \cdot(z_s-z_k) \big) \cdot ETP_k
 $$ {#eq-A3}
 
-with $P_s$: value of the precipitation in the virtual station *s* \[I.U.\]; $T_s$: value of the temperature in the virtual station *s* \[I.U.\]; $ETP_s$: value of the potential evapotranspiration in the virtual station *s* \[I.U.\]; $P_k$: value of the precipitation in the meteorological station *k* \[I.U.\]; $T_k$: value of the temperature in the meteorological station *k~i~* \[I.U.\]; $ETP_k$: value of the potential evapotranspiration in the meteorological station *k* \[I.U.\]; $CoeffP_s$: precipitation coefficient \[-\]; $CoeffT_s$: temperature coefficient \[°C\]; $CoeffETP_s$: potential evapotranspiration coefficient \[-\];$GradP_s$: precipitation gradient ($\mathrm{d}P_s/\mathrm{d}z$) \[1/m\]; $GradT_s$: temperature gradient ($\mathrm{d}T_s/\mathrm{d}z$) \[°C/m\]; $GradETP_s$: potential evapotranspiration gradient ($\mathrm{d}ETP_s/\mathrm{d}z$) \[1/m\]; $z_s$: altitude of the virtual station *s* \[m a.s.l.\]; $z_k$: position of the meteorological station *k* of the database \[m a.s.l.\].
+with $P_s$: value of the precipitation in the virtual station *s* \[I.U.\]; $T_s$: value of the temperature in the virtual station *s* \[I.U.\]; $ETP_s$: value of the potential evapotranspiration in the virtual station *s* \[I.U.\]; $P_k$: value of the precipitation in the meteorological station *k* \[I.U.\]; $T_k$: value of the temperature in the meteorological station *k~i~* \[I.U.\]; $ETP_k$: value of the potential evapotranspiration in the meteorological station *k* \[I.U.\]; $CoeffP_s$: precipitation coefficient \[-\]; $CoeffT_s$: temperature coefficient \[Â°C\]; $CoeffETP_s$: potential evapotranspiration coefficient \[-\];$GradP_s$: precipitation gradient ($\mathrm{d}P_s/\mathrm{d}z$) \[1/m\]; $GradT_s$: temperature gradient ($\mathrm{d}T_s/\mathrm{d}z$) \[Â°C/m\]; $GradETP_s$: potential evapotranspiration gradient ($\mathrm{d}ETP_s/\mathrm{d}z$) \[1/m\]; $z_s$: altitude of the virtual station *s* \[m a.s.l.\]; $z_k$: position of the meteorological station *k* of the database \[m a.s.l.\].
 
 In that case, the parameters *Search Radius* and *No. min. of stations* are not used, since only the nearest meteorological station is used.
 
@@ -156,7 +156,7 @@ $$
 ETP_S=CoeffETP_S \cdot \Bigg(\frac{\sum_{i=1}^{n} \Big[\big( 1 + GradETP_s \cdot (z_s-z_i) \big) \cdot ETP_i \cdot {\frac {1}{d_{i,s}^2}} \Big]}{\sum_{i=1}^{n} \frac{1}{{d_{i,s}}^2}} \Bigg)
 $$ {#eq-A8}
 
-with $P_s$: value of the precipitation in the virtual station *s* \[I.U.\]; $T_s$: value of the temperature in the virtual station *s* \[I.U.\]; $ETP_s$: value of the potential evapotranspiration in the virtual station *s* \[I.U.\]; $P_i$: value of the precipitation in the meteorological station *i* \[I.U.\]; $T_i$: value of the temperature in the meteorological station *i* \[I.U.\]; $ETP_i$: value of the potential evapotranspiration in the meteorological station *i* \[I.U.\]; $CoeffP_s$: precipitation coefficient \[-\]; $CoeffT_s$: temperature coefficient \[°C\]; $CoeffETP_s$: potential evapotranspiration coefficient \[-\]; $GradP_s$: precipitation gradient ($\mathrm{d}P_s/\mathrm{d}z$) \[1/m\]; $GradT_s$: temperature gradient ($\mathrm{d}T_s/\mathrm{d}z$) \[°C/m\]; $GradETP_s$: potential evapotranspiration gradient ($\mathrm{d}ETP_s/\mathrm{d}z$) \[1/m\]; $z_s$: altitude of the virtual station *s* \[m a.s.l.\]; $z_i$: position of the meteorological station *i* of the database \[m a.s.l.\].
+with $P_s$: value of the precipitation in the virtual station *s* \[I.U.\]; $T_s$: value of the temperature in the virtual station *s* \[I.U.\]; $ETP_s$: value of the potential evapotranspiration in the virtual station *s* \[I.U.\]; $P_i$: value of the precipitation in the meteorological station *i* \[I.U.\]; $T_i$: value of the temperature in the meteorological station *i* \[I.U.\]; $ETP_i$: value of the potential evapotranspiration in the meteorological station *i* \[I.U.\]; $CoeffP_s$: precipitation coefficient \[-\]; $CoeffT_s$: temperature coefficient \[Â°C\]; $CoeffETP_s$: potential evapotranspiration coefficient \[-\]; $GradP_s$: precipitation gradient ($\mathrm{d}P_s/\mathrm{d}z$) \[1/m\]; $GradT_s$: temperature gradient ($\mathrm{d}T_s/\mathrm{d}z$) \[Â°C/m\]; $GradETP_s$: potential evapotranspiration gradient ($\mathrm{d}ETP_s/\mathrm{d}z$) \[1/m\]; $z_s$: altitude of the virtual station *s* \[m a.s.l.\]; $z_i$: position of the meteorological station *i* of the database \[m a.s.l.\].
 
 ### Complementary calculations for the Potential Evapotranspiration (ETP)
 
@@ -178,7 +178,7 @@ ETP =
   \end{cases}
 $$ {#eq-A9}
 
-with $ETP$: potential evapotranspiration \[mm/month\]; $T$: air temperature \[°C\]; $R_g$: global radiation \[cal/cm\^2/day\]; $K$: constant \[-\].
+with $ETP$: potential evapotranspiration \[mm/month\]; $T$: air temperature \[Â°C\]; $R_g$: global radiation \[cal/cm\^2/day\]; $K$: constant \[-\].
 
 The constant *K* value is:
 
@@ -210,7 +210,7 @@ ETP =
   \end{cases}
 $$ {#eq-A11}
 
-with $ETP$: potential evapotranspiration \[m/d\]; $R_g$: global radiation \[MJ/m\^2/day\]; $T_a$: air temperature \[°C\]; $\rho$: water density, constant value of 1'000 \[kg/m\^3\] ; $\lambda$: latent heat of vaporization, constant value of 2.26 \[MJ/kg\].
+with $ETP$: potential evapotranspiration \[m/d\]; $R_g$: global radiation \[MJ/m\^2/day\]; $T_a$: air temperature \[Â°C\]; $\rho$: water density, constant value of 1'000 \[kg/m\^3\] ; $\lambda$: latent heat of vaporization, constant value of 2.26 \[MJ/kg\].
 
 *R~g~* value is a location dependent (latitude and longitude) monthly average of the global radiation.
 
@@ -232,7 +232,7 @@ ETP =
   \end{cases}
 $$ {#eq-A12}
 
-with $ETP$: potential evapotranspiration \[m/d\]; $R_e$: extra-terrestrial radiation \[MJ m\^{-2} d\^{-1}\]; $T$: Air temperature \[°C\]; $\rho$: water density, constant value of 1'000 \[kg/m\^3\]; $\lambda$: latent heat of vaporization, constant value of 2.26 \[MJ/kg\].
+with $ETP$: potential evapotranspiration \[m/d\]; $R_e$: extra-terrestrial radiation \[MJ m\^{-2} d\^{-1}\]; $T$: Air temperature \[Â°C\]; $\rho$: water density, constant value of 1'000 \[kg/m\^3\]; $\lambda$: latent heat of vaporization, constant value of 2.26 \[MJ/kg\].
 
 Oudin method coefficients (5 and 100) were optimized for the hydrological modelling, on the basis of a study realized on many worldwide watersheds [@oudin_recherche_2004].
 
@@ -279,16 +279,16 @@ with $X$: uniform ETP \[mm/d\]
 
 The Snow-SD (Snow model with a Seasonal Degree-day factor) model (@fig-model_snow), inspired by [@schaefli_conceptual_2005] and [@hamdi_modeprevision_2005], is composed of two sub-models. They simulate the transient evolution of the snow pack (accumulation and melt) as a function of the temperature (*T*) and precipitation (*P*) and produce an equivalent precipitation (*P~eq~*) which can be used as an input variable for the SAC-SMA or GR4J model.
 
-![Snow-SD model](figures/fig-model_snow.ps){#fig-model_snow}
+![Snow-SD model](figures/fig-model_snow.png){#fig-model_snow}
 
 +----------+-----------+-------------------------------------------------------+-------------------+
 | Name     | Units     | Decription                                            | Regular range     |
 +==========+===========+=======================================================+===================+
-| S        | mm/°C/d   | Reference degree-day snowmelt coefficient             | 0.5 to 20         |
+| S        | mm/Â°C/d   | Reference degree-day snowmelt coefficient             | 0.5 to 20         |
 +----------+-----------+-------------------------------------------------------+-------------------+
-| SInt     | mm/°C/d   | Degree-day snowmelt interval                          | 0 to 4            |
+| SInt     | mm/Â°C/d   | Degree-day snowmelt interval                          | 0 to 4            |
 +----------+-----------+-------------------------------------------------------+-------------------+
-| SMin     | mm/°C/d   | Minimal degree-day snowmelt coefficient               | \geq 0            |
+| SMin     | mm/Â°C/d   | Minimal degree-day snowmelt coefficient               | \geq 0            |
 +----------+-----------+-------------------------------------------------------+-------------------+
 | SPh      | d         | Phase shift of the sinusoidal function                | 1 to 365          |
 +----------+-----------+-------------------------------------------------------+-------------------+
@@ -296,11 +296,11 @@ The Snow-SD (Snow model with a Seasonal Degree-day factor) model (@fig-model_sno
 +----------+-----------+-------------------------------------------------------+-------------------+
 | bp       | d/mm      | Melt coefficient due to liquid precipitation          | 0.0125            |
 +----------+-----------+-------------------------------------------------------+-------------------+
-| Tcp1     | °C        | Minimum critical temperature for liquid precipitation | 0                 |
+| Tcp1     | Â°C        | Minimum critical temperature for liquid precipitation | 0                 |
 +----------+-----------+-------------------------------------------------------+-------------------+
-| Tcp2     | °C        | Maximum critical temperature for solid precipitation  | 4                 |
+| Tcp2     | Â°C        | Maximum critical temperature for solid precipitation  | 4                 |
 +----------+-----------+-------------------------------------------------------+-------------------+
-| Tcf      | °C        | Critical snowmelt temperature                         | 0                 |
+| Tcf      | Â°C        | Critical snowmelt temperature                         | 0                 |
 +----------+-----------+-------------------------------------------------------+-------------------+
 | CFR      | \-        | Refreezing coefficient                                | 0 to 1            |
 +----------+-----------+-------------------------------------------------------+-------------------+
@@ -330,7 +330,7 @@ $$
   \end{cases}
 $$ {#eq-B3}
 
-with $P_w$: liquid precipitation \[L/T\]; $\alpha$: separation factor; $P$: precipitation \[L/T\]; $P_{sn}$: solid precipitation \[L/T\]; $T$: temperature \[°C\]; $T_{cp1}$: minimum critical temperature for liquid precipitation \[°C\]; $T_{cp2}$: maximum critical temperature for solid precipitation \[°C\].
+with $P_w$: liquid precipitation \[L/T\]; $\alpha$: separation factor; $P$: precipitation \[L/T\]; $P_{sn}$: solid precipitation \[L/T\]; $T$: temperature \[Â°C\]; $T_{cp1}$: minimum critical temperature for liquid precipitation \[Â°C\]; $T_{cp2}$: maximum critical temperature for solid precipitation \[Â°C\].
 
 If the observed temperature is lower than *T~cp1~*, only solid precipitation is generated. If the temperature is higher than *T~cp2~*, only liquid precipitation (*P~w~*) is present. If the observed temperature is between these two critical values, both phases (liquid and solid) are produced. Solid precipitation (*P~sn~*) is used as input for the snow pack, varying its content as a function of melt or freezing. The snowmelt calculation is performed as follows, using a time-varying degree-day snowmelt coefficient with a lower bound as presented in @fig-model_snow_degreeday (Griessinger et al. 2016, Magnusson et al. 2014, Slater and Clark 2005):
 
@@ -350,9 +350,9 @@ $$
 \mathrm{d}H_{snow}/\mathrm{d}t = P_{sn} - M_{sn}, \quad M_{sn} \leq P_{sn} + H_{snow}/\mathrm{d}t, \quad M_{sn} \geq - W_{snow}/\mathrm{d}t
 $$ {#eq-B6}
 
-with $S'$ (*S* Series in RS MINERVE): time-varying degree-day snowmelt coefficient \[L/T/°C\]; $S$: reference degree-day snowmelt coefficient \[L/T/°C\]; $S_{Int}$: degree-day snowmelt coefficient interval \[L/T/°C\]; $n$: day of the year \[T\]; $S_{Min}$: Minimal degree-day snowmelt coefficient \[L/T/°C\]; $S_{Ph}$: Phase shift of the sinusoidal function \[T\]; $M_{sn}$: snowmelt or freezing \[L/T\]; $b_p$: melt coefficient due to liquid precipitation \[T/L\]; $T_{cf}$: critical snowmelt temperature \[°C\]; $CFR$: refreezing coefficient \[-\]; $H_{snow}$: water content of the solid fraction of snow \[L\]; $dt$: time step \[T\]; $W_{snow}$: water content of the liquid fraction of snow \[L\].
+with $S'$ (*S* Series in RS MINERVE): time-varying degree-day snowmelt coefficient \[L/T/Â°C\]; $S$: reference degree-day snowmelt coefficient \[L/T/Â°C\]; $S_{Int}$: degree-day snowmelt coefficient interval \[L/T/Â°C\]; $n$: day of the year \[T\]; $S_{Min}$: Minimal degree-day snowmelt coefficient \[L/T/Â°C\]; $S_{Ph}$: Phase shift of the sinusoidal function \[T\]; $M_{sn}$: snowmelt or freezing \[L/T\]; $b_p$: melt coefficient due to liquid precipitation \[T/L\]; $T_{cf}$: critical snowmelt temperature \[Â°C\]; $CFR$: refreezing coefficient \[-\]; $H_{snow}$: water content of the solid fraction of snow \[L\]; $dt$: time step \[T\]; $W_{snow}$: water content of the liquid fraction of snow \[L\].
 
-![Time-varying degree-day snowmelt coefficient](figures/fig-model_snow_degreeday.ps){#fig-model_snow_degreeday}
+![Time-varying degree-day snowmelt coefficient](figures/fig-model_snow_degreeday.png){#fig-model_snow_degreeday}
 
 *S~Min~* allows to fix a lower limit to the *S'* value. The *S~Ph~* parameter defines the (horizontal) phase shift of the sinusoidal curve with respect to the first day of the year.
 
@@ -385,7 +385,7 @@ $$ {#eq-B10}
 
 with $SWE$: snow water equivalent \[L\].
 
-The variables for the initial situation associated to this model are \theta (*Theta* in RS MINERVE) and *SWE*. The parameters to adjust are *S*, *S~Int~* and *CFR*. The parameters *S~Phi~*, *b~p~*, *\theta~cr~*, *T~cp1~*, *T~cp2~* and *T~cf~* can be assumed as constant (*b~p~* = 0.0125, *\theta~cr~ = 0.1*, *T~cp1~ = 0 °C*, *T~cp2~ = 4 °C*, *T~cf~ = 0 °C*, *S~Phi~ = 80* (corresponding to March 21^st^ for the Northern hemisphere; use 264 for Southern hemisphere corresponding to September 21)) but can be also be calibrated for some cases.
+The variables for the initial situation associated to this model are \theta (*Theta* in RS MINERVE) and *SWE*. The parameters to adjust are *S*, *S~Int~* and *CFR*. The parameters *S~Phi~*, *b~p~*, *\theta~cr~*, *T~cp1~*, *T~cp2~* and *T~cf~* can be assumed as constant (*b~p~* = 0.0125, *\theta~cr~ = 0.1*, *T~cp1~ = 0 Â°C*, *T~cp2~ = 4 Â°C*, *T~cf~ = 0 Â°C*, *S~Phi~ = 80* (corresponding to March 21^st^ for the Northern hemisphere; use 264 for Southern hemisphere corresponding to September 21)) but can be also be calibrated for some cases.
 
 The refreezing coefficient *CFR* is similar to the one found for example in HBV (see Section 2.7) and is available for the Snow-SD model in RS MINERVE program from the version 2.8.0. By default, *CFR* is set to 1, recommended values from the literature are around 0.05.
 
@@ -395,7 +395,7 @@ The input variables of the model are precipitation (*P*) and temperature (*T*), 
 
 The SWMM (Storm Water Management Model) model presented hereafter was developed by Metcalf and Eddy (1971).
 
-![SWMM Runoff model](figures/fig-model_swmm.ps){#fig-model_swmm}
+![SWMM Runoff model](figures/fig-model_swmm.png){#fig-model_swmm}
 
 +----------+-----------+-----------------------------------------------+-------------------+
 | Name     | Units     | Description                                   | Regular Range     |
@@ -444,18 +444,18 @@ In the glacier model the equivalent precipitation is transferred to the linear s
 
 The final flow (*Q~tot~*) produced by the sub-catchment is the addition of the two flows (*Q~glacier~* and *Q~snow~*).
 
-![GSM model](figures/fig-model_gsm.ps){#fig-model_gsm}
+![GSM model](figures/fig-model_gsm.png){#fig-model_gsm}
 
 +-------------+-----------+-------------------------------------------------------+-------------------+
 | Name        | Units     | Description                                           | Regular Range     |
 +=============+===========+=======================================================+===================+
 | A           | m^2^      | Surface of infiltration                               | >0                |
 +-------------+-----------+-------------------------------------------------------+-------------------+
-| S           | mm/°C/d   | Reference degree-day snowmelt coefficient             | 0.5 to 20         |
+| S           | mm/Â°C/d   | Reference degree-day snowmelt coefficient             | 0.5 to 20         |
 +-------------+-----------+-------------------------------------------------------+-------------------+
-| SInt        | mm/°C/d   | Degree-day snowmelt interval                          | 0 to 4            |
+| SInt        | mm/Â°C/d   | Degree-day snowmelt interval                          | 0 to 4            |
 +-------------+-----------+-------------------------------------------------------+-------------------+
-| SMin        | mm/°C/d   | Minimal degree-day snowmelt coefficient               | \geq 0            |
+| SMin        | mm/Â°C/d   | Minimal degree-day snowmelt coefficient               | \geq 0            |
 +-------------+-----------+-------------------------------------------------------+-------------------+
 | Sph         | d         | Phase shift of the sinusoidal function                | 1 to 365          |
 +-------------+-----------+-------------------------------------------------------+-------------------+
@@ -463,19 +463,19 @@ The final flow (*Q~tot~*) produced by the sub-catchment is the addition of the t
 +-------------+-----------+-------------------------------------------------------+-------------------+
 | bp          | d/mm      | Melt coefficient due to liquid precipitation          | 0.0125            |
 +-------------+-----------+-------------------------------------------------------+-------------------+
-| Tcp1        | °C        | Minimum critical temperature for liquid precipitation | 0                 |
+| Tcp1        | Â°C        | Minimum critical temperature for liquid precipitation | 0                 |
 +-------------+-----------+-------------------------------------------------------+-------------------+
-| Tcp2        | °C        | Maximum critical temperature for solid precipitation  | 4                 |
+| Tcp2        | Â°C        | Maximum critical temperature for solid precipitation  | 4                 |
 +-------------+-----------+-------------------------------------------------------+-------------------+
-| Tcf         | °C        | Critical snowmelt temperature                         | 0                 |
+| Tcf         | Â°C        | Critical snowmelt temperature                         | 0                 |
 +-------------+-----------+-------------------------------------------------------+-------------------+
-| G           | mm/°C/d   | Reference degree-day glacier melt coefficient         | 0.5 to 20         |
+| G           | mm/Â°C/d   | Reference degree-day glacier melt coefficient         | 0.5 to 20         |
 +-------------+-----------+-------------------------------------------------------+-------------------+
-| GInt        | mm/°C/d   | Degree-day glacier melt interval                      | 0 to 4            |
+| GInt        | mm/Â°C/d   | Degree-day glacier melt interval                      | 0 to 4            |
 +-------------+-----------+-------------------------------------------------------+-------------------+
-| GMin        | mm/°C/d   | Minimal degree-day glacier melt coefficient           | \geq 0            |
+| GMin        | mm/Â°C/d   | Minimal degree-day glacier melt coefficient           | \geq 0            |
 +-------------+-----------+-------------------------------------------------------+-------------------+
-| Tcg         | °C        | Critical glacier melt temperature                     | 0                 |
+| Tcg         | Â°C        | Critical glacier melt temperature                     | 0                 |
 +-------------+-----------+-------------------------------------------------------+-------------------+
 | Kgl         | 1/d       | Release coefficient of glacier melt reservoir         | 0.1 to 5          |
 +-------------+-----------+-------------------------------------------------------+-------------------+
@@ -513,7 +513,7 @@ $$
   \end{cases}
 $$ {#eq-D3}
 
-with $P_w$: liquid precipitation \[L/T\]; $\alpha$: separation factor; $P$: precipitation \[L/T\]; $P_{sn}$: solid precipitation \[L/T\]; $T$: te*mperature \[°C\]; $T_{cp1}$: minimum critical temperature for liquid precipitation \[°C\]; $T_cp2$: maximum critical temperature for solid precipitation \[°C\].
+with $P_w$: liquid precipitation \[L/T\]; $\alpha$: separation factor; $P$: precipitation \[L/T\]; $P_{sn}$: solid precipitation \[L/T\]; $T$: te*mperature \[Â°C\]; $T_{cp1}$: minimum critical temperature for liquid precipitation \[Â°C\]; $T_cp2$: maximum critical temperature for solid precipitation \[Â°C\].
 
 If the observed temperature is lower than *T~cp1~* only solid precipitation is produced. If the temperature is higher than *T~cp2~* only liquid precipitation (*P~w~*) is produced. If the temperature observed is found between these two critical values liquid and solid precipitation are produced. The solid precipitation (*P~sn~*) is used as input for the snow pack, varying its content as a function of melt or freezing. The snowmelt calculation is performed as follows, using a time-varying degree-day snowmelt coefficient (@fig-model_snow_degreeday) (Magnusson et al. 2014, Slater and Clark 2005)
 
@@ -533,7 +533,7 @@ $$
 \mathrm{d}H_{snow}/\mathrm{d}t = P_{sn} - M_{sn} , \quad M_{sn} \leq P_{sn} + H_{snow}/\mathrm{d}t , \quad M_{sn} \geq - W_{snow}/\mathrm{d}t
 $$ {#eq-D6}
 
-with $S'$ (SSeries in RS MINERVE): time-varying degree-day snowmelt coefficient \[L/T/°C\]; $S$: reference degree-day snowmelt coefficient \[L/T/°C\]; $S_{Int}$: degree-day snowmelt coefficient interval \[L/T/°C\]; $n$: day of the year \[T\]; $S_{Min}$: Minimal degree-day snowmelt coefficient \[L/T/°C\]; $S_{Ph}$: Phase shift of the sinusoidal function \[T\]; $M_{sn}$: snowmelt or freezing \[L/T\]; $b_p$: melt coefficient due to liquid precipitation \[T/L\]; $T_{cf}$: critical snowmelt temperature \[°C\]; $CFR$: refreezing coefficient \[-\]; $H_{snow}$: water content of the solid fraction of snow \[L\]; dt: time step \[T\]; $W_{snow}$: water content of the liquid fraction of snow \[L\].
+with $S'$ (SSeries in RS MINERVE): time-varying degree-day snowmelt coefficient \[L/T/Â°C\]; $S$: reference degree-day snowmelt coefficient \[L/T/Â°C\]; $S_{Int}$: degree-day snowmelt coefficient interval \[L/T/Â°C\]; $n$: day of the year \[T\]; $S_{Min}$: Minimal degree-day snowmelt coefficient \[L/T/Â°C\]; $S_{Ph}$: Phase shift of the sinusoidal function \[T\]; $M_{sn}$: snowmelt or freezing \[L/T\]; $b_p$: melt coefficient due to liquid precipitation \[T/L\]; $T_{cf}$: critical snowmelt temperature \[Â°C\]; $CFR$: refreezing coefficient \[-\]; $H_{snow}$: water content of the solid fraction of snow \[L\]; dt: time step \[T\]; $W_{snow}$: water content of the liquid fraction of snow \[L\].
 
 The *S~ph~* parameter defines the phase shift of the sinusoidal curve with respect to the first day of the year.
 
@@ -602,7 +602,7 @@ $$
 Q_{glacier} = K_{gl} \cdot H_{Rgl} \cdot A
 $$ {#eq-D16}
 
-with $P_{eqGL}$: glacier melt \[L/T\]; \]; $T_{cg}$: critical glacier melt temperature \[°C\]; $G$: degree-day glacier melt coefficient \[L/T/ºC\]; $G_{Min}$: Minimal degree-day glacier melt coefficient \[L/T/°C\]; $H_{Rgl}$:level of glacier melt reservoir \[L\]; $K_{gl}$: coefficient of linear glacier reservoir \[1/T\]; $Q_{glacier}$: outflow of linear glacier reservoir \[L^3^/T\].
+with $P_{eqGL}$: glacier melt \[L/T\]; \]; $T_{cg}$: critical glacier melt temperature \[Â°C\]; $G$: degree-day glacier melt coefficient \[L/T/Â°C\]; $G_{Min}$: Minimal degree-day glacier melt coefficient \[L/T/Â°C\]; $H_{Rgl}$:level of glacier melt reservoir \[L\]; $K_{gl}$: coefficient of linear glacier reservoir \[1/T\]; $Q_{glacier}$: outflow of linear glacier reservoir \[L^3^/T\].
 
 And the total discharge is the addition of *Q~glacier~* and *Q~snow~*:
 
@@ -614,7 +614,7 @@ with $Q$: total outflow \[L^3^/T\];
 
 The variables for the initial situation associated to this model are \theta (*Theta* in RS MINERVE), *SWE*, *H~Rsn~*, and *H~Rgl~*.
 
-The parameters to adjust are *S*, *S~Int~*, *CFR*, *\theta~cr~*, *G*, *G~Int~*, *K~gl~* and *K~sn~*. The parameters *S~ph~*, *b~p~*, *\theta~cr~*, *T~cp1~*, *T~cp2~*, *T~cf~* and *T~cg~* can be assumed as constant (*b~p~ = 0.0125*, *\theta~cr~ = 0.1*, *T~cp1~ = 0 °C*, *T~cp2~ = 4 °C*, *T~cf~ = 0 °C*, *T~cg~ = 0 °C*, *S~Ph~ = 80* (corresponding to March 21^st^ for the Northern hemisphere; use 264 for Southern hemisphere corresponding to September 21)). The parameter *A* is supposed to be constant.
+The parameters to adjust are *S*, *S~Int~*, *CFR*, *\theta~cr~*, *G*, *G~Int~*, *K~gl~* and *K~sn~*. The parameters *S~ph~*, *b~p~*, *\theta~cr~*, *T~cp1~*, *T~cp2~*, *T~cf~* and *T~cg~* can be assumed as constant (*b~p~ = 0.0125*, *\theta~cr~ = 0.1*, *T~cp1~ = 0 Â°C*, *T~cp2~ = 4 Â°C*, *T~cf~ = 0 Â°C*, *T~cg~ = 0 Â°C*, *S~Ph~ = 80* (corresponding to March 21^st^ for the Northern hemisphere; use 264 for Southern hemisphere corresponding to September 21)). The parameter *A* is supposed to be constant.
 
 The refreezing coefficient *CFR* is similar to the one found for example in HBV (see Section 2.7) and is available for the GSM model in the RS MINERVE program from its version 2.8.0. By default, *CFR* is set to 1, recommended values from the literature are around 0.05.
 
@@ -624,18 +624,18 @@ The input variables of the model are the precipitation (*P*) and the temperature
 
 In the SOCONT model (@fig-model_socont), the Snow-SD model simulates the transient evolution of the snow pack (melt and accumulation) as a function of the temperature (*T*) and the precipitation (*P*), thus providing an equivalent precipitation (*P~eq~*) that is used as input by the GR3 model. The GR3 model also takes into account the potential evapotranspiration (*ETP*) and provides the net intensity to the SWMM model.
 
-![SOCONT Model](figures/fig-model_socont.ps){#fig-model_socont}
+![SOCONT Model](figures/fig-model_socont.png){#fig-model_socont}
 
 +----------+-----------+-------------------------------------------------------+-------------------+
 | Name     | Units     | Description                                           | Regular Range     |
 +==========+===========+=======================================================+===================+
 | A        | m^2^      | Surface                                               | >0                |
 +----------+-----------+-------------------------------------------------------+-------------------+
-| S        | mm/°C/d   | Reference degree-day snowmelt coefficient             | 0.5 to 20         |
+| S        | mm/Â°C/d   | Reference degree-day snowmelt coefficient             | 0.5 to 20         |
 +----------+-----------+-------------------------------------------------------+-------------------+
-| SInt     | mm/°C/d   | Degree-day snowmelt interval                          | 0 to 4            |
+| SInt     | mm/Â°C/d   | Degree-day snowmelt interval                          | 0 to 4            |
 +----------+-----------+-------------------------------------------------------+-------------------+
-| SMin     | mm/°C/d   | Minimal degree-day snowmelt coefficient               | \geq 0            |
+| SMin     | mm/Â°C/d   | Minimal degree-day snowmelt coefficient               | \geq 0            |
 +----------+-----------+-------------------------------------------------------+-------------------+
 | SPh      | d         | Phase shift of the sinusoidal function                | 1 to 365          |
 +----------+-----------+-------------------------------------------------------+-------------------+
@@ -643,11 +643,11 @@ In the SOCONT model (@fig-model_socont), the Snow-SD model simulates the transie
 +----------+-----------+-------------------------------------------------------+-------------------+
 | bp       | d/mm      | Melt coefficient due to liquid precipitation          | 0.0125            |
 +----------+-----------+-------------------------------------------------------+-------------------+
-| Tcp1     | °C        | Minimum critical temperature for liquid precipitation | 0                 |
+| Tcp1     | Â°C        | Minimum critical temperature for liquid precipitation | 0                 |
 +----------+-----------+-------------------------------------------------------+-------------------+
-| Tcp2     | °C        | Maximum critical temperature for solid precipitation  | 4                 |
+| Tcp2     | Â°C        | Maximum critical temperature for solid precipitation  | 4                 |
 +----------+-----------+-------------------------------------------------------+-------------------+
-| Tcf      | °C        | Critical snowmelt temperature                         | 0                 |
+| Tcf      | Â°C        | Critical snowmelt temperature                         | 0                 |
 +----------+-----------+-------------------------------------------------------+-------------------+
 | HGR3Max  | m         | Maximum height of infiltration reservoir              | 0 to 2            |
 +----------+-----------+-------------------------------------------------------+-------------------+
@@ -691,7 +691,7 @@ $$
   \end{cases}
 $$ {#eq-E3}
 
-with $P_w$: liquid precipitation \[L/T\]; $\alpha$: separation factor; $P$: precipitation \[L/T\]; $P_{sn}$: solid precipitation \[L/T\]; $T$: temperature \[°C\]; $T_{cp1}$: minimum critical temperature for liquid precipitation \[°C\]; $T_{cp2}$: maximum critical temperature for solid precipitation \[°C\].
+with $P_w$: liquid precipitation \[L/T\]; $\alpha$: separation factor; $P$: precipitation \[L/T\]; $P_{sn}$: solid precipitation \[L/T\]; $T$: temperature \[Â°C\]; $T_{cp1}$: minimum critical temperature for liquid precipitation \[Â°C\]; $T_{cp2}$: maximum critical temperature for solid precipitation \[Â°C\].
 
 If the observed temperature is lower than *T~cp1~* only solid precipitation is produced. If the temperature is higher than *T~cp2~* only liquid precipitation (*P~w~*) is produced. If the temperature observed is found between these two critical values liquid and solid precipitation are produced. The solid precipitation (*P~sn~*) is used as input for the snow pack, varying its content as a function of melt or freezing. The snowmelt calculation is performed as follows, using a time-varying degree-day snowmelt coefficient (@fig-model_snow_degreeday) (Magnusson et al. 2014, Slater and Clark 2005):
 
@@ -711,7 +711,7 @@ $$
 \mathrm{d}H_{snow}/\mathrm{d}t = P_{sn} - M_{sn}, \quad M_{sn} \leq P_{sn} + H_{snow}/\mathrm{d}t, \quad M_{sn} \geq - W_{snow}/\mathrm{d}t
 $$ {#eq-E6}
 
-with $S'$ (SSeries in RS MINERVE): time-varying degree-day snowmelt coefficient \[L/T/°C\]; $S$: reference degree-day snowmelt coefficient \[L/T/°C\]; $S_{Int}$: degree-day snowmelt coefficient interval \[L/T/°C\]; $n$: day of the year \[T\]; $S_{Min}$: Minimal degree-day snowmelt coefficient \[L/T/°C\]; $S_{Ph}$: Phase shift of the sinusoidal function \[T\]; $M_{sn}$: snowmelt or freezing \[L/T\]; $b_p$: melt coefficient due to liquid precipitation \[T/L\]; $T_{cf}$: critical snowmelt temperature \[°C\]; $CFR$: refreezing coefficient \[-\]; $H_{snow}$: water content of the solid fraction of snow \[L\]; $dt$: time step \[T\]; $W_{snow}$: water content of the liquid fraction of snow \[L\].
+with $S'$ (SSeries in RS MINERVE): time-varying degree-day snowmelt coefficient \[L/T/Â°C\]; $S$: reference degree-day snowmelt coefficient \[L/T/Â°C\]; $S_{Int}$: degree-day snowmelt coefficient interval \[L/T/Â°C\]; $n$: day of the year \[T\]; $S_{Min}$: Minimal degree-day snowmelt coefficient \[L/T/Â°C\]; $S_{Ph}$: Phase shift of the sinusoidal function \[T\]; $M_{sn}$: snowmelt or freezing \[L/T\]; $b_p$: melt coefficient due to liquid precipitation \[T/L\]; $T_{cf}$: critical snowmelt temperature \[Â°C\]; $CFR$: refreezing coefficient \[-\]; $H_{snow}$: water content of the solid fraction of snow \[L\]; $dt$: time step \[T\]; $W_{snow}$: water content of the liquid fraction of snow \[L\].
 
 The *S~Ph~* parameter defines the phase shift of the sinusoidal curve with respect to the first day of the year.
 
@@ -796,7 +796,7 @@ $$ {#eq-E18}
 
 with $H_r$: runoff water level downstream of the surface \[L\]; $i_{Net}$: net intensity \[L/T\]; $i_r$: runoff intensity \[L/T\]; $K_r$: Strickler coefficient \[L^1/3^/T\]; $J_o$: average slope of the plane \[-\]; $L$: length of the plane \[L\].
 
-The variables for the initial situation associated to this model are *\theta* (*Theta* in RS MINERVE), *SWE*, *H~GR3~* and *H~r~*. The parameters to adjust are *S*, *S~Int~*, *b~p~*, *CFR*, *\theta~cr~*, *K~GR3~*, *H~GR3Max~* and *K~r~*. The parameters *S~Phi~*, *b~p~*, *\theta~cr~*, *T~cp1~*, *T~cp2~* and *T~cf~* can be assumed as constant (*b~p~ = 0.0125*, *\\theta~cr~ = 0.1*, *T~cp1~ = 0 °C*, *T~cp2~ = 4 °C*, *T~cf~ = 0 °C*, *S~Phi~ = 80* (corresponding to March 21^st^ for the Northern hemisphere; use 264 for Southern hemisphere corresponding to September 21)). The other parameters (*J~o~*, *L*, *A*) are supposed to be constant.
+The variables for the initial situation associated to this model are *\theta* (*Theta* in RS MINERVE), *SWE*, *H~GR3~* and *H~r~*. The parameters to adjust are *S*, *S~Int~*, *b~p~*, *CFR*, *\theta~cr~*, *K~GR3~*, *H~GR3Max~* and *K~r~*. The parameters *S~Phi~*, *b~p~*, *\theta~cr~*, *T~cp1~*, *T~cp2~* and *T~cf~* can be assumed as constant (*b~p~ = 0.0125*, *\\theta~cr~ = 0.1*, *T~cp1~ = 0 Â°C*, *T~cp2~ = 4 Â°C*, *T~cf~ = 0 Â°C*, *S~Phi~ = 80* (corresponding to March 21^st^ for the Northern hemisphere; use 264 for Southern hemisphere corresponding to September 21)). The other parameters (*J~o~*, *L*, *A*) are supposed to be constant.
 
 The refreezing coefficient *CFR* is similar to the one found for example in HBV (see Section 2.7) and is available for the SOCONT model in the RS MINERVE program from its version 2.8.0. By default, *CFR* is set to 1; recommended values from the literature are around 0.05.
 
@@ -806,26 +806,26 @@ The outflow discharge *Q~tot~*, composed by the base discharge (*Q~GR3~*) and th
 
 ## HBV model description {#sec-model_hbv}
 
-The integrated rainfall-runoff model HBV (Bergström, 1976, 1992) is composed of a snow function, a humidity reservoir and two (upper and lower) soil storage reservoirs. The structure of the implemented model is presented in @fig-model_hbv.
+The integrated rainfall-runoff model HBV (BergstrÃ¶m, 1976, 1992) is composed of a snow function, a humidity reservoir and two (upper and lower) soil storage reservoirs. The structure of the implemented model is presented in @fig-model_hbv.
 
-![HBV Model](figures/fig-model_hbv.ps){#fig-model_hbv}
+![HBV Model](figures/fig-model_hbv.png){#fig-model_hbv}
 
 +----------+-----------+--------------------------------------------------+-------------------+
 | Name     | Units     | Description                                      | Regular Range     |
 +==========+===========+==================================================+===================+
 | A        | m^2^      | Surface of the basin                             | >0                |
 +----------+-----------+--------------------------------------------------+-------------------+
-| CFMax    | mm/°C/d   | Melting factor                                   | 0.5 to 20         |
+| CFMax    | mm/Â°C/d   | Melting factor                                   | 0.5 to 20         |
 +----------+-----------+--------------------------------------------------+-------------------+
 | CFR      | \-        | Refreezing factor                                | 0.05              |
 +----------+-----------+--------------------------------------------------+-------------------+
 | CWH      | \-        | Critical relative water content of the snow pack | 0.1               |
 +----------+-----------+--------------------------------------------------+-------------------+
-| TT       | °C        | Threshold temperature of rain/snow               | 0 to 3            |
+| TT       | Â°C        | Threshold temperature of rain/snow               | 0 to 3            |
 +----------+-----------+--------------------------------------------------+-------------------+
-| TTInt    | °C        | Temperature interval for rain/snow mixing        | 0 to 3            |
+| TTInt    | Â°C        | Temperature interval for rain/snow mixing        | 0 to 3            |
 +----------+-----------+--------------------------------------------------+-------------------+
-| TTSM     | °C        | Threshold temperature for snow melt              | 0                 |
+| TTSM     | Â°C        | Threshold temperature for snow melt              | 0                 |
 +----------+-----------+--------------------------------------------------+-------------------+
 | Beta     | \-        | Model parameter (shape coefficient)              | 1 to 5            |
 +----------+-----------+--------------------------------------------------+-------------------+
@@ -875,7 +875,7 @@ $$
   \end{cases}
 $$ {#eq-F3}
 
-with $RF$: rainfall \[L/T\]; $\alpha$: separation factor; $P$: precipitation \[L/T\]; $SF$: snowfall \[L/T\]; $T$: temperature \[°C\]; $TT$: threshold temperature for rain/snow \[°C\]; $TTInt$: temperature interval for rain/snow mixing \[°C\].
+with $RF$: rainfall \[L/T\]; $\alpha$: separation factor; $P$: precipitation \[L/T\]; $SF$: snowfall \[L/T\]; $T$: temperature \[Â°C\]; $TT$: threshold temperature for rain/snow \[Â°C\]; $TTInt$: temperature interval for rain/snow mixing \[Â°C\].
 
 The snowfall (*SF*) is used as input for the snow pack, varying its content as a function of melt or freezing. The snowmelt calculation is performed as follows:
 
@@ -891,7 +891,7 @@ $$
 \mathrm{d}H_{snow}/\mathrm{d}t = SF - M_{sn} , \quad M_{sn} \leq SF + H_{snow}/\mathrm{d}t, \quad M_{sn} \geq - W_{snow}/\mathrm{d}t
 $$ {#eq-F5}
 
-with $M_{sn}$: snowmelt or freezing \[L/T\]; $CFMax$: degree-day melting factor \[L/T/°C\]; $CFR$: refreezing factor \[-\]; $TTSM$: critical snowmelt temperature \[°C\]; $H_{snow}$: snow height \[L\]; $W_{snow}$: water content \[L\]; $dt$: time step \[T\].
+with $M_{sn}$: snowmelt or freezing \[L/T\]; $CFMax$: degree-day melting factor \[L/T/Â°C\]; $CFR$: refreezing factor \[-\]; $TTSM$: critical snowmelt temperature \[Â°C\]; $H_{snow}$: snow height \[L\]; $W_{snow}$: water content \[L\]; $dt$: time step \[T\].
 
 The equivalent precipitation (*P~eq~*) is produced by the water content of the snow (equations @eq-F6 to @eq-F8):
 
@@ -999,7 +999,7 @@ The model inputs are the precipitation (*P*), the temperature (*T*) and the pote
 
 The GR4J model is a global hydrological model with four parameters developed by Perrin et al. (2003). It is an empirical model (@fig-model_gr4j), but its structure is similar to the conceptual models. It takes into account the humidity and contains two reservoirs (production and routing). Unit hydrographs are also associated for the hydrological behaviour of the basin.
 
-![GR4J Model](figures/fig-model_gr4j.ps){#fig-model_gr4j}
+![GR4J Model](figures/fig-model_gr4j.png){#fig-model_gr4j}
 
 +----------+-----------+---------------------------------------------------+-------------------+
 | Name     | Units     | Description                                       | Regular Range     |
@@ -1170,7 +1170,7 @@ The model inputs are the equivalent precipitation (*P~eq~*) and the potential ev
 
 The SAC-SMA (@fig-model_sac_sma) or SACRAMENTO hydrological model was developed in the 70's (Burnash et al., 1973; Burnash, 1995) to optimize humidity characteristics into the soil, distributed into different level, with rational percolation characteristics, for an efficient simulation of discharges. This model calculates the total discharge from the precipitation (*P*) and the potential evapotranspiration (*ETP*) depending on the parameters and initial conditions presented in @tbl-param_model_sac_sma.
 
-![SAC-SMA Model](figures/fig-model_sac_sma.ps){#fig-model_sac_sma}
+![SAC-SMA Model](figures/fig-model_sac_sma.png){#fig-model_sac_sma}
 
 +---------+-----------+--------------------------------------------------------------------------------+-------------------+
 | Name    | Units     | Description                                                                    | Regular Range     |
@@ -1352,7 +1352,9 @@ Moreover, when the Upper Zone Free Water storage is completely full and the prec
 
 This storage represents the semi-saturated zone. It characterizes the volume of moisture in the lower soils which will be claimed by dry soil particles when moisture from a wetting front reaches that depth. The water is consumed through evapotranspiration, proportionally to the remaining ETP of the Upper Zone Tension Water storage.
 
-The water reaching this reservoir comes from the Upper Zone percolation. One fraction (*Pfree*) of this percolation goes directly to the Free Water storages, even if the Tension Water storage is not yet full, and the other fraction (*1-Pfree*) goes to the Tension Water storage of the Lower Zone ![yves_guillou_idea](media/image18.png){width="0.12569444444444444in" height="0.16527777777777777in"}\[\^2\].The water also reaches this storage from transfers between the other Lower Zone Free Water storages.
+The water reaching this reservoir comes from the Upper Zone percolation. One fraction (*Pfree*) of this percolation goes directly to the Free Water storages, even if the Tension Water storage is not yet full, and the other fraction (*1-Pfree*) goes to the Tension Water storage of the Lower Zone [^3]. The water also reaches this storage from transfers between the other Lower Zone Free Water storages.
+
+[^3]: If the Tension Water storage of the Lower Zone is completely full, then percolation goes entirely to the 2 Free Water storages.
 
 The following concepts are defined:
 
@@ -1526,7 +1528,7 @@ To use the SCS UH, one needs to determine only two things: time to peak *T~p~*; 
 
 The total hydrograph from the rainfall event will be the addition of each hydrograph resulting from each excess rainfall, scaled by the rainfall magnitude.
 
-![Curvilinear and triangular dimensionless unit hydrographs](figures/fig-model_scs.ps){#fig-model_scs}
+![Curvilinear and triangular dimensionless unit hydrographs](figures/fig-model_scs.png){#fig-model_scs}
 
 +----------+-----------+----------------------+-------------------+
 | Name     | Units     | Description          | Regular Range     |
@@ -1670,9 +1672,9 @@ The term *b* represents the cross-sectional variation for the level \eta and con
 
 ::: {#fig-channel_routing_st_venant layout-ncol=2}
 
-![Descriptive sketch for parameters used in the calculation of I~1~](figures/fig-model_channel_routing_st_venant_1.ps){#fig-model_channel_routing_st_venant_1}
+![Descriptive sketch for parameters used in the calculation of I~1~](figures/fig-model_channel_routing_st_venant_1.png){#fig-model_channel_routing_st_venant_1}
 
-![Transversal profile available for the computation of channel routing](figures/fig-model_channel_routing_st_venant_2.ps){#fig-model_channel_routing_st_venant_2}
+![Transversal profile available for the computation of channel routing](figures/fig-model_channel_routing_st_venant_2.png){#fig-model_channel_routing_st_venant_2}
 
 ::: Sections of the Channel routing model
 
@@ -1945,7 +1947,7 @@ with ${Q_{turbine}}^n$: discharge at instant n \[L^3^/T\]; $H^n$: water level at
 
 : **Time-Q** paired data, parameters and initial conditions required {#tbl-param_model_turbine}
 
-![Time-H, tubine start and stop operation](figures/fig-model_turbine.ps){#fig-model_turbine}
+![Time-H, tubine start and stop operation](figures/fig-model_turbine.png){#fig-model_turbine}
 
 ## Hydropower {#sec-model_hydropower}
 
@@ -2085,7 +2087,7 @@ with ${Q_{demand}}^n$: demanded consumption at instant *n* \[L^3^/T\]; ${Q_{up}}
 
 : **Consumer** parameters required {#tbl-param_model_consumer}
 
-![Distribution of discharges in the Consumer object](figures/fig-model_consumer.ps){#fig-model_consumer}
+![Distribution of discharges in the Consumer object](figures/fig-model_consumer.png){#fig-model_consumer}
 
 ## Structure efficiency {#sec-model_efficiency}
 
