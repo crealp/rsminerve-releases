@@ -4,7 +4,7 @@ project:
 
 book:
   title: "RS MINERVE Manuals"
-  author: "Bastien ROQUIER, Javier FLUIXA SANMARTIN, Tristan BRAUCHLI, Theo BARACCHINI, Javier GARCIA HERNANDEZ, Alain FOEHN, Javier PAREDES ARQUIOLA, Giovanni DE CESARE"
+  authors: "Bastien ROQUIER, Javier FLUIXA SANMARTIN, Tristan BRAUCHLI, Theo BARACCHINI, Javier GARCIA HERNANDEZ, Alain FOEHN, Javier PAREDES ARQUIOLA, Giovanni DE CESARE"
   ISSN: 2673-2661
   date: "12.04.2022"
   chapters:
