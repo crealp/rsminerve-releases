@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="generator" content="quarto-0.9.233">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>RS MINERVE - Technical Manual - 5&nbsp; Expert module - Stochastic equations</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+
+  <script src="site_libs/quarto-nav/quarto-nav.js"></script>
+  <script src="site_libs/quarto-nav/headroom.min.js"></script>
+  <script src="site_libs/clipboard/clipboard.min.js"></script>
+  <meta name="quarto:offset" content="./">
+  <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+  <script src="site_libs/quarto-search/fuse.min.js"></script>
+  <script src="site_libs/quarto-search/quarto-search.js"></script>
+  <link href="./calibration_algorithms.html" rel="prev">
+  <script src="site_libs/quarto-html/quarto.js"></script>
+  <script src="site_libs/quarto-html/popper.min.js"></script>
+  <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+  <script src="site_libs/quarto-html/anchor.min.js"></script>
+  <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+  <link id="quarto-text-highlighting-styles" href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
+  <script src="site_libs/bootstrap/bootstrap.min.js"></script>
+  <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+  <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+  <script id="quarto-search-options" type="application/json">{
+    "location": "sidebar",
+    "copy-button": false,
+    "collapse-after": 3,
+    "panel-placement": "start",
+    "type": "textbox",
+    "limit": 20,
+    "language": {
+      "search-no-results-text": "No results",
+      "search-matching-documents-text": "matching documents",
+      "search-copy-link-title": "Copy link to search",
+      "search-hide-matches-text": "Hide additional matches",
+      "search-more-match-text": "more match in this document",
+      "search-more-matches-text": "more matches in this document",
+      "search-clear-button-title": "Clear",
+      "search-detached-cancel-button-title": "Cancel",
+      "search-submit-button-title": "Submit"
+    }
+  }</script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body class="floating">
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Expert module - Stochastic equations</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">RS MINERVE - Technical Manual</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./foreword.html" class="sidebar-item-text sidebar-link">Foreword</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./hydrological_models.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Hydrological and hydraulics models description</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./performance_indicators.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Performance indicators</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./calibration_algorithms.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Expert module - Calibration algorithms</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./stochastic_equations.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Expert module - Stochastic equations</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+<h2 id="toc-title">Table of contents</h2>
+<ul>
+<li><a href="#sec-stochastic_equations_intro" id="toc-sec-stochastic_equations_intro" class="nav-link active" data-scroll-target="#sec-stochastic_equations_intro"> <span class="header-section-number">5.1</span> Introduction to the stochastic simulation</a></li>
+<li><a href="#sec-stochastic_equations_distributions" id="toc-sec-stochastic_equations_distributions" class="nav-link" data-scroll-target="#sec-stochastic_equations_distributions"> <span class="header-section-number">5.2</span> Probability distributions</a>
+<ul class="collapse">
+<li><a href="#uniform" id="toc-uniform" class="nav-link" data-scroll-target="#uniform"> <span class="header-section-number">5.2.1</span> Uniform</a></li>
+<li><a href="#normal" id="toc-normal" class="nav-link" data-scroll-target="#normal"> <span class="header-section-number">5.2.2</span> Normal</a></li>
+<li><a href="#log-normal" id="toc-log-normal" class="nav-link" data-scroll-target="#log-normal"> <span class="header-section-number">5.2.3</span> Log normal</a></li>
+<li><a href="#exponential" id="toc-exponential" class="nav-link" data-scroll-target="#exponential"> <span class="header-section-number">5.2.4</span> Exponential</a></li>
+<li><a href="#user-defined" id="toc-user-defined" class="nav-link" data-scroll-target="#user-defined"> <span class="header-section-number">5.2.5</span> User defined</a></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+<header id="title-block-header" class="quarto-title-block default">
+
+<div class="quarto-title"><h1 class="title display-7"><span id="sec-stochastic_equations" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Expert module - Stochastic equations</span></span></h1></div></header>
+
+<section id="sec-stochastic_equations_intro" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="sec-stochastic_equations_intro"><span class="header-section-number">5.1</span> Introduction to the stochastic simulation</h2>
+<p>The problem of identifiability is basic to all statistical methods and data analysis and it occurs in diverse areas such as reliability theory, survival analysis, econometrics, etc., where stochastic modelling is widely used (Prakasa, 1992).</p>
+<p>The module Stochastic of the Expert frame has been implemented for launching multiple simulations depending of the object’s selected parameters. This module uses probability distributions to calculate the simulation parameters. The defaults results are two CSV files, one of them is a statistics series of all the simulations and the other is a parameter series with a selected distribution. The user can save all the simulation in a single file when the process is finished.</p>
+</section>
+<section id="sec-stochastic_equations_distributions" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="sec-stochastic_equations_distributions"><span class="header-section-number">5.2</span> Probability distributions</h2>
+<p>A probability distribution assigns a probability to each measurable subset of the possible outcomes of a random experiment. The predefined distributions are uniform, normal, log normal, exponential and finally it is possible use a customized distribution (<a href="#fig-probability_distributions">Figure&nbsp;<span>5.1</span></a>).</p>
+<div id="fig-probability_distributions" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-probability_distributions.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 5.1: Probability distributions of the stochastic simulations module</figcaption><p></p>
+</figure>
+</div>
+<p>For define a correct probability distribution, the area under the probability density function must be equal to 1. For other hand, cumulative distribution function is bounded between 0 and 1 and also it must be non-decreasing and right-continuous.</p>
+<section id="uniform" class="level3" data-number="5.2.1">
+<h3 data-number="5.2.1" class="anchored" data-anchor-id="uniform"><span class="header-section-number">5.2.1</span> Uniform</h3>
+<p>The continuous uniform distribution or rectangular distribution is a family of symmetric probability distributions such that for each member of the family, all intervals of the same length on the distribution’s support are equally probable. <a href="#fig-distribution_uniform">Figure&nbsp;<span>5.2</span></a> shows an example with a bounded X between [-5, 5].</p>
+<div id="fig-distribution_uniform" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-distribution_uniform.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 5.2: Uniform distribution. Probability density function (left), cumulative distribution function (right)</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="normal" class="level3" data-number="5.2.2">
+<h3 data-number="5.2.2" class="anchored" data-anchor-id="normal"><span class="header-section-number">5.2.2</span> Normal</h3>
+<p>The normal distribution (or Gaussian distribution) is a very common continuous probability distribution. Normal distributions are important in statistics and are often used to represent distributions are not known. Several characterizations of the univariate and the multivariate normal distribution are known (Kagan et al., 1967; Prakasa, 1992) The normal distribution is sometimes informally called the bell curve. The following <a href="#fig-distribution_normal">Figure&nbsp;<span>5.3</span></a> shows an example with a bounded X axis between [-5,5], where is more probable to find a X value.</p>
+<div id="fig-distribution_normal" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-distribution_normal.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 5.3: Normal distribution. Probability density function (left), cumulative distribution function (right)</figcaption><p></p>
+</figure>
+</div>
+<p><strong>Probability density function:</strong></p>
+<p><span id="eq-SE1"><span class="math display">\[
+\varphi = f(x\ |\ \mu,\ \sigma) = \frac{1}{\sigma\sqrt{2\pi}} \cdot e^{- \frac{(x - \mu)^{2}}{2\sigma^{2}}}
+\qquad(5.1)\]</span></span></p>
+<p>with <span class="math inline">\(\mu\)</span>: mean or expectation of the distribution (and also its median and mode); <span class="math inline">\(\sigma^{2}\)</span>: variance;&nbsp;<span class="math inline">\(\sigma\)</span>: standard deviation.</p>
+<p><strong>Cumulative distribution function:</strong></p>
+<p><span id="eq-SE2"><span class="math display">\[
+\phi = f(x\ |\ \mu,\ \sigma) = \frac{1}{2}\cdot \Bigg( 1 + \frac{1}{\sqrt{\pi}}\int_{- \Big( \frac{x - \mu}{\sigma\sqrt{2}} \Big)}^{\Big( \frac{x - \mu}{\sigma\sqrt{2}} \Big)}e^{{- t}^{2}} \mathrm{d}t \Bigg)
+\qquad(5.2)\]</span></span></p>
+<p>The normal distribution is useful because of the central limit theorem. In its most general form, under some conditions, it states that averages of random variables independently drawn from independent distributions converge in distribution to the normal, that is, become normally distributed when the number of random variables is sufficiently large.</p>
+</section>
+<section id="log-normal" class="level3" data-number="5.2.3">
+<h3 data-number="5.2.3" class="anchored" data-anchor-id="log-normal"><span class="header-section-number">5.2.3</span> Log normal</h3>
+<p>A log-normal distribution is a continuous probability distribution of a random variable whose logarithm is normally distributed. Consequently, if the random variable <em>X</em> is log-normally distributed, then <em>Y = ln(X)</em> has a normal distribution. Likewise, if <em>Y</em> has a normal distribution, then <em>X = e<sup>y</sup></em> has a log-normal distribution. A random variable which is log-normally distributed takes only positive real values (Johnson et al., 1994). <a href="#fig-distribution_lognormal">Figure&nbsp;<span>5.4</span></a> shows an example with a bounded <em>X</em> axis between [0, 2], where is more probable to find an <em>X</em> value.</p>
+<div id="fig-distribution_lognormal" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-distribution_lognormal.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 5.4: Log normal distribution. Probability density function (left), cumulative distribution function (right)</figcaption><p></p>
+</figure>
+</div>
+<p><strong>Probability density function:</strong></p>
+<p><span id="eq-SE3"><span class="math display">\[
+\varphi = f(x\ |\ \mu,\ \sigma) = \frac{1}{x\sigma\sqrt{2\pi}}e^{- \frac{\left( \ln x - \mu \right)^{2}}{2\sigma^{2}}}
+\qquad(5.3)\]</span></span></p>
+<p>with <span class="math inline">\(\mu\)</span>: mean or expectation of the distribution (and also its median and mode); <span class="math inline">\(\sigma^{2}\)</span>: variance;&nbsp;<span class="math inline">\(\sigma\)</span> standard deviation.</p>
+<p><strong>Cumulative distribution function:</strong></p>
+<p><span id="eq-SE4"><span class="math display">\[
+\phi = f(x\ |\ \mu,\ \sigma) = \frac{1}{2}\left\lbrack 1 + \frac{1}{\sqrt{\pi}}\int_{- \left( \frac{\ln x - \mu}{\sigma\sqrt{2}} \right)}^{\left( \frac{\ln x - \mu}{\sigma\sqrt{2}} \right)}e^{{- t}^{2}}dt \right\rbrack
+\qquad(5.4)\]</span></span></p>
+<p>A log-normal process is the statistical realization of the multiplicative product of many independent random variables, each of which is positive. This is justified by considering the central limit theorem in the log domain. The log-normal distribution is the maximum entropy probability distribution for a random variate <em>X</em> for which the mean and variance of <em>ln(X)</em> are specified (Park and Vera, 2009)</p>
+</section>
+<section id="exponential" class="level3" data-number="5.2.4">
+<h3 data-number="5.2.4" class="anchored" data-anchor-id="exponential"><span class="header-section-number">5.2.4</span> Exponential</h3>
+<p>The exponential distribution describes the time between events in a Poisson point process. Is a type of random mathematical object that consists of points randomly located on a mathematical space (Stoyan et al., 1995). It is a particular case of the gamma distribution. It is the continuous analogue of the geometric distribution, and it has the key property of being memoryless. <a href="#fig-distribution_exponential">Figure&nbsp;<span>5.5</span></a> shows an example with a bounded <em>X</em> axis between [0, 10], where is more probable to find an <em>X</em> value.</p>
+<div id="fig-distribution_exponential" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-distribution_exponential.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 5.5: Exponential distribution. Probability density function (left), cumulative distribution function (right)</figcaption><p></p>
+</figure>
+</div>
+<p><strong>Probability density function:</strong></p>
+<p><span id="eq-SE5"><span class="math display">\[
+\varphi = f(x\ |\ \lambda) = \lambda e^{- \lambda x}
+\qquad(5.5)\]</span></span></p>
+<p>with <span class="math inline">\(\lambda\)</span>: the parameter of the distribution, often called the rate parameter [λ&gt;0].</p>
+<p><strong>Cumulative distribution function:</strong></p>
+<p><span id="eq-SE6"><span class="math display">\[
+\phi = f(x\ |\ \lambda) = 1 - e^{- \lambda x}
+\qquad(5.6)\]</span></span></p>
+</section>
+<section id="user-defined" class="level3" data-number="5.2.5">
+<h3 data-number="5.2.5" class="anchored" data-anchor-id="user-defined"><span class="header-section-number">5.2.5</span> User defined</h3>
+<p>For define a custom probability distribution, the user must create a text file with two columns (Figure 27, left). The first column is the cumulated probability and the second it is for the <em>X</em> value associated. The middle values are calculated with a linear interpolation method. <a href="#fig-distribution_custom">Figure&nbsp;<span>5.6</span></a> right is the cumulative distribution for a user defined distribution.</p>
+<div id="fig-distribution_custom" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-distribution_custom.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 5.6: Custom distribution. Format distribution file (left). Cumulative distribution function (right).</figcaption><p></p>
+</figure>
+</div>
+<p><a href="#fig-probability_density_custom">Figure&nbsp;<span>5.7</span></a> shows the probability density function for the user defined distribution. As same to cumulative distribution, program calculate middle point through linear interpolation.</p>
+<div id="fig-probability_density_custom" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><embed src="figures/fig-probability_density_custom.ps" class="img-fluid"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 5.7: User distribution. Probability density function.</figcaption><p></p>
+</figure>
+</div>
+
+
+
+</section>
+</section>
+</main> <!-- /main -->
+<script type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    setTimeout(function() {
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./calibration_algorithms.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Expert module - Calibration algorithms</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+</body></html>

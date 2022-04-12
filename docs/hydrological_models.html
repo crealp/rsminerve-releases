@@ -1,0 +1,2996 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="generator" content="quarto-0.9.233">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>RS MINERVE - Technical Manual - 2&nbsp; Hydrological and hydraulics models description</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+    }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+
+  <script src="site_libs/quarto-nav/quarto-nav.js"></script>
+  <script src="site_libs/quarto-nav/headroom.min.js"></script>
+  <script src="site_libs/clipboard/clipboard.min.js"></script>
+  <meta name="quarto:offset" content="./">
+  <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+  <script src="site_libs/quarto-search/fuse.min.js"></script>
+  <script src="site_libs/quarto-search/quarto-search.js"></script>
+  <link href="./performance_indicators.html" rel="next">
+  <link href="./intro.html" rel="prev">
+  <script src="site_libs/quarto-html/quarto.js"></script>
+  <script src="site_libs/quarto-html/popper.min.js"></script>
+  <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+  <script src="site_libs/quarto-html/anchor.min.js"></script>
+  <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+  <link id="quarto-text-highlighting-styles" href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
+  <script src="site_libs/bootstrap/bootstrap.min.js"></script>
+  <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+  <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+  <script id="quarto-search-options" type="application/json">{
+    "location": "sidebar",
+    "copy-button": false,
+    "collapse-after": 3,
+    "panel-placement": "start",
+    "type": "textbox",
+    "limit": 20,
+    "language": {
+      "search-no-results-text": "No results",
+      "search-matching-documents-text": "matching documents",
+      "search-copy-link-title": "Copy link to search",
+      "search-hide-matches-text": "Hide additional matches",
+      "search-more-match-text": "more match in this document",
+      "search-more-matches-text": "more matches in this document",
+      "search-clear-button-title": "Clear",
+      "search-detached-cancel-button-title": "Cancel",
+      "search-submit-button-title": "Submit"
+    }
+  }</script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body class="floating">
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Hydrological and hydraulics models description</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">RS MINERVE - Technical Manual</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./foreword.html" class="sidebar-item-text sidebar-link">Foreword</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./hydrological_models.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Hydrological and hydraulics models description</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./performance_indicators.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Performance indicators</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./calibration_algorithms.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Expert module - Calibration algorithms</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./stochastic_equations.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Expert module - Stochastic equations</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+<h2 id="toc-title">Table of contents</h2>
+<ul>
+<li><a href="#list-of-objects" id="toc-list-of-objects" class="nav-link active" data-scroll-target="#list-of-objects"> <span class="header-section-number">2.1</span> List of objects</a></li>
+<li><a href="#sec-virtual_station" id="toc-sec-virtual_station" class="nav-link" data-scroll-target="#sec-virtual_station"> <span class="header-section-number">2.2</span> Virtual Station</a>
+<ul class="collapse">
+<li><a href="#thiessen-interpolation" id="toc-thiessen-interpolation" class="nav-link" data-scroll-target="#thiessen-interpolation"> <span class="header-section-number">2.2.1</span> Thiessen interpolation</a></li>
+<li><a href="#shepard-interpolation" id="toc-shepard-interpolation" class="nav-link" data-scroll-target="#shepard-interpolation"> <span class="header-section-number">2.2.2</span> Shepard interpolation</a></li>
+<li><a href="#complementary-calculations-for-the-potential-evapotranspiration-etp" id="toc-complementary-calculations-for-the-potential-evapotranspiration-etp" class="nav-link" data-scroll-target="#complementary-calculations-for-the-potential-evapotranspiration-etp"> <span class="header-section-number">2.2.3</span> Complementary calculations for the Potential Evapotranspiration (ETP)</a></li>
+</ul></li>
+<li><a href="#sec-model_snow" id="toc-sec-model_snow" class="nav-link" data-scroll-target="#sec-model_snow"> <span class="header-section-number">2.3</span> Snow-SD model description</a></li>
+<li><a href="#sec-model_swmm" id="toc-sec-model_swmm" class="nav-link" data-scroll-target="#sec-model_swmm"> <span class="header-section-number">2.4</span> Runoff (SWMM) model description</a></li>
+<li><a href="#sec-model_gsm" id="toc-sec-model_gsm" class="nav-link" data-scroll-target="#sec-model_gsm"> <span class="header-section-number">2.5</span> GSM model description</a></li>
+<li><a href="#sec-model_socont" id="toc-sec-model_socont" class="nav-link" data-scroll-target="#sec-model_socont"> <span class="header-section-number">2.6</span> SOCONT model description</a></li>
+<li><a href="#sec-model_hbv" id="toc-sec-model_hbv" class="nav-link" data-scroll-target="#sec-model_hbv"> <span class="header-section-number">2.7</span> HBV model description</a></li>
+<li><a href="#sec-model_gr4j" id="toc-sec-model_gr4j" class="nav-link" data-scroll-target="#sec-model_gr4j"> <span class="header-section-number">2.8</span> GR4J model description</a></li>
+<li><a href="#sec-model_sac_sma" id="toc-sec-model_sac_sma" class="nav-link" data-scroll-target="#sec-model_sac_sma"> <span class="header-section-number">2.9</span> SAC-SMA model description</a></li>
+<li><a href="#sec-model_scs" id="toc-sec-model_scs" class="nav-link" data-scroll-target="#sec-model_scs"> <span class="header-section-number">2.10</span> SCS (Soil Conservation Service) model description</a></li>
+<li><a href="#sec-model_channel_routing" id="toc-sec-model_channel_routing" class="nav-link" data-scroll-target="#sec-model_channel_routing"> <span class="header-section-number">2.11</span> Channel routing description</a>
+<ul class="collapse">
+<li><a href="#sec-model_channel_routing_st_venant" id="toc-sec-model_channel_routing_st_venant" class="nav-link" data-scroll-target="#sec-model_channel_routing_st_venant"> <span class="header-section-number">2.11.1</span> St.&nbsp;Venant routing</a></li>
+<li><a href="#sec-model_channel_routing_muskingum" id="toc-sec-model_channel_routing_muskingum" class="nav-link" data-scroll-target="#sec-model_channel_routing_muskingum"> <span class="header-section-number">2.11.2</span> Muskingum-Cunge routing</a></li>
+<li><a href="#sec-model_channel_routing_kinematic" id="toc-sec-model_channel_routing_kinematic" class="nav-link" data-scroll-target="#sec-model_channel_routing_kinematic"> <span class="header-section-number">2.11.3</span> Kinematic Wave routing</a></li>
+<li><a href="#sec-model_channel_routing_lagtime" id="toc-sec-model_channel_routing_lagtime" class="nav-link" data-scroll-target="#sec-model_channel_routing_lagtime"> <span class="header-section-number">2.11.4</span> Lag-time</a></li>
+</ul></li>
+<li><a href="#sec-model_timeseries" id="toc-sec-model_timeseries" class="nav-link" data-scroll-target="#sec-model_timeseries"> <span class="header-section-number">2.12</span> Time series</a></li>
+<li><a href="#sec-model_reservoir" id="toc-sec-model_reservoir" class="nav-link" data-scroll-target="#sec-model_reservoir"> <span class="header-section-number">2.13</span> Reservoir</a></li>
+<li><a href="#sec-model_hq" id="toc-sec-model_hq" class="nav-link" data-scroll-target="#sec-model_hq"> <span class="header-section-number">2.14</span> Level-Discharge Relation (HQ)</a></li>
+<li><a href="#sec-model_turbine" id="toc-sec-model_turbine" class="nav-link" data-scroll-target="#sec-model_turbine"> <span class="header-section-number">2.15</span> Turbine</a></li>
+<li><a href="#sec-model_hydropower" id="toc-sec-model_hydropower" class="nav-link" data-scroll-target="#sec-model_hydropower"> <span class="header-section-number">2.16</span> Hydropower</a></li>
+<li><a href="#sec-model_diversion" id="toc-sec-model_diversion" class="nav-link" data-scroll-target="#sec-model_diversion"> <span class="header-section-number">2.17</span> Diversion</a></li>
+<li><a href="#sec-model_consumer" id="toc-sec-model_consumer" class="nav-link" data-scroll-target="#sec-model_consumer"> <span class="header-section-number">2.18</span> Consumer</a></li>
+<li><a href="#sec-model_efficiency" id="toc-sec-model_efficiency" class="nav-link" data-scroll-target="#sec-model_efficiency"> <span class="header-section-number">2.19</span> Structure efficiency</a></li>
+<li><a href="#sec-model_planner" id="toc-sec-model_planner" class="nav-link" data-scroll-target="#sec-model_planner"> <span class="header-section-number">2.20</span> Planner</a></li>
+<li><a href="#sec-model_comparator" id="toc-sec-model_comparator" class="nav-link" data-scroll-target="#sec-model_comparator"> <span class="header-section-number">2.21</span> Comparator</a></li>
+</ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+<header id="title-block-header" class="quarto-title-block default">
+
+<div class="quarto-title"><h1 class="title display-7"><span id="sec-hydrological_models" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Hydrological and hydraulics models description</span></span></h1></div></header>
+
+<p>This chapter presents the hydrological objects existing in RS MINERVE software.</p>
+<section id="list-of-objects" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="list-of-objects"><span class="header-section-number">2.1</span> List of objects</h2>
+<p>The parameters or required data (such as paired data) of all objects are presented hereafter. Not presented objects do not require data or require data from another object or from database.</p>
+<ul>
+<li><p>Hydrology:</p>
+<ul>
+<li><p>Virtual Station (see <a href="#sec-virtual_station">Section&nbsp;<span>2.2</span></a>)</p></li>
+<li><p>Snow-SD model (see <a href="#sec-model_snow">Section&nbsp;<span>2.3</span></a>)</p></li>
+<li><p>Runoff (SWMM) model (see <a href="#sec-model_swmm">Section&nbsp;<span>2.4</span></a>)</p></li>
+<li><p>GSM model (see <a href="#sec-model_gsm">Section&nbsp;<span>2.5</span></a>)</p></li>
+<li><p>SOCONT model (see <a href="#sec-model_socont">Section&nbsp;<span>2.6</span></a>)</p></li>
+<li><p>HBV model (see <a href="#sec-model_hbv">Section&nbsp;<span>2.7</span></a>)</p></li>
+<li><p>GR4J model (see <a href="#sec-model_gr4j">Section&nbsp;<span>2.8</span></a>)</p></li>
+<li><p>SAC (SACRAMENTO-SOIL MOISTURE ACCOUNT) model (see <a href="#sec-model_sac_sma">Section&nbsp;<span>2.9</span></a>)</p></li>
+<li><p>SCS (Soil Conservation Service) Unit Hydrograph model (see <a href="#sec-model_scs">Section&nbsp;<span>2.10</span></a>)</p></li>
+</ul></li>
+<li><p>Rivers</p>
+<ul>
+<li>Channel routing description (see <a href="#sec-model_channel_routing">Section&nbsp;<span>2.11</span></a>)</li>
+</ul></li>
+<li><p>Standard:</p>
+<ul>
+<li><p>Junction (object without parameters or paired data)</p></li>
+<li><p>Time Series (see <a href="#sec-model_timeseries">Section&nbsp;<span>2.12</span></a>)</p></li>
+<li><p>Source (object without parameters or paired data, but only a link to the database)</p></li>
+<li><p>Comparator (see <a href="#sec-model_comparator">Section&nbsp;<span>2.21</span></a>)</p></li>
+<li><p>Sub-model (object without any parameters or paired data)</p></li>
+<li><p>Group Interface (object without any parameters or paired data)</p></li>
+</ul></li>
+<li><p>Structures:</p>
+<ul>
+<li><p>Reservoir (see <a href="#sec-model_reservoir">Section&nbsp;<span>2.13</span></a>)</p></li>
+<li><p>Level-Discharge relation HQ (see <a href="#sec-model_hq">Section&nbsp;<span>2.14</span></a>)</p></li>
+<li><p>Turbine (see <a href="#sec-model_turbine">Section&nbsp;<span>2.15</span></a>)</p></li>
+<li><p>TurbineDB (object linked to the database; see <a href="#sec-model_turbine">Section&nbsp;<span>2.15</span></a>)</p></li>
+<li><p>Hydropower (see <a href="#sec-model_hydropower">Section&nbsp;<span>2.16</span></a>)</p></li>
+<li><p>Diversion (see <a href="#sec-model_diversion">Section&nbsp;<span>2.17</span></a>)</p></li>
+<li><p>Consumer (see <a href="#sec-model_consumer">Section&nbsp;<span>2.18</span></a>)</p></li>
+<li><p>Structure Efficiency (see sec-model_efficiency)</p></li>
+</ul></li>
+<li><p>Regulation objects:</p>
+<ul>
+<li>Planner (see <a href="#sec-model_planner">Section&nbsp;<span>2.20</span></a>)</li>
+</ul></li>
+</ul>
+</section>
+<section id="sec-virtual_station" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="sec-virtual_station"><span class="header-section-number">2.2</span> Virtual Station</h2>
+<p>The object “V-Station” (which is associated with the coordinates X, Y, Z) allows the spatial distribution of the meteorological variables (precipitation, temperature, ETP) from available measures or estimations of a database, with spatial reference in metric coordinates.</p>
+<div id="tbl-param_virtual_station" class="anchored">
+<table class="table">
+<caption>Table 2.1: List of parameters and initial conditions for the <strong>virtual station</strong></caption>
+<colgroup>
+<col style="width: 16%">
+<col style="width: 6%">
+<col style="width: 63%">
+<col style="width: 13%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Units</th>
+<th>Description</th>
+<th>Regular Range</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>X, Y, Z</td>
+<td>-</td>
+<td>Coordinates of the virtual station</td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td>Search Radius</td>
+<td>m</td>
+<td>Search radius of the virtual stations</td>
+<td><blockquote class="blockquote">
+<p>0</p>
+</blockquote></td>
+</tr>
+<tr class="odd">
+<td>No.&nbsp;min. of stations</td>
+<td>-</td>
+<td>Minimal number of stations used for interpolation (higher priority than “Search Radius”)</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Gradient P</td>
+<td>1/m</td>
+<td>Precipitation gradient</td>
+<td>-<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></td>
+</tr>
+<tr class="odd">
+<td>Gradient T</td>
+<td>°C/m</td>
+<td>Temperature gradient</td>
+<td>-0.007 to -0.004</td>
+</tr>
+<tr class="even">
+<td>Gradient ETP</td>
+<td>1/m</td>
+<td>Evapotranspiration gradient</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td>Coeff P</td>
+<td>-</td>
+<td>Multiplying correction coefficient</td>
+<td>0.5 to 2</td>
+</tr>
+<tr class="even">
+<td>Coeff T</td>
+<td>°C</td>
+<td>Adding correction coefficient</td>
+<td>-2 to 2</td>
+</tr>
+<tr class="odd">
+<td>Coeff ETP</td>
+<td>-</td>
+<td>Multiplying correction coefficient</td>
+<td>0.5 to 2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The method chosen for the spatial distribution of the precipitation, the temperature and the ETP corresponds to the Thiessen and Shepard methods. The first method, Thiessen, searches the nearest meteorological station for each meteorological variable. The second one, Shepard, searches i stations being in a search radius and calculates the meteorological variable depending on inverse distance weighting.</p>
+<section id="thiessen-interpolation" class="level3" data-number="2.2.1">
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="thiessen-interpolation"><span class="header-section-number">2.2.1</span> Thiessen interpolation</h3>
+<p>The evaluation of a variable in a virtual station s from n meteorological stations is obtained by searching the nearest meteorological station <em>k</em> of the database to the virtual point <em>s</em> (normally referring to the gravity centre of a sub-catchment).</p>
+<p>This method has been extended to take into account the evolution of certain meteorological variables as a function of the altitude. Thus, gradients and coefficients for precipitation, potential evapotranspiration or temperature is also included in the method for obtaining the final value at virtual station <em>s</em>, as presented in equations <a href="#eq-A1">Equation&nbsp;<span>2.1</span></a> to <a href="#eq-A3">Equation&nbsp;<span>2.3</span></a>.</p>
+<p><span id="eq-A1"><span class="math display">\[
+P_s=CoeffP_s \cdot \big( 1 + GradP_s \cdot (z_s-z_k) \big) \cdot P_k
+\qquad(2.1)\]</span></span></p>
+<p><span id="eq-A2"><span class="math display">\[
+T_s=CoeffT_s + GradT_s \cdot(z_s-z_k) + T_k
+\qquad(2.2)\]</span></span></p>
+<p><span id="eq-A3"><span class="math display">\[
+ETP_s=CoeffETP_s \cdot\big( 1 + GradETP_s \cdot(z_s-z_k) \big) \cdot ETP_k
+\qquad(2.3)\]</span></span></p>
+<p>with <span class="math inline">\(P_s\)</span>: value of the precipitation in the virtual station <em>s</em> [I.U.]; <span class="math inline">\(T_s\)</span>: value of the temperature in the virtual station <em>s</em> [I.U.]; <span class="math inline">\(ETP_s\)</span>: value of the potential evapotranspiration in the virtual station <em>s</em> [I.U.]; <span class="math inline">\(P_k\)</span>: value of the precipitation in the meteorological station <em>k</em> [I.U.]; <span class="math inline">\(T_k\)</span>: value of the temperature in the meteorological station <em>k<sub>i</sub></em> [I.U.]; <span class="math inline">\(ETP_k\)</span>: value of the potential evapotranspiration in the meteorological station <em>k</em> [I.U.]; <span class="math inline">\(CoeffP_s\)</span>: precipitation coefficient [-]; <span class="math inline">\(CoeffT_s\)</span>: temperature coefficient [°C]; <span class="math inline">\(CoeffETP_s\)</span>: potential evapotranspiration coefficient [-];<span class="math inline">\(GradP_s\)</span>: precipitation gradient (<span class="math inline">\(\mathrm{d}P_s/\mathrm{d}z\)</span>) [1/m]; <span class="math inline">\(GradT_s\)</span>: temperature gradient (<span class="math inline">\(\mathrm{d}T_s/\mathrm{d}z\)</span>) [�C/m]; <span class="math inline">\(GradETP_s\)</span>: potential evapotranspiration gradient (<span class="math inline">\(\mathrm{d}ETP_s/\mathrm{d}z\)</span>) [1/m]; <span class="math inline">\(z_s\)</span>: altitude of the virtual station <em>s</em> [m a.s.l.]; <span class="math inline">\(z_k\)</span>: position of the meteorological station <em>k</em> of the database [m a.s.l.].</p>
+<p>In that case, the parameters <em>Search Radius</em> and <em>No.&nbsp;min. of stations</em> are not used, since only the nearest meteorological station is used.</p>
+</section>
+<section id="shepard-interpolation" class="level3" data-number="2.2.2">
+<h3 data-number="2.2.2" class="anchored" data-anchor-id="shepard-interpolation"><span class="header-section-number">2.2.2</span> Shepard interpolation</h3>
+<p>The evaluation of a variable in a virtual station s from n meteorological stations localized at i=1,2,…,n is obtained by weighting according to the inverse square distance <em>d<sub>i,s</sub></em> between the meteorological station <em>i</em> of the database and the virtual station <em>s</em>.</p>
+<p><span id="eq-A4"><span class="math display">\[
+d_{i,s}=\sqrt{(x_i-x_s)^2+(y_i-y_s)^2}
+\qquad(2.4)\]</span></span></p>
+<p>with <span class="math inline">\(x_i\)</span>, <span class="math inline">\(y_i\)</span>: position of the meteorological station <em>i</em> of the database [m]; <span class="math inline">\(x_s\)</span>, <span class="math inline">\(y_s\)</span>: position of the virtual station s [m]; <span class="math inline">\(d_{i,s}\)</span>: distance between the meteorological station <em>i</em> and the virtual station <em>s</em> [m].</p>
+<p>The <em>n</em> meteorological stations for the spatial interpolation in the virtual station <em>s</em> are determined automatically respecting equation <a href="#eq-A5">Equation&nbsp;<span>2.5</span></a>. Hence, the number <em>n</em> of meteorological stations is variable for every pair (<em>s</em>, <em>r<sub>s</sub></em>). Nevertheless, a minimal number of stations used for interpolation can be fixed by the user with the corresponding parameter.</p>
+<p><span id="eq-A5"><span class="math display">\[
+d_{i,s} \leq r_s
+\qquad(2.5)\]</span></span></p>
+<p>with <span class="math inline">\(r_s\)</span>: search radius of meteorological stations [m].</p>
+<p>The Shepard method (1968) has been also extended to take into account the evolution of the meteorological variables as a function of the altitude. Gradients and coefficients for precipitation, potential evapotranspiration or temperature are also included in the method for obtaining the final value at virtual station <em>s</em>, as presented in equations <a href="#eq-A6">Equation&nbsp;<span>2.6</span></a> to <a href="#eq-A8">Equation&nbsp;<span>2.8</span></a>.</p>
+<p><span id="eq-A6"><span class="math display">\[
+P_S=CoeffP_S \cdot \Bigg(\frac{\sum_{i=1}^{n} \Big[ \big( 1 + GradP_s \cdot (z_s-z_i) \big) \cdot P_i \cdot {\frac {1}{d_{i,s}^2}} \Big]}{\sum_{i=1}^{n} \frac{1}{{d_{i,s}}^2}} \Bigg)
+\qquad(2.6)\]</span></span></p>
+<p><span id="eq-A7"><span class="math display">\[
+T_S=CoeffT_S + \Bigg(\frac{\sum_{i=1}^{n} \Big[\big(GradT_s \cdot (z_s-z_i) + T_i\big) \cdot {\frac {1}{d_{i,s}^2}} \Big]}{\sum_{i=1}^{n} \frac{1}{{d_{i,s}}^2}} \Bigg)
+\qquad(2.7)\]</span></span></p>
+<p><span id="eq-A8"><span class="math display">\[
+ETP_S=CoeffETP_S \cdot \Bigg(\frac{\sum_{i=1}^{n} \Big[\big( 1 + GradETP_s \cdot (z_s-z_i) \big) \cdot ETP_i \cdot {\frac {1}{d_{i,s}^2}} \Big]}{\sum_{i=1}^{n} \frac{1}{{d_{i,s}}^2}} \Bigg)
+\qquad(2.8)\]</span></span></p>
+<p>with <span class="math inline">\(P_s\)</span>: value of the precipitation in the virtual station <em>s</em> [I.U.]; <span class="math inline">\(T_s\)</span>: value of the temperature in the virtual station <em>s</em> [I.U.]; <span class="math inline">\(ETP_s\)</span>: value of the potential evapotranspiration in the virtual station <em>s</em> [I.U.]; <span class="math inline">\(P_i\)</span>: value of the precipitation in the meteorological station <em>i</em> [I.U.]; <span class="math inline">\(T_i\)</span>: value of the temperature in the meteorological station <em>i</em> [I.U.]; <span class="math inline">\(ETP_i\)</span>: value of the potential evapotranspiration in the meteorological station <em>i</em> [I.U.]; <span class="math inline">\(CoeffP_s\)</span>: precipitation coefficient [-]; <span class="math inline">\(CoeffT_s\)</span>: temperature coefficient [°C]; <span class="math inline">\(CoeffETP_s\)</span>: potential evapotranspiration coefficient [-]; <span class="math inline">\(GradP_s\)</span>: precipitation gradient (<span class="math inline">\(\mathrm{d}P_s/\mathrm{d}z\)</span>) [1/m]; <span class="math inline">\(GradT_s\)</span>: temperature gradient (<span class="math inline">\(\mathrm{d}T_s/\mathrm{d}z\)</span>) [�C/m]; <span class="math inline">\(GradETP_s\)</span>: potential evapotranspiration gradient (<span class="math inline">\(\mathrm{d}ETP_s/\mathrm{d}z\)</span>) [1/m]; <span class="math inline">\(z_s\)</span>: altitude of the virtual station <em>s</em> [m a.s.l.]; <span class="math inline">\(z_i\)</span>: position of the meteorological station <em>i</em> of the database [m a.s.l.].</p>
+</section>
+<section id="complementary-calculations-for-the-potential-evapotranspiration-etp" class="level3" data-number="2.2.3">
+<h3 data-number="2.2.3" class="anchored" data-anchor-id="complementary-calculations-for-the-potential-evapotranspiration-etp"><span class="header-section-number">2.2.3</span> Complementary calculations for the Potential Evapotranspiration (ETP)</h3>
+<p>If no ETP values are available in the database, RS MINERVE offers also the possibility of calculating the ETP from different methods directly at virtual station. These methods can be selected in the RS MINERVE Settings, on the Evapotranspiration frame (<a href="#fig-selection_ETP">Figure&nbsp;<span>2.1</span></a>).</p>
+<div id="fig-selection_ETP" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-selection_ETP.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2.1: Selection of the ETP calculation</figcaption><p></p>
+</figure>
+</div>
+<p>The available methods are presented hereafter in detail.</p>
+<p><strong>a. Turc</strong></p>
+<p>The potential evapotranspiration proposed by Turc (1955, 1961) is presented in equation <a href="#eq-A9">Equation&nbsp;<span>2.9</span></a>:</p>
+<p><span id="eq-A9"><span class="math display">\[
+ETP =
+  \begin{cases}
+    CoeffETP \cdot K \cdot TT + 15 \cdot (R_g+50)       &amp; \quad \text{if } T&gt;0\\
+    0                                                   &amp; \quad \text{if } T \leq 0
+  \end{cases}
+\qquad(2.9)\]</span></span></p>
+<p>with <span class="math inline">\(ETP\)</span>: potential evapotranspiration [mm/month]; <span class="math inline">\(T\)</span>: air temperature [°C]; <span class="math inline">\(R_g\)</span>: global radiation [cal/cm^2/day]; <span class="math inline">\(K\)</span>: constant [-].</p>
+<p>The constant <em>K</em> value is:</p>
+<p><span id="eq-A10"><span class="math display">\[
+K =
+  \begin{cases}
+    0.4   &amp; \quad \text{if Month } \neq \text{February}\\
+    0.37  &amp; \quad \text{if Month = February}
+  \end{cases}
+\qquad(2.10)\]</span></span></p>
+<p><em>R<sub>g</sub></em> value is a location dependent (latitude and longitude) monthly average of the global radiation.</p>
+<p>The global radiation <em>R<sub>g</sub></em> is obtained in [kWh/m^2/day] from the <em>Global horizontal radiation</em> dataset provided by the Surface meteorological and Solar Energy (SSE) web portal, sponsored by the NASA’s Applied Science Program (<a href="http://eosweb.larc.nasa.gov/sse" class="uri">http://eosweb.larc.nasa.gov/sse</a>). This data comes as a grid (latitude and longitude) and is composed of monthly averaged values.</p>
+<p><em>R<sub>g</sub></em> data takes into account 22 year monthly average (July 1983 - June 2005). The latitude and the longitude values indicate the lower left corner of a 1x1 degree region. Negative values are south and west; positive values are north and east. Boundaries of the -90/-180 region are -90 to -89 (south) and -180 to -179 (west). The last region, 89/180, is bounded by 89 to 90 (north) and 179 to 180 (east). The mid-point of the region is +0.5 added to the latitude/longitude value. These data are regional averages, not point data.</p>
+<p>If the user introduces decimals to the latitude/longitude values, the RS MINERVE program calculates the nearest integer value for <em>R<sub>g</sub></em> calculations.</p>
+<p><strong>b. McGuinness</strong></p>
+<p>McGuinness et Bordne <span class="citation" data-cites="mcguinness1972">(<a href="#ref-mcguinness1972" role="doc-biblioref">McGuinness and Bordne 1972</a>)</span> proposes next ETP calculation:</p>
+<p><span id="eq-A11"><span class="math display">\[
+ETP =
+  \begin{cases}
+    CoeffETP \cdot K \cdot \frac{R_g}{\lambda + \rho} \cdot \frac {T_a + 5}{68}       &amp; \quad \text{if } T&gt;-5\\
+    0  &amp; \quad \text{if } T \leq -5
+  \end{cases}
+\qquad(2.11)\]</span></span></p>
+<p>with <span class="math inline">\(ETP\)</span>: potential evapotranspiration [m/d]; <span class="math inline">\(R_g\)</span>: global radiation [MJ/m^2/day]; <span class="math inline">\(T_a\)</span>: air temperature [°C]; <span class="math inline">\(\rho\)</span>: water density, constant value of 1’000 [kg/m^3] ; <span class="math inline">\(\lambda\)</span>: latent heat of vaporization, constant value of 2.26 [MJ/kg].</p>
+<p><em>R<sub>g</sub></em> value is a location dependent (latitude and longitude) monthly average of the global radiation.</p>
+<p>The global radiation <em>R<sub>g</sub></em> is obtained in [kWh/m^2/day] from the <em>Global horizontal radiation</em> dataset provided by the Surface meteorological and Solar Energy (SSE) web portal, sponsored by the NASA’s Applied Science Program (<a href="http://eosweb.larc.nasa.gov/sse" class="uri">http://eosweb.larc.nasa.gov/sse</a>). This data comes as a grid (latitude and longitude) and is composed of monthly averaged values.</p>
+<p><em>R<sub>g</sub></em> data takes into account 22 year monthly average (July 1983 - June 2005). The latitude and the longitude values indicate the lower left corner of a 1x1 degree region. Negative values are south and west; positive values are north and east. Boundaries of the -90/-180 region are -90 to -89 (south) and -180 to -179 (west). The last region, 89/180, is bounded by 89 to 90 (north) and 179 to 180 (east). The mid-point of the region is +0.5 added to the latitude/longitude value. These data are regional averages; not point data.</p>
+<p>If the user introduces decimals to the latitude/longitude values, the RS MINERVE program calculates the nearest integer value for <em>R<sub>g</sub></em> calculations.</p>
+<p><strong>c.&nbsp;Oudin</strong></p>
+<p>Oudin <span class="citation" data-cites="oudin_recherche_2004">(<a href="#ref-oudin_recherche_2004" role="doc-biblioref">Oudin 2004</a>)</span> proposes following equation for the calculation of ETP:</p>
+<p><span id="eq-A12"><span class="math display">\[
+ETP =
+  \begin{cases}
+    CoeffETP \cdot K \cdot \frac{R_e}{\lambda \cdot \rho} \cdot \frac {T + 5}{100}       &amp; \quad \text{if } T&gt;-5\\
+    0  &amp; \quad \text{if } T \leq -5
+  \end{cases}
+\qquad(2.12)\]</span></span></p>
+<p>with <span class="math inline">\(ETP\)</span>: potential evapotranspiration [m/d]; <span class="math inline">\(R_e\)</span>: extra-terrestrial radiation [MJ m^{-2} d^{-1}]; <span class="math inline">\(T\)</span>: Air temperature [°C]; <span class="math inline">\(\rho\)</span>: water density, constant value of 1’000 [kg/m^3]; <span class="math inline">\(\lambda\)</span>: latent heat of vaporization, constant value of 2.26 [MJ/kg].</p>
+<p>Oudin method coefficients (5 and 100) were optimized for the hydrological modelling, on the basis of a study realized on many worldwide watersheds <span class="citation" data-cites="oudin_recherche_2004">(<a href="#ref-oudin_recherche_2004" role="doc-biblioref">Oudin 2004</a>)</span>.</p>
+<p>Latitude are only necessary for obtaining <em>R<sub>e</sub></em> values.</p>
+<p>The extra-terrestrial radiation <em>R<sub>e</sub></em> is calculated as follows: <span id="eq-A13"><span class="math display">\[
+R_e=37.6 \cdot dr \cdot \big( \omega \cdot \sin(\psi) \cdot \sin(\delta) + \sin(\omega) \cdot \cos(\psi) \cdot \cos(\delta)\big)
+\qquad(2.13)\]</span></span></p>
+<p><span id="eq-A14"><span class="math display">\[
+dr=1 + 0.033 \cdot \cos \Big(\frac {2 \cdot \Pi \cdot J_d}{365} \Big)
+\qquad(2.14)\]</span></span></p>
+<p><span id="eq-A15"><span class="math display">\[
+\omega=\arccos (-\tan(\psi) \cdot \tan(\delta))
+\qquad(2.15)\]</span></span></p>
+<p><span id="eq-A16"><span class="math display">\[
+\delta=0.409 \cdot \sin \Big( \frac{2 \cdot \Pi \cdot J_d}{365} - 1.39\Big)
+\qquad(2.16)\]</span></span></p>
+<p><span id="eq-A17"><span class="math display">\[
+J_d =
+  \begin{cases}
+    275 \cdot \frac{month}{9} - 30 + Dm       &amp; \quad \text{if month} &lt;3\\
+    275 \cdot \frac{month}{9} - 31 + Dm       &amp; \quad \text{if month} \geq 3 \text{ and leap year = true}\\
+    275 \cdot \frac{month}{9} - 32 + Dm       &amp; \quad \text{if month} \geq 3 \text{ and leap year = false}
+  \end{cases}
+\qquad(2.17)\]</span></span></p>
+<p>with <span class="math inline">\(dr\)</span>: relative distance Sun-Earth [-]; <span class="math inline">\(\delta\)</span>: solar declination [rad]; <span class="math inline">\(J_d\)</span>: Julian day [-]; <span class="math inline">\(\psi\)</span>: latitude, negative in the south hemisphere [rad]; <span class="math inline">\(\omega\)</span>: hour angle of the sun [rad]; <span class="math inline">\(month\)</span>: month of the year, 1 to 12 [-]; <span class="math inline">\(Dm\)</span>:day of the month [-].</p>
+<p><strong>d.&nbsp;Uniform ETP</strong></p>
+<p>The user can also set a uniform ETP for the whole simulation period and for the entire basin.</p>
+<p><span id="eq-A18"><span class="math display">\[
+ETP=CoeffETP \cdot X
+\qquad(2.18)\]</span></span></p>
+<p>with <span class="math inline">\(X\)</span>: uniform ETP [mm/d]</p>
+</section>
+</section>
+<section id="sec-model_snow" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="sec-model_snow"><span class="header-section-number">2.3</span> Snow-SD model description</h2>
+<p>The Snow-SD (Snow model with a Seasonal Degree-day factor) model (<a href="#fig-model_snow">Figure&nbsp;<span>2.2</span></a>), inspired by <span class="citation" data-cites="schaefli_conceptual_2005">(<a href="#ref-schaefli_conceptual_2005" role="doc-biblioref">Schaefli et al. 2005</a>)</span> and <span class="citation" data-cites="hamdi_modeprevision_2005">(<a href="#ref-hamdi_modeprevision_2005" role="doc-biblioref">Hamdi, Hingray, and Musy 2005</a>)</span>, is composed of two sub-models. They simulate the transient evolution of the snow pack (accumulation and melt) as a function of the temperature (<em>T</em>) and precipitation (<em>P</em>) and produce an equivalent precipitation (<em>P<sub>eq</sub></em>) which can be used as an input variable for the SAC-SMA or GR4J model.</p>
+<div id="fig-model_snow" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-model_snow.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2.2: Snow-SD model</figcaption><p></p>
+</figure>
+</div>
+<div id="tbl-param_model_snow" class="anchored">
+<table class="table">
+<caption>Table 2.2: List of parameters and initial conditions for the <strong>Snow-SD model</strong></caption>
+<colgroup>
+<col style="width: 11%">
+<col style="width: 12%">
+<col style="width: 56%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Units</th>
+<th>Decription</th>
+<th>Regular range</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>S</td>
+<td>mm/°C/d</td>
+<td>Reference degree-day snowmelt coefficient</td>
+<td>0.5 to 20</td>
+</tr>
+<tr class="even">
+<td>SInt</td>
+<td>mm/°C/d</td>
+<td>Degree-day snowmelt interval</td>
+<td>0 to 4</td>
+</tr>
+<tr class="odd">
+<td>SMin</td>
+<td>mm/°C/d</td>
+<td>Minimal degree-day snowmelt coefficient</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>SPh</td>
+<td>d</td>
+<td>Phase shift of the sinusoidal function</td>
+<td>1 to 365</td>
+</tr>
+<tr class="odd">
+<td>ThetaCri</td>
+<td>-</td>
+<td>Critical relative water content of the snow pack</td>
+<td>0.1</td>
+</tr>
+<tr class="even">
+<td>bp</td>
+<td>d/mm</td>
+<td>Melt coefficient due to liquid precipitation</td>
+<td>0.0125</td>
+</tr>
+<tr class="odd">
+<td>Tcp1</td>
+<td>°C</td>
+<td>Minimum critical temperature for liquid precipitation</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>Tcp2</td>
+<td>°C</td>
+<td>Maximum critical temperature for solid precipitation</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<td>Tcf</td>
+<td>°C</td>
+<td>Critical snowmelt temperature</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>CFR</td>
+<td>-</td>
+<td>Refreezing coefficient</td>
+<td>0 to 1</td>
+</tr>
+<tr class="odd">
+<td>SWEIni</td>
+<td>m</td>
+<td>Initial snow water equivalent height</td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td>ThetaIni</td>
+<td>-</td>
+<td>Initial relative water content in the snow pack</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>In a first step, precipitation is separated into solid (<em>P<sub>sn</sub></em>) and liquid precipitation (<em>P<sub>w</sub></em>) as a function of the temperature (equations <a href="#eq-B1">Equation&nbsp;<span>2.19</span></a> to <a href="#eq-B3">Equation&nbsp;<span>2.21</span></a>):</p>
+<p><span id="eq-B1"><span class="math display">\[
+P_w = \alpha \cdot P
+\qquad(2.19)\]</span></span></p>
+<p><span id="eq-B2"><span class="math display">\[
+P_{sn} = (1 - \alpha) \cdot P
+\qquad(2.20)\]</span></span></p>
+<p><span id="eq-B3"><span class="math display">\[
+\alpha =
+  \begin{cases}
+    0                                     &amp; \quad \text{if } T \leq T_{cp1}\\
+    (T - T_{cp1})/(T_{cp2} - T_{cp1})     &amp; \quad \text{if } T_{cp1} &lt; T &lt; T_{cp2}\\
+    1                                     &amp; \quad \text{if } T \geq T_{cp2}
+  \end{cases}
+\qquad(2.21)\]</span></span></p>
+<p>with <span class="math inline">\(P_w\)</span>: liquid precipitation [L/T]; <span class="math inline">\(\alpha\)</span>: separation factor; <span class="math inline">\(P\)</span>: precipitation [L/T]; <span class="math inline">\(P_{sn}\)</span>: solid precipitation [L/T]; <span class="math inline">\(T\)</span>: temperature [°C]; <span class="math inline">\(T_{cp1}\)</span>: minimum critical temperature for liquid precipitation [°C]; <span class="math inline">\(T_{cp2}\)</span>: maximum critical temperature for solid precipitation [°C].</p>
+<p>If the observed temperature is lower than <em>T<sub>cp1</sub></em>, only solid precipitation is generated. If the temperature is higher than <em>T<sub>cp2</sub></em>, only liquid precipitation (<em>P<sub>w</sub></em>) is present. If the observed temperature is between these two critical values, both phases (liquid and solid) are produced. Solid precipitation (<em>P<sub>sn</sub></em>) is used as input for the snow pack, varying its content as a function of melt or freezing. The snowmelt calculation is performed as follows, using a time-varying degree-day snowmelt coefficient with a lower bound as presented in <a href="#fig-model_snow_degreeday">Figure&nbsp;<span>2.3</span></a> (Griessinger et al.&nbsp;2016, Magnusson et al.&nbsp;2014, Slater and Clark 2005):</p>
+<p><span id="eq-B4"><span class="math display">\[
+S' = max \Big( S_{Min}\ ;\ S + \ \frac{S_{Int}}{2} \cdot \sin \big( 2\pi \cdot \frac{n - S_{Ph}}{365} \big) \Big)
+\qquad(2.22)\]</span></span></p>
+<p><span id="eq-B5"><span class="math display">\[
+M_{sn} =
+  \begin{cases}
+    S' \cdot (1 + b_p \cdot P_w) \cdot (T - T_{cf})     &amp; \quad \text{if } T &gt; T_{cf}\\
+    S' \cdot CFR \cdot (T - T_{cf})        &amp; \quad \text{if } T \leq T_{cf}
+  \end{cases}
+\qquad(2.23)\]</span></span></p>
+<p><span id="eq-B6"><span class="math display">\[
+\mathrm{d}H_{snow}/\mathrm{d}t = P_{sn} - M_{sn}, \quad M_{sn} \leq P_{sn} + H_{snow}/\mathrm{d}t, \quad M_{sn} \geq - W_{snow}/\mathrm{d}t
+\qquad(2.24)\]</span></span></p>
+<p>with <span class="math inline">\(S'\)</span> (<em>S</em> Series in RS MINERVE): time-varying degree-day snowmelt coefficient [L/T/°C]; <span class="math inline">\(S\)</span>: reference degree-day snowmelt coefficient [L/T/°C]; <span class="math inline">\(S_{Int}\)</span>: degree-day snowmelt coefficient interval [L/T/°C]; <span class="math inline">\(n\)</span>: day of the year [T]; <span class="math inline">\(S_{Min}\)</span>: Minimal degree-day snowmelt coefficient [L/T/°C]; <span class="math inline">\(S_{Ph}\)</span>: Phase shift of the sinusoidal function [T]; <span class="math inline">\(M_{sn}\)</span>: snowmelt or freezing [L/T]; <span class="math inline">\(b_p\)</span>: melt coefficient due to liquid precipitation [T/L]; <span class="math inline">\(T_{cf}\)</span>: critical snowmelt temperature [°C]; <span class="math inline">\(CFR\)</span>: refreezing coefficient [-]; <span class="math inline">\(H_{snow}\)</span>: water content of the solid fraction of snow [L]; <span class="math inline">\(dt\)</span>: time step [T]; <span class="math inline">\(W_{snow}\)</span>: water content of the liquid fraction of snow [L].</p>
+<div id="fig-model_snow_degreeday" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-model_snow_degreeday.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2.3: Time-varying degree-day snowmelt coefficient</figcaption><p></p>
+</figure>
+</div>
+<p><em>S<sub>Min</sub></em> allows to fix a lower limit to the <em>S’</em> value. The <em>S<sub>Ph</sub></em> parameter defines the (horizontal) phase shift of the sinusoidal curve with respect to the first day of the year.</p>
+<p>The equivalent precipitation (<em>P<sub>eq</sub></em>) depends on the water content of the snow (equations <a href="#eq-B7">Equation&nbsp;<span>2.25</span></a> to <a href="#eq-B9">Equation&nbsp;<span>2.27</span></a>):</p>
+<p><span id="eq-B7"><span class="math display">\[
+\theta = \frac{W_{snow}}{H_{snow}}
+\qquad(2.25)\]</span></span></p>
+<p><span id="eq-B8"><span class="math display">\[
+P_{eq} =
+  \begin{cases}
+    P_w + W_{snow}/\mathrm{d}t                            &amp; \quad \text{if } H_{snow} = 0\\
+    0                                            &amp; \quad \text{if } H_{snow} &gt; 0 \text{ and } \theta \leq \theta_{cr}\\
+    (\theta - \theta_{cr}) \cdot H_{snow}/\mathrm{d}t     &amp; \quad \text{if } H_{snow} &gt; 0 \text{ and } \theta &gt; \theta_{cr}
+  \end{cases}
+\qquad(2.26)\]</span></span></p>
+<p><span id="eq-B9"><span class="math display">\[
+\mathrm{d}W_{snow}/\mathrm{d}t = P_w + M_{sn} - P_{eq}
+\qquad(2.27)\]</span></span></p>
+<p>with <span class="math inline">\(\theta\)</span> (<em>Theta</em> in RS MINERVE): relative water content in the snow pack [-]; <span class="math inline">\(\theta_{cr}\)</span> (<em>ThetaCri</em> in RS MINERVE): critical relative water content in the snow pack [-]; <span class="math inline">\(P_{eq}\)</span>: equivalent precipitation [L/T].</p>
+<p>The snow water equivalent is then the addition of <em>H<sub>snow</sub></em> and <em>W<sub>snow</sub></em> (equation <a href="#eq-B10">Equation&nbsp;<span>2.28</span></a>):</p>
+<p><span id="eq-B10"><span class="math display">\[
+SWE = H_{snow} + W_{snow}
+\qquad(2.28)\]</span></span></p>
+<p>with <span class="math inline">\(SWE\)</span>: snow water equivalent [L].</p>
+<p>The variables for the initial situation associated to this model are (<em>Theta</em> in RS MINERVE) and <em>SWE</em>. The parameters to adjust are <em>S</em>, <em>S<sub>Int</sub></em> and <em>CFR</em>. The parameters <em>S<sub>Phi</sub></em>, <em>b<sub>p</sub></em>, <em><sub>cr</sub></em>, <em>T<sub>cp1</sub></em>, <em>T<sub>cp2</sub></em> and <em>T<sub>cf</sub></em> can be assumed as constant (<em>b<sub>p</sub></em> = 0.0125, <em><sub>cr</sub> = 0.1</em>, <em>T<sub>cp1</sub> = 0 �C</em>, <em>T<sub>cp2</sub> = 4 �C</em>, <em>T<sub>cf</sub> = 0 �C</em>, <em>S<sub>Phi</sub> = 80</em> (corresponding to March 21<sup>st</sup> for the Northern hemisphere; use 264 for Southern hemisphere corresponding to September 21)) but can be also be calibrated for some cases.</p>
+<p>The refreezing coefficient <em>CFR</em> is similar to the one found for example in HBV (see Section 2.7) and is available for the Snow-SD model in RS MINERVE program from the version 2.8.0. By default, <em>CFR</em> is set to 1, recommended values from the literature are around 0.05.</p>
+<p>The input variables of the model are precipitation (<em>P</em>) and temperature (<em>T</em>), the output value is the equivalent precipitation (<em>P<sub>eq</sub></em>).</p>
+</section>
+<section id="sec-model_swmm" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="sec-model_swmm"><span class="header-section-number">2.4</span> Runoff (SWMM) model description</h2>
+<p>The SWMM (Storm Water Management Model) model presented hereafter was developed by Metcalf and Eddy (1971).</p>
+<div id="fig-model_swmm" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-model_swmm.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2.4: SWMM Runoff model</figcaption><p></p>
+</figure>
+</div>
+<div id="tbl-param_model_swmm" class="anchored">
+<table class="table">
+<caption>Table 2.3: List of parameters and initial conditions for the <strong>SWMM model</strong></caption>
+<colgroup>
+<col style="width: 12%">
+<col style="width: 13%">
+<col style="width: 52%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Units</th>
+<th>Description</th>
+<th>Regular Range</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>m<sup>2</sup></td>
+<td>Surface of runoff</td>
+<td><blockquote class="blockquote">
+<p>0</p>
+</blockquote></td>
+</tr>
+<tr class="even">
+<td>L</td>
+<td>m</td>
+<td>Length of the plane</td>
+<td><blockquote class="blockquote">
+<p>0</p>
+</blockquote></td>
+</tr>
+<tr class="odd">
+<td>J0</td>
+<td>-</td>
+<td>Runoff slope</td>
+<td><blockquote class="blockquote">
+<p>0</p>
+</blockquote></td>
+</tr>
+<tr class="even">
+<td>K</td>
+<td>m<sup>1/3</sup>/s</td>
+<td>Strickler coefficient</td>
+<td>0.1 to 90</td>
+</tr>
+<tr class="odd">
+<td>HIni</td>
+<td>m</td>
+<td>Initial water level downstream of the surface</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The transfer of the net intensity to an impermeable surface is carried out by the help of a non-linear transfer reservoir (<a href="#fig-model_swmm">Figure&nbsp;<span>2.4</span></a>) depending on the equations <a href="#eq-C1">Equation&nbsp;<span>2.29</span></a> to <a href="#eq-C3">Equation&nbsp;<span>2.31</span></a>:</p>
+<p><span id="eq-C1"><span class="math display">\[
+\mathrm{d}H/\mathrm{d}t = 2 \cdot (i_{Net} - i_{r}), \quad H_{r} \geq 0
+\qquad(2.29)\]</span></span></p>
+<p><span id="eq-C2"><span class="math display">\[
+i_{r} = K \cdot \sqrt{J_{o}} \cdot H^{5/3} \cdot \frac{1}{L}
+\qquad(2.30)\]</span></span></p>
+<p><span id="eq-C3"><span class="math display">\[
+Q = i_{r} \cdot A
+\qquad(2.31)\]</span></span></p>
+<p>with <span class="math inline">\(H\)</span>: runoff water level downstream of the surface [L]; <span class="math inline">\(i_{Net}\)</span>: net intensity [L/T]; <span class="math inline">\(i_r\)</span>: runoff intensity [L/T]; <span class="math inline">\(K\)</span>: Strickler coefficient [L<sup>1/3</sup>/T]; <span class="math inline">\(J_o\)</span>: average slope of the plane [-]; <span class="math inline">\(L\)</span>: length of the plane [L]; <span class="math inline">\(A\)</span>: run-off surface [L<sup>2</sup>].</p>
+<p>The variable for the initial condition associated to the model is <em>H<sub>r</sub></em>. The parameter to adjust is <em>K</em>. The other parameters (<em>J<sub>o</sub></em>, <em>L</em>, <em>A</em>) are supposed to be constant.</p>
+<p>The SWMM model, supplied by a hyetograph of net rainfall (<em>i<sub>Net</sub></em>), provides a hydrograph downstream of the surface (<em>Q</em>).</p>
+</section>
+<section id="sec-model_gsm" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="sec-model_gsm"><span class="header-section-number">2.5</span> GSM model description</h2>
+<p>The GSM model (<a href="#fig-model_gsm">Figure&nbsp;<span>2.5</span></a>) is composed of 5 sub-models, two corresponding to the Snow-SD model and the other three corresponding to the glacier model. The present model allows an easy construction of this kind of composition.</p>
+<p>From the inputs of precipitation (P) and temperature (T), the snow model creates an equivalent precipitation (<em>P<sub>eq</sub></em>) which is transferred to the glacier model. The same accounts for the height of the snow (<em>SWE</em>) and the temperature (<em>T</em>).</p>
+<p>In the glacier model the equivalent precipitation is transferred to the linear snow reservoir (<em>R<sub>sn</sub></em>) and finally to the outlet of the sub-catchment (Q<sub>snow</sub>). Besides, the sub-model of the glacier melt creates a flow when the height of snow is zero (<em>SWE=0</em>). This glacier flow (<em>P<sub>eqGL</sub></em>) is transferred to the linear glacier reservoir (<em>R<sub>gl</sub></em>) and the resulting flow (<em>Q<sub>glacier</sub></em>) to the outlet of the sub-catchment.</p>
+<p>The final flow (<em>Q<sub>tot</sub></em>) produced by the sub-catchment is the addition of the two flows (<em>Q<sub>glacier</sub></em> and <em>Q<sub>snow</sub></em>).</p>
+<div id="fig-model_gsm" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-model_gsm.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2.5: GSM model</figcaption><p></p>
+</figure>
+</div>
+<div id="tbl-param_model_gsm" class="anchored">
+<table class="table">
+<caption>Table 2.4: List of parameters and initial conditions for the <strong>GSM model</strong></caption>
+<colgroup>
+<col style="width: 13%">
+<col style="width: 11%">
+<col style="width: 54%">
+<col style="width: 19%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Units</th>
+<th>Description</th>
+<th>Regular Range</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>m<sup>2</sup></td>
+<td>Surface of infiltration</td>
+<td><blockquote class="blockquote">
+<p>0</p>
+</blockquote></td>
+</tr>
+<tr class="even">
+<td>S</td>
+<td>mm/°C/d</td>
+<td>Reference degree-day snowmelt coefficient</td>
+<td>0.5 to 20</td>
+</tr>
+<tr class="odd">
+<td>SInt</td>
+<td>mm/°C/d</td>
+<td>Degree-day snowmelt interval</td>
+<td>0 to 4</td>
+</tr>
+<tr class="even">
+<td>SMin</td>
+<td>mm/°C/d</td>
+<td>Minimal degree-day snowmelt coefficient</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Sph</td>
+<td>d</td>
+<td>Phase shift of the sinusoidal function</td>
+<td>1 to 365</td>
+</tr>
+<tr class="even">
+<td>ThetaCri</td>
+<td>-</td>
+<td>Critical relative water content of the snow pack</td>
+<td>0.1</td>
+</tr>
+<tr class="odd">
+<td>bp</td>
+<td>d/mm</td>
+<td>Melt coefficient due to liquid precipitation</td>
+<td>0.0125</td>
+</tr>
+<tr class="even">
+<td>Tcp1</td>
+<td>°C</td>
+<td>Minimum critical temperature for liquid precipitation</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>Tcp2</td>
+<td>°C</td>
+<td>Maximum critical temperature for solid precipitation</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td>Tcf</td>
+<td>°C</td>
+<td>Critical snowmelt temperature</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>G</td>
+<td>mm/°C/d</td>
+<td>Reference degree-day glacier melt coefficient</td>
+<td>0.5 to 20</td>
+</tr>
+<tr class="even">
+<td>GInt</td>
+<td>mm/°C/d</td>
+<td>Degree-day glacier melt interval</td>
+<td>0 to 4</td>
+</tr>
+<tr class="odd">
+<td>GMin</td>
+<td>mm/°C/d</td>
+<td>Minimal degree-day glacier melt coefficient</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Tcg</td>
+<td>°C</td>
+<td>Critical glacier melt temperature</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>Kgl</td>
+<td>1/d</td>
+<td>Release coefficient of glacier melt reservoir</td>
+<td>0.1 to 5</td>
+</tr>
+<tr class="even">
+<td>Ksn</td>
+<td>1/d</td>
+<td>Release coefficient of snowmelt reservoir</td>
+<td>0.1 to 5</td>
+</tr>
+<tr class="odd">
+<td>CFR</td>
+<td>-</td>
+<td>Refreezing coefficient</td>
+<td>0 to 1</td>
+</tr>
+<tr class="even">
+<td>SWEIni</td>
+<td>m</td>
+<td>Initial snow water equivalent height</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td>ThetaIni</td>
+<td>-</td>
+<td>Initial relative water content in the snow pack</td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td>QsnowIni</td>
+<td>m<sup>3</sup>/s</td>
+<td>Initial outflow of linear snow reservoir</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td>QglacierIni</td>
+<td>m<sup>3</sup>/s</td>
+<td>Initial outflow of linear glacier reservoir</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>In a first step, the precipitation is divided into a solid precipitation (<em>P<sub>sn</sub></em>) and into a liquid precipitation (<em>P<sub>w</sub></em>) as a function of the temperature (equations <a href="#eq-D1">Equation&nbsp;<span>2.32</span></a> to <a href="#eq-D3">Equation&nbsp;<span>2.34</span></a>):</p>
+<p><span id="eq-D1"><span class="math display">\[
+P_{w} = \alpha \cdot P
+\qquad(2.32)\]</span></span></p>
+<p><span id="eq-D2"><span class="math display">\[
+P_{sn} = (1 - \alpha) \cdot P
+\qquad(2.33)\]</span></span></p>
+<p><span id="eq-D3"><span class="math display">\[
+\alpha =
+  \begin{cases}
+    0                                     &amp; \quad \text{if } T \leq T_{cp1}\\
+    (T - T_{cp1})/(T_{cp2} - T_{cp1})     &amp; \quad \text{if } T_{cp1} &lt; T &lt; T_{cp2}\\
+    1                                     &amp; \quad \text{if } T \geq T_{cp2}
+  \end{cases}
+\qquad(2.34)\]</span></span></p>
+<p>with <span class="math inline">\(P_w\)</span>: liquid precipitation [L/T]; <span class="math inline">\(\alpha\)</span>: separation factor; <span class="math inline">\(P\)</span>: precipitation [L/T]; <span class="math inline">\(P_{sn}\)</span>: solid precipitation [L/T]; <span class="math inline">\(T\)</span>: te*mperature [°C]; <span class="math inline">\(T_{cp1}\)</span>: minimum critical temperature for liquid precipitation [°C]; <span class="math inline">\(T_cp2\)</span>: maximum critical temperature for solid precipitation [°C].</p>
+<p>If the observed temperature is lower than <em>T<sub>cp1</sub></em> only solid precipitation is produced. If the temperature is higher than <em>T<sub>cp2</sub></em> only liquid precipitation (<em>P<sub>w</sub></em>) is produced. If the temperature observed is found between these two critical values liquid and solid precipitation are produced. The solid precipitation (<em>P<sub>sn</sub></em>) is used as input for the snow pack, varying its content as a function of melt or freezing. The snowmelt calculation is performed as follows, using a time-varying degree-day snowmelt coefficient (<a href="#fig-model_snow_degreeday">Figure&nbsp;<span>2.3</span></a>) (Magnusson et al.&nbsp;2014, Slater and Clark 2005)</p>
+<p><span id="eq-D4"><span class="math display">\[
+S^{'} = max \bigg( S_{Min}\ ;\ S + \frac{S_{Int}}{2} \cdot \sin \Big( 2 \pi \cdot \frac{n - S_{Ph}}{365} \Big) \bigg)\
+\qquad(2.35)\]</span></span></p>
+<p><span id="eq-D5"><span class="math display">\[
+M_{sn} =
+  \begin{cases}
+    S' \cdot (1 + b_p \cdot P_w) \cdot (T - T_{cf})    &amp; \quad \text{if } T &gt; T_{cf} \\
+    S' \cdot CFR \cdot (T - T_{cf})                    &amp; \quad \text{if } T \leq T_{cf}
+  \end{cases}
+\qquad(2.36)\]</span></span></p>
+<p><span id="eq-D6"><span class="math display">\[
+\mathrm{d}H_{snow}/\mathrm{d}t = P_{sn} - M_{sn} , \quad M_{sn} \leq P_{sn} + H_{snow}/\mathrm{d}t , \quad M_{sn} \geq - W_{snow}/\mathrm{d}t
+\qquad(2.37)\]</span></span></p>
+<p>with <span class="math inline">\(S'\)</span> (SSeries in RS MINERVE): time-varying degree-day snowmelt coefficient [L/T/°C]; <span class="math inline">\(S\)</span>: reference degree-day snowmelt coefficient [L/T/°C]; <span class="math inline">\(S_{Int}\)</span>: degree-day snowmelt coefficient interval [L/T/°C]; <span class="math inline">\(n\)</span>: day of the year [T]; <span class="math inline">\(S_{Min}\)</span>: Minimal degree-day snowmelt coefficient [L/T/°C]; <span class="math inline">\(S_{Ph}\)</span>: Phase shift of the sinusoidal function [T]; <span class="math inline">\(M_{sn}\)</span>: snowmelt or freezing [L/T]; <span class="math inline">\(b_p\)</span>: melt coefficient due to liquid precipitation [T/L]; <span class="math inline">\(T_{cf}\)</span>: critical snowmelt temperature [°C]; <span class="math inline">\(CFR\)</span>: refreezing coefficient [-]; <span class="math inline">\(H_{snow}\)</span>: water content of the solid fraction of snow [L]; dt: time step [T]; <span class="math inline">\(W_{snow}\)</span>: water content of the liquid fraction of snow [L].</p>
+<p>The <em>S<sub>ph</sub></em> parameter defines the phase shift of the sinusoidal curve with respect to the first day of the year.</p>
+<p>The equivalent precipitation (<em>P<sub>eq</sub></em>) is produced by the water content of the snow (equations <a href="#eq-D7">Equation&nbsp;<span>2.38</span></a> to <a href="#eq-D9">Equation&nbsp;<span>2.40</span></a>):</p>
+<p><span id="eq-D7"><span class="math display">\[
+\theta = \frac{W_{snow}}{H_{snow}}
+\qquad(2.38)\]</span></span></p>
+<p><span id="eq-D8"><span class="math display">\[
+P_{eq} =
+  \begin{cases}
+    P_{w} + W_{snow}/\mathrm{d}t                          &amp; \quad \text{if } H_{snow} = 0 \\
+    0                                                     &amp; \quad \text{if } H_{snow} &gt; 0 \text{ and } \theta \leq \theta_{cr} \\
+    (\theta - \theta_{cr}) \cdot H_{snow}/\mathrm{d}t     &amp; \quad \text{if } H_{snow} &gt; 0 \text{ and } \theta &gt; \theta_{cr}
+  \end{cases}
+\qquad(2.39)\]</span></span></p>
+<p><span id="eq-D9"><span class="math display">\[
+\mathrm{d}W_{snow}/\mathrm{d}t = P_w + M_{sn} - P_{eq}
+\qquad(2.40)\]</span></span></p>
+<p>with <span class="math inline">\(\theta\)</span> (<em>Theta</em> in RS MINERVE): relative water content in the snow pack [-]; <span class="math inline">\(\theta_{cr}\)</span> (<em>ThetaCri</em> in RS MINERVE): critical relative water content in the snow pack [-]; <span class="math inline">\(P_{eq}\)</span>: equivalent precipitation [L/T].</p>
+<p>The equivalent precipitation <em>P<sub>eq</sub></em> is then transferred to the linear snow reservoir (<em>R<sub>sn</sub></em>), generating an outflow according to equations <a href="#eq-D10">Equation&nbsp;<span>2.41</span></a> and <a href="#eq-D11">Equation&nbsp;<span>2.42</span></a>.</p>
+<p><span id="eq-D10"><span class="math display">\[
+\mathrm{d}H_{Rsn}/\mathrm{d}t = P_{eq} - K_{sn} \cdot H_{Rsn}
+\qquad(2.41)\]</span></span></p>
+<p><span id="eq-D11"><span class="math display">\[
+Q_{snow} = K_{sn} \cdot H_{Rsn} \cdot A
+\qquad(2.42)\]</span></span></p>
+<p>with <span class="math inline">\(P_{eq}\)</span>: equivalent precipitation [L/T]; <span class="math inline">\(H_{Rsn}\)</span>: level in linear snow reservoir [L]; <span class="math inline">\(K_{sn}\)</span>: release coefficient of linear snow reservoir [1/T]; <span class="math inline">\(Q_{snow}\)</span>: outflow of linear snow reservoir [L<sup>3</sup>/T]; <span class="math inline">\(A\)</span>: glacier surface [L<sup>2</sup>].</p>
+<p>The snow water equivalent is then the addition of H<sub>snow</sub> and <em>W<sub>snow</sub></em> (equation <a href="#eq-D12">Equation&nbsp;<span>2.43</span></a>):</p>
+<p><span id="eq-D12"><span class="math display">\[
+SWE = H_{snow} + W_{snow}
+\qquad(2.43)\]</span></span></p>
+<p>with <span class="math inline">\(SWE\)</span>: snow water equivalent [L].</p>
+<p>The glacier melt sub-model only provides a discharge when the snow level is zero (<em>H<sub>snow</sub>=0</em>). The water intensity produced by the glacier melt (<em>P<sub>eqGL</sub></em>) is transferred to the linear glacier reservoir (<em>R<sub>gl</sub></em>) and the resulting discharge (<em>Q<sub>glacier</sub></em>) at the outlet of the sub-catchment.</p>
+<p>The glacier melt <em>Q<sub>glacier</sub></em> is defined according to equations <a href="#eq-D13">Equation&nbsp;<span>2.44</span></a> to <a href="#eq-D16">Equation&nbsp;<span>2.47</span></a>:</p>
+<p><span id="eq-D13"><span class="math display">\[
+G' = max \bigg( G_{Min}\ ;\ G + \frac{G_{Int}}{2} \cdot \sin \Big( 2\pi \cdot \frac{n - S_{Ph}}{365} \Big) \bigg)
+\qquad(2.44)\]</span></span></p>
+<p><span id="eq-D14"><span class="math display">\[
+P_{eqGL} =
+  \begin{cases}
+    0                          &amp; \quad \text{if } T \leq T_{cg} \text{ or }  H_{snow} &gt; 0 \\
+    G \cdot (T - T_{cr})       &amp; \quad \text{if } T &gt; T_{cg}    \text{ and } H_{snow} = 0
+  \end{cases}
+\qquad(2.45)\]</span></span></p>
+<p><span id="eq-D15"><span class="math display">\[
+\mathrm{d}H_{Rgl}/\mathrm{d}t = P_{eqGL} - K_{gl} \cdot H_{Rgl}
+\qquad(2.46)\]</span></span></p>
+<p><span id="eq-D16"><span class="math display">\[
+Q_{glacier} = K_{gl} \cdot H_{Rgl} \cdot A
+\qquad(2.47)\]</span></span></p>
+<p>with <span class="math inline">\(P_{eqGL}\)</span>: glacier melt [L/T]; ]; <span class="math inline">\(T_{cg}\)</span>: critical glacier melt temperature [°C]; <span class="math inline">\(G\)</span>: degree-day glacier melt coefficient [L/T/°C]; <span class="math inline">\(G_{Min}\)</span>: Minimal degree-day glacier melt coefficient [L/T/°C]; <span class="math inline">\(H_{Rgl}\)</span>:level of glacier melt reservoir [L]; <span class="math inline">\(K_{gl}\)</span>: coefficient of linear glacier reservoir [1/T]; <span class="math inline">\(Q_{glacier}\)</span>: outflow of linear glacier reservoir [L<sup>3</sup>/T].</p>
+<p>And the total discharge is the addition of <em>Q<sub>glacier</sub></em> and <em>Q<sub>snow</sub></em>:</p>
+<p><span id="eq-D17"><span class="math display">\[
+Q = Q_{snow} + Q_{glacier}
+\qquad(2.48)\]</span></span></p>
+<p>with <span class="math inline">\(Q\)</span>: total outflow [L<sup>3</sup>/T];</p>
+<p>The variables for the initial situation associated to this model are (<em>Theta</em> in RS MINERVE), <em>SWE</em>, <em>H<sub>Rsn</sub></em>, and <em>H<sub>Rgl</sub></em>.</p>
+<p>The parameters to adjust are <em>S</em>, <em>S<sub>Int</sub></em>, <em>CFR</em>, <em><sub>cr</sub></em>, <em>G</em>, <em>G<sub>Int</sub></em>, <em>K<sub>gl</sub></em> and <em>K<sub>sn</sub></em>. The parameters <em>S<sub>ph</sub></em>, <em>b<sub>p</sub></em>, <em><sub>cr</sub></em>, <em>T<sub>cp1</sub></em>, <em>T<sub>cp2</sub></em>, <em>T<sub>cf</sub></em> and <em>T<sub>cg</sub></em> can be assumed as constant (<em>b<sub>p</sub> = 0.0125</em>, <em><sub>cr</sub> = 0.1</em>, <em>T<sub>cp1</sub> = 0 �C</em>, <em>T<sub>cp2</sub> = 4 �C</em>, <em>T<sub>cf</sub> = 0 �C</em>, <em>T<sub>cg</sub> = 0 �C</em>, <em>S<sub>Ph</sub> = 80</em> (corresponding to March 21<sup>st</sup> for the Northern hemisphere; use 264 for Southern hemisphere corresponding to September 21)). The parameter <em>A</em> is supposed to be constant.</p>
+<p>The refreezing coefficient <em>CFR</em> is similar to the one found for example in HBV (see Section 2.7) and is available for the GSM model in the RS MINERVE program from its version 2.8.0. By default, <em>CFR</em> is set to 1, recommended values from the literature are around 0.05.</p>
+<p>The input variables of the model are the precipitation (<em>P</em>) and the temperature (<em>T</em>). The output is the total discharge (<em>Q<sub>tot</sub></em>) at the model outlet.</p>
+</section>
+<section id="sec-model_socont" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="sec-model_socont"><span class="header-section-number">2.6</span> SOCONT model description</h2>
+<p>In the SOCONT model (<a href="#fig-model_socont">Figure&nbsp;<span>2.6</span></a>), the Snow-SD model simulates the transient evolution of the snow pack (melt and accumulation) as a function of the temperature (<em>T</em>) and the precipitation (<em>P</em>), thus providing an equivalent precipitation (<em>P<sub>eq</sub></em>) that is used as input by the GR3 model. The GR3 model also takes into account the potential evapotranspiration (<em>ETP</em>) and provides the net intensity to the SWMM model.</p>
+<div id="fig-model_socont" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-model_socont.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2.6: SOCONT Model</figcaption><p></p>
+</figure>
+</div>
+<div id="tbl-param_model_socont" class="anchored">
+<table class="table">
+<caption>Table 2.5: List of parameters and initial conditions for the <strong>SOCONT model</strong></caption>
+<colgroup>
+<col style="width: 11%">
+<col style="width: 12%">
+<col style="width: 56%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Units</th>
+<th>Description</th>
+<th>Regular Range</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>m<sup>2</sup></td>
+<td>Surface</td>
+<td><blockquote class="blockquote">
+<p>0</p>
+</blockquote></td>
+</tr>
+<tr class="even">
+<td>S</td>
+<td>mm/°C/d</td>
+<td>Reference degree-day snowmelt coefficient</td>
+<td>0.5 to 20</td>
+</tr>
+<tr class="odd">
+<td>SInt</td>
+<td>mm/°C/d</td>
+<td>Degree-day snowmelt interval</td>
+<td>0 to 4</td>
+</tr>
+<tr class="even">
+<td>SMin</td>
+<td>mm/°C/d</td>
+<td>Minimal degree-day snowmelt coefficient</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>SPh</td>
+<td>d</td>
+<td>Phase shift of the sinusoidal function</td>
+<td>1 to 365</td>
+</tr>
+<tr class="even">
+<td>ThetaCri</td>
+<td>-</td>
+<td>Critical relative water content of the snow pack</td>
+<td>0.1</td>
+</tr>
+<tr class="odd">
+<td>bp</td>
+<td>d/mm</td>
+<td>Melt coefficient due to liquid precipitation</td>
+<td>0.0125</td>
+</tr>
+<tr class="even">
+<td>Tcp1</td>
+<td>°C</td>
+<td>Minimum critical temperature for liquid precipitation</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>Tcp2</td>
+<td>°C</td>
+<td>Maximum critical temperature for solid precipitation</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td>Tcf</td>
+<td>°C</td>
+<td>Critical snowmelt temperature</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>HGR3Max</td>
+<td>m</td>
+<td>Maximum height of infiltration reservoir</td>
+<td>0 to 2</td>
+</tr>
+<tr class="even">
+<td>KGR3</td>
+<td>1/s</td>
+<td>Release coefficient of infiltration reservoir</td>
+<td>0.00025 to 0.1</td>
+</tr>
+<tr class="odd">
+<td>L</td>
+<td>m</td>
+<td>Length of the plane</td>
+<td><blockquote class="blockquote">
+<p>0</p>
+</blockquote></td>
+</tr>
+<tr class="even">
+<td>J0</td>
+<td>-</td>
+<td>Runoff slope</td>
+<td><blockquote class="blockquote">
+<p>0</p>
+</blockquote></td>
+</tr>
+<tr class="odd">
+<td>Kr</td>
+<td>m<sup>1/3</sup>/s</td>
+<td>Strickler coefficient</td>
+<td>0.1 to 90</td>
+</tr>
+<tr class="even">
+<td>CFR</td>
+<td>-</td>
+<td>Refreezing coefficient</td>
+<td>0 to 1</td>
+</tr>
+<tr class="odd">
+<td>SWEIni</td>
+<td>m</td>
+<td>Initial snow water equivalent height</td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td>HGR3Ini</td>
+<td>m</td>
+<td>Initial level in infiltration reservoir</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td>HrIni</td>
+<td>m</td>
+<td>Initial runoff water level downstream of the surface</td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td>ThetaIni</td>
+<td>-</td>
+<td>Initial relative water content in the snow pack</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>In a first step, the precipitation is divided into a solid precipitation (<em>P<sub>sn</sub></em>) and into a liquid precipitation (<em>P<sub>w</sub></em>) as a function of the temperature (equations <a href="#eq-E1">Equation&nbsp;<span>2.49</span></a> to <a href="#eq-E3">Equation&nbsp;<span>2.51</span></a>):</p>
+<p><span id="eq-E1"><span class="math display">\[
+P_w = \alpha \cdot P
+\qquad(2.49)\]</span></span></p>
+<p><span id="eq-E2"><span class="math display">\[
+P_{sn} = (1 - \alpha) \cdot P
+\qquad(2.50)\]</span></span></p>
+<p><span id="eq-E3"><span class="math display">\[
+\alpha =
+  \begin{cases}
+    0                                     &amp; \quad \text{if }  T \leq T_{cp1} \\
+    (T - T_{cp1})/(T_{cp2} - T_{cp1})     &amp; \quad \text{if }  T_{cp1} &lt; T &lt; T_{cp2} \\
+    1                                     &amp; \quad \text{if }  T \geq T_{cp2}
+  \end{cases}
+\qquad(2.51)\]</span></span></p>
+<p>with <span class="math inline">\(P_w\)</span>: liquid precipitation [L/T]; <span class="math inline">\(\alpha\)</span>: separation factor; <span class="math inline">\(P\)</span>: precipitation [L/T]; <span class="math inline">\(P_{sn}\)</span>: solid precipitation [L/T]; <span class="math inline">\(T\)</span>: temperature [°C]; <span class="math inline">\(T_{cp1}\)</span>: minimum critical temperature for liquid precipitation [°C]; <span class="math inline">\(T_{cp2}\)</span>: maximum critical temperature for solid precipitation [°C].</p>
+<p>If the observed temperature is lower than <em>T<sub>cp1</sub></em> only solid precipitation is produced. If the temperature is higher than <em>T<sub>cp2</sub></em> only liquid precipitation (<em>P<sub>w</sub></em>) is produced. If the temperature observed is found between these two critical values liquid and solid precipitation are produced. The solid precipitation (<em>P<sub>sn</sub></em>) is used as input for the snow pack, varying its content as a function of melt or freezing. The snowmelt calculation is performed as follows, using a time-varying degree-day snowmelt coefficient (<a href="#fig-model_snow_degreeday">Figure&nbsp;<span>2.3</span></a>) (Magnusson et al.&nbsp;2014, Slater and Clark 2005):</p>
+<p><span id="eq-E4"><span class="math display">\[
+S' = max\left( S_{Min}\ ;\ S + \ \frac{S_{Int}}{2}\sin\left( 2\pi\frac{n - S_{Ph}}{365} \right) \right)
+\qquad(2.52)\]</span></span></p>
+<p><span id="eq-E5"><span class="math display">\[
+M_{sn} =
+  \begin{cases}
+    S' \cdot (1 + b_{p} \cdot P_{w}) \cdot (T - T_{cf})      &amp; \quad \text{if }  T &gt; T_{cf} \\
+    S' \cdot CFR \cdot (T - T_{cf})                          &amp; \quad \text{if }  T \leq T_{cf}
+  \end{cases}
+\qquad(2.53)\]</span></span></p>
+<p><span id="eq-E6"><span class="math display">\[
+\mathrm{d}H_{snow}/\mathrm{d}t = P_{sn} - M_{sn}, \quad M_{sn} \leq P_{sn} + H_{snow}/\mathrm{d}t, \quad M_{sn} \geq - W_{snow}/\mathrm{d}t
+\qquad(2.54)\]</span></span></p>
+<p>with <span class="math inline">\(S'\)</span> (SSeries in RS MINERVE): time-varying degree-day snowmelt coefficient [L/T/°C]; <span class="math inline">\(S\)</span>: reference degree-day snowmelt coefficient [L/T/°C]; <span class="math inline">\(S_{Int}\)</span>: degree-day snowmelt coefficient interval [L/T/°C]; <span class="math inline">\(n\)</span>: day of the year [T]; <span class="math inline">\(S_{Min}\)</span>: Minimal degree-day snowmelt coefficient [L/T/°C]; <span class="math inline">\(S_{Ph}\)</span>: Phase shift of the sinusoidal function [T]; <span class="math inline">\(M_{sn}\)</span>: snowmelt or freezing [L/T]; <span class="math inline">\(b_p\)</span>: melt coefficient due to liquid precipitation [T/L]; <span class="math inline">\(T_{cf}\)</span>: critical snowmelt temperature [°C]; <span class="math inline">\(CFR\)</span>: refreezing coefficient [-]; <span class="math inline">\(H_{snow}\)</span>: water content of the solid fraction of snow [L]; <span class="math inline">\(dt\)</span>: time step [T]; <span class="math inline">\(W_{snow}\)</span>: water content of the liquid fraction of snow [L].</p>
+<p>The <em>S<sub>Ph</sub></em> parameter defines the phase shift of the sinusoidal curve with respect to the first day of the year.</p>
+<p>The equivalent precipitation (<em>P<sub>eq</sub></em>) is produced by the water content of the snow (equations <a href="#eq-E7">Equation&nbsp;<span>2.55</span></a> to <a href="#eq-E9">Equation&nbsp;<span>2.57</span></a>):</p>
+<p><span id="eq-E7"><span class="math display">\[
+\theta = W_{snow}/H_{snow}
+\qquad(2.55)\]</span></span></p>
+<p><span id="eq-E8"><span class="math display">\[
+P_{eq} =
+  \begin{cases}
+    P_{w} + W_{snow}/\mathrm{d}t                            &amp; \quad \text{if }  H_{snow} = 0 \\
+    0                                                       &amp; \quad \text{if }  H_{snow} &gt; 0 \text{ and } \theta \leq \theta_{cr} \\
+    (\theta - \theta_{cr}) \cdot H_{snow}/\mathrm{d}t       &amp; \quad \text{if }  H_{snow} &gt; 0 \text{ and } \theta &gt; \theta_{cr}
+  \end{cases}
+\qquad(2.56)\]</span></span></p>
+<p><span id="eq-E9"><span class="math display">\[
+\mathrm{d}W_{snow}/\mathrm{d}t = P_w + M_{sn} - P_{eq}
+\qquad(2.57)\]</span></span></p>
+<p>with <span class="math inline">\(\theta\)</span> (<em>Theta</em> in RS MINERVE): relative water content in the snow pack [-]; <span class="math inline">\(\theta_{cr}\)</span> (<em>ThetaCri</em> in RS MINERVE): critical relative water content in the snow pack [-]; <span class="math inline">\(P_{eq}\)</span>: equivalent precipitation [L/T].</p>
+<p>The snow water equivalent is then the addition of <em>H<sub>snow</sub></em> and <em>W<sub>snow</sub></em> (equation <a href="#eq-E10">Equation&nbsp;<span>2.58</span></a>):</p>
+<p><span id="eq-E10"><span class="math display">\[
+SWE = H_{snow} + W_{snow}
+\qquad(2.58)\]</span></span></p>
+<p>with <span class="math inline">\(SWE\)</span>: snow water equivalent [L].</p>
+<p>Next, the infiltration reservoir is computed as follows:</p>
+<p><span id="eq-E11"><span class="math display">\[
+i_{Inf} =
+  \begin{cases}
+    P_{eq} \cdot \big(1 - (H_{GR3}/H_{GR3Max})^{2} \big)     &amp; \quad \text{if }  H_{GR3} \leq H_{GR3Max} \\
+    0                                                        &amp; \quad \text{if }  H_{GR3} &gt; H_{GR3Max}
+  \end{cases}
+\qquad(2.59)\]</span></span></p>
+<p><span id="eq-E12"><span class="math display">\[
+ETR =
+  \begin{cases}
+  ETP \cdot \sqrt{ \frac{H_{GR3}}{H_{GR3Max}}}     &amp; \quad \text{if }  H_{GR3} \leq H_{GR3Max} \\
+  ETP                                              &amp; \quad \text{if }  H_{GR3} &gt; H_{GR3Max}
+  \end{cases}
+\qquad(2.60)\]</span></span></p>
+<p><span id="eq-E13"><span class="math display">\[
+i_{Net} = P_{eq} - i_{Inf}
+\qquad(2.61)\]</span></span></p>
+<p><span id="eq-E14"><span class="math display">\[
+Q =
+  \begin{cases}
+    Q = K_{GR3} \cdot H_{GR3} \cdot A           &amp; \quad \text{if }  H_{GR3} \leq H_{GR3Max} \\
+    Q = K_{GR3} \cdot H_{GR3Max} \cdot A        &amp; \quad \text{if }  H_{GR3} &gt; H_{GR3Max}
+  \end{cases}
+\qquad(2.62)\]</span></span></p>
+<p><span id="eq-E15"><span class="math display">\[
+\mathrm{d}H_{GR3}/\mathrm{d}t = i_{Inf} - ETR - \frac{Q}{A}
+\qquad(2.63)\]</span></span></p>
+<p>with <span class="math inline">\(ETP\)</span>: potential evapotranspiration [L/T]; <span class="math inline">\(i_{Inf}\)</span>: infiltration intensity [L/T]; <span class="math inline">\(P_{eq}\)</span>: equivalent precipitation [L/T]; <span class="math inline">\(H\)</span>: level in infiltration reservoir [L]; <span class="math inline">\(H_{GR3Max}\)</span>: capacity of infiltration reservoir [L]; <span class="math inline">\(ETR\)</span>: real evapotranspiration [L/T]; <span class="math inline">\(Q\)</span>: base discharge [L<sup>3</sup>/T]; <span class="math inline">\(K_{GR3}\)</span>: release coefficient of infiltration reservoir [1/T]; <span class="math inline">\(A\)</span>: surface [L<sup>2</sup>]; <span class="math inline">\(i_{Net}\)</span>: net intensity [L/T].</p>
+<p>The transfer of the net intensity to an impermeable surface is carried out by the help of a non-linear transfer reservoir depending on the equations <a href="#eq-E16">Equation&nbsp;<span>2.64</span></a> to <a href="#eq-E18">Equation&nbsp;<span>2.66</span></a>:</p>
+<p><span id="eq-E16"><span class="math display">\[
+\mathrm{d}H_{r}/\mathrm{d}t = 2 \cdot (i_{Net} - i_{r}), \quad H_{r} \geq 0
+\qquad(2.64)\]</span></span></p>
+<p><span id="eq-E17"><span class="math display">\[
+i_{r} = K_{r} \cdot \sqrt{J_{o}} \cdot {H_{r}}^{\frac{5}{3}} \cdot \frac{1}{L}
+\qquad(2.65)\]</span></span></p>
+<p><span id="eq-E18"><span class="math display">\[
+Q = i_{r} \cdot A
+\qquad(2.66)\]</span></span></p>
+<p>with <span class="math inline">\(H_r\)</span>: runoff water level downstream of the surface [L]; <span class="math inline">\(i_{Net}\)</span>: net intensity [L/T]; <span class="math inline">\(i_r\)</span>: runoff intensity [L/T]; <span class="math inline">\(K_r\)</span>: Strickler coefficient [L<sup>1/3</sup>/T]; <span class="math inline">\(J_o\)</span>: average slope of the plane [-]; <span class="math inline">\(L\)</span>: length of the plane [L].</p>
+<p>The variables for the initial situation associated to this model are <em>(</em>Theta* in RS MINERVE), <em>SWE</em>, <em>H<sub>GR3</sub></em> and <em>H<sub>r</sub></em>. The parameters to adjust are <em>S</em>, <em>S<sub>Int</sub></em>, <em>b<sub>p</sub></em>, <em>CFR</em>, <em><sub>cr</sub></em>, <em>K<sub>GR3</sub></em>, <em>H<sub>GR3Max</sub></em> and <em>K<sub>r</sub></em>. The parameters <em>S<sub>Phi</sub></em>, <em>b<sub>p</sub></em>, <em><sub>cr</sub></em>, <em>T<sub>cp1</sub></em>, <em>T<sub>cp2</sub></em> and <em>T<sub>cf</sub></em> can be assumed as constant (<em>b<sub>p</sub> = 0.0125</em>, <em>\theta<sub>cr</sub> = 0.1</em>, <em>T<sub>cp1</sub> = 0 �C</em>, <em>T<sub>cp2</sub> = 4 �C</em>, <em>T<sub>cf</sub> = 0 �C</em>, <em>S<sub>Phi</sub> = 80</em> (corresponding to March 21<sup>st</sup> for the Northern hemisphere; use 264 for Southern hemisphere corresponding to September 21)). The other parameters (<em>J<sub>o</sub></em>, <em>L</em>, <em>A</em>) are supposed to be constant.</p>
+<p>The refreezing coefficient <em>CFR</em> is similar to the one found for example in HBV (see Section 2.7) and is available for the SOCONT model in the RS MINERVE program from its version 2.8.0. By default, <em>CFR</em> is set to 1; recommended values from the literature are around 0.05.</p>
+<p>The input variables of the model are the precipitation (<em>P</em>), the temperature (<em>T</em>) and the potential evapotranspiration (<em>ETP</em>). The output value is the equivalent precipitation (<em>P<sub>eq</sub></em>).</p>
+<p>The outflow discharge <em>Q<sub>tot</sub></em>, composed by the base discharge (<em>Q<sub>GR3</sub></em>) and the run-off discharge (<em>Q<sub>r</sub></em>), is finally transferred to the outlet of the sub-catchment.</p>
+</section>
+<section id="sec-model_hbv" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="sec-model_hbv"><span class="header-section-number">2.7</span> HBV model description</h2>
+<p>The integrated rainfall-runoff model HBV (Bergström, 1976, 1992) is composed of a snow function, a humidity reservoir and two (upper and lower) soil storage reservoirs. The structure of the implemented model is presented in <a href="#fig-model_hbv">Figure&nbsp;<span>2.7</span></a>.</p>
+<div id="fig-model_hbv" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-model_hbv.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2.7: HBV Model</figcaption><p></p>
+</figure>
+</div>
+<div id="tbl-param_model_hbv" class="anchored">
+<table class="table">
+<caption>Table 2.6: List of parameters and initial conditions for the <strong>HBV model</strong></caption>
+<colgroup>
+<col style="width: 11%">
+<col style="width: 12%">
+<col style="width: 54%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Units</th>
+<th>Description</th>
+<th>Regular Range</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>m<sup>2</sup></td>
+<td>Surface of the basin</td>
+<td><blockquote class="blockquote">
+<p>0</p>
+</blockquote></td>
+</tr>
+<tr class="even">
+<td>CFMax</td>
+<td>mm/°C/d</td>
+<td>Melting factor</td>
+<td>0.5 to 20</td>
+</tr>
+<tr class="odd">
+<td>CFR</td>
+<td>-</td>
+<td>Refreezing factor</td>
+<td>0.05</td>
+</tr>
+<tr class="even">
+<td>CWH</td>
+<td>-</td>
+<td>Critical relative water content of the snow pack</td>
+<td>0.1</td>
+</tr>
+<tr class="odd">
+<td>TT</td>
+<td>°C</td>
+<td>Threshold temperature of rain/snow</td>
+<td>0 to 3</td>
+</tr>
+<tr class="even">
+<td>TTInt</td>
+<td>°C</td>
+<td>Temperature interval for rain/snow mixing</td>
+<td>0 to 3</td>
+</tr>
+<tr class="odd">
+<td>TTSM</td>
+<td>°C</td>
+<td>Threshold temperature for snow melt</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>Beta</td>
+<td>-</td>
+<td>Model parameter (shape coefficient)</td>
+<td>1 to 5</td>
+</tr>
+<tr class="odd">
+<td>FC</td>
+<td>m</td>
+<td>Maximum soil storage capacity</td>
+<td>0.050 to 0.65</td>
+</tr>
+<tr class="even">
+<td>PWP</td>
+<td>-</td>
+<td>Soil permanent wilting point threshold</td>
+<td>0.030 to 1</td>
+</tr>
+<tr class="odd">
+<td>SUMax</td>
+<td>m</td>
+<td>Upper reservoir water level threshold</td>
+<td>0 to 0.10</td>
+</tr>
+<tr class="even">
+<td>Kr</td>
+<td>1/d</td>
+<td>Near surface flow storage coefficient</td>
+<td>0.05 to 0.5</td>
+</tr>
+<tr class="odd">
+<td>Ku</td>
+<td>1/d</td>
+<td>Interflow storage coefficient</td>
+<td>0.01 to 0.4</td>
+</tr>
+<tr class="even">
+<td>Kl</td>
+<td>1/d</td>
+<td>Baseflow storage coefficient</td>
+<td>0 to 0.15</td>
+</tr>
+<tr class="odd">
+<td>Kperc</td>
+<td>1/d</td>
+<td>Percolation storage coefficient</td>
+<td>0 to 0.8</td>
+</tr>
+<tr class="even">
+<td>SWEIni</td>
+<td>m</td>
+<td>Initial snow water equivalent height</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td>WHIni</td>
+<td>-</td>
+<td>Initial relative water content in the snow pack</td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td>HumIni</td>
+<td>m</td>
+<td>Initial humidity</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td>SUIni</td>
+<td>m</td>
+<td>Initial upper reservoir water level</td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td>SLIni</td>
+<td>m</td>
+<td>Initial lower reservoir water level</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The precipitation is first divided into snowfall (<em>SF</em>) and rainfall (<em>RF</em>) as a function of the temperature (equations <a href="#eq-H1">Equation&nbsp;<span>2.106</span></a> to <a href="#eq-H3">Equation&nbsp;<span>2.108</span></a>). If the observed temperature is lower than <em>TT-TTInt/2</em>, only solid snowfall is produced. If the temperature is higher than <em>TT+TTInt/2</em>, only rainfall is produced. If the observed temperature is found between these values, both rainfall and snowfall are produced.</p>
+<p><span id="eq-F1"><span class="math display">\[
+RF = \alpha \cdot P
+\qquad(2.67)\]</span></span></p>
+<p><span id="eq-F2"><span class="math display">\[
+SF = (1 - \alpha) \cdot P
+\qquad(2.68)\]</span></span></p>
+<p><span id="eq-F3"><span class="math display">\[
+\alpha =
+  \begin{cases}
+    0                                    &amp; \quad \text{if } T &lt; TT - TTInt/2 \\
+    \frac{T - (TT - TTInt/2)}{TTInt}     &amp; \quad \text{if } TT - TTInt/2 &lt; T &lt; TT + TTInt/2 \\
+    1                                    &amp; \quad \text{if } T &gt; TT + TTInt/2
+  \end{cases}
+\qquad(2.69)\]</span></span></p>
+<p>with <span class="math inline">\(RF\)</span>: rainfall [L/T]; <span class="math inline">\(\alpha\)</span>: separation factor; <span class="math inline">\(P\)</span>: precipitation [L/T]; <span class="math inline">\(SF\)</span>: snowfall [L/T]; <span class="math inline">\(T\)</span>: temperature [°C]; <span class="math inline">\(TT\)</span>: threshold temperature for rain/snow [°C]; <span class="math inline">\(TTInt\)</span>: temperature interval for rain/snow mixing [°C].</p>
+<p>The snowfall (<em>SF</em>) is used as input for the snow pack, varying its content as a function of melt or freezing. The snowmelt calculation is performed as follows:</p>
+<p><span id="eq-F4"><span class="math display">\[
+M_{sn} =
+  \begin{cases}
+    CFMax \cdot (T - TTSM)               &amp; \quad \text{if } T &gt; TTSM \\
+    CFR \cdot CFMax \cdot (T - TTSM)     &amp; \quad \text{if } T \leq TTSM
+  \end{cases}
+\qquad(2.70)\]</span></span></p>
+<p><span id="eq-F5"><span class="math display">\[
+\mathrm{d}H_{snow}/\mathrm{d}t = SF - M_{sn} , \quad M_{sn} \leq SF + H_{snow}/\mathrm{d}t, \quad M_{sn} \geq - W_{snow}/\mathrm{d}t
+\qquad(2.71)\]</span></span></p>
+<p>with <span class="math inline">\(M_{sn}\)</span>: snowmelt or freezing [L/T]; <span class="math inline">\(CFMax\)</span>: degree-day melting factor [L/T/°C]; <span class="math inline">\(CFR\)</span>: refreezing factor [-]; <span class="math inline">\(TTSM\)</span>: critical snowmelt temperature [°C]; <span class="math inline">\(H_{snow}\)</span>: snow height [L]; <span class="math inline">\(W_{snow}\)</span>: water content [L]; <span class="math inline">\(dt\)</span>: time step [T].</p>
+<p>The equivalent precipitation (<em>P<sub>eq</sub></em>) is produced by the water content of the snow (equations <a href="#eq-F6">Equation&nbsp;<span>2.72</span></a> to <a href="#eq-F8">Equation&nbsp;<span>2.74</span></a>):</p>
+<p><span id="eq-F6"><span class="math display">\[
+WH = W_{snow}/H_{snow}
+\qquad(2.72)\]</span></span></p>
+<p><span id="eq-F7"><span class="math display">\[
+P_{eq} =
+  \begin{cases}
+    RF + W_{snow}/\mathrm{d}t                      &amp; \quad \text{if } H_{snow} = 0 \\
+    0                                     &amp; \quad \text{if } H_{snow} &gt; 0 \text { and } WH \leq CWH \\
+    (\ WH - \ CWH) \cdot H_{snow}/\mathrm{d}t      &amp; \quad \text{if } H_{snow} &gt; 0 \text { and } WH &gt; CWH
+  \end{cases}
+\qquad(2.73)\]</span></span></p>
+<p><span id="eq-F8"><span class="math display">\[
+\mathrm{d}W_{snow}/\mathrm{d}t = RF + M_{sn} - P_{eq}
+\qquad(2.74)\]</span></span></p>
+<p>with <span class="math inline">\(WH\)</span>: relative water content in the snow pack [-]; <span class="math inline">\(CWH\)</span>: critical relative water content in the snow pack [-]; <span class="math inline">\(P_{eq}\)</span>: equivalent precipitation [L/T].</p>
+<p>The snow water equivalent is then the addition of <em>H<sub>snow</sub></em> and <em>W<sub>snow</sub></em> (equation <a href="#eq-F9">Equation&nbsp;<span>2.75</span></a>):</p>
+<p><span id="eq-F9"><span class="math display">\[
+SWE = H_{snow} + W_{snow}
+\qquad(2.75)\]</span></span></p>
+<p>with <span class="math inline">\(SWE\)</span>: snow water equivalent [L].</p>
+<p>The calculation of the recharge is carried out depending on a model parameter <em>Beta</em>, as presented in equation <a href="#eq-H10">Equation&nbsp;<span>2.115</span></a>. <em>ETR</em> is calculated as shown in equation <a href="#eq-H11">Equation&nbsp;<span>2.116</span></a>. Finally, the humidity of the soil (<em>Hum</em>) is performed taking into account the input (Equivalent precipitation, <em>P<sub>eq</sub></em>) and outputs (Recharge intensity and <em>ETR</em>) as presented in equation <a href="#eq-H12">Equation&nbsp;<span>2.117</span></a>. Additionally, and based on Seibert (1997), parameter <em>PWP</em> is a rate related to parameter <em>FC</em>. Thus, the height of the soil permanent wilting point threshold is calculated multiplying <em>PWP</em> by <em>FC</em>.</p>
+<p><span id="eq-F10"><span class="math display">\[
+i_{Recharge} = \Bigg( \frac{Hum}{FC} \Bigg)^{Beta} \cdot P_{eq}
+\qquad(2.76)\]</span></span></p>
+<p><span id="eq-F11"><span class="math display">\[
+ETR =
+  \begin{cases}
+    ETP \cdot \frac{Hum}{(PWP \cdot FC)}      &amp; \quad \text{if } Hum &lt; (PWP \cdot FC) \\
+    ETP                                       &amp; \quad \text{if } Hum \geq (PWP \cdot FC)
+  \end{cases}
+\qquad(2.77)\]</span></span></p>
+<p><span id="eq-F12"><span class="math display">\[
+\frac{dHum}{dt} = (P_{eq} - i_{Recharge}) - ETR, \quad Hum \geq 0
+\qquad(2.78)\]</span></span></p>
+<p>with <span class="math inline">\(i_{Recharge}\)</span>: Reservoir recharge intensity [L/T] ; <span class="math inline">\(Hum\)</span>: Humidity [L]; <span class="math inline">\(FC\)</span>: Maximum soil storage capacity [L] ; <span class="math inline">\(Beta\)</span>: Model parameter (shape coefficient) [-]; <span class="math inline">\(P_{eq}\)</span>: Equivalent precipitation [L/T]; <span class="math inline">\(ETR\)</span>: Evapotranspiration [L/T] ; <span class="math inline">\(ETP\)</span>: Potential evapotranspiration [L/T] ; <span class="math inline">\(PWP\)</span>: Soil permanent wilting point threshold [-].</p>
+<p>Then, near surface (or run-off) flow is calculated depending on the water level in the <em>Upper reservoir</em> (<em>SU</em>) and its threshold, as well as on a flow storage coefficient <em>K<sub>r</sub></em>.</p>
+<p><span id="eq-F13"><span class="math display">\[
+Q_r =
+  \begin{cases}
+    K_{r} \cdot (SU - SU_{Max}) \cdot A       &amp; \quad \text{if } SU &gt; SU_{Max} \\
+    0                                         &amp; \quad \text{if } SU \leq SU_{Max}
+  \end{cases}
+\qquad(2.79)\]</span></span></p>
+<p>with <span class="math inline">\(Q_r\)</span>: Near surface flow (or run-off flow) [L<sup>3</sup>/T]; <span class="math inline">\(K_r\)</span>: Near surface flow storage coefficient [1/T]; <span class="math inline">\(SU\)</span>: Upper reservoir water level [L]; <span class="math inline">\(SU_{Max}\)</span>: Upper reservoir water level threshold [L]; <span class="math inline">\(A\)</span>: Basin surface [L<sup>2</sup>].</p>
+<p>The <em>Upper reservoir</em> (or interflow reservoir), corresponding to the upper soil storage and producing the interflow, is computed as follows:</p>
+<p><span id="eq-F14"><span class="math display">\[
+\frac{dSU}{dt} = i_{Recharge} - (K_{perc} + K_{u}) \cdot SU - \frac {Q_{r}}{A} , \quad SU \geq 0 \\
+\qquad(2.80)\]</span></span></p>
+<p><span id="eq-F15"><span class="math display">\[
+i_{Perc} = K_{perc} \cdot SU
+\qquad(2.81)\]</span></span></p>
+<p><span id="eq-F16"><span class="math display">\[
+Q_{u} = K_{u} \cdot SU \cdot A
+\qquad(2.82)\]</span></span></p>
+<p>with <span class="math inline">\(K_{perc}\)</span>: Percolation storage coefficient [1/T] ; <span class="math inline">\(K_u\)</span>: Interflow storage coefficient [1/T] ; <span class="math inline">\(i_{Perc}\)</span>: Percolation intensity [L/T] ; <span class="math inline">\(Q_u\)</span>: Interflow [L<sup>3</sup>/T].</p>
+<p>Afterwards, the lower reservoir (or baseflow reservoir), corresponding to the lower soil storage, is calculated as presented in equations <a href="#eq-F17">Equation&nbsp;<span>2.83</span></a> and <a href="#eq-F18">Equation&nbsp;<span>2.84</span></a>.</p>
+<p><span id="eq-F17"><span class="math display">\[
+\mathrm{d}SL/\mathrm{d}t = i_{Perc} - K_{l} \cdot SL , \quad SL \geq 0
+\qquad(2.83)\]</span></span></p>
+<p><span id="eq-F18"><span class="math display">\[
+Q_{l} = K_{l} \cdot SL \cdot A
+\qquad(2.84)\]</span></span></p>
+<p>with <span class="math inline">\(SL\)</span>: Lower reservoir water level [L]; <span class="math inline">\(K_l\)</span>: Baseflow storage coefficient [1/T]; <span class="math inline">\(Q_l\)</span>: Baseflow [L<sup>3</sup>/T].</p>
+<p>And finally the total outflow is:</p>
+<p><span id="eq-F19"><span class="math display">\[
+Q_{tot} = Q_{r} + Q_{u} + Q_{l}
+\qquad(2.85)\]</span></span></p>
+<p>with <span class="math inline">\(Q_{tot}\)</span>: Total outflow [L<sup>3</sup>/T].</p>
+<p>The initial conditions associated to this model are <em>SWE<sub>Ini</sub></em>, <em>WH<sub>Ini</sub></em>, <em>Hum<sub>Ini</sub></em>, <em>SU<sub>Ini</sub></em> and <em>SL<sub>Ini</sub></em>. The parameters to adjust are <em>CFMax</em>, <em>CFR</em>, <em>CWH</em>, <em>TT</em>, <em>TTInt</em>, <em>TTSM</em>, <em>Beta</em>, <em>FC</em>, <em>PWP</em>, <em>SU<sub>max</sub></em>, <em>K<sub>r</sub></em>, <em>K<sub>u</sub></em>, <em>Kl</em> and <em>K<sub>perc</sub></em>. The parameter <em>A</em> is supposed to be constant.</p>
+<p>The model inputs are the precipitation (<em>P</em>), the temperature (<em>T</em>) and the potential evapotranspiration (<em>ETP</em>). The output is the total discharge at the model outlet (<em>Q<sub>tot</sub></em>).</p>
+</section>
+<section id="sec-model_gr4j" class="level2" data-number="2.8">
+<h2 data-number="2.8" class="anchored" data-anchor-id="sec-model_gr4j"><span class="header-section-number">2.8</span> GR4J model description</h2>
+<p>The GR4J model is a global hydrological model with four parameters developed by Perrin et al.&nbsp;(2003). It is an empirical model (<a href="#fig-model_gr4j">Figure&nbsp;<span>2.8</span></a>), but its structure is similar to the conceptual models. It takes into account the humidity and contains two reservoirs (production and routing). Unit hydrographs are also associated for the hydrological behaviour of the basin.</p>
+<div id="fig-model_gr4j" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-model_gr4j.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2.8: GR4J Model</figcaption><p></p>
+</figure>
+</div>
+<div id="tbl-param_model_gr4j" class="anchored">
+<table class="table">
+<caption>Table 2.7: List of parameters and initial conditions for the <strong>GR4J model</strong></caption>
+<colgroup>
+<col style="width: 11%">
+<col style="width: 12%">
+<col style="width: 54%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Units</th>
+<th>Description</th>
+<th>Regular Range</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>m<sup>2</sup></td>
+<td>Surface of the basin</td>
+<td><blockquote class="blockquote">
+<p>0</p>
+</blockquote></td>
+</tr>
+<tr class="even">
+<td>X1</td>
+<td>m</td>
+<td>Capacity of production store</td>
+<td>0.01 to 1.2</td>
+</tr>
+<tr class="odd">
+<td>X2</td>
+<td>m</td>
+<td>Water exchange coefficient</td>
+<td>-0.005 to 0.003</td>
+</tr>
+<tr class="even">
+<td>X3</td>
+<td>m</td>
+<td>Capacity of routing store</td>
+<td>0.01 to 0.5</td>
+</tr>
+<tr class="odd">
+<td>X4</td>
+<td>d</td>
+<td>UH time base</td>
+<td>-0.5 to 1</td>
+</tr>
+<tr class="even">
+<td>SIni</td>
+<td>m</td>
+<td>Initial water content in the production reservoir</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td>RIni</td>
+<td>m</td>
+<td>Initial water level in the routing reservoir</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The first calculation is the neutralization of <em>P<sub>eq</sub></em> by <em>ETP</em> for determining a net intensity (<em>P<sub>n</sub></em>) and a net evapotranspiration (<em>E<sub>n</sub></em>) according to equations <a href="#eq-G1">Equation&nbsp;<span>2.86</span></a> and <a href="#eq-G2">Equation&nbsp;<span>2.87</span></a>.</p>
+<p><span id="eq-G1"><span class="math display">\[
+P_n =
+  \begin{cases}
+    P_{eq} - ETP       &amp; \quad \text{if } P \geq ETP \\
+    0                  &amp; \quad \text{if } P &lt; ETP
+  \end{cases}
+\qquad(2.86)\]</span></span></p>
+<p><span id="eq-G2"><span class="math display">\[
+E_n =
+  \begin{cases}
+    0                  &amp; \quad \text{if } P \geq ETP \\
+    ETP - P_{eq}       &amp; \quad \text{if } P &lt; ETP
+  \end{cases}
+\qquad(2.87)\]</span></span></p>
+<p>with <span class="math inline">\(P_n\)</span>: net rain intensity [L/T] ; <span class="math inline">\(P_{eq}\)</span> : Equivalent precipitation [L/T] ; ETP: potential evapotranspiration [L/T] ; <span class="math inline">\(E_n\)</span>: net evapotranspiration [L/T].</p>
+<p>When <em>P<sub>n</sub></em> is not zero, a part (<em>P<sub>s</sub></em>) of <em>P<sub>n</sub></em> feed the production reservoir (<em>S</em>) as presented in equation <a href="#eq-G3">Equation&nbsp;<span>2.88</span></a>. Similarly, when <em>E<sub>n</sub></em> is not zero, an evapotranspiration (<em>E<sub>s</sub></em>) from the production reservoir is calculated depending on the water level in the production reservoir as described in equation <a href="#eq-G4">Equation&nbsp;<span>2.89</span></a>.</p>
+<p><span id="eq-G3"><span class="math display">\[
+P_s = \frac{\mathrm{d}}{\mathrm{d} t} \frac {X1 \cdot \bigg( 1-{( \frac{S}{X1})}^{2} \bigg) \cdot tanh \Big( \frac{P_n \cdot dt}{X1} \Big)}{1 + \frac{S}{X1} \cdot tanh\Big( \frac{P_n \cdot dt}{X1} \Big)}
+\qquad(2.88)\]</span></span></p>
+<p><span id="eq-G4"><span class="math display">\[
+E_s = \frac{\mathrm{d}}{\mathrm{d} t} \frac {S \cdot  \bigg( 2- \frac{S}{X1} \bigg) \cdot tanh \Big( \frac{E_n \cdot dt}{X1} \Big)}{1 + \Big( 1 - \frac{S}{X1} \Big) \cdot tanh\Big( \frac{E_n \cdot dt}{X1} \Big)}
+\qquad(2.89)\]</span></span></p>
+<p>with <span class="math inline">\(P_s\)</span>: rain intensity feeding the production reservoir [L/T]; <span class="math inline">\(X1\)</span>: maximum capacity of production reservoir <span class="math inline">\(S\)</span> [L] ; <span class="math inline">\(S\)</span> : water content in the production reservoir [L]; <span class="math inline">\(E_s\)</span> : evapotranspiration from the production reservoir [L/T].</p>
+<p>The percolation (<em>i<sub>Perc</sub></em>) flowing from the production reservoir is then calculated as follows:</p>
+<p><span id="eq-G5"><span class="math display">\[
+i_{Perc} = \frac {\mathrm{d}}{\mathrm{d} t} \big( S + (P_s - E_s) \cdot dt \big) \cdot \Bigg( 1 - \bigg( 1 + \Big( \frac{4}{9} \cdot \frac{ S + (P_s - E_s) \cdot dt}{X1} \Big)^{4} \bigg)^{- \frac{1}{4}} \Bigg)
+\qquad(2.90)\]</span></span></p>
+<p>with <span class="math inline">\(i_{Perc}\)</span>: percolation intensity [L/T].</p>
+<p>Finally, the variation in the production reservoir <em>S</em> is obtained according to equation <a href="#eq-G6">Equation&nbsp;<span>2.91</span></a>:</p>
+<p><span id="eq-G6"><span class="math display">\[
+\frac {\mathrm{d} S}{\mathrm{d} t} = P_s - E_s - i_{Perc} , \quad S \geq 0
+\qquad(2.91)\]</span></span></p>
+<p>The quantity of water (<em>i<sub>Pr</sub></em>) which goes to the routing reservoir is provided by:</p>
+<p><span id="eq-G7"><span class="math display">\[
+i_{Pr} = i_{Perc} + (P_n - P_s)
+\qquad(2.92)\]</span></span></p>
+<p>with <span class="math inline">\(i_{Pr}\)</span> : intensity flowing to the routing reservoir [L/T].</p>
+<p>Afterwards, for the calculation of unit hydrographs, <em>i<sub>Pr</sub></em> is divided in two flow components: 90% are routed by a unit hydrograph UH1 and a routing reservoir and 10% by a symmetrical unit hydrograph UH2. UH1 and UH2 depend on parameter <em>X4</em>, which is the base time.</p>
+<p>The ordinates of the hydrographs are calculated from curves SH1 and SH2, which correspond to the cumulated hydrograph. SH1 and SH2 are defined depending on the time step <em>t</em> as presented in equation <a href="#eq-G8">Equation&nbsp;<span>2.93</span></a> and <a href="#eq-G9">Equation&nbsp;<span>2.94</span></a>. The ordinates of UH1 and UH2 are then calculated.</p>
+<p><span id="eq-G8"><span class="math display">\[
+SH1_{t} =
+  \begin{cases}
+    0                                              &amp; \quad \text{if } t \leq 0 \\
+    \bigg( \frac{t}{X4} \bigg)^{\frac{5}{2}}       &amp; \quad \text{if } 0 &lt; t &lt; X4 \\
+    1                                              &amp; \quad \text{if } t \geq X4
+  \end{cases}
+\qquad(2.93)\]</span></span></p>
+<p><span id="eq-G9"><span class="math display">\[
+SH2_{t} =
+  \begin{cases}
+    0                                                                      &amp; \quad \text{if } t \leq 0 \\
+    \frac{1}{2} \cdot \bigg( \frac{t}{X4} \bigg)^{\frac{5}{2}}             &amp; \quad \text{if } 0 &lt; t &lt; X4 \\
+    1 - \frac{1}{2} \cdot \bigg( 2 - \frac{t}{X4} \bigg)^{\frac{5}{2}}     &amp; \quad \text{if } X4 &lt; t &lt; 2 \cdot X4 \\
+    1                                                                      &amp; \quad \text{if } t \geq 2 \cdot X4 \\
+  \end{cases}
+\qquad(2.94)\]</span></span></p>
+<p><span id="eq-G10"><span class="math display">\[
+UH1_{j} = SH1_{j} - SH1_{j - 1}
+\qquad(2.95)\]</span></span></p>
+<p><span id="eq-G11"><span class="math display">\[
+UH2_{j} = SH2_{j} - SH2_{j - 1}
+\qquad(2.96)\]</span></span></p>
+<p>with <span class="math inline">\(SH1\)</span>: hydrograph 1 from <span class="math inline">\(S\)</span> [-]; <span class="math inline">\(SH2\)</span>: hydrograph 2 from <span class="math inline">\(S\)</span> [-]; <span class="math inline">\(t\)</span>: time step [T]; <span class="math inline">\(X4\)</span>: base time [T]; <span class="math inline">\(UH1\)</span>: hydrograph from SH1 [-]; <span class="math inline">\(UH2\)</span>: hydrograph from <span class="math inline">\(SH2\)</span> [-].</p>
+<p>Then, at each time step <em>k</em>, outflows <em>Q9</em> and <em>Q1</em> from the two hydrographs correspond to the convolution of previous intensities according to the repartition provided by the discretized hydrograph and calculated as presented in equations <a href="#eq-G12">Equation&nbsp;<span>2.97</span></a> and <a href="#eq-G13">Equation&nbsp;<span>2.98</span></a>.</p>
+<p><span id="eq-G12"><span class="math display">\[
+Q9 = 0.9 \cdot \sum_{j = 1}^{l} ( UH1_{j} \cdot {i_{Pr}}_{k - j - l})
+\qquad(2.97)\]</span></span></p>
+<p><span id="eq-G13"><span class="math display">\[
+Q1 = 0.1 \cdot \sum_{j = 1}^{m} ( UH2_{j} \cdot {i_{Pr}}_{k - j - l})
+\qquad(2.98)\]</span></span></p>
+<p>with <span class="math inline">\(Q9\)</span>: Unitary flow from the UH1 hydrograph; [L/T]; <span class="math inline">\(Q1\)</span>: Unitary flow from the UH2 hydrograph [L/T]; <span class="math inline">\(j\)</span>: day (integer) [T]; <span class="math inline">\(l\)</span>: integer value of <span class="math inline">\(X4 + 1\)</span> [T] ; <span class="math inline">\(m\)</span>: integer value of <span class="math inline">\(2 \cdot X4+1\)</span> [T].</p>
+<p>Then, an exchange function (<em>i<sub>F</sub></em>) with the non-atmospheric outside produces an underground water exchange according to equation <a href="#eq-G14">Equation&nbsp;<span>2.99</span></a> (physical interpretation of this function is not direct). Then, the routing reservoir (<em>R</em>) is emptied by a routing discharge (<em>Q<sub>r’</sub></em>) as described in equation <a href="#eq-G15">Equation&nbsp;<span>2.100</span></a>.</p>
+<p><span id="eq-G14"><span class="math display">\[
+i_F = \frac{\mathrm{d}}{\mathrm{d} t}X2 \cdot \bigg( \frac{R}{X3} \bigg)^{\frac{7}{2}}
+\qquad(2.99)\]</span></span></p>
+<p><span id="eq-G15"><span class="math display">\[
+Q_{r'} = \frac{\mathrm{d}}{\mathrm{d} t} \big( R + (Q9 + iF) \cdot dt \big) \cdot \Bigg( 1 - \bigg( 1 + \Big( \frac{R + (Q9 + iF) \cdot dt}{X3} \Big)^{4} \bigg)^{- \frac{1}{4}} \Bigg)
+\qquad(2.100)\]</span></span></p>
+<p>with <span class="math inline">\(i_F\)</span>: exchange function [L/T] ; <span class="math inline">\(X2\)</span>: water exchange coefficient, positive for contributions, negative for losses due to infiltration or zero when no exchange is produced [L]; <span class="math inline">\(R\)</span>: water level in the routing reservoir [L] ; <span class="math inline">\(X3\)</span>: one day capacity of routing reservoir [L]; <span class="math inline">\(Q_{r'}\)</span>: unitary routing reservoir outflow [L/T].</p>
+<p>The variation of the water level in the routing reservoir is:</p>
+<p><span id="eq-G16"><span class="math display">\[
+\mathrm{d}R/\mathrm{d}t = Q9 - i_F - Q_{r'} , \quad R \geq 0
+\qquad(2.101)\]</span></span></p>
+<p>The outflow <em>Q1</em> from hydrograph UH2 has also the same exchange for providing the complementary flow <em>Q<sub>d’</sub></em>:</p>
+<p><span id="eq-G17"><span class="math display">\[
+Q_{d'} = Q1 + i_F
+\qquad(2.102)\]</span></span></p>
+<p>with <span class="math inline">\(Q_{d'}\)</span>: unitary complementary outflow [L/T].</p>
+<p>Finally, the model outflows are calculated as presented in equations <a href="#eq-G18">Equation&nbsp;<span>2.103</span></a> and <a href="#eq-G19">Equation&nbsp;<span>2.104</span></a> and the total flow at the outlet, <em>Q<sub>tot</sub></em>, as presented in equation <a href="#eq-G20">Equation&nbsp;<span>2.105</span></a>:</p>
+<p><span id="eq-G18"><span class="math display">\[
+Q_r = Q_{r'} \cdot A
+\qquad(2.103)\]</span></span></p>
+<p><span id="eq-G19"><span class="math display">\[
+Q_d = Q_{d'} \cdot A
+\qquad(2.104)\]</span></span></p>
+<p><span id="eq-G20"><span class="math display">\[
+Q_{tot} = Q_r + Q_d
+\qquad(2.105)\]</span></span></p>
+<p>with <span class="math inline">\(Q_r\)</span>: outflow from the routing reservoir [L<sup>3</sup>/T]; <span class="math inline">\(A\)</span>: Basin surface [L<sup>2</sup>]; <span class="math inline">\(Q_d\)</span>: complementary outflow [L<sup>3</sup>/T]; <span class="math inline">\(Q_{tot}\)</span>: total outflow [L<sup>3</sup>/T].</p>
+<p>The variables associated to this model are <em>S<sub>Ini</sub></em> and <em>R<sub>Ini</sub></em>. The parameters to adjust are <em>X1</em>, <em>X2</em>, <em>X3</em> and <em>X4</em>. The parameter <em>A</em> is supposed to be constant.</p>
+<p>The model inputs are the equivalent precipitation (<em>P<sub>eq</sub></em>) and the potential evapotranspiration (<em>ETP</em>). The output is the total discharge at the model outlet (<em>Q<sub>tot</sub></em>).</p>
+</section>
+<section id="sec-model_sac_sma" class="level2" data-number="2.9">
+<h2 data-number="2.9" class="anchored" data-anchor-id="sec-model_sac_sma"><span class="header-section-number">2.9</span> SAC-SMA model description</h2>
+<p>The SAC-SMA (<a href="#fig-model_sac_sma">Figure&nbsp;<span>2.9</span></a>) or SACRAMENTO hydrological model was developed in the 70’s (Burnash et al., 1973; Burnash, 1995) to optimize humidity characteristics into the soil, distributed into different level, with rational percolation characteristics, for an efficient simulation of discharges. This model calculates the total discharge from the precipitation (<em>P</em>) and the potential evapotranspiration (<em>ETP</em>) depending on the parameters and initial conditions presented in <a href="#tbl-param_model_sac_sma">Table&nbsp;<span>2.8</span></a>.</p>
+<div id="fig-model_sac_sma" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-model_sac_sma.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2.9: SAC-SMA Model</figcaption><p></p>
+</figure>
+</div>
+<div id="tbl-param_model_sac_sma" class="anchored">
+<table class="table">
+<caption>Table 2.8: List of parameters and initial conditions for the <strong>SAC-SMA model</strong></caption>
+<colgroup>
+<col style="width: 8%">
+<col style="width: 9%">
+<col style="width: 65%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Units</th>
+<th>Description</th>
+<th>Regular Range</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>m<sup>2</sup></td>
+<td>Surface of the basin</td>
+<td><blockquote class="blockquote">
+<p>0</p>
+</blockquote></td>
+</tr>
+<tr class="even">
+<td>Adimp</td>
+<td>-</td>
+<td>Maximum fraction of an additional impervious area due to saturation</td>
+<td>0 to 0.2</td>
+</tr>
+<tr class="odd">
+<td>Pctim</td>
+<td>-</td>
+<td>Permanent impervious area fraction</td>
+<td>0 to 0.05</td>
+</tr>
+<tr class="even">
+<td>Riva</td>
+<td>-</td>
+<td>Riparian vegetarian area fraction</td>
+<td>0 to 0.2</td>
+</tr>
+<tr class="odd">
+<td>UztwMax</td>
+<td>m</td>
+<td>Upper Zone Tension Water capacity</td>
+<td>0.01 to 0.15</td>
+</tr>
+<tr class="even">
+<td>UzfwMax</td>
+<td>m</td>
+<td>Upper Zone Free Water capacity</td>
+<td>0.005 to 0.10</td>
+</tr>
+<tr class="odd">
+<td>Uzk</td>
+<td>1/d</td>
+<td>Interflow depletion rate from the Upper Zone Free Water storage</td>
+<td>0.10 to 0.75</td>
+</tr>
+<tr class="even">
+<td>Zperc</td>
+<td>-</td>
+<td>Ratio of maximum and minimum percolation rates</td>
+<td>10 to 350</td>
+</tr>
+<tr class="odd">
+<td>Rexp</td>
+<td>-</td>
+<td>Shape parameter of the percolation curve</td>
+<td>1 to 4</td>
+</tr>
+<tr class="even">
+<td>Pfree</td>
+<td>-</td>
+<td>Percolation fraction that goes directly to the Lower Zone Free Water storages</td>
+<td>0 to0.6</td>
+</tr>
+<tr class="odd">
+<td>LztwMax</td>
+<td>m</td>
+<td>The Lower Zone Tension Water capacity</td>
+<td>0.05 to 0.40</td>
+</tr>
+<tr class="even">
+<td>LzfpMax</td>
+<td>m</td>
+<td>The Lower Zone primary Free Water capacity</td>
+<td>0.03 to 0.80</td>
+</tr>
+<tr class="odd">
+<td>LzfsMax</td>
+<td>m</td>
+<td>The Lower Zone supplementary Free Water capacity</td>
+<td>0.01 to 0.40</td>
+</tr>
+<tr class="even">
+<td>Rserv</td>
+<td>-</td>
+<td>Fraction of Lower Zone Free Water not transferable to Lower Zone Tension Water</td>
+<td>0 to 1</td>
+</tr>
+<tr class="odd">
+<td>Lzpk</td>
+<td>1/d</td>
+<td>Depletion rate of the Lower Zone primary Free Water storage</td>
+<td>0.001 to 0.03</td>
+</tr>
+<tr class="even">
+<td>Lzsk</td>
+<td>1/d</td>
+<td>Depletion rate of the Lower Zone supplemental Free Water storage</td>
+<td>0.02 to 0.3</td>
+</tr>
+<tr class="odd">
+<td>Side</td>
+<td>-</td>
+<td>Ratio of deep percolation from Lower Zone Free Water storages</td>
+<td>0 to 0.5</td>
+</tr>
+<tr class="even">
+<td>AdimIni</td>
+<td>m</td>
+<td>Initial Tension Water content of the Adimp area</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td>UztwIni</td>
+<td>m</td>
+<td>Initial Upper Zone Tension Water content</td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td>UzfwIni</td>
+<td>m</td>
+<td>Initial Upper Zone Free Water content</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td>LztwIni</td>
+<td>m</td>
+<td>Initial Lower Zone Tension Water content</td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td>LzfpIni</td>
+<td>m</td>
+<td>Initial Lower Zone Free supplementary content</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td>LzfsIni</td>
+<td>m</td>
+<td>Initial Lower Zone Free primary content</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>When considering rainfall over a basin, two basic basin areas are taken into account:</p>
+<ul>
+<li><p>An impervious portion of the soil mantle covered by streams, lake surfaces, marshes and other impervious material directly linked to the streamflow network. This area produces impervious and direct runoff Q<sub>DirectRunoff</sub> from any rainfall.</p></li>
+<li><p>A pervious portion of the soil mantle which distributes rainwater to the next storages. In addition, the pervious area can produce runoff when rainfall rates are sufficiently heavy.</p></li>
+</ul>
+<p>The basin may present permanent or temporarily impervious areas, determined by:</p>
+<ul>
+<li><p>The permanent impervious area fraction (<em>P<sub>ctim</sub></em>).</p></li>
+<li><p>The maximum fraction of an additional impervious area due to saturation (<em>A<sub>dimp</sub></em>). It represents the maximum portion of reservoirs and temporary watersheds contained in the basin.</p></li>
+</ul>
+<p>Thus, the permanent pervious area fraction of the basin is calculated following equation <a href="#eq-H1">Equation&nbsp;<span>2.106</span></a>.</p>
+<p><span id="eq-H1"><span class="math display">\[
+P_{area} = 1 - (P_{ctim} + A_{dimp})
+\qquad(2.106)\]</span></span></p>
+<p>with <span class="math inline">\(P_{area}\)</span>: permanent pervious area fraction of the basin [-] ; <span class="math inline">\(P_{ctim}\)</span>: permanent impervious area fraction [-] ; <span class="math inline">\(A_{dimp}\)</span>: maximum fraction of an additional impervious area due to saturation [-].</p>
+<p>It is worth mentioning that the behaviour of the additional impervious area might be purely pervious, purely impervious or mixed, depending on the storage of the permanent pervious and impervious areas. The pervious capacity (or fraction) of this area will decrease as the rainfall grows.</p>
+<p>As shown in <a href="#fig-model_sac_sma">Figure&nbsp;<span>2.9</span></a>, the SAC model divides the soil in 2 zones:</p>
+<ul>
+<li><p>An <strong>Upper Zone</strong>, sub-divided in two areas that receive the infiltrated water from rainfall.</p></li>
+<li><p>A <strong>Lower Zone</strong>, sub-divided in 3 reservoirs, where the input is the percolation from the Upper Zone.</p></li>
+</ul>
+<p>The main components of the model and their flow transfers are described below.</p>
+<p><strong>Upper Zone Tension Water storage</strong></p>
+<p>This storage represents the water bound by adhesion and cohesion in between the soil pores as well as the water intercepted by vegetation. The water can be only consumed by evapotranspiration.</p>
+<p>The water that reaches this reservoir comes from the rain felt into the pervious area of the basin, but also from transfers from the Upper Zone Free Water storage.</p>
+<p>The following concepts are defined for this reservoir:</p>
+<ul>
+<li><p>The Upper Zone <em>Tension Water Maximum</em> capacity (<em>Uztw<sub>Max</sub></em>) is the maximum Tension Water storage admissible in the Upper Zone.</p></li>
+<li><p>The Upper Zone <em>Tension Water Content</em> (<em>UztwC</em>) is the Tension Water stored in this Upper Zone at any given time.</p></li>
+</ul>
+<p>If the relative content of Tension Water (ratio between its content and its maximum storage) is smaller than the relative content of Free Water, a transfer is produced from the Free Water storage to the Tension Water storage. The expressions of these ratios and the infiltration transfer are shown in equations <a href="#eq-H2">Equation&nbsp;<span>2.107</span></a> to <a href="#eq-H4">Equation&nbsp;<span>2.109</span></a>:</p>
+<p><span id="eq-H2"><span class="math display">\[
+T = \frac{UztwC}{Uztw_{Max}}
+\qquad(2.107)\]</span></span></p>
+<p><span id="eq-H3"><span class="math display">\[
+F = \frac{UzfwC}{Uzfw_{Max}}
+\qquad(2.108)\]</span></span></p>
+<p><span id="eq-H4"><span class="math display">\[
+Uztr =
+  \begin{cases}
+    \mathrm{d} \bigg( \frac{UzfwC \cdot Uztw_{Max} - UztwC \cdot Uzfw_{Max}}{Uzfw_{Max} + Uztw_{Max}} \bigg) / \mathrm{d}t      &amp; \quad \text{if } T &lt; F \\
+    0                                                                                                                           &amp; \quad \text{if } T \geq F
+  \end{cases}
+\qquad(2.109)\]</span></span></p>
+<p>with <span class="math inline">\(T\)</span>: relative content of Upper Zone Tension Water [-]; <span class="math inline">\(F\)</span>: relative content of Upper Zone Free Water [-]; <span class="math inline">\(Uztr\)</span>: infiltration transfer from the Free Water storage to the Tension Water storage [L/T]; <span class="math inline">\(UztwC\)</span>: the Upper Zone Tension Water storage [L]; <span class="math inline">\(Uztw_{Max}\)</span>: the Upper Zone Tension Water capacity [L]; <span class="math inline">\(UzfwC\)</span>: the Upper Zone Free Water storage [L]; <span class="math inline">\(Uzfw_{Max}\)</span>: the Upper Zone Free Water capacity [L].</p>
+<p>Although free water is present during filling of Upper Zone Tension Water (by infiltration), this free water is rapidly transformed into Upper Zone Tension Water until tension water relative content requirements are satisfied.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<p>In addition, when the Upper Zone Tension Water volume has been filled, excess moisture above the Upper Zone Tension Water capacity is accumulated in the Upper Zone Free Water.</p>
+<p><strong>Upper Zone Free Water storage</strong></p>
+<p>This storage represents the water not attached to the soil particles and free to move under gravitational forces. The water that reaches this reservoir comes from the infiltration of the Upper Zone Tension Water storage</p>
+<p>The following concepts are defined:</p>
+<ul>
+<li><p>The Upper Zone <em>Free Water Maximum</em> capacity (<em>Uzfw<sub>Max</sub></em>) is the maximum Free Water storage admissible in the Upper Zone.</p></li>
+<li><p>The Upper Zone <em>Free Water Content</em> (<em>UzfwC</em>) is the Free Water stored in the Upper Zone at any given time.</p></li>
+<li><p>The <em>Interflow depletion rate</em> (<em>Uzk</em>) represents the portion of the Upper Zone Free Water that is transferred outside as interflow.</p></li>
+</ul>
+<p>The water may be depleted by evapotranspiration, percolation to the Lower Zone or horizontal flow (surface runoff and interflow).</p>
+<p>On the one hand, the percolation to the Lower Zone is computed prior to the interflow computation as it is its preferred path. It depends on the deficiency of the Lower Zone moisture volumes, on the soil properties, and on the water relative storage in this reservoir. The first 2 factors define the percolation demand from the Lower Zone (DDA). This demand represents the percolation in case of total percolation availability on the Upper Zone Free Water storage.</p>
+<p><span id="eq-H5"><span class="math display">\[
+P_{Base} = Lzfp_{Max} \cdot Lzpk + Lzfs_{Max} \cdot Lzsk
+\qquad(2.110)\]</span></span></p>
+<p><span id="eq-H6"><span class="math display">\[
+DEFR = \frac{(Lztw_{Max} - LztwC) + (Lzfp_{Max} - LzfpC) + (Lzfs_{Max} - LzfsC)}{Lztw_{Max} + Lzfp_{Max} + Lzfs_{Max}}
+\qquad(2.111)\]</span></span></p>
+<p><span id="eq-H7"><span class="math display">\[
+DDA = P_{Base} \cdot (1 + Zperc \cdot {DEFR}^{Rexp})
+\qquad(2.112)\]</span></span></p>
+<p>with <span class="math inline">\(P_{Base}\)</span>: the continuing percolation rate under saturated condition (maximal percolation) [L/T]; <span class="math inline">\(DDA\)</span>: Lower Zone maximum percolation demand [L/T]; <span class="math inline">\(Zperc\)</span>: ratio of maximum and minimum percolation rates [-]; <span class="math inline">\(DEFR\)</span>: relative Lower Zone water deficiency [-]; <span class="math inline">\(Rexp\)</span>: shape parameter of the percolation curve [-].</p>
+<p>The effective percolation depends on the percolation demand and the ratio between the Upper Zone Free Water content and the Upper Zone Free Water capacity as shown in equation <a href="#eq-H8">Equation&nbsp;<span>2.113</span></a>. In addition, the effective percolation is limited by the humidity content in the Upper Zone and also by the deficiency in the Lower Zone (equations <a href="#eq-H9">Equation&nbsp;<span>2.114</span></a> and <a href="#eq-H10">Equation&nbsp;<span>2.115</span></a> respectively):</p>
+<p><span id="eq-H8"><span class="math display">\[
+PERC = DDA \cdot \frac{UzfwC}{Uzfw_{Max}}
+\qquad(2.113)\]</span></span></p>
+<p><span id="eq-H9"><span class="math display">\[
+PERC \leq \mathrm{d}(UzfwC)/\mathrm{d}t
+\qquad(2.114)\]</span></span></p>
+<p><span id="eq-H10"><span class="math display">\[
+PERC \leq \mathrm{d} \Big( (Lztw_{Max} - LztwC) + (Lzfp_{Max} - LzfpC) + (Lzfs_{Max} - LzfsC) \Big) / \mathrm{d}t
+\qquad(2.115)\]</span></span></p>
+<p>with <span class="math inline">\(PERC\)</span>: real percolation [L/T]; <span class="math inline">\(DDA\)</span>: Lower Zone maximum percolation demand [L/T]; <span class="math inline">\(UzfwC\)</span>: Upper Zone Free Water content [L]; <span class="math inline">\(Uzfw_{Max}\)</span>: Upper Zone Free Water capacity [L].</p>
+<p>On the other hand, the interflow occurs only when the rate of precipitation exceed the rate at which downward motion can occur from the Upper Zone Free Water. It depends on the water content and on its interflow depletion rate Uzk, as shown in equation <a href="#eq-H11">Equation&nbsp;<span>2.116</span></a>:</p>
+<p><span id="eq-H11"><span class="math display">\[
+Q_{interflow} = Uzk \cdot UzfwC \cdot P_area \cdot A
+\qquad(2.116)\]</span></span></p>
+<p>with <span class="math inline">\(Q_{interflow}\)</span>: interflow [L<sup>3</sup>/T]; <span class="math inline">\(Uzk\)</span>: interflow depletion rate from the Upper Zone Free water storage [T<sup>-1</sup>]; <span class="math inline">\(UzfwC\)</span>: Upper Zone Free Water content [L]; <span class="math inline">\(P_{area}\)</span>: pervious area fraction of the basin [-]; <span class="math inline">\(A\)</span>: surface of the basin [L<sup>2</sup>].</p>
+<p>Moreover, when the Upper Zone Free Water storage is completely full and the precipitation intensity exceeds both the percolation rate and the maximum interflow drainage capacity, the excess precipitation results in surface runoff <em>Q<sub>SurfRunoff</sub></em>.</p>
+<p><strong>Lower Zone Tension Water storage</strong></p>
+<p>This storage represents the semi-saturated zone. It characterizes the volume of moisture in the lower soils which will be claimed by dry soil particles when moisture from a wetting front reaches that depth. The water is consumed through evapotranspiration, proportionally to the remaining ETP of the Upper Zone Tension Water storage.</p>
+<p>The water reaching this reservoir comes from the Upper Zone percolation. One fraction (<em>Pfree</em>) of this percolation goes directly to the Free Water storages, even if the Tension Water storage is not yet full, and the other fraction (<em>1-Pfree</em>) goes to the Tension Water storage of the Lower Zone <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. The water also reaches this storage from transfers between the other Lower Zone Free Water storages.</p>
+<p>The following concepts are defined:</p>
+<ul>
+<li><p>The Lower Zone <em>Tension Water Maximum</em> capacity (<em>Lztw<sub>Max</sub></em>) is the maximum Tension Water storage admissible in the Lower Zone.</p></li>
+<li><p>The Lower Zone <em>Tension Water Content</em> (<em>LztwC</em>) is the Tension Water stored in the Lower Zone at any given time.</p></li>
+</ul>
+<p>If the relative content of Tension Water (ratio between its content and its maximum storage) is smaller than the relative content of Free Water, the incoming excess is transferred from Free Water to Tension Water. The expressions of both ratios are shown in equations <a href="#eq-H12">Equation&nbsp;<span>2.117</span></a> to <a href="#eq-H14">Equation&nbsp;<span>2.119</span></a>:</p>
+<p><span id="eq-H12"><span class="math display">\[
+RFW = Rserv \cdot (LzfpMax + Lzfs_{Max})
+\qquad(2.117)\]</span></span></p>
+<p><span id="eq-H13"><span class="math display">\[
+T = \frac{LztwC}{Lztw_{Max}}
+\qquad(2.118)\]</span></span></p>
+<p><span id="eq-H14"><span class="math display">\[
+F = \frac{LzfpC + LzfsC - RFW}{Lzfp_{Max} + Lzfs_{Max} - RFW}
+\qquad(2.119)\]</span></span></p>
+<p>with <span class="math inline">\(T\)</span>: relative content of Lower Zone Tension Water [-]; <span class="math inline">\(F\)</span>: relative content of Lower Zone Free Water [-]; <span class="math inline">\(RFW\)</span>: Lower Zone Free Water not transferable to Lower Zone Tension Water, susceptible to become baseflow [L]; <span class="math inline">\(Rserv\)</span>: fraction of Lower Zone Free Water not transferable to Lower Zone Tension Water[-].</p>
+<p>If the relative content of the Lower Zone Tension Water is smaller than the relative fullness of the global Lower Zone, a water transfer DEL occurs from the Lower Zone Free Supplementary reservoir to the Lower Zone Tension Water reservoir, as described by the following equations:</p>
+<p><span id="eq-H15"><span class="math display">\[
+R = \frac{LzfpC + LzfsC + LztwC - RFW}{Lzfp_{Max} + Lzfs_{Max} + Lztw_{Max} - RFW}
+\qquad(2.120)\]</span></span></p>
+<p><span id="eq-H16"><span class="math display">\[
+DEL = Lztw_{Max} \cdot \mathrm{d}(R - T)/\mathrm{d}t
+\qquad(2.121)\]</span></span></p>
+<p>with <span class="math inline">\(DEL\)</span>: the Free-Tension Water transfer in the Lower Zone [L/T]; <span class="math inline">\(R\)</span>: ratio between the available water for evapotranspiration and the total water content, in the whole Lower Zone [-]; <span class="math inline">\(RFW\)</span>: Lower Zone Free Water not transferable to Lower Zone Tension Water, susceptible to become baseflow [L].</p>
+<p><strong>Lower Zone Primary and Supplementary Free Water storages</strong></p>
+<p>This storage represents the saturated zone of the subsoil, i.e.&nbsp;the aquifer. There are two types of Lower Zone Free Water: a primary type with a very slow draining providing baseflow over long periods of time, and a supplementary type which supplements the baseflow after a period of relatively recent rainfall.</p>
+<p>The water that reaches these storages comes from the <em>Pfree</em> fraction of the percolation of the Upper Zone Free Water. This fraction is distributed into the primary and supplementary storages according to their deficiency of water.</p>
+<p>The following concepts are defined:</p>
+<ul>
+<li><p>The Lower Zone <em>primary Free Water Maximum</em> capacity (<em>Lzfp<sub>Max</sub></em>) is the maximum primary water storage admissible in the Lower Zone.</p></li>
+<li><p>The Lower Zone <em>primary Free Water Content</em> (<em>LzfpC</em>) is the primary Free Water stored in the Lower Zone at any given time.</p></li>
+<li><p>The <em>Depletion rate of the Lower Zone primary Free Water storage</em> (<em>Lzpk</em>) is the portion of primary Free Water that drains as baseflow per day.</p></li>
+<li><p>The Lower Zone <em>supplementary Free Water Maximum</em> capacity (<em>LzfsMax</em>) is the maximum supplementary water storage admissible in the Lower Zone.</p></li>
+<li><p>The Lower Zone <em>supplementary Free Water Content</em> (<em>LzfsC</em>) is the supplementary Free Water stored in the Lower Zone at any given time.</p></li>
+<li><p>The <em>Depletion rate of the Lower Zone supplementary Free Water storage</em> (<em>Lzsk</em>) is the portion of supplementary Free Water that drains as baseflow per day.</p></li>
+</ul>
+<p>The drained water leaving these two storages (primary flow <em>Q<sub>primary</sub></em> and supplementary flow <em>Q<sub>supplementary</sub></em>) follows the Darcy’s law and forms the baseflow of the Lower Zone <em>Q~Lower Zone~</em> as shown in equations <a href="#eq-H17">Equation&nbsp;<span>2.122</span></a> to <a href="#eq-H19">Equation&nbsp;<span>2.124</span></a>:</p>
+<p><span id="eq-H17"><span class="math display">\[
+Q_{primary} = Lzpk \cdot LzfpC \cdot P_area \cdot A
+\qquad(2.122)\]</span></span></p>
+<p><span id="eq-H18"><span class="math display">\[
+Q_{supplementary} = Lzsk \cdot LzfsC \cdot P_area \cdot A
+\qquad(2.123)\]</span></span></p>
+<p><span id="eq-H19"><span class="math display">\[
+Q_{Lower\ Zone} = Q_{primary} + Q_{supplementary}
+\qquad(2.124)\]</span></span></p>
+<p>with <span class="math inline">\(Q_{primary}\)</span>: primary baseflow [L<sup>3</sup>/T]; <span class="math inline">\(Q_{supplementary}\)</span>: supplementary baseflow [L<sup>3</sup>/T]; <span class="math inline">\(Q_{Lower\ Zone}\)</span>: total baseflow produced in the Lower Zone [L<sup>3</sup>/T]; <span class="math inline">\(Lzpk\)</span>: depletion rate of the Lower Zone primary Free Water storage [T<sup>-1</sup>]; <span class="math inline">\(LzfpC\)</span>: Lower Zone primary Free Water Content [L]; <span class="math inline">\(Lzsk\)</span>: depletion rate of the Lower Zone supplementary Free Water storage [T<sup>-1</sup>]; <span class="math inline">\(LzfsC\)</span>: Lower Zone supplementary Free Water Content [L]; <span class="math inline">\(P_area\)</span>: pervious area fraction of the basin [-]; <span class="math inline">\(A\)</span>: surface of the basin [L<sup>2</sup>].</p>
+<p>The model allows including baseflow losses, called subsurface flow <em>Q<sub>SubSurf</sub></em>, due to the existence of geological faults, fractured rocks, etc. that lead to filtrations throughout the aquifer. The <em>Side</em> parameter captures these losses as shown in equation <a href="#eq-H20">Equation&nbsp;<span>2.125</span></a>:</p>
+<p><span id="eq-H20"><span class="math display">\[
+Q_{SubSurf} = Side \cdot Q_{baseflow}
+\qquad(2.125)\]</span></span></p>
+<p>with <span class="math inline">\(Side\)</span>: ratio of deep percolation from Lower Zone Free Water storages [-], <span class="math inline">\(Q_{baseflow}\)</span>: Lower Zone Free Water volume actually integrated to the channel outflow hydrographs [L<sup>3</sup>/T]; <span class="math inline">\(Q_{SubSurf}\)</span>: discharge lost into the aquifer [L<sup>3</sup>/T].</p>
+<p>And so this <em>Side</em> parameter is used to correct the baseflow as follows:</p>
+<p><span id="eq-H21"><span class="math display">\[
+Q_{baseflow} = \frac{Q_{Lower\ Zone}}{1 + Side}
+\qquad(2.126)\]</span></span></p>
+<p><span id="eq-H22"><span class="math display">\[
+Q_{SubSurf} = Side \cdot \frac{Q_{Lower\ Zone}}{1 + Side}
+\qquad(2.127)\]</span></span></p>
+<p><strong>Evapotranspiration</strong></p>
+<p>The real evapotranspirations are obtained from each Tension Water storage, from the transfers between Free Water and Tension Water storages, from riverside vegetation and from impervious areas. They are described hereafter.</p>
+<ul>
+<li><em>ETR1</em>: evapotranspiration from the Upper Zone Tension Water reservoir. If this reservoir is not full, the evapotranspiration is proportional to its content (equation <a href="#eq-H23">Equation&nbsp;<span>2.128</span></a>):</li>
+</ul>
+<p><span id="eq-H23"><span class="math display">\[
+ETR1 = ETP \cdot \frac{UztwC}{Uztw_{Max}} \leq UztwC
+\qquad(2.128)\]</span></span></p>
+<p>with <span class="math inline">\(ETP\)</span>: potential evapotranspiration [L/T].</p>
+<p>The remaining evapotranspiration demand RED and the updated content of water in the Upper Zone Tension Water reservoir <em>UztwC</em> are then calculated:</p>
+<p><span id="eq-H24"><span class="math display">\[
+RED = ETP - ETR1
+\qquad(2.129)\]</span></span></p>
+<p><span id="eq-H25"><span class="math display">\[
+\mathrm{d}(UztwC)/\mathrm{d}t = - ETR1
+\qquad(2.130)\]</span></span></p>
+<ul>
+<li><em>ETR2</em>: evapotranspiration from the Upper Zone Free Water reservoir. This evapotranspiration is equal to the remaining RED left by the Tension Water reservoir, but it is limited by the Upper Zone Free Water content <em>UzfwC</em>:</li>
+</ul>
+<p><span id="eq-H26"><span class="math display">\[
+ETR2 = min \big( RED ; \mathrm{d}(UzfwC)/\mathrm{d}t \big)
+\qquad(2.131)\]</span></span></p>
+<p>Then, the remaining evapotranspiration REDLz from the Lower Zone is:</p>
+<p><span id="eq-H27"><span class="math display">\[
+REDLz = RED - ETR2
+\qquad(2.132)\]</span></span></p>
+<p>The variation of the water content <em>UzfwC</em> in the Upper Zone Free Water reservoir is defined as follows:</p>
+<p><span id="eq-H28"><span class="math display">\[
+\mathrm{d}(UzfwC)/\mathrm{d}t = - ETR2
+\qquad(2.133)\]</span></span></p>
+<ul>
+<li><em>ETR3</em>: evapotranspiration from the Lower Zone Tension Water reservoir. The evapotranspiration availability corresponds to the remaining evapotranspiration demand in the Lower Zone. Evapotranspiration in this reservoir is proportional to the remaining evapotranspiration and to the Lower Zone Tension Water content, and inversely proportional to the Tension Water reservoirs’ capacity of the Upper Zone and the Lower Zone:</li>
+</ul>
+<p><span id="eq-H29"><span class="math display">\[
+ETR3 = REDLz \cdot \frac{LztwC}{Uztw_{Max} + Lztw_{Max}} \leq \mathrm{d}(LztwC)/\mathrm{d}t
+\qquad(2.134)\]</span></span></p>
+<ul>
+<li><em>ETR4</em>: evapotranspiration from the basin covered by riverside vegetation. Riverside vegetation absorbs the deficiency of potential evapotranspiration from the Upper Zone and the Lower Zone:</li>
+</ul>
+<p><span id="eq-H30"><span class="math display">\[
+ETR4 = ETP - ETR1 - ETR2 - ETR3
+\qquad(2.135)\]</span></span></p>
+<ul>
+<li><em>ETR5</em>: evapotranspiration from the impervious fraction of the basin.</li>
+</ul>
+<p><span id="eq-H31"><span class="math display">\[
+ETR5 = ETR1 + (RED + ETR2) \cdot \frac{AdimC - UztwC - V_{ETR1}}{Uztw_{Max} + Lztw_{Max}}
+\qquad(2.136)\]</span></span></p>
+<p><span id="eq-H32"><span class="math display">\[
+V_{ETR1} = \int_{t1}^{t2}{ETR1 \cdot \mathrm{d}t}
+\qquad(2.137)\]</span></span></p>
+<p>with <span class="math inline">\(AdimC\)</span>: sum of the Upper Zone and Lower Zone Tension Water Content in the <em>A<sub>dimp</sub></em> area [-]; <span class="math inline">\(V_{ETR1}\)</span>: evapotranspirated water from the Upper Zone Tension Water reservoir in a time step [L].</p>
+<p>Each evapotranspiration value is weighted based on the portion of the basin area in which it is produced. The total evapotranspiration is finally:</p>
+<p><span id="eq-H33"><span class="math display">\[
+ETRtotal = \Big( (ETR1 + ETR2 + ETR3) \cdot P_area + ETR4 \cdot Riva + ETR5 \cdot A_dimp \Big) \cdot A
+\qquad(2.138)\]</span></span></p>
+<p>with <span class="math inline">\(ETRtotal\)</span>: total evapotranspiration [L<sup>3</sup>/T]; <span class="math inline">\(P_area\)</span>: pervious area fraction of the basin [-]; <span class="math inline">\(Riva\)</span>: riparian vegetarian area fraction [-]; <span class="math inline">\(Pctim\)</span>: permanent impervious area fraction of the basin [-]; <span class="math inline">\(A_dimp\)</span>: maximum fraction of an additional impervious area due to saturation [-]; <span class="math inline">\(A\)</span>: surface of the basin [L<sup>2</sup>].</p>
+<p>A more detailed guide about the SAC-SMA equations can be found on the following National Weather Service link: <a href="http://www.nws.noaa.gov/iao/iao_SAC_SMA.php" class="uri">http://www.nws.noaa.gov/iao/iao_SAC_SMA.php</a></p>
+</section>
+<section id="sec-model_scs" class="level2" data-number="2.10">
+<h2 data-number="2.10" class="anchored" data-anchor-id="sec-model_scs"><span class="header-section-number">2.10</span> SCS (Soil Conservation Service) model description</h2>
+<p>The Soil Conservation Service (SCS) model is a popular method developed in the early 70’s (SCS, 1972) for assessing an event runoff volume and peak rate of discharge using limited input data (precipitation). It is especially applicable for small watersheds.</p>
+<p>The SCS model only requires precipitation as input, which provides the effective precipitation considered after the initial abstraction. The hydrograph computation is by default based on the dimensionless unit hydrograph (<a href="#fig-model_scs">Figure&nbsp;<span>2.10</span></a>) resulting from a 1 cm of excess rainfall. This unit hydrograph (UH) has 37.5% of the total runoff volume before the peak discharge (<em>T/T<sub>p</sub>=1</em>) and the remaining 62.5% volume after. The shape of the default UH can be tailored in RS MINERVE.</p>
+<p>To use the SCS UH, one needs to determine only two things: time to peak <em>T<sub>p</sub></em>; and peak discharge <em>Q<sub>p</sub></em>.</p>
+<p>The total hydrograph from the rainfall event will be the addition of each hydrograph resulting from each excess rainfall, scaled by the rainfall magnitude.</p>
+<div id="fig-model_scs" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-model_scs.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2.10: Curvilinear and triangular dimensionless unit hydrographs</figcaption><p></p>
+</figure>
+</div>
+<div id="tbl-param_model_scs" class="anchored">
+<table class="table">
+<caption>Table 2.9: List of parameters and initial conditions for the <strong>SCS model</strong></caption>
+<colgroup>
+<col style="width: 15%">
+<col style="width: 16%">
+<col style="width: 31%">
+<col style="width: 27%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Units</th>
+<th>Description</th>
+<th>Regular Range</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>m<sup>2</sup></td>
+<td>Surface of the basin</td>
+<td><blockquote class="blockquote">
+<p>0</p>
+</blockquote></td>
+</tr>
+<tr class="even">
+<td>CN</td>
+<td>-</td>
+<td>Curve Number</td>
+<td>30 to 100</td>
+</tr>
+<tr class="odd">
+<td>L</td>
+<td>m</td>
+<td>Width of the plane</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>J0</td>
+<td>-</td>
+<td>Runoff slope</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Ia</td>
+<td>mm</td>
+<td>Initial abstraction</td>
+<td>0 to 100000</td>
+</tr>
+<tr class="even">
+<td>TI</td>
+<td>s</td>
+<td>Lag time</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>First, according to the SCS-CN method, we define the rainfall excess (<em>Q<sub>e</sub></em>, in m) as:</p>
+<p><span id="eq-I1"><span class="math display">\[
+Q_{e} = \frac{(P - Ia)^{2}}{P - Ia + \lambda} \text{ for } P &gt; 0.2 \lambda , \text{ else } Q_{e} = 0
+\qquad(2.139)\]</span></span></p>
+<p>Initial abstraction (<em>I<sub>a</sub></em>, in m) is all losses before runoff begins. It includes water retained in surface depressions, water intercepted by vegetation, evaporation, and infiltration. If not specified, <em>I<sub>a</sub></em> will be derived from the Curve Number following equation <a href="#eq-I2">Equation&nbsp;<span>2.140</span></a>.</p>
+<p><span id="eq-I2"><span class="math display">\[
+I_{a} = 0.2 \cdot \lambda
+\qquad(2.140)\]</span></span></p>
+<p>with <span class="math inline">\(\lambda\)</span>: potential maximum retention after runoff begins [m], given by equation <a href="#eq-I3">Equation&nbsp;<span>2.141</span></a>:</p>
+<p><span id="eq-I3"><span class="math display">\[
+\lambda = \bigg( \frac{25400}{CN} - 254 \bigg) \cdot \frac{1}{1000}
+\qquad(2.141)\]</span></span></p>
+<p>with <span class="math inline">\(CN\)</span>: curve number [-].</p>
+<p>The UH can be solved using a simplified form of ‘triangular’ unit hydrograph. Assuming that this triangular unit hydrograph has the same 37.5% of volume on the rising side as the dimensionless UH of <a href="#fig-model_scs">Figure&nbsp;<span>2.10</span></a>, we can solve for the <em>T<sub>b</sub></em>, which contains entire 100% volume of runoff:</p>
+<p><span id="eq-I4"><span class="math display">\[
+T_{b} = \frac{1}{0.375} \cdot T_{p} = 2.67 \cdot T_{p}
+\qquad(2.142)\]</span></span></p>
+<p><em>T<sub>p</sub></em> (in h) and <em>Q<sub>p</sub></em> (in m<sup>3</sup>/s per unit excess rainfall) can then be derived from the triangular UH. By considering two triangles, we can write the total volume (<em>Q</em>) under the hydrograph:</p>
+<p><span id="eq-I5"><span class="math display">\[
+Q = \frac{Q_{p} \cdot T_{p}}{2} + \frac{Q_{p} \cdot (T_{b} - T_{p})}{2} = \frac{Q_{p}}{2} \cdot 2.67 \cdot T_{p}
+\qquad(2.143)\]</span></span></p>
+<p>Since the area under the UH is equivalent to 1 cm, we have (for 1 cm rainfall depth, with A in m<sup>2</sup>):</p>
+<p><span id="eq-I6"><span class="math display">\[
+\frac{q_{p}}{2} \cdot 2.67T_{p} \cdot 3600 = \frac{A}{100}
+\qquad(2.144)\]</span></span></p>
+<p><span id="eq-I7"><span class="math display">\[
+q_{p} = \frac{2A}{100 \cdot 3600 \cdot 2.67T_{p}} = \frac{2A}{3600 \cdot 2.67 \cdot T_{p}} \text { per m excess rainfall}
+\qquad(2.145)\]</span></span></p>
+<p>From the scheme in <a href="#fig-model_scs">Figure&nbsp;<span>2.10</span></a>, we have the time-of-peak:</p>
+<p><span id="eq-I8"><span class="math display">\[
+T_{p} = \frac{T_{r}}{2} + T_{l}
+\qquad(2.146)\]</span></span></p>
+<p>with <span class="math inline">\(T_r\)</span> (in h) being the duration of the unit excess rainfall and <span class="math inline">\(T_l\)</span> (in h) the time between the center of mass of excess rainfall and the peak of the UH. In RS MINERVE we numerically apply the UH to each precipitation time interval, therefore <em>T<sub>r</sub></em> is equal to the computation time-step <em>dT</em> in the code. If the lag time parameter (<em>T<sub>l</sub></em>) is not provided, SCS defines it as:</p>
+<p><span id="eq-I9"><span class="math display">\[
+T_{l} = 0.6 \cdot T_{c}
+\qquad(2.147)\]</span></span></p>
+<p>with <span class="math inline">\(T_c\)</span>: the time of concentration defined in SI (in h), as:</p>
+<p><span id="eq-I10"><span class="math display">\[
+T_{c} = \frac{227 \cdot L^{0.8}(\lambda + 1)^{0.7}}{10^{5} \sqrt{J0}}
+\qquad(2.148)\]</span></span></p>
+<p>with <span class="math inline">\(L\)</span>: the width of plane parameter; <span class="math inline">\(J0\)</span>: the runoff slope parameter.</p>
+<p>If <em>T<sub>l</sub></em> is provided, <em>T<sub>c</sub></em> is simply computed from equation <a href="#eq-I9">Equation&nbsp;<span>2.147</span></a>. We can thus compute <em>T<sub>p</sub></em> as:</p>
+<p><span id="eq-I11"><span class="math display">\[
+T_{p} = \frac{dT}{2} + 0.6 \cdot T_{c}
+\qquad(2.149)\]</span></span></p>
+<p>And the resulting flow <em>Q<sub>p</sub></em> becomes (with <em>Q<sub>e</sub></em> the excess rainfall during the time interval <em>dT</em>):</p>
+<p><span id="eq-I12"><span class="math display">\[
+Q_p = q_p \cdot Q_e = \frac {2.08 \cdot 10^{-4} \cdot A}{T_p} \cdot Q_e
+\qquad(2.150)\]</span></span></p>
+</section>
+<section id="sec-model_channel_routing" class="level2" data-number="2.11">
+<h2 data-number="2.11" class="anchored" data-anchor-id="sec-model_channel_routing"><span class="header-section-number">2.11</span> Channel routing description</h2>
+<p>The channel routing can be solved by the St-Venant, Muskingum-Cunge or Kinematic wave. The three possibilities are presented hereafter and their parameters in <a href="#tbl-param_model_channel_routing">Table&nbsp;<span>2.10</span></a>.</p>
+<div id="tbl-param_model_channel_routing" class="anchored">
+<table class="table">
+<caption>Table 2.10: List of parameters and initial conditions for the <strong>channel routing model</strong></caption>
+<colgroup>
+<col style="width: 13%">
+<col style="width: 13%">
+<col style="width: 49%">
+<col style="width: 24%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Units</th>
+<th>Description</th>
+<th>Regular Range</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>L</td>
+<td>m</td>
+<td>Length</td>
+<td><blockquote class="blockquote">
+<p>0</p>
+</blockquote></td>
+</tr>
+<tr class="even">
+<td>B0</td>
+<td>m</td>
+<td>Width of the channel base</td>
+<td><blockquote class="blockquote">
+<p>0</p>
+</blockquote></td>
+</tr>
+<tr class="odd">
+<td>m</td>
+<td>-</td>
+<td>Side bank relation coefficient (1H/mV)</td>
+<td>0.1 to 1</td>
+</tr>
+<tr class="even">
+<td>J0</td>
+<td>-</td>
+<td>Slope</td>
+<td><blockquote class="blockquote">
+<p>0</p>
+</blockquote></td>
+</tr>
+<tr class="odd">
+<td>K</td>
+<td>m<sup>1/3</sup>/s</td>
+<td>Strickler coefficient</td>
+<td>10 to 90</td>
+</tr>
+<tr class="even">
+<td>N</td>
+<td>-</td>
+<td>Number of sections (not for Lag-Time)</td>
+<td><blockquote class="blockquote">
+<p>0</p>
+</blockquote></td>
+</tr>
+<tr class="odd">
+<td>Lag</td>
+<td>min</td>
+<td>Lag time (only for Lag-Time)</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>QIni</td>
+<td>m<sup>3</sup>/s</td>
+<td>Initial discharge</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="sec-model_channel_routing_st_venant" class="level3" data-number="2.11.1">
+<h3 data-number="2.11.1" class="anchored" data-anchor-id="sec-model_channel_routing_st_venant"><span class="header-section-number">2.11.1</span> St.&nbsp;Venant routing</h3>
+<p>The St.&nbsp;Venant equations solving the 1D unsteady flow are:</p>
+<p><span id="eq-J1"><span class="math display">\[
+\frac{\partial A}{\partial t} + \frac{\partial Q}{\partial x} = 0
+\qquad(2.151)\]</span></span></p>
+<p><span id="eq-J2"><span class="math display">\[
+\frac{\partial Q}{\partial t} + \frac{\partial}{\partial x} \bigg( \frac{Q^{2}}{A} + g \cdot I_{1} \bigg) = g \cdot A \cdot \big( J_{0} - J_{f} \big) + g \cdot I_{2}
+\qquad(2.152)\]</span></span></p>
+<p>with <span class="math inline">\(A\)</span>: cross sectional flow area [L<sup>2</sup>]; <span class="math inline">\(Q\)</span>: discharge [L<sup>3</sup>/T]; <span class="math inline">\(J_0\)</span>: bottom slope; <span class="math inline">\(J_f\)</span>: friction slope [-]; <span class="math inline">\(I_1\)</span>: profile coefficient [L<sup>3</sup>]; <span class="math inline">\(I_2\)</span>: coefficient for cross sectional variation [L<sup>2</sup>].</p>
+<p>Equation <a href="#eq-J1">Equation&nbsp;<span>2.151</span></a> expresses the mass conservation while equation <a href="#eq-J2">Equation&nbsp;<span>2.152</span></a> ensures the conservation of momentum. The term <em>I<sub>1</sub></em> takes into account the shape of the transversal profile and is calculated as follows:</p>
+<p><span id="eq-J3"><span class="math display">\[
+I_{1} = \int_{0}^{h}{(h - \eta) \cdot b(\eta})\ \mathrm{d}\eta
+\qquad(2.153)\]</span></span></p>
+<p>The term <em>b</em> represents the cross-sectional variation for the level and constitutes an integration variable according to <a href="#fig-model_channel_routing_st_venant_1">Figure&nbsp;<span>2.11</span></a>. St.&nbsp;Venant equations can be solved in RS MINERVE for a trapezoidal profile (<a href="#fig-model_channel_routing_st_venant_2">Figure&nbsp;<span>2.12</span></a>).</p>
+<p>::: {#fig-channel_routing_st_venant layout-ncol=2}</p>
+<div id="fig-model_channel_routing_st_venant_1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-model_channel_routing_st_venant_1.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2.11: Descriptive sketch for parameters used in the calculation of I<sub>1</sub></figcaption><p></p>
+</figure>
+</div>
+<div id="fig-model_channel_routing_st_venant_2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-model_channel_routing_st_venant_2.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2.12: Transversal profile available for the computation of channel routing</figcaption><p></p>
+</figure>
+</div>
+<p>::: Sections of the Channel routing model</p>
+<p>For this trapezoidal section, the equation defining <em>I<sub>1</sub></em> is reduced to:</p>
+<p><span id="eq-J4"><span class="math display">\[
+I_1 = \frac {B \cdot h^2}{2} + \frac {m \cdot h^3}{3}
+\qquad(2.154)\]</span></span></p>
+<p>with <span class="math inline">\(B\)</span>: width of the base of the transversal profile [L]; <span class="math inline">\(h\)</span>: water level [L]; <span class="math inline">\(m\)</span>: side bank relation coefficient (1 vertical / <em>m</em> horizontal) [-].</p>
+<p>The friction slope <em>J<sub>f</sub></em> is calculated according to Manning-Strickler:</p>
+<p><span id="eq-J5"><span class="math display">\[
+J_f = \frac{Q \cdot |Q|}{A^{2} \cdot K^{2} \cdot {R_{h}}^{\frac{4}{3}}}
+\qquad(2.155)\]</span></span></p>
+<p><span id="eq-J6"><span class="math display">\[
+R_h = \frac{A}{L_p}
+\qquad(2.156)\]</span></span></p>
+<p>with <span class="math inline">\(J_f\)</span>: friction slope [-]; <span class="math inline">\(K\)</span>: Strickler coefficient [L<sup>1/3</sup>/T]; <span class="math inline">\(R_h\)</span>: hydraulic radius [L]; <span class="math inline">\(A\)</span>: flow area [L<sup>2</sup>]; <span class="math inline">\(L_p\)</span>: wetted perimeter [L].</p>
+<p>The term <em>I<sub>2</sub></em> takes into account the variation of the section along the channel. In the case of a prismatic channel <em>I<sub>2</sub></em> is equal to zero. In general, <em>I<sub>2</sub></em> is:</p>
+<p><span id="eq-J7"><span class="math display">\[
+I_2 = \int_{0}^{h}{(h - \eta) \ {\frac{\partial b}{\partial x}} |_{h = \eta}}
+\qquad(2.157)\]</span></span></p>
+<p>For a prismatic channel, equations <a href="#eq-J1">Equation&nbsp;<span>2.151</span></a> and <a href="#eq-J2">Equation&nbsp;<span>2.152</span></a> are solved by the Euler method (first order) as follows:</p>
+<p><span id="eq-J8"><span class="math display">\[
+{A_{j + 1}}^{n + 1} = {A_{j + 1}}^{n} - \frac{\Delta t}{\Delta x}({Q_{j + 1}}^{n} - {Q_{j}}^{n})
+\qquad(2.158)\]</span></span></p>
+<p><span id="eq-J9"><span class="math display">\[
+  {Q_{j + 1}}^{n + 1} = {Q_{j + 1}}^{n} - \frac{\Delta t}{\Delta x}(\frac{({Q_{j + 1}}^{n})^{2}}{{A_{j + 1}}^{n}} - \frac{({Q_{j}}^{n})^{2}}{{A_{j}}^{n}} + g \cdot {I_{1,j + 1}}^{n} - g \cdot {I_{1,j}}^{n}) + \Delta t \cdot g \cdot \frac{({A_{j}}^{n} + {A_{j + 1}}^{n})}{2} \cdot J_{0} - \Delta t \cdot g \cdot {A_{j + 1}}^{n} \cdot {{J_{f}}_{j + 1}}^{n}
+\qquad(2.159)\]</span></span></p>
+<p>with <span class="math inline">\(j\)</span> and <span class="math inline">\(j+1\)</span> representing the spatial position; <span class="math inline">\(n\)</span> and <span class="math inline">\(n+1\)</span> representing the time increment; <span class="math inline">\(g\)</span>: gravity constant [L<sup>2</sup>/T]; <span class="math inline">\(\Delta x\)</span>: longitudinal increment [L].</p>
+<p>The downstream boundary condition used by RS MINERVE is the normal flow depth.</p>
+<p>In practice, according to the physical situation to be simulated, some terms of the complete dynamic equations can be eliminated in order to get simplified expressions without losing precision. Applicable solutions are the diffusive and kinematic waves which are presented in the following.</p>
+</section>
+<section id="sec-model_channel_routing_muskingum" class="level3" data-number="2.11.2">
+<h3 data-number="2.11.2" class="anchored" data-anchor-id="sec-model_channel_routing_muskingum"><span class="header-section-number">2.11.2</span> Muskingum-Cunge routing</h3>
+<p>Ruling out the first two terms of equation <a href="#eq-J2">Equation&nbsp;<span>2.152</span></a> yields:</p>
+<p><span id="eq-J10"><span class="math display">\[
+\frac{\partial I_{1}}{\partial x} = A \cdot \left( J_{0} - J_{f} \right) + I_{2}
+\qquad(2.160)\]</span></span></p>
+<p>This new equation corresponds to the approximation of the diffusive wave. With the supplementary hypothesis of a prismatic channel (Cunge, 1991) it is possible to express equation <a href="#eq-J2">Equation&nbsp;<span>2.152</span></a> as follows:</p>
+<p><span id="eq-J11"><span class="math display">\[
+\frac{\partial Q}{\partial t} + \bigg( \frac{Q}{BD}\frac{\mathrm{d}D}{\mathrm{d}h} \bigg) \cdot \frac{\partial Q}{\partial x} - \frac{D^{2}}{2 \cdot B \cdot |Q|} \cdot \frac{\partial^{2}Q}{\partial x^{2}} = 0
+\qquad(2.161)\]</span></span></p>
+<p>with <span class="math inline">\(B\)</span>: width of the bottom of the transversal profile [L]; <span class="math inline">\(D\)</span>: discharge rate [L<sup>3</sup>/T].</p>
+<p>The discharge rate is the capacity of a cross section of a channel to transport a certain flow and is defined as:</p>
+<p><span id="eq-J12"><span class="math display">\[
+Q = D \cdot {J_{0}}^{\frac{1}{2}}
+\qquad(2.162)\]</span></span></p>
+<p>Equation <a href="#eq-J11">Equation&nbsp;<span>2.161</span></a> is an equation with partial derivatives of parabolic type which represents the convection and the diffusion of the variable <em>Q</em>. Hence, the flow transported with a velocity <em>c</em> (equation <a href="#eq-J13">Equation&nbsp;<span>2.163</span></a>) and diffused with a diffusion coefficient (equation <a href="#eq-J14">Equation&nbsp;<span>2.164</span></a>):</p>
+<p><span id="eq-J13"><span class="math display">\[
+c = \frac{Q}{B \cdot D} \cdot \frac{\mathrm{d}D}{\mathrm{d}h}
+\qquad(2.163)\]</span></span></p>
+<p><span id="eq-J14"><span class="math display">\[
+\delta = \frac{D^{2}}{2B \cdot |Q|}
+\qquad(2.164)\]</span></span></p>
+<p>Based on the hypothesis of a clearly defined relation between the flow <em>Q</em> and the water level <em>h</em>, equation <a href="#eq-J11">Equation&nbsp;<span>2.161</span></a> is reduced to:</p>
+<p><span id="eq-J15"><span class="math display">\[
+\frac{\partial Q}{\partial t} + \bigg( \frac{\mathrm{d}Q}{\mathrm{d}A} \bigg)_{x_{0}} \cdot \frac{\partial Q}{\partial x} = 0
+\qquad(2.165)\]</span></span></p>
+<p>This equation is called “equation of the kinematic wave” and describes the simple convection of the flow with a velocity <em>c</em> according to equation <a href="#eq-J13">Equation&nbsp;<span>2.163</span></a>. It can be solved by the following numerical finite difference scheme:</p>
+<p><span id="eq-J16"><span class="math display">\[
+\frac{\partial Q}{\partial t} \approx \frac{X \cdot \big( {Q_{j}}^{n + 1} - {Q_{j}}^{n} \big) + (1 + X) \cdot \big( {Q_{j + 1}}^{n + 1} - {Q_{j + 1}}^{n} \big)}{\Delta t}
+\qquad(2.166)\]</span></span></p>
+<p><span id="eq-J17"><span class="math display">\[
+\frac{\partial Q}{\partial x} \approx \frac{\frac{1}{2} \cdot \big( {Q_{j + 1}}^{n + 1} - {Q_{j}}^{n + 1} \big) + \frac{1}{2} \cdot \big( {Q_{j + 1}}^{n} - {Q_{j}}^{n} \big)}{\Delta x}
+\qquad(2.167)\]</span></span></p>
+<p>Applying this scheme to equation <a href="#eq-J15">Equation&nbsp;<span>2.165</span></a> yields:</p>
+<p><span id="eq-J18"><span class="math display">\[
+\frac{X \cdot \big( {Q_{j}}^{n + 1} - {Q_{j}}^{n} \big) + (1 + X) \cdot \big( {Q_{j + 1}}^{n + 1} - {Q_{j + 1}}^{n} \big)}{c \cdot \Delta t} + \frac{\frac{1}{2} \cdot \big( {Q_{j + 1}}^{n + 1} - {Q_{j}}^{n + 1} \big) + \frac{1}{2} \cdot \big( {Q_{j + 1}}^{n} - {Q_{j}}^{n} \big)}{\Delta x} = 0
+\qquad(2.168)\]</span></span></p>
+<p>We can express the solution of this equation as a function of the unknown variable <em>Q<sub>j+1</sub><sup>n+1</sup></em> namely:</p>
+<p><span id="eq-J19"><span class="math display">\[
+{Q_{j + 1}}^{n + 1} = C_1 \cdot {Q_{j}}^{n + 1} + C_2 \cdot {Q_{j}}^{n} + C_3 \cdot {Q_{j + 1}}^{n}
+\qquad(2.169)\]</span></span></p>
+<p>with:</p>
+<p><span id="eq-J20"><span class="math display">\[
+\begin{matrix}
+  C_1 = - \frac{K \cdot X - \frac{\Delta t}{2}}{K \cdot (1 - X) + \frac{\Delta t}{2}} \\
+  C_2 = \frac{K \cdot X + \frac{\Delta t}{2}}{K \cdot (1 - X) + \frac{\Delta t}{2}} \\
+  C_3 = \frac{K \cdot (1 - X) - \frac{\Delta t}{2}}{K \cdot (1 - X) + \frac{\Delta t}{2}} \\
+\end{matrix}
+\qquad(2.170)\]</span></span></p>
+<p><span id="eq-J21"><span class="math display">\[
+K = \frac{\Delta x}{c}
+\qquad(2.171)\]</span></span></p>
+<p><span id="eq-J22"><span class="math display">\[
+c = \frac{{Q_{j + 1}}^{n} - {Q_{j}}^{n}}{{A_{j + 1}}^{n} - {A_{j}}^{n}}
+\qquad(2.172)\]</span></span></p>
+<p>Here, hydraulic engineers might recognize the equation of Muskingum (Boillat, 1980) corresponding to the name of the river localized in the United States where the method was employed for the first time. The Muskingum method represents an approximation by finite differences of the equation for the kinematic wave. This is not only an appearance since developing the terms of equation <a href="#eq-J18">Equation&nbsp;<span>2.168</span></a> in terms of a Taylor series around the point (<em>j</em>, <em>n</em>) assuming <em>x/t = c</em> and neglecting the quadratic terms (<em>x^2</em>) the equation can be written as follows:</p>
+<p><span id="eq-J23"><span class="math display">\[
+\frac{\partial Q}{\partial t} + c \cdot \frac{\partial Q}{\partial x} - c \cdot B\frac{\partial^{2}Q}{\partial x^{2}} = 0
+\qquad(2.173)\]</span></span></p>
+<p><span id="eq-J24"><span class="math display">\[
+B = \Delta x \cdot \bigg( \frac{1}{2} - X \bigg)
+\qquad(2.174)\]</span></span></p>
+<p>According to this analysis proposed by Cunge (1969) it can be recognized that the Muskingum equation is a solution in terms of finite differences of the equation of the diffusive wave (<a href="#eq-J11">Equation&nbsp;<span>2.161</span></a>) under the condition of correctly introducing the value of the parameters <em>K</em> and <em>X</em>. <em>K</em> is defined by equation <a href="#eq-J21">Equation&nbsp;<span>2.171</span></a> and according to the celerity <em>c</em> (equation <a href="#eq-J24">Equation&nbsp;<span>2.174</span></a>), <em>X</em> corresponds to:</p>
+<p><span id="eq-J25"><span class="math display">\[
+X = \frac{1}{2} - \frac{D^3}{2 \cdot \Delta x \cdot |Q| \cdot Q \cdot \frac{\mathrm{d}D}{\mathrm{d}h}}
+\qquad(2.175)\]</span></span></p>
+<p>This function of the diffusive wave implemented at present in RS MINERVE is capable of solving the Muskingum-Cunge equation for the trapezoidal geometry of a transversal profile according to <a href="#fig-model_channel_routing_st_venant_2">Figure&nbsp;<span>2.12</span></a>.</p>
+</section>
+<section id="sec-model_channel_routing_kinematic" class="level3" data-number="2.11.3">
+<h3 data-number="2.11.3" class="anchored" data-anchor-id="sec-model_channel_routing_kinematic"><span class="header-section-number">2.11.3</span> Kinematic Wave routing</h3>
+<p>In the kinematic wave model the terms of inertia and pressure of the St.&nbsp;Venant equations are supposed to be negligible. As a consequence, the cinematic hypothesis supposes that the gravity forces are identical, though with an opposite sign, to the friction forces. This implies that there is an explicit relationship between the flow and the water level (measured normal water depth).</p>
+<p>The equation of the cinematic wave as presented in the previous chapter is presented as follows:</p>
+<p><span id="eq-J26"><span class="math display">\[
+\frac{\partial Q}{\partial t} + \left( \frac{dQ}{dA} \right)_{x_{0}} \cdot \frac{\partial Q}{\partial x} = 0
+\qquad(2.176)\]</span></span></p>
+<p>This is a simple equation of convection which indicates that the flow <em>Q</em> is transported downstream with a celerity <em>c</em> which is defined as:</p>
+<p><span id="eq-J27"><span class="math display">\[
+c = \frac{\partial Q}{\partial A}
+\qquad(2.177)\]</span></span></p>
+<p>This rather simple model transports each point of the hydrograph from upstream to downstream with a velocity <em>c</em>. Since no diffusive term appears in the equation the peak discharge remains constant and is not reduced. On the contrary, the general behaviour of a flood is modified, since high discharges are transferred downstream more rapidly than small ones.</p>
+<p>The initial parameters are identical to those of the model of the diffusive wave. The geometry for the transversal profiles also corresponds to the same than for the Muskingum-Cunge method (trapezoidal channels, <a href="#fig-model_channel_routing_st_venant_2">Figure&nbsp;<span>2.12</span></a>). Opposite to the model of the diffusive wave, no reduction of the flood is produced as mentioned previously. The solution is performed according to the following equations:</p>
+<p><span id="eq-J28"><span class="math display">\[
+c = \frac{{Q_{j + 1}}^{n} - {Q_{j}}^{n}}{{A_{j + 1}}^{n} - {A_{j}}^{n}}
+\qquad(2.178)\]</span></span></p>
+<p><span id="eq-J29"><span class="math display">\[
+\alpha = c \cdot \frac{\Delta t}{\Delta L}
+\qquad(2.179)\]</span></span></p>
+<p><span id="eq-J30"><span class="math display">\[
+{Q_{j + 1}}^{n + 1}=
+  \begin{cases}
+    \alpha \cdot {Q_{j}}^{n} + (1 - \alpha) \cdot {Q_{j + 1}}^{n}                                   &amp; \quad \text{if } \alpha \leq 1 \\
+    1/\alpha \cdot {Q_{j}}^{n} + (1 - \frac{1}{\alpha}) \cdot {Q_{j}}^{n + 1}               &amp; \quad \text{if } \alpha &gt; 1
+  \end{cases}
+\qquad(2.180)\]</span></span></p>
+</section>
+<section id="sec-model_channel_routing_lagtime" class="level3" data-number="2.11.4">
+<h3 data-number="2.11.4" class="anchored" data-anchor-id="sec-model_channel_routing_lagtime"><span class="header-section-number">2.11.4</span> Lag-time</h3>
+<p>The lag-time model is the simpler routing model where upstream and downstream flows are delayed by a fixed lag time called <em>Lag</em> (in minutes).</p>
+</section>
+</section>
+<section id="sec-model_timeseries" class="level2" data-number="2.12">
+<h2 data-number="2.12" class="anchored" data-anchor-id="sec-model_timeseries"><span class="header-section-number">2.12</span> Time series</h2>
+<p>In this object, temporary series of flow, precipitation, temperature or ETP can be directly introduced. The time is incorporated in seconds and the associated values in their corresponding units, in tabular form “t [s] - value [depending on the series]”.</p>
+<div id="tbl-param_model_timeseries" class="anchored">
+<table class="table">
+<caption>Table 2.11: <strong>Time series</strong> required data</caption>
+<colgroup>
+<col style="width: 22%">
+<col style="width: 44%">
+<col style="width: 31%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Units</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Series (paired data)</td>
+<td>s (depending on the series)</td>
+<td>Time - Value series</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="sec-model_reservoir" class="level2" data-number="2.13">
+<h2 data-number="2.13" class="anchored" data-anchor-id="sec-model_reservoir"><span class="header-section-number">2.13</span> Reservoir</h2>
+<p>The transient evolution of a water volume <span class="math inline">\(V\)</span> in a reservoir is described by the following retention equation:</p>
+<p><span id="eq-K1"><span class="math display">\[
+\frac{\mathrm{d}V}{\mathrm{d}t} = Q_{e} - Q_{s}
+\qquad(2.181)\]</span></span></p>
+<p>with <span class="math inline">\(V\)</span>: volume in the reservoir [L<sup>3</sup>]; <span class="math inline">\(Q_e\)</span>: inflow in the reservoir [L<sup>3</sup>/T]; <span class="math inline">\(Q_s\)</span>: outflow [L<sup>3</sup>/T].</p>
+<p>Usually, reservoirs are equipped with turbines, pumps and spillways depending on the water level in the reservoir. To solve equation <a href="#eq-K1">Equation&nbsp;<span>2.181</span></a>, it is necessary to know the outflow as a function of the water volume <span class="math inline">\(V\)</span> in the reservoir. This operation is possible if relation between the water level and the water volume is known (<a href="#tbl-param_model_reservoir">Table&nbsp;<span>2.12</span></a>).</p>
+<div id="tbl-param_model_reservoir" class="anchored">
+<table class="table">
+<caption>Table 2.12: <strong>Reservoir</strong> paired data and initial condition required</caption>
+<colgroup>
+<col style="width: 22%">
+<col style="width: 20%">
+<col style="width: 45%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Units</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>H-V (paired data)</td>
+<td>masl - m<sup>3</sup></td>
+<td>Level - Volume relation</td>
+</tr>
+<tr class="even">
+<td>Hini</td>
+<td>masl</td>
+<td>Initial level in the reservoir</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="sec-model_hq" class="level2" data-number="2.14">
+<h2 data-number="2.14" class="anchored" data-anchor-id="sec-model_hq"><span class="header-section-number">2.14</span> Level-Discharge Relation (HQ)</h2>
+<p>The HQ object provides an outflow depending on a level in a reservoir. The outflow is calculated by the help of a “Level - Discharge” relation (<a href="#tbl-param_model_hq">Table&nbsp;<span>2.13</span></a>). Hence, the discharge in then calculated as follows:</p>
+<p><span id="eq-L1"><span class="math display">\[
+  {Q_{outflow}}^{n} =
+  \begin{cases}
+    0                                                                                               &amp; \quad \text{if } H^n &lt; H_{1} \\
+    Q_{dev,i} + (H_{i + 1} - H^{n}) \cdot \frac{Q_{outflow,i+1} - Q_{outflow,i}}{H_{i+1} - H_i}     &amp; \quad \text{if } H_i &lt; H^n &lt; H_{i+1} \\
+  \end{cases}
+\qquad(2.182)\]</span></span></p>
+<p>with <span class="math inline">\({Q_{outflow}}^n\)</span>: discharge at instant n [L<sup>3</sup>/T]; <span class="math inline">\(H^n\)</span>: water level at instant n [L]; <span class="math inline">\(Q_{outflow,i}\)</span>: discharge flow for a water level <span class="math inline">\(H_i\)</span> [L<sup>3</sup>/T]; <span class="math inline">\(H_i\)</span>: reservoir water level [L].</p>
+<div id="tbl-param_model_hq" class="anchored">
+<table class="table">
+<caption>Table 2.13: ** HQ** paired data required</caption>
+<colgroup>
+<col style="width: 22%">
+<col style="width: 22%">
+<col style="width: 40%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Units</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>H-Q (paired data)</td>
+<td>masl - m<sup>3</sup>/s</td>
+<td>Level - Discharge relation</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="sec-model_turbine" class="level2" data-number="2.15">
+<h2 data-number="2.15" class="anchored" data-anchor-id="sec-model_turbine"><span class="header-section-number">2.15</span> Turbine</h2>
+<p>In this object, temporary series of flow can be directly introduced to provide an outflow in a reservoir. The time is incorporated in seconds and the associated values in their corresponding units, in tabular form “t [s] - discharge”. The final discharge also depends on the level reservoir as presented in next equations:</p>
+<p><span id="eq-M1"><span class="math display">\[
+{Q_{turbine}}^n =
+  \begin{cases}
+    {Q_{wanted}}^{n}    &amp; \quad \text{if } \left( H^{n} &gt; H_{on}  \right) \text{ or } (H_{off} \leq  H^{n} \leq H_{on} \text{ and } IsOperating = 1)  \\
+    0                   &amp; \quad \text{if } \left( H^{n} &lt; H_{off} \right) \text{ or } (H_{off} \leq  H^{n} \leq H_{on} \text{ and } IsOperating = 0) \\
+  \end{cases}
+\qquad(2.183)\]</span></span></p>
+<p>with <span class="math inline">\({Q_{turbine}}^n\)</span>: discharge at instant n [L<sup>3</sup>/T]; <span class="math inline">\(H^n\)</span>: water level at instant <em>n</em> [L]; <span class="math inline">\({Q_{wanted}}^n\)</span>: discharge flow wanted at instant n [L<sup>3</sup>/T]; <span class="math inline">\(Hon\)</span>: Threshold in the level of the reservoir to start the turbine cycle [L]; <span class="math inline">\(Hoff\)</span>: Threshold in the level of the reservoir to stop the turbine cycle [L]; <span class="math inline">\(IsOperating\)</span>: Planned turbine cycle at instant <em>t</em> [0/1].</p>
+<div id="tbl-param_model_turbine" class="anchored">
+<table class="table">
+<caption>Table 2.14: <strong>Time-Q</strong> paired data, parameters and initial conditions required</caption>
+<colgroup>
+<col style="width: 15%">
+<col style="width: 14%">
+<col style="width: 70%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Units</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>H-Q (paired data)</td>
+<td>masl - m<sup>3</sup>/s</td>
+<td>Level - Discharge relation</td>
+</tr>
+<tr class="even">
+<td>Hon</td>
+<td>masl</td>
+<td>Threshold in the level of the reservoir to start the turbine cycle (turbine starts when the threshold is exceeded)</td>
+</tr>
+<tr class="odd">
+<td>Hoff</td>
+<td>masl</td>
+<td>Threshold in the level of the reservoir to stop the turbine cycle (turbine stops when level go below the threshold)</td>
+</tr>
+<tr class="even">
+<td>IsOper atingIni</td>
+<td>0/1</td>
+<td>First suggested value for the turbine cycle (0 = not turbine; 1 = turbine). Only taken into account if <em>Hoff &gt; H &gt; Hon</em></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="fig-model_turbine" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-model_turbine.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2.13: Time-H, tubine start and stop operation</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="sec-model_hydropower" class="level2" data-number="2.16">
+<h2 data-number="2.16" class="anchored" data-anchor-id="sec-model_hydropower"><span class="header-section-number">2.16</span> Hydropower</h2>
+<p>The inputs of this object are a reservoir level and a discharge. It also needs the paired data relation “Discharge (Q) - Performance (<span class="math inline">\(\eta\)</span>)” for the turbine, the altitude (Z<sub>central</sub>) of the hydropower plant, the length (<em>L</em>), the diameter (<em>D</em>) and the roughness (<em>K</em>) of the pipe as well as the kinematic viscosity of the fluid (*).</p>
+<p>As outputs, the object calculates not only the power and the revenue for each time step, as presented in equations <a href="#eq-N1">Equation&nbsp;<span>2.184</span></a> to <a href="#eq-N3">Equation&nbsp;<span>2.186</span></a>, but also the total energy produced and the total obtained revenue. For this calculation, it takes into account the head loss in terms of volumetric flow rate in a full-flowing circular pipe from the Darcy-Weisbach equation (Darcy, 1857; Simmons, 2008).</p>
+<p><span id="eq-N1"><span class="math display">\[
+{Z_{net}}^{n} = ({Z_{water}}^{n} - Z_{central}) - f \cdot \frac{8 \cdot L \cdot {Q^{n}}^{2}}{g \cdot \pi^{2} \cdot D^{5}}
+\qquad(2.184)\]</span></span></p>
+<p><span id="eq-N2"><span class="math display">\[
+Power^{n} = \eta^{n} \cdot 1000 \cdot Q^{n} \cdot g \cdot {Z_{net}}^{n}
+\qquad(2.185)\]</span></span></p>
+<p><span id="eq-N3"><span class="math display">\[
+Revenue^{n} = Power^{n} \cdot Price^{n}
+\qquad(2.186)\]</span></span></p>
+<p>with <span class="math inline">\({H_{net}}^n\)</span>: net height at instant <em>n</em> [L]; <span class="math inline">\({Z_{water}}^n\)</span>: water height in the reservoir at instant <em>n</em> [L]; <span class="math inline">\(Z_{central}\)</span>: hydropower plant altitude [L]; <span class="math inline">\(f\)</span>: friction factor [-]; <span class="math inline">\(L\)</span>: length of the pipe [L]; <span class="math inline">\(Q^n\)</span>: discharge at instant <em>n</em> [L<sup>3</sup>/T]; <span class="math inline">\(g\)</span>: gravity, 9.81 [L<sup>2</sup>/T]; <span class="math inline">\(D\)</span>: diameter [L]; <span class="math inline">\(Power^n\)</span>: power at instant <em>n</em> [Watt]; <span class="math inline">\(\eta\)</span>: performance of the turbine at instant <em>n</em> [%]; <span class="math inline">\(Revenue^n\)</span>: Revenue of the turbine at instant <em>n</em> [/Kwh]; <span class="math inline">\(Price^n\)</span>: Price of the energy at instant <em>n</em> [/Kwh].</p>
+<p>If the discharge actually provided to the object Hydropower is higher than the range proposed in the relation <em>Q-of this object, the maximum discharge of the paired data </em>Q-is taken for the energy production calculations.</p>
+<div id="tbl-param_model_hydropower" class="anchored">
+<table class="table">
+<caption>Table 2.15: <strong>Hydropower</strong> paired data and parameters required</caption>
+<colgroup>
+<col style="width: 16%">
+<col style="width: 18%">
+<col style="width: 64%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Units</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Q- (paired data)</td>
+<td>m^ 3^/s - %</td>
+<td>Discharge-Performance relation</td>
+</tr>
+<tr class="even">
+<td>Zplant</td>
+<td>masl</td>
+<td>Hydropower plant altitude</td>
+</tr>
+<tr class="odd">
+<td>L</td>
+<td>m</td>
+<td>Length of the pipe</td>
+</tr>
+<tr class="even">
+<td>D</td>
+<td>m</td>
+<td>Diameter of the pipe</td>
+</tr>
+<tr class="odd">
+<td>K</td>
+<td>m</td>
+<td>Roughness</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>m<sup>2</sup>/s</td>
+<td>Kinematic viscosity</td>
+</tr>
+<tr class="odd">
+<td>Default Price</td>
+<td>eu ro/Kwh</td>
+<td>Default price, only used if no data exists in the database</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>A default price can be introduced for first approximation of the revenue. It is used only if the object does not have a price series in the database.</p>
+<p>For the calculation of the friction factor <em>f</em> of the Darcy-Weisbach equation, the equation of Colebrook-White (Colebrook and White, 1937; Colebrook, 1939) is used. It is presented in equation <a href="#eq-N4">Equation&nbsp;<span>2.187</span></a>, where <em>represents </em>f<em>. In addition, the Reynolds number, </em>Re*, is presented in equation <a href="#eq-N5">Equation&nbsp;<span>2.188</span></a>.</p>
+<p><span id="eq-N4"><span class="math display">\[
+\frac{1}{\sqrt{\lambda}} = - 2 \cdot log_{10}\left( \frac{k/D}{3.7} + \frac{2.51}{Re \cdot \sqrt{\lambda}} \right)
+\qquad(2.187)\]</span></span></p>
+<p><span id="eq-N5"><span class="math display">\[
+Re = v \cdot \frac{D}{\upsilon}
+\qquad(2.188)\]</span></span></p>
+<p>with <span class="math inline">\(\lambda\)</span>: friction factor [-]; <span class="math inline">\(k\)</span>: roughness [L]; <span class="math inline">\(Re\)</span>: Reynolds number [-]; <span class="math inline">\(v\)</span>: velocity [L/T]; <span class="math inline">\(\upsilon\)</span>: kinematic viscosity [L<sup>2</sup>/T]</p>
+<p>The equation <a href="#eq-N4">Equation&nbsp;<span>2.187</span></a> is solved for the range of discharges of the paired data *Q-, providing the paired data relation “Discharge (Q) - Friction factor ()” for user information.</p>
+</section>
+<section id="sec-model_diversion" class="level2" data-number="2.17">
+<h2 data-number="2.17" class="anchored" data-anchor-id="sec-model_diversion"><span class="header-section-number">2.17</span> Diversion</h2>
+<p>This object needs the paired data relation “Inflow - Diverted flow” as information as well as the incoming hydrograph. The relation describes the behaviour of the diversion and is generated by the user, who performs a calculation for the behaviour of the diversion and then creates the relation “Inflow - Diverted flow”.</p>
+<p>With this information, the Diversion calculates the diverted hydrograph and the downstream hydrograph, as presented in equation <a href="#eq-O1">Equation&nbsp;<span>2.189</span></a>:</p>
+<p><span id="eq-O1"><span class="math display">\[
+{Q_{up}}^{n} = {Q_{down}}^{n} + {Q_{diverted}}^{n}
+\qquad(2.189)\]</span></span></p>
+<p>with <span class="math inline">\({Q_{up}}^n\)</span>: total flow upstream at instant <em>n</em> [L<sup>3</sup>/T]; <span class="math inline">\({Q_{diverted}}^n\)</span>: diverted flow at instant <em>n</em> [L<sup>3</sup>/T]; <span class="math inline">\({Q_{down}}^n\)</span>: downstream flow at instant <em>n</em> [L<sup>3</sup>/T].</p>
+<div id="tbl-param_model_diversion" class="anchored">
+<table class="table">
+<caption>Table 2.16: <strong>Diversion</strong> paired data required</caption>
+<colgroup>
+<col style="width: 28%">
+<col style="width: 21%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Units</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Q<sub>up</sub>-Q<sub>diverted</sub> (paired data)</td>
+<td>m<sup>3</sup>/s - m<sup>3</sup>/s</td>
+<td>Upstream flow - Diverted flow relation</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="sec-model_consumer" class="level2" data-number="2.18">
+<h2 data-number="2.18" class="anchored" data-anchor-id="sec-model_consumer"><span class="header-section-number">2.18</span> Consumer</h2>
+<p>The Consumer object is used to take into account a consumption site (agriculture, cities, etc.). A series in the database is used as the demand of the Consumer object. If no information about consummation exists in the database, the parameter “Default QDemand” is used for the whole period of the simulation as uniform demand.</p>
+<p>The LossRate parameter provides the distribution losses of a demand site (physical leaks, clandestine connections, etc.). If the input discharge (Qup) is sufficient, the delivered flow (Qdelivered) is equal to the Qdemand and the supply requirement (<em>Qsupplied</em>) is equal to the Qdemand divided by <em>(1-LossRate)</em>, otherwise the supply requirement is equal to the input discharge (<em>Qup</em>). Then, the ConsumptionRate parameter is used to determine the discharge consumed by the demand site and which is lost (evaporation, embodied products, etc). The discharge remainder (Qreturn) is returned to the main system. The output flow is equal to the input flow minus the losses and the effective consumption (<em>Qconsumed</em>).</p>
+<p>The Consumer object calculates the losses, the consumed discharge as well as the downstream hydrograph, as presented in next equations. At the same time, the object also calculates the unmet demand and the demand coverage (%) series during the simulation period.</p>
+<p><span id="eq-P1"><span class="math display">\[
+{Q_{supplied}}^{n} = min \bigg( \frac{{Q_{demand}}^{n}}{1 - LossRate};{Q_{up}}^{n} \bigg)
+\qquad(2.190)\]</span></span></p>
+<p><span id="eq-P2"><span class="math display">\[
+{Q_{stream}}^{n} = {Q_{up}}^{n} - {Q_{supplied}}^{n}
+\qquad(2.191)\]</span></span></p>
+<p><span id="eq-P3"><span class="math display">\[
+{Q_{losses}}^{n} = {Q_{supplied}}^{n} \cdot LossRate
+\qquad(2.192)\]</span></span></p>
+<p><span id="eq-P4"><span class="math display">\[
+{Q_{delivered}}^{n} = {Q_{supplied}}^{n} \cdot (1 - LossRate)
+\qquad(2.193)\]</span></span></p>
+<p><span id="eq-P5"><span class="math display">\[
+{Q_{UnmetDemand}}^{n} = {Q_{demand}}^{n} - {Q_{delivered}}^{n}
+\qquad(2.194)\]</span></span></p>
+<p><span id="eq-P6"><span class="math display">\[
+{DemandCoverage}^{n} = \frac{{Q_{demand}}^{n} - {Q_{delivered}}^{n}}{{Q_{demand}}^{n}} \cdot 100
+\qquad(2.195)\]</span></span></p>
+<p><span id="eq-P7"><span class="math display">\[
+{Q_{consumed}}^{n} = {Q_{delivered}}^{n} \cdot ConsumptionRate
+\qquad(2.196)\]</span></span></p>
+<p><span id="eq-P8"><span class="math display">\[
+{Q_{return}}^{n} = {Q_{delivered}}^{n} \cdot (1 - ConsumptionRate)
+\qquad(2.197)\]</span></span></p>
+<p><span id="eq-P9"><span class="math display">\[
+{Q_{down}}^{n} = {Q_{up}}^ {n} - {Q_{losses}}^{n} - {Q_{consumed}}^{n}
+\qquad(2.198)\]</span></span></p>
+<p>with <span class="math inline">\({Q_{demand}}^n\)</span>: demanded consumption at instant <em>n</em> [L<sup>3</sup>/T]; <span class="math inline">\({Q_{up}}^n\)</span>: total flow upstream at instant <em>n</em> [L<sup>3</sup>/T]; <span class="math inline">\(LossRate\)</span>: fraction of the Q<sub>supplied</sub> lost at the demand site [-]; <span class="math inline">\({Q_{supplied}}^n\)</span>: supplied discharge at instant n [L<sup>3</sup>/T]; <span class="math inline">\({Q_{stream}}^n\)</span>: discharge that flows downstream after the initial supply at instant <em>n</em> [L<sup>3</sup>/T]; <span class="math inline">\({Q_{losses}}^n\)</span>: part of the <em>Q<sub>supplied</sub></em> discharge that is lost at instant <em>n</em> [L<sup>3</sup>/T]; <span class="math inline">\(LossRate\)</span>: fraction of the <em>Q<sub>supplied</sub></em> discharge that will be lost before its delivery [-]; <span class="math inline">\({Q_{delivered}}^n\)</span>: part of the <em>Q<sub>supplied</sub></em> discharge that is not lost at instant <em>n</em> [L<sup>3</sup>/T]; <span class="math inline">\({Q_{UnmetDemand}}^n\)</span>: discharge shortfall at the consumption site at instant <em>n</em> [L<sup>3</sup>/T]; <span class="math inline">\(DemandCoverage\)</span>: percentage of the demand covered by the delivered discharge at instant <em>n</em> [%]; <span class="math inline">\(ConsumptionRate\)</span>: fraction of the <em>Q<sub>delivered</sub></em> ultimately consumed [-]; <span class="math inline">\({Q_{consumed}}^n\)</span>: discharge consumed at the consumption site at instant <em>n</em> [L<sup>3</sup>/T]; <span class="math inline">\({Q_{return}}^n\)</span>: discharge returning downstream from the consumption site at instant <em>n</em> [L<sup>3</sup>/T]; <span class="math inline">\({Q_{down}}^n\)</span>: downstream flow at instant <em>n</em> [L<sup>3</sup>/T].</p>
+<div id="tbl-param_model_consumer" class="anchored">
+<table class="table">
+<caption>Table 2.17: <strong>Consumer</strong> parameters required</caption>
+<colgroup>
+<col style="width: 16%">
+<col style="width: 11%">
+<col style="width: 72%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Units</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>LossRate</td>
+<td>-</td>
+<td>Fraction of the Q<sub>supplied</sub> lost at the demand site</td>
+</tr>
+<tr class="even">
+<td>ConsumptionRate</td>
+<td>-</td>
+<td>Fraction of the Q<sub>delivered</sub> ultimately consumed</td>
+</tr>
+<tr class="odd">
+<td>Default QDemand</td>
+<td>m<sup>3</sup>/s</td>
+<td>Default demand of consummation, only used if no data exists in the database</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="fig-model_consumer" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-model_consumer.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2.14: Distribution of discharges in the Consumer object</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="sec-model_efficiency" class="level2" data-number="2.19">
+<h2 data-number="2.19" class="anchored" data-anchor-id="sec-model_efficiency"><span class="header-section-number">2.19</span> Structure efficiency</h2>
+<p>This object needs an efficiency coefficient as information to describe the efficiency of a structure such a canal or a pipe, as well as the incoming hydrograph.</p>
+<p>An efficiency of 1 provides an output flow equivalent to the input hydrograph. An efficiency of 0 generates a complete loss of the input.</p>
+<p>The downstream hydrograph is calculated as presented in equation <a href="#eq-Q1">Equation&nbsp;<span>2.199</span></a> and <a href="#eq-Q2">Equation&nbsp;<span>2.200</span></a>:</p>
+<p><span id="eq-Q1"><span class="math display">\[
+{Q_{down}}^{n} = {Q_{up}}^{n} \cdot \text{Efficiency}
+\qquad(2.199)\]</span></span></p>
+<p><span id="eq-Q2"><span class="math display">\[
+{Q_{lost}}^{n} = {Q_{up}}^{n} \cdot (1 - \text{Efficiency})
+\qquad(2.200)\]</span></span></p>
+<p>with <span class="math inline">\({Q_{up}}^n\)</span>: total flow upstream at instant <em>n</em> [L<sup>3</sup>/T]; <span class="math inline">\({Q_{lost}}^n\)</span>: lost flow at instant <em>n</em> [L<sup>3</sup>/T]; <span class="math inline">\({Q_{down}}^n\)</span>: downstream flow at instant <em>n</em> [L<sup>3</sup>/T].</p>
+<div id="tbl-param_model_efficiency" class="anchored">
+<table class="table">
+<caption>Table 2.18: <strong>Structure efficiency</strong> parameters required</caption>
+<colgroup>
+<col style="width: 19%">
+<col style="width: 19%">
+<col style="width: 41%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Units</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Efficiency</td>
+<td>-</td>
+<td>Efficiency of the structure</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="sec-model_planner" class="level2" data-number="2.20">
+<h2 data-number="2.20" class="anchored" data-anchor-id="sec-model_planner"><span class="header-section-number">2.20</span> Planner</h2>
+<p>When a planner object is selected, a manage system is generated. Inside this object, several Rules can be created. All the rules will be computed, from first one to last one. In each rule define several Conditions is possible and also create combinations between them (with AND or OR operators). The rule will be applied if the combined condition (or an individual condition) is satisfied.</p>
+<div id="tbl-operators_combin_model_planner" class="anchored">
+<table class="table">
+<caption>Table 2.19: Operators to combine rule conditions</caption>
+<colgroup>
+<col style="width: 20%">
+<col style="width: 70%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Operator</th>
+<th>Combined condition is satisfied when</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>OR</td>
+<td>Left condition OR Right condition are satisfied</td>
+</tr>
+<tr class="even">
+<td>AND</td>
+<td>Left condition AND Right condition are satisfied</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>A typical example of planner is the implementation of a turbine / pump law as a function of the water level in the reservoir. Thus, some Rules should be created with different conditions regarding to reservoir levels or, in some cases, to results from other objects.</p>
+<div id="tbl-param_model_planner" class="anchored">
+<table class="table">
+<caption>Table 2.20: <strong>Planner</strong> data required</caption>
+<colgroup>
+<col style="width: 11%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 68%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Object</th>
+<th>Name</th>
+<th>Units</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Planner</td>
+<td>Rule</td>
+<td>-</td>
+<td>Rule to be applied regarding at least one condition</td>
+</tr>
+<tr class="even">
+<td>Rules</td>
+<td>Condition</td>
+<td>-</td>
+<td>Expression to be evaluated and if it is satisfied the parent rule will be applied</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The possible operators to use inside the conditions are presented in <a href="#tbl-param_model_planner">Table&nbsp;<span>2.20</span></a>.</p>
+<div id="tbl-operators_model_planner" class="anchored">
+<table class="table">
+<caption>Table 2.21: Operators for rule conditions</caption>
+<colgroup>
+<col style="width: 20%">
+<col style="width: 37%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Operator</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>&gt;</td>
+<td>Bigger than</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Bigger than or equal to</td>
+</tr>
+<tr class="odd">
+<td>=</td>
+<td>Equal to</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Smaller than or equal to</td>
+</tr>
+<tr class="odd">
+<td>&lt;</td>
+<td>Smaller than</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="sec-model_comparator" class="level2" data-number="2.21">
+<h2 data-number="2.21" class="anchored" data-anchor-id="sec-model_comparator"><span class="header-section-number">2.21</span> Comparator</h2>
+<p>The Comparator object calculates ten performance indicators by comparing a simulated and a reference (observed) timeseries. The warm up period parameter (in days) is used for the initialization of the model state variables. Note that this time period starts at the beginning of and must be shorter than the simulation period and is not used to compute the performance indicators. The description of each indicator is presented in Chapter 3.</p>
+<p>Moreover, for the calculation of threshold-based indicators (Peirce Skill Score and Overall Accuracy), the definition of both the reference and the simulation thresholds is required (<a href="#tbl-param_model_comparator">Table&nbsp;<span>2.22</span></a>).</p>
+<div id="tbl-param_model_comparator" class="anchored">
+<table class="table">
+<caption>Table 2.22: <strong>Comparator</strong> parameters required</caption>
+<colgroup>
+<col style="width: 15%">
+<col style="width: 19%">
+<col style="width: 65%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Units</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Reference threshold</td>
+<td>(depends on the variable)</td>
+<td>Threshold used by threshold-based indicators (returns TRUE if reference value &gt; threshold)</td>
+</tr>
+<tr class="even">
+<td>Simulation threshold</td>
+<td>(depends on the variable)</td>
+<td>Threshold used by threshold-based indicators (returns TRUE if simulation value &gt; threshold)</td>
+</tr>
+<tr class="odd">
+<td>Warm up period</td>
+<td>Days</td>
+<td>Warm up period, not used for indicators computation</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-hamdi_modeprevision_2005" class="csl-entry" role="doc-biblioentry">
+Hamdi, Y, B Hingray, and A Musy. 2005. <span>“Un Modèle de Prévision Hydro-Météorologique Pour Les Crues Du <span>Rhône</span> Supérieur En <span>Suisse</span>.”</span> <em>Wasser, Energie and Luft</em>, 325–32.
+</div>
+<div id="ref-mcguinness1972" class="csl-entry" role="doc-biblioentry">
+McGuinness, J. L., and Erich F. Bordne. 1972. <span>“A Comparison of Lysimeter-Derived Potential Evapotranspiration with Computed Values.”</span> <a href="https://EconPapers.repec.org/RePEc:ags:uerstb:171893">https://EconPapers.repec.org/RePEc:ags:uerstb:171893</a>.
+</div>
+<div id="ref-oudin_recherche_2004" class="csl-entry" role="doc-biblioentry">
+Oudin, L. 2004. <span>“Recherche d’un Modèle d’évapotranspiration Potentielle Pertinent Comme Entrée d’un Modèle Pluie-Débit Global.”</span> {PhD} {Thesis}, Ecole Nationale du Génie Rural, des Eaux et des Forêts, Paris.
+</div>
+<div id="ref-schaefli_conceptual_2005" class="csl-entry" role="doc-biblioentry">
+Schaefli, B., B. Hingray, M. Niggli, and A. Musy. 2005. <span>“A Conceptual Glacio-Hydrological Model for High Mountainous Catchments.”</span> <em>Hydrology and Earth System Sciences</em> 9 (1/2): 95–109. <a href="https://doi.org/10.5194/hess-9-95-2005">https://doi.org/10.5194/hess-9-95-2005</a>.
+</div>
+</div>
+</section>
+<section class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1" role="doc-endnote"><p>The precipitation and evapotranspiration gradients are function of the local conditions. Their regular ranges have to be estimated for each studied case.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2" role="doc-endnote"><p>The precipitation and evapotranspiration gradients are function of the local conditions. Their regular ranges have to be estimated for each studied case.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3" role="doc-endnote"><p>If the Tension Water storage of the Lower Zone is completely full, then percolation goes entirely to the 2 Free Water storages.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+</main> <!-- /main -->
+<script type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    setTimeout(function() {
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./intro.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./performance_indicators.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Performance indicators</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+</body></html>
