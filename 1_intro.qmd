@@ -1,0 +1,27 @@
+# Introduction
+
+The Routing System II program was developed at the Laboratory of Hydraulic Constructions (LCH) at the Ecole Polytechnique Fédérale de Lausanne (EPFL) [@dubois_routing_2000; @garcia_hernandez_routing_2007].
+
+The program presented hereafter, RS MINERVE, is based on the same concept than Routing System II. RS MINERVE is developed by the CREALP and HydroCosmos SA with the collaboration of the Laboratory of Hydraulic Constructions (LCH) at the Ecole Polytechnique Fédérale de Lausanne (EPFL) and the Universitat Politècnica de València (UPV).
+
+## Manual's structure {.unnumbered}
+
+The presented Technical manual is organised in eight chapters:
+
+1.  Introduction
+
+2.  Hydrological and hydraulic models description
+
+3.  Performance indicators
+
+4.  Calibration algorithms
+
+5.  Visual basic scripts
+
+6.  Files formats
+
+7.  Database formats
+
+8.  GIS formats
+
+For the RS MINERVE software utilisation, the reader can also use the RS MINERVE User's Manual [@foehn_rs_2020].

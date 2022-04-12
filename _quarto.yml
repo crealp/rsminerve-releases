@@ -1,0 +1,30 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "RS MINERVE - Technical Manual"
+  author: "Bastien ROQUIER, Javier FLUIXA SANMARTIN, Tristan BRAUCHLI, Theo BARACCHINI, Javier GARCIA HERNANDEZ, Alain FOEHN, Javier PAREDES ARQUIOLA, Giovanni DE CESARE"
+  ISSN: 2673-2661
+  date: "12.04.2022"
+  chapters:
+    - 0_index.qmd
+    - 0_foreword.qmd
+    - 1_intro.qmd
+    - 2_hydrological_models.qmd
+    - 3_performance_indicators.qmd
+    - 4_calibration_algorithms.qmd
+    
+number-sections: true
+tbl-cap-location: top
+bibliography: references.bib
+link-citations: true
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+
+
