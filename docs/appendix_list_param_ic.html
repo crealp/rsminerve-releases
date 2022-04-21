@@ -1,0 +1,1602 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="generator" content="quarto-0.9.233">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="description" content="This document contains the User and Technical Manuals of the RS MINERVE software. These manuals are constantly updated. This version corresponds to the Software version 2.9.1.">
+  <title>RS MINERVE Manuals - Appendix A — Appendix: List of parameters and initial conditions</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+
+  <script src="site_libs/quarto-nav/quarto-nav.js"></script>
+  <script src="site_libs/quarto-nav/headroom.min.js"></script>
+  <script src="site_libs/clipboard/clipboard.min.js"></script>
+  <meta name="quarto:offset" content="./">
+  <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+  <script src="site_libs/quarto-search/fuse.min.js"></script>
+  <script src="site_libs/quarto-search/quarto-search.js"></script>
+  <link href="./appendix_list_notifications.html" rel="next">
+  <link href="./acknowledgments.html" rel="prev">
+  <script src="site_libs/quarto-html/quarto.js"></script>
+  <script src="site_libs/quarto-html/popper.min.js"></script>
+  <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+  <script src="site_libs/quarto-html/anchor.min.js"></script>
+  <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+  <link id="quarto-text-highlighting-styles" href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
+  <script src="site_libs/bootstrap/bootstrap.min.js"></script>
+  <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+  <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+  <script id="quarto-search-options" type="application/json">{
+    "location": "sidebar",
+    "copy-button": false,
+    "collapse-after": 3,
+    "panel-placement": "start",
+    "type": "textbox",
+    "limit": 20,
+    "language": {
+      "search-no-results-text": "No results",
+      "search-matching-documents-text": "matching documents",
+      "search-copy-link-title": "Copy link to search",
+      "search-hide-matches-text": "Hide additional matches",
+      "search-more-match-text": "more match in this document",
+      "search-more-matches-text": "more matches in this document",
+      "search-clear-button-title": "Clear",
+      "search-detached-cancel-button-title": "Cancel",
+      "search-submit-button-title": "Submit"
+    }
+  }</script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body class="floating">
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Appendix A — Appendix: List of parameters and initial conditions</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">RS MINERVE Manuals</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">RS MINERVE software</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="./user_manual.html" class="sidebar-item-text sidebar-link">User Manual</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./user_rainfall_runoff_modelling.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Rainfall-runoff modelling</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./user_hydraulic_infrastructures.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Hydraulic infrastructures modelling</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./user_database.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Database</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./user_gis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">GIS</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./user_hydro_hydrau_simulation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Hydrological-hydraulic simulation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./user_expert_module.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Expert module</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./user_plugins.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Plugins</span></a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="./tech_manual.html" class="sidebar-item-text sidebar-link">Technical Manual</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_hydrological_models.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Hydrological and hydraulics models description</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_performance_indicators.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Performance indicators</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_calibration_algorithms.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Expert module - Calibration algorithms</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_stochastic_equations.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Expert module - Stochastic equations</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_scripts.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Visual Basic Scripts</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_file_formats.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">File formats</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_database_formats.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Database formats</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_gis_formats.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">GIS formats</span></a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examples.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Examples of application</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./acknowledgments.html" class="sidebar-item-text sidebar-link">Acknowledgments</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Appendices</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix_list_param_ic.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Appendix: List of parameters and initial conditions</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix_list_notifications.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">List of notifications from pre-simulation and post-simulation reports</span></a>
+  </div>
+</li>
+    </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+<h2 id="toc-title">Table of contents</h2>
+<ul>
+<li><a href="#hydrology-models" id="toc-hydrology-models" class="nav-link active" data-scroll-target="#hydrology-models"> <span class="header-section-number">A.1</span> Hydrology models</a></li>
+<li><a href="#river-models" id="toc-river-models" class="nav-link" data-scroll-target="#river-models"> <span class="header-section-number">A.2</span> River models</a></li>
+<li><a href="#standard-models" id="toc-standard-models" class="nav-link" data-scroll-target="#standard-models"> <span class="header-section-number">A.3</span> Standard models</a></li>
+<li><a href="#infrastructure-objects" id="toc-infrastructure-objects" class="nav-link" data-scroll-target="#infrastructure-objects"> <span class="header-section-number">A.4</span> Infrastructure objects</a></li>
+</ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+<header id="title-block-header" class="quarto-title-block default">
+
+<div class="quarto-title"><h1 class="title display-7"><span id="sec-appendix_list_param_ic" class="quarto-section-identifier d-none d-lg-block">Appendix A — Appendix: List of parameters and initial conditions</span></h1><div class="quarto-description"><p>This document contains the User and Technical Manuals of the RS MINERVE software. 
+These manuals are constantly updated. This version corresponds to the Software version 2.9.1.
+</p></div></div></header>
+
+<section id="hydrology-models" class="level2" data-number="A.1">
+<h2 data-number="A.1" class="anchored" data-anchor-id="hydrology-models"><span class="header-section-number">A.1</span> Hydrology models</h2>
+<div id="tbl-app_param_virtual_station" class="anchored">
+<table class="table">
+<caption>Table A.1: List of parameters for the <strong>virtual station</strong></caption>
+<colgroup>
+<col style="width: 16%">
+<col style="width: 6%">
+<col style="width: 63%">
+<col style="width: 13%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Units</th>
+<th>Description</th>
+<th>Regular Range</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>X, Y, Z</td>
+<td>-</td>
+<td>Coordinates of the virtual station</td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td>Search Radius</td>
+<td>m</td>
+<td>Search radius of the virtual stations</td>
+<td>&gt;0</td>
+</tr>
+<tr class="odd">
+<td>No.&nbsp;min. of stations</td>
+<td>-</td>
+<td>Minimal number of stations used for interpolation (higher priority than “Search Radius”)</td>
+<td><span class="math inline">\(\geq\)</span> 1</td>
+</tr>
+<tr class="even">
+<td>Gradient P</td>
+<td>1/m</td>
+<td>Precipitation gradient</td>
+<td>-<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></td>
+</tr>
+<tr class="odd">
+<td>Gradient T</td>
+<td>°C/m</td>
+<td>Temperature gradient</td>
+<td>-0.007 to -0.004</td>
+</tr>
+<tr class="even">
+<td>Gradient ETP</td>
+<td>1/m</td>
+<td>Evapotranspiration gradient</td>
+<td>-<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></td>
+</tr>
+<tr class="odd">
+<td>Coeff P</td>
+<td>-</td>
+<td>Multiplying correction coefficient</td>
+<td>0.5 to 2</td>
+</tr>
+<tr class="even">
+<td>Coeff T</td>
+<td>°C</td>
+<td>Adding correction coefficient</td>
+<td>-2 to 2</td>
+</tr>
+<tr class="odd">
+<td>Coeff ETP</td>
+<td>-</td>
+<td>Multiplying correction coefficient</td>
+<td>0.5 to 2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="tbl-app_param_model_snow" class="anchored">
+<table class="table">
+<caption>Table A.2: List of parameters and <em>initial conditions</em> for the <strong>Snow-SD model</strong></caption>
+<colgroup>
+<col style="width: 12%">
+<col style="width: 11%">
+<col style="width: 55%">
+<col style="width: 19%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Units</th>
+<th>Decription</th>
+<th>Regular range</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>S</td>
+<td>mm/°C/d</td>
+<td>Reference degree-day snowmelt coefficient</td>
+<td>0.5 to 20</td>
+</tr>
+<tr class="even">
+<td>SInt</td>
+<td>mm/°C/d</td>
+<td>Degree-day snowmelt interval</td>
+<td>0 to 4</td>
+</tr>
+<tr class="odd">
+<td>SMin</td>
+<td>mm/°C/d</td>
+<td>Minimal degree-day snowmelt coefficient</td>
+<td><span class="math inline">\(\geq\)</span> 0</td>
+</tr>
+<tr class="even">
+<td>SPh</td>
+<td>d</td>
+<td>Phase shift of the sinusoidal function</td>
+<td>1 to 365</td>
+</tr>
+<tr class="odd">
+<td>ThetaCri</td>
+<td>-</td>
+<td>Critical relative water content of the snow pack</td>
+<td>0.1</td>
+</tr>
+<tr class="even">
+<td>bp</td>
+<td>d/mm</td>
+<td>Melt coefficient due to liquid precipitation</td>
+<td>0.0125</td>
+</tr>
+<tr class="odd">
+<td>Tcp1</td>
+<td>°C</td>
+<td>Minimum critical temperature for liquid precipitation</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>Tcp2</td>
+<td>°C</td>
+<td>Maximum critical temperature for solid precipitation</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<td>Tcf</td>
+<td>°C</td>
+<td>Critical snowmelt temperature</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>CFR</td>
+<td>-</td>
+<td>Refreezing coefficient</td>
+<td>0 to 1</td>
+</tr>
+<tr class="odd">
+<td><em>SWEIni</em></td>
+<td>m</td>
+<td>Initial snow water equivalent height</td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td><em>ThetaIni</em></td>
+<td>-</td>
+<td>Initial relative water content in the snow pack</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="tbl-app_param_model_swmm" class="anchored">
+<table class="table">
+<caption>Table A.3: List of parameters and <em>initial conditions</em> for the <strong>SWMM model</strong></caption>
+<colgroup>
+<col style="width: 12%">
+<col style="width: 13%">
+<col style="width: 52%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Units</th>
+<th>Description</th>
+<th>Regular Range</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>m<sup>2</sup></td>
+<td>Surface of runoff</td>
+<td>&gt;0</td>
+</tr>
+<tr class="even">
+<td>L</td>
+<td>m</td>
+<td>Length of the plane</td>
+<td>&gt;0</td>
+</tr>
+<tr class="odd">
+<td>J0</td>
+<td>-</td>
+<td>Runoff slope</td>
+<td>&gt;0</td>
+</tr>
+<tr class="even">
+<td>K</td>
+<td>m<sup>1/3</sup>/s</td>
+<td>Strickler coefficient</td>
+<td>0.1 to 90</td>
+</tr>
+<tr class="odd">
+<td><em>HIni</em></td>
+<td>m</td>
+<td>Initial water level downstream of the surface</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="tbl-app_param_model_gsm" class="anchored">
+<table class="table">
+<caption>Table A.4: List of parameters and <em>initial conditions</em> for the <strong>GSM model</strong></caption>
+<colgroup>
+<col style="width: 15%">
+<col style="width: 11%">
+<col style="width: 53%">
+<col style="width: 19%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Units</th>
+<th>Description</th>
+<th>Regular Range</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>m<sup>2</sup></td>
+<td>Surface of infiltration</td>
+<td>&gt;0</td>
+</tr>
+<tr class="even">
+<td>S</td>
+<td>mm/°C/d</td>
+<td>Reference degree-day snowmelt coefficient</td>
+<td>0.5 to 20</td>
+</tr>
+<tr class="odd">
+<td>SInt</td>
+<td>mm/°C/d</td>
+<td>Degree-day snowmelt interval</td>
+<td>0 to 4</td>
+</tr>
+<tr class="even">
+<td>SMin</td>
+<td>mm/°C/d</td>
+<td>Minimal degree-day snowmelt coefficient</td>
+<td><span class="math inline">\(\geq\)</span> 0</td>
+</tr>
+<tr class="odd">
+<td>Sph</td>
+<td>d</td>
+<td>Phase shift of the sinusoidal function</td>
+<td>1 to 365</td>
+</tr>
+<tr class="even">
+<td>ThetaCri</td>
+<td>-</td>
+<td>Critical relative water content of the snow pack</td>
+<td>0.1</td>
+</tr>
+<tr class="odd">
+<td>bp</td>
+<td>d/mm</td>
+<td>Melt coefficient due to liquid precipitation</td>
+<td>0.0125</td>
+</tr>
+<tr class="even">
+<td>Tcp1</td>
+<td>°C</td>
+<td>Minimum critical temperature for liquid precipitation</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>Tcp2</td>
+<td>°C</td>
+<td>Maximum critical temperature for solid precipitation</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td>Tcf</td>
+<td>°C</td>
+<td>Critical snowmelt temperature</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>G</td>
+<td>mm/°C/d</td>
+<td>Reference degree-day glacier melt coefficient</td>
+<td>0.5 to 20</td>
+</tr>
+<tr class="even">
+<td>GInt</td>
+<td>mm/°C/d</td>
+<td>Degree-day glacier melt interval</td>
+<td>0 to 4</td>
+</tr>
+<tr class="odd">
+<td>GMin</td>
+<td>mm/°C/d</td>
+<td>Minimal degree-day glacier melt coefficient</td>
+<td><span class="math inline">\(\geq\)</span> 0</td>
+</tr>
+<tr class="even">
+<td>Tcg</td>
+<td>°C</td>
+<td>Critical glacier melt temperature</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>Kgl</td>
+<td>1/d</td>
+<td>Release coefficient of glacier melt reservoir</td>
+<td>0.1 to 5</td>
+</tr>
+<tr class="even">
+<td>Ksn</td>
+<td>1/d</td>
+<td>Release coefficient of snowmelt reservoir</td>
+<td>0.1 to 5</td>
+</tr>
+<tr class="odd">
+<td>CFR</td>
+<td>-</td>
+<td>Refreezing coefficient</td>
+<td>0 to 1</td>
+</tr>
+<tr class="even">
+<td><em>SWEIni</em></td>
+<td>m</td>
+<td>Initial snow water equivalent height</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td><em>ThetaIni</em></td>
+<td>-</td>
+<td>Initial relative water content in the snow pack</td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td><em>QsnowIni</em></td>
+<td>m<sup>3</sup>/s</td>
+<td>Initial outflow of linear snow reservoir</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td><em>QglacierIni</em></td>
+<td>m<sup>3</sup>/s</td>
+<td>Initial outflow of linear glacier reservoir</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="tbl-app_param_model_socont" class="anchored">
+<table class="table">
+<caption>Table A.5: List of parameters and <em>initial conditions</em> for the <strong>SOCONT model</strong></caption>
+<colgroup>
+<col style="width: 12%">
+<col style="width: 11%">
+<col style="width: 55%">
+<col style="width: 19%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Units</th>
+<th>Description</th>
+<th>Regular Range</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>m<sup>2</sup></td>
+<td>Surface</td>
+<td>&gt;0</td>
+</tr>
+<tr class="even">
+<td>S</td>
+<td>mm/°C/d</td>
+<td>Reference degree-day snowmelt coefficient</td>
+<td>0.5 to 20</td>
+</tr>
+<tr class="odd">
+<td>SInt</td>
+<td>mm/°C/d</td>
+<td>Degree-day snowmelt interval</td>
+<td>0 to 4</td>
+</tr>
+<tr class="even">
+<td>SMin</td>
+<td>mm/°C/d</td>
+<td>Minimal degree-day snowmelt coefficient</td>
+<td><span class="math inline">\(\geq\)</span> 0</td>
+</tr>
+<tr class="odd">
+<td>SPh</td>
+<td>d</td>
+<td>Phase shift of the sinusoidal function</td>
+<td>1 to 365</td>
+</tr>
+<tr class="even">
+<td>ThetaCri</td>
+<td>-</td>
+<td>Critical relative water content of the snow pack</td>
+<td>0.1</td>
+</tr>
+<tr class="odd">
+<td>bp</td>
+<td>d/mm</td>
+<td>Melt coefficient due to liquid precipitation</td>
+<td>0.0125</td>
+</tr>
+<tr class="even">
+<td>Tcp1</td>
+<td>°C</td>
+<td>Minimum critical temperature for liquid precipitation</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>Tcp2</td>
+<td>°C</td>
+<td>Maximum critical temperature for solid precipitation</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td>Tcf</td>
+<td>°C</td>
+<td>Critical snowmelt temperature</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>HGR3Max</td>
+<td>m</td>
+<td>Maximum height of infiltration reservoir</td>
+<td>0 to 2</td>
+</tr>
+<tr class="even">
+<td>KGR3</td>
+<td>1/s</td>
+<td>Release coefficient of infiltration reservoir</td>
+<td>0.00025 to 0.1</td>
+</tr>
+<tr class="odd">
+<td>L</td>
+<td>m</td>
+<td>Length of the plane</td>
+<td>&gt;0</td>
+</tr>
+<tr class="even">
+<td>J0</td>
+<td>-</td>
+<td>Runoff slope</td>
+<td>&gt;0</td>
+</tr>
+<tr class="odd">
+<td>Kr</td>
+<td>m<sup>1/3</sup>/s</td>
+<td>Strickler coefficient</td>
+<td>0.1 to 90</td>
+</tr>
+<tr class="even">
+<td>CFR</td>
+<td>-</td>
+<td>Refreezing coefficient</td>
+<td>0 to 1</td>
+</tr>
+<tr class="odd">
+<td><em>SWEIni</em></td>
+<td>m</td>
+<td>Initial snow water equivalent height</td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td><em>HGR3Ini</em></td>
+<td>m</td>
+<td>Initial level in infiltration reservoir</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td><em>HrIni</em></td>
+<td>m</td>
+<td>Initial runoff water level downstream of the surface</td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td><em>ThetaIni</em></td>
+<td>-</td>
+<td>Initial relative water content in the snow pack</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="tbl-app_param_model_hbv" class="anchored">
+<table class="table">
+<caption>Table A.6: List of parameters and <em>initial conditions</em> for the <strong>HBV model</strong></caption>
+<colgroup>
+<col style="width: 11%">
+<col style="width: 12%">
+<col style="width: 54%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Units</th>
+<th>Description</th>
+<th>Regular Range</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>m<sup>2</sup></td>
+<td>Surface of the basin</td>
+<td>&gt;0</td>
+</tr>
+<tr class="even">
+<td>CFMax</td>
+<td>mm/°C/d</td>
+<td>Melting factor</td>
+<td>0.5 to 20</td>
+</tr>
+<tr class="odd">
+<td>CFR</td>
+<td>-</td>
+<td>Refreezing factor</td>
+<td>0.05</td>
+</tr>
+<tr class="even">
+<td>CWH</td>
+<td>-</td>
+<td>Critical relative water content of the snow pack</td>
+<td>0.1</td>
+</tr>
+<tr class="odd">
+<td>TT</td>
+<td>°C</td>
+<td>Threshold temperature of rain/snow</td>
+<td>0 to 3</td>
+</tr>
+<tr class="even">
+<td>TTInt</td>
+<td>°C</td>
+<td>Temperature interval for rain/snow mixing</td>
+<td>0 to 3</td>
+</tr>
+<tr class="odd">
+<td>TTSM</td>
+<td>°C</td>
+<td>Threshold temperature for snow melt</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>Beta</td>
+<td>-</td>
+<td>Model parameter (shape coefficient)</td>
+<td>1 to 5</td>
+</tr>
+<tr class="odd">
+<td>FC</td>
+<td>m</td>
+<td>Maximum soil storage capacity</td>
+<td>0.050 to 0.65</td>
+</tr>
+<tr class="even">
+<td>PWP</td>
+<td>-</td>
+<td>Soil permanent wilting point threshold</td>
+<td>0.030 to 1</td>
+</tr>
+<tr class="odd">
+<td>SUMax</td>
+<td>m</td>
+<td>Upper reservoir water level threshold</td>
+<td>0 to 0.10</td>
+</tr>
+<tr class="even">
+<td>Kr</td>
+<td>1/d</td>
+<td>Near surface flow storage coefficient</td>
+<td>0.05 to 0.5</td>
+</tr>
+<tr class="odd">
+<td>Ku</td>
+<td>1/d</td>
+<td>Interflow storage coefficient</td>
+<td>0.01 to 0.4</td>
+</tr>
+<tr class="even">
+<td>Kl</td>
+<td>1/d</td>
+<td>Baseflow storage coefficient</td>
+<td>0 to 0.15</td>
+</tr>
+<tr class="odd">
+<td>Kperc</td>
+<td>1/d</td>
+<td>Percolation storage coefficient</td>
+<td>0 to 0.8</td>
+</tr>
+<tr class="even">
+<td><em>SWEIni</em></td>
+<td>m</td>
+<td>Initial snow water equivalent height</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td><em>WHIni</em></td>
+<td>-</td>
+<td>Initial relative water content in the snow pack</td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td><em>HumIni</em></td>
+<td>m</td>
+<td>Initial humidity</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td><em>SUIni</em></td>
+<td>m</td>
+<td>Initial upper reservoir water level</td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td><em>SLIni</em></td>
+<td>m</td>
+<td>Initial lower reservoir water level</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="tbl-app_param_model_gr4j" class="anchored">
+<table class="table">
+<caption>Table A.7: List of parameters and <em>initial conditions</em> for the <strong>GR4J model</strong></caption>
+<colgroup>
+<col style="width: 11%">
+<col style="width: 12%">
+<col style="width: 54%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Units</th>
+<th>Description</th>
+<th>Regular Range</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>m<sup>2</sup></td>
+<td>Surface of the basin</td>
+<td>&gt;0</td>
+</tr>
+<tr class="even">
+<td>X1</td>
+<td>m</td>
+<td>Capacity of production store</td>
+<td>0.01 to 1.2</td>
+</tr>
+<tr class="odd">
+<td>X2</td>
+<td>m</td>
+<td>Water exchange coefficient</td>
+<td>-0.005 to 0.003</td>
+</tr>
+<tr class="even">
+<td>X3</td>
+<td>m</td>
+<td>Capacity of routing store</td>
+<td>0.01 to 0.5</td>
+</tr>
+<tr class="odd">
+<td>X4</td>
+<td>d</td>
+<td>UH time base</td>
+<td>-0.5 to 1</td>
+</tr>
+<tr class="even">
+<td><em>SIni</em></td>
+<td>m</td>
+<td>Initial water content in the production reservoir</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td><em>RIni</em></td>
+<td>m</td>
+<td>Initial water level in the routing reservoir</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="tbl-app_param_model_sac_sma" class="anchored">
+<table class="table">
+<caption>Table A.8: List of parameters and <em>initial conditions</em> for the <strong>SAC-SMA model</strong></caption>
+<colgroup>
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 64%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Units</th>
+<th>Description</th>
+<th>Regular Range</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>m<sup>2</sup></td>
+<td>Surface of the basin</td>
+<td>&gt;0</td>
+</tr>
+<tr class="even">
+<td>Adimp</td>
+<td>-</td>
+<td>Maximum fraction of an additional impervious area due to saturation</td>
+<td>0 to 0.2</td>
+</tr>
+<tr class="odd">
+<td>Pctim</td>
+<td>-</td>
+<td>Permanent impervious area fraction</td>
+<td>0 to 0.05</td>
+</tr>
+<tr class="even">
+<td>Riva</td>
+<td>-</td>
+<td>Riparian vegetarian area fraction</td>
+<td>0 to 0.2</td>
+</tr>
+<tr class="odd">
+<td>UztwMax</td>
+<td>m</td>
+<td>Upper Zone Tension Water capacity</td>
+<td>0.01 to 0.15</td>
+</tr>
+<tr class="even">
+<td>UzfwMax</td>
+<td>m</td>
+<td>Upper Zone Free Water capacity</td>
+<td>0.005 to 0.10</td>
+</tr>
+<tr class="odd">
+<td>Uzk</td>
+<td>1/d</td>
+<td>Interflow depletion rate from the Upper Zone Free Water storage</td>
+<td>0.10 to 0.75</td>
+</tr>
+<tr class="even">
+<td>Zperc</td>
+<td>-</td>
+<td>Ratio of maximum and minimum percolation rates</td>
+<td>10 to 350</td>
+</tr>
+<tr class="odd">
+<td>Rexp</td>
+<td>-</td>
+<td>Shape parameter of the percolation curve</td>
+<td>1 to 4</td>
+</tr>
+<tr class="even">
+<td>Pfree</td>
+<td>-</td>
+<td>Percolation fraction that goes directly to the Lower Zone Free Water storages</td>
+<td>0 to0.6</td>
+</tr>
+<tr class="odd">
+<td>LztwMax</td>
+<td>m</td>
+<td>The Lower Zone Tension Water capacity</td>
+<td>0.05 to 0.40</td>
+</tr>
+<tr class="even">
+<td>LzfpMax</td>
+<td>m</td>
+<td>The Lower Zone primary Free Water capacity</td>
+<td>0.03 to 0.80</td>
+</tr>
+<tr class="odd">
+<td>LzfsMax</td>
+<td>m</td>
+<td>The Lower Zone supplementary Free Water capacity</td>
+<td>0.01 to 0.40</td>
+</tr>
+<tr class="even">
+<td>Rserv</td>
+<td>-</td>
+<td>Fraction of Lower Zone Free Water not transferable to Lower Zone Tension Water</td>
+<td>0 to 1</td>
+</tr>
+<tr class="odd">
+<td>Lzpk</td>
+<td>1/d</td>
+<td>Depletion rate of the Lower Zone primary Free Water storage</td>
+<td>0.001 to 0.03</td>
+</tr>
+<tr class="even">
+<td>Lzsk</td>
+<td>1/d</td>
+<td>Depletion rate of the Lower Zone supplemental Free Water storage</td>
+<td>0.02 to 0.3</td>
+</tr>
+<tr class="odd">
+<td>Side</td>
+<td>-</td>
+<td>Ratio of deep percolation from Lower Zone Free Water storages</td>
+<td>0 to 0.5</td>
+</tr>
+<tr class="even">
+<td><em>AdimIni</em></td>
+<td>m</td>
+<td>Initial Tension Water content of the Adimp area</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td><em>UztwIni</em></td>
+<td>m</td>
+<td>Initial Upper Zone Tension Water content</td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td><em>UzfwIni</em></td>
+<td>m</td>
+<td>Initial Upper Zone Free Water content</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td><em>LztwIni</em></td>
+<td>m</td>
+<td>Initial Lower Zone Tension Water content</td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td><em>LzfpIni</em></td>
+<td>m</td>
+<td>Initial Lower Zone Free supplementary content</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td><em>LzfsIni</em></td>
+<td>m</td>
+<td>Initial Lower Zone Free primary content</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="tbl-app_param_model_scs" class="anchored">
+<table class="table">
+<caption>Table A.9: List of parameters and <em>initial conditions</em> for the <strong>SCS model</strong></caption>
+<colgroup>
+<col style="width: 15%">
+<col style="width: 16%">
+<col style="width: 31%">
+<col style="width: 27%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Units</th>
+<th>Description</th>
+<th>Regular Range</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>m<sup>2</sup></td>
+<td>Surface of the basin</td>
+<td>&gt;0</td>
+</tr>
+<tr class="even">
+<td>CN</td>
+<td>-</td>
+<td>Curve Number</td>
+<td>30 to 100</td>
+</tr>
+<tr class="odd">
+<td>L</td>
+<td>m</td>
+<td>Width of the plane</td>
+<td><span class="math inline">\(\geq\)</span> 0</td>
+</tr>
+<tr class="even">
+<td>J0</td>
+<td>-</td>
+<td>Runoff slope</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><em>Ia</em></td>
+<td>mm</td>
+<td>Initial abstraction</td>
+<td>0 to 100000</td>
+</tr>
+<tr class="even">
+<td>TI</td>
+<td>s</td>
+<td>Lag time</td>
+<td><span class="math inline">\(\geq\)</span> 0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="river-models" class="level2" data-number="A.2">
+<h2 data-number="A.2" class="anchored" data-anchor-id="river-models"><span class="header-section-number">A.2</span> River models</h2>
+<div id="tbl-app_param_model_channel_routing" class="anchored">
+<table class="table">
+<caption>Table A.10: List of parameters and <em>initial conditions</em> for the <strong>channel routing model</strong></caption>
+<colgroup>
+<col style="width: 13%">
+<col style="width: 13%">
+<col style="width: 49%">
+<col style="width: 24%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Units</th>
+<th>Description</th>
+<th>Regular Range</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>L</td>
+<td>m</td>
+<td>Length</td>
+<td>&gt;0</td>
+</tr>
+<tr class="even">
+<td>B0</td>
+<td>m</td>
+<td>Width of the channel base</td>
+<td>&gt;0</td>
+</tr>
+<tr class="odd">
+<td>m</td>
+<td>-</td>
+<td>Side bank relation coefficient (1H/mV)</td>
+<td>0.1 to 1</td>
+</tr>
+<tr class="even">
+<td>J0</td>
+<td>-</td>
+<td>Slope</td>
+<td>&gt;0</td>
+</tr>
+<tr class="odd">
+<td>K</td>
+<td>m<sup>1/3</sup>/s</td>
+<td>Strickler coefficient</td>
+<td>10 to 90</td>
+</tr>
+<tr class="even">
+<td>N</td>
+<td>-</td>
+<td>Number of sections (not for Lag-Time)</td>
+<td>&gt;0</td>
+</tr>
+<tr class="odd">
+<td>Lag</td>
+<td>min</td>
+<td>Lag time (only for Lag-Time)</td>
+<td><span class="math inline">\(\geq\)</span> 0</td>
+</tr>
+<tr class="even">
+<td><em>QIni</em></td>
+<td>m<sup>3</sup>/s</td>
+<td>Initial discharge</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="standard-models" class="level2" data-number="A.3">
+<h2 data-number="A.3" class="anchored" data-anchor-id="standard-models"><span class="header-section-number">A.3</span> Standard models</h2>
+<div id="tbl-app_param_model_timeseries" class="anchored">
+<table class="table">
+<caption>Table A.11: <strong>Time series</strong> required data</caption>
+<colgroup>
+<col style="width: 22%">
+<col style="width: 44%">
+<col style="width: 31%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Units</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Series (paired data)</td>
+<td>s (depending on the series)</td>
+<td>Time - Value series</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="infrastructure-objects" class="level2" data-number="A.4">
+<h2 data-number="A.4" class="anchored" data-anchor-id="infrastructure-objects"><span class="header-section-number">A.4</span> Infrastructure objects</h2>
+<div id="tbl-app_param_model_reservoir" class="anchored">
+<table class="table">
+<caption>Table A.12: <strong>Reservoir</strong> paired data and <em>initial condition</em> required</caption>
+<colgroup>
+<col style="width: 22%">
+<col style="width: 20%">
+<col style="width: 45%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Units</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>H-V (paired data)</td>
+<td>masl - m<sup>3</sup></td>
+<td>Level - Volume relation</td>
+</tr>
+<tr class="even">
+<td><em>Hini</em></td>
+<td>masl</td>
+<td>Initial level in the reservoir</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="tbl-app_param_model_hq" class="anchored">
+<table class="table">
+<caption>Table A.13: <strong>HQ</strong> paired data required</caption>
+<colgroup>
+<col style="width: 22%">
+<col style="width: 22%">
+<col style="width: 40%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Units</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>H-Q (paired data)</td>
+<td>masl - m<sup>3</sup>/s</td>
+<td>Level - Discharge relation</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="tbl-app_param_model_turbine" class="anchored">
+<table class="table">
+<caption>Table A.14: <strong>Time-Q</strong> paired data, parameters and <em>initial condition</em> required</caption>
+<colgroup>
+<col style="width: 16%">
+<col style="width: 13%">
+<col style="width: 69%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Units</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>H-Q (paired data)</td>
+<td>masl - m<sup>3</sup>/s</td>
+<td>Level - Discharge relation</td>
+</tr>
+<tr class="even">
+<td>Hon</td>
+<td>masl</td>
+<td>Threshold in the level of the reservoir to start the turbine cycle (turbine starts when the threshold is exceeded)</td>
+</tr>
+<tr class="odd">
+<td>Hoff</td>
+<td>masl</td>
+<td>Threshold in the level of the reservoir to stop the turbine cycle (turbine stops when level go below the threshold)</td>
+</tr>
+<tr class="even">
+<td><em>IsOperatingIni</em></td>
+<td>0/1</td>
+<td>First suggested value for the turbine cycle (0 = not turbine; 1 = turbine). Only taken into account if <em>Hoff &gt; H &gt; Hon</em></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="tbl-app_param_model_hydropower" class="anchored">
+<table class="table">
+<caption>Table A.15: <strong>Hydropower</strong> paired data and parameters required</caption>
+<colgroup>
+<col style="width: 16%">
+<col style="width: 18%">
+<col style="width: 64%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Units</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Q- (paired data)</td>
+<td>m^ 3^/s - %</td>
+<td>Discharge-Performance relation</td>
+</tr>
+<tr class="even">
+<td>Zplant</td>
+<td>masl</td>
+<td>Hydropower plant altitude</td>
+</tr>
+<tr class="odd">
+<td>L</td>
+<td>m</td>
+<td>Length of the pipe</td>
+</tr>
+<tr class="even">
+<td>D</td>
+<td>m</td>
+<td>Diameter of the pipe</td>
+</tr>
+<tr class="odd">
+<td>K</td>
+<td>m</td>
+<td>Roughness</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>m<sup>2</sup>/s</td>
+<td>Kinematic viscosity</td>
+</tr>
+<tr class="odd">
+<td>Default Price</td>
+<td>eu ro/Kwh</td>
+<td>Default price, only used if no data exists in the database</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="tbl-app_param_model_diversion" class="anchored">
+<table class="table">
+<caption>Table A.16: <strong>Diversion</strong> paired data required</caption>
+<colgroup>
+<col style="width: 28%">
+<col style="width: 21%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Units</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Q<sub>up</sub>-Q<sub>diverted</sub> (paired data)</td>
+<td>m<sup>3</sup>/s - m<sup>3</sup>/s</td>
+<td>Upstream flow - Diverted flow relation</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="tbl-app_param_model_consumer" class="anchored">
+<table class="table">
+<caption>Table A.17: <strong>Consumer</strong> parameters required</caption>
+<colgroup>
+<col style="width: 16%">
+<col style="width: 11%">
+<col style="width: 72%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Units</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>LossRate</td>
+<td>-</td>
+<td>Fraction of the <em>Q<sub>supplied</sub></em> lost at the demand site</td>
+</tr>
+<tr class="even">
+<td>ConsumptionRate</td>
+<td>-</td>
+<td>Fraction of the <em>Q<sub>delivered</sub></em> ultimately consumed</td>
+</tr>
+<tr class="odd">
+<td>Default QDemand</td>
+<td>m<sup>3</sup>/s</td>
+<td>Default demand of consummation, only used if no data exists in the database</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="tbl-app_param_model_efficiency" class="anchored">
+<table class="table">
+<caption>Table A.18: <strong>Structure efficiency</strong> parameters required</caption>
+<colgroup>
+<col style="width: 19%">
+<col style="width: 19%">
+<col style="width: 41%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Units</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Efficiency</td>
+<td>-</td>
+<td>Efficiency of the structure</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+
+</section>
+<section class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1" role="doc-endnote"><p>The precipitation and potential evapotranspiration gradients are function of the local conditions. Their regular ranges have to be estimated for each studied case.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2" role="doc-endnote"><p>The precipitation and potential evapotranspiration gradients are function of the local conditions. Their regular ranges have to be estimated for each studied case.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+</main> <!-- /main -->
+<script type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    setTimeout(function() {
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./acknowledgments.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Acknowledgments</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./appendix_list_notifications.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">List of notifications from pre-simulation and post-simulation reports</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+</body></html>

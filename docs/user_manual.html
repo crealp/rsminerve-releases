@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="generator" content="quarto-0.9.233">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="description" content="This document contains the User and Technical Manuals of the RS MINERVE software. These manuals are constantly updated. This version corresponds to the Software version 2.9.1.">
+  <title>RS MINERVE Manuals - User Manual</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+    }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+
+  <script src="site_libs/quarto-nav/quarto-nav.js"></script>
+  <script src="site_libs/quarto-nav/headroom.min.js"></script>
+  <script src="site_libs/clipboard/clipboard.min.js"></script>
+  <meta name="quarto:offset" content="./">
+  <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+  <script src="site_libs/quarto-search/fuse.min.js"></script>
+  <script src="site_libs/quarto-search/quarto-search.js"></script>
+  <link href="./user_rainfall_runoff_modelling.html" rel="next">
+  <link href="./index.html" rel="prev">
+  <script src="site_libs/quarto-html/quarto.js"></script>
+  <script src="site_libs/quarto-html/popper.min.js"></script>
+  <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+  <script src="site_libs/quarto-html/anchor.min.js"></script>
+  <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+  <link id="quarto-text-highlighting-styles" href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
+  <script src="site_libs/bootstrap/bootstrap.min.js"></script>
+  <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+  <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+  <script id="quarto-search-options" type="application/json">{
+    "location": "sidebar",
+    "copy-button": false,
+    "collapse-after": 3,
+    "panel-placement": "start",
+    "type": "textbox",
+    "limit": 20,
+    "language": {
+      "search-no-results-text": "No results",
+      "search-matching-documents-text": "matching documents",
+      "search-copy-link-title": "Copy link to search",
+      "search-hide-matches-text": "Hide additional matches",
+      "search-more-match-text": "more match in this document",
+      "search-more-matches-text": "more matches in this document",
+      "search-clear-button-title": "Clear",
+      "search-detached-cancel-button-title": "Cancel",
+      "search-submit-button-title": "Submit"
+    }
+  }</script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body class="floating">
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">User Manual</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">RS MINERVE Manuals</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">RS MINERVE software</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="./user_manual.html" class="sidebar-item-text sidebar-link active">User Manual</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./user_rainfall_runoff_modelling.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Rainfall-runoff modelling</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./user_hydraulic_infrastructures.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Hydraulic infrastructures modelling</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./user_database.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Database</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./user_gis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">GIS</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./user_hydro_hydrau_simulation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Hydrological-hydraulic simulation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./user_expert_module.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Expert module</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./user_plugins.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Plugins</span></a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="./tech_manual.html" class="sidebar-item-text sidebar-link">Technical Manual</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_hydrological_models.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Hydrological and hydraulics models description</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_performance_indicators.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Performance indicators</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_calibration_algorithms.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Expert module - Calibration algorithms</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_stochastic_equations.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Expert module - Stochastic equations</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_scripts.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Visual Basic Scripts</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_file_formats.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">File formats</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_database_formats.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Database formats</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_gis_formats.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">GIS formats</span></a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examples.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Examples of application</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./acknowledgments.html" class="sidebar-item-text sidebar-link">Acknowledgments</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Appendices</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix_list_param_ic.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Appendix: List of parameters and initial conditions</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix_list_notifications.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">List of notifications from pre-simulation and post-simulation reports</span></a>
+  </div>
+</li>
+    </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+<h2 id="toc-title">Table of contents</h2>
+<ul>
+<li><a href="#document-structure" id="toc-document-structure" class="nav-link active" data-scroll-target="#document-structure">Document structure</a></li>
+<li><a href="#installation-procedure" id="toc-installation-procedure" class="nav-link" data-scroll-target="#installation-procedure">Installation procedure</a></li>
+<li><a href="#updates" id="toc-updates" class="nav-link" data-scroll-target="#updates">Updates</a></li>
+<li><a href="#uninstallation-procedure" id="toc-uninstallation-procedure" class="nav-link" data-scroll-target="#uninstallation-procedure">Uninstallation procedure</a></li>
+<li><a href="#the-model-interface" id="toc-the-model-interface" class="nav-link" data-scroll-target="#the-model-interface">The Model interface</a></li>
+<li><a href="#the-search-tool" id="toc-the-search-tool" class="nav-link" data-scroll-target="#the-search-tool">The Search tool</a></li>
+<li><a href="#sec-user_intro_settings" id="toc-sec-user_intro_settings" class="nav-link" data-scroll-target="#sec-user_intro_settings">Settings</a></li>
+<li><a href="#list-of-keyboard-shortcuts-and-mouse-actions" id="toc-list-of-keyboard-shortcuts-and-mouse-actions" class="nav-link" data-scroll-target="#list-of-keyboard-shortcuts-and-mouse-actions">List of keyboard shortcuts and mouse actions</a></li>
+<li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+</ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+<header id="title-block-header" class="quarto-title-block default">
+
+<div class="quarto-title"><h1 class="title display-7"><span id="sec-user_manual" class="quarto-section-identifier d-none d-lg-block">User Manual</span></h1><div class="quarto-description"><p>This document contains the User and Technical Manuals of the RS MINERVE software. 
+These manuals are constantly updated. This version corresponds to the Software version 2.9.1.
+</p></div></div></header>
+
+<section id="document-structure" class="level2">
+<h2 class="anchored" data-anchor-id="document-structure">Document structure</h2>
+<p>The manual is composed of 7 main chapters:</p>
+<ol type="1">
+<li><p>Rainfall-runoff modelling (<a href="user_rainfall_runoff_modelling.html">Section&nbsp;<span>1</span></a>)</p></li>
+<li><p>Hydraulic infrastructures modelling (<a href="user_hydraulic_infrastructures.html">Section&nbsp;<span>2</span></a>)</p></li>
+<li><p>Database (<a href="user_database.html">Section&nbsp;<span>3</span></a>)</p></li>
+<li><p>GIS (<a href="user_gis.html">Section&nbsp;<span>4</span></a>)</p></li>
+<li><p>Hydrological-hydraulic simulation (<a href="user_hydro_hydrau_simulation.html">Section&nbsp;<span>5</span></a>)</p></li>
+<li><p>Expert module (<a href="user_expert_module.html">Section&nbsp;<span>6</span></a>)</p></li>
+<li><p>Plugins (<a href="user_plugins.html">Section&nbsp;<span>7</span></a>)</p></li>
+</ol>
+<p><span style="color:blue">In the different chapters, actions to be done by the user are presented in blue</span>.</p>
+<p>In addition to this User’s manual, the reader can also find all model equations and file descriptions in the technical manual <span class="citation" data-cites="garcia_hernandez_rs_2020">(<a href="#ref-garcia_hernandez_rs_2020" role="doc-biblioref">García Hernández et al. 2020</a>)</span>.</p>
+</section>
+<section id="installation-procedure" class="level2">
+<h2 class="anchored" data-anchor-id="installation-procedure">Installation procedure</h2>
+<p>Proceed as follows to install RS MINERVE on your computer (requires Windows 7 or later versions of Windows):</p>
+<ul>
+<li><p>Visit the CREALP website: <a href="https://crealp.ch/rs-minerve/" class="uri">https://crealp.ch/rs-minerve/</a></p></li>
+<li><p>Select the version within the “Téléchargement et support” section</p></li>
+<li><p>Save the file, double-click on RSMinerve-install.exe (in the Internet browser <em>Downloads</em> frame) and follow the installation procedure.</p></li>
+</ul>
+<div id="fig-rsm_interface" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-rsm_interface.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 1: Structure of the RS MINERVE main interface</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="updates" class="level2">
+<h2 class="anchored" data-anchor-id="updates">Updates</h2>
+<p>When RS MINERVE is opened and if an Internet connection is available, RS MINERVE connects to the server to check if a new version is available. If this is the case, the user is invited to install the new version by accepting the update.</p>
+<div id="fig-installation_updates" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-installation_updates.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2: Installation of updates</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="uninstallation-procedure" class="level2">
+<h2 class="anchored" data-anchor-id="uninstallation-procedure">Uninstallation procedure</h2>
+<p>To uninstall RS MINERVE, use the conventional uninstallation procedure in Windows.</p>
+</section>
+<section id="the-model-interface" class="level2">
+<h2 class="anchored" data-anchor-id="the-model-interface">The Model interface</h2>
+<p>The structure of the RS MINERVE main window and the different frames composing it are presented in <a href="#fig-rsm_interface">Figure&nbsp;<span>1</span></a>.</p>
+<p>The <em>Interface</em> frame (<a href="#fig-rsm_interface">Figure&nbsp;<span>1</span></a>) in the middle of the RS MINERVE interface allows the visualization of the model network.</p>
+<p>Interaction within the <em>Interface</em> is possible with the mouse.</p>
+<ul>
+<li><p>Use the scroll wheel to zoom in / zoom out</p></li>
+<li><p>Press the scroll wheel and move the mouse to move the interface window</p></li>
+<li><p>Left click on an object (<a href="#fig-selected_object">Figure&nbsp;<span>3</span></a> (b)) <span class="math inline">\(\rightarrow\)</span> Select the object and move it in the interface</p></li>
+<li><p>Double-click on an object (the object is highlighted, <a href="#fig-selected_object">Figure&nbsp;<span>3</span></a> (c)) <span class="math inline">\(\rightarrow\)</span> Display the <em>Object description, Series</em> and other corresponding frames (in the right part).</p></li>
+</ul>
+<div id="fig-selected_object" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-selected_object.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3: Example of an unselected object (a), after a left click (b) and after a double-click (c)</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="the-search-tool" class="level2">
+<h2 class="anchored" data-anchor-id="the-search-tool">The Search tool</h2>
+<p>To facilitate navigation in the main window, the <em>Search</em> tool (right-frame) allows the user to enter the name of an object. All corresponding names are listed and a click on the correct one opens the parent model and highlights the corresponding object.</p>
+<div id="fig-search_tool" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-search_tool.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 4: The Search tool</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="sec-user_intro_settings" class="level2">
+<h2 class="anchored" data-anchor-id="sec-user_intro_settings">Settings</h2>
+<p>The user can access the settings in the RS MINERVE frame (<a href="#fig-settings_tab">Figure&nbsp;<span>5</span></a>) and can change the following values:</p>
+<ul>
+<li><p>The units of inputs, parameters and state variables of RS MINERVE (Precipitation, Temperature, Length, Height,…)</p></li>
+<li><p>The interpolation method for meteorological values:</p>
+<ul>
+<li><p>Thiessen polygons: for using the nearest meteorological station</p></li>
+<li><p>Shepard method: for values depending on inverse distance weighting</p></li>
+</ul></li>
+<li><p>The Potential Evapotranspiration (<span class="math inline">\(ETP\)</span>) method used in the hydrological model. The <span class="math inline">\(ETP\)</span> can be directly taken from Database, or computed with one of the following methods:</p>
+<ul>
+<li><p>Turc</p></li>
+<li><p>McGuinness</p></li>
+<li><p>Oudin</p></li>
+<li><p>Uniform ETP</p></li>
+</ul></li>
+</ul>
+<p>Any change is directly applied to the current model. In addition, the user can also save the current settings as default settings for new models.</p>
+<div id="fig-settings_tab" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-settings_tab.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 5: RS MINERVE Settings tab</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="list-of-keyboard-shortcuts-and-mouse-actions" class="level2">
+<h2 class="anchored" data-anchor-id="list-of-keyboard-shortcuts-and-mouse-actions">List of keyboard shortcuts and mouse actions</h2>
+<p>The user can use a list of keyboard shortcuts (<a href="#tbl-list_keyboard_shortcuts">Table&nbsp;<span>1</span></a>) as well as a list of mouse actions over the graphics (<a href="#tbl-list_mouse_actions_graphics">Table&nbsp;<span>2</span></a>).</p>
+<div id="tbl-list_keyboard_shortcuts" class="anchored">
+<table class="table">
+<caption>Table 1: List of keyboard shortcuts</caption>
+<colgroup>
+<col style="width: 22%">
+<col style="width: 77%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Ctrl + N</strong></td>
+<td>New Project</td>
+</tr>
+<tr class="even">
+<td><strong>Ctrl + O</strong></td>
+<td>Open Project</td>
+</tr>
+<tr class="odd">
+<td><strong>Ctrl + S</strong></td>
+<td>Save Project</td>
+</tr>
+<tr class="even">
+<td><strong>Ctrl + Shift + S</strong></td>
+<td>Save as Project</td>
+</tr>
+<tr class="odd">
+<td><strong>Ctrl + W</strong></td>
+<td>Close Project</td>
+</tr>
+<tr class="even">
+<td><strong>F5</strong></td>
+<td>Start Simulation</td>
+</tr>
+<tr class="odd">
+<td><strong>Shift + F5</strong></td>
+<td>Stop Simulation</td>
+</tr>
+<tr class="even">
+<td><strong>Esc</strong></td>
+<td>Back (go to hierarchical higher level), Cancel object selection (when object type selected in Objects frame)</td>
+</tr>
+<tr class="odd">
+<td><strong>Space</strong></td>
+<td>Switch between <em>Select</em> and <em>Connections</em></td>
+</tr>
+<tr class="even">
+<td><strong>Ctrl + Space</strong></td>
+<td>Switch between <em>Select</em> and <em>Transitions</em> (in a Regulation object only)</td>
+</tr>
+<tr class="odd">
+<td><strong>Ctrl</strong></td>
+<td>To select more than one object or series</td>
+</tr>
+</tbody>
+</table>
+</div>
+<table class="table">
+<colgroup>
+<col style="width: 47%">
+<col style="width: 53%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong><em>OVER THE AXES</em></strong></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>Left click</strong></td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td><strong>Right click and move the mouse</strong></td>
+<td>Displace the current view</td>
+</tr>
+<tr class="even">
+<td><strong>Move the scroll wheel</strong></td>
+<td>Zoom in / zoom out</td>
+</tr>
+<tr class="odd">
+<td><strong>Click on scroll wheel and movethe mouse</strong></td>
+<td>Select the zoom zone</td>
+</tr>
+<tr class="even">
+<td><strong>Double click on scroll wheel</strong></td>
+<td>Back to default zoom</td>
+</tr>
+</tbody>
+</table>
+<div id="tbl-list_mouse_actions_graphics" class="anchored">
+<table class="table">
+<caption>Table 2: List of mouse actions in graphics</caption>
+<colgroup>
+<col style="width: 47%">
+<col style="width: 53%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong><em>OVER THE TIME SERIES PLOT</em></strong></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>Left click</strong></td>
+<td>Date and value of the nearest series point</td>
+</tr>
+<tr class="odd">
+<td><strong>Right click and move the mouse</strong></td>
+<td>Displace the current view</td>
+</tr>
+<tr class="even">
+<td><strong>Move the scroll wheel</strong></td>
+<td>Zoom in / zoom out</td>
+</tr>
+<tr class="odd">
+<td><strong>Click on scroll wheel and move the mouse</strong></td>
+<td>Select the zoom zone</td>
+</tr>
+<tr class="even">
+<td><strong>Double click on scroll wheel</strong></td>
+<td>Back to default zoom</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="references" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="references">References</h2>
+
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-garcia_hernandez_rs_2020" class="csl-entry" role="doc-biblioentry">
+García Hernández, Javier, Alain Foehn, Javier Fluixá Sanmartín, Bastien Roquier, Tristan Brauchli, Javier Paredes Arquiola, and Giovanni De Cesare. 2020. <em><span>RS</span> <span>MINERVE</span> - <span>Technical</span> Manual</em>. Switzerland: RS MINERVE Group.
+</div>
+</div>
+</section>
+</main> <!-- /main -->
+<script type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    setTimeout(function() {
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">RS MINERVE software</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./user_rainfall_runoff_modelling.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Rainfall-runoff modelling</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+</body></html>

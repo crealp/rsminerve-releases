@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="generator" content="quarto-0.9.233">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="description" content="This document contains the User and Technical Manuals of the RS MINERVE software. These manuals are constantly updated. This version corresponds to the Software version 2.9.1.">
+  <title>RS MINERVE Manuals - 14&nbsp; Database formats</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+
+  <script src="site_libs/quarto-nav/quarto-nav.js"></script>
+  <script src="site_libs/quarto-nav/headroom.min.js"></script>
+  <script src="site_libs/clipboard/clipboard.min.js"></script>
+  <meta name="quarto:offset" content="./">
+  <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+  <script src="site_libs/quarto-search/fuse.min.js"></script>
+  <script src="site_libs/quarto-search/quarto-search.js"></script>
+  <link href="./tech_gis_formats.html" rel="next">
+  <link href="./tech_file_formats.html" rel="prev">
+  <script src="site_libs/quarto-html/quarto.js"></script>
+  <script src="site_libs/quarto-html/popper.min.js"></script>
+  <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+  <script src="site_libs/quarto-html/anchor.min.js"></script>
+  <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+  <link id="quarto-text-highlighting-styles" href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
+  <script src="site_libs/bootstrap/bootstrap.min.js"></script>
+  <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+  <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+  <script id="quarto-search-options" type="application/json">{
+    "location": "sidebar",
+    "copy-button": false,
+    "collapse-after": 3,
+    "panel-placement": "start",
+    "type": "textbox",
+    "limit": 20,
+    "language": {
+      "search-no-results-text": "No results",
+      "search-matching-documents-text": "matching documents",
+      "search-copy-link-title": "Copy link to search",
+      "search-hide-matches-text": "Hide additional matches",
+      "search-more-match-text": "more match in this document",
+      "search-more-matches-text": "more matches in this document",
+      "search-clear-button-title": "Clear",
+      "search-detached-cancel-button-title": "Cancel",
+      "search-submit-button-title": "Submit"
+    }
+  }</script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body class="floating">
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Database formats</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">RS MINERVE Manuals</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">RS MINERVE software</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="./user_manual.html" class="sidebar-item-text sidebar-link">User Manual</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./user_rainfall_runoff_modelling.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Rainfall-runoff modelling</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./user_hydraulic_infrastructures.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Hydraulic infrastructures modelling</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./user_database.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Database</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./user_gis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">GIS</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./user_hydro_hydrau_simulation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Hydrological-hydraulic simulation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./user_expert_module.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Expert module</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./user_plugins.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Plugins</span></a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="./tech_manual.html" class="sidebar-item-text sidebar-link">Technical Manual</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_hydrological_models.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Hydrological and hydraulics models description</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_performance_indicators.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Performance indicators</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_calibration_algorithms.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Expert module - Calibration algorithms</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_stochastic_equations.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Expert module - Stochastic equations</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_scripts.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Visual Basic Scripts</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_file_formats.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">File formats</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_database_formats.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Database formats</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_gis_formats.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">GIS formats</span></a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examples.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Examples of application</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./acknowledgments.html" class="sidebar-item-text sidebar-link">Acknowledgments</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Appendices</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix_list_param_ic.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Appendix: List of parameters and initial conditions</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix_list_notifications.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">List of notifications from pre-simulation and post-simulation reports</span></a>
+  </div>
+</li>
+    </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+<h2 id="toc-title">Table of contents</h2>
+<ul>
+<li><a href="#the-database-viewer" id="toc-the-database-viewer" class="nav-link active" data-scroll-target="#the-database-viewer"> <span class="header-section-number">14.1</span> The Database Viewer</a></li>
+<li><a href="#sec-tech_database_formats_dataset_csv" id="toc-sec-tech_database_formats_dataset_csv" class="nav-link" data-scroll-target="#sec-tech_database_formats_dataset_csv"> <span class="header-section-number">14.2</span> Database, dataset and CSV formats</a>
+<ul class="collapse">
+<li><a href="#database-files" id="toc-database-files" class="nav-link" data-scroll-target="#database-files">Database files</a></li>
+<li><a href="#dataset-files" id="toc-dataset-files" class="nav-link" data-scroll-target="#dataset-files">Dataset files</a></li>
+<li><a href="#csv-files" id="toc-csv-files" class="nav-link" data-scroll-target="#csv-files">CSV files</a></li>
+</ul></li>
+<li><a href="#automatic-creation-of-databases-or-datasets" id="toc-automatic-creation-of-databases-or-datasets" class="nav-link" data-scroll-target="#automatic-creation-of-databases-or-datasets"> <span class="header-section-number">14.3</span> Automatic creation of databases or datasets</a></li>
+</ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+<header id="title-block-header" class="quarto-title-block default">
+
+<div class="quarto-title"><h1 class="title display-7"><span id="sec-tech_database_formats" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Database formats</span></span></h1><div class="quarto-description"><p>This document contains the User and Technical Manuals of the RS MINERVE software. 
+These manuals are constantly updated. This version corresponds to the Software version 2.9.1.
+</p></div></div></header>
+
+<p>The different input data as well as exported results are managed within a database. The <em>Database&nbsp;Viewer</em>, accessible from the <em>RS MINERVE</em> window, is used to create or edit the database linked to the active model.</p>
+<section id="the-database-viewer" class="level2" data-number="14.1">
+<h2 data-number="14.1" class="anchored" data-anchor-id="the-database-viewer"><span class="header-section-number">14.1</span> The Database Viewer</h2>
+<p>The <em>Database Viewer</em> window appears when a database is created ( <img src="figures/fig-icon_plus.png" style="width:0.17in;height:0.17in"> <em>Add</em>) or opened for edition (<img src="figures/fig-icon_database_open_2.png" style="width:0.15in;height:0.15in"> <em>Open</em>).</p>
+<p>The database structure, presented in <a href="#tbl-structure_database_interface">Table&nbsp;<span>14.1</span></a>, is organized in five hierarchical levels:</p>
+<ul>
+<li><p><strong>Database</strong></p>
+<ul>
+<li><p>Description of the database</p></li>
+<li><p>Contains one or more groups</p></li>
+</ul></li>
+<li><p><strong>Group</strong></p>
+<ul>
+<li>Separation based on category of data (Measures, Forecasts, Simulations,…)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></li>
+</ul></li>
+<li><p>Contains one or more datasets</p></li>
+<li><p><strong>Dataset</strong></p>
+<ul>
+<li><p>Set of data of common type (Meteo data, Flow data,…)</p></li>
+<li><p>Contains one or more stations</p></li>
+</ul></li>
+<li><p><strong>Station</strong></p>
+<ul>
+<li><p>Information about the station (name and coordinates)</p></li>
+<li><p>Contains one or more sensors</p></li>
+</ul></li>
+<li><p><strong>Sensor</strong></p>
+<ul>
+<li><p>Description of the sensor (name, units and data)</p></li>
+<li><p>Contains one data series</p></li>
+</ul></li>
+</ul>
+<p>The user can create a complete database or different datasets to add to an existing database.</p>
+<div id="tbl-structure_database_interface" class="anchored">
+<table class="table">
+<caption>Table 14.1: Structure of the database interface</caption>
+<colgroup>
+<col style="width: 17%">
+<col style="width: 25%">
+<col style="width: 30%">
+<col style="width: 26%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Node</th>
+<th>Name</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Database</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><strong><em>Description</em></strong></td>
+<td><em>Name of the database</em></td>
+<td><em>Database_tutorial</em></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Date creation</td>
+<td>Date of creation of database</td>
+<td>14.12.2012 13:32</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Date modification</td>
+<td>Date of last modification</td>
+<td>04.01.2013 14:30</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><strong><em>Time zone</em></strong></td>
+<td><em>Time scale of the data</em></td>
+<td><em>UTC+01:00</em></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Filename</td>
+<td>File name and path</td>
+<td>(Full path of file)&nbsp;</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>XML file</td>
+<td>XML file size</td>
+<td>21 Ko</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Data file</td>
+<td>Data file size</td>
+<td>161 Ko</td>
+</tr>
+<tr class="odd">
+<td><strong>Group</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><strong><em>Description</em></strong></td>
+<td><em>Name of the group</em></td>
+<td><em>Measure</em></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><strong><em>Category</em></strong></td>
+<td><em>Type of data (Inputs,</em> <em>Outputs or None)</em></td>
+<td><em>Inputs</em></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Date capture</td>
+<td>Date of last dataset capture date in the group</td>
+<td>18/12/2012 10:54&nbsp;</td>
+</tr>
+<tr class="odd">
+<td><strong>Dataset</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><strong><em>Description</em></strong></td>
+<td><em>Name of the dataset</em></td>
+<td><em>Meteo_data</em></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Dataset creation</td>
+<td>Dataset creation date</td>
+<td>14.12.2012 00:00</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Dataset reception</td>
+<td>Date of receipt of data</td>
+<td>14.12.2012 03:00</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Data modification</td>
+<td>Date of last modification</td>
+<td>14.12.2012 03:00</td>
+</tr>
+<tr class="even">
+<td></td>
+<td><strong><em>Data capture</em></strong></td>
+<td><em>First date of the data (editable)</em></td>
+<td><em>14.12.2012 00:00</em></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Time zone</td>
+<td>Time scale of the data</td>
+<td>UTC+01:00</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Filename</td>
+<td>File name and path</td>
+<td>(Full path of file)&nbsp;</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>XML file</td>
+<td>XML file size</td>
+<td>21 Ko</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Data file</td>
+<td>Data file size</td>
+<td>161 Ko</td>
+</tr>
+<tr class="odd">
+<td><strong>Station</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><strong><em>Name</em></strong></td>
+<td><em>Name of the station</em></td>
+<td><em>Station_meteo_1</em></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><strong><em>X</em></strong></td>
+<td><em>Coordinate X in meter</em></td>
+<td><em>650000</em></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><strong><em>Y</em></strong></td>
+<td><em>Coordinate Y in meter</em></td>
+<td><em>130000</em></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><strong><em>Z</em></strong></td>
+<td><em>Altitude in meter above sea level</em></td>
+<td><em>1957</em></td>
+</tr>
+<tr class="even">
+<td><strong>Sensor</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><strong><em>Description</em></strong></td>
+<td><em>Name of the variable</em></td>
+<td><em>Precipitation</em></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><strong><em>Category</em></strong></td>
+<td><em>Variable type</em></td>
+<td><em>Precipitation</em></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><strong><em>Unit</em></strong></td>
+<td><em>Variable unit</em></td>
+<td><em>MillimetersPerHour</em></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><strong><em>Interpolation</em></strong> <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></td>
+<td><em>Data assimilation method</em></td>
+<td><em>Linear</em></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Initial date</td>
+<td>The first date of the time series</td>
+<td>01/01/2011 00:00:00</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Final date</td>
+<td>The last date of the time series</td>
+<td>31/12/2013 00:00:00</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Min value</td>
+<td>Minimum value of the series</td>
+<td>0 m<sup>3</sup>/s</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Average value</td>
+<td>Average value of the series</td>
+<td>1.1884 m<sup>3</sup>/s</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Max value</td>
+<td>Maximum value of the series</td>
+<td>3.2485 m<sup>3</sup>/s</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="sec-tech_database_formats_dataset_csv" class="level2" data-number="14.2">
+<h2 data-number="14.2" class="anchored" data-anchor-id="sec-tech_database_formats_dataset_csv"><span class="header-section-number">14.2</span> Database, dataset and CSV formats</h2>
+<p>Databases and datasets also correspond to different saving formats:</p>
+<ul>
+<li><p>Database files (<strong>[.dbt and .dbx] in text format or [.dbb and .dbx] in binary format</strong>) can be created, opened, imported, exported or saved from the complete database (database level).</p></li>
+<li><p>Dataset files (<strong>[.dst and .dsx] in text format or [.dsb and .dsx] in binary format</strong>) can also be created, opened, imported, exported or saved from the Database (dataset level).</p></li>
+<li><p>CSV files (<strong>[.csv] in text format</strong>) can also be created, opened, imported or exported from the Database (dataset level).</p></li>
+</ul>
+<section id="database-files" class="level3">
+<h3 class="anchored" data-anchor-id="database-files">Database files</h3>
+<p>The database file includes two different files:</p>
+<ul>
+<li><p>A XML file (*.dbx) describing the structure of the database (groups, datasets, stations and sensors)</p></li>
+<li><p>A file containing the data series. This file can be in text format (*.dbt) or binary format (*.dbb). Binary format allows to reduce the file size.</p></li>
+</ul>
+<p>Note that in the text file (*.dbt), if the database is not empty and contains one or more sensors (then at least a dataset with at least a station)<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>, each data series should be composed of:</p>
+<ul>
+<li><p>A header containing four fields separated by a backslash character: Group\Dataset\Station\Sensor. Each field name must be identical to the name found in the corresponding &lt;Name&gt; node in the XML file (*.dbx) (<a href="#fig-format_2_database_files">Figure&nbsp;<span>14.1</span></a>).</p></li>
+<li><p>Two columns (date and data) separated by a tabulation character.</p></li>
+</ul>
+<div id="fig-format_2_database_files" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-format_2_database_files.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 14.1: Format of the two database files (in text format for the data file)</figcaption><p></p>
+</figure>
+</div>
+<p>An example of the XML file and of the text file is showed respectively in <a href="#fig-example_database_xml_file">Figure&nbsp;<span>14.2</span></a> and <a href="#fig-example_database_text_format">Figure&nbsp;<span>14.3</span></a>.</p>
+<div id="fig-example_database_xml_file" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-example_database_xml_file.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 14.2: Example of the database XML file</figcaption><p></p>
+</figure>
+</div>
+<div id="fig-example_database_text_format" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-example_database_text_format.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 14.3: Example of the database data file in text format</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="dataset-files" class="level3">
+<h3 class="anchored" data-anchor-id="dataset-files">Dataset files</h3>
+<p>The dataset file includes also two different files (<a href="#fig-example_dataset_xml_file">Figure&nbsp;<span>14.5</span></a> and <a href="#fig-example_dataset_text_format">Figure&nbsp;<span>14.6</span></a>):</p>
+<ul>
+<li><p>A XML file (*.dsx) describing the structure of the dataset (stations and sensors)</p></li>
+<li><p>A file containing the data series. This file can be in text (*.dst) or in binary (*.dsb) format. This last format allows to reduce the file size.</p></li>
+</ul>
+<p>Note that in the text file (*.dst), if the dataset is not empty and contains one or more sensors (then at least a dataset with at least a station)<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>, each data series should be composed of:</p>
+<ul>
+<li><p>A header containing two fields separated by a backslash character: Station\Sensor. Each field name must be identical to the name found in the corresponding &lt;Name&gt; node in the XML file (*.dsx) (<a href="#fig-example_dataset_xml_file">Figure&nbsp;<span>14.5</span></a>).</p></li>
+<li><p>Then two columns (date and data) separated by a tabulation character.</p></li>
+</ul>
+<div id="fig-format_2_dataset_files" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-format_2_dataset_files.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 14.4: Format of the two dataset files (in text format for the data file)</figcaption><p></p>
+</figure>
+</div>
+<p>An example of the XML and text files is showed respectively in <a href="#fig-example_dataset_xml_file">Figure&nbsp;<span>14.5</span></a> and <a href="#fig-example_dataset_text_format">Figure&nbsp;<span>14.6</span></a>.</p>
+<div id="fig-example_dataset_xml_file" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-example_dataset_xml_file.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 14.5: Example of the dataset XML file</figcaption><p></p>
+</figure>
+</div>
+<div id="fig-example_dataset_text_format" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-example_dataset_text_format.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 14.6: Example of the dataset data file in text format</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="csv-files" class="level3">
+<h3 class="anchored" data-anchor-id="csv-files">CSV files</h3>
+<p>CSV files can be used to import and export Dataset files. It is possible to open a CSV file and RS MINERVE will create a Database required to contain the Dataset. The structure of the CSV files is showed in <a href="#fig-structure_csv_file_database">Figure&nbsp;<span>14.7</span></a>.</p>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>RS MINERVE will automatically remove ‘NA’, ‘NaN’, ‘N/A’ or ‘NULL’ values contained in the time series before creating the dataset.</p>
+</div>
+</div>
+<div id="fig-structure_csv_file_database" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-structure_csv_file_database.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 14.7: Structure of CSV file in RS MINERVE</figcaption><p></p>
+</figure>
+</div>
+<p>And <a href="#fig-example_csv_file_database">Figure&nbsp;<span>14.8</span></a> shows an example of CSV file.</p>
+<div id="fig-example_csv_file_database" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-example_csv_file_database.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 14.8: Example of CSV file in text format</figcaption><p></p>
+</figure>
+</div>
+</section>
+</section>
+<section id="automatic-creation-of-databases-or-datasets" class="level2" data-number="14.3">
+<h2 data-number="14.3" class="anchored" data-anchor-id="automatic-creation-of-databases-or-datasets"><span class="header-section-number">14.3</span> Automatic creation of databases or datasets</h2>
+<p>An automatic creation of a database or a dataset is possible. Concerning the text file (respectively *.dbt, *.dst or *.csv), it can be easily created based on information provided in <a href="#sec-tech_database_formats_dataset_csv">Section&nbsp;<span>14.2</span></a>. Regarding the .xml file (*.dbx or *.dsx) or plain file (*.csv), additional information for the automatic creation is presented hereafter.</p>
+<p><span class="quarto-unresolved-ref">?tbl-database_nodes_xml_file</span> and <span class="quarto-unresolved-ref">?tbl-dataset_nodes_xml_file</span> describe all the possible nodes respectively represented in a database (*.dbx) and a dataset XML file (*.dsx). The presented tables takes into account an example with a dataset “Measure” with a station “Aigle” and a sensor of observed precipitation “P”. The information visible in Database is also presented in last three columns.</p>
+<p>To create an XML file, all the possible nodes are very useful but not all required, since some of them are also necessary for operational hydro-meteorological systems.</p>
+<p>“Key” node generally allows distinguishing different databases (or datasets) with different name and structure. “ID” node is only useful for operational system, since it can be used when datasets with same “Key” (as well as same filename and structure) are overwritten at each new forecast. Then, “ID” node allows to Database knowing if the dataset has been updated or not.</p>
+<div id="tbl-database_nodes_xml_file" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/tbl-database_nodes_xml_file.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Description of all the possible nodes in a database XML file</figcaption><p></p>
+</figure>
+</div>
+<div id="tbl-dataset_nodes_xml_file" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/tbl-dataset_nodes_xml_file.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Description of all the possible nodes in a dataset XML file</figcaption><p></p>
+</figure>
+</div>
+
+
+
+</section>
+<section class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1" role="doc-endnote"><p>Definition and use of Groups and Datasets can also be done in a different way by the user.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2" role="doc-endnote"><p>Data can be interpolated in three different ways: <em>linear</em>, <em>constant before</em> and <em>constant after</em>. With <em>constant before</em>, the value for a given time is used as a constant for the preceding time interval, whereas the <em>constant after</em> method applies the value for the following time interval.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3" role="doc-endnote"><p>If the database is not containing sensor, the data file (*.dbt or *.dbb) will be empty.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4" role="doc-endnote"><p>If the dataset is not containing sensor, the data file (<em>.dst or </em>.dsb) will be empty.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+</main> <!-- /main -->
+<script type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    setTimeout(function() {
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./tech_file_formats.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">File formats</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./tech_gis_formats.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">GIS formats</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+</body></html>
