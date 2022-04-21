@@ -3,7 +3,6 @@
   <meta charset="utf-8">
   <meta name="generator" content="quarto-0.9.233">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <meta name="description" content="This document contains the User and Technical Manuals of the RS MINERVE software. These manuals are constantly updated. This version corresponds to the Software version 2.9.1.">
   <title>RS MINERVE Manuals - User Manual</title>
   <style>
     code{white-space: pre-wrap;}
@@ -78,7 +77,7 @@
 <body class="floating">
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <nav class="quarto-secondary-nav color-navbar" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
       <h1 class="quarto-secondary-nav-title">User Manual</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
@@ -88,7 +87,9 @@
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+
+<div class="quarto-title-banner color-navbar page-columns page-full"><div class="quarto-title column-body"><h1 class="title display-7"><span id="sec-user_manual" class="quarto-section-identifier d-none d-lg-block">User Manual</span></h1></div></div></header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
@@ -105,7 +106,7 @@
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">RS MINERVE software</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Introduction</a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -173,12 +174,12 @@
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tech_calibration_algorithms.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Expert module - Calibration algorithms</span></a>
+  <a href="./tech_calibration_algorithms.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Calibration algorithms</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tech_stochastic_equations.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Expert module - Stochastic equations</span></a>
+  <a href="./tech_stochastic_equations.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Stochastic equations</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -203,11 +204,36 @@
 </li>
     </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="./examples.html" class="sidebar-item-text sidebar-link">Examples of application</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./examples.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Examples of application</span></a>
+  <a href="./examples_ex1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Example 1 – Simple basin with only runoff</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examples_ex2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Example 2 – Combined full basin with meteorological stations</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examples_ex3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Example 3 – Equipped basin with a hydropower scheme</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examples_ex4.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Example 4 – Automatic calibration of a model</span></a>
+  </div>
+</li>
+    </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./acknowledgments.html" class="sidebar-item-text sidebar-link">Acknowledgments</a>
@@ -254,24 +280,21 @@
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-<header id="title-block-header" class="quarto-title-block default">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
-<div class="quarto-title"><h1 class="title display-7"><span id="sec-user_manual" class="quarto-section-identifier d-none d-lg-block">User Manual</span></h1><div class="quarto-description"><p>This document contains the User and Technical Manuals of the RS MINERVE software. 
-These manuals are constantly updated. This version corresponds to the Software version 2.9.1.
-</p></div></div></header>
 
+<p data-sidebar-align="true">This chapter contains the User Manual of the RS MINERVE software.</p>
 <section id="document-structure" class="level2">
 <h2 class="anchored" data-anchor-id="document-structure">Document structure</h2>
 <p>The manual is composed of 7 main chapters:</p>
 <ol type="1">
-<li><p>Rainfall-runoff modelling (<a href="user_rainfall_runoff_modelling.html">Section&nbsp;<span>1</span></a>)</p></li>
-<li><p>Hydraulic infrastructures modelling (<a href="user_hydraulic_infrastructures.html">Section&nbsp;<span>2</span></a>)</p></li>
-<li><p>Database (<a href="user_database.html">Section&nbsp;<span>3</span></a>)</p></li>
-<li><p>GIS (<a href="user_gis.html">Section&nbsp;<span>4</span></a>)</p></li>
-<li><p>Hydrological-hydraulic simulation (<a href="user_hydro_hydrau_simulation.html">Section&nbsp;<span>5</span></a>)</p></li>
-<li><p>Expert module (<a href="user_expert_module.html">Section&nbsp;<span>6</span></a>)</p></li>
-<li><p>Plugins (<a href="user_plugins.html">Section&nbsp;<span>7</span></a>)</p></li>
+<li><p><a href="user_rainfall_runoff_modelling.html">Rainfall-runoff modelling</a></p></li>
+<li><p><a href="user_hydraulic_infrastructures.html">Hydraulic infrastructures modelling</a></p></li>
+<li><p><a href="user_database.html">Database</a></p></li>
+<li><p><a href="user_gis.html">GIS</a></p></li>
+<li><p><a href="user_hydro_hydrau_simulation.html">Hydrological-hydraulic simulation</a></p></li>
+<li><p><a href="user_expert_module.html">Expert module</a></p></li>
+<li><p><a href="user_plugins.html">Plugins</a></p></li>
 </ol>
 <p><span style="color:blue">In the different chapters, actions to be done by the user are presented in blue</span>.</p>
 <p>In addition to this User’s manual, the reader can also find all model equations and file descriptions in the technical manual <span class="citation" data-cites="garcia_hernandez_rs_2020">(<a href="#ref-garcia_hernandez_rs_2020" role="doc-biblioref">García Hernández et al. 2020</a>)</span>.</p>
@@ -319,7 +342,7 @@ These manuals are constantly updated. This version corresponds to the Software v
 <div id="fig-selected_object" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-selected_object.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3: Example of an unselected object (a), after a left click (b) and after a double-click (c)</figcaption><p></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3: Example of (a) an unselected object, (b) after a left click and (c) after a double-click</figcaption><p></p>
 </figure>
 </div>
 </section>
@@ -417,6 +440,7 @@ These manuals are constantly updated. This version corresponds to the Software v
 </tbody>
 </table>
 </div>
+<p>&nbsp;</p>
 <table class="table">
 <colgroup>
 <col style="width: 47%">
@@ -576,7 +600,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./index.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">RS MINERVE software</span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Introduction</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

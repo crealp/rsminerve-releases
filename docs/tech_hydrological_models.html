@@ -3,7 +3,6 @@
   <meta charset="utf-8">
   <meta name="generator" content="quarto-0.9.233">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <meta name="description" content="This document contains the User and Technical Manuals of the RS MINERVE software. These manuals are constantly updated. This version corresponds to the Software version 2.9.1.">
   <title>RS MINERVE Manuals - 8&nbsp; Hydrological and hydraulics models description</title>
   <style>
     code{white-space: pre-wrap;}
@@ -78,7 +77,7 @@
 <body class="floating">
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <nav class="quarto-secondary-nav color-navbar" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
       <h1 class="quarto-secondary-nav-title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Hydrological and hydraulics models description</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
@@ -88,7 +87,9 @@
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+
+<div class="quarto-title-banner color-navbar page-columns page-full"><div class="quarto-title column-body"><h1 class="title display-7"><span id="sec-tech_hydrological_models" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Hydrological and hydraulics models description</span></span></h1></div></div></header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
@@ -105,7 +106,7 @@
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">RS MINERVE software</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Introduction</a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -173,12 +174,12 @@
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tech_calibration_algorithms.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Expert module - Calibration algorithms</span></a>
+  <a href="./tech_calibration_algorithms.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Calibration algorithms</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tech_stochastic_equations.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Expert module - Stochastic equations</span></a>
+  <a href="./tech_stochastic_equations.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Stochastic equations</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -203,11 +204,36 @@
 </li>
     </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="./examples.html" class="sidebar-item-text sidebar-link">Examples of application</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./examples.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Examples of application</span></a>
+  <a href="./examples_ex1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Example 1 – Simple basin with only runoff</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examples_ex2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Example 2 – Combined full basin with meteorological stations</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examples_ex3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Example 3 – Equipped basin with a hydropower scheme</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examples_ex4.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Example 4 – Automatic calibration of a model</span></a>
+  </div>
+</li>
+    </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./acknowledgments.html" class="sidebar-item-text sidebar-link">Acknowledgments</a>
@@ -278,14 +304,10 @@
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-<header id="title-block-header" class="quarto-title-block default">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
-<div class="quarto-title"><h1 class="title display-7"><span id="sec-tech_hydrological_models" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Hydrological and hydraulics models description</span></span></h1><div class="quarto-description"><p>This document contains the User and Technical Manuals of the RS MINERVE software. 
-These manuals are constantly updated. This version corresponds to the Software version 2.9.1.
-</p></div></div></header>
 
-<p>This chapter presents the hydrological objects existing in RS MINERVE software.</p>
+<p data-sidebar-align="true">This chapter presents the hydrological objects existing in RS MINERVE software.</p>
 <section id="list-of-objects" class="level2" data-number="8.1">
 <h2 data-number="8.1" class="anchored" data-anchor-id="list-of-objects"><span class="header-section-number">8.1</span> List of objects</h2>
 <p>The parameters or required data (such as paired data) of all objects are presented hereafter. Not presented objects do not require data or require data from another object or from database.</p>
@@ -429,7 +451,7 @@ ETP_s=CoeffETP_s \cdot\big( 1 + GradETP_s \cdot(z_s-z_k) \big) \cdot ETP_k
 </section>
 <section id="shepard-interpolation" class="level3">
 <h3 class="anchored" data-anchor-id="shepard-interpolation">Shepard interpolation</h3>
-<p>The evaluation of a variable in a virtual station s from <span class="math inline">\(n\)</span> meteorological stations localized at i=1,2,…,n is obtained by weighting according to the inverse square distance <span class="math inline">\(d_{i,s}\)</span> between the meteorological station <span class="math inline">\(i\)</span> of the database and the virtual station <span class="math inline">\(s\)</span>.</p>
+<p>The evaluation of a variable in a virtual station <span class="math inline">\(s\)</span> from <span class="math inline">\(n\)</span> meteorological stations localized at <span class="math inline">\(i=1,2,...,n\)</span> is obtained by weighting according to the inverse square distance <span class="math inline">\(d_{i,s}\)</span> between the meteorological station <span class="math inline">\(i\)</span> of the database and the virtual station <span class="math inline">\(s\)</span>.</p>
 <p><span id="eq-A4"><span class="math display">\[
 d_{i,s}=\sqrt{(x_i-x_s)^2+(y_i-y_s)^2}
 \qquad(8.4)\]</span></span></p>
@@ -492,7 +514,7 @@ ETP =
     0  &amp; \quad \text{if } T \leq -5
   \end{cases}
 \qquad(8.11)\]</span></span></p>
-<p>with <span class="math inline">\(ETP\)</span>: potential evapotranspiration [m/d]; <span class="math inline">\(R_g\)</span>: global radiation [MJ/m<sup>2</sup>/day]; <span class="math inline">\(T_a\)</span>: air temperature [°C]; <span class="math inline">\(\rho\)</span>: water density, constant value of 1’000 [kg/m^3] ; <span class="math inline">\(\lambda\)</span>: latent heat of vaporization, constant value of 2.26 [MJ/kg].</p>
+<p>with <span class="math inline">\(ETP\)</span>: potential evapotranspiration [m/d]; <span class="math inline">\(R_g\)</span>: global radiation [MJ/m<sup>2</sup>/day]; <span class="math inline">\(T_a\)</span>: air temperature [°C]; <span class="math inline">\(\rho\)</span>: water density, constant value of 1’000 [kg/m^3^] ; <span class="math inline">\(\lambda\)</span>: latent heat of vaporization, constant value of 2.26 [MJ/kg].</p>
 <p><span class="math inline">\(R_g\)</span> value is a location dependent (latitude and longitude) monthly average of the global radiation.</p>
 <p>The global radiation <span class="math inline">\(R_g\)</span> is obtained in [kWh/m<sup>2</sup>/day] from the <em>Global horizontal radiation</em> dataset provided by the Surface meteorological and Solar Energy (SSE) web portal, sponsored by the NASA’s Applied Science Program (<a href="http://eosweb.larc.nasa.gov/sse" class="uri">http://eosweb.larc.nasa.gov/sse</a>). This data comes as a grid (latitude and longitude) and is composed of monthly averaged values.</p>
 <p><span class="math inline">\(R_g\)</span> data takes into account 22 year monthly average (July 1983 - June 2005). The latitude and the longitude values indicate the lower left corner of a 1x1 degree region. Negative values are south and west; positive values are north and east. Boundaries of the -90/-180 region are -90 to -89 (south) and -180 to -179 (west). The last region, 89/180, is bounded by 89 to 90 (north) and 179 to 180 (east). The mid-point of the region is +0.5 added to the latitude/longitude value. These data are regional averages; not point data.</p>
@@ -506,7 +528,7 @@ ETP =
     0  &amp; \quad \text{if } T \leq -5
   \end{cases}
 \qquad(8.12)\]</span></span></p>
-<p>with <span class="math inline">\(ETP\)</span>: potential evapotranspiration [m/d]; <span class="math inline">\(R_e\)</span>: extra-terrestrial radiation [MJ m^{-2} d^{-1}]; <span class="math inline">\(T\)</span>: Air temperature [°C]; <span class="math inline">\(\rho\)</span>: water density, constant value of 1’000 [kg/m^{3}]; <span class="math inline">\(\lambda\)</span>: latent heat of vaporization, constant value of 2.26 [MJ/kg].</p>
+<p>with <span class="math inline">\(ETP\)</span>: potential evapotranspiration [m/d]; <span class="math inline">\(R_e\)</span>: extra-terrestrial radiation [MJ m<sup>-2</sup> d<sup>-1</sup>]; <span class="math inline">\(T\)</span>: Air temperature [°C]; <span class="math inline">\(\rho\)</span>: water density, constant value of 1’000 [kg/m^{3}]; <span class="math inline">\(\lambda\)</span>: latent heat of vaporization, constant value of 2.26 [MJ/kg].</p>
 <p>Oudin method coefficients (5 and 100) were optimized for the hydrological modelling, on the basis of a study realized on many worldwide watersheds <span class="citation" data-cites="oudin_recherche_2004">(<a href="#ref-oudin_recherche_2004" role="doc-biblioref">Oudin 2004</a>)</span>.</p>
 <p>Latitude are only necessary for obtaining <span class="math inline">\(R_e\)</span> values.</p>
 <p>The extra-terrestrial radiation <span class="math inline">\(R_e\)</span> is calculated as follows:</p>
@@ -2075,7 +2097,7 @@ ETRtotal = \Big( (ETR1 + ETR2 + ETR3) \cdot P_{area} + ETR4 \cdot Riva + ETR5 \c
 </section>
 <section id="sec-model_scs" class="level2" data-number="8.10">
 <h2 data-number="8.10" class="anchored" data-anchor-id="sec-model_scs"><span class="header-section-number">8.10</span> SCS (Soil Conservation Service) model description</h2>
-<p>The Soil Conservation Service (SCS) model is a popular method developed in the early 70’s <span class="citation" data-cites="soil_conservation_service_scs_national_1972">(<a href="#ref-soil_conservation_service_scs_national_1972" role="doc-biblioref">(SCS) 1972</a>)</span> for assessing an event runoff volume and peak rate of discharge using limited input data (precipitation). It is especially applicable for small watersheds.</p>
+<p>The Soil Conservation Service (SCS) model is a popular method developed in the early 70’s <span class="citation" data-cites="soil_conservation_service_scs_national_1972">(<a href="#ref-soil_conservation_service_scs_national_1972" role="doc-biblioref">Service 1972</a>)</span> for assessing an event runoff volume and peak rate of discharge using limited input data (precipitation). It is especially applicable for small watersheds.</p>
 <p>The SCS model only requires precipitation as input, which provides the effective precipitation considered after the initial abstraction. The hydrograph computation is by default based on the dimensionless unit hydrograph (<a href="#fig-model_scs">Figure&nbsp;<span>8.10</span></a>) resulting from a 1 cm of excess rainfall. This unit hydrograph (UH) has 37.5% of the total runoff volume before the peak discharge (<span class="math inline">\(T/T_p=1\)</span>) and the remaining 62.5% volume after. The shape of the default UH can be tailored in RS MINERVE.</p>
 <p>To use the SCS UH, one needs to determine only two things: time to peak <span class="math inline">\(T_p\)</span>; and peak discharge <span class="math inline">\(Q_p\)</span>.</p>
 <p>The total hydrograph from the rainfall event will be the addition of each hydrograph resulting from each excess rainfall, scaled by the rainfall magnitude.</p>
@@ -2591,7 +2613,7 @@ c = \frac{{Q_{j + 1}}^{n} - {Q_{j}}^{n}}{{A_{j + 1}}^{n} - {A_{j}}^{n}}
 </section>
 <section id="sec-model_hydropower" class="level2" data-number="8.16">
 <h2 data-number="8.16" class="anchored" data-anchor-id="sec-model_hydropower"><span class="header-section-number">8.16</span> Hydropower</h2>
-<p>The inputs of this object are a reservoir level and a discharge. It also needs the paired data relation “Discharge (Q) - Performance (<span class="math inline">\(\eta\)</span>)” for the turbine, the altitude (<span class="math inline">\(Z_{central}\)</span>) of the hydropower plant, the length (<span class="math inline">\(L\)</span>), the diameter (<span class="math inline">\(D\)</span>) and the roughness (<span class="math inline">\(K\)</span>) of the pipe as well as the kinematic viscosity of the fluid (<span class="math inline">\(\nu\)</span>).</p>
+<p>The inputs of this object are a reservoir level and a discharge. It also needs the paired data relation “Discharge (<span class="math inline">\(Q\)</span>) - Performance (<span class="math inline">\(\eta\)</span>)” for the turbine, the altitude (<span class="math inline">\(Z_{central}\)</span>) of the hydropower plant, the length (<span class="math inline">\(L\)</span>), the diameter (<span class="math inline">\(D\)</span>) and the roughness (<span class="math inline">\(K\)</span>) of the pipe as well as the kinematic viscosity of the fluid (<span class="math inline">\(\nu\)</span>).</p>
 <p>As outputs, the object calculates not only the power and the revenue for each time step, as presented in <a href="#eq-N1">Equation&nbsp;<span>8.184</span></a> to <a href="#eq-N3">Equation&nbsp;<span>8.186</span></a>, but also the total energy produced and the total obtained revenue. For this calculation, it takes into account the head loss in terms of volumetric flow rate in a full-flowing circular pipe from the Darcy-Weisbach equation <span class="citation" data-cites="darcy_recherches_1857 simmons_henry_2008">(<a href="#ref-darcy_recherches_1857" role="doc-biblioref">Darcy 1857</a>; <a href="#ref-simmons_henry_2008" role="doc-biblioref">Simmons 2008</a>)</span>.</p>
 <p><span id="eq-N1"><span class="math display">\[
 {Z_{net}}^{n} = ({Z_{water}}^{n} - Z_{central}) - f \cdot \frac{8 \cdot L \cdot {Q^{n}}^{2}}{g \cdot \pi^{2} \cdot D^{5}}
@@ -2652,7 +2674,7 @@ Revenue^{n} = Power^{n} \cdot Price^{n}
 </tr>
 <tr class="odd">
 <td>Default Price</td>
-<td>eu ro/Kwh</td>
+<td>€/Kwh</td>
 <td>Default price, only used if no data exists in the database</td>
 </tr>
 </tbody>
@@ -3010,11 +3032,11 @@ Perrin, Charles, Claude Michel, and Vazken Andréassian. 2003. <span>“Improvem
 <div id="ref-schaefli_conceptual_2005" class="csl-entry" role="doc-biblioentry">
 Schaefli, B., B. Hingray, M. Niggli, and A. Musy. 2005. <span>“A Conceptual Glacio-Hydrological Model for High Mountainous Catchments.”</span> <em>Hydrology and Earth System Sciences</em> 9 (1/2): 95–109. <a href="https://doi.org/10.5194/hess-9-95-2005">https://doi.org/10.5194/hess-9-95-2005</a>.
 </div>
-<div id="ref-soil_conservation_service_scs_national_1972" class="csl-entry" role="doc-biblioentry">
-(SCS), Soil Conservation Service. 1972. <em>National <span>Engineering</span> <span>Handbook</span>, <span>Section</span> 4: <span>Hydrology</span></em>. Washington, D.C.: U.S. Dept. of Agriculture.
-</div>
 <div id="ref-seibert_estimation_1997" class="csl-entry" role="doc-biblioentry">
 Seibert, Jan. 1997. <span>“Estimation of <span>Parameter</span> <span>Uncertainty</span> in the <span>HBV</span> <span>Model</span>.”</span> <em>Hydrology Research</em> 28 (4-5): 247–62. <a href="https://doi.org/10.2166/nh.1998.15">https://doi.org/10.2166/nh.1998.15</a>.
+</div>
+<div id="ref-soil_conservation_service_scs_national_1972" class="csl-entry" role="doc-biblioentry">
+Service, Soil Conservation. 1972. <em>National <span>Engineering</span> <span>Handbook</span>, <span>Section</span> 4: <span>Hydrology</span></em>. Washington, D.C.: U.S. Dept. of Agriculture.
 </div>
 <div id="ref-shepard_two-dimensional_1968" class="csl-entry" role="doc-biblioentry">
 Shepard, Donald. 1968. <span>“A Two-Dimensional Interpolation Function for Irregularly-Spaced Data.”</span> In <em>Proceedings of the 1968 23rd <span>ACM</span> National Conference on -</em>, 517–24. Not Known: ACM Press. <a href="https://doi.org/10.1145/800186.810616">https://doi.org/10.1145/800186.810616</a>.

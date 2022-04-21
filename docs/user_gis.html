@@ -3,7 +3,6 @@
   <meta charset="utf-8">
   <meta name="generator" content="quarto-0.9.233">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <meta name="description" content="This document contains the User and Technical Manuals of the RS MINERVE software. These manuals are constantly updated. This version corresponds to the Software version 2.9.1.">
   <title>RS MINERVE Manuals - 4&nbsp; GIS</title>
   <style>
     code{white-space: pre-wrap;}
@@ -59,7 +58,7 @@
 <body class="floating">
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <nav class="quarto-secondary-nav color-navbar" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
       <h1 class="quarto-secondary-nav-title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">GIS</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
@@ -69,7 +68,9 @@
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+
+<div class="quarto-title-banner color-navbar page-columns page-full"><div class="quarto-title column-body"><h1 class="title display-7"><span id="sec-user_gis" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">GIS</span></span></h1></div></div></header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
@@ -86,7 +87,7 @@
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">RS MINERVE software</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Introduction</a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -154,12 +155,12 @@
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tech_calibration_algorithms.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Expert module - Calibration algorithms</span></a>
+  <a href="./tech_calibration_algorithms.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Calibration algorithms</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tech_stochastic_equations.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Expert module - Stochastic equations</span></a>
+  <a href="./tech_stochastic_equations.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Stochastic equations</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -184,11 +185,36 @@
 </li>
     </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="./examples.html" class="sidebar-item-text sidebar-link">Examples of application</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./examples.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Examples of application</span></a>
+  <a href="./examples_ex1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Example 1 – Simple basin with only runoff</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examples_ex2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Example 2 – Combined full basin with meteorological stations</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examples_ex3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Example 3 – Equipped basin with a hydropower scheme</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examples_ex4.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Example 4 – Automatic calibration of a model</span></a>
+  </div>
+</li>
+    </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./acknowledgments.html" class="sidebar-item-text sidebar-link">Acknowledgments</a>
@@ -257,14 +283,10 @@
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-<header id="title-block-header" class="quarto-title-block default">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
-<div class="quarto-title"><h1 class="title display-7"><span id="sec-user_gis" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">GIS</span></span></h1><div class="quarto-description"><p>This document contains the User and Technical Manuals of the RS MINERVE software. 
-These manuals are constantly updated. This version corresponds to the Software version 2.9.1.
-</p></div></div></header>
 
-<p>The GIS module allows the user to manage and process geospatial data. In this chapter, the GIS interface and its different tools are presented.</p>
+<p data-sidebar-align="true">The GIS module allows the user to manage and process geospatial data. In this chapter, the GIS interface and its different tools are presented.</p>
 <section id="gis-interface" class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="gis-interface"><span class="header-section-number">4.1</span> GIS interface</h2>
 <p>To start GIS:</p>
@@ -310,35 +332,35 @@ Important
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><img src="media/fig-icon_gis_select_features.png" style="width:0.44in;height:0.44in"></td>
+<td><img src="figures/fig-icon_gis_select_features.png" style="width:0.44in;height:0.44in"></td>
 <td>Select features by rectangle</td>
 </tr>
 <tr class="even">
-<td><img src="media/fig-icon_gis_pan.png" style="width:0.44in;height:0.44in"></td>
+<td><img src="figures/fig-icon_gis_pan.png" style="width:0.44in;height:0.44in"></td>
 <td>Pan</td>
 </tr>
 <tr class="odd">
-<td><img src="media/fig-icon_gis_zoom_in.png" style="width:0.44in;height:0.44in"></td>
+<td><img src="figures/fig-icon_gis_zoom_in.png" style="width:0.44in;height:0.44in"></td>
 <td>Zoom in</td>
 </tr>
 <tr class="even">
-<td><img src="media/fig-icon_gis_zoom_out.png" style="width:0.44in;height:0.44in"></td>
+<td><img src="figures/fig-icon_gis_zoom_out.png" style="width:0.44in;height:0.44in"></td>
 <td>Zoom out</td>
 </tr>
 <tr class="odd">
-<td><img src="media/fig-icon_gis_zoom_layer.png" style="width:0.44in;height:0.44in"></td>
+<td><img src="figures/fig-icon_gis_zoom_layer.png" style="width:0.44in;height:0.44in"></td>
 <td>Zoom to layer extent</td>
 </tr>
 <tr class="even">
-<td><img src="media/fig-icon_gis_zoom_extent.png" style="width:0.44in;height:0.44in"></td>
+<td><img src="figures/fig-icon_gis_zoom_extent.png" style="width:0.44in;height:0.44in"></td>
 <td>Zoom to global extent</td>
 </tr>
 <tr class="odd">
-<td><img src="media/fig-icon_gis_view_attribute.png" style="width:0.44in;height:0.44in"></td>
+<td><img src="figures/fig-icon_gis_view_attribute.png" style="width:0.44in;height:0.44in"></td>
 <td>View attribute table of selected layer</td>
 </tr>
 <tr class="even">
-<td><img src="media/fig-icon_gis_view_info.png" style="width:0.44in;height:0.44in"></td>
+<td><img src="figures/fig-icon_gis_view_info.png" style="width:0.44in;height:0.44in"></td>
 <td>View information on selected feature</td>
 </tr>
 </tbody>
@@ -383,7 +405,7 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The <em>Creation</em> tool defines automatically the parameters <span class="math inline">\(Surface\)</span>, <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> of the objects; the definition of the $$Z parameter is optional using the option <em>Altitude (Z)</em>. For the definition of the rest of parameters, please use the <em>Edition</em> tool.</p>
+<p>The <em>Creation</em> tool defines automatically the parameters <span class="math inline">\(Surface\)</span>, <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> of the objects; the definition of the <span class="math inline">\(Z\)</span> parameter is optional using the option <em>Altitude (Z)</em>. For the definition of the rest of parameters, please use the <em>Edition</em> tool.</p>
 </div>
 </div>
 <p>If you use the default layers names, the program will load automatically the specific fields. The names are shown in <a href="#fig-gis_default_layers_names">Figure&nbsp;<span>4.3</span></a>.</p>
@@ -545,7 +567,7 @@ Important
 <p>The Spatial View (<a href="#fig-gis_hydro_model_visualization">Figure&nbsp;<span>4.9</span></a>) allows you to visualize results, parameters, or initial conditions at each of the objects.</p>
 <div id="fig-gis_hydro_model_visualization" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="figures/fig-gis_hydro_model_visualization.emf" class="img-fluid figure-img"></p>
+<p><img src="figures/fig-gis_hydro_model_visualization.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 4.9: Hydro Model Visualization: interface workflow in the Spatial View</figcaption><p></p>
 </figure>
 </div>

@@ -3,7 +3,6 @@
   <meta charset="utf-8">
   <meta name="generator" content="quarto-0.9.233">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <meta name="description" content="This document contains the User and Technical Manuals of the RS MINERVE software. These manuals are constantly updated. This version corresponds to the Software version 2.9.1.">
   <title>RS MINERVE Manuals - 1&nbsp; Rainfall-runoff modelling</title>
   <style>
     code{white-space: pre-wrap;}
@@ -78,7 +77,7 @@
 <body class="floating">
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <nav class="quarto-secondary-nav color-navbar" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
       <h1 class="quarto-secondary-nav-title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Rainfall-runoff modelling</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
@@ -88,7 +87,9 @@
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+
+<div class="quarto-title-banner color-navbar page-columns page-full"><div class="quarto-title column-body"><h1 class="title display-7"><span id="sec-user_rainfall_runoff" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Rainfall-runoff modelling</span></span></h1></div></div></header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
@@ -105,7 +106,7 @@
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">RS MINERVE software</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Introduction</a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -173,12 +174,12 @@
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tech_calibration_algorithms.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Expert module - Calibration algorithms</span></a>
+  <a href="./tech_calibration_algorithms.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Calibration algorithms</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tech_stochastic_equations.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Expert module - Stochastic equations</span></a>
+  <a href="./tech_stochastic_equations.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Stochastic equations</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -203,11 +204,36 @@
 </li>
     </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="./examples.html" class="sidebar-item-text sidebar-link">Examples of application</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./examples.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Examples of application</span></a>
+  <a href="./examples_ex1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Example 1 – Simple basin with only runoff</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examples_ex2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Example 2 – Combined full basin with meteorological stations</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examples_ex3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Example 3 – Equipped basin with a hydropower scheme</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examples_ex4.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Example 4 – Automatic calibration of a model</span></a>
+  </div>
+</li>
+    </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./acknowledgments.html" class="sidebar-item-text sidebar-link">Acknowledgments</a>
@@ -259,14 +285,10 @@
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-<header id="title-block-header" class="quarto-title-block default">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
-<div class="quarto-title"><h1 class="title display-7"><span id="sec-user_rainfall_runoff" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Rainfall-runoff modelling</span></span></h1><div class="quarto-description"><p>This document contains the User and Technical Manuals of the RS MINERVE software. 
-These manuals are constantly updated. This version corresponds to the Software version 2.9.1.
-</p></div></div></header>
 
-<p>RS MINERVE is an object-oriented modeling software. The different processes are modeled with equation-based objects, presented hereafter in <a href="#sec-user_rainfall_runoff_hydrology">Section&nbsp;<span>1.1</span></a> (<em>Hydrology</em>) and <a href="#sec-user_rainfall_runoff_standard">Section&nbsp;<span>1.3</span></a> (<em>Standard objects</em>). <em>Hydraulic infrastructures</em> and <em>Regulation</em> objects are presented in <a href="user_hydraulic_infrastructures.html">Section&nbsp;<span>2</span></a>.</p>
+<p data-sidebar-align="true">RS MINERVE is an object-oriented modeling software. The different processes are modeled with equation-based objects, presented hereafter in <a href="#sec-user_rainfall_runoff_hydrology">Section&nbsp;<span>1.1</span></a> (<em>Hydrology</em>) and <a href="#sec-user_rainfall_runoff_standard">Section&nbsp;<span>1.3</span></a> (<em>Standard objects</em>). <em>Hydraulic infrastructures</em> and <em>Regulation</em> objects are presented in <a href="user_hydraulic_infrastructures.html">Section&nbsp;<span>2</span></a>.</p>
 <p>The implemented hydrological models (Snow-SD, SWMM and GSM-SOCONT) have been developed within the framework of different research projects, namely CRUEX <span class="citation" data-cites="berod_contribution_1994">(<a href="#ref-berod_contribution_1994" role="doc-biblioref">Bérod 1994</a>)</span>, SWURVE <span class="citation" data-cites="schaefli_conceptual_2005">(<a href="#ref-schaefli_conceptual_2005" role="doc-biblioref">Schaefli et al. 2005</a>)</span> and MINERVE<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> <span class="citation" data-cites="hamdi_projet_2003 hamdi_modeprevision_2005">(<a href="#ref-hamdi_projet_2003" role="doc-biblioref">Y. Hamdi, Hingray, and Musy 2003</a>; <a href="#ref-hamdi_modeprevision_2005" role="doc-biblioref">Y. Hamdi, Hingray, and Musy 2005</a>)</span>.</p>
 <p>The hydrological models HBV <span class="citation" data-cites="bergstrom_development_1976 bergstrom_hbv_1992">(<a href="#ref-bergstrom_development_1976" role="doc-biblioref">Bergström 1976</a>, <a href="#ref-bergstrom_hbv_1992" role="doc-biblioref">1992</a>)</span>, GR4J <span class="citation" data-cites="perrin_improvement_2003">(<a href="#ref-perrin_improvement_2003" role="doc-biblioref">Perrin, Michel, and Andréassian 2003</a>)</span>, SAC <span class="citation" data-cites="burnash_nws_1995">(<a href="#ref-burnash_nws_1995" role="doc-biblioref">Burnash 1995</a>)</span> and SCS <span class="citation" data-cites="mcguinness_comparison_1972">(<a href="#ref-mcguinness_comparison_1972" role="doc-biblioref">McGuinness and Bordne 1972</a>)</span> are also included in the software RS MINERVE for extending the hydrological modeling possibilities.</p>
 <section id="sec-user_rainfall_runoff_hydrology" class="level2" data-number="1.1">
@@ -408,9 +430,9 @@ These manuals are constantly updated. This version corresponds to the Software v
 <ul>
 <li><p><span style="color:blue">Click on <img src="figures/fig-parameters_button.png" style="width:0.2in;height:0.2in"> <em>Parameters</em> in the <em>Parameters and Variables</em> frame (<a href="user_manual.html#fig-rsm_interface">Figure&nbsp;<span>1</span></a>).</span></p></li>
 <li><p><span style="color:blue">Select an <em>Object type</em> and a <em>Zone Id</em> in the <em>Selection</em> frame (<a href="#fig-selection_frame">Figure&nbsp;<span>1.2</span></a>). Use <em>Ctrl</em> to select more than one Zone ID.</span></p></li>
-<li><p>In the <em>Parameters management</em> frame (fig-param_management_frame, left), the parameters of the selected object type are listed. Parameters with identical value in all objects of the selected zone(s) are checked by default. The objects contained in the zone(s) and their respective parameter values are displayed in the <em>Objects list</em> (fig-param_management_frame, right).</p></li>
+<li><p>In the <em>Parameters management</em> frame (<a href="#fig-param_management_frame">Figure&nbsp;<span>1.3</span></a>, left), the parameters of the selected object type are listed. Parameters with identical value in all objects of the selected zone(s) are checked by default. The objects contained in the zone(s) and their respective parameter values are displayed in the <em>Objects list</em> (<a href="#fig-param_management_frame">Figure&nbsp;<span>1.3</span></a>, right).</p></li>
 <li><p><span style="color:blue">Define the parameters to be calibrated, i.e.&nbsp;uniformly modified, by checking and unchecking the parameters in the <em>Parameters management</em> frame (the [x] column, fig-param_management_frame, left).</span></p></li>
-<li><p><span style="color:blue">Modify in the <em>Parameters management</em> frame the values of the <em>Parameters</em> to be calibrated and click on <em>Apply selected changes</em>. (Alternatively, individually modify the values of each object in the <em>Objects</em> list (fig-param_management_frame, right)).</span></p></li>
+<li><p><span style="color:blue">Modify in the <em>Parameters management</em> frame the values of the <em>Parameters</em> to be calibrated and click on <em>Apply selected changes</em>. (Alternatively, individually modify the values of each object in the <em>Objects</em> list (<a href="#fig-param_management_frame">Figure&nbsp;<span>1.3</span></a>, right)).</span></p></li>
 <li><p><span style="color:blue">Repeat the procedure for all object types in each zone.</span></p></li>
 </ul>
 <div id="fig-selection_frame" class="quarto-figure quarto-figure-center anchored">

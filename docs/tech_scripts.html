@@ -3,7 +3,6 @@
   <meta charset="utf-8">
   <meta name="generator" content="quarto-0.9.233">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <meta name="description" content="This document contains the User and Technical Manuals of the RS MINERVE software. These manuals are constantly updated. This version corresponds to the Software version 2.9.1.">
   <title>RS MINERVE Manuals - 12&nbsp; Visual Basic Scripts</title>
   <style>
     code{white-space: pre-wrap;}
@@ -59,7 +58,7 @@
 <body class="floating">
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <nav class="quarto-secondary-nav color-navbar" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
       <h1 class="quarto-secondary-nav-title"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Visual Basic Scripts</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
@@ -69,7 +68,9 @@
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+
+<div class="quarto-title-banner color-navbar page-columns page-full"><div class="quarto-title column-body"><h1 class="title display-7"><span id="sec-tech_scripts" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Visual Basic Scripts</span></span></h1></div></div></header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
@@ -86,7 +87,7 @@
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">RS MINERVE software</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Introduction</a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -154,12 +155,12 @@
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tech_calibration_algorithms.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Expert module - Calibration algorithms</span></a>
+  <a href="./tech_calibration_algorithms.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Calibration algorithms</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tech_stochastic_equations.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Expert module - Stochastic equations</span></a>
+  <a href="./tech_stochastic_equations.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Stochastic equations</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -184,11 +185,36 @@
 </li>
     </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="./examples.html" class="sidebar-item-text sidebar-link">Examples of application</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./examples.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Examples of application</span></a>
+  <a href="./examples_ex1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Example 1 – Simple basin with only runoff</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examples_ex2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Example 2 – Combined full basin with meteorological stations</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examples_ex3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Example 3 – Equipped basin with a hydropower scheme</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examples_ex4.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Example 4 – Automatic calibration of a model</span></a>
+  </div>
+</li>
+    </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./acknowledgments.html" class="sidebar-item-text sidebar-link">Acknowledgments</a>
@@ -237,14 +263,10 @@
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-<header id="title-block-header" class="quarto-title-block default">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
-<div class="quarto-title"><h1 class="title display-7"><span id="sec-tech_scripts" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Visual Basic Scripts</span></span></h1><div class="quarto-description"><p>This document contains the User and Technical Manuals of the RS MINERVE software. 
-These manuals are constantly updated. This version corresponds to the Software version 2.9.1.
-</p></div></div></header>
 
-<p>VBScript (Visual Basic Scripting Edition) is an Active Scripting language developed by Microsoft that is modelled on Visual Basic. It is designed as a “lightweight” language with a fast interpreter and can be effectively used for automating day to day office tasks as well as monitoring in the Windows-based environment. It has been installed by default in every desktop release of Microsoft Windows since Windows 98.</p>
+<p data-sidebar-align="true">VBScript (Visual Basic Scripting Edition) is an Active Scripting language developed by Microsoft that is modelled on Visual Basic. It is designed as a “lightweight” language with a fast interpreter and can be effectively used for automating day to day office tasks as well as monitoring in the Windows-based environment. It has been installed by default in every desktop release of Microsoft Windows since Windows 98.</p>
 <p>This chapter describes the methodology to run tasks using Visual Basic scripts when working with RS MINERVE models (running a model, extracting information from dataset, etc.).</p>
 <section id="introduction-to-visual-basic-scripts" class="level2" data-number="12.1">
 <h2 data-number="12.1" class="anchored" data-anchor-id="introduction-to-visual-basic-scripts"><span class="header-section-number">12.1</span> Introduction to Visual Basic Scripts</h2>
@@ -548,9 +570,13 @@ These manuals are constantly updated. This version corresponds to the Software v
 <section id="sec-tech_scripts_start" class="level2" data-number="12.3">
 <h2 data-number="12.3" class="anchored" data-anchor-id="sec-tech_scripts_start"><span class="header-section-number">12.3</span> Application Start</h2>
 <table class="table">
+<colgroup>
+<col style="width: 37%">
+<col style="width: 62%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>Start</strong></a>{:name=‘Script_Start’}</td>
+<td><a name="Script_Start"> Start </a></td>
 <td><em>Opening of the model</em></td>
 </tr>
 </tbody>
@@ -601,9 +627,13 @@ These manuals are constantly updated. This version corresponds to the Software v
 <section id="model-preparation" class="level2" data-number="12.4">
 <h2 data-number="12.4" class="anchored" data-anchor-id="model-preparation"><span class="header-section-number">12.4</span> Model preparation</h2>
 <table class="table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>LoadDataset</strong></a>{:name=‘Script_LoadDataset’}</td>
+<td><a name="Script_LoadDataset"> LoadDataset </a></td>
 <td><em>Loading of the input dataset</em></td>
 </tr>
 </tbody>
@@ -654,10 +684,18 @@ These manuals are constantly updated. This version corresponds to the Software v
 </tr>
 </tbody>
 </table>
+<p><br>
+</p>
+<p><br>
+</p>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>LoadDatasetAndSetDates</strong></a>{:name=‘Script_LoadDatasetAndSetDates’}</td>
+<td><a name="Script_LoadDatasetAndSetDates"> LoadDatasetAndSetDates </a></td>
 <td><em>Loading of the input dataset and set dates</em></td>
 </tr>
 </tbody>
@@ -720,10 +758,18 @@ These manuals are constantly updated. This version corresponds to the Software v
 </tr>
 </tbody>
 </table>
+<p><br>
+</p>
+<p><br>
+</p>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>MergeLoadedDataset</strong></a>{:name=‘Script_MergeLoadedDataset’}</td>
+<td><a name="Script_MergeLoadedDataset"> MergeLoadedDataset </a></td>
 <td><em>Merging of the input dataset to base dataset</em></td>
 </tr>
 </tbody>
@@ -786,10 +832,18 @@ These manuals are constantly updated. This version corresponds to the Software v
 </tr>
 </tbody>
 </table>
+<p><br>
+</p>
+<p><br>
+</p>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>LoadInitialConditionsFromFile</strong></a>{:name=‘Script_LoadInitialConditionsFromFile’}</td>
+<td><a name="Script_LoadInitialConditionsFromFile"> LoadInitialConditionsFromFile </a></td>
 <td><em>Setting of the initial conditions</em></td>
 </tr>
 </tbody>
@@ -836,10 +890,18 @@ These manuals are constantly updated. This version corresponds to the Software v
 </tr>
 </tbody>
 </table>
+<p><br>
+</p>
+<p><br>
+</p>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>LoadInitialConditionsFromDataset</strong></a>{:name=‘Script_LoadInitialConditionsFromDataset’}</td>
+<td><a name="Script_LoadInitialConditionsFromDataset"> LoadInitialConditionsFromDataset </a></td>
 <td><em>Setting of the initial conditions from a dataset</em></td>
 </tr>
 </tbody>
@@ -894,10 +956,18 @@ These manuals are constantly updated. This version corresponds to the Software v
 </tr>
 </tbody>
 </table>
+<p><br>
+</p>
+<p><br>
+</p>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>LoadInitialConditionsFromFileAndCopyFile</strong></a>{:name=‘Script_LoadInitialConditionsFromFileAndCopy’}</td>
+<td><a name="Script_LoadInitialConditionsFromFileAndCopy"> LoadInitialConditionsFromFileAndCopyFile </a></td>
 <td><em>Setting of the initial conditions from a file and copy the file</em></td>
 </tr>
 </tbody>
@@ -960,10 +1030,18 @@ These manuals are constantly updated. This version corresponds to the Software v
 </tr>
 </tbody>
 </table>
+<p><br>
+</p>
+<p><br>
+</p>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>LoadInitialConditionsFromFileAndMoveFile</strong></a>{:name=‘Script_LoadInitialConditionsFromFileAndMove’}</td>
+<td><a name="Script_LoadInitialConditionsFromFileAndMove"> LoadInitialConditionsFromFileAndMoveFile </a></td>
 <td><em>Loading of the initial conditions and moving of the text file</em></td>
 </tr>
 </tbody>
@@ -1026,10 +1104,18 @@ These manuals are constantly updated. This version corresponds to the Software v
 </tr>
 </tbody>
 </table>
+<p><br>
+</p>
+<p><br>
+</p>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>LoadParametersFromFile</strong></a>{:name=‘Script_LoadParametersFromFile’}</td>
+<td><a name="Script_LoadParametersFromFile"> LoadParametersFromFile </a></td>
 <td><em>Setting of the parameters</em></td>
 </tr>
 </tbody>
@@ -1076,10 +1162,18 @@ These manuals are constantly updated. This version corresponds to the Software v
 </tr>
 </tbody>
 </table>
+<p><br>
+</p>
+<p><br>
+</p>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>GetStartDateFromDataset</strong></a>{:name=‘Script_GetStartDateFromDataset’}</td>
+<td><a name="Script_GetStartDateFromDataset"> GetStartDateFromDataset </a></td>
 <td><em>Getting the start date from a dataset</em></td>
 </tr>
 </tbody>
@@ -1114,7 +1208,7 @@ These manuals are constantly updated. This version corresponds to the Software v
 <tbody>
 <tr class="odd">
 <td>Start date</td>
-<td>It returns the value of the start date of a dataset. The format of the date is: dd.MM.yyyy HH:mm:ss.</td>
+<td>It returns the value of the start date of a dataset. The format of the date is: <em>dd.MM.yyyy HH:mm:ss</em>.</td>
 </tr>
 </tbody>
 </table>
@@ -1143,10 +1237,18 @@ These manuals are constantly updated. This version corresponds to the Software v
 </tr>
 </tbody>
 </table>
+<p><br>
+</p>
+<p><br>
+</p>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>GetEndDateFromDataset</strong></a>{:name=‘Script_GetEndDateFromDataset’}</td>
+<td><a name="Script_GetEndDateFromDataset"> GetEndDateFromDataset </a></td>
 <td><em>Getting the end date from a dataset</em></td>
 </tr>
 </tbody>
@@ -1181,7 +1283,7 @@ These manuals are constantly updated. This version corresponds to the Software v
 <tbody>
 <tr class="odd">
 <td>End date</td>
-<td>It returns the value of the end date of a dataset. The format of the date is: dd.MM.yyyy HH:mm:ss.</td>
+<td>It returns the value of the end date of a dataset. The format of the date is: <em>dd.MM.yyyy HH:mm:ss</em>.</td>
 </tr>
 </tbody>
 </table>
@@ -1210,10 +1312,18 @@ These manuals are constantly updated. This version corresponds to the Software v
 </tr>
 </tbody>
 </table>
+<p><br>
+</p>
+<p><br>
+</p>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>GetStartDateFromModel</strong></a>{:name=‘Script_GetStartDateFromModel’}</td>
+<td><a name="Script_GetStartDateFromModel"> GetStartDateFromModel </a></td>
 <td><em>Getting the start date from model</em></td>
 </tr>
 </tbody>
@@ -1231,7 +1341,7 @@ These manuals are constantly updated. This version corresponds to the Software v
 <tbody>
 <tr class="odd">
 <td>Start date</td>
-<td>It returns the value of the start date of the model. The format of the date is: dd.MM.yyyy HH:mm:ss.</td>
+<td>It returns the value of the start date of the model. The format of the date is: <em>dd.MM.yyyy HH:mm:ss</em>.</td>
 </tr>
 </tbody>
 </table>
@@ -1248,10 +1358,18 @@ These manuals are constantly updated. This version corresponds to the Software v
 </tr>
 </tbody>
 </table>
+<p><br>
+</p>
+<p><br>
+</p>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>GetEndDateFromModel</strong></a>{:name=‘Script_GetEndDateFromModel’}</td>
+<td><a name="Script_GetEndDateFromModel"> GetEndDateFromModel </a></td>
 <td><em>Getting the end date from model</em></td>
 </tr>
 </tbody>
@@ -1269,7 +1387,7 @@ These manuals are constantly updated. This version corresponds to the Software v
 <tbody>
 <tr class="odd">
 <td>End date</td>
-<td>It returns the value of the end date of the model. The format of the date is: dd.MM.yyyy HH:mm:ss.</td>
+<td>It returns the value of the end date of the model. The format of the date is: <em>dd.MM.yyyy HH:mm:ss</em>.</td>
 </tr>
 </tbody>
 </table>
@@ -1286,10 +1404,18 @@ These manuals are constantly updated. This version corresponds to the Software v
 </tr>
 </tbody>
 </table>
+<p><br>
+</p>
+<p><br>
+</p>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>GetICDateFromICFile</strong></a>{:name=‘Script_GetICDateFromICFile’}</td>
+<td><a name="Script_GetICDateFromICFile"> GetICDateFromICFile </a></td>
 <td><em>Getting the date from an Initial Conditions file</em></td>
 </tr>
 </tbody>
@@ -1320,7 +1446,7 @@ These manuals are constantly updated. This version corresponds to the Software v
 <tbody>
 <tr class="odd">
 <td>Date</td>
-<td>It returns the date of the Initial Conditions file. The format of the date is: dd.MM.yyyy HH:mm:ss.</td>
+<td>It returns the date of the Initial Conditions file. The format of the date is: <em>dd.MM.yyyy HH:mm:ss</em>.</td>
 </tr>
 </tbody>
 </table>
@@ -1349,10 +1475,18 @@ These manuals are constantly updated. This version corresponds to the Software v
 </tr>
 </tbody>
 </table>
+<p><br>
+</p>
+<p><br>
+</p>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>SetDates</strong></a>{:name=‘Script_SetDates’}</td>
+<td><a name="Script_SetDates"> SetDates </a></td>
 <td><em>Setting of the dates</em></td>
 </tr>
 </tbody>
@@ -1370,11 +1504,11 @@ These manuals are constantly updated. This version corresponds to the Software v
 <tbody>
 <tr class="odd">
 <td>startdate</td>
-<td>Date. Start date for the simulation period. The format of the date has to be: dd.MM.yyyy HH:mm:ss.</td>
+<td>Date. Start date for the simulation period. The format of the date has to be: <em>dd.MM.yyyy HH:mm:ss</em>.</td>
 </tr>
 <tr class="even">
 <td>enddate</td>
-<td>Date. End date for the simulation period. The format of the date has to be: dd.MM.yyyy HH:mm:ss.</td>
+<td>Date. End date for the simulation period. The format of the date has to be: <em>dd.MM.yyyy HH:mm:ss</em>.</td>
 </tr>
 </tbody>
 </table>
@@ -1399,10 +1533,18 @@ These manuals are constantly updated. This version corresponds to the Software v
 </tr>
 </tbody>
 </table>
+<p><br>
+</p>
+<p><br>
+</p>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>SetStartDate</strong></a>{:name=‘Script_SetStartDate’}</td>
+<td><a name="Script_SetStartDate"> SetStartDate </a></td>
 <td><em>Setting of the start date</em></td>
 </tr>
 </tbody>
@@ -1420,7 +1562,7 @@ These manuals are constantly updated. This version corresponds to the Software v
 <tbody>
 <tr class="odd">
 <td>startdate</td>
-<td>Date. Start date for the simulation period. The format of the date has to be: dd.MM.yyyy HH:mm:ss.</td>
+<td>Date. Start date for the simulation period. The format of the date has to be: <em>dd.MM.yyyy HH:mm:ss</em>.</td>
 </tr>
 </tbody>
 </table>
@@ -1441,10 +1583,18 @@ These manuals are constantly updated. This version corresponds to the Software v
 </tr>
 </tbody>
 </table>
+<p><br>
+</p>
+<p><br>
+</p>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>SetEndDate</strong></a>{:name=‘Script_SetEndDate’}</td>
+<td><a name="Script_SetEndDate"> SetEndDate </a></td>
 <td><em>Setting of the end date</em></td>
 </tr>
 </tbody>
@@ -1462,7 +1612,7 @@ These manuals are constantly updated. This version corresponds to the Software v
 <tbody>
 <tr class="odd">
 <td>enddate</td>
-<td>Date. End date for the simulation period. The format of the date has to be: dd.MM.yyyy HH:mm:ss.</td>
+<td>Date. End date for the simulation period. The format of the date has to be: <em>dd.MM.yyyy HH:mm:ss</em>.</td>
 </tr>
 </tbody>
 </table>
@@ -1483,10 +1633,18 @@ These manuals are constantly updated. This version corresponds to the Software v
 </tr>
 </tbody>
 </table>
+<p><br>
+</p>
+<p><br>
+</p>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>SetSimulationTimeStep</strong></a>{:name=‘Script_SetSimulationTimeStep’}</td>
+<td><a name="Script_SetSimulationTimeStep"> SetSimulationTimeStep </a></td>
 <td><em>Setting of the simulation timestep</em></td>
 </tr>
 </tbody>
@@ -1537,10 +1695,18 @@ These manuals are constantly updated. This version corresponds to the Software v
 </tr>
 </tbody>
 </table>
+<p><br>
+</p>
+<p><br>
+</p>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>SetRecordingTimeStep</strong></a>{:name=‘Script_SetRecordingTimeStep’}</td>
+<td><a name="Script_SetRecordingTimeStep"> SetRecordingTimeStep </a></td>
 <td><em>Setting of the recording timestep</em></td>
 </tr>
 </tbody>
@@ -1591,10 +1757,18 @@ These manuals are constantly updated. This version corresponds to the Software v
 </tr>
 </tbody>
 </table>
+<p><br>
+</p>
+<p><br>
+</p>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>SetETPMethod</strong></a>{:name=‘Script_SetETPMethod’}</td>
+<td><a name="Script_SetETPMethod"> SetETPMethod </a></td>
 <td><em>Setting of the ETP method</em></td>
 </tr>
 </tbody>
@@ -1633,10 +1807,18 @@ These manuals are constantly updated. This version corresponds to the Software v
 </tr>
 </tbody>
 </table>
+<p><br>
+</p>
+<p><br>
+</p>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>SetLongitudeAndLatitude</strong></a>{:name=‘Script_SetLongitudeAndLatitude’}</td>
+<td><a name="Script_SetLongitudeAndLatitude"> SetLongitudeAndLatitude </a></td>
 <td><em>Setting of the Longitude and Latitude</em></td>
 </tr>
 </tbody>
@@ -1683,10 +1865,18 @@ These manuals are constantly updated. This version corresponds to the Software v
 </tr>
 </tbody>
 </table>
+<p><br>
+</p>
+<p><br>
+</p>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>SetUniformETPValue</strong></a>{:name=‘Script_SetUniformETPValue’}</td>
+<td><a name="Script_SetUniformETPValue"> SetUniformETPValue </a></td>
 <td><em>Setting of the Uniform ETP</em></td>
 </tr>
 </tbody>
@@ -1725,10 +1915,18 @@ These manuals are constantly updated. This version corresponds to the Software v
 </tr>
 </tbody>
 </table>
+<p><br>
+</p>
+<p><br>
+</p>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>SetSpatialInterpolationMethod</strong></a>{:name=‘Script_SetSpatialInterpolationMethod’}</td>
+<td><a name="Script_SetSpatialInterpolationMethod"> SetSpatialInterpolationMethod </a></td>
 <td><em>Setting of the Spatial Interpolation method</em></td>
 </tr>
 </tbody>
@@ -1767,10 +1965,18 @@ These manuals are constantly updated. This version corresponds to the Software v
 </tr>
 </tbody>
 </table>
+<p><br>
+</p>
+<p><br>
+</p>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>DefineModelProperties</strong></a>{:name=‘Script_DefineModelProperties’}</td>
+<td><a name="Script_DefineModelProperties"> DefineModelProperties </a></td>
 <td><em>Defining property of an object</em></td>
 </tr>
 </tbody>
@@ -1837,10 +2043,18 @@ These manuals are constantly updated. This version corresponds to the Software v
 </tr>
 </tbody>
 </table>
+<p><br>
+</p>
+<p><br>
+</p>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>UpdateModelProperties</strong></a>{:name=‘Script_UpdateModelProperties’}</td>
+<td><a name="Script_UpdateModelProperties"> UpdateModelProperties </a></td>
 <td><em>Updating of model properties</em></td>
 </tr>
 </tbody>
@@ -1923,16 +2137,24 @@ These manuals are constantly updated. This version corresponds to the Software v
 </tr>
 </tbody>
 </table>
+<p><br>
+</p>
+<p><br>
+</p>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>SetOutputRatioCoeffsInPlanner</strong></a>{:name=‘Script_SetOutputRatioCoeffsInPlanner’}</td>
+<td><a name="Script_SetOutputRatioCoeffsInPlanner"> SetOutputRatioCoeffsInPlanner </a></td>
 <td><em>Setting of the coefficients of the expression defining a rule’s output</em></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Description</strong></p>
-<p>This procedure sets the coefficients A and B in the expression: <em>Q=A*Output+B</em> for the definition of a particular Rule output at a specified Planner.</p>
+<p>This procedure sets the coefficients A and B in the expression: <span class="math inline">\(Q=A \cdot Output+B\)</span> for the definition of a particular Rule output at a specified Planner.</p>
 <p><strong>Syntax</strong></p>
 <p><code>SetOutputRatioCoeffsInPlanner (plannerName, ruleName, coefA, coefB)</code></p>
 <p><strong>Parameters</strong></p>
@@ -1997,10 +2219,18 @@ These manuals are constantly updated. This version corresponds to the Software v
 </tr>
 </tbody>
 </table>
+<p><br>
+</p>
+<p><br>
+</p>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>SetConditionThresholdInPlanner</strong></a>{:name=‘Script_SetConditionThresholdInPlanner’}</td>
+<td><a name="Script_SetConditionThresholdInPlanner"> SetConditionThresholdInPlanner </a></td>
 <td><em>Setting of the threshold value of a condition in a specific Planner</em></td>
 </tr>
 </tbody>
@@ -2075,10 +2305,18 @@ These manuals are constantly updated. This version corresponds to the Software v
 </tr>
 </tbody>
 </table>
+<p><br>
+</p>
+<p><br>
+</p>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>SetDaysInPlanner</strong></a>{:name=‘Script_SetDaysInPlanner’}</td>
+<td><a name="Script_SetDaysInPlanner"> SetDaysInPlanner </a></td>
 <td><em>Setting of the days of a rule in a specific Planner</em></td>
 </tr>
 </tbody>
@@ -2137,10 +2375,18 @@ These manuals are constantly updated. This version corresponds to the Software v
 </tr>
 </tbody>
 </table>
+<p><br>
+</p>
+<p><br>
+</p>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>SetHoursInPlanner</strong></a>{:name=‘Script_SetHoursInPlanner’}</td>
+<td><a name="Script_SetHoursInPlanner"> SetHoursInPlanner </a></td>
 <td><em>Setting of the hours of a rule in a specific Planner</em></td>
 </tr>
 </tbody>
@@ -2207,9 +2453,13 @@ These manuals are constantly updated. This version corresponds to the Software v
 <section id="simulation-and-reports" class="level2" data-number="12.5">
 <h2 data-number="12.5" class="anchored" data-anchor-id="simulation-and-reports"><span class="header-section-number">12.5</span> Simulation and reports</h2>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>SavePreSimulationReportAs</strong></a>{:name=‘Script_SavePreSimulationReportAs’}</td>
+<td><a name="Script_SavePreSimulationReportAs"> SavePreSimulationReportAs </a></td>
 <td><em>Writing of the pre-simulation report</em></td>
 </tr>
 </tbody>
@@ -2264,10 +2514,18 @@ These manuals are constantly updated. This version corresponds to the Software v
 </tr>
 </tbody>
 </table>
+<p><br>
+</p>
+<p><br>
+</p>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>SavePreSimulationReport</strong></a>{:name=‘Script_SavePreSimulationReport’}</td>
+<td><a name="Script_SavePreSimulationReport"> SavePreSimulationReport </a></td>
 <td><em>Writing of the pre-simulation report</em></td>
 </tr>
 </tbody>
@@ -2326,10 +2584,18 @@ These manuals are constantly updated. This version corresponds to the Software v
 </tr>
 </tbody>
 </table>
+<p><br>
+</p>
+<p><br>
+</p>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>Simulate</strong></a>{:name=‘Script_Simulate’}</td>
+<td><a name="Script_Simulate"> Simulate </a></td>
 <td><em>Running of the model</em></td>
 </tr>
 </tbody>
@@ -2355,10 +2621,18 @@ These manuals are constantly updated. This version corresponds to the Software v
 </tr>
 </tbody>
 </table>
+<p><br>
+</p>
+<p><br>
+</p>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>SavePostSimulationReportAs</strong></a>{:name=‘Script_SavePostSimulationReportAs’}</td>
+<td><a name="Script_SavePostSimulationReportAs"> SavePostSimulationReportAs </a></td>
 <td><em>Writing of the post-simulation report</em></td>
 </tr>
 </tbody>
@@ -2413,10 +2687,18 @@ These manuals are constantly updated. This version corresponds to the Software v
 </tr>
 </tbody>
 </table>
+<p><br>
+</p>
+<p><br>
+</p>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>SavePostSimulationReport</strong></a>{:name=‘Script_SavePostSimulationReport’}</td>
+<td><a name="Script_SavePostSimulationReport"> SavePostSimulationReport </a></td>
 <td><em>Writing of the post-simulation report</em></td>
 </tr>
 </tbody>
@@ -2479,9 +2761,13 @@ These manuals are constantly updated. This version corresponds to the Software v
 <section id="save-model-and-properties" class="level2" data-number="12.6">
 <h2 data-number="12.6" class="anchored" data-anchor-id="save-model-and-properties"><span class="header-section-number">12.6</span> Save model and properties</h2>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>SaveModelAs</strong></a>{:name=‘Script_SaveModelAs’}</td>
+<td><a name="Script_SaveModelAs"> SaveModelAs </a></td>
 <td><em>Saving of the model</em></td>
 </tr>
 </tbody>
@@ -2536,10 +2822,18 @@ These manuals are constantly updated. This version corresponds to the Software v
 </tr>
 </tbody>
 </table>
+<p><br>
+</p>
+<p><br>
+</p>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>SaveModel</strong></a>{:name=‘Script_SaveModel’}</td>
+<td><a name="Script_SaveModel"> SaveModel </a></td>
 <td><em>Saving of the model</em></td>
 </tr>
 </tbody>
@@ -2565,10 +2859,18 @@ These manuals are constantly updated. This version corresponds to the Software v
 </tr>
 </tbody>
 </table>
+<p><br>
+</p>
+<p><br>
+</p>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>SaveInitialConditionsAs</strong></a>{:name=‘Script_SaveInitialConditionsAs’}</td>
+<td><a name="Script_SaveInitialConditionsAs"> SaveInitialConditionsAs </a></td>
 <td><em>Saving of the initial conditions</em></td>
 </tr>
 </tbody>
@@ -2619,10 +2921,18 @@ These manuals are constantly updated. This version corresponds to the Software v
 </tr>
 </tbody>
 </table>
+<p><br>
+</p>
+<p><br>
+</p>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>SaveInitialConditions</strong></a>{:name=‘Script_SaveInitialConditions’}</td>
+<td><a name="Script_SaveInitialConditions"> SaveInitialConditions </a></td>
 <td><em>Saving of the initial conditions</em></td>
 </tr>
 </tbody>
@@ -2681,10 +2991,18 @@ These manuals are constantly updated. This version corresponds to the Software v
 </tr>
 </tbody>
 </table>
+<p><br>
+</p>
+<p><br>
+</p>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>SaveFinalConditionsAs</strong></a>{:name=‘Script_SaveFinalConditionsAs’}</td>
+<td><a name="Script_SaveFinalConditionsAs"> SaveFinalConditionsAs </a></td>
 <td><em>Saving of the final conditions</em></td>
 </tr>
 </tbody>
@@ -2743,10 +3061,18 @@ These manuals are constantly updated. This version corresponds to the Software v
 </tr>
 </tbody>
 </table>
+<p><br>
+</p>
+<p><br>
+</p>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>SaveFinalConditions</strong></a>{:name=‘Script_SaveFinalConditions’}</td>
+<td><a name="Script_SaveFinalConditions"> SaveFinalConditions </a></td>
 <td><em>Saving of the final conditions</em></td>
 </tr>
 </tbody>
@@ -2813,10 +3139,18 @@ These manuals are constantly updated. This version corresponds to the Software v
 </tr>
 </tbody>
 </table>
+<p><br>
+</p>
+<p><br>
+</p>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>SaveParametersAs</strong></a>{:name=‘Script_SaveParametersAs’}</td>
+<td><a name="Script_SaveParametersAs"> SaveParametersAs </a></td>
 <td><em>Saving of the parameters</em></td>
 </tr>
 </tbody>
@@ -2867,10 +3201,18 @@ These manuals are constantly updated. This version corresponds to the Software v
 </tr>
 </tbody>
 </table>
+<p><br>
+</p>
+<p><br>
+</p>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>SaveParameters</strong></a>{:name=‘Script_SaveParameters’}</td>
+<td><a name="Script_SaveParameters"> SaveParameters </a></td>
 <td><em>Saving of the parameters</em></td>
 </tr>
 </tbody>
@@ -2929,9 +3271,13 @@ These manuals are constantly updated. This version corresponds to the Software v
 <section id="model-results" class="level2" data-number="12.7">
 <h2 data-number="12.7" class="anchored" data-anchor-id="model-results"><span class="header-section-number">12.7</span> Model results</h2>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>SaveFullResultsAs</strong></a>{:name=‘Script_SaveFullResultsAs’}</td>
+<td><a name="Script_SaveFullResultsAs"> SaveFullResultsAs </a></td>
 <td><em>Saving of all the results</em></td>
 </tr>
 </tbody>
@@ -2994,10 +3340,18 @@ These manuals are constantly updated. This version corresponds to the Software v
 </tr>
 </tbody>
 </table>
+<p><br>
+</p>
+<p><br>
+</p>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>SaveFullResults</strong></a>{:name=‘Script_SaveFullResults’}</td>
+<td><a name="Script_SaveFullResults"> SaveFullResults </a></td>
 <td><em>Saving of all the results</em></td>
 </tr>
 </tbody>
@@ -3068,10 +3422,18 @@ These manuals are constantly updated. This version corresponds to the Software v
 </tr>
 </tbody>
 </table>
+<p><br>
+</p>
+<p><br>
+</p>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>SaveSelectionResultsAs</strong></a>{:name=‘Script_SaveSelectionResultsAs’}</td>
+<td><a name="Script_SaveSelectionResultsAs"> SaveSelectionResultsAs </a></td>
 <td><em>Saving of selection results</em></td>
 </tr>
 </tbody>
@@ -3142,10 +3504,18 @@ These manuals are constantly updated. This version corresponds to the Software v
 </tr>
 </tbody>
 </table>
+<p><br>
+</p>
+<p><br>
+</p>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>SaveSelectionResults</strong></a>{:name=‘Script_SaveSelectionResults’}</td>
+<td><a name="Script_SaveSelectionResults"> SaveSelectionResults </a></td>
 <td><em>Saving of selection results</em></td>
 </tr>
 </tbody>
@@ -3228,10 +3598,18 @@ These manuals are constantly updated. This version corresponds to the Software v
 </tr>
 </tbody>
 </table>
+<p><br>
+</p>
+<p><br>
+</p>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>SaveInitializationDatasetAs</strong></a>{:name=‘Script_SaveInitializationDatasetAs’}</td>
+<td><a name="Script_SaveInitializationDatasetAs"> SaveInitializationDatasetAs </a></td>
 <td><em>Saving of series of state variables</em></td>
 </tr>
 </tbody>
@@ -3302,10 +3680,18 @@ These manuals are constantly updated. This version corresponds to the Software v
 </tr>
 </tbody>
 </table>
+<p><br>
+</p>
+<p><br>
+</p>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>SaveInitializationDataset</strong></a>{:name=‘Script_SaveInitializationDataset’}</td>
+<td><a name="Script_SaveInitializationDataset"> SaveInitializationDataset </a></td>
 <td><em>Saving of series of state variables</em></td>
 </tr>
 </tbody>
@@ -3368,10 +3754,18 @@ These manuals are constantly updated. This version corresponds to the Software v
 </tr>
 </tbody>
 </table>
+<p><br>
+</p>
+<p><br>
+</p>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>ExportResultsTo</strong></a>{:name=‘Script_ExportResultsTo’}</td>
+<td><a name="Script_ExportResultsTo"> ExportResultsTo </a></td>
 <td><em>Exporting of the selection results</em></td>
 </tr>
 </tbody>
@@ -3438,10 +3832,18 @@ These manuals are constantly updated. This version corresponds to the Software v
 </tr>
 </tbody>
 </table>
+<p><br>
+</p>
+<p><br>
+</p>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>MergeFullResults</strong></a>{:name=‘Script_MergeFullResults’}</td>
+<td><a name="Script_MergeFullResults"> MergeFullResults </a></td>
 <td><em>Merging of full results dataset with the base full dataset</em></td>
 </tr>
 </tbody>
@@ -3520,10 +3922,18 @@ These manuals are constantly updated. This version corresponds to the Software v
 </tr>
 </tbody>
 </table>
+<p><br>
+</p>
+<p><br>
+</p>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>MergeSelectionResults</strong></a>{:name=‘Script_MergeSelectionResults’}</td>
+<td><a name="Script_MergeSelectionResults"> MergeSelectionResults </a></td>
 <td><em>Merging of selection results dataset with the base selection dataset</em></td>
 </tr>
 </tbody>
@@ -3614,10 +4024,18 @@ These manuals are constantly updated. This version corresponds to the Software v
 </tr>
 </tbody>
 </table>
+<p><br>
+</p>
+<p><br>
+</p>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>MergeDatasetsAs</strong></a>{:name=‘Script_MergeDatasetsAs’}</td>
+<td><a name="Script_MergeDatasetsAs"> MergeDatasetsAs </a></td>
 <td><em>Merging of a source dataset with another dataset</em></td>
 </tr>
 </tbody>
@@ -3700,10 +4118,18 @@ These manuals are constantly updated. This version corresponds to the Software v
 </tr>
 </tbody>
 </table>
+<p><br>
+</p>
+<p><br>
+</p>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>MergeDatasets</strong></a>{:name=‘Script_MergeDatasets’}</td>
+<td><a name="Script_MergeDatasets"> MergeDatasets </a></td>
 <td><em>Merging of a source dataset with another dataset</em></td>
 </tr>
 </tbody>
@@ -3762,10 +4188,18 @@ These manuals are constantly updated. This version corresponds to the Software v
 </tr>
 </tbody>
 </table>
+<p><br>
+</p>
+<p><br>
+</p>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>GetPropertyValue</strong></a>{:name=‘Script_GetPropertyValue’}</td>
+<td><a name="Script_GetPropertyValue"> GetPropertyValue </a></td>
 <td><em>Getting property value from an object</em></td>
 </tr>
 </tbody>
@@ -3841,10 +4275,18 @@ These manuals are constantly updated. This version corresponds to the Software v
 </tr>
 </tbody>
 </table>
+<p><br>
+</p>
+<p><br>
+</p>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>GetIndicatorValue</strong></a>{:name=‘Script_GetIndicatorValue’}</td>
+<td><a name="Script_GetIndicatorValue"> GetIndicatorValue </a></td>
 <td><em>Getting the value of an indicator from a comparator</em></td>
 </tr>
 </tbody>
@@ -3908,9 +4350,13 @@ These manuals are constantly updated. This version corresponds to the Software v
 <section id="calibration" class="level2" data-number="12.8">
 <h2 data-number="12.8" class="anchored" data-anchor-id="calibration"><span class="header-section-number">12.8</span> Calibration</h2>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>LoadCalibrationsInModel</strong></a>{:name=‘Script_LoadCalibrationsInModel’}</td>
+<td><a name="Script_LoadCalibrationsInModel"> LoadCalibrationsInModel </a></td>
 <td><em>Loading of all the calibrations defined in a model</em></td>
 </tr>
 </tbody>
@@ -3932,10 +4378,18 @@ These manuals are constantly updated. This version corresponds to the Software v
 </tr>
 </tbody>
 </table>
+<p><br>
+</p>
+<p><br>
+</p>
 <table class="table">
+<colgroup>
+<col style="width: 55%">
+<col style="width: 44%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>LoadCalibrationsByFile</strong></a>{:name=‘Script_LoadCalibrationsByFile’}</td>
+<td><a name="Script_LoadCalibrationsByFile"> LoadCalibrationsByFile </a></td>
 <td><em>Loading of all the calibration configurations defined in a configuration file</em></td>
 </tr>
 </tbody>
@@ -3978,10 +4432,18 @@ These manuals are constantly updated. This version corresponds to the Software v
 </tr>
 </tbody>
 </table>
+<p><br>
+</p>
+<p><br>
+</p>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>SaveAllCalibrationsInModel</strong></a>{:name=‘Script_SaveAllCalibrationsInModel’}</td>
+<td><a name="Script_SaveAllCalibrationsInModel"> SaveAllCalibrationsInModel </a></td>
 <td><em>Saving all calibration configurations in the RSM model</em></td>
 </tr>
 </tbody>
@@ -4003,10 +4465,18 @@ These manuals are constantly updated. This version corresponds to the Software v
 </tr>
 </tbody>
 </table>
+<p><br>
+</p>
+<p><br>
+</p>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>RunCalibration</strong></a>{:name=‘Script_RunCalibration’}</td>
+<td><a name="Script_RunCalibration"> RunCalibration </a></td>
 <td><em>Running a specified calibration</em></td>
 </tr>
 </tbody>
@@ -4057,10 +4527,18 @@ These manuals are constantly updated. This version corresponds to the Software v
 </tr>
 </tbody>
 </table>
+<p><br>
+</p>
+<p><br>
+</p>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>RunAllCalibrations</strong></a>{:name=‘Script_RunAllCalibrations’}</td>
+<td><a name="Script_RunAllCalibrations"> RunAllCalibrations </a></td>
 <td><em>Running all the calibrations</em></td>
 </tr>
 </tbody>
@@ -4099,10 +4577,18 @@ These manuals are constantly updated. This version corresponds to the Software v
 </tr>
 </tbody>
 </table>
+<p><br>
+</p>
+<p><br>
+</p>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>ExportCalibrationResults</strong></a>{:name=‘Script_ExportCalibrationResults’}</td>
+<td><a name="Script_ExportCalibrationResults"> ExportCalibrationResults </a></td>
 <td><em>Exporting of the calibration’s results</em></td>
 </tr>
 </tbody>
@@ -4153,10 +4639,18 @@ These manuals are constantly updated. This version corresponds to the Software v
 </tr>
 </tbody>
 </table>
+<p><br>
+</p>
+<p><br>
+</p>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>ExportAllCalibrationsResults</strong></a>{:name=‘Script_ExportAllCalibrationsResults’}</td>
+<td><a name="Script_ExportAllCalibrationsResults"> ExportAllCalibrationsResults </a></td>
 <td><em>Exporting of all the calibrations’ results</em></td>
 </tr>
 </tbody>
@@ -4199,10 +4693,18 @@ These manuals are constantly updated. This version corresponds to the Software v
 </tr>
 </tbody>
 </table>
+<p><br>
+</p>
+<p><br>
+</p>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>SetCalibrationDates</strong></a>{:name=‘Script_SetCalibrationDates’}</td>
+<td><a name="Script_SetCalibrationDates"> SetCalibrationDates </a></td>
 <td><em>Setting of the start and end dates of the calibration period</em></td>
 </tr>
 </tbody>
@@ -4224,11 +4726,11 @@ These manuals are constantly updated. This version corresponds to the Software v
 </tr>
 <tr class="even">
 <td>startDate</td>
-<td>Date. Start date for the calibration period. The format of the date has to be: dd.MM.yyyy HH:mm:ss.</td>
+<td>Date. Start date for the calibration period. The format of the date has to be: <em>dd.MM.yyyy HH:mm:ss</em>.</td>
 </tr>
 <tr class="odd">
 <td>endDate</td>
-<td>Date. End date for the calibration period. The format of the date has to be: dd.MM.yyyy HH:mm:ss.</td>
+<td>Date. End date for the calibration period. The format of the date has to be: <em>dd.MM.yyyy HH:mm:ss</em>.</td>
 </tr>
 </tbody>
 </table>
@@ -4257,9 +4759,13 @@ These manuals are constantly updated. This version corresponds to the Software v
 <section id="application-stop" class="level2" data-number="12.9">
 <h2 data-number="12.9" class="anchored" data-anchor-id="application-stop"><span class="header-section-number">12.9</span> Application Stop</h2>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>Stop</strong></a>{:name=‘Script_Stop’}</td>
+<td><a name="Script_Stop"> Stop </a></td>
 <td><em>Stop of the execution</em></td>
 </tr>
 </tbody>
@@ -4272,9 +4778,13 @@ These manuals are constantly updated. This version corresponds to the Software v
 <section id="other-proceduresfunctions" class="level2" data-number="12.10">
 <h2 data-number="12.10" class="anchored" data-anchor-id="other-proceduresfunctions"><span class="header-section-number">12.10</span> Other procedures/functions</h2>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>RemoveFile</strong></a>{:name=‘Script_RemoveFile’}</td>
+<td><a name="Script_RemoveFile"> RemoveFile </a></td>
 <td><em>Removing any type of files</em></td>
 </tr>
 </tbody>
@@ -4317,10 +4827,18 @@ These manuals are constantly updated. This version corresponds to the Software v
 </tr>
 </tbody>
 </table>
+<p><br>
+</p>
+<p><br>
+</p>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>GetAppVersion</strong></a>{:name=‘Script_GetAppVersion’}</td>
+<td><a name="Script_GetAppVersion"> GetAppVersion </a></td>
 <td><em>Getting the installed RS MINERVE software version</em></td>
 </tr>
 </tbody>
@@ -4342,10 +4860,18 @@ These manuals are constantly updated. This version corresponds to the Software v
 </tr>
 </tbody>
 </table>
+<p><br>
+</p>
+<p><br>
+</p>
 <table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td><a href=""><strong>GetReaderVersion</strong></a>{:name=‘Script_GetReaderVersion’}</td>
+<td><a name="Script_GetReaderVersion"> GetReaderVersion </a></td>
 <td><em>Getting the installed model reader (xml) version</em></td>
 </tr>
 </tbody>
@@ -4554,7 +5080,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./tech_stochastic_equations.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Expert module - Stochastic equations</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Stochastic equations</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
