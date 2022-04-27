@@ -116,7 +116,7 @@ Also, it is worth mentioning the difference between:
 | **Simulation and**    | [SavePreSimulationReportAs](#Script_SavePreSimulationReportAs)                                  |
 | **reports**           |                                                                                                 |
 +-----------------------+-------------------------------------------------------------------------------------------------+
-|                       | [SavePreSimulationReport]Script_SavePreSimulationReport)                                        |
+|                       | [SavePreSimulationReport](#Script_SavePreSimulationReport)                                      |
 +-----------------------+-------------------------------------------------------------------------------------------------+
 |                       | [Simulate](#Script_Simulate)                                                                    |
 +-----------------------+-------------------------------------------------------------------------------------------------+
