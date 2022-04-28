@@ -1,8 +1,6 @@
 on:
   push:
-    branches: main
   pull_request:
-    branches: main
   # to be able to trigger a manual build
   workflow_dispatch:
 
@@ -37,4 +35,4 @@ jobs:
           # The branch the action should deploy to.
           branch: master
           # The folder the action should deploy. Adapt if you changed in Quarto config
-          folder: /docs/
+          folder: ./docs
