@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-0.9.315">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>RS MINERVE Manuals - 4&nbsp; GIS</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<link href="./user_hydro_hydrau_simulation.html" rel="next">
+<link href="./user_database.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link id="quarto-text-highlighting-styles" href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">GIS</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title"><span id="sec-user_gis" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">GIS</span></span></h1>
+                </div>
+  </div>
+    
+  
+
+
+
+  <div class="quarto-title-meta">
+
+      
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">RS MINERVE Manuals</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Introduction</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="./user_manual.html" class="sidebar-item-text sidebar-link">User Manual</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./user_rainfall_runoff_modelling.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Rainfall-runoff modelling</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./user_hydraulic_infrastructures.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Hydraulic infrastructures modelling</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./user_database.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Database</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./user_gis.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">GIS</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./user_hydro_hydrau_simulation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Hydrological-hydraulic simulation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./user_expert_module.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Expert module</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./user_plugins.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Plugins</span></a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="./tech_manual.html" class="sidebar-item-text sidebar-link">Technical Manual</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_hydrological_models.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Hydrological and hydraulics models description</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_performance_indicators.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Performance indicators</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_calibration_algorithms.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Calibration algorithms</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_stochastic_equations.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Stochastic equations</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_scripts.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Visual Basic Scripts</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_file_formats.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">File formats</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_database_formats.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Database formats</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_gis_formats.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">GIS formats</span></a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="./examples.html" class="sidebar-item-text sidebar-link">Examples of application</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examples_ex1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Example 1 – Simple basin with only runoff</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examples_ex2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Example 2 – Combined full basin with meteorological stations</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examples_ex3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Example 3 – Equipped basin with a hydropower scheme</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examples_ex4.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Example 4 – Automatic calibration of a model</span></a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./acknowledgments.html" class="sidebar-item-text sidebar-link">Acknowledgments</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Appendices</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix_list_param_ic.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Appendix: List of parameters and initial conditions</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix_list_notifications.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">List of notifications from pre-simulation and post-simulation reports</span></a>
+  </div>
+</li>
+    </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#gis-interface" id="toc-gis-interface" class="nav-link active" data-scroll-target="#gis-interface"> <span class="header-section-number">4.1</span> GIS interface</a></li>
+  <li><a href="#gis-commands" id="toc-gis-commands" class="nav-link" data-scroll-target="#gis-commands"> <span class="header-section-number">4.2</span> GIS Commands</a>
+  <ul class="collapse">
+  <li><a href="#importation-of-new-layers" id="toc-importation-of-new-layers" class="nav-link" data-scroll-target="#importation-of-new-layers">Importation of new layers</a></li>
+  <li><a href="#tools-for-interaction-in-the-interface" id="toc-tools-for-interaction-in-the-interface" class="nav-link" data-scroll-target="#tools-for-interaction-in-the-interface">Tools for interaction in the interface</a></li>
+  </ul></li>
+  <li><a href="#automatic-model-creation" id="toc-automatic-model-creation" class="nav-link" data-scroll-target="#automatic-model-creation"> <span class="header-section-number">4.3</span> Automatic Model <em>Creation</em></a></li>
+  <li><a href="#model-edition" id="toc-model-edition" class="nav-link" data-scroll-target="#model-edition"> <span class="header-section-number">4.4</span> Model <em>Edition</em></a>
+  <ul class="collapse">
+  <li><a href="#create-objects" id="toc-create-objects" class="nav-link" data-scroll-target="#create-objects">Create Objects</a></li>
+  <li><a href="#model-gis-links" id="toc-model-gis-links" class="nav-link" data-scroll-target="#model-gis-links">Model-GIS Links</a>
+  <ul class="collapse">
+  <li><a href="#link-creation" id="toc-link-creation" class="nav-link" data-scroll-target="#link-creation">Link creation</a></li>
+  <li><a href="#link-removal" id="toc-link-removal" class="nav-link" data-scroll-target="#link-removal">Link removal</a></li>
+  <li><a href="#auto-linking-objects" id="toc-auto-linking-objects" class="nav-link" data-scroll-target="#auto-linking-objects">Auto-linking objects</a></li>
+  </ul></li>
+  <li><a href="#export-properties" id="toc-export-properties" class="nav-link" data-scroll-target="#export-properties">Export Properties</a>
+  <ul class="collapse">
+  <li><a href="#export-pre-calculated-feature-attributes" id="toc-export-pre-calculated-feature-attributes" class="nav-link" data-scroll-target="#export-pre-calculated-feature-attributes">Export pre-calculated feature attributes</a></li>
+  <li><a href="#compute-properties-from-the-shapefile" id="toc-compute-properties-from-the-shapefile" class="nav-link" data-scroll-target="#compute-properties-from-the-shapefile">Compute properties from the shapefile</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#hydro-model-visualization" id="toc-hydro-model-visualization" class="nav-link" data-scroll-target="#hydro-model-visualization"> <span class="header-section-number">4.5</span> Hydro Model Visualization</a>
+  <ul class="collapse">
+  <li><a href="#spatial-view" id="toc-spatial-view" class="nav-link" data-scroll-target="#spatial-view">Spatial View</a></li>
+  </ul></li>
+  <li><a href="#db-stations-visualization" id="toc-db-stations-visualization" class="nav-link" data-scroll-target="#db-stations-visualization"> <span class="header-section-number">4.6</span> DB Stations Visualization</a>
+  <ul class="collapse">
+  <li><a href="#data-requirements" id="toc-data-requirements" class="nav-link" data-scroll-target="#data-requirements">Data requirements</a></li>
+  <li><a href="#procedure" id="toc-procedure" class="nav-link" data-scroll-target="#procedure">Procedure</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<p>The GIS module allows the user to manage and process geospatial data. In this chapter, the GIS interface and its different tools are presented.</p>
+<section id="gis-interface" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="gis-interface"><span class="header-section-number">4.1</span> GIS interface</h2>
+<p>To start GIS:</p>
+<ul>
+<li><span style="color:blue">Click on <em>GIS</em> section in the main frame (<a href="user_manual.html#fig-rsm_interface">Figure&nbsp;<span>1</span></a>).</span> The <em>GIS</em> tab is shown in <a href="#fig-gis_tool_interface">Figure&nbsp;<span>4.1</span></a>.</li>
+</ul>
+<div id="fig-gis_tool_interface" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-gis_tool_interface.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 4.1: Interface of the GIS tool</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="gis-commands" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="gis-commands"><span class="header-section-number">4.2</span> GIS Commands</h2>
+<section id="importation-of-new-layers" class="level3">
+<h3 class="anchored" data-anchor-id="importation-of-new-layers">Importation of new layers</h3>
+<p>To add geospatial data in the GIS Interface,</p>
+<ul>
+<li><p><span style="color:blue">Click on the <em>Add layers</em> button in the GIS Commands tab (<a href="#fig-gis_tool_interface">Figure&nbsp;<span>4.1</span></a>).</span></p></li>
+<li><p><span style="color:blue">Move up/down the different layers and use the check boxes to display or not the layers.</span></p></li>
+</ul>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The file path of the shapefile is added to the hydrological model (.rsm) , not the whole shapefile.</p>
+</div>
+</div>
+</section>
+<section id="tools-for-interaction-in-the-interface" class="level3">
+<h3 class="anchored" data-anchor-id="tools-for-interaction-in-the-interface">Tools for interaction in the interface</h3>
+<table class="table">
+<colgroup>
+<col style="width: 65%">
+<col style="width: 34%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><img src="figures/fig-icon_gis_select_features.png" style="width:0.44in;height:0.44in"></td>
+<td>Select features by rectangle</td>
+</tr>
+<tr class="even">
+<td><img src="figures/fig-icon_gis_pan.png" style="width:0.44in;height:0.44in"></td>
+<td>Pan</td>
+</tr>
+<tr class="odd">
+<td><img src="figures/fig-icon_gis_zoom_in.png" style="width:0.44in;height:0.44in"></td>
+<td>Zoom in</td>
+</tr>
+<tr class="even">
+<td><img src="figures/fig-icon_gis_zoom_out.png" style="width:0.44in;height:0.44in"></td>
+<td>Zoom out</td>
+</tr>
+<tr class="odd">
+<td><img src="figures/fig-icon_gis_zoom_layer.png" style="width:0.44in;height:0.44in"></td>
+<td>Zoom to layer extent</td>
+</tr>
+<tr class="even">
+<td><img src="figures/fig-icon_gis_zoom_extent.png" style="width:0.44in;height:0.44in"></td>
+<td>Zoom to global extent</td>
+</tr>
+<tr class="odd">
+<td><img src="figures/fig-icon_gis_view_attribute.png" style="width:0.44in;height:0.44in"></td>
+<td>View attribute table of selected layer</td>
+</tr>
+<tr class="even">
+<td><img src="figures/fig-icon_gis_view_info.png" style="width:0.44in;height:0.44in"></td>
+<td>View information on selected feature</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="automatic-model-creation" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="automatic-model-creation"><span class="header-section-number">4.3</span> Automatic Model <em>Creation</em></h2>
+<p>The <em>Creation</em> tool in the <em>Model Management</em> frame automatizes the creation of hydrological models based on the GIS layers where the hydrological objects, the confluences and their links are defined. This tool connects the objects (which represent the different subbasins) with their corresponding downstream junctions (that represent the outlets of each subbasin); theses junctions with the downstream rivers that transport the discharges generated in the subbasins; and finally these rivers with the outlet downstream junctions.</p>
+<p>The structure of the GIS layers has to be edited under the following format:</p>
+<ul>
+<li><p>The <strong>subbasins</strong> layer must contain an attribute column with the ID of the downstream junctions (the outlets of each subbasin).</p></li>
+<li><p>The <strong>junctions</strong> layer must contain an attribute column with the ID of the downstream rivers that will transport the discharges. Also, one of the attribute columns must correspond with the ID indicated in the subbasins and the rivers layers.</p></li>
+<li><p>The <strong>rivers</strong> layer must contain an attribute column with the ID of the downstream outlet junctions.</p></li>
+</ul>
+<p>Once the different layers have been added to the interface, it is possible to use <em>Creation</em>:</p>
+<ul>
+<li><span style="color:blue">Click <em>Creation</em> in the <em>Model Management</em> frame.</span></li>
+</ul>
+<p>A <em>Configuration</em> area with three parts –<em>Subbasins</em>, <em>Junctions</em> and <em>Rivers</em>– as well as an attribute table (for the selected layer) should appear below the GIS interface (<a href="#fig-gis_creation_interface">Figure&nbsp;<span>4.2</span></a>).</p>
+<ul>
+<li><p><span style="color:blue">In the <em>Subbasins</em> part, select the name of the layer that contains the subbasins information (<em>Layer name</em>), the attribute that contains the basins name (<em>Basins name</em>) and the ID of the downstream junctions to be linked to the subbasins (<em>Junctions ID</em>). You can create submodels based on Basins ID, by choosing the corresponding ID field.</span></p></li>
+<li><p><span style="color:blue">In the <em>Junctions</em> part, select the name of the layer that contains the junctions information (<em>Layer name</em>), the attribute that contains the junctions name (<em>Junctions name</em>), the ID field of the junctions that will be linked to the downstream rivers (<em>Junctions ID</em>), and the ID field of the rivers that will be linked (<em>Rivers ID</em>).</span></p></li>
+<li><p><span style="color:blue">If you want to create river sections, choose the option in the <em>Rivers</em> part (<em>Create rivers</em>), select the name of the layer that contains the rivers information (<em>Layer name</em>), the attribute that contains the rivers name (<em>Rivers name</em>), the ID field of the rivers that will be linked to the downstream junctions (<em>Rivers ID</em>), and the ID field of the downstream junctions that will be linked (<em>Junctions ID</em>).</span></p></li>
+<li><p><span style="color:blue">In the <em>Allocate SubBasins Type</em>, select the different subbasins entities aggregated per type by holding Ctrl while clicking (Step 5 in <a href="#fig-gis_creation_interface">Figure&nbsp;<span>4.2</span></a>). Choose the type of object to create (like SOCONT or GSM) and click <em>Allocate Subbasins</em>.</span></p></li>
+<li><p><span style="color:blue">In the <em>Allocate Rivers Type</em>, select the different rivers entities aggregated per type by holding Ctrl while clicking (Step 6 in <a href="#fig-gis_creation_interface">Figure&nbsp;<span>4.2</span></a>). Choose the type of object to create (like Kinematic Wave) and click <em>Allocate Rivers</em>.</span></p></li>
+<li><p><span style="color:blue">Click <em>Create Model</em> to create all the objects and their links defined in the GIS layers.</span></p></li>
+</ul>
+<div id="fig-gis_creation_interface" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-gis_creation_interface.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 4.2: Model Creation interface in the GIS</figcaption><p></p>
+</figure>
+</div>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <em>Creation</em> tool defines automatically the parameters <span class="math inline">\(Surface\)</span>, <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> of the objects; the definition of the <span class="math inline">\(Z\)</span> parameter is optional using the option <em>Altitude (Z)</em>. For the definition of the rest of parameters, please use the <em>Edition</em> tool.</p>
+</div>
+</div>
+<p>If you use the default layers names, the program will load automatically the specific fields. The names are shown in <a href="#fig-gis_default_layers_names">Figure&nbsp;<span>4.3</span></a>.</p>
+<div id="fig-gis_default_layers_names" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-gis_default_layers_names.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 4.3: Default layers names to autofill fields</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="model-edition" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="model-edition"><span class="header-section-number">4.4</span> Model <em>Edition</em></h2>
+<p>With the <em>Edition</em> tool in the <em>Model Management</em> frame, the user can manually edit existing objects and links, create new ones, or remove some of them.</p>
+<p>Once the GIS layers have been added and/or the hydrological objects have been created,</p>
+<ul>
+<li><p><span style="color:blue">Select the layer on the left side of the GIS tab.</span></p></li>
+<li><p><span style="color:blue">Click <em>Edition</em> in the <em>Model Management</em> frame.</span></p></li>
+</ul>
+<p>An attribute table (for the selected entities) as well as an action area with three tabs should appear below the GIS interface (<a href="#fig-gis_model_edition_interface">Figure&nbsp;<span>4.4</span></a>),</p>
+<ul>
+<li><p><span style="color:blue">Select features of the selected layer in order to bring them up in the attribute table (use the <em>Select All</em> button to select all features).</span></p></li>
+<li><p><span style="color:blue">In the action area, select in the drop-down menu a Field Name (layer attribute) that should be used to identify features.</span></p></li>
+</ul>
+<div id="fig-gis_model_edition_interface" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-gis_model_edition_interface.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 4.4: Model Edition interface in the GIS and its workflow</figcaption><p></p>
+</figure>
+</div>
+<p>The three tabs offer you the possibility of the following actions:</p>
+<ul>
+<li><p><strong>Create Objects</strong>: Create model objects from GIS features.</p></li>
+<li><p><strong>Model-GIS Links</strong>: Link GIS features to existing model objects.</p></li>
+<li><p><strong>Export Properties</strong>: Export feature properties to properties (parameters) of model objects.</p></li>
+</ul>
+<section id="create-objects" class="level3">
+<h3 class="anchored" data-anchor-id="create-objects">Create Objects</h3>
+<p>In the following example, we are going to generate a sub-model of the subcatchment highlighted in blue in <a href="#fig-gis_model_edition_interface">Figure&nbsp;<span>4.4</span></a>, which has both normal and glacial elevation bands.</p>
+<ul>
+<li><p><span style="color:blue">Select the <em>Create Objects action tab</em>.</span></p></li>
+<li><p><span style="color:blue">Select all non-glacial features by holding Ctrl while clicking (Step 3 in <a href="#fig-gis_model_edition_interface">Figure&nbsp;<span>4.4</span></a>). Using the sorting tool for the attribute table might help to order the objects.</span></p></li>
+<li><p><span style="color:blue">Under <em>Type of Object to create</em>, select a non-glacial basin model (like SOCONT).</span></p></li>
+<li><p><span style="color:blue">Put a check on <em>Also Create Virtual Weather Stations</em>.</span> Now, a virtual weather station will be created for and linked to each created object.</p></li>
+<li><p><span style="color:blue">Put a check on <em>Also link basins to a Junction</em>.</span> Now, all created objects will be linked to a single newly created junction.</p></li>
+<li><p><span style="color:blue">Under <em>Select Model</em>, select the model in which you wish to place the newly created objects. In our case, this is the parent model.</span></p></li>
+<li><p><span style="color:blue">Put a check on <em>Create new Submodel</em> and give it a name.</span> Now, a submodel will be created and contain all the newly created objects.</p></li>
+<li><p><span style="color:blue">Click <em>Create Objects</em>.</span></p></li>
+</ul>
+<p>Once the creation process is finished, a message is displayed and object icons are displayed next to each of the features, to indicate that the features and the objects have been linked (<a href="#fig-gis_object_creation_process">Figure&nbsp;<span>4.5</span></a>).</p>
+<div id="fig-gis_object_creation_process" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-gis_object_creation_process.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 4.5: Object creation process completed</figcaption><p></p>
+</figure>
+</div>
+<p>We then create the glacial objects:</p>
+<ul>
+<li><p><span style="color:blue">Select glacial features by holding Ctrl while clicking (Step 3 in <a href="#fig-gis_model_edition_interface">Figure&nbsp;<span>4.4</span></a>).</span></p></li>
+<li><p><span style="color:blue">Under <em>Type of Object to create</em>, select a glacial basin model (like GSM).</span></p></li>
+<li><p><span style="color:blue">Put a check on <em>Also Create Virtual Weather Stations</em>.</span> Now, a virtual weather station will be created for and linked to each created object.</p></li>
+<li><p><span style="color:blue">Put a check on <em>Also link basins to a Junction</em>.</span> Now, all created objects will be linked to another single newly created junction.</p></li>
+<li><p><span style="color:blue">Under <em>Select Model</em>, select the model in which you wish to place all newly created objects. <u>In our case, this is the model that was previously created</u>.</span></p></li>
+<li><p><span style="color:blue">Remove the check from <em>Create new Submodel</em>, since we created our submodel in the last step.</span></p></li>
+<li><p><span style="color:blue">Click <em>Create Objects</em>.</span></p></li>
+</ul>
+<p>If we now view the hydraulic submodel that was created we see that all the SOCONT and GSM objects were created and linked to both a junction and a virtual station (<a href="#fig-gis_automatic_generated_objects">Figure&nbsp;<span>4.6</span></a>).</p>
+<div id="fig-gis_automatic_generated_objects" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-gis_automatic_generated_objects.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 4.6: Automatically generated objects</figcaption><p></p>
+</figure>
+</div>
+<p>It is still necessary to link the junctions to a group interface and define certain properties of the basins (area) and virtual stations (coordinates) in order for the submodel to be complete. In <em>Export Properties</em>, we see how these properties can be exported by bulk from the linked shapefile features.</p>
+</section>
+<section id="model-gis-links" class="level3">
+<h3 class="anchored" data-anchor-id="model-gis-links">Model-GIS Links</h3>
+<p>It is important that model objects be linked with GIS features for two reasons. First, it allows properties to be efficiently exported from the features to the object (see next section). Second, it allows model simulation results to be viewed in the GIS (see <a href="#fig-gis_hydro_model_visualization">Figure&nbsp;<span>4.9</span></a>).</p>
+<p>In the following, we explain how to remove and create a link between a feature and an existing model object.</p>
+<section id="link-creation" class="level4">
+<h4 class="anchored" data-anchor-id="link-creation">Link creation</h4>
+<p>To create a link,</p>
+<ul>
+<li><p><span style="color:blue">Select an unlinked feature in the link viewer.</span></p></li>
+<li><p><span style="color:blue">Select a model object in the right-hand list.</span></p></li>
+<li><p><span style="color:blue">Click the <em>link</em> icon situated below the <em>Auto-Link</em> button.</span></p></li>
+</ul>
+</section>
+<section id="link-removal" class="level4">
+<h4 class="anchored" data-anchor-id="link-removal">Link removal</h4>
+<p>To remove a link,</p>
+<ul>
+<li><p><span style="color:blue">Select the link you wish to remove in the link viewer on left side of <a href="#fig-gis_linking_unlinking_elements">Figure&nbsp;<span>4.7</span></a>.</span></p></li>
+<li><p><span style="color:blue">Click the <em>unlink</em> icon situated below the <em>Auto-Link</em> button.</span></p></li>
+</ul>
+<div id="fig-gis_linking_unlinking_elements" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-gis_linking_unlinking_elements.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 4.7: Linking and unlinking elements. Here, the two unlinked elements are ready to be linked</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="auto-linking-objects" class="level4">
+<h4 class="anchored" data-anchor-id="auto-linking-objects">Auto-linking objects</h4>
+<p>If the object names match the Field Name displayed in the link viewer, then you can use the <em>Auto-Link</em> button to match and link the elements automatically.</p>
+</section>
+</section>
+<section id="export-properties" class="level3">
+<h3 class="anchored" data-anchor-id="export-properties">Export Properties</h3>
+<p>Properties can be exported from a linked feature directly to the basin model or to its associated virtual weather station. There are two properties that you will definitely want to export from the GIS to the hydraulic model: Basin area and the coordinates of the virtual weather station of each basin.</p>
+<div id="fig-gis_exporting_feature_attributes" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-gis_exporting_feature_attributes.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 4.8: Exporting feature attributes to model objects</figcaption><p></p>
+</figure>
+</div>
+<section id="export-pre-calculated-feature-attributes" class="level4">
+<h4 class="anchored" data-anchor-id="export-pre-calculated-feature-attributes">Export pre-calculated feature attributes</h4>
+<p>In order to use a feature attribute as a model parameter value,</p>
+<ul>
+<li><p><span style="color:blue">Select a linked pair of elements in the <em>Export Properties</em> tab.</span></p></li>
+<li><p><span style="color:blue">Navigate to the model parameter that you wish to change, and in the drop-down list, select the attribute of the linked feature that should be used.</span></p></li>
+</ul>
+</section>
+<section id="compute-properties-from-the-shapefile" class="level4">
+<h4 class="anchored" data-anchor-id="compute-properties-from-the-shapefile">Compute properties from the shapefile</h4>
+<p>The area of a basin, as well as average X and Y coordinates, can be calculated directly from the feature itself instead of using a pre-calculated feature attribute. In order to do that,</p>
+<ul>
+<li><p><span style="color:blue">Select a linked pair of elements in the <em>Export Properties</em> tab.</span></p></li>
+<li><p><span style="color:blue">To compute the area for the different sub-basins, select <em>Compute Area from Shapefile</em>.</span></p></li>
+<li><p><span style="color:blue">To compute the centre of gravity for the virtual weather station, select <em>Compute (X,Y) Coordinates from Shapefile</em>.</span></p></li>
+</ul>
+<p>The action can be performed on multiple pairs at the same time, but only pairs of objects of the same type (i.e.&nbsp;only pairs of SOCONT objects). The action cannot be applied to different object types at the same time because different object types have different sets of parameters.</p>
+</section>
+</section>
+</section>
+<section id="hydro-model-visualization" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="hydro-model-visualization"><span class="header-section-number">4.5</span> Hydro Model Visualization</h2>
+<p>The <em>Model Visualization</em> module lets you visualize and edit model information from within the GIS interface. There are three tabs for interaction:</p>
+<ul>
+<li><p><strong>Object Info</strong>: view and edit model object parameters.</p></li>
+<li><p><strong>Solver</strong>: run a simulation.</p></li>
+<li><p><strong>Spatial View</strong>: Change the colours of GIS features based on values from linked objects.</p></li>
+</ul>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Shapefile features must be linked to a model object to display information</p>
+</div>
+</div>
+<section id="spatial-view" class="level3">
+<h3 class="anchored" data-anchor-id="spatial-view">Spatial View</h3>
+<p>The Spatial View (<a href="#fig-gis_hydro_model_visualization">Figure&nbsp;<span>4.9</span></a>) allows you to visualize results, parameters, or initial conditions at each of the objects.</p>
+<div id="fig-gis_hydro_model_visualization" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-gis_hydro_model_visualization.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 4.9: Hydro Model Visualization: interface workflow in the Spatial View</figcaption><p></p>
+</figure>
+</div>
+<p>In order to perform a visualization,</p>
+<ul>
+<li><p><span style="color:blue">Select the layer that you wish to visualize. Features from this layer must be linked with model objects.</span></p></li>
+<li><p><span style="color:blue">Select the <em>Spatial View</em> tab.</span></p></li>
+<li><p><span style="color:blue">Select the object types that you wish to visualize. Multiple selections can be made, but different object types <strong>must</strong> share a parameter in order to be displayed.</span></p></li>
+<li><p><span style="color:blue">Select the parameter type from either <em>Results, Parameters, or Initial Conditions</em>.</span></p></li>
+<li><p><span style="color:blue">Select the parameter that you wish to display.</span></p></li>
+<li><p><span style="color:blue">If you are viewing simulation results, select the date for which results should be displayed.</span></p></li>
+<li><p><span style="color:blue">Optional: change color settings.</span></p></li>
+<li><p><span style="color:blue">Click on <em>Visualize</em>.</span></p></li>
+</ul>
+</section>
+</section>
+<section id="db-stations-visualization" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="db-stations-visualization"><span class="header-section-number">4.6</span> DB Stations Visualization</h2>
+<p>The <em>DB Stations Visualization</em> tool allows spatial representation of the stations contained in a database or a dataset.</p>
+<p>The stations are represented directly in the GIS interface. The coordinates are taken from the X, Y and Z coordinates from the position of the stations.</p>
+<section id="data-requirements" class="level3">
+<h3 class="anchored" data-anchor-id="data-requirements">Data requirements</h3>
+<p>The input is composed of a dataset or a database (RS MINERVE format).</p>
+</section>
+<section id="procedure" class="level3">
+<h3 class="anchored" data-anchor-id="procedure">Procedure</h3>
+<p>The steps to plot in GIS the stations’ location are presented hereafter.</p>
+<ul>
+<li><p><span style="color:blue">In GIS, click on the <em>DB Stations Visualization</em> button (<em>Toolbox</em> frame).</span></p></li>
+<li><p><span style="color:blue">Select the dataset or the database to be considered.</span></p></li>
+</ul>
+<p>A new layer of points is created and displayed in the GIS interface (<a href="#fig-gis_visualization_stations_location">Figure&nbsp;<span>4.10</span></a>). The user can posteriorly save the layer.</p>
+<div id="fig-gis_visualization_stations_location" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-gis_visualization_stations_location.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 4.10: Visualization of stations location in GIS</figcaption><p></p>
+</figure>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./user_database.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Database</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./user_hydro_hydrau_simulation.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Hydrological-hydraulic simulation</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
