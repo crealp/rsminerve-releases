@@ -1,0 +1,368 @@
+# Hydraulic infrastructures modelling {#sec-user_hydraulic_infrastructures}
+
+@sec-user_rainfall_runoff presents the different steps to create a
+hydrological model without any hydraulic infrastructures. This @sec-user_hydraulic_infrastructures
+explains how infrastructures like reservoirs, turbines or spillways are
+implemented in RS MINERVE.
+
+Hydraulic infrastructures are listed in @sec-user_hydraulic_infrastructures_list, and objects used for
+automatic regulation are presented in @sec-user_hydraulic_infrastructures_hydropower and @sec-user_hydraulic_infrastructures_planner.
+
+## Infrastructures {#sec-user_hydraulic_infrastructures_list}
+
++-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ![](figures/fig-icon_object_reservoir.png){width="0.44in"height="0.44in"}   | **Reservoir** - Water level and volume evolution are simulated based on a "Level-Volume" relation and an initialreservoir level.                                                                                     |
++-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ![](figures/fig-icon_object_hq.png){width="0.44in"height="0.44in"}          | **HQ** - Based on a level-discharge relation, it allows integration of level-based outflows to reservoirs (such as spillways, gates, orifices,...).                                                                  |
++-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ![](figures/fig-icon_object_turbine.png){width="0.44in" height="0.44in"}    | **Turbine** - It calculates the turbine or pump flow from a reservoir, based on a *Wanted Discharge* defined in the same object by a time-discharge series.                                                          |
++-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ![](figures/fig-icon_object_turbinedb.png){width="0.44in" height="0.44in"}  | **TurbineDB** - The TurbineDB object works as the *Turbine* object but is directly based on data provided by the database. It is equivalent to the combination of a turbine and a source.                            |
++-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ![](figures/fig-icon_object_hydropower.png){width="0.44in" height="0.44in"} | **Hydropower** - This object calculates the power and the revenue, normally produced by a turbine, depending on the discharge and on the reservoir level.                                                            |
++-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ![](figures/fig-icon_object_diversion.png){width="0.44in" height="0.44in"}  | **Diversion** - This object is used to simulate the separation of flow based on an "Inflow - Diverted flow" relation. It can be used as a hydrological object but is mostly used as a hydraulic function.            |
++-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ![](figures/fig-icon_object_consumer.png){width="0.44in" height="0.44in"}   | **Consumer** - This object simulates the consumed dischargeof a user (e.g.: a village or an agricultural field) based on a series from a database or from a uniform demand.                                          |
++-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ![](figures/fig-icon_object_efficiency.png){width="0.44in" height="0.44in"} | **Structure efficiency** - This object computes effects of discharge losses in a structure like a canal or a pipe based on an efficiency coefficient.                                                                |
++-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ![](figures/fig-icon_object_planner.png){width="0.44in" height="0.44in"}    | **Planner** - This is a control system consisting of the definition of a set of management rules, based on conditions. This object allows you to manage the regulation of reservoirs, turbines, bottom outlets, etc. |
++-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+##  Addition of a Hydropower scheme {#sec-user_hydraulic_infrastructures_hydropower}
+
+This chapter presents a general example for the construction of a
+hydropower scheme, including a reservoir with a hydropower plant, a
+turbine and a spillway.
+
+### Addition of a reservoir
+
+To add a reservoir:
+
+- <span style="color:blue">Select the object *Reservoir* in the Infras*tructures objects* frame (@fig-model_with_reservoir) and add it in the *Interface*.</span>
+
+- <span style="color:blue">Link the output of the upstream sub-basin (object *Junction* in @fig-model_with_reservoir) to the *Reservoir*.</span>
+
+![A regular model with a reservoir](figures/fig-model_with_reservoir.png){#fig-model_with_reservoir}
+
+- <span style="color:blue">Double-click on the *Reservoir* object. The *Reservoir*, *Series*
+  and *Initial Conditions* frames are opened (@fig-model_with_reservoir).</span>
+
+- <span style="color:blue">In the *Series* frame, select the *H-V* series and open the *Values* tab.</span>
+
+- <span style="color:blue">By default, the table is empty. Insert the corresponding
+  Height-Volume (*H-V*) relation for the reservoir.</span>
+
+- <span style="color:blue">Define an initial water elevation ($HIni$) in the *Initial
+  conditions* frame.</span>
+
+Alternatively to the last point to define the initial water elevation of
+the *Reservoir*, a time series can be saved in the database with a
+sensor of Category *Altitude* and Unit *masl*. For each simulation, RS
+MINERVE will then search and interpolate the initial condition from the
+added time series. To link the *Reservoir* with the sensor, first select
+in the *Data Source* frame the corresponding *Group* and *Dataset*.
+
+Then, in the *Reservoir* frame (right part), click on the ![](figures/fig-icon_arrow_down_menu.png){height="0.24"} 
+*Select station from Database* button and
+define the correct station in the *Station* drop-down list (only
+stations containing a sensor with appropriate units are listed). The
+value in the *Initial conditions* frame will change after every
+simulation to the value interpolated from the time series.
+
+Once a reservoir is implemented, outputs of the reservoir have to be
+defined. Water from a reservoir can be exited through different ways. A
+combination of *Turbine* (or *TurbineDB*) and *Hydropower* objects are
+used to simulate the use of water for hydropower production.
+*Regulations* are generally used to automatize the operation of
+*Turbine* and *TurbineDB* objects. Finally, *HQ* objects generate
+discharges based on elevation-discharge relations.[^hydr_infr_10]
+
+All these objects can be used independently and cumulatively. For
+example, several turbines can be placed in parallel with one or several
+*TurbineDB*(s), *HQ* object(s) and/or *Regulation*(s). None of them is
+imperative.
+
+[^hydr_infr_10]: As outputs from the Reservoir are defined by downstream objects, output flows (Qs) are considered 
+as an *Input* to the *Reservoir* in terms of information flow. The corresponding water is thereby withdrawn from the stored volume. 
+This implies that at least one output flow has to be defined to validate the model.
+
+### Addition of a TurbineDB object
+
+The *TurbineDB* object is based on data from a database. Thus, before
+adding a *TurbineDB*, data have to be added to the database
+
+- <span style="color:blue">Open a database (see @sec-user_database) and create a station with a sensor
+  of category *Flow.* Modify the description and insert data for the
+  *TurbineDB* outflow in the *Values* tab.</span>
+
+The *TurbineDB* object is then added.
+
+- <span style="color:blue">Select the object *TurbineDB* in the *Structures objects* frame (@fig-model_with_reservoir) 
+  and add it in the *Interface*. Add also a *Junction* to
+  which outflow(s) from the *Reservoir* will be linked to.</span>
+
+- <span style="color:blue">Switch to *Connections* (*Editing Tools* frame $\rightarrow$ *Connections* or
+  use the *space* key) and link the *Reservoir* to the *TurbineDB*
+  object and the *TurbineDB* object to the *Junction* (@fig-addition_turbinedb_junction).</span>
+
+![Addition of a *TurbineDB* and a junction](figures/fig-addition_turbinedb_junction.png){#fig-addition_turbinedb_junction}
+
+- <span style="color:blue">In the *Data Source* frame (@fig-model_with_reservoir), select for the line *HPP*
+  [^11] the *Group* and *DataSet* corresponding to the sensor created in the database.</span>
+
+- <span style="color:blue">Double-click on the *TurbineDB* object to open the *TurbineDB* frame
+  (right-side). Then, click on the ![](figures/fig-icon_arrow_down_menu.png){height="0.25"} *Select station from Database* button
+  and define the corresponding station in the *Station* drop-down
+  list. The link between the *TurbineDB* object and the database is
+  now operational.</span>
+
+- <span style="color:blue">In the *Parameters* frame (@fig-param_ic_turbine), user can define the reservoir
+  water altitude to start ($H_{on}$) or stop ($H_{off}$) the turbine. If the
+  value is equal to zero, the turbine operation will be independent of
+  the reservoir altitude.</span>
+
+- <span style="color:blue">In the *Initial conditions* frame (@fig-param_ic_turbine), user must define the
+  initial turbine status when the water altitude is initially between
+  $H_{on}$ and $H_{off}$. 'Zero' (0) means starting the simulation with the
+  turbine OFF and 'one' (1) means starting with the turbine ON.</span>
+
+Once these parameters specified, the *TurbineDB* object is ready for
+use.
+
+[^11]: Short for HydroPower Plant, which includes the *TurbineDB* and the *Hydropower* objects.
+
+![Parameters and initial conditions of turbine](figures/fig-param_ic_turbine.png){#fig-param_ic_turbine}
+
+\ 
+
+![Example of turbine operation](figures/fig-example_turbine_operation.png){#fig-example_turbine_operation}
+
+### Addition of a Hydropower object
+
+The *Hydropower* object calculates the power and the revenue produced by
+the discharge of the turbine from the reservoir. The results depend on
+the discharge and on the reservoir water level.
+
+- <span style="color:blue">Select the object *Hydropower* in the *Structures objects* frame (@fig-model_with_reservoir) 
+  and add it in the *Interface* (@fig-addition_hydropower).</span>
+
+![Addition of a *Hydropower* object](figures/fig-addition_hydropower.png){#fig-addition_hydropower}
+
+As the power produced in the hydropower plant depends on the water level
+in the reservoir and on the discharge of the turbine, these two
+variables (water level and discharge) must be transferred to the
+Hydropower object as follows (@fig-links_hydropower_reservoir_turbinedb):
+
+- <span style="color:blue">Link the *TurbineDB* to the *Hydropower* object so the discharge
+  variable can be transferred to the *Hydropower* object.</span>
+
+- <span style="color:blue">The water level information will be automatically transferred from
+  the *Reservoir* to the *Hydropower* object through the *TurbineDB* object.</span>
+
+![Links between the *Hydropower* object and the *Reservoir* and *TurbineDB* information](figures/fig-links_hydropower_reservoir_turbinedb.png){#fig-links_hydropower_reservoir_turbinedb}
+
+- <span style="color:blue">Double-click on the *Hydropower* object to open its frame
+  (right-side). Then, click on the ![](figures/fig-icon_arrow_down_menu.png){width="0.15in" height="0.15"} 
+  *Select station from Database* button and define the corresponding station which contains the
+  *Electricity price* series in the *Station* drop-down list. The
+  link between the *Hydropower* object and the database is now
+  operational.</span>
+
+- <span style="color:blue">In the *Series* frame, select the $Q-\eta$ (discharge-efficiency) series
+  and open the Values tab. Insert data for the $Q-\eta$ relation (manually
+  or copied from a spreadsheet).</span>
+
+- <span style="color:blue">In the *Parameters* frame, introduce the features of the hydropower
+  plant. In particular the following parameters must be specified: the
+  hydropower plant altitude ($Zcentral$) in masl; the length of the
+  pipe ($L$) in m; the diameter of the pipe ($D$) in m; the Roughness ($K$)
+  in m; the kinematic viscosity ($\nu$) in m^2^/s; and the default price
+  of electricity, only used if no data exists in the database.</span>
+
+The *Hydropower* object is ready for use.
+
+### Addition of an HQ object
+
+HQ objects are used to define level-discharge relations to implement
+structures such as spillways, orifices or sluice gates. For illustration
+purpose, an *HQ* object is used as a spillway in the following
+procedure.
+
+- <span style="color:blue">Select the *HQ* object in the *Structures objects* frame (@fig-model_with_reservoir)
+  and add it in the *Interface*.
+
+- <span style="color:blue">Link the *Reservoir* to the *HQ* object and the *HQ* object to the
+  *Junction* (@fig-addition_spillway).
+
+![Addition of a spillway](figures/fig-addition_spillway.png){#fig-addition_spillway}
+
+- <span style="color:blue">Double-click on the *HQ* object. In the *Series* frame, select the
+  *H-Q* series and open the *Values* tab. Insert data for the *H-Q*
+  relation (manually or copied from a spreadsheet).</span>
+
+The *HQ* object is ready for use.
+
+### Simulation with implemented structures 
+
+Several structures can be added in parallel as illustrated in @fig-addition_spillway.
+When all objects are created, the model linked to the database and
+validated, start the simulation (@sec-user_hydro_hydrau_simulation_run_model). Discharges through the
+different objects can then be visualized by clicking on each object
+(@sec-user_hydro_hydrau_simulation_run_model) or within the *Selection and Plots* module (@sec-user_hydro_hydrau_simulation_selection_plots).
+
+It is **important** to remember that discharges generated by *HQ*
+objects are defined by the water level in the reservoir. Below a certain
+level, no discharge is produced. This is not the case of the *TurbineDB*
+objects that withdraws from the reservoir the discharges defined in the
+database, without checking if water is available or not in the
+reservoir. This might result in a negative volume in the reservoir (a
+warning is generated in the *Simulation report*). In order to generate
+discharges only when the water is actually available, *Regulation*
+objects are necessary.
+
+## Implementation of a planner {#sec-user_hydraulic_infrastructures_planner}
+
+The planner object represents a control system that allows the
+definition of a set of management rules based on conditions. This object
+allows regulating the operation of reservoirs, turbines and hydropower
+models in RS MINERVE.
+
+Each rule is defined using one or more conditions (that can be
+combined), temporary restrictions (specific dates, hours, days of the
+week, or months of the year) and an expected output. The conditions and
+the temporary restrictions define the rule to be applied (and
+corresponding output). The input values for the conditions can be
+defined in different ways: directly taken from the variable of some
+object of the full model (e.g., a specific reservoir), its own input or
+depending on the state of another rule defined in the same planner. The
+output can be generated from a predefined series of values, through the
+database, as one of the three possible inputs of the planner object or
+by setting a specific value. Furthermore, the output values can be
+modified by applying a multiplier and/or additive coefficient(s). A
+planner can be connected from all objects and to all objects except to
+stations, time series and sources (@fig-inputs_outputs_planner).
+
+Once we have simulated the model, the planner shows at what times each
+defined rule has been applied. With all these options, the planner
+object is an efficient tool for managing complex systems.
+
+![Inputs and outputs for a *Planner object*](figures/fig-inputs_outputs_planner.png){#fig-inputs_outputs_planner}
+
+### Planner
+
+The first part of the Planner window (right frame) shows basic
+information about the object (@fig-planner_principal_window).
+
+![*Planner* object principal window](figures/fig-planner_principal_window.png){#fig-planner_principal_window}
+
+To know if the planner is correctly connected in the model, the
+exclamation mark should be green; if it is not, the exclamation mark
+will be orange and the object will be isolated and not calculated
+(@fig-planner_section). In that case, it will indicate what part of the planner
+element is not correctly defined.
+
+![Planner section](figures/fig-planner_section.png){#fig-planner_section}
+
+- <span style="color:blue">Click on the blue circular arrow ("Clear variable") to reset inputs information after connections are removed.</span>
+
+@fig-planner_section_example shows an example with one Input ($Altitude$) and two outputs ($Qdown1$, $Qdown2$):
+
+![Planner section example](figures/fig-planner_section_example.png){#fig-planner_section_example}
+
+### Outputs
+
+The second part allows the user to add or delete outputs for the object
+(@fig-planner_outputs_section). The number of outputs for a planner object is not limited.
+
+![Planner *Outputs* section](figures/fig-planner_outputs_section.png){#fig-planner_outputs_section}
+
+- <span style="color:blue">To add a new output, choose the category and then push the "Add new output" button (green cross).</span>
+
+- <span style="color:blue">To delete an output, choose the output and push the "Delete output" button (red cross).</span>
+
+### Series
+
+The third part shows the series that can be used by the planner object
+(@fig-planner_series_section). The user can define new series linking different variable
+types. It's also possible to delete the existing series. As in the
+output section, the number of series for one planner object is not
+limited.
+
+![Planner *Series* section](figures/fig-planner_series_section.png){#fig-planner_series_section}
+
+- <span style="color:blue">To add a new series, choose the category and select the independent
+  variable, then push the "Add new series" button (green cross).</span>
+
+- <span style="color:blue">To delete a series, choose it and push the "Delete series" button (red cross).</span>
+
+### Rules
+
+The fourth part shows basic information about the rules for the
+management of the object (@fig-planner_rules_section). This part is divided into four
+sections: *Conditions*, *Time*, *Output generation* and *Initial rule
+state*. The rules' listing in the table defines the order in which those
+rules will be applied.
+
+![Planner *Rules* section](figures/fig-planner_rules_section.png){#fig-planner_rules_section}
+
+- <span style="color:blue">To move the rule in the table you can use the up and down arrows.</span>
+
+Example is shown in @fig-planner_rules_section_example. It shows summary information about the rules.
+
+![Rules section example](figures/fig-planner_rules_section_example.png){#fig-planner_rules_section_example}
+
+In the *Conditions* section, the user can define stand-alone or combined
+conditions (@fig-planner_conditions_rules_section). To define the condition, it's possible to use
+the planner's inputs, the results of any object or the states of other
+rules (@fig-planner_combined_conditions). The "always satisfied" option allows defining a
+condition as always true.
+
+![Conditions (Rules) section](figures/fig-planner_conditions_rules_section.png){#fig-planner_conditions_rules_section}
+
+![Example of stand-alone and combined conditions](figures/fig-planner_combined_conditions.png){#fig-planner_combined_conditions}
+
+- <span style="color:blue">Once one or more rules are defined, the user can create combined conditions using operators between conditions (AND, OR ...).</span>
+
+\ 
+
+- <span style="color:blue">The number of conditions is not limited.</span>
+
+@fig-planner_conditions_section_example shows an example, with some stand-alone conditions and
+combined conditions. At the end, it shows summarize information about
+the combined conditions (violet, as a simplified expression with names,
+and blue as expanded expression with descriptions).
+
+![Conditions (Rules) section example](figures/fig-planner_conditions_section_example.png){#fig-planner_conditions_section_example}
+
+In the *Time* section, the user can define a time schedule to turn on or
+off the rule depending on the time (@fig-planner_time_rules_section).
+
+![Time (Rules) section](figures/fig-planner_time_rules_section.png){#fig-planner_time_rules_section}
+
+@fig-planner_time_rules_section_example shows an example with a schedule to start and stop the rules.
+
+![Time (Rules) section example](figures/fig-planner_time_rules_section_example.png){#fig-planner_time_rules_section_example}
+
+In the *Output generation* section, the user can define how to create the output (@fig-planner_output_generation_section).
+
+![Output generation (Rules) section](figures/fig-planner_output_generation_section.png){#fig-planner_output_generation_section}
+
+An example is shown in @fig-planner_output_generation_section_example with a specific value (19 m^3^/s) for the output (Qdown1).
+
+![Output generation (Rules) section example](figures/fig-planner_output_generation_section_example.png){#fig-planner_output_generation_section_example}
+
+In the last section, *Initial Rule State*, the user can define the
+initial rule state for the planner object at the beginning of the
+simulation (@fig-planner_initial_rule_state_section).
+
+![Initial Rule State (Rules) section](figures/fig-planner_initial_rule_state_section.png){#fig-planner_initial_rule_state_section}
+
+#### Simulation with the planner implemented
+
+Once the planner object is properly implemented, the user can start the
+simulation. Results can be visualized by double-clicking on the object
+or by using the *Selection and Plots* module (@fig-complete_model_with_planner).
+
+![A complete example of a model with planner objects](figures/fig-complete_model_with_planner.png){#fig-complete_model_with_planner}

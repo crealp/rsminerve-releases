@@ -1,0 +1,638 @@
+#  Expert module {#sec-user_expert_module}
+
+In this chapter, the four plugins of the Expert module are presented:
+
+- Automatic calibration of hydrological model parameters
+
+- Stochastic simulation
+
+- Time-slices simulation
+
+- Scenario simulation
+
+## Calibrator {#sec-user_expert_module_calibrator}
+
+The complexity of a hydrological model calibration increases with the
+number of parameters to calibrate. The search for optimal values of
+calibration parameters can be made manually to a reasonable number of
+parameters. But in general, for large basins including hundreds or
+thousands of parameters, it is essential to have an automatic
+calibration tool.
+
+In RS MINERVE, an automatic calibration can be realized in the *Calibrator* tool (@fig-calibrator_interface).
+
+- <span style="color:blue">Click on *Expert* module and then on the Calibrator tool (@fig-calibrator_interface).</span>
+
+### Calibration configuration
+
+Different types of calibration can be achieved for an optimization:
+
+- Regular calibration: One or more zones with a unique downstream gauged station, calibrated with the same parameters for all zones.
+
+- Calibration per zone: One or more zones with a unique downstream gauged station, calibrated with different parameters per zones.
+
+- Regional calibration: One or more zones with several downstream gauged station, calibrated with the same parameters for all zones.
+
+The creation of a new calibration configuration can be realized
+following next steps (corresponding to the black boxes in the @fig-calibrator_interface):
+
+- <span style="color:blue">In the *Selection* frame (@fig-calibrator_interface), select the object types to
+  calibrate: press simultaneously *Ctrl* on keyboard and left click on
+  the object types. Then define the corresponding zone(s) by clicking
+  on the Zone Id number(s).</span>
+
+> All the objects corresponding to the selected object types and zone(s) appear in the *Models* frame (@fig-calibrator_interface). The correspondent parameters are shown in the *Parameters* frame (@fig-calibrator_interface).
+
+- <span style="color:blue">In the *Parameters* frame (@fig-calibrator_interface), select the parameters to
+  calibrate. For each of them, define their minimum and maximum
+  possible values (*Min* and *Max* columns) and the value to be used
+  for the first iteration of the calibration (*From model*, *Defined*
+  value or *Random* value).</span>
+
+- <span style="color:blue">If more than one zone has been selected (*Selection* frame), a
+  column *Values per zone* appears in the table. For the
+  parameter(s) selected for calibration, a box appears in this
+  column. If the box is checked, the calibration for the parameter
+  will consider a different value for each zone. If not, the same
+  value will be considered for all zones in the concerned
+  calibration.</span>
+
+> <span style="color:blue">Parameters can be imported in the model by clicking on ![](figures/fig-icon_calibrator_import_param.png){height="0.16in"} in the *Parameters import/export* frame (@fig-calibrator_interface).
+
+<span style="color:blue">In the *Comparators* frame (@fig-calibrator_interface), select the comparator(s) whose
+the observed variables (discharges or heights) will be used for the
+calibration (press simultaneously *Ctrl* on keyboard and left click on
+the comparators name to select more than one).</span> If more than one
+comparator is selected, all will be taken into account in the objective
+function with the same weight.
+
+![Interface of the Hydrological calibration module (in black: configuration; in green: results)](figures/fig-calibrator_interface.png){#fig-calibrator_interface}
+
+- <span style="color:blue">Define the weight of each indicator to determine the objective
+  function in the *Objective Functions* (OF) frame.</span> Its total weight
+  appears in the cell at the top of the frame.
+
+- <span style="color:blue">In the *Solver* tab of the *Hydrologic parameters optimization*
+  frame (@fig-calibrator_interface), specify the calibration period and both
+  *Simulation* and *Recording* time steps (@fig-calibrator_solver_runtime_algorithms). The *warm up
+  period* parameter defined for each comparator will be taken into
+  account to initialize the state variables (as explained in the
+  Technical manual).</span>
+
+![Calibration solver: both runtime (left) and algorithm properties (right)](figures/fig-calibrator_solver_runtime_algorithms.png){#fig-calibrator_solver_runtime_algorithms}
+
+> <span style="color:blue">In the *Algorithm parameters* tab of this same frame, define the
+> algorithm type (SCE-UA in the example of @fig-calibrator_solver_runtime_algorithms) and the
+> corresponding parameters.</span>
+>
+> Three different algorithms (Shuffled Complex Evolution -- University
+> of Arizona - SCE-UA and Uniform Adaptive Monte Carlo - UAMC and
+> Coupled Latin Hypercube and Rosenbrock - CLHR) are available in the
+> actual version. For more information, see RS MINERVE -- Technical
+> Manual.
+>
+> The mouse fly above of each parameter name shows their description.
+
+- <span style="color:blue">Click on ![](figures/fig-icon_calibrator_export_config.png){height="0.19in"} in the *Calibration Configuration*
+  frame (@fig-calibrator_interface) to save the current calibration configuration. If
+  you want to save the configuration for all the calibrations click on
+  ![](figures/fig-icon_calibrator_export_all_config.png){height="0.19in"}.</span> The produced file can be imported
+  for the next calibration test.
+
+<span style="color:blue">To import an existing configuration, click on
+![](figures/fig-icon_calibrator_import_config.png){height="0.19in"} in the *Calibration Configuration* frame
+(@fig-calibrator_interface) and load the file.</span>
+
+### Calibration start/stop
+
+- <span style="color:blue">Click on ![](figures/fig-icon_calibrator_start.png){height="0.11in"} in the *Hydrologic parameters
+  optimization* frame to launch the calibration.</span>
+
+> If the calibration configuration is valid, a "Start" message with
+> the current date appears in the *Process* tab in the *Summary Results*
+> frame. Otherwise, a red error message is displayed at the bottom of
+> the *Solver* tab and describes the problem to resolve.
+
+- <span style="color:blue">To stop the calibration, click on
+  ![](figures/fig-icon_calibrator_stop.png){height="0.11in"} in the *Hydrologic parameters
+  optimization* frame.</span> It takes a moment to stop until the current
+  simulation ends.
+
+### Calibration results
+
+After each simulation during the calibration, the following results are
+showed in the *Summary* *Results* frame (@fig-calibrator_interface and @fig-calibrator_textual_results):
+
+- The Objective Function (OF), with its maximum possible value.
+
+- The results of the simulation before optimization with initial
+  parameters, initial indicators values and initial OF value.
+
+- The results of the current iteration with its parameters values and
+  the respective indicators values and OF value.
+
+- The best result, with related parameters and OF value.
+
+These results can be exported at all times by saving with the Save
+button located in the same frame or by copying then pasting the text in
+a file.
+
+![Textual results of the calibration in progress](figures/fig-calibrator_textual_results.png){#fig-calibrator_textual_results}
+
+If more than one comparator has been selected in the *Comparators*
+frame, the Objective Function is equal to the sum of the objective
+functions obtained at each compactor.
+
+The results of the calibration in progress can also be visualized as
+graphic form in the *Graphic* *Results* frame (@fig-calibrator_interface and @fig-calibrator_graphic_results):
+
+- The *OF Progress* tab shows the temporal evolution of the Objective
+  Function (OF), with Initial value in green, current value in red
+  and all other values in orange. The activation of the mouse wheel
+  on vertical axis allows to zoom on the OF values of interest.
+
+- The *Comparator* tab allows following the progression of the current
+  simulated variable (discharges or heights) with respect to the
+  observed one. If more than one comparator had been selected for
+  the calibration in the *Comparators* frame, the comparator to show
+  can be modified by clicking on the one of interest in the same
+  frame.
+
+![Graphic results of the calibration in progress. Evolution of the Objective function (left) and hydrograph of both observed and current simulated discharge (right).](figures/fig-calibrator_graphic_results.png){#fig-calibrator_graphic_results}
+
+At the end of the calibration:
+
+- The parameters obtained for the best *Objective Function* value are
+  applied in the current model. If the model is saved, the
+  parameters are stored; if not, the hydrological model keeps the
+  initial parameter values.
+
+- The parameters can be also exported in a file by clicking on
+  ![](figures/fig-icon_calibrator_export_param.png){height="0.18in"} in the *Parameters import/export* frame (@fig-calibrator_interface).
+
+### Multiple calibration
+
+Additionally, in combination with all possible optimizations, multiple
+calibrations can be achieved:
+
+- Unconnected basins calibration: several independent basins can be
+  calibrated if the same "order" is provided for all of them.
+
+- Upstream-downstream basins calibration: Different dependent basins
+  can be calibrated from upstream to downstream ("order" grows up
+  from upstream to downstream).
+
+Parallel and series calibration can be combined for a complex basin as
+presented in example of @fig-calibrator_example_with_basins, where two unconnected basins are
+calibrated in Calibration A and Calibration B, then a downstream basin
+is calibrated in Calibration C and, finally, a more downstream basin is
+calibrated in Calibration D.
+
+![Example of a calibration with two unconnected basins and two basins upstream](figures/fig-calibrator_example_with_basins.png){#fig-calibrator_example_with_basins}
+
+## Scenario simulation
+
+To evaluate the model sensitivity (i.e. the simulated flows) to the
+Initial Conditions, to the parameters and also to the meteorological
+inputs, it is necessary to run a lot of simulations to test different
+sets of values. But for the user it is very tedious to launch these many
+scenarios simulations.
+
+In RS MINERVE, scenario's simulations can be realized in the *Scenario
+simulation* tool.
+
+- <span style="color:blue">Click on the *Expert module* in the *Toolbox* frame (@fig-rsm_interface) and then on the *Scenario simulation* (@fig-scenario_simulation_interface).</span>
+
+![Interface of the Scenario simulation module (in black: configuration; in green: results)](figures/fig-scenario_simulation_interface.png){#fig-scenario_simulation_interface}
+
+### Scenarios configuration
+
+A scenario is composed of a combination of input datasets (one for each
+type of *Input data*), a set of initial conditions and a set of
+parameters. Except the dataset for the *Station* input (meteorological
+inputs) when the model contains at least one *Virtual weather station*,
+all other inputs are optional. Initial conditions and parameters can be
+provided as text or worksheet files.
+
+All possible combinations composed of every input type with at least one
+dataset or input file are proposed, but the user can erase undesired
+simulations.
+
+The creation of a new scenarios configuration can be achieved following
+next steps (corresponding to the black boxes in @fig-time_slice_simulation_interface):
+
+- <span style="color:blue">In the *Inputs* frame (@fig-scenario_simulation_interface), click on the *DataSets* tab
+  (@fig-scenario_simulation_inputs). Select the dataset(s) to be used as data sources for
+  the different *Inputs*: Station, TurbineDB, Source, Reservoir and
+  Consumer (only object types existing in the model are listed). For
+  example, for the *Station* data source, click on *Station* in the
+  left part*,* search the corresponding dataset name(s) in the right
+  part and check it/them.</span>
+
+![*Inputs* frame in the Scenario simulation tool](figures/fig-scenario_simulation_inputs.png){#fig-scenario_simulation_inputs}
+
+- <span style="color:blue">Click on the Initial conditions tab (@fig-scenario_simulation_inputs). If you want to add
+  initial conditions (IC) file(s), click on
+  ![](figures/fig-icon_add_button.png){height="0.16in"} and import the desired IC files. The
+  selected ones are listed in the *Inputs* frame.</span>
+
+- <span style="color:blue">Click on the Parameters tab (@fig-scenario_simulation_inputs). If you want to add
+  parameters file(s), click on ![](figures/fig-icon_add_button.png){height="0.16in"} and import the desired parameters
+  files. The selected ones are listed in the *Inputs* frame.</span>
+
+- <span style="color:blue">In the *Selection* frame (@fig-scenario_simulation_interface), choose the *model selection*
+  to be used.</span>
+
+- <span style="color:blue">Then, select the object's series to be displayed.</span>
+
+The *model selection* is also used for the results exportation.
+
+- <span style="color:blue">In the *Outputs* frame (@fig-scenario_simulation_interface), define the outputs to be
+  recorded: *All results* (all the simulation results of the model)
+  and/or *Results from selection* (which considers only the above
+  selected model selection). For each one, it is possible to record:</span>
+
+    - <span style="color:blue">*Each simulation:* one dataset will be produced by time-slice (see *Simulation period* in *Solver frame* at @fig-scenario_simulation_interface)</span>
+
+    - <span style="color:blue">*Combined simulations*: only one dataset will be produced for all the period</span>
+
+    - <span style="color:blue">*Nothing:* no dataset will be produced</span>
+
+- <span style="color:blue">In the *Solver* frame (@fig-scenario_simulation_interface), specify:</span>
+
+    - <span style="color:blue">Both *Simulation* and *Recording* time steps</span>
+
+The period of each scenario simulation will only correspond to the
+period covered by all the datasets composing the scenario. If the
+covered periods for a scenario do not overlap for more than one time
+step, a gray progress bar is displayed (since simulation cannot be
+achieved).
+
+The name of the output file of each scenario is composed by merging the
+names of all the datasets used for the scenario. The input type of each
+dataset (e.g. Station, Source) is added before the name of each dataset
+(e.g. "Station-Datameteo_Source-Datasource...")
+
+### Scenario simulation start/stop
+
+- <span style="color:blue">Click on ![](figures/fig-icon_calibrator_start.png){height="0.12in"} in the *Solver* frame to launch the time-slice simulation.</span>
+
+> If the model is valid, the simulation starts. Succes of each scenario
+> is presented with a green progress bar (@fig-scenario_simulation_progress_simulation). If the current
+> scenario is not valid, the RS MINERVE error is displayed and a gray
+> progress bar is shown (@fig-scenario_simulation_progress_simulation, right).
+
+![Progress state after succes (left) and failure (right) of the simulation](figures/fig-scenario_simulation_progress_simulation.png){#fig-scenario_simulation_progress_simulation}
+
+- <span style="color:blue">Click on ![](figures/fig-icon_calibrator_stop.png){height="0.12in"} in the *Solver* frame if necessary
+  to stop the simulation. All results until that moment are saved.</span>
+
+### Scenarios results
+
+After simulation of each scenario, following components are showed:
+
+- In the *Selection* frame: the temporal evolution of the selected object's series.
+
+- In the *Comparators* frame: the values of indicators checked at the
+  top left of the frame (*Indicators to visualize*).These values are
+  displayed as graphical and tabular forms and correspond to the
+  comparator selected in the bottom left of the *Comparator* frame.
+
+During the simulation, you can change all the objects or all indicators
+or all comparators to visualize by clicking on or checking them. The
+tabular results of indicators can be exported at all times by copying
+then pasting the text in a file.
+
+At the end of the scenario simulation, the outputs datasets are
+available in the same repository than those of the database.
+
+## Stochastic simulation
+
+This tool is capable of generating a set of simulations based on
+different parameters or initial conditions with values located in a
+defined user interval. For each element of the model, simulated
+hydrographs, corresponding statistics (mean, median, quartiles, minimum
+and maximum values), and related set of parameters for each simulation
+are provided. This module has implemented 4 types of probability
+distributions, uniform, normal, log normal and exponential. Also, it is
+possible to define a custom probability distribution with a txt file, to
+get more information go to the Technical Manual.
+
+Sometimes the complexity of a hydrological model requires a sensitivity
+analysis to collect a set of simulations. The possibility to analysis
+the results of a model depending of a range parameter is really useful
+to know the variability of the model. This module generates a lot of
+information, all the results simulations, generated parameter series and
+finally a statistic results.
+
+In RS MINERVE, an automatic stochastic simulation can be realized in the
+*Hydrological calibration* tool (@fig-stochastic_simulation_interface).
+
+- <span style="color:blue">Click on *Expert* module and then on the Stochastic Simulation (@fig-stochastic_simulation_interface).</span>
+
+![Interface of the Stochastic simulation module (in black: configuration; in green: results)](figures/fig-stochastic_simulation_interface.png){#fig-stochastic_simulation_interface}
+
+### Stochastic configuration
+
+The creation of a new Stochastic simulation configuration can be
+realized following next steps (corresponding to the black boxes in 
+@fig-stochastic_simulation_interface):
+
+- <span style="color:blue">In the *Selection* frame (@fig-stochastic_simulation_interface), select the object types to
+  simulate: press simultaneously *Ctrl* on keyboard and left click on
+  the object types. Then define the corresponding zone(s) by clicking
+  on the Zone Id number(s).</span>
+
+> All the objects corresponding to the selected object types and zone(s)
+> appear in the *Models* frame (@fig-stochastic_simulation_interface). The correspondent parameters
+> are shown in the *Parameters* frame (@fig-stochastic_simulation_interface).
+
+- <span style="color:blue">In the *Parameters* frame (@fig-stochastic_simulation_interface), select the range parameters
+  to simulate. For each of them, define their minimum and maximum
+  possible values (*Min* and *Max* columns) and the probability
+  distribution to be used in the simulation (*Uniform, normal, log
+  normal, exponential and user defined*). To get more information go
+  to the Technical Manual.</span>
+
+- <span style="color:blue">If more than one zone has been selected (*Selection* frame), a
+  column *Values per zone* appears in the table. For the
+  parameter(s) selected for simulation, a box appears in this
+  column. If the box is checked, the simulation for the parameter
+  will consider a different value for each zone. If not, the same
+  value will be considered for all zones in the concerned
+  simulation.</span>
+
+> <span style="color:blue">Parameters can be imported in the model by clicking on ![](figures/fig-icon_calibrator_import_param.png){height="0.16in"} in the *Parameters import/export* frame (@fig-stochastic_simulation_interface).</span>
+
+- <span style="color:blue">In the *Selection plot* frame (@fig-stochastic_simulation_interface), select the result(s) that
+  will be used for the simulation (press simultaneously *Ctrl* on keyboard
+  and left click on the selection name to select more than one). It is
+  necessary to define previously a plot to run the stochastic simulation.</span>
+
+- <span style="color:blue">In the *Solver* tab of the *Hydrologic parameters* frame (@fig-stochastic_simulation_interface), specify the simulation period and both *Simulation* and
+  *Recording* time steps.</span>
+
+- <span style="color:blue">Click on ![](figures/fig-icon_calibrator_export_config.png){height="0.19in"} in the *Summary results* frame
+  (@fig-stochastic_simulation_interface) to save the current stochastic configuration. If you
+  want to save the configuration for all the simulations click on ![](figures/fig-icon_calibrator_export_all_config.png){height="0.15in"}. The produced file can be imported
+  for the next simulation test.</span>
+
+<span style="color:blue">To import an existing configuration, click on ![](figures/fig-icon_calibrator_import_config.png){height="0.19in"} in the *Simulation Configuration* frame (@fig-stochastic_simulation_interface) and load the file.</span>
+
+### Stochastic start/stop
+
+- <span style="color:blue">Click on ![](figures/fig-icon_calibrator_start.png){height="0.11in"} in the *Hydrologic parameters* frame to launch the simulation.</span>
+
+> If the simulation configuration is valid, a "Start" message with the
+> current date appears in the *Process* tab in the *Summary Results*
+> frame. Otherwise, a red error message is displayed at the bottom of
+> the *Solver* tab and describes the problem to resolve.
+
+- <span style="color:blue">Click on ![](figures/fig-icon_calibrator_stop.png){height="0.11in"} in the *Hydrologic parameters* frame to stop the simulation. It takes a moment to stop until the current simulation ends.</span>
+
+### Stochastic results
+
+After each simulation during the calibration, the following results are
+showed in the *Summary Results* frame (@fig-stochastic_simulation_textual_results):
+
+![Textual results of the stochastic simulation](figures/fig-stochastic_simulation_textual_results.png){#fig-stochastic_simulation_textual_results}
+
+These results can be exported at all times by saving with the Save button ![](figures/fig-icon_save_button.png){width="0.16in" height="0.16in"}.
+
+This action save three CSV files with all the numerical simulation information.
+
+- <span style="color:blue">First file, (\*.csv) contains all the simulations results for the
+  defined period of time (@fig-stochastic_simulation_numerical_results, left).</span>
+
+- <span style="color:blue">Second file, (\* - Statistical.csv) contains the statistical values
+  for simulations results for the defined period of time (Max, Q(75\%),
+  Median, Average, Q(25\%) and Min) (fig-stochastic_simulation_numerical_results, right).</span>
+
+- <span style="color:blue">Third file, (\* - P&IC.csv) contains the parameters values with a
+  defined probability distribution (@fig-stochastic_simulation_probability_distribution).</span>
+
+![Numerical results for the stochastic simulation. All the simulation iterations (left). Statistical results (right).](figures/fig-stochastic_simulation_numerical_results.png){#fig-stochastic_simulation_numerical_results}
+
+\ 
+
+![Parameters values with a defined probability distribution](figures/fig-stochastic_simulation_probability_distribution.png){#fig-stochastic_simulation_probability_distribution}
+
+Finally, @fig-stochastic_simulation_graphical_results shows the statistical graphical results for the defined period of time.
+
+![Graphic results of the stochastic simulation, statistical series plots](figures/fig-stochastic_simulation_graphical_results.png){#fig-stochastic_simulation_graphical_results}
+
+## Time-slice simulation
+
+The computation duration logically increases with the model complexity
+but also with the simulation period length. Thus, simulations on long
+periods with short time steps and a complex model can become
+inappropriate for user's computer performance. In this case, it is
+necessary to clip the simulation period in time-slices.
+
+In RS MINERVE, a time-slice simulation can be realized in the
+*Time-slice simulation* tool.
+
+- <span style="color:blue">Click on *Expert* module and then in the *Time-slice simulation* tool (@fig-time_slice_simulation_interface).</span>
+
+![Interface of the Time-slice simulation tool (in black: configuration; in green: results](figures/fig-time_slice_simulation_interface.png){#fig-time_slice_simulation_interface}
+
+### Time-slice configuration
+
+The creation of a new time-slice configuration can be achieved following
+next steps (corresponding to the black boxes in @fig-time_slice_simulation_interface):
+
+- <span style="color:blue">In the *Inputs* frame (@fig-time_slice_simulation_interface), select the dataset(s) for each
+  data source (Station, TurbineDB, Source, etc.). For example,
+  for the *Data Source* of *Station* objects: click on *Station,*
+  search the corresponding dataset name(s) and check it.</span>
+
+> More than one dataset can be checked for each type of input. If a
+> period of the simulation is covered by more than one dataset, the
+> dataset starting first is used
+
+- <span style="color:blue">In the *Selection* frame (@fig-time_slice_simulation_interface), choose the *model selection* to be used.</span>
+
+- <span style="color:blue">Then, select the object's series to be displayed.</span>
+
+> The *model selection* is also used for the results exportation.
+
+- <span style="color:blue">In the *Outputs* frame (@fig-time_slice_simulation_interface), define the outputs to be
+  recorded: *All results* (all the simulation results of the model)
+  and/or *Results from selection* (which considers only the above
+  selected model selection). For each one, it is possible to record:</span>
+
+  - <span style="color:blue">*Each simulation:* one dataset will be produced by time-slice
+    (see *Simulation period* in *Solver frame* at @fig-time_slice_simulation_interface)</span>
+
+  - <span style="color:blue">*Combined simulations*: only one dataset will be produced for all the period</span>
+
+  - <span style="color:blue">*Nothing:* no dataset will be produced</span>
+
+- <span style="color:blue">In the *Solver* frame (@fig-time_slice_simulation_interface), specify:</span>
+
+  - <span style="color:blue">The entire simulation period: *Start* and *End* dates.</span>
+
+> By default, the maximum possible period to be simulated is proposed.
+> It corresponds to the maximum period covered by the datasets in each
+> object type for which at least one dataset is selected. Manual
+> modification can only shrink the extent of the simulation period.
+
+  - <span style="color:blue">The time-slice or *Simulation period: annually, monthly, etc.*</span>
+
+  - <span style="color:blue">Both *Simulation* and *Recording* time steps.</span>
+
+### Time-slice simulation start/stop
+
+- <span style="color:blue">Click on ![](figures/fig-icon_calibrator_start.png){height="0.12in"} in the *Solver* frame to launch the time-slice simulation.</span>
+
+> If the model is valid, the simulation starts. In addition, succes of
+> each time-slice is presented with a green progress bar (@fig-time_slice_simulation_progress_simulation,
+> left). If one time-slice cannot be achieved, the RS MINERVE error
+> window is displayed and a gray progress bar is shown (@fig-time_slice_simulation_progress_simulation, right).
+
+![Progress state after success (left) and failure (right) of the simulation](figures/fig-time_slice_simulation_progress_simulation.png){#fig-time_slice_simulation_progress_simulation}
+
+- <span style="color:blue">Click on ![](figures/fig-icon_calibrator_stop.png){height="0.11in"} in the *Solver* frame if necessary
+  to stop the simulation. All results until that moment are saved.</span>
+
+### Time-slice results
+
+After each computation of each time-slice, next components are shown:
+
+- In the *Solver* frame, the progress bar of each time-slice.
+
+- In the *Selection* frame, the series of the components selected in
+  the object list for the last computed time-slice.
+
+- In the Comparators frame: the values of the indicators checked under
+  *Indicators to visualize* for the selected comparators are
+  graphically shown in the top part of the frame and in tabular form
+  in the bottom part of the same frame (@fig-time_slice_simulation_visualization_indicators).
+
+![Visualization of indicators at the different comparators](figures/fig-time_slice_simulation_visualization_indicators.png){#fig-time_slice_simulation_visualization_indicators}
+
+Objects selection in the *Selection* frame as well as indicators and
+comparators to consider in the *Comparators* frame can be modified
+during the Time-slice simulation.
+
+The tabular results of indicators can be exported at any time by copying
+them and pasting the text in a file.
+
+At the end of the time-slice simulation, the outputs datasets are
+available in the same repository than those of the database.
+
+## Optimizator
+
+In RS MINERVE, an automatic optimization of the Planner's conditions and
+rules can be performed with the *Optimizator* tool (@fig-planner_optimizator_interface).
+
+- <span style="color:blue">Click on *Expert* module and then on the Optimizator tool (@fig-planner_optimizator_interface).</span>
+
+### Optimization configuration
+
+The definition of a new optimization configuration can be carried out
+following the next steps (corresponding to the black boxes in @fig-planner_optimizator_interface):
+
+- <span style="color:blue">In the *Selection* frame (@fig-planner_optimizator_interface), select the Zones to be considered and the Planners objects to which the optimization should
+  be applied to: press *Ctrl* and click to select multiple Zones or
+  Planners.</span>
+
+> Once the Zones and Planner objects selected, all the possible "output
+> generation" parameters and the "conditions" parameters that can be
+> optimized appear in the *Parameters to optimize* frame (@fig-planner_optimizator_interface).
+
+- <span style="color:blue">In the *Parameters to optimize* frame (@fig-planner_optimizator_interface), select the parameters to optimize in both tabs (Output generation and
+  Conditions). For each one, define its minimum and maximum possible values.</span>
+
+![Interface of the Planner optimization module (in black: configuration; in green: results)](figures/fig-planner_optimizator_interface.png){#fig-planner_optimizator_interface}
+
+- <span style="color:blue">Choose the 'Model selection' (from those defined in *Selection and
+  plots* module) in the *Objective Function* (OF) frame (@fig-planner_optimizator_interface).</span>
+  The available series of this selection appear in the table below.
+
+- <span style="color:blue">Select the series to take into account in the objective function.
+  For each selection, specify its weight, the optimization type
+  (maximize or minimize) and the value we want to maximize/minimize
+  (the maximum value of the series, the minimum value, the average or
+  the value for a specific K date).</span>
+
+- <span style="color:blue">If the option "K^th^ date" is selected for the Value to optimize,
+  the user has to define a specific date in the "K^th^ Date" column.</span>
+
+- <span style="color:blue">A conversion from discharge to damages can be applied to the flow
+  series selected. This could be used to optimize damages instead of
+  discharges. For this purpose, the user can create a conversion curve
+  adding at least two points in the "Table conversion" on the right.
+  When the points are added, the Convert option for this result can be
+  enabled.</span>
+
+- <span style="color:blue">In the *Solver* section of the *Optimization computation* frame,
+  specify the optimization period and both the *Simulation* and *Recording* time steps (@fig-planner_optimizator_interface).</span>
+
+- <span style="color:blue">In the *Algorithm parameters* section of the same frame, define the
+  optimization algorithm to be used (e.g., SCE-UA in @fig-planner_optimizator_interface) and its
+  corresponding parameters. Three different algorithms are available:
+  Shuffled Complex Evolution -- University of Arizona - SCE-UA; Uniform
+  Adaptive Monte Carlo -- UAMC; Coupled Latin Hypercube with
+  Rosenbrock - CLHR. For more information about their basic essentials,
+  please refer to the RS MINERVE -- Technical Manual.</span>
+
+- <span style="color:blue">Hover the mouse over each parameter to display a short description.</span>
+
+- <span style="color:blue">To save the current optimization configuration (optional), click on
+  ![](figures/fig-icon_calibrator_export_config.png){height="0.16in"} in the *Optimization Configuration*
+  frame (@fig-planner_optimizator_interface). If you want to save the configuration for all the
+  optimizations, click on ![](figures/fig-icon_calibrator_export_all_config.png){height="0.16in"}.</span> The resulting file can be imported
+  for the next optimization.
+
+- <span style="color:blue">To import an existing optimization, click on ![](figures/fig-icon_calibrator_import_config.png){height="0.17"} in the *Optimization Configuration*
+  frame (@fig-planner_optimizator_interface) and load the file.</span>
+
+### Optimization start/stop
+
+- <span style="color:blue">Click on ![](figures/fig-icon_calibrator_start.png){height="0.11in"} in the *Optimization computation*
+  frame to launch the optimization.</span>
+
+> If the optimization configuration is valid, a "Start" message with
+> the current date appears in the *Process* tab of the *Summary Results*
+> frame. Otherwise, a red error message is displayed at the bottom of
+> the *Solver* section with a description of the problem.
+
+- <span style="color:blue">To stop the process, click on ![](figures/fig-icon_calibrator_stop.png){height="0.11in"} in the *Optimization computation*
+  frame.</span> It takes a moment to stop until the ongoing simulation ends.
+
+### Optimization results
+
+During the optimization running, the following results are displayed in
+the *Summary* *Results* frame (@fig-planner_optimizator_interface and @fig-planner_optimizator_text_results):
+
+- The Objective Function (OF), with its maximum possible value.
+
+- The results of the simulation before the optimization with the
+  initial Planner parameters and the initial OF value.
+
+- The results of the current iteration with its Planner parameters
+  values and the respective values of the OF value.
+
+- The best result, with related parameters and OF value.
+
+The results can be exported for all iterations at the end of the process
+with the Save button located in the same frame. The summary results can
+also be copy -pasted the text in a file.
+
+![Textual results of the optimization in progress](figures/fig-planner_optimizator_text_results.png){#fig-planner_optimizator_text_results}
+
+The results of the optimization in progress are also displayed
+graphically in the *Graphic* *Results* frame (@fig-planner_optimizator_interface):
+
+- The *OF Progress* tab shows the evolution of the Objective Function
+  (OF), with its Initial value in green, the current value in red
+  and all other values in orange. The activation of the mouse wheel
+  on the vertical axis allows to zoom on the OF values of interest.
+
+At the end of the optimization:
+
+- The Planner parameters obtained at the end of the optimization
+  process are applied to the model. If the model is saved, the
+  parameters are stored; if not, the Planner objects keep the
+  initial (non-optimized) parameters.
