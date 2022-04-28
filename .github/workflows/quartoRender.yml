@@ -28,13 +28,13 @@ jobs:
       - name: Render book to all format
         # Add any command line argument needed
         run: |
-          quarto render
+          quarto render --to html
       - name: Deploy 🚀
         # only deploy when push to main
-        if: github.event_name != 'pull_request'
+        # if: github.event_name != 'pull_request'
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           # The branch the action should deploy to.
-          branch: gh-pages
+          branch: master
           # The folder the action should deploy. Adapt if you changed in Quarto config
           folder: /docs/
