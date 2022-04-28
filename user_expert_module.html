@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-0.9.315">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>RS MINERVE Manuals - 6&nbsp; Expert module</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<link href="./user_plugins.html" rel="next">
+<link href="./user_hydro_hydrau_simulation.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link id="quarto-text-highlighting-styles" href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+</head>
+
+<body class="floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Expert module</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title"><span id="sec-user_expert_module" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Expert module</span></span></h1>
+                </div>
+  </div>
+    
+  
+
+
+
+  <div class="quarto-title-meta">
+
+      
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">RS MINERVE Manuals</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Introduction</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="./user_manual.html" class="sidebar-item-text sidebar-link">User Manual</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./user_rainfall_runoff_modelling.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Rainfall-runoff modelling</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./user_hydraulic_infrastructures.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Hydraulic infrastructures modelling</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./user_database.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Database</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./user_gis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">GIS</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./user_hydro_hydrau_simulation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Hydrological-hydraulic simulation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./user_expert_module.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Expert module</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./user_plugins.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Plugins</span></a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="./tech_manual.html" class="sidebar-item-text sidebar-link">Technical Manual</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_hydrological_models.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Hydrological and hydraulics models description</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_performance_indicators.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Performance indicators</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_calibration_algorithms.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Calibration algorithms</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_stochastic_equations.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Stochastic equations</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_scripts.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Visual Basic Scripts</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_file_formats.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">File formats</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_database_formats.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Database formats</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_gis_formats.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">GIS formats</span></a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="./examples.html" class="sidebar-item-text sidebar-link">Examples of application</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examples_ex1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Example 1 – Simple basin with only runoff</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examples_ex2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Example 2 – Combined full basin with meteorological stations</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examples_ex3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Example 3 – Equipped basin with a hydropower scheme</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examples_ex4.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Example 4 – Automatic calibration of a model</span></a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./acknowledgments.html" class="sidebar-item-text sidebar-link">Acknowledgments</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Appendices</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix_list_param_ic.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Appendix: List of parameters and initial conditions</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix_list_notifications.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">List of notifications from pre-simulation and post-simulation reports</span></a>
+  </div>
+</li>
+    </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sec-user_expert_module_calibrator" id="toc-sec-user_expert_module_calibrator" class="nav-link active" data-scroll-target="#sec-user_expert_module_calibrator"> <span class="header-section-number">6.1</span> Calibrator</a>
+  <ul class="collapse">
+  <li><a href="#calibration-configuration" id="toc-calibration-configuration" class="nav-link" data-scroll-target="#calibration-configuration">Calibration configuration</a></li>
+  <li><a href="#calibration-startstop" id="toc-calibration-startstop" class="nav-link" data-scroll-target="#calibration-startstop">Calibration start/stop</a></li>
+  <li><a href="#calibration-results" id="toc-calibration-results" class="nav-link" data-scroll-target="#calibration-results">Calibration results</a></li>
+  <li><a href="#multiple-calibration" id="toc-multiple-calibration" class="nav-link" data-scroll-target="#multiple-calibration">Multiple calibration</a></li>
+  </ul></li>
+  <li><a href="#scenario-simulation" id="toc-scenario-simulation" class="nav-link" data-scroll-target="#scenario-simulation"> <span class="header-section-number">6.2</span> Scenario simulation</a>
+  <ul class="collapse">
+  <li><a href="#scenarios-configuration" id="toc-scenarios-configuration" class="nav-link" data-scroll-target="#scenarios-configuration">Scenarios configuration</a></li>
+  <li><a href="#scenario-simulation-startstop" id="toc-scenario-simulation-startstop" class="nav-link" data-scroll-target="#scenario-simulation-startstop">Scenario simulation start/stop</a></li>
+  <li><a href="#scenarios-results" id="toc-scenarios-results" class="nav-link" data-scroll-target="#scenarios-results">Scenarios results</a></li>
+  </ul></li>
+  <li><a href="#stochastic-simulation" id="toc-stochastic-simulation" class="nav-link" data-scroll-target="#stochastic-simulation"> <span class="header-section-number">6.3</span> Stochastic simulation</a>
+  <ul class="collapse">
+  <li><a href="#stochastic-configuration" id="toc-stochastic-configuration" class="nav-link" data-scroll-target="#stochastic-configuration">Stochastic configuration</a></li>
+  <li><a href="#stochastic-startstop" id="toc-stochastic-startstop" class="nav-link" data-scroll-target="#stochastic-startstop">Stochastic start/stop</a></li>
+  <li><a href="#stochastic-results" id="toc-stochastic-results" class="nav-link" data-scroll-target="#stochastic-results">Stochastic results</a></li>
+  </ul></li>
+  <li><a href="#time-slice-simulation" id="toc-time-slice-simulation" class="nav-link" data-scroll-target="#time-slice-simulation"> <span class="header-section-number">6.4</span> Time-slice simulation</a>
+  <ul class="collapse">
+  <li><a href="#time-slice-configuration" id="toc-time-slice-configuration" class="nav-link" data-scroll-target="#time-slice-configuration">Time-slice configuration</a></li>
+  <li><a href="#time-slice-simulation-startstop" id="toc-time-slice-simulation-startstop" class="nav-link" data-scroll-target="#time-slice-simulation-startstop">Time-slice simulation start/stop</a></li>
+  <li><a href="#time-slice-results" id="toc-time-slice-results" class="nav-link" data-scroll-target="#time-slice-results">Time-slice results</a></li>
+  </ul></li>
+  <li><a href="#optimizator" id="toc-optimizator" class="nav-link" data-scroll-target="#optimizator"> <span class="header-section-number">6.5</span> Optimizator</a>
+  <ul class="collapse">
+  <li><a href="#optimization-configuration" id="toc-optimization-configuration" class="nav-link" data-scroll-target="#optimization-configuration">Optimization configuration</a></li>
+  <li><a href="#optimization-startstop" id="toc-optimization-startstop" class="nav-link" data-scroll-target="#optimization-startstop">Optimization start/stop</a></li>
+  <li><a href="#optimization-results" id="toc-optimization-results" class="nav-link" data-scroll-target="#optimization-results">Optimization results</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<p>In this chapter, the four plugins of the Expert module are presented:</p>
+<ul>
+<li><p>Automatic calibration of hydrological model parameters</p></li>
+<li><p>Stochastic simulation</p></li>
+<li><p>Time-slices simulation</p></li>
+<li><p>Scenario simulation</p></li>
+</ul>
+<section id="sec-user_expert_module_calibrator" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="sec-user_expert_module_calibrator"><span class="header-section-number">6.1</span> Calibrator</h2>
+<p>The complexity of a hydrological model calibration increases with the number of parameters to calibrate. The search for optimal values of calibration parameters can be made manually to a reasonable number of parameters. But in general, for large basins including hundreds or thousands of parameters, it is essential to have an automatic calibration tool.</p>
+<p>In RS MINERVE, an automatic calibration can be realized in the <em>Calibrator</em> tool (<a href="#fig-calibrator_interface">Figure&nbsp;<span>6.1</span></a>).</p>
+<ul>
+<li><span style="color:blue">Click on <em>Expert</em> module and then on the Calibrator tool (<a href="#fig-calibrator_interface">Figure&nbsp;<span>6.1</span></a>).</span></li>
+</ul>
+<section id="calibration-configuration" class="level3">
+<h3 class="anchored" data-anchor-id="calibration-configuration">Calibration configuration</h3>
+<p>Different types of calibration can be achieved for an optimization:</p>
+<ul>
+<li><p>Regular calibration: One or more zones with a unique downstream gauged station, calibrated with the same parameters for all zones.</p></li>
+<li><p>Calibration per zone: One or more zones with a unique downstream gauged station, calibrated with different parameters per zones.</p></li>
+<li><p>Regional calibration: One or more zones with several downstream gauged station, calibrated with the same parameters for all zones.</p></li>
+</ul>
+<p>The creation of a new calibration configuration can be realized following next steps (corresponding to the black boxes in the <a href="#fig-calibrator_interface">Figure&nbsp;<span>6.1</span></a>):</p>
+<ul>
+<li><span style="color:blue">In the <em>Selection</em> frame (<a href="#fig-calibrator_interface">Figure&nbsp;<span>6.1</span></a>), select the object types to calibrate: press simultaneously <em>Ctrl</em> on keyboard and left click on the object types. Then define the corresponding zone(s) by clicking on the Zone Id number(s).</span></li>
+</ul>
+<blockquote class="blockquote">
+<p>All the objects corresponding to the selected object types and zone(s) appear in the <em>Models</em> frame (<a href="#fig-calibrator_interface">Figure&nbsp;<span>6.1</span></a>). The correspondent parameters are shown in the <em>Parameters</em> frame (<a href="#fig-calibrator_interface">Figure&nbsp;<span>6.1</span></a>).</p>
+</blockquote>
+<ul>
+<li><p><span style="color:blue">In the <em>Parameters</em> frame (<a href="#fig-calibrator_interface">Figure&nbsp;<span>6.1</span></a>), select the parameters to calibrate. For each of them, define their minimum and maximum possible values (<em>Min</em> and <em>Max</em> columns) and the value to be used for the first iteration of the calibration (<em>From model</em>, <em>Defined</em> value or <em>Random</em> value).</span></p></li>
+<li><p><span style="color:blue">If more than one zone has been selected (<em>Selection</em> frame), a column <em>Values per zone</em> appears in the table. For the parameter(s) selected for calibration, a box appears in this column. If the box is checked, the calibration for the parameter will consider a different value for each zone. If not, the same value will be considered for all zones in the concerned calibration.</span></p></li>
+</ul>
+<blockquote class="blockquote">
+<p><span style="color:blue">Parameters can be imported in the model by clicking on <img src="figures/fig-icon_calibrator_import_param.png" style="height:0.16in"> in the <em>Parameters import/export</em> frame (<a href="#fig-calibrator_interface">Figure&nbsp;<span>6.1</span></a>).</span></p>
+</blockquote>
+<p><span style="color:blue">In the <em>Comparators</em> frame (<a href="#fig-calibrator_interface">Figure&nbsp;<span>6.1</span></a>), select the comparator(s) whose the observed variables (discharges or heights) will be used for the calibration (press simultaneously <em>Ctrl</em> on keyboard and left click on the comparators name to select more than one).</span> If more than one comparator is selected, all will be taken into account in the objective function with the same weight.</p>
+<div id="fig-calibrator_interface" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-calibrator_interface.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 6.1: Interface of the Hydrological calibration module (in black: configuration; in green: results)</figcaption><p></p>
+</figure>
+</div>
+<ul>
+<li><p><span style="color:blue">Define the weight of each indicator to determine the objective function in the <em>Objective Functions</em> (OF) frame.</span> Its total weight appears in the cell at the top of the frame.</p></li>
+<li><p><span style="color:blue">In the <em>Solver</em> tab of the <em>Hydrologic parameters optimization</em> frame (<a href="#fig-calibrator_interface">Figure&nbsp;<span>6.1</span></a>), specify the calibration period and both <em>Simulation</em> and <em>Recording</em> time steps (<a href="#fig-calibrator_solver_runtime_algorithms">Figure&nbsp;<span>6.2</span></a>). The <em>warm up period</em> parameter defined for each comparator will be taken into account to initialize the state variables (as explained in the Technical manual).</span></p></li>
+</ul>
+<div id="fig-calibrator_solver_runtime_algorithms" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-calibrator_solver_runtime_algorithms.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 6.2: Calibration solver: both runtime (left) and algorithm properties (right)</figcaption><p></p>
+</figure>
+</div>
+<blockquote class="blockquote">
+<p><span style="color:blue">In the <em>Algorithm parameters</em> tab of this same frame, define the algorithm type (SCE-UA in the example of <a href="#fig-calibrator_solver_runtime_algorithms">Figure&nbsp;<span>6.2</span></a>) and the corresponding parameters.</span></p>
+<p>Three different algorithms (Shuffled Complex Evolution – University of Arizona - SCE-UA and Uniform Adaptive Monte Carlo - UAMC and Coupled Latin Hypercube and Rosenbrock - CLHR) are available in the actual version. For more information, see RS MINERVE – Technical Manual.</p>
+<p>The mouse fly above of each parameter name shows their description.</p>
+</blockquote>
+<ul>
+<li><span style="color:blue">Click on <img src="figures/fig-icon_calibrator_export_config.png" style="height:0.19in"> in the <em>Calibration Configuration</em> frame (<a href="#fig-calibrator_interface">Figure&nbsp;<span>6.1</span></a>) to save the current calibration configuration. If you want to save the configuration for all the calibrations click on <img src="figures/fig-icon_calibrator_export_all_config.png" style="height:0.19in">.</span> The produced file can be imported for the next calibration test.</li>
+</ul>
+<p><span style="color:blue">To import an existing configuration, click on <img src="figures/fig-icon_calibrator_import_config.png" style="height:0.19in"> in the <em>Calibration Configuration</em> frame (<a href="#fig-calibrator_interface">Figure&nbsp;<span>6.1</span></a>) and load the file.</span></p>
+</section>
+<section id="calibration-startstop" class="level3">
+<h3 class="anchored" data-anchor-id="calibration-startstop">Calibration start/stop</h3>
+<ul>
+<li><span style="color:blue">Click on <img src="figures/fig-icon_calibrator_start.png" style="height:0.11in"> in the <em>Hydrologic parameters optimization</em> frame to launch the calibration.</span></li>
+</ul>
+<blockquote class="blockquote">
+<p>If the calibration configuration is valid, a “Start” message with the current date appears in the <em>Process</em> tab in the <em>Summary Results</em> frame. Otherwise, a red error message is displayed at the bottom of the <em>Solver</em> tab and describes the problem to resolve.</p>
+</blockquote>
+<ul>
+<li><span style="color:blue">To stop the calibration, click on <img src="figures/fig-icon_calibrator_stop.png" style="height:0.11in"> in the <em>Hydrologic parameters optimization</em> frame.</span> It takes a moment to stop until the current simulation ends.</li>
+</ul>
+</section>
+<section id="calibration-results" class="level3">
+<h3 class="anchored" data-anchor-id="calibration-results">Calibration results</h3>
+<p>After each simulation during the calibration, the following results are showed in the <em>Summary</em> <em>Results</em> frame (<a href="#fig-calibrator_interface">Figure&nbsp;<span>6.1</span></a> and <a href="#fig-calibrator_textual_results">Figure&nbsp;<span>6.3</span></a>):</p>
+<ul>
+<li><p>The Objective Function (OF), with its maximum possible value.</p></li>
+<li><p>The results of the simulation before optimization with initial parameters, initial indicators values and initial OF value.</p></li>
+<li><p>The results of the current iteration with its parameters values and the respective indicators values and OF value.</p></li>
+<li><p>The best result, with related parameters and OF value.</p></li>
+</ul>
+<p>These results can be exported at all times by saving with the Save button located in the same frame or by copying then pasting the text in a file.</p>
+<div id="fig-calibrator_textual_results" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-calibrator_textual_results.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 6.3: Textual results of the calibration in progress</figcaption><p></p>
+</figure>
+</div>
+<p>If more than one comparator has been selected in the <em>Comparators</em> frame, the Objective Function is equal to the sum of the objective functions obtained at each compactor.</p>
+<p>The results of the calibration in progress can also be visualized as graphic form in the <em>Graphic</em> <em>Results</em> frame (<a href="#fig-calibrator_interface">Figure&nbsp;<span>6.1</span></a> and <a href="#fig-calibrator_graphic_results">Figure&nbsp;<span>6.4</span></a>):</p>
+<ul>
+<li><p>The <em>OF Progress</em> tab shows the temporal evolution of the Objective Function (OF), with Initial value in green, current value in red and all other values in orange. The activation of the mouse wheel on vertical axis allows to zoom on the OF values of interest.</p></li>
+<li><p>The <em>Comparator</em> tab allows following the progression of the current simulated variable (discharges or heights) with respect to the observed one. If more than one comparator had been selected for the calibration in the <em>Comparators</em> frame, the comparator to show can be modified by clicking on the one of interest in the same frame.</p></li>
+</ul>
+<div id="fig-calibrator_graphic_results" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-calibrator_graphic_results.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 6.4: Graphic results of the calibration in progress. Evolution of the Objective function (left) and hydrograph of both observed and current simulated discharge (right).</figcaption><p></p>
+</figure>
+</div>
+<p>At the end of the calibration:</p>
+<ul>
+<li><p>The parameters obtained for the best <em>Objective Function</em> value are applied in the current model. If the model is saved, the parameters are stored; if not, the hydrological model keeps the initial parameter values.</p></li>
+<li><p>The parameters can be also exported in a file by clicking on <img src="figures/fig-icon_calibrator_export_param.png" style="height:0.18in"> in the <em>Parameters import/export</em> frame (<a href="#fig-calibrator_interface">Figure&nbsp;<span>6.1</span></a>).</p></li>
+</ul>
+</section>
+<section id="multiple-calibration" class="level3">
+<h3 class="anchored" data-anchor-id="multiple-calibration">Multiple calibration</h3>
+<p>Additionally, in combination with all possible optimizations, multiple calibrations can be achieved:</p>
+<ul>
+<li><p>Unconnected basins calibration: several independent basins can be calibrated if the same “order” is provided for all of them.</p></li>
+<li><p>Upstream-downstream basins calibration: Different dependent basins can be calibrated from upstream to downstream (“order” grows up from upstream to downstream).</p></li>
+</ul>
+<p>Parallel and series calibration can be combined for a complex basin as presented in example of <a href="#fig-calibrator_example_with_basins">Figure&nbsp;<span>6.5</span></a>, where two unconnected basins are calibrated in Calibration A and Calibration B, then a downstream basin is calibrated in Calibration C and, finally, a more downstream basin is calibrated in Calibration D.</p>
+<div id="fig-calibrator_example_with_basins" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-calibrator_example_with_basins.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 6.5: Example of a calibration with two unconnected basins and two basins upstream</figcaption><p></p>
+</figure>
+</div>
+</section>
+</section>
+<section id="scenario-simulation" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="scenario-simulation"><span class="header-section-number">6.2</span> Scenario simulation</h2>
+<p>To evaluate the model sensitivity (i.e.&nbsp;the simulated flows) to the Initial Conditions, to the parameters and also to the meteorological inputs, it is necessary to run a lot of simulations to test different sets of values. But for the user it is very tedious to launch these many scenarios simulations.</p>
+<p>In RS MINERVE, scenario’s simulations can be realized in the <em>Scenario simulation</em> tool.</p>
+<ul>
+<li><span style="color:blue">Click on the <em>Expert module</em> in the <em>Toolbox</em> frame (<a href="user_manual.html#fig-rsm_interface">Figure&nbsp;<span>1</span></a>) and then on the <em>Scenario simulation</em> (<a href="#fig-scenario_simulation_interface">Figure&nbsp;<span>6.6</span></a>).</span></li>
+</ul>
+<div id="fig-scenario_simulation_interface" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-scenario_simulation_interface.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 6.6: Interface of the Scenario simulation module (in black: configuration; in green: results)</figcaption><p></p>
+</figure>
+</div>
+<section id="scenarios-configuration" class="level3">
+<h3 class="anchored" data-anchor-id="scenarios-configuration">Scenarios configuration</h3>
+<p>A scenario is composed of a combination of input datasets (one for each type of <em>Input data</em>), a set of initial conditions and a set of parameters. Except the dataset for the <em>Station</em> input (meteorological inputs) when the model contains at least one <em>Virtual weather station</em>, all other inputs are optional. Initial conditions and parameters can be provided as text or worksheet files.</p>
+<p>All possible combinations composed of every input type with at least one dataset or input file are proposed, but the user can erase undesired simulations.</p>
+<p>The creation of a new scenarios configuration can be achieved following next steps (corresponding to the black boxes in <a href="#fig-time_slice_simulation_interface">Figure&nbsp;<span>6.14</span></a>):</p>
+<ul>
+<li><span style="color:blue">In the <em>Inputs</em> frame (<a href="#fig-scenario_simulation_interface">Figure&nbsp;<span>6.6</span></a>), click on the <em>DataSets</em> tab (<a href="#fig-scenario_simulation_inputs">Figure&nbsp;<span>6.7</span></a>). Select the dataset(s) to be used as data sources for the different <em>Inputs</em>: Station, TurbineDB, Source, Reservoir and Consumer (only object types existing in the model are listed). For example, for the <em>Station</em> data source, click on <em>Station</em> in the left part<em>,</em> search the corresponding dataset name(s) in the right part and check it/them.</span></li>
+</ul>
+<div id="fig-scenario_simulation_inputs" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-scenario_simulation_inputs.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 6.7: <em>Inputs</em> frame in the Scenario simulation tool</figcaption><p></p>
+</figure>
+</div>
+<ul>
+<li><p><span style="color:blue">Click on the Initial conditions tab (<a href="#fig-scenario_simulation_inputs">Figure&nbsp;<span>6.7</span></a>). If you want to add initial conditions (IC) file(s), click on <img src="figures/fig-icon_add_button.png" style="height:0.16in"> and import the desired IC files. The selected ones are listed in the <em>Inputs</em> frame.</span></p></li>
+<li><p><span style="color:blue">Click on the Parameters tab (<a href="#fig-scenario_simulation_inputs">Figure&nbsp;<span>6.7</span></a>). If you want to add parameters file(s), click on <img src="figures/fig-icon_add_button.png" style="height:0.16in"> and import the desired parameters files. The selected ones are listed in the <em>Inputs</em> frame.</span></p></li>
+<li><p><span style="color:blue">In the <em>Selection</em> frame (<a href="#fig-scenario_simulation_interface">Figure&nbsp;<span>6.6</span></a>), choose the <em>model selection</em> to be used.</span></p></li>
+<li><p><span style="color:blue">Then, select the object’s series to be displayed.</span></p></li>
+</ul>
+<p>The <em>model selection</em> is also used for the results exportation.</p>
+<ul>
+<li><p><span style="color:blue">In the <em>Outputs</em> frame (<a href="#fig-scenario_simulation_interface">Figure&nbsp;<span>6.6</span></a>), define the outputs to be recorded: <em>All results</em> (all the simulation results of the model) and/or <em>Results from selection</em> (which considers only the above selected model selection). For each one, it is possible to record:</span></p>
+<ul>
+<li><p><span style="color:blue"><em>Each simulation:</em> one dataset will be produced by time-slice (see <em>Simulation period</em> in <em>Solver frame</em> at <a href="#fig-scenario_simulation_interface">Figure&nbsp;<span>6.6</span></a>)</span></p></li>
+<li><p><span style="color:blue"><em>Combined simulations</em>: only one dataset will be produced for all the period</span></p></li>
+<li><p><span style="color:blue"><em>Nothing:</em> no dataset will be produced</span></p></li>
+</ul></li>
+<li><p><span style="color:blue">In the <em>Solver</em> frame (<a href="#fig-scenario_simulation_interface">Figure&nbsp;<span>6.6</span></a>), specify:</span></p>
+<ul>
+<li><span style="color:blue">Both <em>Simulation</em> and <em>Recording</em> time steps</span></li>
+</ul></li>
+</ul>
+<p>The period of each scenario simulation will only correspond to the period covered by all the datasets composing the scenario. If the covered periods for a scenario do not overlap for more than one time step, a gray progress bar is displayed (since simulation cannot be achieved).</p>
+<p>The name of the output file of each scenario is composed by merging the names of all the datasets used for the scenario. The input type of each dataset (e.g.&nbsp;Station, Source) is added before the name of each dataset (e.g.&nbsp;“Station-Datameteo_Source-Datasource…”)</p>
+</section>
+<section id="scenario-simulation-startstop" class="level3">
+<h3 class="anchored" data-anchor-id="scenario-simulation-startstop">Scenario simulation start/stop</h3>
+<ul>
+<li><span style="color:blue">Click on <img src="figures/fig-icon_calibrator_start.png" style="height:0.12in"> in the <em>Solver</em> frame to launch the time-slice simulation.</span></li>
+</ul>
+<blockquote class="blockquote">
+<p>If the model is valid, the simulation starts. Succes of each scenario is presented with a green progress bar (<a href="#fig-scenario_simulation_progress_simulation">Figure&nbsp;<span>6.8</span></a>). If the current scenario is not valid, the RS MINERVE error is displayed and a gray progress bar is shown (<a href="#fig-scenario_simulation_progress_simulation">Figure&nbsp;<span>6.8</span></a>, right).</p>
+</blockquote>
+<div id="fig-scenario_simulation_progress_simulation" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-scenario_simulation_progress_simulation.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 6.8: Progress state after succes (left) and failure (right) of the simulation</figcaption><p></p>
+</figure>
+</div>
+<ul>
+<li><span style="color:blue">Click on <img src="figures/fig-icon_calibrator_stop.png" style="height:0.12in"> in the <em>Solver</em> frame if necessary to stop the simulation. All results until that moment are saved.</span></li>
+</ul>
+</section>
+<section id="scenarios-results" class="level3">
+<h3 class="anchored" data-anchor-id="scenarios-results">Scenarios results</h3>
+<p>After simulation of each scenario, following components are showed:</p>
+<ul>
+<li><p>In the <em>Selection</em> frame: the temporal evolution of the selected object’s series.</p></li>
+<li><p>In the <em>Comparators</em> frame: the values of indicators checked at the top left of the frame (<em>Indicators to visualize</em>).These values are displayed as graphical and tabular forms and correspond to the comparator selected in the bottom left of the <em>Comparator</em> frame.</p></li>
+</ul>
+<p>During the simulation, you can change all the objects or all indicators or all comparators to visualize by clicking on or checking them. The tabular results of indicators can be exported at all times by copying then pasting the text in a file.</p>
+<p>At the end of the scenario simulation, the outputs datasets are available in the same repository than those of the database.</p>
+</section>
+</section>
+<section id="stochastic-simulation" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="stochastic-simulation"><span class="header-section-number">6.3</span> Stochastic simulation</h2>
+<p>This tool is capable of generating a set of simulations based on different parameters or initial conditions with values located in a defined user interval. For each element of the model, simulated hydrographs, corresponding statistics (mean, median, quartiles, minimum and maximum values), and related set of parameters for each simulation are provided. This module has implemented 4 types of probability distributions, uniform, normal, log normal and exponential. Also, it is possible to define a custom probability distribution with a txt file, to get more information go to the Technical Manual.</p>
+<p>Sometimes the complexity of a hydrological model requires a sensitivity analysis to collect a set of simulations. The possibility to analysis the results of a model depending of a range parameter is really useful to know the variability of the model. This module generates a lot of information, all the results simulations, generated parameter series and finally a statistic results.</p>
+<p>In RS MINERVE, an automatic stochastic simulation can be realized in the <em>Hydrological calibration</em> tool (1).</p>
+<ul>
+<li><span style="color:blue">Click on <em>Expert</em> module and then on the Stochastic Simulation (1).</span></li>
+</ul>
+<div id="fig-stochastic_simulation_interface" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-stochastic_simulation_interface.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 6.9: Interface of the Stochastic simulation module (in black: configuration; in green: results)</figcaption><p></p>
+</figure>
+</div>
+<section id="stochastic-configuration" class="level3">
+<h3 class="anchored" data-anchor-id="stochastic-configuration">Stochastic configuration</h3>
+<p>The creation of a new Stochastic simulation configuration can be realized following next steps (corresponding to the black boxes in 1):</p>
+<ul>
+<li><span style="color:blue">In the <em>Selection</em> frame (1), select the object types to simulate: press simultaneously <em>Ctrl</em> on keyboard and left click on the object types. Then define the corresponding zone(s) by clicking on the Zone Id number(s).</span></li>
+</ul>
+<blockquote class="blockquote">
+<p>All the objects corresponding to the selected object types and zone(s) appear in the <em>Models</em> frame (1). The correspondent parameters are shown in the <em>Parameters</em> frame (1).</p>
+</blockquote>
+<ul>
+<li><p><span style="color:blue">In the <em>Parameters</em> frame (1), select the range parameters to simulate. For each of them, define their minimum and maximum possible values (<em>Min</em> and <em>Max</em> columns) and the probability distribution to be used in the simulation (<em>Uniform, normal, log normal, exponential and user defined</em>). To get more information go to the Technical Manual.</span></p></li>
+<li><p><span style="color:blue">If more than one zone has been selected (<em>Selection</em> frame), a column <em>Values per zone</em> appears in the table. For the parameter(s) selected for simulation, a box appears in this column. If the box is checked, the simulation for the parameter will consider a different value for each zone. If not, the same value will be considered for all zones in the concerned simulation.</span></p></li>
+</ul>
+<blockquote class="blockquote">
+<p><span style="color:blue">Parameters can be imported in the model by clicking on <img src="figures/fig-icon_calibrator_import_param.png" style="height:0.16in"> in the <em>Parameters import/export</em> frame (1).</span></p>
+</blockquote>
+<ul>
+<li><p><span style="color:blue">In the <em>Selection plot</em> frame (1), select the result(s) that will be used for the simulation (press simultaneously <em>Ctrl</em> on keyboard and left click on the selection name to select more than one). It is necessary to define previously a plot to run the stochastic simulation.</span></p></li>
+<li><p><span style="color:blue">In the <em>Solver</em> tab of the <em>Hydrologic parameters</em> frame (1), specify the simulation period and both <em>Simulation</em> and <em>Recording</em> time steps.</span></p></li>
+<li><p><span style="color:blue">Click on <img src="figures/fig-icon_calibrator_export_config.png" style="height:0.19in"> in the <em>Summary results</em> frame</span></p>
+<ol class="example" type="1">
+<li>to save the current stochastic configuration. If you want to save the configuration for all the simulations click on <img src="figures/fig-icon_calibrator_export_all_config.png" style="height:0.15in">. The produced file can be imported for the next simulation test.</li>
+</ol></li>
+</ul>
+<p><span style="color:blue">To import an existing configuration, click on <img src="figures/fig-icon_calibrator_import_config.png" style="height:0.19in"> in the <em>Simulation Configuration</em> frame (1) and load the file.</span></p>
+</section>
+<section id="stochastic-startstop" class="level3">
+<h3 class="anchored" data-anchor-id="stochastic-startstop">Stochastic start/stop</h3>
+<ul>
+<li><span style="color:blue">Click on <img src="figures/fig-icon_calibrator_start.png" style="height:0.11in"> in the <em>Hydrologic parameters</em> frame to launch the simulation.</span></li>
+</ul>
+<blockquote class="blockquote">
+<p>If the simulation configuration is valid, a “Start” message with the current date appears in the <em>Process</em> tab in the <em>Summary Results</em> frame. Otherwise, a red error message is displayed at the bottom of the <em>Solver</em> tab and describes the problem to resolve.</p>
+</blockquote>
+<ul>
+<li><span style="color:blue">Click on <img src="figures/fig-icon_calibrator_stop.png" style="height:0.11in"> in the <em>Hydrologic parameters</em> frame to stop the simulation. It takes a moment to stop until the current simulation ends.</span></li>
+</ul>
+</section>
+<section id="stochastic-results" class="level3">
+<h3 class="anchored" data-anchor-id="stochastic-results">Stochastic results</h3>
+<p>After each simulation during the calibration, the following results are showed in the <em>Summary Results</em> frame (<a href="#fig-stochastic_simulation_textual_results">Figure&nbsp;<span>6.10</span></a>):</p>
+<div id="fig-stochastic_simulation_textual_results" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-stochastic_simulation_textual_results.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 6.10: Textual results of the stochastic simulation</figcaption><p></p>
+</figure>
+</div>
+<p>These results can be exported at all times by saving with the Save button <img src="figures/fig-icon_save_button.png" style="width:0.16in;height:0.16in">.</p>
+<p>This action save three CSV files with all the numerical simulation information.</p>
+<ul>
+<li><p><span style="color:blue">First file, (*.csv) contains all the simulations results for the defined period of time (<a href="#fig-stochastic_simulation_numerical_results">Figure&nbsp;<span>6.11</span></a>, left).</span></p></li>
+<li><p><span style="color:blue">Second file, (* - Statistical.csv) contains the statistical values for simulations results for the defined period of time (Max, Q(75%), Median, Average, Q(25%) and Min) (fig-stochastic_simulation_numerical_results, right).</span></p></li>
+<li><p><span style="color:blue">Third file, (* - P&amp;IC.csv) contains the parameters values with a defined probability distribution (<a href="#fig-stochastic_simulation_probability_distribution">Figure&nbsp;<span>6.12</span></a>).</span></p></li>
+</ul>
+<div id="fig-stochastic_simulation_numerical_results" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-stochastic_simulation_numerical_results.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 6.11: Numerical results for the stochastic simulation. All the simulation iterations (left). Statistical results (right).</figcaption><p></p>
+</figure>
+</div>
+<p>&nbsp;</p>
+<div id="fig-stochastic_simulation_probability_distribution" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-stochastic_simulation_probability_distribution.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 6.12: Parameters values with a defined probability distribution</figcaption><p></p>
+</figure>
+</div>
+<p>Finally, <a href="#fig-stochastic_simulation_graphical_results">Figure&nbsp;<span>6.13</span></a> shows the statistical graphical results for the defined period of time.</p>
+<div id="fig-stochastic_simulation_graphical_results" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-stochastic_simulation_graphical_results.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 6.13: Graphic results of the stochastic simulation, statistical series plots</figcaption><p></p>
+</figure>
+</div>
+</section>
+</section>
+<section id="time-slice-simulation" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="time-slice-simulation"><span class="header-section-number">6.4</span> Time-slice simulation</h2>
+<p>The computation duration logically increases with the model complexity but also with the simulation period length. Thus, simulations on long periods with short time steps and a complex model can become inappropriate for user’s computer performance. In this case, it is necessary to clip the simulation period in time-slices.</p>
+<p>In RS MINERVE, a time-slice simulation can be realized in the <em>Time-slice simulation</em> tool.</p>
+<ul>
+<li><span style="color:blue">Click on <em>Expert</em> module and then in the <em>Time-slice simulation</em> tool (<a href="#fig-time_slice_simulation_interface">Figure&nbsp;<span>6.14</span></a>).</span></li>
+</ul>
+<div id="fig-time_slice_simulation_interface" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-time_slice_simulation_interface.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 6.14: Interface of the Time-slice simulation tool (in black: configuration; in green: results</figcaption><p></p>
+</figure>
+</div>
+<section id="time-slice-configuration" class="level3">
+<h3 class="anchored" data-anchor-id="time-slice-configuration">Time-slice configuration</h3>
+<p>The creation of a new time-slice configuration can be achieved following next steps (corresponding to the black boxes in <a href="#fig-time_slice_simulation_interface">Figure&nbsp;<span>6.14</span></a>):</p>
+<ul>
+<li><span style="color:blue">In the <em>Inputs</em> frame (<a href="#fig-time_slice_simulation_interface">Figure&nbsp;<span>6.14</span></a>), select the dataset(s) for each data source (Station, TurbineDB, Source, etc.). For example, for the <em>Data Source</em> of <em>Station</em> objects: click on <em>Station,</em> search the corresponding dataset name(s) and check it.</span></li>
+</ul>
+<blockquote class="blockquote">
+<p>More than one dataset can be checked for each type of input. If a period of the simulation is covered by more than one dataset, the dataset starting first is used</p>
+</blockquote>
+<ul>
+<li><p><span style="color:blue">In the <em>Selection</em> frame (<a href="#fig-time_slice_simulation_interface">Figure&nbsp;<span>6.14</span></a>), choose the <em>model selection</em> to be used.</span></p></li>
+<li><p><span style="color:blue">Then, select the object’s series to be displayed.</span></p></li>
+</ul>
+<blockquote class="blockquote">
+<p>The <em>model selection</em> is also used for the results exportation.</p>
+</blockquote>
+<ul>
+<li><p><span style="color:blue">In the <em>Outputs</em> frame (<a href="#fig-time_slice_simulation_interface">Figure&nbsp;<span>6.14</span></a>), define the outputs to be recorded: <em>All results</em> (all the simulation results of the model) and/or <em>Results from selection</em> (which considers only the above selected model selection). For each one, it is possible to record:</span></p>
+<ul>
+<li><p><span style="color:blue"><em>Each simulation:</em> one dataset will be produced by time-slice (see <em>Simulation period</em> in <em>Solver frame</em> at <a href="#fig-time_slice_simulation_interface">Figure&nbsp;<span>6.14</span></a>)</span></p></li>
+<li><p><span style="color:blue"><em>Combined simulations</em>: only one dataset will be produced for all the period</span></p></li>
+<li><p><span style="color:blue"><em>Nothing:</em> no dataset will be produced</span></p></li>
+</ul></li>
+<li><p><span style="color:blue">In the <em>Solver</em> frame (<a href="#fig-time_slice_simulation_interface">Figure&nbsp;<span>6.14</span></a>), specify:</span></p>
+<ul>
+<li><span style="color:blue">The entire simulation period: <em>Start</em> and <em>End</em> dates.</span></li>
+</ul></li>
+</ul>
+<blockquote class="blockquote">
+<p>By default, the maximum possible period to be simulated is proposed. It corresponds to the maximum period covered by the datasets in each object type for which at least one dataset is selected. Manual modification can only shrink the extent of the simulation period.</p>
+</blockquote>
+<ul>
+<li><p><span style="color:blue">The time-slice or <em>Simulation period: annually, monthly, etc.</em></span></p></li>
+<li><p><span style="color:blue">Both <em>Simulation</em> and <em>Recording</em> time steps.</span></p></li>
+</ul>
+</section>
+<section id="time-slice-simulation-startstop" class="level3">
+<h3 class="anchored" data-anchor-id="time-slice-simulation-startstop">Time-slice simulation start/stop</h3>
+<ul>
+<li><span style="color:blue">Click on <img src="figures/fig-icon_calibrator_start.png" style="height:0.12in"> in the <em>Solver</em> frame to launch the time-slice simulation.</span></li>
+</ul>
+<blockquote class="blockquote">
+<p>If the model is valid, the simulation starts. In addition, succes of each time-slice is presented with a green progress bar (<a href="#fig-time_slice_simulation_progress_simulation">Figure&nbsp;<span>6.15</span></a>, left). If one time-slice cannot be achieved, the RS MINERVE error window is displayed and a gray progress bar is shown (<a href="#fig-time_slice_simulation_progress_simulation">Figure&nbsp;<span>6.15</span></a>, right).</p>
+</blockquote>
+<div id="fig-time_slice_simulation_progress_simulation" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-time_slice_simulation_progress_simulation.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 6.15: Progress state after success (left) and failure (right) of the simulation</figcaption><p></p>
+</figure>
+</div>
+<ul>
+<li><span style="color:blue">Click on <img src="figures/fig-icon_calibrator_stop.png" style="height:0.11in"> in the <em>Solver</em> frame if necessary to stop the simulation. All results until that moment are saved.</span></li>
+</ul>
+</section>
+<section id="time-slice-results" class="level3">
+<h3 class="anchored" data-anchor-id="time-slice-results">Time-slice results</h3>
+<p>After each computation of each time-slice, next components are shown:</p>
+<ul>
+<li><p>In the <em>Solver</em> frame, the progress bar of each time-slice.</p></li>
+<li><p>In the <em>Selection</em> frame, the series of the components selected in the object list for the last computed time-slice.</p></li>
+<li><p>In the Comparators frame: the values of the indicators checked under <em>Indicators to visualize</em> for the selected comparators are graphically shown in the top part of the frame and in tabular form in the bottom part of the same frame (<a href="#fig-time_slice_simulation_visualization_indicators">Figure&nbsp;<span>6.16</span></a>).</p></li>
+</ul>
+<div id="fig-time_slice_simulation_visualization_indicators" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-time_slice_simulation_visualization_indicators.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 6.16: Visualization of indicators at the different comparators</figcaption><p></p>
+</figure>
+</div>
+<p>Objects selection in the <em>Selection</em> frame as well as indicators and comparators to consider in the <em>Comparators</em> frame can be modified during the Time-slice simulation.</p>
+<p>The tabular results of indicators can be exported at any time by copying them and pasting the text in a file.</p>
+<p>At the end of the time-slice simulation, the outputs datasets are available in the same repository than those of the database.</p>
+</section>
+</section>
+<section id="optimizator" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="optimizator"><span class="header-section-number">6.5</span> Optimizator</h2>
+<p>In RS MINERVE, an automatic optimization of the Planner’s conditions and rules can be performed with the <em>Optimizator</em> tool (<a href="#fig-planner_optimizator_interface">Figure&nbsp;<span>6.17</span></a>).</p>
+<ul>
+<li><span style="color:blue">Click on <em>Expert</em> module and then on the Optimizator tool (<a href="#fig-planner_optimizator_interface">Figure&nbsp;<span>6.17</span></a>).</span></li>
+</ul>
+<section id="optimization-configuration" class="level3">
+<h3 class="anchored" data-anchor-id="optimization-configuration">Optimization configuration</h3>
+<p>The definition of a new optimization configuration can be carried out following the next steps (corresponding to the black boxes in <a href="#fig-planner_optimizator_interface">Figure&nbsp;<span>6.17</span></a>):</p>
+<ul>
+<li><span style="color:blue">In the <em>Selection</em> frame (<a href="#fig-planner_optimizator_interface">Figure&nbsp;<span>6.17</span></a>), select the Zones to be considered and the Planners objects to which the optimization should be applied to: press <em>Ctrl</em> and click to select multiple Zones or Planners.</span></li>
+</ul>
+<blockquote class="blockquote">
+<p>Once the Zones and Planner objects selected, all the possible “output generation” parameters and the “conditions” parameters that can be optimized appear in the <em>Parameters to optimize</em> frame (<a href="#fig-planner_optimizator_interface">Figure&nbsp;<span>6.17</span></a>).</p>
+</blockquote>
+<ul>
+<li><span style="color:blue">In the <em>Parameters to optimize</em> frame (<a href="#fig-planner_optimizator_interface">Figure&nbsp;<span>6.17</span></a>), select the parameters to optimize in both tabs (Output generation and Conditions). For each one, define its minimum and maximum possible values.</span></li>
+</ul>
+<div id="fig-planner_optimizator_interface" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-planner_optimizator_interface.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 6.17: Interface of the Planner optimization module (in black: configuration; in green: results)</figcaption><p></p>
+</figure>
+</div>
+<ul>
+<li><p><span style="color:blue">Choose the ‘Model selection’ (from those defined in <em>Selection and plots</em> module) in the <em>Objective Function</em> (OF) frame (<a href="#fig-planner_optimizator_interface">Figure&nbsp;<span>6.17</span></a>).</span> The available series of this selection appear in the table below.</p></li>
+<li><p><span style="color:blue">Select the series to take into account in the objective function. For each selection, specify its weight, the optimization type (maximize or minimize) and the value we want to maximize/minimize (the maximum value of the series, the minimum value, the average or the value for a specific K date).</span></p></li>
+<li><p><span style="color:blue">If the option “K<sup>th</sup> date” is selected for the Value to optimize, the user has to define a specific date in the “K<sup>th</sup> Date” column.</span></p></li>
+<li><p><span style="color:blue">A conversion from discharge to damages can be applied to the flow series selected. This could be used to optimize damages instead of discharges. For this purpose, the user can create a conversion curve adding at least two points in the “Table conversion” on the right. When the points are added, the Convert option for this result can be enabled.</span></p></li>
+<li><p><span style="color:blue">In the <em>Solver</em> section of the <em>Optimization computation</em> frame, specify the optimization period and both the <em>Simulation</em> and <em>Recording</em> time steps (<a href="#fig-planner_optimizator_interface">Figure&nbsp;<span>6.17</span></a>).</span></p></li>
+<li><p><span style="color:blue">In the <em>Algorithm parameters</em> section of the same frame, define the optimization algorithm to be used (e.g., SCE-UA in <a href="#fig-planner_optimizator_interface">Figure&nbsp;<span>6.17</span></a>) and its corresponding parameters. Three different algorithms are available: Shuffled Complex Evolution – University of Arizona - SCE-UA; Uniform Adaptive Monte Carlo – UAMC; Coupled Latin Hypercube with Rosenbrock - CLHR. For more information about their basic essentials, please refer to the RS MINERVE – Technical Manual.</span></p></li>
+<li><p><span style="color:blue">Hover the mouse over each parameter to display a short description.</span></p></li>
+<li><p><span style="color:blue">To save the current optimization configuration (optional), click on <img src="figures/fig-icon_calibrator_export_config.png" style="height:0.16in"> in the <em>Optimization Configuration</em> frame (<a href="#fig-planner_optimizator_interface">Figure&nbsp;<span>6.17</span></a>). If you want to save the configuration for all the optimizations, click on <img src="figures/fig-icon_calibrator_export_all_config.png" style="height:0.16in">.</span> The resulting file can be imported for the next optimization.</p></li>
+<li><p><span style="color:blue">To import an existing optimization, click on <img src="figures/fig-icon_calibrator_import_config.png" height="0"> in the <em>Optimization Configuration</em> frame (<a href="#fig-planner_optimizator_interface">Figure&nbsp;<span>6.17</span></a>) and load the file.</span></p></li>
+</ul>
+</section>
+<section id="optimization-startstop" class="level3">
+<h3 class="anchored" data-anchor-id="optimization-startstop">Optimization start/stop</h3>
+<ul>
+<li><span style="color:blue">Click on <img src="figures/fig-icon_calibrator_start.png" style="height:0.11in"> in the <em>Optimization computation</em> frame to launch the optimization.</span></li>
+</ul>
+<blockquote class="blockquote">
+<p>If the optimization configuration is valid, a “Start” message with the current date appears in the <em>Process</em> tab of the <em>Summary Results</em> frame. Otherwise, a red error message is displayed at the bottom of the <em>Solver</em> section with a description of the problem.</p>
+</blockquote>
+<ul>
+<li><span style="color:blue">To stop the process, click on <img src="figures/fig-icon_calibrator_stop.png" style="height:0.11in"> in the <em>Optimization computation</em> frame.</span> It takes a moment to stop until the ongoing simulation ends.</li>
+</ul>
+</section>
+<section id="optimization-results" class="level3">
+<h3 class="anchored" data-anchor-id="optimization-results">Optimization results</h3>
+<p>During the optimization running, the following results are displayed in the <em>Summary</em> <em>Results</em> frame (<a href="#fig-planner_optimizator_interface">Figure&nbsp;<span>6.17</span></a> and <a href="#fig-planner_optimizator_text_results">Figure&nbsp;<span>6.18</span></a>):</p>
+<ul>
+<li><p>The Objective Function (OF), with its maximum possible value.</p></li>
+<li><p>The results of the simulation before the optimization with the initial Planner parameters and the initial OF value.</p></li>
+<li><p>The results of the current iteration with its Planner parameters values and the respective values of the OF value.</p></li>
+<li><p>The best result, with related parameters and OF value.</p></li>
+</ul>
+<p>The results can be exported for all iterations at the end of the process with the Save button located in the same frame. The summary results can also be copy -pasted the text in a file.</p>
+<div id="fig-planner_optimizator_text_results" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-planner_optimizator_text_results.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 6.18: Textual results of the optimization in progress</figcaption><p></p>
+</figure>
+</div>
+<p>The results of the optimization in progress are also displayed graphically in the <em>Graphic</em> <em>Results</em> frame (<a href="#fig-planner_optimizator_interface">Figure&nbsp;<span>6.17</span></a>):</p>
+<ul>
+<li>The <em>OF Progress</em> tab shows the evolution of the Objective Function (OF), with its Initial value in green, the current value in red and all other values in orange. The activation of the mouse wheel on the vertical axis allows to zoom on the OF values of interest.</li>
+</ul>
+<p>At the end of the optimization:</p>
+<ul>
+<li>The Planner parameters obtained at the end of the optimization process are applied to the model. If the model is saved, the parameters are stored; if not, the Planner objects keep the initial (non-optimized) parameters.</li>
+</ul>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./user_hydro_hydrau_simulation.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Hydrological-hydraulic simulation</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./user_plugins.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Plugins</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
