@@ -32,7 +32,7 @@ collaborate to improve RS MINERVE and use it to support postgraduate courses in 
 
 ## Release {.unnumbered}
 
-Approved for Public Release. Distribution Unlimited
+Approved for Public Release. Distribution Unlimited.
 
 [![ISSN](figures/fig-logo_issn.svg){width="1in"}](https://portal.issn.org/resource/ISSN/2673-2653)
 
