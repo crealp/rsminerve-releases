@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="generator" content="quarto-0.9.233">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>RS MINERVE Manuals - 17&nbsp; Example 2 – Combined full basin with meteorological stations</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+
+  <script src="site_libs/quarto-nav/quarto-nav.js"></script>
+  <script src="site_libs/quarto-nav/headroom.min.js"></script>
+  <script src="site_libs/clipboard/clipboard.min.js"></script>
+  <meta name="quarto:offset" content="./">
+  <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+  <script src="site_libs/quarto-search/fuse.min.js"></script>
+  <script src="site_libs/quarto-search/quarto-search.js"></script>
+  <link href="./examples_ex3.html" rel="next">
+  <link href="./examples_ex1.html" rel="prev">
+  <script src="site_libs/quarto-html/quarto.js"></script>
+  <script src="site_libs/quarto-html/popper.min.js"></script>
+  <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+  <script src="site_libs/quarto-html/anchor.min.js"></script>
+  <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+  <link id="quarto-text-highlighting-styles" href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
+  <script src="site_libs/bootstrap/bootstrap.min.js"></script>
+  <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+  <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+  <script id="quarto-search-options" type="application/json">{
+    "location": "sidebar",
+    "copy-button": false,
+    "collapse-after": 3,
+    "panel-placement": "start",
+    "type": "textbox",
+    "limit": 20,
+    "language": {
+      "search-no-results-text": "No results",
+      "search-matching-documents-text": "matching documents",
+      "search-copy-link-title": "Copy link to search",
+      "search-hide-matches-text": "Hide additional matches",
+      "search-more-match-text": "more match in this document",
+      "search-more-matches-text": "more matches in this document",
+      "search-clear-button-title": "Clear",
+      "search-detached-cancel-button-title": "Cancel",
+      "search-submit-button-title": "Submit"
+    }
+  }</script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body class="floating">
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav color-navbar" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Example 2 – Combined full basin with meteorological stations</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+
+<div class="quarto-title-banner color-navbar page-columns page-full"><div class="quarto-title column-body"><h1 class="title display-7"><span id="sec-examples_ex2" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Example 2 – Combined full basin with meteorological stations</span></span></h1></div></div></header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">RS MINERVE Manuals</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Introduction</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="./user_manual.html" class="sidebar-item-text sidebar-link">User Manual</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./user_rainfall_runoff_modelling.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Rainfall-runoff modelling</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./user_hydraulic_infrastructures.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Hydraulic infrastructures modelling</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./user_database.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Database</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./user_gis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">GIS</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./user_hydro_hydrau_simulation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Hydrological-hydraulic simulation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./user_expert_module.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Expert module</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./user_plugins.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Plugins</span></a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="./tech_manual.html" class="sidebar-item-text sidebar-link">Technical Manual</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_hydrological_models.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Hydrological and hydraulics models description</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_performance_indicators.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Performance indicators</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_calibration_algorithms.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Calibration algorithms</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_stochastic_equations.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Stochastic equations</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_scripts.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Visual Basic Scripts</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_file_formats.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">File formats</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_database_formats.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Database formats</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_gis_formats.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">GIS formats</span></a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="./examples.html" class="sidebar-item-text sidebar-link">Examples of application</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examples_ex1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Example 1 – Simple basin with only runoff</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examples_ex2.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Example 2 – Combined full basin with meteorological stations</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examples_ex3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Example 3 – Equipped basin with a hydropower scheme</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examples_ex4.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Example 4 – Automatic calibration of a model</span></a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./acknowledgments.html" class="sidebar-item-text sidebar-link">Acknowledgments</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Appendices</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix_list_param_ic.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Appendix: List of parameters and initial conditions</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix_list_notifications.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">List of notifications from pre-simulation and post-simulation reports</span></a>
+  </div>
+</li>
+    </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+<h2 id="toc-title">Table of contents</h2>
+<ul>
+<li><a href="#objective-of-example-2" id="toc-objective-of-example-2" class="nav-link active" data-scroll-target="#objective-of-example-2"> <span class="header-section-number">17.1</span> Objective of Example 2</a></li>
+<li><a href="#resolution-of-example-2" id="toc-resolution-of-example-2" class="nav-link" data-scroll-target="#resolution-of-example-2"> <span class="header-section-number">17.2</span> Resolution of Example 2</a></li>
+<li><a href="#results-of-example-2" id="toc-results-of-example-2" class="nav-link" data-scroll-target="#results-of-example-2"> <span class="header-section-number">17.3</span> Results of Example 2</a></li>
+</ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+<p data-sidebar-align="true">The hydrological system proposed by the Example 2 includes four hydrological models of production, a GSM and three HBV models as well as the rivers of the basin. The discharge production in the sub-basins area is based on given precipitations and temperatures from a database.</p>
+<p>This expected model is represented in <a href="#fig-examples_model_scheme_ex2">Figure&nbsp;<span>17.1</span></a>.</p>
+<div id="fig-examples_model_scheme_ex2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-examples_model_scheme_ex2.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 17.1: Model scheme</figcaption><p></p>
+</figure>
+</div>
+<p>The parameters of the objects are provided in <a href="#fig-examples_characteristics_ex2_1">Figure&nbsp;<span>17.2</span></a> to <a href="#fig-examples_characteristics_ex2_3">Figure&nbsp;<span>17.4</span></a> and the precipitation and temperature data are in the database “Database manual”.</p>
+<section id="objective-of-example-2" class="level2" data-number="17.1">
+<h2 data-number="17.1" class="anchored" data-anchor-id="objective-of-example-2"><span class="header-section-number">17.1</span> Objective of Example 2</h2>
+<p>The objective of this example is to determine the hydrograph in the outlet of the system during the period between the 08.05.2013 00:00 and the 15.05.2013 00:00, the peak discharge and the peak time, as well as the discharge created at the outlet of each sub-basin.</p>
+<p>The simulation parameters are:</p>
+<ul>
+<li><p>Simulation time step = 600 s</p></li>
+<li><p>Recording time step = 600 s</p></li>
+</ul>
+<p>A uniform and null ETP is assumed for this example (the user can check the selected ETP method in the RS MINERVE settings).</p>
+<div id="fig-examples_characteristics_ex2_1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-examples_characteristics_ex2_1.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 17.2: Characteristics of the objects (1/3)</figcaption><p></p>
+</figure>
+</div>
+<p>&nbsp;</p>
+<div id="fig-examples_characteristics_ex2_2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-examples_characteristics_ex2_2.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 17.3: Characteristics of the objects (2/3)</figcaption><p></p>
+</figure>
+</div>
+<p>&nbsp;</p>
+<div id="fig-examples_characteristics_ex2_3" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-examples_characteristics_ex2_3.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 17.4: Characteristics of the objects (3/3)</figcaption><p></p>
+</figure>
+</div>
+<p>Besides, two meteorological real stations are included in the data base:</p>
+<div id="fig-examples_characteristics_meteo_ex2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-examples_characteristics_meteo_ex2.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 17.5: Characteristics of the meteorological real stations</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="resolution-of-example-2" class="level2" data-number="17.2">
+<h2 data-number="17.2" class="anchored" data-anchor-id="resolution-of-example-2"><span class="header-section-number">17.2</span> Resolution of Example 2</h2>
+<p>First of all, the subcatchment with HBV <img src="figures/fig-icon_object_hbv.png" style="height:0.24in"> and GSM <img src="figures/fig-icon_object_gsm.png" style="height:0.24in"> models will be set up. Then, the three rivers <img src="figures/fig-icon_object_kinem.png" style="height:0.24in"> (with Kinematic Wave) and the two junctions <img src="figures/fig-icon_object_junction.png" style="height:0.24in"> are also added as presented in <a href="#fig-examples_unlinked_objects_ex2">Figure&nbsp;<span>17.6</span></a> (more details are given in Example 1 for model construction, including the link between each object and their parameterization).</p>
+<div id="fig-examples_unlinked_objects_ex2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-examples_unlinked_objects_ex2.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 17.6: Unlinked objects of the model</figcaption><p></p>
+</figure>
+</div>
+<p>After that, the models are linked from upstream to downstream (<a href="#fig-examples_topologic_links_between_objects_ex2">Figure&nbsp;<span>17.7</span></a>) and the relations created can be visualized by double clicking on each blue arrow (<a href="#fig-examples_possible_outputs_transfer_ex2">Figure&nbsp;<span>17.8</span></a>, <a href="#fig-examples_connection_between_objects_ex2">Figure&nbsp;<span>17.9</span></a>).</p>
+<div id="fig-examples_topologic_links_between_objects_ex2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-examples_topologic_links_between_objects_ex2.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 17.7: Relations between the objects</figcaption><p></p>
+</figure>
+</div>
+<p>&nbsp;</p>
+<div id="fig-examples_possible_outputs_transfer_ex2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-examples_possible_outputs_transfer_ex2.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 17.8: Possible outputs transfers between objects</figcaption><p></p>
+</figure>
+</div>
+<p>&nbsp;</p>
+<div id="fig-examples_connection_between_objects_ex2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-examples_connection_between_objects_ex2.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 17.9: Connections between objects</figcaption><p></p>
+</figure>
+</div>
+<p>The parameters associated to each object are then introduced (values available in previous tables). The result is presented for both HBV 1 and GSM 1 models in <a href="#fig-examples_param_ic_hbv_gsm_ex2">Figure&nbsp;<span>17.10</span></a>.</p>
+<div id="fig-examples_param_ic_hbv_gsm_ex2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-examples_param_ic_hbv_gsm_ex2.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 17.10: Parameters of the HBV 1 model (left) and the GSM 1 model (right)</figcaption><p></p>
+</figure>
+</div>
+<p>Secondly, virtual weather stations are inserted. For its accomplishment, 4 Virtual Weather Stations <img src="figures/fig-icon_object_station.png" style="height:0.24in"> are created and connected according to <a href="#fig-examples_model_with_stations_ex2">Figure&nbsp;<span>17.11</span></a>. The topology of the relations created in this case is detailed in <a href="#fig-examples_topologic_links_between_stations_ex2">Figure&nbsp;<span>17.12</span></a>. Then the parameters are introduced (<a href="#fig-examples_param_station_ex2">Figure&nbsp;<span>17.13</span></a>) with the available values presented previously.</p>
+<div id="fig-examples_model_with_stations_ex2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-examples_model_with_stations_ex2.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 17.11: Topology of the full model: production, transfer then transport</figcaption><p></p>
+</figure>
+</div>
+<p>&nbsp;</p>
+<div id="fig-examples_topologic_links_between_stations_ex2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-examples_topologic_links_between_stations_ex2.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 17.12: Topologic links between the different objects</figcaption><p></p>
+</figure>
+</div>
+<p>&nbsp;</p>
+<div id="fig-examples_param_station_ex2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-examples_param_station_ex2.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 17.13: Parameters of the Virtual Weather Station H1 (for HBV 1)</figcaption><p></p>
+</figure>
+</div>
+<p>Constructed model can be now saved clicking in the button <img src="figures/fig-icon_save_button.png" style="height:0.24in"> and giving a name to the .rsm file (e.g. “Example2.rsm”).</p>
+<p>Next, the meteorological data have to be loaded: the dialog box of the database is opened clicking in <img src="figures/fig-icon_database_open.png" style="height:0.24in"> (<a href="#fig-examples_database_frame_ex2">Figure&nbsp;<span>17.14</span></a>) for loading the corresponding database file (“Database manual.dbx”).</p>
+<div id="fig-examples_database_frame_ex2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-examples_database_frame_ex2.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 17.14: Database frame</figcaption><p></p>
+</figure>
+</div>
+<p>The user can click on the Database tab to visualize or modify the series of the database (<a href="#fig-examples_database_model_ex2">Figure&nbsp;<span>17.15</span></a>).</p>
+<div id="fig-examples_database_model_ex2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-examples_database_model_ex2.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 17.15: Database of the model</figcaption><p></p>
+</figure>
+</div>
+<p>Once the database loaded, the user can connect the database to the hydrological model. For achieving this purpose, the user has to choose the correct data source in the corresponding frame (<a href="#fig-examples_datasource_connection_ex2">Figure&nbsp;<span>17.16</span></a>): the group “Measure” and the dataset “DataSet Example 2and3” for the current example. Since no source, <em>TurbineDB</em>, reservoir or consumer objects exist in the model, it is not necessary to fill up their data sources.</p>
+<div id="fig-examples_datasource_connection_ex2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-examples_datasource_connection_ex2.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 17.16: Data source used for connecting the model to the database</figcaption><p></p>
+</figure>
+</div>
+<p>Finally, and after achieve a simulation, the weight of each meteorological real station can be checked by clicking at one Virtual Weather station of the hydrological model (<a href="#fig-examples_weight_station_ex2">Figure&nbsp;<span>17.17</span></a>).</p>
+<div id="fig-examples_weight_station_ex2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-examples_weight_station_ex2.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 17.17: Weight of each meteorological station for the Virtual Weather Station H1</figcaption><p></p>
+</figure>
+</div>
+<p>The pre-simulation validation (<img src="figures/fig-icon_validation.png" style="height:0.24in">) allows to valid the model. If the message: “Model ‘Example 2’ is valid” appears, the simulation can be started by clicking in the button Start.</p>
+</section>
+<section id="results-of-example-2" class="level2" data-number="17.3">
+<h2 data-number="17.3" class="anchored" data-anchor-id="results-of-example-2"><span class="header-section-number">17.3</span> Results of Example 2</h2>
+<p>Once finished the calculation, the hydrograph in the outlet of the system, among others, can be visualized (<a href="#fig-examples_outlet_hydrograph_ex2">Figure&nbsp;<span>17.18</span></a>).</p>
+<div id="fig-examples_outlet_hydrograph_ex2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-examples_outlet_hydrograph_ex2.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 17.18: Hydrograph in the outlet of the system</figcaption><p></p>
+</figure>
+</div>
+<p>If we check the values (<a href="#fig-examples_discharge_values_ex2">Figure&nbsp;<span>17.19</span></a>), we can found that the maximal discharge arrives on May the 9<sup>th</sup>, 2013 at 07:00 and the discharge value is 8.154 m<sup>3</sup>/s.</p>
+<div id="fig-examples_discharge_values_ex2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-examples_discharge_values_ex2.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 17.19: Discharge values at outlet</figcaption><p></p>
+</figure>
+</div>
+<p>All the simulated variables of the model (including the discharge in each sub-basin outlet) can be visualized (<a href="#fig-examples_selection_plots_subbasins_ex2">Figure&nbsp;<span>17.20</span></a> and <a href="#fig-examples_hydrographs_subbasins_ex2">Figure&nbsp;<span>17.21</span></a>) clicking on the “Selection and plots” frame and in selecting the series to draw as presented in <a href="user_hydro_hydrau_simulation.html#sec-user_hydro_hydrau_simulation_selection_plots">Section&nbsp;<span>5.2</span></a>. Finally you can export the selection results in excel format clicking in “Export results to…” in the series frame.</p>
+<div id="fig-examples_selection_plots_subbasins_ex2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-examples_selection_plots_subbasins_ex2.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 17.20: <em>Selection and Plots</em> with the hydrographs at the outlet for each sub-basin of the system</figcaption><p></p>
+</figure>
+</div>
+<p>&nbsp;</p>
+<div id="fig-examples_hydrographs_subbasins_ex2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-examples_hydrographs_subbasins_ex2.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 17.21: Hydrographs at the outlet for each sub-basin of the system</figcaption><p></p>
+</figure>
+</div>
+
+
+
+</section>
+</main> <!-- /main -->
+<script type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    setTimeout(function() {
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./examples_ex1.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Example 1 – Simple basin with only runoff</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./examples_ex3.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Example 3 – Equipped basin with a hydropower scheme</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+</body></html>

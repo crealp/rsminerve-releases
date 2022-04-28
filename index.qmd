@@ -1,0 +1,47 @@
+## Introduction {.unnumbered}
+
+RS MINERVE is a software for the simulation of free surface run-off flow formation and propagation. It models complex hydrological and hydraulic networks according 
+to a semi-distributed conceptual scheme. In addition to particular hydrological processes such as snowmelt, glacier melt, surface and underground flow, hydraulic 
+control elements (e.g. gates, spillways, diversions, junctions, turbines and pumps) are also included.
+
+RS MINERVE is based on the same concept than Routing System II, earlier software developed at the Laboratory of Hydraulic Constructions (LCH) at the Ecole Polytechnique 
+Fédérale de Lausanne (EPFL) [@dubois_routing_2000; @garcia_hernandez_routing_2007] and used since 2002 in different projects and theses, such as by @jordan_modeprevision_2007 or @claude_evolution_2011.
+The software presented hereafter, RS MINERVE, is currently developed by the CREALP and HydroCosmos SA, with the collaboration of the previously mentioned LCH as well as 
+the Universitat Politècnica de València (UPV). It has also been used since 2011 in numerous projects and theses (e.g. @garcia_hernandez_flood_2011).
+
+The global analysis of a hydrologic-hydraulic network is essential in numerous decision-making situations such as the management or planning of water resources, 
+the optimization of hydropower plant operations, the design and regulation of spillways or the development of appropriate flood protection concepts. RS MINERVE 
+makes such analyses accessible to a broad public through its user-friendly interface and its valuable possibilities. In addition, thanks to its modular framework, 
+the software can be developed and adapted to specific needs or issues.
+
+RS MINERVE contains different hydrological models for **rainfall-runoff, such as GSM, SOCONT, SAC-SMA, GR4J, HBV and SCS**. The combination of hydraulic structure 
+models (reservoirs, turbines, spillways,...) can also reproduce complex hydropower schemes. In addition, a **hydropower model** computes the net height and the linear 
+pressure losses, providing energy production values and total income based on the turbine performance and on the sale price of energy. A **consumption model** calculates 
+water deficits for consumptive uses of cities, industries and/or agriculture. A **structure efficiency model** computes discharge losses in a structure such a canal 
+or a pipe by considering a simple efficiency coefficient.
+
+The **Expert module**, specifically created for research or complex studies, enables in-depth evaluation of hydrologic and hydraulic results. Time-slice simulation 
+facilitates the analysis of large data sets without overloading the computer memory. Scenario simulation introduced the possibility of simulating multiple weather 
+scenarios or several sets of parameters and initial conditions to study the variability and sensitivity of the model results. The automatic calibration with different 
+algorithms, such as the SCE-UA, calculates the best set of hydrological parameters depending on a user-defined objective function.
+
+RS MINERVE program is **freely distributed** to interested users. Several projects and theses have used and are using this program for study basins in Switzerland, 
+Spain, Peru, Brazil France and Nepal. In addition to the research center [**CREALP**](https://crealp.ch/) and the engineering office [**HydroCosmos SA**](https://www.hydrocosmos.ch/), 
+which currently develop RS MINERVE, two universities ([**Ecole Polytechnique Fédérale de Lausanne**](https://www.epfl.ch/en/) and [**Universitat Politècnica de València**](http://www.upv.es/en)) 
+collaborate to improve RS MINERVE and use it to support postgraduate courses in Civil Engineering and Environmental Sciences.
+
+## Release {.unnumbered}
+
+Approved for Public Release. Distribution Unlimited.
+
+[![ISSN](figures/fig-logo_issn.svg){width="1in"}](https://portal.issn.org/resource/ISSN/2673-2653)
+
+[![ISSN](figures/fig-logo_issn.svg){width="1in"}](https://portal.issn.org/resource/ISSN/2673-2661)
+
++-----------------------------------------------------------+---------------------------------------------------------+
+| Centre de recherche sur l’environnement alpin (CREALP)    | ![](figures/fig-logo_crealp_fondTans.png){width="2in"}  |
++-----------------------------------------------------------+---------------------------------------------------------+
+| HydroCosmos SA                                            | ![](figures/fig-logo_hydrocosmos.png){width="2in"}      |
++-----------------------------------------------------------+---------------------------------------------------------+
+
+## References {.unnumbered}
