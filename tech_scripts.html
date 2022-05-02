@@ -1,0 +1,5123 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-0.9.342">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>RS MINERVE Manuals - 12&nbsp; Visual Basic Scripts</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<link href="./tech_file_formats.html" rel="next">
+<link href="./tech_stochastic_equations.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link id="quarto-text-highlighting-styles" href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Visual Basic Scripts</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title"><span id="sec-tech_scripts" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Visual Basic Scripts</span></span></h1>
+                </div>
+  </div>
+    
+  
+
+
+
+  <div class="quarto-title-meta">
+
+      
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">RS MINERVE Manuals</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Introduction</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="./user_manual.html" class="sidebar-item-text sidebar-link">User Manual</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./user_rainfall_runoff_modelling.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Rainfall-runoff modelling</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./user_hydraulic_infrastructures.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Hydraulic infrastructures modelling</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./user_database.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Database</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./user_gis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">GIS</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./user_hydro_hydrau_simulation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Hydrological-hydraulic simulation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./user_expert_module.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Expert module</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./user_plugins.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Plugins</span></a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="./tech_manual.html" class="sidebar-item-text sidebar-link">Technical Manual</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_hydrological_models.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Hydrological and hydraulics models description</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_performance_indicators.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Performance indicators</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_calibration_algorithms.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Calibration algorithms</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_stochastic_equations.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Stochastic equations</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_scripts.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Visual Basic Scripts</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_file_formats.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">File formats</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_database_formats.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Database formats</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_gis_formats.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">GIS formats</span></a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="./examples.html" class="sidebar-item-text sidebar-link">Examples of application</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examples_ex1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Example 1 – Simple basin with only runoff</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examples_ex2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Example 2 – Combined full basin with meteorological stations</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examples_ex3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Example 3 – Equipped basin with a hydropower scheme</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examples_ex4.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Example 4 – Automatic calibration of a model</span></a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./acknowledgments.html" class="sidebar-item-text sidebar-link">Acknowledgments</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Appendices</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix_list_param_ic.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Appendix: List of parameters and initial conditions</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix_list_notifications.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">List of notifications from pre-simulation and post-simulation reports</span></a>
+  </div>
+</li>
+    </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction-to-visual-basic-scripts" id="toc-introduction-to-visual-basic-scripts" class="nav-link active" data-scroll-target="#introduction-to-visual-basic-scripts"> <span class="header-section-number">12.1</span> Introduction to Visual Basic Scripts</a></li>
+  <li><a href="#available-vbs-procedures-and-functions-in-rs-minerve" id="toc-available-vbs-procedures-and-functions-in-rs-minerve" class="nav-link" data-scroll-target="#available-vbs-procedures-and-functions-in-rs-minerve"> <span class="header-section-number">12.2</span> Available VBS procedures and functions in RS MINERVE</a></li>
+  <li><a href="#sec-tech_scripts_start" id="toc-sec-tech_scripts_start" class="nav-link" data-scroll-target="#sec-tech_scripts_start"> <span class="header-section-number">12.3</span> Application Start</a></li>
+  <li><a href="#model-preparation" id="toc-model-preparation" class="nav-link" data-scroll-target="#model-preparation"> <span class="header-section-number">12.4</span> Model preparation</a></li>
+  <li><a href="#simulation-and-reports" id="toc-simulation-and-reports" class="nav-link" data-scroll-target="#simulation-and-reports"> <span class="header-section-number">12.5</span> Simulation and reports</a></li>
+  <li><a href="#save-model-and-properties" id="toc-save-model-and-properties" class="nav-link" data-scroll-target="#save-model-and-properties"> <span class="header-section-number">12.6</span> Save model and properties</a></li>
+  <li><a href="#model-results" id="toc-model-results" class="nav-link" data-scroll-target="#model-results"> <span class="header-section-number">12.7</span> Model results</a></li>
+  <li><a href="#calibration" id="toc-calibration" class="nav-link" data-scroll-target="#calibration"> <span class="header-section-number">12.8</span> Calibration</a></li>
+  <li><a href="#application-stop" id="toc-application-stop" class="nav-link" data-scroll-target="#application-stop"> <span class="header-section-number">12.9</span> Application Stop</a></li>
+  <li><a href="#other-proceduresfunctions" id="toc-other-proceduresfunctions" class="nav-link" data-scroll-target="#other-proceduresfunctions"> <span class="header-section-number">12.10</span> Other procedures/functions</a></li>
+  <li><a href="#objects-nomenclature-in-vbscript" id="toc-objects-nomenclature-in-vbscript" class="nav-link" data-scroll-target="#objects-nomenclature-in-vbscript"> <span class="header-section-number">12.11</span> Objects nomenclature in VBScript</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<p>VBScript (Visual Basic Scripting Edition) is an Active Scripting language developed by Microsoft that is modelled on Visual Basic. It is designed as a “lightweight” language with a fast interpreter and can be effectively used for automating day to day office tasks as well as monitoring in the Windows-based environment. It has been installed by default in every desktop release of Microsoft Windows since Windows 98.</p>
+<p>This chapter describes the methodology to run tasks using Visual Basic scripts when working with RS MINERVE models (running a model, extracting information from dataset, etc.).</p>
+<section id="introduction-to-visual-basic-scripts" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="introduction-to-visual-basic-scripts"><span class="header-section-number">12.1</span> Introduction to Visual Basic Scripts</h2>
+<p>A VBScript script must be executed within a host environment, of which there are several provided with Microsoft Windows, including: Windows Script Host (WSH), Internet Explorer (IE), and Internet Information Services (IIS).</p>
+<p>VBScript can also be used to create applications that run directly on a workstation running Microsoft Windows. The simplest example is a script that makes use of the Windows Script Host (WSH) environment. Such a script is usually in a stand-alone file with the file extension .vbs.</p>
+<p>VBScript can be used for managing RS MINERVE without the graphical interface. The VBScript can be invoked in two ways: from the command line with Cscript, or directly by double-clicking on the script.</p>
+<p>In VBScript, <em>Properties</em> are attributes or values of an object that can be read and set. As long as the value returned by the property is not an object, setting and retrieving property values requires a simple assignment statement. Many properties return either individual objects or collections (a collection is an object that serves as a container for other data items or objects). These also require assignment statements that use the Set statement. For example, you can retrieve a reference to the root folder of the <em>C:</em> drive on a local system with a code fragment like the following:</p>
+<p><code>Set oFS = CreateObject("Scripting.FileSystemObject")</code></p>
+<p>When running RS MINERVE with VBScripts, the following code line has to be used before executing the specific RS MINERVE tasks:</p>
+<p><code>Set rsm = CreateObject("RSMinerve.RS.Task")</code></p>
+<p>Also, it is worth mentioning the difference between:</p>
+<ul>
+<li><p>Procedures (or Sub Procedures): does not return any value.</p></li>
+<li><p>Functions (or Function Procedures): return a value.</p></li>
+</ul>
+</section>
+<section id="available-vbs-procedures-and-functions-in-rs-minerve" class="level2" data-number="12.2">
+<h2 data-number="12.2" class="anchored" data-anchor-id="available-vbs-procedures-and-functions-in-rs-minerve"><span class="header-section-number">12.2</span> Available VBS procedures and functions in RS MINERVE</h2>
+<div id="tbl-tech_scripts_proced_funct" class="anchored">
+<table class="table">
+<caption>Table 12.1: Summary of the VBS procedures and functions available in RS MINERVE</caption>
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Name of procedure/ function</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Application start</strong></td>
+<td><a href="#Script_Start">Start</a></td>
+</tr>
+<tr class="even">
+<td><strong>Model preparation</strong></td>
+<td><a href="#Script_LoadDataset">LoadDataset</a></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><a href="#Script_LoadDatasetAndSetDates">LoadDatasetAndSetDates</a></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><a href="#Script_MergeLoadedDataset">MergeLoadedDataset</a></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><a href="#Script_LoadInitialConditionsFromFile">LoadInitialConditionsFromFile</a></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><a href="#Script_LoadInitialConditionsFromDataset">LoadInitialConditionsFromDataset</a></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><a href="#Script_LoadInitialConditionsFromFileAndCopy">LoadInitialConditionsFromFileAndCopyFile</a></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><a href="#Script_LoadInitialConditionsFromFileAndMove">LoadInitialConditionsFromFileAndMoveFile</a></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><a href="#Script_LoadParametersFromFile">LoadParametersFromFile</a></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><a href="#Script_GetStartDateFromDataset">GetStartDateFromDataset</a></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><a href="#Script_GetEndDateFromDataset">GetEndDateFromDataset</a></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><a href="#Script_GetStartDateFromModel">GetStartDateFromModel</a></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><a href="#Script_GetEndDateFromModel">GetEndDateFromModel</a></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><a href="#Script_GetICDateFromICFile">GetICDateFromICFile</a></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><a href="#Script_SetDates">SetDates</a></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><a href="#Script_SetStartDate">SetStartDate</a></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><a href="#Script_SetEndDate">SetEndDate</a></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><a href="#Script_SetSimulationTimeStep">SetSimulationTimeStep</a></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><a href="#Script_SetRecordingTimeStep">SetRecordingTimeStep</a></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><a href="#Script_SetETPMethod">SetETPMethod</a></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><a href="#Script_SetLongitudeAndLatitude">SetLongitudeAndLatitude</a></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><a href="#Script_SetUniformETPValue">SetUniformETPValue</a></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><a href="#Script_SetSpatialInterpolationMethod">SetSpatialInterpolationMethod</a></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><a href="#Script_DefineModelProperties">DefineModelProperties</a></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><a href="#Script_UpdateModelProperties">UpdateModelProperties</a></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><a href="#Script_SetOutputRatioCoeffsInPlanner">SetOutputRatioCoeffsInPlanner</a></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><a href="#Script_SetConditionThresholdInPlanner">SetConditionThresholdInPlanner</a></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><a href="#Script_SetDaysInPlanner">SetDaysInPlanner</a></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><a href="#Script_SetHoursInPlanner">SetHoursInPlanner</a></td>
+</tr>
+<tr class="even">
+<td><strong>Simulation and</strong> <strong>reports</strong></td>
+<td><a href="#Script_SavePreSimulationReportAs">SavePreSimulationReportAs</a></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><a href="#Script_SavePreSimulationReport">SavePreSimulationReport</a></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><a href="#Script_Simulate">Simulate</a></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><a href="#Script_SavePostSimulationReportAs">SavePostSimulationReportAs</a></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><a href="#Script_SavePostSimulationReport">SavePostSimulationReport</a></td>
+</tr>
+<tr class="odd">
+<td><strong>Save model and</strong> <strong>properties</strong></td>
+<td><a href="#Script_SaveModelAs">SaveModelAs</a></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><a href="#Script_SaveModel">SaveModel</a></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><a href="#Script_SaveInitialConditionsAs">SaveInitialConditionsAs</a></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><a href="#Script_SaveInitialConditions">SaveInitialConditions</a></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><a href="#Script_SaveFinalConditionsAs">SaveFinalConditionsAs</a></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><a href="#Script_SaveFinalConditions">SaveFinalConditions</a></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><a href="#Script_SaveParametersAs">SaveParametersAs</a></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><a href="#Script_SaveParameters">SaveParameters</a></td>
+</tr>
+<tr class="odd">
+<td><strong>Model results</strong></td>
+<td><a href="#Script_SaveFullResultsAs">SaveFullResultsAs</a></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><a href="#Script_SaveFullResults">SaveFullResults</a></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><a href="#Script_SaveSelectionResultsAs">SaveSelectionResultsAs</a></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><a href="#Script_SaveSelectionResults">SaveSelectionResults</a></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><a href="#Script_SaveInitializationDatasetAs">SaveInitializationDatasetAs</a></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><a href="#Script_SaveInitializationDataset">SaveInitializationDataset</a></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><a href="#Script_ExportResultsTo">ExportResultsTo</a></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><a href="#Script_MergeFullResults">MergeFullResults</a></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><a href="#Script_MergeSelectionResults">MergeSelectionResults</a></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><a href="#Script_MergeDatasetsAs">MergeDatasetsAs</a></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><a href="#Script_MergeDatasets">MergeDatasets</a></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><a href="#Script_GetPropertyValue">GetPropertyValue</a></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><a href="#Script_GetIndicatorValue">GetIndicatorValue</a></td>
+</tr>
+<tr class="even">
+<td><strong>Calibration</strong></td>
+<td><a href="#Script_LoadCalibrationsInModel">LoadCalibrationsInModel</a></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><a href="#Script_LoadCalibrationsByFile">LoadCalibrationsByFile</a></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><a href="#Script_SaveAllCalibrationsInModel">SaveAllCalibrationsInModel</a></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><a href="#Script_RunCalibration">RunCalibration</a></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><a href="#Script_RunAllCalibrations">RunAllCalibrations</a></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><a href="#Script_ExportCalibrationResults">ExportCalibrationResults</a></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><a href="#Script_ExportAllCalibrationsResults">ExportAllCalibrationsResults</a></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><a href="#Script_SetCalibrationDates">SetCalibrationDates</a></td>
+</tr>
+<tr class="even">
+<td><strong>Application stop</strong></td>
+<td><a href="#Script_Stop">Stop</a></td>
+</tr>
+<tr class="odd">
+<td><strong>Other procedures</strong> <strong>/functions</strong></td>
+<td><a href="#Script_RemoveFile">RemoveFile</a></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><a href="#Script_GetAppVersion">GetAppVersion</a></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><a href="#Script_GetReaderVersion">GetReaderVersion</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="sec-tech_scripts_start" class="level2" data-number="12.3">
+<h2 data-number="12.3" class="anchored" data-anchor-id="sec-tech_scripts_start"><span class="header-section-number">12.3</span> Application Start</h2>
+<table class="table">
+<colgroup>
+<col style="width: 37%">
+<col style="width: 62%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_Start"> Start </a></td>
+<td><em>Opening of the model</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This procedure opens the indicated model to be used.</p>
+<p><strong>Syntax</strong></p>
+<p><code>Start (modelFullPath, debug=false)</code></p>
+<p><strong>Parameters</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 66%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>modelFullPath</td>
+<td>String. Full path of the hydrological model. The file extension of the model has to be <em>*.rsm</em>; otherwise, the script reports an error.</td>
+</tr>
+<tr class="even">
+<td>Debug</td>
+<td>Boolean (optional). If TRUE, the script writes a text file with the error logs.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Argument Null Exception</td>
+<td>“Model file not defined”</td>
+</tr>
+<tr class="even">
+<td>Argument Exception</td>
+<td>“Model file not found”</td>
+</tr>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Model file not valid”</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="model-preparation" class="level2" data-number="12.4">
+<h2 data-number="12.4" class="anchored" data-anchor-id="model-preparation"><span class="header-section-number">12.4</span> Model preparation</h2>
+<table class="table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_LoadDataset"> LoadDataset </a></td>
+<td><em>Loading of the input dataset</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This procedure loads the indicated input dataset in the model. The model has to have been previously open.</p>
+<p><strong>Syntax</strong></p>
+<p><code>LoadDataset (inputDatasetFullPath)</code></p>
+<p><strong>Parameters</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>inputDatasetFullPath</td>
+<td>String. Full path of the input dataset</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Model not loaded”</td>
+</tr>
+<tr class="even">
+<td>Argument Null Exception</td>
+<td>“Input dataset not defined”</td>
+</tr>
+<tr class="odd">
+<td>Argument Exception</td>
+<td>“Input dataset not found”</td>
+</tr>
+<tr class="even">
+<td>Invalid Operation Exception</td>
+<td>“Input dataset not valid”</td>
+</tr>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Failed to apply datasources”</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<p><br>
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_LoadDatasetAndSetDates"> LoadDatasetAndSetDates </a></td>
+<td><em>Loading of the input dataset and set dates</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>The input dataset is loaded, and the datasource and the simulation period are defined based on the dataset. Depending on the parameters and whether each time series have a different period, the simulation period is defined.</p>
+<p><strong>Syntax</strong></p>
+<p><code>LoadDatasetAndSetDates (inputDatasetFullPath, canBeginWithMissingData, canEndWithMissingData)</code></p>
+<p><strong>Parameters</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>inputDatasetFullPath</td>
+<td>String. Full path of the input dataset</td>
+</tr>
+<tr class="even">
+<td>canBeginWithMissingData</td>
+<td>Boolean. If false, the last start date of the time series is used as simulation date start.</td>
+</tr>
+<tr class="odd">
+<td>canEndWithMissingData</td>
+<td>Boolean. If false, the first last date of the time series is used as simulation date end.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Model not loaded”</td>
+</tr>
+<tr class="even">
+<td>Argument Null Exception</td>
+<td>“Input dataset not defined”</td>
+</tr>
+<tr class="odd">
+<td>Argument Exception</td>
+<td>“Input dataset not found”</td>
+</tr>
+<tr class="even">
+<td>Invalid Operation Exception</td>
+<td>“Input dataset not valid”</td>
+</tr>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Failed to apply datasources”</td>
+</tr>
+<tr class="even">
+<td>Invalid Operation Exception</td>
+<td>“Input dataset is empty”</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<p><br>
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_MergeLoadedDataset"> MergeLoadedDataset </a></td>
+<td><em>Merging of the input dataset to base dataset</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This procedure merges a loaded dataset to a base dataset. It can be useful when new data is available and the user would like to merge to historical data. The result is an updated base dataset containing the loaded dataset, saved in a text or binary format file.</p>
+<p><strong>Syntax</strong></p>
+<p><code>MergeLoadedDataset (baseDatasetFullPath, saveDataInDstFile)</code></p>
+<p><strong>Parameters</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>baseDatasetFullPath</td>
+<td>String. Full path of the base dataset.</td>
+</tr>
+<tr class="even">
+<td>saveDataInDstFile</td>
+<td>Boolean. If true the dataset values are saved in text format (<em>*.dst</em>), if false in binary format (<em>*.dsb</em>).</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Input dataset not loaded, failed to merge with base dataset”</td>
+</tr>
+<tr class="even">
+<td>Argument Null Exception</td>
+<td>“Input dataset not defined”</td>
+</tr>
+<tr class="odd">
+<td>Argument Exception</td>
+<td>“Fullpath of base dataset not valid”</td>
+</tr>
+<tr class="even">
+<td>Invalid Operation Exception</td>
+<td>“Failed to create new base dataset”</td>
+</tr>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Base dataset not valid”</td>
+</tr>
+<tr class="even">
+<td>Invalid Operation Exception</td>
+<td>“Failed to merge input dataset with base dataset”</td>
+</tr>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Failed to save changes in base dataset”</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<p><br>
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_LoadInitialConditionsFromFile"> LoadInitialConditionsFromFile </a></td>
+<td><em>Setting of the initial conditions</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This procedure sets the initial conditions of the model from a text or an Excel file (please refer to <a href="tech_file_formats.html#sec-tech_file_formats_param_ic_files">Section&nbsp;<span>13.2</span></a> to learn more about Initial Conditions files).</p>
+<p><strong>Syntax</strong></p>
+<p><code>LoadInitialConditionsFromFile (icFileFullPath)</code></p>
+<p><strong>Parameters</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>icFileFullPath</td>
+<td>String. Full path of the IC file. Accepted file extensions are <em>*.txt</em> and <em>*.xlsx</em>.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Model not loaded”</td>
+</tr>
+<tr class="even">
+<td>Argument Null Exception</td>
+<td>“IC file not defined”</td>
+</tr>
+<tr class="odd">
+<td>Argument Exception</td>
+<td>“IC file not found”</td>
+</tr>
+<tr class="even">
+<td>Invalid Operation Exception</td>
+<td>“Failed to import initial conditions from IC file”</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<p><br>
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_LoadInitialConditionsFromDataset"> LoadInitialConditionsFromDataset </a></td>
+<td><em>Setting of the initial conditions from a dataset</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>The initial conditions are set from a dataset file (please refer to <a href="tech_database_formats.html#sec-tech_database_formats_dataset_csv">Section&nbsp;<span>14.2</span></a> of this manual to learn more about dataset formats).</p>
+<p><strong>Syntax</strong></p>
+<p><code>LoadInitialConditionsFromDataset (icDatasetFullPath)</code></p>
+<p><strong>Parameters</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>icDatasetFullPath</td>
+<td>String. Full path of the dataset from where to extract the initial conditions.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Model not loaded”</td>
+</tr>
+<tr class="even">
+<td>Argument Null Exception</td>
+<td>“IC dataset not defined”</td>
+</tr>
+<tr class="odd">
+<td>Argument Exception</td>
+<td>“IC dataset not found”</td>
+</tr>
+<tr class="even">
+<td>Invalid Operation Exception</td>
+<td>“IC dataset not valid”</td>
+</tr>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Failed to load results from IC dataset”</td>
+</tr>
+<tr class="even">
+<td>Invalid Operation Exception</td>
+<td>“Failed to initialize the model with IC dataset”</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<p><br>
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_LoadInitialConditionsFromFileAndCopy"> LoadInitialConditionsFromFileAndCopyFile </a></td>
+<td><em>Setting of the initial conditions from a file and copy the file</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This procedure sets the initial conditions of the model from a text or an Excel file, and copies them in a newly created text file (which name is based on the original IC filename but includes the start date of the simulation). If the indicated folder where to create the new IC file does not exist it will be created.</p>
+<p><strong>Syntax</strong></p>
+<p><code>LoadInitialConditionsFromFileAndCopyFile (icFileFullPath, saveFolder)</code></p>
+<p><strong>Parameters</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>icFileFullPath</td>
+<td>String. Full path of the IC file. Accepted file extensions are <em>*.txt</em> and <em>*.xlsx</em>.</td>
+</tr>
+<tr class="even">
+<td>saveFolder</td>
+<td>String. Folder where results have to be stored.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Model not loaded”</td>
+</tr>
+<tr class="even">
+<td>Argument Null Exception</td>
+<td>“IC file not defined”</td>
+</tr>
+<tr class="odd">
+<td>Argument Exception</td>
+<td>“IC file not found”</td>
+</tr>
+<tr class="even">
+<td>Argument Null Exception</td>
+<td>“Save folder not defined”</td>
+</tr>
+<tr class="odd">
+<td>Argument Exception</td>
+<td>“Save folder ‘<em>saveFolder</em>’ not valid”</td>
+</tr>
+<tr class="even">
+<td>Invalid Operation Exception</td>
+<td>“Failed to import initial conditions from IC file”</td>
+</tr>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Failed to copy the IC file”</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<p><br>
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_LoadInitialConditionsFromFileAndMove"> LoadInitialConditionsFromFileAndMoveFile </a></td>
+<td><em>Loading of the initial conditions and moving of the text file</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This procedure sets the initial conditions of the model from a text or an Excel file, and moves the file to the specified folder (the filename is based on the original IC filename but includes the start date of the simulation). The target file must not exist before; otherwise an error occurs.</p>
+<p><strong>Syntax</strong></p>
+<p><code>LoadInitialConditionsFromFileAndMoveFile (icFileFullPath, saveFolder)</code></p>
+<p><strong>Parameters</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>icFileFullPath</td>
+<td>String. Full path of the IC file. Accepted file extensions are <em>*.txt</em> and <em>*.xlsx</em>.</td>
+</tr>
+<tr class="even">
+<td>saveFolder</td>
+<td>String. Folder where results are stored.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Model not loaded”</td>
+</tr>
+<tr class="even">
+<td>Argument Null Exception</td>
+<td>“IC file not defined”</td>
+</tr>
+<tr class="odd">
+<td>Argument Exception</td>
+<td>“IC file not found”</td>
+</tr>
+<tr class="even">
+<td>Argument Null Exception</td>
+<td>“Save folder not defined”</td>
+</tr>
+<tr class="odd">
+<td>Argument Exception</td>
+<td>“Save folder ‘<em>saveFolder</em>’ not valid”</td>
+</tr>
+<tr class="even">
+<td>Invalid Operation Exception</td>
+<td>“Failed to import initial conditions from IC file”</td>
+</tr>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Failed to move the IC file”</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<p><br>
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_LoadParametersFromFile"> LoadParametersFromFile </a></td>
+<td><em>Setting of the parameters</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This procedure sets the parameters of the model from a text or an Excel file (please refer to <a href="tech_file_formats.html#sec-tech_file_formats_param_ic_files">Section&nbsp;<span>13.2</span></a> of this manual to learn more about Parameters files).</p>
+<p><strong>Syntax</strong></p>
+<p><code>LoadParametersFromFile (paramFileFullPath)</code></p>
+<p><strong>Parameters</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>icFileFullPath</td>
+<td>String. Full path of the Parameters file. Accepted file extensions are <em>*.txt</em> and <em>*.xlsx</em>.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Model not loaded”</td>
+</tr>
+<tr class="even">
+<td>Argument Null Exception</td>
+<td>“Parameters file not defined”</td>
+</tr>
+<tr class="odd">
+<td>Argument Exception</td>
+<td>“Parameters file not found”</td>
+</tr>
+<tr class="even">
+<td>Invalid Operation Exception</td>
+<td>“Failed to import parameters from Parameters file”</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<p><br>
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_GetStartDateFromDataset"> GetStartDateFromDataset </a></td>
+<td><em>Getting the start date from a dataset</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This function extracts the start date of a specified dataset file. If the dataset contains different start dates (data series with initial lacking data), the user can choose whether to get the first common date of the complete dataset.</p>
+<p><strong>Syntax</strong></p>
+<p><code>GetStartDateFromDataset (DatasetFullPath, canBeginWithMissingData)</code></p>
+<p><strong>Parameters</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>DatasetFullPath</td>
+<td>String. Full path of the dataset file.</td>
+</tr>
+<tr class="even">
+<td>canBeginWithMissingData</td>
+<td>Boolean. If true the last start date of the time series is used as simulation date start.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returned value</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Start date</td>
+<td>It returns the value of the start date of a dataset. The format of the date is: <em>dd.MM.yyyy HH:mm:ss</em>.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Model not loaded”</td>
+</tr>
+<tr class="even">
+<td>Argument Null Exception</td>
+<td>“Dataset not defined”</td>
+</tr>
+<tr class="odd">
+<td>Argument Exception</td>
+<td>“Dataset not found”</td>
+</tr>
+<tr class="even">
+<td>Invalid Operation Exception</td>
+<td>“Dataset not valid”</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<p><br>
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_GetEndDateFromDataset"> GetEndDateFromDataset </a></td>
+<td><em>Getting the end date from a dataset</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This function extracts the end date of a specified dataset file. If the dataset contains different end dates (data series with final lacking data), the user can choose whether to get the last common date of the complete dataset.</p>
+<p><strong>Syntax</strong></p>
+<p><code>GetEndDateFromDataset (DatasetFullPath, canEndWithMissingData)</code></p>
+<p><strong>Parameters</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>DatasetFullPath</td>
+<td>String. Full path of the dataset file.</td>
+</tr>
+<tr class="even">
+<td>canEndWithMissingData</td>
+<td>Boolean. If true the first last date of the time series is used as simulation date end.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Outputs</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>End date</td>
+<td>It returns the value of the end date of a dataset. The format of the date is: <em>dd.MM.yyyy HH:mm:ss</em>.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Model not loaded”</td>
+</tr>
+<tr class="even">
+<td>Argument Null Exception</td>
+<td>“Dataset not defined”</td>
+</tr>
+<tr class="odd">
+<td>Argument Exception</td>
+<td>“Dataset not found”</td>
+</tr>
+<tr class="even">
+<td>Invalid Operation Exception</td>
+<td>“Dataset not valid”</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<p><br>
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_GetStartDateFromModel"> GetStartDateFromModel </a></td>
+<td><em>Getting the start date from model</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This function extracts the start date from the loaded model.</p>
+<p><strong>Syntax</strong></p>
+<p><code>GetStartDateFromModel ()</code></p>
+<p><strong>Returned value</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Start date</td>
+<td>It returns the value of the start date of the model. The format of the date is: <em>dd.MM.yyyy HH:mm:ss</em>.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Model not loaded”</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<p><br>
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_GetEndDateFromModel"> GetEndDateFromModel </a></td>
+<td><em>Getting the end date from model</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This function extracts the end date from the loaded model.</p>
+<p><strong>Syntax</strong></p>
+<p><code>GetEndDateFromModel ()</code></p>
+<p><strong>Returned value</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>End date</td>
+<td>It returns the value of the end date of the model. The format of the date is: <em>dd.MM.yyyy HH:mm:ss</em>.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Model not loaded”</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<p><br>
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_GetICDateFromICFile"> GetICDateFromICFile </a></td>
+<td><em>Getting the date from an Initial Conditions file</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This function extracts the date corresponding to a specified Initial Conditions file.</p>
+<p><strong>Syntax</strong></p>
+<p><code>GetICDateFromICFile (icFileFullPath)</code></p>
+<p><strong>Parameters</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>icFileFullPath</td>
+<td>String. Full path of the IC file. Accepted file extension is <em>*.txt</em>.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returned value</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Date</td>
+<td>It returns the date of the Initial Conditions file. The format of the date is: <em>dd.MM.yyyy HH:mm:ss</em>.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Model not loaded”</td>
+</tr>
+<tr class="even">
+<td>Argument Null Exception</td>
+<td>“IC file not defined”</td>
+</tr>
+<tr class="odd">
+<td>Argument Exception</td>
+<td>“IC file not found”</td>
+</tr>
+<tr class="even">
+<td>Invalid Operation Exception</td>
+<td>“Failed to get IC Date from IC file”</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<p><br>
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_SetDates"> SetDates </a></td>
+<td><em>Setting of the dates</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This procedure sets the simulation period based on specified start and end dates.</p>
+<p><strong>Syntax</strong></p>
+<p><code>SetDates (startDate, endDate)</code></p>
+<p><strong>Parameters</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>startdate</td>
+<td>Date. Start date for the simulation period. The format of the date has to be: <em>dd.MM.yyyy HH:mm:ss</em>.</td>
+</tr>
+<tr class="even">
+<td>enddate</td>
+<td>Date. End date for the simulation period. The format of the date has to be: <em>dd.MM.yyyy HH:mm:ss</em>.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Model not loaded”</td>
+</tr>
+<tr class="even">
+<td>Argument Exception</td>
+<td>“Start Date not valid, unable to convert ‘<em>startdate</em>’ to a Date”</td>
+</tr>
+<tr class="odd">
+<td>Argument Exception</td>
+<td>“End Date not valid, unable to convert ‘<em>enddate</em>’ to a Date”</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<p><br>
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_SetStartDate"> SetStartDate </a></td>
+<td><em>Setting of the start date</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This procedure sets the simulation period start date.</p>
+<p><strong>Syntax</strong></p>
+<p><code>SetStartDate (startDate)</code></p>
+<p><strong>Parameters</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>startdate</td>
+<td>Date. Start date for the simulation period. The format of the date has to be: <em>dd.MM.yyyy HH:mm:ss</em>.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Model not loaded”</td>
+</tr>
+<tr class="even">
+<td>Argument Exception</td>
+<td>“Start Date not valid, unable to convert ‘<em>startdate</em>’ to a Date”</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<p><br>
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_SetEndDate"> SetEndDate </a></td>
+<td><em>Setting of the end date</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This procedure sets the simulation period end date.</p>
+<p><strong>Syntax</strong></p>
+<p><code>SetEndtDate (endDate)</code></p>
+<p><strong>Parameters</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>enddate</td>
+<td>Date. End date for the simulation period. The format of the date has to be: <em>dd.MM.yyyy HH:mm:ss</em>.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Model not loaded”</td>
+</tr>
+<tr class="even">
+<td>Argument Exception</td>
+<td>“End Date not valid, unable to convert ‘<em>enddate</em>’ to a Date”</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<p><br>
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_SetSimulationTimeStep"> SetSimulationTimeStep </a></td>
+<td><em>Setting of the simulation timestep</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This procedure sets the simulation timestep and its unit for the simulation.</p>
+<p><strong>Syntax</strong></p>
+<p><code>SetSimulationTimeStep (value, unit)</code></p>
+<p><strong>Parameters</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>value</td>
+<td>Double. Simulation time step as double (value has to be &gt;0).</td>
+</tr>
+<tr class="even">
+<td>unit</td>
+<td>String. Unit: Seconds, Minutes, Hours or Days.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Model not loaded”</td>
+</tr>
+<tr class="even">
+<td>Argument Exception</td>
+<td>“Simulation time step not valid, unable to convert ‘<em>value</em>’ to a Double”</td>
+</tr>
+<tr class="odd">
+<td>Argument Exception</td>
+<td>“Simulation time step not valid, ‘<em>value</em>’ is outside the range of a Double”</td>
+</tr>
+<tr class="even">
+<td>Argument Exception</td>
+<td>“Simulation time step not valid, unit ‘<em>unit</em>’ not recognized”</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<p><br>
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_SetRecordingTimeStep"> SetRecordingTimeStep </a></td>
+<td><em>Setting of the recording timestep</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This procedure sets the recording timestep and its unit for the simulation.</p>
+<p><strong>Syntax</strong></p>
+<p><code>SetRecordingTimeStep (value, unit)</code></p>
+<p><strong>Parameters</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>value</td>
+<td>Double. Recording time step as double (value has to be &gt;0).</td>
+</tr>
+<tr class="even">
+<td>unit</td>
+<td>String. Unit: Seconds, Minutes, Hours, Days or Months.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Model not loaded”</td>
+</tr>
+<tr class="even">
+<td>Argument Exception</td>
+<td>“Recording time step not valid, unable to convert ‘<em>value</em>’ to a Double”</td>
+</tr>
+<tr class="odd">
+<td>Argument Exception</td>
+<td>“Recording time step not valid, ‘<em>value</em>’ is outside the range of a Double”</td>
+</tr>
+<tr class="even">
+<td>Argument Exception</td>
+<td>“Recording time step not valid, unit ‘<em>unit</em>’ not recognized”</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<p><br>
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_SetETPMethod"> SetETPMethod </a></td>
+<td><em>Setting of the ETP method</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This procedure sets the ETP (Potential EvapoTranspiration) method in the model (please refer to <a href="tech_file_formats.html#sec-tech_file_formats_param_ic_files">Section&nbsp;<span>13.2</span></a> of the User’s Manual to learn more about the model Settings).</p>
+<p><strong>Syntax</strong></p>
+<p><code>SetETPMethod (etpMethod)</code></p>
+<p><strong>Parameters</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>selectedETPMethod</td>
+<td>String. Selected ETP Method: Turc, McGuinness, Oudin or Uniform ETP.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Model not loaded”</td>
+</tr>
+<tr class="even">
+<td>Argument Exception</td>
+<td>“Selected ETP Method is not implemented in RS MINERVE”</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<p><br>
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_SetLongitudeAndLatitude"> SetLongitudeAndLatitude </a></td>
+<td><em>Setting of the Longitude and Latitude</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This procedure sets the Longitude and Latitude used when applying ETP methods.</p>
+<p><strong>Syntax</strong></p>
+<p><code>SetLongitudeAndLatitude (longitude, latitude)</code></p>
+<p><strong>Parameters</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>longitude</td>
+<td>Integer. Selected Longitude.</td>
+</tr>
+<tr class="even">
+<td>latitude</td>
+<td>Integer. Selected Latitude.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Model not loaded”</td>
+</tr>
+<tr class="even">
+<td>Argument Exception</td>
+<td>“Longitude not valid”</td>
+</tr>
+<tr class="odd">
+<td>Argument Exception</td>
+<td>“Latitude not valid”</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<p><br>
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_SetUniformETPValue"> SetUniformETPValue </a></td>
+<td><em>Setting of the Uniform ETP</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This procedure sets the Uniform ETP value when Uniform ETP Method has been set.</p>
+<p><strong>Syntax</strong></p>
+<p><code>SetUniformETPValue (value)</code></p>
+<p><strong>Parameters</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>value</td>
+<td>String. Uniform ETP value.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Model not loaded”</td>
+</tr>
+<tr class="even">
+<td>Argument Exception</td>
+<td>“Uniform ETP value not valid”</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<p><br>
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_SetSpatialInterpolationMethod"> SetSpatialInterpolationMethod </a></td>
+<td><em>Setting of the Spatial Interpolation method</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This procedure sets the Spatial Interpolation method to be used.</p>
+<p><strong>Syntax</strong></p>
+<p><code>SetSpatialInterpolationMethod (spatialInterpolationMethod)</code></p>
+<p><strong>Parameters</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>selectedETPMethod</td>
+<td>String. Selected ETP Method.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Model not loaded”</td>
+</tr>
+<tr class="even">
+<td>Argument Exception</td>
+<td>“Selected Spatial Interpolation Method does not exist in RS MINERVE”</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<p><br>
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_DefineModelProperties"> DefineModelProperties </a></td>
+<td><em>Defining property of an object</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This procedure defines a parameter or an initial condition in all objects included in the specified zone.</p>
+<p><strong>Syntax</strong></p>
+<p><code>DefineModelProperties (objectType, propertyName, value, zone = null)</code></p>
+<p><strong>Parameters</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>objectType</td>
+<td>String. Object type (e.g.&nbsp;SOCONT, GSM, Reservoir, etc.). See <a href="#tbl-scriptsobjects_nomeclature">Table&nbsp;<span>12.2</span></a>.</td>
+</tr>
+<tr class="even">
+<td>propertyName</td>
+<td>String. Property name (e.g.&nbsp;HGR3Max). See <a href="#tbl-scriptsobjects_nomeclature">Table&nbsp;<span>12.2</span></a>.</td>
+</tr>
+<tr class="odd">
+<td>value</td>
+<td>Double. Value of the property.</td>
+</tr>
+<tr class="even">
+<td>zone = null</td>
+<td>String (optional). Zone where the objects are.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Model not loaded”</td>
+</tr>
+<tr class="even">
+<td>Argument Exception</td>
+<td>“Object type ‘objectType’ not valid”</td>
+</tr>
+<tr class="odd">
+<td>Argument Null Exception</td>
+<td>“Property name not defined”</td>
+</tr>
+<tr class="even">
+<td>Argument Exception</td>
+<td>“Zone ‘zone’ not found in ‘hydrologicalmodel’”</td>
+</tr>
+<tr class="odd">
+<td>Argument Exception</td>
+<td>“Value is not valid, unable to convert ‘value’ to a Double”</td>
+</tr>
+<tr class="even">
+<td>Invalid Operation Exception</td>
+<td>“Failed to define model properties”</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<p><br>
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_UpdateModelProperties"> UpdateModelProperties </a></td>
+<td><em>Updating of model properties</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This procedure updates a parameter or an initial condition in all objects included in the specified zone.</p>
+<p><strong>Syntax</strong></p>
+<p><code>UpdateModelProperties (objectType, propertyName, scale, shift, linkedPropertyName=null, zone = null, objectName=null)</code></p>
+<p><strong>Parameters</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>objectType</td>
+<td>String. Object type (e.g.&nbsp;SOCONT, GSM, Reservoir, etc.). See <a href="#tbl-scriptsobjects_nomeclature">Table&nbsp;<span>12.2</span></a>.</td>
+</tr>
+<tr class="even">
+<td>propertyName</td>
+<td>String. Property name (e.g.&nbsp;HGR3Ini). See <a href="#tbl-scriptsobjects_nomeclature">Table&nbsp;<span>12.2</span></a>.</td>
+</tr>
+<tr class="odd">
+<td>scale</td>
+<td>String. Scale to multiply the current property.</td>
+</tr>
+<tr class="even">
+<td>shift</td>
+<td>String. Shift to add to the current property.</td>
+</tr>
+<tr class="odd">
+<td>linkedPropertyName = null</td>
+<td>String (optional). Name of the property that restricts the maximum value of the updated property (e.g.&nbsp;the HGR3Max when updating the HGR3Ini).</td>
+</tr>
+<tr class="even">
+<td>zone = null</td>
+<td>String (optional). Zone where the objects to which the procedure will be applied are.</td>
+</tr>
+<tr class="odd">
+<td>objectName = null</td>
+<td>String (optional). Name of the object to which the procedure will be applied. The object must be within the zone if this one has been specified.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Model not loaded”</td>
+</tr>
+<tr class="even">
+<td>Argument Exception</td>
+<td>“Object type ‘objectType’ not valid”</td>
+</tr>
+<tr class="odd">
+<td>Argument Null Exception</td>
+<td>“Property name not defined”</td>
+</tr>
+<tr class="even">
+<td>Argument Exception</td>
+<td>“Zone ‘zone’ not found in ‘hydrologicalmodel’”</td>
+</tr>
+<tr class="odd">
+<td>Argument Exception</td>
+<td>“Scale is not valid, unable to convert ‘scale’ to a Double”</td>
+</tr>
+<tr class="even">
+<td>Argument Exception</td>
+<td>“Shift is not valid, unable to convert ‘shift’ to a Double”</td>
+</tr>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Failed to update model properties”</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<p><br>
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_SetOutputRatioCoeffsInPlanner"> SetOutputRatioCoeffsInPlanner </a></td>
+<td><em>Setting of the coefficients of the expression defining a rule’s output</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This procedure sets the coefficients A and B in the expression: <span class="math inline">\(Q=A \cdot Output+B\)</span> for the definition of a particular Rule output at a specified Planner.</p>
+<p><strong>Syntax</strong></p>
+<p><code>SetOutputRatioCoeffsInPlanner (plannerName, ruleName, coefA, coefB)</code></p>
+<p><strong>Parameters</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>plannerName</td>
+<td>String. Name of the Planner object concerned.</td>
+</tr>
+<tr class="even">
+<td>ruleName</td>
+<td>String. Name of the Rule (defined within the above Planner) for which the output expression’s coefficients are to be defined.</td>
+</tr>
+<tr class="odd">
+<td>coefA</td>
+<td>Double. Value of the coefficient A in the output expression <span class="math inline">\(Q=A \cdot Output+B\)</span></td>
+</tr>
+<tr class="even">
+<td>coefB</td>
+<td>Double. Value of the coefficient B in the output expression *<span class="math inline">\(Q=A \cdot Output+B\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Argument Null Exception</td>
+<td>“Planner name not defined”</td>
+</tr>
+<tr class="even">
+<td>Argument Null Exception</td>
+<td>“Rule name not defined”</td>
+</tr>
+<tr class="odd">
+<td>Argument Exception</td>
+<td>“Ratio Coeff. A is not valid, unable to convert to a Double”</td>
+</tr>
+<tr class="even">
+<td>Argument Exception</td>
+<td>“Ratio Coeff. B is not valid, unable to convert to a Double”</td>
+</tr>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“No Planner with this name”</td>
+</tr>
+<tr class="even">
+<td>Invalid Operation Exception</td>
+<td>“No Rule with this name”</td>
+</tr>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Failed to define Ratio Coefficient in Planner”</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<p><br>
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_SetConditionThresholdInPlanner"> SetConditionThresholdInPlanner </a></td>
+<td><em>Setting of the threshold value of a condition in a specific Planner</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This procedure sets the Threshold value of a condition in a Rule of a specific Planner.</p>
+<p><strong>Syntax</strong></p>
+<p><code>SetConditionThresholdInPlanner (plannerName, ruleName, conditionName, value)</code></p>
+<p><strong>Parameters</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>regulationName</td>
+<td>String. Name of the Planner object concerned.</td>
+</tr>
+<tr class="even">
+<td>ruleName</td>
+<td>String. Name of the Rule, defined within the above Planner.</td>
+</tr>
+<tr class="odd">
+<td>conditionName</td>
+<td>String. Name of the Condition, defined within the above Rule, for which the threshold is to be defined.</td>
+</tr>
+<tr class="even">
+<td>value</td>
+<td>Double. Value of the threshold of the specified condition.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Argument Null Exception</td>
+<td>“Planner name not defined”</td>
+</tr>
+<tr class="even">
+<td>Argument Null Exception</td>
+<td>“Rule name not defined”</td>
+</tr>
+<tr class="odd">
+<td>Argument Null Exception</td>
+<td>“Condition name not defined”</td>
+</tr>
+<tr class="even">
+<td>Argument Exception</td>
+<td>“Value is not valid, unable to convert to a Double”</td>
+</tr>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“No Planner with this name”</td>
+</tr>
+<tr class="even">
+<td>Invalid Operation Exception</td>
+<td>“No Rule with this name”</td>
+</tr>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“No condition with this name”</td>
+</tr>
+<tr class="even">
+<td>Invalid Operation Exception</td>
+<td>“Failed to define Threshold value in Planner”</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<p><br>
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_SetDaysInPlanner"> SetDaysInPlanner </a></td>
+<td><em>Setting of the days of a rule in a specific Planner</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This procedure sets the week days of a Rule of a specific Planner.</p>
+<p><strong>Syntax</strong></p>
+<p><code>SetDaysInPlanner (plannerName, ruleName, day1, day2, day3, day4, day5, day6, day7)</code></p>
+<p><strong>Parameters</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>plannerName</td>
+<td>String. Name of the Planner object concerned.</td>
+</tr>
+<tr class="even">
+<td>ruleName</td>
+<td>String. Name of the Rule, defined within the above Planner.</td>
+</tr>
+<tr class="odd">
+<td>day1,…, day7</td>
+<td>Boolean. Whether the rule is active for the n<sup>th</sup> day of the week (day1=Monday, day2=Tuesday…).</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Argument Null Exception</td>
+<td>“Planner name not defined”</td>
+</tr>
+<tr class="even">
+<td>Argument Null Exception</td>
+<td>“Rule name not defined”</td>
+</tr>
+<tr class="odd">
+<td>Argument Exception</td>
+<td>“No Planner with name plannerName”</td>
+</tr>
+<tr class="even">
+<td>Argument Exception</td>
+<td>“No Rule with name ruleName”</td>
+</tr>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Failed to define rule days in Planner”</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<p><br>
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_SetHoursInPlanner"> SetHoursInPlanner </a></td>
+<td><em>Setting of the hours of a rule in a specific Planner</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This procedure sets the hours of a Rule of a specific Planner.</p>
+<p><strong>Syntax</strong></p>
+<p><code>SetHoursInPlanner (plannerName, ruleName, startHour, endHour)</code></p>
+<p><strong>Parameters</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>plannerName</td>
+<td>String. Name of the Planner object concerned.</td>
+</tr>
+<tr class="even">
+<td>ruleName</td>
+<td>String. Name of the Rule, defined within the above Planner.</td>
+</tr>
+<tr class="odd">
+<td>startHour</td>
+<td>String. Initial hour of the period for which the rule is active.</td>
+</tr>
+<tr class="even">
+<td>endHour</td>
+<td>String. Final hour of the period for which the rule is active.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Argument Null Exception</td>
+<td>“Planner name not defined”</td>
+</tr>
+<tr class="even">
+<td>Argument Null Exception</td>
+<td>“Rule name not defined”</td>
+</tr>
+<tr class="odd">
+<td>Argument Exception</td>
+<td>“No Planner with name plannerName”</td>
+</tr>
+<tr class="even">
+<td>Argument Exception</td>
+<td>“No Rule with name ruleName”</td>
+</tr>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Failed to define hours in Planner”</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="simulation-and-reports" class="level2" data-number="12.5">
+<h2 data-number="12.5" class="anchored" data-anchor-id="simulation-and-reports"><span class="header-section-number">12.5</span> Simulation and reports</h2>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_SavePreSimulationReportAs"> SavePreSimulationReportAs </a></td>
+<td><em>Writing of the pre-simulation report</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This procedure writes the pre-simulation report in a text file, at the specified location with the name: <em>preSimulationReportFullPath.txt</em>.</p>
+<p><strong>Syntax</strong></p>
+<p><code>SavePreSimulationReportAs (preSimulationReportFullPath)</code></p>
+<p><strong>Parameters</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 38%">
+<col style="width: 61%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>preSimulationReportFullPath</td>
+<td>String. Full path of the text file where to save the pre-simulation report. The file extension has to be <em>*.txt</em>.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Model not loaded”</td>
+</tr>
+<tr class="even">
+<td>Argument Null Exception</td>
+<td>“Fullpath not defined”</td>
+</tr>
+<tr class="odd">
+<td>Argument Exception</td>
+<td>“Fullpath contains invalid characters”</td>
+</tr>
+<tr class="even">
+<td>Argument Exception</td>
+<td>“Filename extension not valid”</td>
+</tr>
+<tr class="odd">
+<td>Argument Exception</td>
+<td>“Fullpath not rooted”</td>
+</tr>
+<tr class="even">
+<td>Invalid Operation Exception</td>
+<td>“Failed to save pre-simulation report”</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<p><br>
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_SavePreSimulationReport"> SavePreSimulationReport </a></td>
+<td><em>Writing of the pre-simulation report</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This procedure writes the pre-simulation report in a text file, at the specified location with the specified reference name.</p>
+<p><strong>Syntax</strong></p>
+<p><code>SavePreSimulationReport (saveFolder, referenceName, showInitialDateInFileName = true)</code></p>
+<p><strong>Parameters</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 36%">
+<col style="width: 63%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>saveFolder</td>
+<td>String. Folder path where to save the text file.</td>
+</tr>
+<tr class="even">
+<td>referenceName</td>
+<td>String. Reference name for the file.</td>
+</tr>
+<tr class="odd">
+<td>showInitialDateInFileName</td>
+<td>Boolean (optional). Adds the StartDate of the simulation to the filename if True (e.g. <em>yyyyMMddHH_referenceName.txt</em>).</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Model not loaded”</td>
+</tr>
+<tr class="even">
+<td>Argument Null Exception</td>
+<td>“Reference name not defined”</td>
+</tr>
+<tr class="odd">
+<td>Argument Null Exception</td>
+<td>“Save folder not defined”</td>
+</tr>
+<tr class="even">
+<td>Argument Exception</td>
+<td>“Save folder ‘savefolder’ not valid”</td>
+</tr>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Failed to save pre-simulation report”</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<p><br>
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_Simulate"> Simulate </a></td>
+<td><em>Running of the model</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This procedure executes the simulation of the model with the loaded parameters and hydrometeorological datasets.</p>
+<p><strong>Syntax</strong></p>
+<p><code>Simulate()</code></p>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Model not loaded”</td>
+</tr>
+<tr class="even">
+<td>Invalid Operation Exception</td>
+<td>“Simulation failed, see /log_RSM/errlog.txt”</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<p><br>
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_SavePostSimulationReportAs"> SavePostSimulationReportAs </a></td>
+<td><em>Writing of the post-simulation report</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This procedure writes the post-simulation report in a text file, at the specified location with the name: <em>postSimulationReportFullPath</em>.</p>
+<p><strong>Syntax</strong></p>
+<p><code>SavePostSimulationReportAs (postSimulationReportFullPath)</code></p>
+<p><strong>Parameters</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 38%">
+<col style="width: 61%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>postSimulationReportFullPath</td>
+<td>String. Full path of the text file where to save the post-simulation report. The file extension has to be <em>*.txt</em>.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Model not loaded”</td>
+</tr>
+<tr class="even">
+<td>Argument Null Exception</td>
+<td>“Fullpath not defined”</td>
+</tr>
+<tr class="odd">
+<td>Argument Exception</td>
+<td>“Fullpath contains invalid characters”</td>
+</tr>
+<tr class="even">
+<td>Argument Exception</td>
+<td>“Filename extension not valid”</td>
+</tr>
+<tr class="odd">
+<td>Argument Exception</td>
+<td>“Fullpath not rooted”</td>
+</tr>
+<tr class="even">
+<td>Invalid Operation Exception</td>
+<td>“Failed to save post-simulation report”</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<p><br>
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_SavePostSimulationReport"> SavePostSimulationReport </a></td>
+<td><em>Writing of the post-simulation report</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This procedure writes the post-simulation report in a text file, at the specified location with the specified reference name.</p>
+<p><strong>Syntax</strong></p>
+<p><code>SavePostSimulationReport (saveFolder, referenceName, showInitialDateInFileName = true)</code></p>
+<p><strong>Parameters</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 36%">
+<col style="width: 63%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>saveFolder</td>
+<td>String. Folder path where to save the text file.</td>
+</tr>
+<tr class="even">
+<td>referenceName</td>
+<td>String. Reference name for the file.</td>
+</tr>
+<tr class="odd">
+<td>showInitialDateInFileName</td>
+<td>Boolean (optional). Adds the StartDate of the simulation to the filename if True (e.g. <em>yyyyMMddHH_referenceName.txt</em>).</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 36%">
+<col style="width: 63%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Model not loaded”</td>
+</tr>
+<tr class="even">
+<td>Argument Null Exception</td>
+<td>“Reference name not defined”</td>
+</tr>
+<tr class="odd">
+<td>Argument Null Exception</td>
+<td>“Save folder not defined”</td>
+</tr>
+<tr class="even">
+<td>Argument Exception</td>
+<td>“Save folder ‘saveFolder’ not valid”</td>
+</tr>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Failed to save post-simulation report”</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="save-model-and-properties" class="level2" data-number="12.6">
+<h2 data-number="12.6" class="anchored" data-anchor-id="save-model-and-properties"><span class="header-section-number">12.6</span> Save model and properties</h2>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_SaveModelAs"> SaveModelAs </a></td>
+<td><em>Saving of the model</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This procedure saves the loaded model, at a defined location with a specified name: <em>modelNameFullPath</em>.</p>
+<p><strong>Syntax</strong></p>
+<p><code>SaveModelAs (modelNameFullPath)</code></p>
+<p><strong>Parameters</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>modelNameFullPath</td>
+<td>String. Full path of the model to save. The file extension has to be <em>*.rsm</em>.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Model not loaded”</td>
+</tr>
+<tr class="even">
+<td>Argument Null Exception</td>
+<td>“Fullpath not defined”</td>
+</tr>
+<tr class="odd">
+<td>Argument Exception</td>
+<td>“Fullpath contains invalid characters”</td>
+</tr>
+<tr class="even">
+<td>Argument Exception</td>
+<td>“Filename extension not valid”</td>
+</tr>
+<tr class="odd">
+<td>Argument Exception</td>
+<td>“Fullpath not rooted”</td>
+</tr>
+<tr class="even">
+<td>Invalid Operation Exception</td>
+<td>“Failed to save model”</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<p><br>
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_SaveModel"> SaveModel </a></td>
+<td><em>Saving of the model</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This procedure saves the loaded model at its current location.</p>
+<p><strong>Syntax</strong></p>
+<p><code>SaveModel ()</code></p>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Model not loaded”</td>
+</tr>
+<tr class="even">
+<td>Invalid Operation Exception</td>
+<td>“Failed to save model”</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<p><br>
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_SaveInitialConditionsAs"> SaveInitialConditionsAs </a></td>
+<td><em>Saving of the initial conditions</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This procedure saves the initial conditions at starting date of the simulation (in a text or an Excel format), at the specified location with the name: <em>initialConditionsFullPath</em>.</p>
+<p><strong>Syntax</strong></p>
+<p><code>SaveInitialConditionsAs (initialConditionsFullPath)</code></p>
+<p><strong>Parameters</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 36%">
+<col style="width: 63%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>initialConditionsFullPath</td>
+<td>String. Full path of the text or Excel file where to save the Initial Conditions. The file extension has to be <em>*.txt</em>. or <em>*.xlsx</em>.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Model not loaded”</td>
+</tr>
+<tr class="even">
+<td>Argument Null Exception</td>
+<td>“Fullpath not defined”</td>
+</tr>
+<tr class="odd">
+<td>Argument Exception</td>
+<td>“Fullpath contains invalid characters”</td>
+</tr>
+<tr class="even">
+<td>Argument Exception</td>
+<td>“Fullpath not rooted”</td>
+</tr>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Failed to create and save initial conditions file”</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<p><br>
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_SaveInitialConditions"> SaveInitialConditions </a></td>
+<td><em>Saving of the initial conditions</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This procedure saves the initial conditions at starting date of the simulation as a text file, at the specified location with the specified reference name.</p>
+<p><strong>Syntax</strong></p>
+<p><code>SaveInitialConditions (saveFolder, referenceName, showInitialDateInFileName = true)</code></p>
+<p><strong>Parameters</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 36%">
+<col style="width: 63%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>saveFolder</td>
+<td>String. Folder path where to save the file.</td>
+</tr>
+<tr class="even">
+<td>referenceName</td>
+<td>String. Reference name for the file.</td>
+</tr>
+<tr class="odd">
+<td>showInitialDateInFileName</td>
+<td>Boolean (optional). Add the StartDate of the simulation to the filename if True (e.g. <em>yyyyMMddHH_referenceName.txt</em>).</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Model not loaded”</td>
+</tr>
+<tr class="even">
+<td>Argument Null Exception</td>
+<td>“Reference name not defined”</td>
+</tr>
+<tr class="odd">
+<td>Argument Null Exception</td>
+<td>“Save folder not defined”</td>
+</tr>
+<tr class="even">
+<td>Argument Exception</td>
+<td>“Save folder ‘saveFolder’ not valid”</td>
+</tr>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Failed to save initial conditions file”</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<p><br>
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_SaveFinalConditionsAs"> SaveFinalConditionsAs </a></td>
+<td><em>Saving of the final conditions</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This procedure saves the conditions at the end of the simulation (in a text or an Excel format), at the specified location with the name: <em>finalConditionsFullPath</em>.</p>
+<p><strong>Syntax</strong></p>
+<p><code>SaveFinalConditionsAs (finalConditionsFullPath)</code></p>
+<p><strong>Parameters</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 37%">
+<col style="width: 62%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>finalConditionsFileFullPath</td>
+<td>String. Full path of the text or Excel file where to save the Final Conditions. The file extension has to be <em>*.txt</em>. or <em>*.xlsx</em>.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Model not loaded”</td>
+</tr>
+<tr class="even">
+<td>Invalid Operation Exception</td>
+<td>“Model ‘hydrologicalmodel’ has no results”</td>
+</tr>
+<tr class="odd">
+<td>Argument Null Exception</td>
+<td>“Fullpath not defined”</td>
+</tr>
+<tr class="even">
+<td>Argument Exception</td>
+<td>“Fullpath contains invalid characters”</td>
+</tr>
+<tr class="odd">
+<td>Argument Exception</td>
+<td>“Fullpath not rooted”</td>
+</tr>
+<tr class="even">
+<td>Invalid Operation Exception</td>
+<td>“Failed to generate final conditions”</td>
+</tr>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Failed to create and save final conditions file”</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<p><br>
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_SaveFinalConditions"> SaveFinalConditions </a></td>
+<td><em>Saving of the final conditions</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This procedure saves the initial conditions at the end of the simulation as a text file, at the specified location with the specified reference name.</p>
+<p><strong>Syntax</strong></p>
+<p><code>SaveFinalConditions (saveFolder, referenceName, showInitialDateInFileName = true)</code></p>
+<p><strong>Parameters</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 36%">
+<col style="width: 63%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>saveFolder</td>
+<td>String. Folder path where to save the file.</td>
+</tr>
+<tr class="even">
+<td>referenceName</td>
+<td>String. Reference Name for the file.</td>
+</tr>
+<tr class="odd">
+<td>showInitialDateInFileName</td>
+<td>Boolean (optional). Add the EndDate of the simulation to the filename if True (e.g. <em>yyyyMMddHH_referenceName.txt</em>).</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Model not loaded”</td>
+</tr>
+<tr class="even">
+<td>Invalid Operation Exception</td>
+<td>“Model ‘hydrologicalmodel’ has no results”</td>
+</tr>
+<tr class="odd">
+<td>Argument Null Exception</td>
+<td>“Reference name not defined”</td>
+</tr>
+<tr class="even">
+<td>Argument Null Exception</td>
+<td>“Save folder not defined”</td>
+</tr>
+<tr class="odd">
+<td>Argument Exception</td>
+<td>“Save folder ‘saveFolder’ not valid”</td>
+</tr>
+<tr class="even">
+<td>Invalid Operation Exception</td>
+<td>“Failed to generate final conditions”</td>
+</tr>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Failed to save final conditions file”</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<p><br>
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_SaveParametersAs"> SaveParametersAs </a></td>
+<td><em>Saving of the parameters</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This procedure saves the parameters of the model (in a text or an Excel format), at the specified location with the name: <em>parametersFullPath</em>.</p>
+<p><strong>Syntax</strong></p>
+<p><code>SaveParametersAs (parametersFullPath)</code></p>
+<p><strong>Parameters</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>parametersFullPath</td>
+<td>Full path of the text or Excel file where to save the parameters. The file extension has to be <em>*.txt</em>. or <em>*.xlsx</em>.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Model not loaded”</td>
+</tr>
+<tr class="even">
+<td>Argument Null Exception</td>
+<td>“Fullpath not defined”</td>
+</tr>
+<tr class="odd">
+<td>Argument Exception</td>
+<td>“Fullpath contains invalid characters”</td>
+</tr>
+<tr class="even">
+<td>Argument Exception</td>
+<td>“Fullpath not rooted”</td>
+</tr>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Failed to create and save parameters file”</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<p><br>
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_SaveParameters"> SaveParameters </a></td>
+<td><em>Saving of the parameters</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This procedure saves the parameters of the model as a text file, at the specified location with the specified reference name.</p>
+<p><strong>Syntax</strong></p>
+<p><code>SaveParameters (saveFolder, referenceName)</code></p>
+<p><strong>Parameters</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>saveFolder</td>
+<td>String. Folder path where to save the file.</td>
+</tr>
+<tr class="even">
+<td>referenceName</td>
+<td>String. Reference Name for the file.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Model not loaded”</td>
+</tr>
+<tr class="even">
+<td>Argument Null Exception</td>
+<td>“Reference name not defined”</td>
+</tr>
+<tr class="odd">
+<td>Argument Null Exception</td>
+<td>“Save folder not defined”</td>
+</tr>
+<tr class="even">
+<td>Argument Exception</td>
+<td>“Save folder ‘saveFolder’ not valid”</td>
+</tr>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Failed to save parameters file”</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="model-results" class="level2" data-number="12.7">
+<h2 data-number="12.7" class="anchored" data-anchor-id="model-results"><span class="header-section-number">12.7</span> Model results</h2>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_SaveFullResultsAs"> SaveFullResultsAs </a></td>
+<td><em>Saving of all the results</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This procedure saves the full results dataset of the simulation in a binary or a text format, at the specified location with the name: <em>resultsDatasetFullPath</em>.</p>
+<p><strong>Syntax</strong></p>
+<p><code>SaveFullResultsAs (resultsDatasetFullPath, saveDataInDstFile)</code></p>
+<p><strong>Parameters</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>resultsDatasetFullPath</td>
+<td>String. Full path of the file where to save the full results dataset. The file extension has to be <em>*.dsx</em>.</td>
+</tr>
+<tr class="even">
+<td>saveDataInDstFile</td>
+<td>Boolean. If true the dataset values are saved in text format (<em>*.dst</em>), if false in binary format (<em>*.dsb</em>).</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Model not loaded”</td>
+</tr>
+<tr class="even">
+<td>Invalid Operation Exception</td>
+<td>“Model ‘hydrologicalmodel’ has no results”</td>
+</tr>
+<tr class="odd">
+<td>Argument Null Exception</td>
+<td>“Fullpath of full results dataset not defined”</td>
+</tr>
+<tr class="even">
+<td>Argument Exception</td>
+<td>“Fullpath of full results dataset contains invalid characters”</td>
+</tr>
+<tr class="odd">
+<td>Argument Exception</td>
+<td>“Filename extension of full results dataset not valid”</td>
+</tr>
+<tr class="even">
+<td>Argument Exception</td>
+<td>“Fullpath of full results dataset not rooted”</td>
+</tr>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Failed to create and save full results dataset”</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<p><br>
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_SaveFullResults"> SaveFullResults </a></td>
+<td><em>Saving of all the results</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This procedure saves the full results dataset of the simulation in a binary or a text format, at the specified location with the specified reference name and with or without the simulation length (in hours) in the name.</p>
+<p><strong>Syntax</strong></p>
+<p><code>SaveFullResults (saveFolder, referenceName, saveDataInDstFile, showDurationInFileName, showInitialDateInFileName = true)</code></p>
+<p><strong>Parameters</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 36%">
+<col style="width: 63%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>saveFolder</td>
+<td>String. Folder path where to save the file.</td>
+</tr>
+<tr class="even">
+<td>referenceName</td>
+<td>String. Reference Name for the file.</td>
+</tr>
+<tr class="odd">
+<td>saveDataInDstFile</td>
+<td>Boolean. If true the dataset values are saved in text format (<em>*.dst</em>), if false in binary format (<em>*.dsb</em>).</td>
+</tr>
+<tr class="even">
+<td>showDurationInFileName</td>
+<td>Boolean. If true it adds the duration in hours of the simulation in the filename (e.g. <em>referencename_nbHoursH.txt</em>).</td>
+</tr>
+<tr class="odd">
+<td>showInitialDateInFileName</td>
+<td>Boolean (optional). If true it adds the StartDate of the simulation to the filename (e.g.&nbsp;<em>yyyyMMddHH_referencename.txt</em>).</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Model not loaded”</td>
+</tr>
+<tr class="even">
+<td>Invalid Operation Exception</td>
+<td>“Model ‘hydrologicalmodel’ has no results”</td>
+</tr>
+<tr class="odd">
+<td>Argument Null Exception</td>
+<td>“Reference name not defined”</td>
+</tr>
+<tr class="even">
+<td>Argument Null Exception</td>
+<td>“Save folder not defined”</td>
+</tr>
+<tr class="odd">
+<td>Argument Exception</td>
+<td>“Save folder ‘saveFolder’ not valid”</td>
+</tr>
+<tr class="even">
+<td>Invalid Operation Exception</td>
+<td>“Failed to save full result”</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<p><br>
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_SaveSelectionResultsAs"> SaveSelectionResultsAs </a></td>
+<td><em>Saving of selection results</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This procedure saves the results dataset of the selection in a binary or a text format, at the specified location with the name: <em>selectionResultsDatasetFullPath</em>.</p>
+<p><strong>Syntax</strong></p>
+<p><code>SaveSelectionResultsAs (selectionResultsDatasetFullPath, saveDataInDstFile, selectionName)</code></p>
+<p><strong>Parameters</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 40%">
+<col style="width: 59%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>selectionResultsDatasetFullPath</td>
+<td>String. Full path of the file where to save the selection results dataset. The file extension has to be <em>*.dsx</em>.</td>
+</tr>
+<tr class="even">
+<td>saveDataInDstFile</td>
+<td>Boolean. If true the dataset values are saved in text format (<em>*.dst</em>), if false in binary format (<em>*.dsb</em>).</td>
+</tr>
+<tr class="odd">
+<td>selectionName</td>
+<td>String. Name of the selection of results.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Model not loaded”</td>
+</tr>
+<tr class="even">
+<td>Invalid Operation Exception</td>
+<td>“Model ‘hydrologicalmodel’ has no results”</td>
+</tr>
+<tr class="odd">
+<td>Argument Null Exception</td>
+<td>“Fullpath of selection results dataset not defined”</td>
+</tr>
+<tr class="even">
+<td>Argument Exception</td>
+<td>“Fullpath of selection results dataset contains invalid characters”</td>
+</tr>
+<tr class="odd">
+<td>Argument Exception</td>
+<td>“Filename extension of selection results dataset not valid”</td>
+</tr>
+<tr class="even">
+<td>Argument Exception</td>
+<td>“Fullpath of selection results dataset not rooted”</td>
+</tr>
+<tr class="odd">
+<td>Argument Exception</td>
+<td>“Selection ‘selectionname’ not valid”</td>
+</tr>
+<tr class="even">
+<td>Invalid Operation Exception</td>
+<td>“Failed to create and save selection results dataset</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<p><br>
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_SaveSelectionResults"> SaveSelectionResults </a></td>
+<td><em>Saving of selection results</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This procedure saves the results dataset of the selection in a binary or a text format, at the specified location with the specified reference name and with or without the simulation length (in hours) in the name.</p>
+<p><strong>Syntax</strong></p>
+<p><code>SaveSelectionResults (saveFolder, referenceName, saveDataInDstFile, selectionName, showDurationInFileName, showInitialDateInFileName = true)</code></p>
+<p><strong>Parameters</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 35%">
+<col style="width: 64%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>saveFolder</td>
+<td>String. Folder path where to save the file.</td>
+</tr>
+<tr class="even">
+<td>referenceName</td>
+<td>String. Reference Name for the file.</td>
+</tr>
+<tr class="odd">
+<td>saveDataInDstFile</td>
+<td>Boolean. If true the dataset values are saved in text format (<em>*.dst</em>), if false in binary format (<em>*.dsb</em>).</td>
+</tr>
+<tr class="even">
+<td>selectionName</td>
+<td>String. Name of the selection of results. This selection name will be included in the filename.</td>
+</tr>
+<tr class="odd">
+<td>showDurationInFileName</td>
+<td>Boolean. If true it adds the duration in hours of the simulation in the filename (e.g. <em>referencename_nbHoursH_selectionname.txt</em>).</td>
+</tr>
+<tr class="even">
+<td>showInitialDateInFileName</td>
+<td>Boolean (optional). If true it adds the StartDate of the simulation to the filename (e.g. <em>yyyyMMddHH_referencename_selectionname.txt</em>).</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Model not loaded”</td>
+</tr>
+<tr class="even">
+<td>Invalid Operation Exception</td>
+<td>“Model ‘hydrologicalmodel’ has no results”</td>
+</tr>
+<tr class="odd">
+<td>Argument Null Exception</td>
+<td>“Reference name not defined”</td>
+</tr>
+<tr class="even">
+<td>Argument Null Exception</td>
+<td>“Save folder not defined”</td>
+</tr>
+<tr class="odd">
+<td>Argument Exception</td>
+<td>“Save folder ‘saveFolder’ not valid”</td>
+</tr>
+<tr class="even">
+<td>Argument Null Exception</td>
+<td>“Selection not defined”</td>
+</tr>
+<tr class="odd">
+<td>Argument Exception</td>
+<td>“Selection ‘selectionName’ not valid”</td>
+</tr>
+<tr class="even">
+<td>Invalid Operation Exception</td>
+<td>“Failed to save selection results”</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<p><br>
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_SaveInitializationDatasetAs"> SaveInitializationDatasetAs </a></td>
+<td><em>Saving of series of state variables</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This procedure saves a dataset containing only the necessary state variables to initialize the model (i.e.&nbsp;the initial conditions of all the objects), at the specified location with the specified reference name and with or without the simulation length (in hours) or the initial date in the name.</p>
+<p><strong>Syntax</strong></p>
+<p><code>SaveInitializationDatasetAs (saveFolder, referenceName, saveDataInDstFile, showDurationInFileName, showInitialDateInFileName = true)</code></p>
+<p><strong>Parameters</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 36%">
+<col style="width: 63%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>saveFolder</td>
+<td>String. Folder path where to save the file.</td>
+</tr>
+<tr class="even">
+<td>referenceName</td>
+<td>String. Reference Name for the file.</td>
+</tr>
+<tr class="odd">
+<td>saveDataInDstFile</td>
+<td>Boolean. If true the dataset values are saved in text format (<em>*.dst</em>), if false in binary format (<em>*.dsb</em>).</td>
+</tr>
+<tr class="even">
+<td>showDurationInFileName</td>
+<td>Boolean. If true it adds the duration in hours of the simulation in the filename (e.g. <em>referencename_nbHoursH.dsx</em>).</td>
+</tr>
+<tr class="odd">
+<td>showInitialDateInFileName</td>
+<td>Boolean (optional). If true it adds the StartDate of the simulation to the filename (e.g.&nbsp;<em>yyyyMMddHH_referencename.dsx</em>).</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Model not loaded”</td>
+</tr>
+<tr class="even">
+<td>Invalid Operation Exception</td>
+<td>“Model has no results”</td>
+</tr>
+<tr class="odd">
+<td>Argument Null Exception</td>
+<td>“Reference name not defined”</td>
+</tr>
+<tr class="even">
+<td>Argument Null Exception</td>
+<td>“Save folder not defined”</td>
+</tr>
+<tr class="odd">
+<td>Argument Exception</td>
+<td>“Save folder not valid”</td>
+</tr>
+<tr class="even">
+<td>Invalid Operation Exception</td>
+<td>“Failed to save full results”</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<p><br>
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_SaveInitializationDataset"> SaveInitializationDataset </a></td>
+<td><em>Saving of series of state variables</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This procedure saves a dataset containing only the necessary state variables to initialize the model (i.e.&nbsp;the initial conditions of all the objects).</p>
+<p><strong>Syntax</strong></p>
+<p><code>SaveInitializationDataset (resultsDatasetFullPath, saveDataInDstFile)</code></p>
+<p><strong>Parameters</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>resultsDatasetFullPath</td>
+<td>String. Full path of the file where is the full results dataset. The file extension has to be <em>*.dsx</em>.</td>
+</tr>
+<tr class="even">
+<td>saveDataInDstFile</td>
+<td>Boolean. If true the dataset values are saved in text format (<em>*.dst</em>), if false in binary format (<em>*.dsb</em>).</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Model not loaded”</td>
+</tr>
+<tr class="even">
+<td>Invalid Operation Exception</td>
+<td>“Model has no results”</td>
+</tr>
+<tr class="odd">
+<td>Argument Null Exception</td>
+<td>“Fullpath of full results dataset not defined”</td>
+</tr>
+<tr class="even">
+<td>Argument Exception</td>
+<td>“Fullpath of full results dataset contains invalid characters”</td>
+</tr>
+<tr class="odd">
+<td>Argument Exception</td>
+<td>“Filename extension of full results dataset not valid”</td>
+</tr>
+<tr class="even">
+<td>Argument Exception</td>
+<td>“Fullpath of full results dataset not rooted”</td>
+</tr>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Failed to create and save full results dataset”</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<p><br>
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_ExportResultsTo"> ExportResultsTo </a></td>
+<td><em>Exporting of the selection results</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This procedure exports the selection results to an Excel or CSV file at the specified location with the name: <em>selectionFileFullPath</em>.</p>
+<p><strong>Syntax</strong></p>
+<p><code>ExportResultsTo (selectionFileFullPath, selectionName)</code></p>
+<p><strong>Parameters</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 38%">
+<col style="width: 61%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>selectionResultsFileFullPath</td>
+<td>String. Full path of the selection results file. Accepted file extensions are <em>*.csv</em> and <em>*.xlsx</em>.</td>
+</tr>
+<tr class="even">
+<td>selectionName</td>
+<td>String. Name of the selection of results.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Model not loaded”</td>
+</tr>
+<tr class="even">
+<td>Invalid Operation Exception</td>
+<td>“Model ‘hydrologicalmodel’ has no results”</td>
+</tr>
+<tr class="odd">
+<td>Argument Null Exception</td>
+<td>“Fullpath not defined”</td>
+</tr>
+<tr class="even">
+<td>Argument Exception</td>
+<td>“Fullpath of selection results contains invalid characters”</td>
+</tr>
+<tr class="odd">
+<td>Argument Exception</td>
+<td>“Fullpath of selection results dataset not rooted”</td>
+</tr>
+<tr class="even">
+<td>Argument Exception</td>
+<td>“Selection ‘selectionName’ not valid”</td>
+</tr>
+<tr class="odd">
+<td>Argument Exception</td>
+<td>“Fullpath extension not valid”</td>
+</tr>
+<tr class="even">
+<td>Invalid Operation Exception</td>
+<td>“Failed to create and save selection results”</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<p><br>
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_MergeFullResults"> MergeFullResults </a></td>
+<td><em>Merging of full results dataset with the base full dataset</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This procedure merges full results from the current simulation with the specified full results dataset (containing the same structure).</p>
+<p><strong>Syntax</strong></p>
+<p><code>MergeFullResults (resultsDatasetFullPath, saveDataInDstFile)</code></p>
+<p><strong>Parameters</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 66%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>resultsDatasetFullPath</td>
+<td>String. Full path of full results dataset. The file extension has to be <em>*.dsx</em>.</td>
+</tr>
+<tr class="even">
+<td>saveDataInDstFile</td>
+<td>Boolean. If true the dataset values are saved in text format (<em>*.dst</em>), if false in binary format (<em>*.dsb</em>).</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Model not loaded”</td>
+</tr>
+<tr class="even">
+<td>Invalid Operation Exception</td>
+<td>“Model ‘hydrologicalmodel’ has no results”</td>
+</tr>
+<tr class="odd">
+<td>Argument Null Exception</td>
+<td>“Fullpath of full results dataset not defined”</td>
+</tr>
+<tr class="even">
+<td>Argument Exception</td>
+<td>“Fullpath of full results dataset contains invalid characters”</td>
+</tr>
+<tr class="odd">
+<td>Argument Exception</td>
+<td>“Filename extension of full results dataset not valid”</td>
+</tr>
+<tr class="even">
+<td>Argument Exception</td>
+<td>“Fullpath of full results dataset not rooted”</td>
+</tr>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Failed to create new full results dataset”</td>
+</tr>
+<tr class="even">
+<td>Invalid Operation Exception</td>
+<td>“Full results dataset not valid”</td>
+</tr>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Failed to retrieve results to update full results dataset”</td>
+</tr>
+<tr class="even">
+<td>Invalid Operation Exception</td>
+<td>“Failed to merge results with full results dataset”</td>
+</tr>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Failed to save changes in full results dataset”</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<p><br>
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_MergeSelectionResults"> MergeSelectionResults </a></td>
+<td><em>Merging of selection results dataset with the base selection dataset</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This procedure merges the selection results from the current simulation with the specified selection results dataset (containing the same structure).</p>
+<p><strong>Syntax</strong></p>
+<p><code>MergeSelectionResults (selectionResultsDatasetFullPath, saveDataInDstFile, selectionName)</code></p>
+<p><strong>Parameters</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 40%">
+<col style="width: 59%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>selectionResultsDatasetFullPath</td>
+<td>String. Full path of the selection results file. The file extension has to be <em>*.dsx</em>.</td>
+</tr>
+<tr class="even">
+<td>saveDataInDstFile</td>
+<td>Boolean. If true the dataset values are saved in text format (<em>*.dst</em>), if false in binary format (<em>*.dsb</em>).</td>
+</tr>
+<tr class="odd">
+<td>selectionName</td>
+<td>String. Name of the selection of results</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Model not loaded”</td>
+</tr>
+<tr class="even">
+<td>Invalid Operation Exception</td>
+<td>“Model ‘hydrologicalmodel’ has no results”</td>
+</tr>
+<tr class="odd">
+<td>Argument Null Exception</td>
+<td>“Fullpath of selection results dataset not defined”</td>
+</tr>
+<tr class="even">
+<td>Argument Null Exception</td>
+<td>“Selection not defined”</td>
+</tr>
+<tr class="odd">
+<td>Argument Exception</td>
+<td>“Selection ‘selectionName’ not valid”</td>
+</tr>
+<tr class="even">
+<td>Argument Exception</td>
+<td>“Fullpath of selection results dataset contains invalid characters”</td>
+</tr>
+<tr class="odd">
+<td>Argument Exception</td>
+<td>“Filename extension of selection results dataset not valid”</td>
+</tr>
+<tr class="even">
+<td>Argument Exception</td>
+<td>“Fullpath of selection results dataset not rooted”</td>
+</tr>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Failed to create new selection results dataset”</td>
+</tr>
+<tr class="even">
+<td>Invalid Operation Exception</td>
+<td>“Selection results dataset not valid”</td>
+</tr>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Failed to retrieve results to update selection results dataset”</td>
+</tr>
+<tr class="even">
+<td>Invalid Operation Exception</td>
+<td>“Failed to merge results with selection results dataset”</td>
+</tr>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Failed to save changes in selection results dataset”</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<p><br>
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_MergeDatasetsAs"> MergeDatasetsAs </a></td>
+<td><em>Merging of a source dataset with another dataset</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This procedure merges a source dataset with a specified dataset (containing the same structure) at a specific location. If two stations have the same name, it can merge the data of both stations; the second dataset is prioritized for the merge of common dates in common stations.</p>
+<p><strong>Syntax</strong></p>
+<p><code>MergeDatasetsAs (nDataset1, nDataset2, MergedDatasetFullPath, merge=true, saveDataInDstFile=true)</code></p>
+<p><strong>Parameters</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>nDataset1</td>
+<td>String. Full path of the first dataset to be merged. The file extension has to be <em>*.dsx</em>.</td>
+</tr>
+<tr class="even">
+<td>nDataset2</td>
+<td>String. Full path of the second dataset to be merged. The file extension has to be <em>*.dsx</em>.</td>
+</tr>
+<tr class="odd">
+<td>MergedDatasetFullPath</td>
+<td>String. Full path of the dataset where the 2 datasets will be merged. The file extension has to be <em>*.dsx</em>.</td>
+</tr>
+<tr class="even">
+<td>merge</td>
+<td>Boolean. If true, the resulting dataset merge the data of stations with the same name. If false, it duplicates one of the stations with a “_(0)” suffix.</td>
+</tr>
+<tr class="odd">
+<td>saveDataInDstFile</td>
+<td>Boolean. If true, the dataset values are saved in text format (<em>*.dst</em>), if false in binary format (<em>*.dsb</em>).</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Argument Null Exception</td>
+<td>“First dataset not defined”</td>
+</tr>
+<tr class="even">
+<td>Argument Null Exception</td>
+<td>“Second dataset not defined”</td>
+</tr>
+<tr class="odd">
+<td>Argument Null Exception</td>
+<td>“Fullpath of merged dataset not defined”</td>
+</tr>
+<tr class="even">
+<td>Argument Exception</td>
+<td>“Fullpath of full merged dataset contains invalid characters”</td>
+</tr>
+<tr class="odd">
+<td>Argument Exception</td>
+<td>“Filename extension of merged dataset not valid”</td>
+</tr>
+<tr class="even">
+<td>Argument Exception</td>
+<td>“Fullpath of full merged dataset not rooted”</td>
+</tr>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“First dataset not valid”</td>
+</tr>
+<tr class="even">
+<td>Invalid Operation Exception</td>
+<td>“Second dataset not valid”</td>
+</tr>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Failed to create merged dataset”</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<p><br>
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_MergeDatasets"> MergeDatasets </a></td>
+<td><em>Merging of a source dataset with another dataset</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This procedure merges a source dataset with a specified dataset (containing the same structure) and saves the resulting dataset in the source dataset. If two stations have the same name, it can merge the data of both stations; the second dataset (update dataset) is prioritized for the merge of common dates in common stations.</p>
+<p><strong>Syntax</strong></p>
+<p><code>MergeDatasets (sourceDatasetFullPath, updateDatasetFullPath, merge=true)</code></p>
+<p><strong>Parameters</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>sourceDatasetFullPath</td>
+<td>String. Full path of the source dataset where the new dataset is added. The file extension has to be <em>*.dsx</em>.</td>
+</tr>
+<tr class="even">
+<td>updateDatasetFullPath</td>
+<td>String. Full path of the update dataset to be added to the source dataset. The file extension has to be <em>*.dsx</em>.</td>
+</tr>
+<tr class="odd">
+<td>merge</td>
+<td>Boolean. If true, the resulting dataset merge the data of stations with the same name. If false, it duplicates one of the stations with a “_(0)” suffix.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Argument Null Exception</td>
+<td>“First dataset not defined”</td>
+</tr>
+<tr class="even">
+<td>Argument Null Exception</td>
+<td>“Second dataset not defined”</td>
+</tr>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“First dataset not valid”</td>
+</tr>
+<tr class="even">
+<td>Invalid Operation Exception</td>
+<td>“Second dataset not valid”</td>
+</tr>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Failed to merge datasets”</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<p><br>
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_GetPropertyValue"> GetPropertyValue </a></td>
+<td><em>Getting property value from an object</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This function gets the value of a parameter or an initial condition of an object.</p>
+<p><strong>Syntax</strong></p>
+<p><code>GetPropertyValue (objectType, propertyName, zone = null)</code></p>
+<p><strong>Parameters</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>objectType</td>
+<td>String. Object type (e.g.&nbsp;SOCONT, GSM, Reservoir, etc.). See <a href="#tbl-scriptsobjects_nomeclature">Table&nbsp;<span>12.2</span></a>.</td>
+</tr>
+<tr class="even">
+<td>propertyName</td>
+<td>String. Property name (e.g.&nbsp;HGR3Max). See <a href="#tbl-scriptsobjects_nomeclature">Table&nbsp;<span>12.2</span></a>.</td>
+</tr>
+<tr class="odd">
+<td>zone</td>
+<td>String (optional). Zone where the objects are.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returned value</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>property value</td>
+<td>It returns the property value (parameter or initial condition) of the object.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Model not loaded”</td>
+</tr>
+<tr class="even">
+<td>Argument Exception</td>
+<td>“Object type ‘objectType’ not valid”</td>
+</tr>
+<tr class="odd">
+<td>Argument Null Exception</td>
+<td>“Property name not defined”</td>
+</tr>
+<tr class="even">
+<td>Argument Exception</td>
+<td>“Zone ‘zone’ not found in hydrological model”</td>
+</tr>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Failed to provide model property”</td>
+</tr>
+<tr class="even">
+<td>Invalid Operation Exception</td>
+<td>“Model property not found”</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<p><br>
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_GetIndicatorValue"> GetIndicatorValue </a></td>
+<td><em>Getting the value of an indicator from a comparator</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This function gets the specified indicator value from a Comparator object.</p>
+<p><strong>Syntax</strong></p>
+<p><code>GetIndicatorValue (indicatorName, objectName)</code></p>
+<p><strong>Parameters</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>indicatorName</td>
+<td>String. Indicator name. Indicators: Nash, Nash-ln, Pearson Correlation Coeff, Kling-Gupta Efficiency, Bias Score, RRMSE, Relative Volume Bias, Normalized Peak Error</td>
+</tr>
+<tr class="even">
+<td>objectName</td>
+<td>String. User-defined object name.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returned value</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>indicator value</td>
+<td>It returns the value of the indicator.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Model not loaded”</td>
+</tr>
+<tr class="even">
+<td>Argument Exception</td>
+<td>“Comparator ‘objectName’ not found”</td>
+</tr>
+<tr class="odd">
+<td>Argument Exception</td>
+<td>“Indicator name ‘indicatorName’ not valid”</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="calibration" class="level2" data-number="12.8">
+<h2 data-number="12.8" class="anchored" data-anchor-id="calibration"><span class="header-section-number">12.8</span> Calibration</h2>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_LoadCalibrationsInModel"> LoadCalibrationsInModel </a></td>
+<td><em>Loading of all the calibrations defined in a model</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This procedure loads all the calibration configurations defined in the opened model.</p>
+<p><strong>Syntax</strong></p>
+<p><code>LoadCalibrationsInModel ()</code></p>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Model not loaded”</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<p><br>
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 55%">
+<col style="width: 44%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_LoadCalibrationsByFile"> LoadCalibrationsByFile </a></td>
+<td><em>Loading of all the calibration configurations defined in a configuration file</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This procedure loads all the calibration configurations defined in a specified configuration file.</p>
+<p><strong>Syntax</strong></p>
+<p><code>LoadCalibrationsByFile (filePath)</code></p>
+<p><strong>Parameters</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>filePath</td>
+<td>String. Full path of the calibration configuration file defined in the Calibrator module of RS MINERVE. The file extension has to be <em>*.cbt</em>.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Argument Null Exception</td>
+<td>“File path is not defined”</td>
+</tr>
+<tr class="even">
+<td>Argument Exception</td>
+<td>“Selected file is not a XML file”</td>
+</tr>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“No Calibration configuration is loaded”</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<p><br>
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_SaveAllCalibrationsInModel"> SaveAllCalibrationsInModel </a></td>
+<td><em>Saving all calibration configurations in the RSM model</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This procedure saves all the calibration configurations in the loaded RSM model. Configurations will then be saved in the <em>.rsm</em> file).</p>
+<p><strong>Syntax</strong></p>
+<p><code>SaveAllCalibrationsInModel ()</code></p>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Model not loaded”</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<p><br>
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_RunCalibration"> RunCalibration </a></td>
+<td><em>Running a specified calibration</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This procedure runs a specified calibration available among the loaded configuration(s).</p>
+<p><strong>Syntax</strong></p>
+<p><code>RunCalibration (configName, logFilePath, deleteLogAfter=false)</code></p>
+<p><strong>Parameters</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>configName</td>
+<td>String. Name given in the Calibrator module of RS MINERVE to the calibration configuration to be executed.</td>
+</tr>
+<tr class="even">
+<td>logFilePath</td>
+<td>String. Full path of the log file where the logs are written.</td>
+</tr>
+<tr class="odd">
+<td>deleteLogAfter</td>
+<td>Boolean. If true, the log file is deleted after the calibration process is ended.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Argument Null Exception</td>
+<td>“The name of the calibration configuration is not defined”</td>
+</tr>
+<tr class="even">
+<td>Argument Exception</td>
+<td>“No calibration configuration called configName”</td>
+</tr>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“The model has fatal errors and cannot continue”</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<p><br>
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_RunAllCalibrations"> RunAllCalibrations </a></td>
+<td><em>Running all the calibrations</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This procedure runs all the calibration configurations previously loaded.</p>
+<p><strong>Syntax</strong></p>
+<p><code>RunAllCalibrations (logFilePath, deleteLogAfter=false)</code></p>
+<p><strong>Parameters</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>logFilePath</td>
+<td>String. Full path of the log file where the logs are written.</td>
+</tr>
+<tr class="even">
+<td>deleteLogAfter</td>
+<td>Boolean. If true, the log file is deleted after the calibration process is ended.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“The model has fatal errors and cannot continue”</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<p><br>
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_ExportCalibrationResults"> ExportCalibrationResults </a></td>
+<td><em>Exporting of the calibration’s results</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This procedure exports the results of a specified calibration, to a <em>.txt</em> file.</p>
+<p><strong>Syntax</strong></p>
+<p><code>ExportCalibrationResults (configName, resultFilePath)</code></p>
+<p><strong>Parameters</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>configName</td>
+<td>String. Name given in the Calibrator module of RS MINERVE to the calibration configuration to be executed.</td>
+</tr>
+<tr class="even">
+<td>resultFilePath</td>
+<td>String. Full path of the file where to save the calibration results. The file extension has to be <em>*.txt</em>.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Argument Null Exception</td>
+<td>“The name of the calibration configuration is not defined”</td>
+</tr>
+<tr class="even">
+<td>Argument Exception</td>
+<td>“The file path for the results is not defined”</td>
+</tr>
+<tr class="odd">
+<td>Argument Exception</td>
+<td>“No calibration configuration called configName”</td>
+</tr>
+<tr class="even">
+<td>Invalid Operation Exception</td>
+<td>“There are no results to export in calibration configName”</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<p><br>
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_ExportAllCalibrationsResults"> ExportAllCalibrationsResults </a></td>
+<td><em>Exporting of all the calibrations’ results</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This procedure exports the results of all the calibration configurations loaded, to a <em>.txt</em> file.</p>
+<p><strong>Syntax</strong></p>
+<p><code>ExportAllCalibrationsResults (resultFolderPath)</code></p>
+<p><strong>Parameters</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>resultFolderPath</td>
+<td>String. Folder path to export the results of all the calibration configurations. The exported results file is named as <em>ConfigName.txt</em>, where ConfigName is the name of each calibration configuration executed.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Argument Null Exception</td>
+<td>“The folder path for the results is not defined”</td>
+</tr>
+<tr class="even">
+<td>Argument Exception</td>
+<td>“Selected folder does not exist”</td>
+</tr>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“There are no results to export for some calibrations”</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<p><br>
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_SetCalibrationDates"> SetCalibrationDates </a></td>
+<td><em>Setting of the start and end dates of the calibration period</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This procedure defines the start and end dates of the period used by the Calibrator module to execute the calibration.</p>
+<p><strong>Syntax</strong></p>
+<p><code>SetCalibrationDates (configName, startDate, endDate)</code></p>
+<p><strong>Parameters</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>configName</td>
+<td>String. Name given in the Calibrator module of RS MINERVE to the calibration configuration for which the start and end dates are to be set.</td>
+</tr>
+<tr class="even">
+<td>startDate</td>
+<td>Date. Start date for the calibration period. The format of the date has to be: <em>dd.MM.yyyy HH:mm:ss</em>.</td>
+</tr>
+<tr class="odd">
+<td>endDate</td>
+<td>Date. End date for the calibration period. The format of the date has to be: <em>dd.MM.yyyy HH:mm:ss</em>.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Model not loaded”</td>
+</tr>
+<tr class="even">
+<td>Argument Null Exception</td>
+<td>“The name of the calibration configuration is not defined”</td>
+</tr>
+<tr class="odd">
+<td>Argument Exception</td>
+<td>“No calibration configuration called configName”</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="application-stop" class="level2" data-number="12.9">
+<h2 data-number="12.9" class="anchored" data-anchor-id="application-stop"><span class="header-section-number">12.9</span> Application Stop</h2>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_Stop"> Stop </a></td>
+<td><em>Stop of the execution</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This procedure stops the execution of the model.</p>
+<p><strong>Syntax</strong></p>
+<p><code>Stop ()</code></p>
+</section>
+<section id="other-proceduresfunctions" class="level2" data-number="12.10">
+<h2 data-number="12.10" class="anchored" data-anchor-id="other-proceduresfunctions"><span class="header-section-number">12.10</span> Other procedures/functions</h2>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_RemoveFile"> RemoveFile </a></td>
+<td><em>Removing any type of files</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This procedure remove for the computer any file given by its full path.</p>
+<p><strong>Syntax</strong></p>
+<p><code>RemoveFile (fileFullPath)</code></p>
+<p><strong>Parameters</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>fileFullPath</td>
+<td>String. Full path of the file to be removed. The file extension of the file must be specified.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Errors</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Argument Null Exception</td>
+<td>“File not defined”</td>
+</tr>
+<tr class="even">
+<td>Argument Exception</td>
+<td>“File not found”</td>
+</tr>
+<tr class="odd">
+<td>Invalid Operation Exception</td>
+<td>“Failed to remove the file”</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<p><br>
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_GetAppVersion"> GetAppVersion </a></td>
+<td><em>Getting the installed RS MINERVE software version</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This function gets the version number of the installed RS MINERVE software.</p>
+<p><strong>Syntax</strong></p>
+<p><code>GetAppVersion ()</code></p>
+<p><strong>Returned value</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Software version</td>
+<td>It returns the version number of the installed RS MINERVE software (e.g., <strong><em>2.6.2.0</em></strong>).</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<p><br>
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a name="Script_GetReaderVersion"> GetReaderVersion </a></td>
+<td><em>Getting the installed model reader (xml) version</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>This function gets the number of the installed model reader (xml) version.</p>
+<p><strong>Syntax</strong></p>
+<p><code>GetReaderVersion ()</code></p>
+<p><strong>Returned value</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Reader version</td>
+<td>It returns the number of the installed model reader (xml) version (e.g., <strong><em>4.001</em></strong>).</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="objects-nomenclature-in-vbscript" class="level2" data-number="12.11">
+<h2 data-number="12.11" class="anchored" data-anchor-id="objects-nomenclature-in-vbscript"><span class="header-section-number">12.11</span> Objects nomenclature in VBScript</h2>
+<p>When using VBScripts to perform tasks within RS MINERVE, it is necessary to indicate the type of the object or the name of a property as arguments for some functions (<strong>DefineModelProperties</strong>, <strong>UpdateModelProperties</strong> and <strong>GetPropertyValue</strong>). <a href="#tbl-scriptsobjects_nomeclature">Table&nbsp;<span>12.2</span></a> gathers the proper nomenclatures of these arguments to be used in the corresponding VBScripts functions.</p>
+<div id="tbl-scriptsobjects_nomeclature" class="anchored">
+<table class="table">
+<caption>Table 12.2: Nomenclature of objects, parameters and initial condition to be used in the <strong>GetPropertyValue</strong> function</caption>
+<colgroup>
+<col style="width: 11%">
+<col style="width: 60%">
+<col style="width: 28%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>ObjectType</th>
+<th>Parameters</th>
+<th>Initial conditions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Station</td>
+<td>X, Y, Z, Search Radius, No.&nbsp;min. of stations, Gradient P, Gradient T, Gradient ETP, Coeff P, Coeff T, Coeff ETP</td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td>SnowSD</td>
+<td>S, SInt, SMin, SPh, ThetaCri, bp, Tcp1, Tcp2, Tcf</td>
+<td>SWEIni, ThetaIni</td>
+</tr>
+<tr class="odd">
+<td>SWMM</td>
+<td>A, L, J0, K</td>
+<td>HIni</td>
+</tr>
+<tr class="even">
+<td>GSM</td>
+<td>A, S, SInt, SMin, SPh, ThetaCri, bp, Tcp1, Tcp2, Tcf, G, GInt, GMin, Tcg, Kgl, Ksn</td>
+<td>SWEIni, ThetaIni, QsnowIni, QglacierIni, HglacierIni</td>
+</tr>
+<tr class="odd">
+<td>SOCONT</td>
+<td>A, S, SInt, SMin, SPh, ThetaCri, bp, Tcp1, Tcp2, Tcf, HGR3Max, KGR3, L, J0, Kr</td>
+<td>SWEIni, ThetaIni, HGR3Ini, HrIni</td>
+</tr>
+<tr class="even">
+<td>HBV</td>
+<td>A, CFMax, CFR, CWH, TT, TTInt, TTSM, Beta, FC, PWP, SUMax, Kr, Ku, Kl, Kperc</td>
+<td>SWEIni, WHIni, HumIni, SUIni, SLIni</td>
+</tr>
+<tr class="odd">
+<td>GR4J</td>
+<td>A, X1, X2, X3, X4</td>
+<td>Sini, RIni</td>
+</tr>
+<tr class="even">
+<td>SAC</td>
+<td>A, Adimp, Pctim, Riva, UztwMax, UzfwMax, Uzk, Zperc, Rexp, Pfree, LztwMax, LzfpMax, LzfsMax, Rserv, Lzpk, Lzsk, Side</td>
+<td>AdimIni, UztwIni, UzfwIni, LztwIni, LzfpIni, LzfsIni</td>
+</tr>
+<tr class="odd">
+<td>LagTime</td>
+<td>L, B0, m, J0, K, lag</td>
+<td>Qini</td>
+</tr>
+<tr class="even">
+<td>Kinematic</td>
+<td>L, B0, m, J0, K, N</td>
+<td>Qini</td>
+</tr>
+<tr class="odd">
+<td>MuskingumCunge</td>
+<td>L, B0, m, J0, K, N</td>
+<td>Qini</td>
+</tr>
+<tr class="even">
+<td>StVenant</td>
+<td>L, B0, m, J0, K, N</td>
+<td>Qini</td>
+</tr>
+<tr class="odd">
+<td>Reservoir</td>
+<td>-</td>
+<td>Hini, HvarIni</td>
+</tr>
+<tr class="even">
+<td>Hydropower</td>
+<td>Zplant, L, D, K, ν, Default Price</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td>Consumer</td>
+<td>Default QDemand, LossRate, ConsumptionRate</td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td>StructureEfficiency</td>
+<td>Efficiency</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./tech_stochastic_equations.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Stochastic equations</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./tech_file_formats.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">File formats</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

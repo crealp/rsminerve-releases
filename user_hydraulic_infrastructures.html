@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-0.9.342">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>RS MINERVE Manuals - 2&nbsp; Hydraulic infrastructures modelling</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<link href="./user_database.html" rel="next">
+<link href="./user_rainfall_runoff_modelling.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link id="quarto-text-highlighting-styles" href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Hydraulic infrastructures modelling</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title"><span id="sec-user_hydraulic_infrastructures" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Hydraulic infrastructures modelling</span></span></h1>
+                </div>
+  </div>
+    
+  
+
+
+
+  <div class="quarto-title-meta">
+
+      
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">RS MINERVE Manuals</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Introduction</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="./user_manual.html" class="sidebar-item-text sidebar-link">User Manual</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./user_rainfall_runoff_modelling.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Rainfall-runoff modelling</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./user_hydraulic_infrastructures.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Hydraulic infrastructures modelling</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./user_database.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Database</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./user_gis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">GIS</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./user_hydro_hydrau_simulation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Hydrological-hydraulic simulation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./user_expert_module.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Expert module</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./user_plugins.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Plugins</span></a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="./tech_manual.html" class="sidebar-item-text sidebar-link">Technical Manual</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_hydrological_models.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Hydrological and hydraulics models description</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_performance_indicators.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Performance indicators</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_calibration_algorithms.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Calibration algorithms</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_stochastic_equations.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Stochastic equations</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_scripts.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Visual Basic Scripts</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_file_formats.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">File formats</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_database_formats.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Database formats</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_gis_formats.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">GIS formats</span></a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="./examples.html" class="sidebar-item-text sidebar-link">Examples of application</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examples_ex1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Example 1 – Simple basin with only runoff</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examples_ex2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Example 2 – Combined full basin with meteorological stations</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examples_ex3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Example 3 – Equipped basin with a hydropower scheme</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examples_ex4.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Example 4 – Automatic calibration of a model</span></a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./acknowledgments.html" class="sidebar-item-text sidebar-link">Acknowledgments</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Appendices</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix_list_param_ic.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Appendix: List of parameters and initial conditions</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix_list_notifications.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">List of notifications from pre-simulation and post-simulation reports</span></a>
+  </div>
+</li>
+    </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sec-user_hydraulic_infrastructures_list" id="toc-sec-user_hydraulic_infrastructures_list" class="nav-link active" data-scroll-target="#sec-user_hydraulic_infrastructures_list"> <span class="header-section-number">2.1</span> Infrastructures</a></li>
+  <li><a href="#sec-user_hydraulic_infrastructures_hydropower" id="toc-sec-user_hydraulic_infrastructures_hydropower" class="nav-link" data-scroll-target="#sec-user_hydraulic_infrastructures_hydropower"> <span class="header-section-number">2.2</span> Addition of a Hydropower scheme</a>
+  <ul class="collapse">
+  <li><a href="#addition-of-a-reservoir" id="toc-addition-of-a-reservoir" class="nav-link" data-scroll-target="#addition-of-a-reservoir">Addition of a reservoir</a></li>
+  <li><a href="#addition-of-a-turbinedb-object" id="toc-addition-of-a-turbinedb-object" class="nav-link" data-scroll-target="#addition-of-a-turbinedb-object">Addition of a TurbineDB object</a></li>
+  <li><a href="#addition-of-a-hydropower-object" id="toc-addition-of-a-hydropower-object" class="nav-link" data-scroll-target="#addition-of-a-hydropower-object">Addition of a Hydropower object</a></li>
+  <li><a href="#addition-of-an-hq-object" id="toc-addition-of-an-hq-object" class="nav-link" data-scroll-target="#addition-of-an-hq-object">Addition of an HQ object</a></li>
+  <li><a href="#simulation-with-implemented-structures" id="toc-simulation-with-implemented-structures" class="nav-link" data-scroll-target="#simulation-with-implemented-structures">Simulation with implemented structures</a></li>
+  </ul></li>
+  <li><a href="#sec-user_hydraulic_infrastructures_planner" id="toc-sec-user_hydraulic_infrastructures_planner" class="nav-link" data-scroll-target="#sec-user_hydraulic_infrastructures_planner"> <span class="header-section-number">2.3</span> Implementation of a planner</a>
+  <ul class="collapse">
+  <li><a href="#planner" id="toc-planner" class="nav-link" data-scroll-target="#planner">Planner</a></li>
+  <li><a href="#outputs" id="toc-outputs" class="nav-link" data-scroll-target="#outputs">Outputs</a></li>
+  <li><a href="#series" id="toc-series" class="nav-link" data-scroll-target="#series">Series</a></li>
+  <li><a href="#rules" id="toc-rules" class="nav-link" data-scroll-target="#rules">Rules</a>
+  <ul class="collapse">
+  <li><a href="#simulation-with-the-planner-implemented" id="toc-simulation-with-the-planner-implemented" class="nav-link" data-scroll-target="#simulation-with-the-planner-implemented">Simulation with the planner implemented</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<p><a href="user_rainfall_runoff_modelling.html">Section&nbsp;<span>1</span></a> presents the different steps to create a hydrological model without any hydraulic infrastructures. This <a href="#sec-user_hydraulic_infrastructures">Section&nbsp;<span>2</span></a> explains how infrastructures like reservoirs, turbines or spillways are implemented in RS MINERVE.</p>
+<p>Hydraulic infrastructures are listed in <a href="#sec-user_hydraulic_infrastructures_list">Section&nbsp;<span>2.1</span></a>, and objects used for automatic regulation are presented in <a href="#sec-user_hydraulic_infrastructures_hydropower">Section&nbsp;<span>2.2</span></a> and <a href="#sec-user_hydraulic_infrastructures_planner">Section&nbsp;<span>2.3</span></a>.</p>
+<section id="sec-user_hydraulic_infrastructures_list" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="sec-user_hydraulic_infrastructures_list"><span class="header-section-number">2.1</span> Infrastructures</h2>
+<table class="table">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 73%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><img src="figures/fig-icon_object_reservoir.png" style="width:0.44in;height:0.44in"></td>
+<td><strong>Reservoir</strong> - Water level and volume evolution are simulated based on a “Level-Volume” relation and an initialreservoir level.</td>
+</tr>
+<tr class="even">
+<td><img src="figures/fig-icon_object_hq.png" style="width:0.44in;height:0.44in"></td>
+<td><strong>HQ</strong> - Based on a level-discharge relation, it allows integration of level-based outflows to reservoirs (such as spillways, gates, orifices,…).</td>
+</tr>
+<tr class="odd">
+<td><img src="figures/fig-icon_object_turbine.png" style="width:0.44in;height:0.44in"></td>
+<td><strong>Turbine</strong> - It calculates the turbine or pump flow from a reservoir, based on a <em>Wanted Discharge</em> defined in the same object by a time-discharge series.</td>
+</tr>
+<tr class="even">
+<td><img src="figures/fig-icon_object_turbinedb.png" style="width:0.44in;height:0.44in"></td>
+<td><strong>TurbineDB</strong> - The TurbineDB object works as the <em>Turbine</em> object but is directly based on data provided by the database. It is equivalent to the combination of a turbine and a source.</td>
+</tr>
+<tr class="odd">
+<td><img src="figures/fig-icon_object_hydropower.png" style="width:0.44in;height:0.44in"></td>
+<td><strong>Hydropower</strong> - This object calculates the power and the revenue, normally produced by a turbine, depending on the discharge and on the reservoir level.</td>
+</tr>
+<tr class="even">
+<td><img src="figures/fig-icon_object_diversion.png" style="width:0.44in;height:0.44in"></td>
+<td><strong>Diversion</strong> - This object is used to simulate the separation of flow based on an “Inflow - Diverted flow” relation. It can be used as a hydrological object but is mostly used as a hydraulic function.</td>
+</tr>
+<tr class="odd">
+<td><img src="figures/fig-icon_object_consumer.png" style="width:0.44in;height:0.44in"></td>
+<td><strong>Consumer</strong> - This object simulates the consumed dischargeof a user (e.g.: a village or an agricultural field) based on a series from a database or from a uniform demand.</td>
+</tr>
+<tr class="even">
+<td><img src="figures/fig-icon_object_efficiency.png" style="width:0.44in;height:0.44in"></td>
+<td><strong>Structure efficiency</strong> - This object computes effects of discharge losses in a structure like a canal or a pipe based on an efficiency coefficient.</td>
+</tr>
+<tr class="odd">
+<td><img src="figures/fig-icon_object_planner.png" style="width:0.44in;height:0.44in"></td>
+<td><strong>Planner</strong> - This is a control system consisting of the definition of a set of management rules, based on conditions. This object allows you to manage the regulation of reservoirs, turbines, bottom outlets, etc.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="sec-user_hydraulic_infrastructures_hydropower" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="sec-user_hydraulic_infrastructures_hydropower"><span class="header-section-number">2.2</span> Addition of a Hydropower scheme</h2>
+<p>This chapter presents a general example for the construction of a hydropower scheme, including a reservoir with a hydropower plant, a turbine and a spillway.</p>
+<section id="addition-of-a-reservoir" class="level3">
+<h3 class="anchored" data-anchor-id="addition-of-a-reservoir">Addition of a reservoir</h3>
+<p>To add a reservoir:</p>
+<ul>
+<li><p><span style="color:blue">Select the object <em>Reservoir</em> in the Infras<em>tructures objects</em> frame (<a href="#fig-model_with_reservoir">Figure&nbsp;<span>2.1</span></a>) and add it in the <em>Interface</em>.</span></p></li>
+<li><p><span style="color:blue">Link the output of the upstream sub-basin (object <em>Junction</em> in <a href="#fig-model_with_reservoir">Figure&nbsp;<span>2.1</span></a>) to the <em>Reservoir</em>.</span></p></li>
+</ul>
+<div id="fig-model_with_reservoir" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-model_with_reservoir.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2.1: A regular model with a reservoir</figcaption><p></p>
+</figure>
+</div>
+<ul>
+<li><p><span style="color:blue">Double-click on the <em>Reservoir</em> object. The <em>Reservoir</em>, <em>Series</em> and <em>Initial Conditions</em> frames are opened (<a href="#fig-model_with_reservoir">Figure&nbsp;<span>2.1</span></a>).</span></p></li>
+<li><p><span style="color:blue">In the <em>Series</em> frame, select the <em>H-V</em> series and open the <em>Values</em> tab.</span></p></li>
+<li><p><span style="color:blue">By default, the table is empty. Insert the corresponding Height-Volume (<em>H-V</em>) relation for the reservoir.</span></p></li>
+<li><p><span style="color:blue">Define an initial water elevation (<span class="math inline">\(HIni\)</span>) in the <em>Initial conditions</em> frame.</span></p></li>
+</ul>
+<p>Alternatively to the last point to define the initial water elevation of the <em>Reservoir</em>, a time series can be saved in the database with a sensor of Category <em>Altitude</em> and Unit <em>masl</em>. For each simulation, RS MINERVE will then search and interpolate the initial condition from the added time series. To link the <em>Reservoir</em> with the sensor, first select in the <em>Data Source</em> frame the corresponding <em>Group</em> and <em>Dataset</em>.</p>
+<p>Then, in the <em>Reservoir</em> frame (right part), click on the <img src="figures/fig-icon_arrow_down_menu.png" height="0"> <em>Select station from Database</em> button and define the correct station in the <em>Station</em> drop-down list (only stations containing a sensor with appropriate units are listed). The value in the <em>Initial conditions</em> frame will change after every simulation to the value interpolated from the time series.</p>
+<p>Once a reservoir is implemented, outputs of the reservoir have to be defined. Water from a reservoir can be exited through different ways. A combination of <em>Turbine</em> (or <em>TurbineDB</em>) and <em>Hydropower</em> objects are used to simulate the use of water for hydropower production. <em>Regulations</em> are generally used to automatize the operation of <em>Turbine</em> and <em>TurbineDB</em> objects. Finally, <em>HQ</em> objects generate discharges based on elevation-discharge relations.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>All these objects can be used independently and cumulatively. For example, several turbines can be placed in parallel with one or several <em>TurbineDB</em>(s), <em>HQ</em> object(s) and/or <em>Regulation</em>(s). None of them is imperative.</p>
+</section>
+<section id="addition-of-a-turbinedb-object" class="level3">
+<h3 class="anchored" data-anchor-id="addition-of-a-turbinedb-object">Addition of a TurbineDB object</h3>
+<p>The <em>TurbineDB</em> object is based on data from a database. Thus, before adding a <em>TurbineDB</em>, data have to be added to the database</p>
+<ul>
+<li><span style="color:blue">Open a database (see <a href="user_database.html">Section&nbsp;<span>3</span></a>) and create a station with a sensor of category <em>Flow.</em> Modify the description and insert data for the <em>TurbineDB</em> outflow in the <em>Values</em> tab.</span></li>
+</ul>
+<p>The <em>TurbineDB</em> object is then added.</p>
+<ul>
+<li><p><span style="color:blue">Select the object <em>TurbineDB</em> in the <em>Structures objects</em> frame (<a href="#fig-model_with_reservoir">Figure&nbsp;<span>2.1</span></a>) and add it in the <em>Interface</em>. Add also a <em>Junction</em> to which outflow(s) from the <em>Reservoir</em> will be linked to.</span></p></li>
+<li><p><span style="color:blue">Switch to <em>Connections</em> (<em>Editing Tools</em> frame <span class="math inline">\(\rightarrow\)</span> <em>Connections</em> or use the <em>space</em> key) and link the <em>Reservoir</em> to the <em>TurbineDB</em> object and the <em>TurbineDB</em> object to the <em>Junction</em> (<a href="#fig-addition_turbinedb_junction">Figure&nbsp;<span>2.2</span></a>).</span></p></li>
+</ul>
+<div id="fig-addition_turbinedb_junction" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-addition_turbinedb_junction.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2.2: Addition of a <em>TurbineDB</em> and a junction</figcaption><p></p>
+</figure>
+</div>
+<ul>
+<li><p><span style="color:blue">In the <em>Data Source</em> frame (<a href="#fig-model_with_reservoir">Figure&nbsp;<span>2.1</span></a>), select for the line <em>HPP</em> <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> the <em>Group</em> and <em>DataSet</em> corresponding to the sensor created in the database.</span></p></li>
+<li><p><span style="color:blue">Double-click on the <em>TurbineDB</em> object to open the <em>TurbineDB</em> frame (right-side). Then, click on the <img src="figures/fig-icon_arrow_down_menu.png" height="0"> <em>Select station from Database</em> button and define the corresponding station in the <em>Station</em> drop-down list. The link between the <em>TurbineDB</em> object and the database is now operational.</span></p></li>
+<li><p><span style="color:blue">In the <em>Parameters</em> frame (<a href="#fig-param_ic_turbine">Figure&nbsp;<span>2.3</span></a>), user can define the reservoir water altitude to start (<span class="math inline">\(H_{on}\)</span>) or stop (<span class="math inline">\(H_{off}\)</span>) the turbine. If the value is equal to zero, the turbine operation will be independent of the reservoir altitude.</span></p></li>
+<li><p><span style="color:blue">In the <em>Initial conditions</em> frame (<a href="#fig-param_ic_turbine">Figure&nbsp;<span>2.3</span></a>), user must define the initial turbine status when the water altitude is initially between <span class="math inline">\(H_{on}\)</span> and <span class="math inline">\(H_{off}\)</span>. ‘Zero’ (0) means starting the simulation with the turbine OFF and ‘one’ (1) means starting with the turbine ON.</span></p></li>
+</ul>
+<p>Once these parameters specified, the <em>TurbineDB</em> object is ready for use.</p>
+<div id="fig-param_ic_turbine" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-param_ic_turbine.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2.3: Parameters and initial conditions of turbine</figcaption><p></p>
+</figure>
+</div>
+<p>&nbsp;</p>
+<div id="fig-example_turbine_operation" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-example_turbine_operation.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2.4: Example of turbine operation</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="addition-of-a-hydropower-object" class="level3">
+<h3 class="anchored" data-anchor-id="addition-of-a-hydropower-object">Addition of a Hydropower object</h3>
+<p>The <em>Hydropower</em> object calculates the power and the revenue produced by the discharge of the turbine from the reservoir. The results depend on the discharge and on the reservoir water level.</p>
+<ul>
+<li><span style="color:blue">Select the object <em>Hydropower</em> in the <em>Structures objects</em> frame (<a href="#fig-model_with_reservoir">Figure&nbsp;<span>2.1</span></a>) and add it in the <em>Interface</em> (<a href="#fig-addition_hydropower">Figure&nbsp;<span>2.5</span></a>).</span></li>
+</ul>
+<div id="fig-addition_hydropower" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-addition_hydropower.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2.5: Addition of a <em>Hydropower</em> object</figcaption><p></p>
+</figure>
+</div>
+<p>As the power produced in the hydropower plant depends on the water level in the reservoir and on the discharge of the turbine, these two variables (water level and discharge) must be transferred to the Hydropower object as follows (<a href="#fig-links_hydropower_reservoir_turbinedb">Figure&nbsp;<span>2.6</span></a>):</p>
+<ul>
+<li><p><span style="color:blue">Link the <em>TurbineDB</em> to the <em>Hydropower</em> object so the discharge variable can be transferred to the <em>Hydropower</em> object.</span></p></li>
+<li><p><span style="color:blue">The water level information will be automatically transferred from the <em>Reservoir</em> to the <em>Hydropower</em> object through the <em>TurbineDB</em> object.</span></p></li>
+</ul>
+<div id="fig-links_hydropower_reservoir_turbinedb" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-links_hydropower_reservoir_turbinedb.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2.6: Links between the <em>Hydropower</em> object and the <em>Reservoir</em> and <em>TurbineDB</em> information</figcaption><p></p>
+</figure>
+</div>
+<ul>
+<li><p><span style="color:blue">Double-click on the <em>Hydropower</em> object to open its frame (right-side). Then, click on the <img src="figures/fig-icon_arrow_down_menu.png" style="width:0.15in" height="0"> <em>Select station from Database</em> button and define the corresponding station which contains the <em>Electricity price</em> series in the <em>Station</em> drop-down list. The link between the <em>Hydropower</em> object and the database is now operational.</span></p></li>
+<li><p><span style="color:blue">In the <em>Series</em> frame, select the <span class="math inline">\(Q-\eta\)</span> (discharge-efficiency) series and open the Values tab. Insert data for the <span class="math inline">\(Q-\eta\)</span> relation (manually or copied from a spreadsheet).</span></p></li>
+<li><p><span style="color:blue">In the <em>Parameters</em> frame, introduce the features of the hydropower plant. In particular the following parameters must be specified: the hydropower plant altitude (<span class="math inline">\(Zcentral\)</span>) in masl; the length of the pipe (<span class="math inline">\(L\)</span>) in m; the diameter of the pipe (<span class="math inline">\(D\)</span>) in m; the Roughness (<span class="math inline">\(K\)</span>) in m; the kinematic viscosity (<span class="math inline">\(\nu\)</span>) in m<sup>2</sup>/s; and the default price of electricity, only used if no data exists in the database.</span></p></li>
+</ul>
+<p>The <em>Hydropower</em> object is ready for use.</p>
+</section>
+<section id="addition-of-an-hq-object" class="level3">
+<h3 class="anchored" data-anchor-id="addition-of-an-hq-object">Addition of an HQ object</h3>
+<p>HQ objects are used to define level-discharge relations to implement structures such as spillways, orifices or sluice gates. For illustration purpose, an <em>HQ</em> object is used as a spillway in the following procedure.</p>
+<ul>
+<li><p><span style="color:blue">Select the <em>HQ</em> object in the <em>Structures objects</em> frame (<a href="#fig-model_with_reservoir">Figure&nbsp;<span>2.1</span></a>) and add it in the <em>Interface</em>.</span></p></li>
+<li><p><span style="color:blue">Link the <em>Reservoir</em> to the <em>HQ</em> object and the <em>HQ</em> object to the <em>Junction</em> (<a href="#fig-addition_spillway">Figure&nbsp;<span>2.7</span></a>).</span></p></li>
+</ul>
+<div id="fig-addition_spillway" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-addition_spillway.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2.7: Addition of a spillway</figcaption><p></p>
+</figure>
+</div>
+<ul>
+<li><span style="color:blue">Double-click on the <em>HQ</em> object. In the <em>Series</em> frame, select the <em>H-Q</em> series and open the <em>Values</em> tab. Insert data for the <em>H-Q</em> relation (manually or copied from a spreadsheet).</span></li>
+</ul>
+<p>The <em>HQ</em> object is ready for use.</p>
+</section>
+<section id="simulation-with-implemented-structures" class="level3">
+<h3 class="anchored" data-anchor-id="simulation-with-implemented-structures">Simulation with implemented structures</h3>
+<p>Several structures can be added in parallel as illustrated in <a href="#fig-addition_spillway">Figure&nbsp;<span>2.7</span></a>. When all objects are created, the model linked to the database and validated, start the simulation (<a href="user_hydro_hydrau_simulation.html#sec-user_hydro_hydrau_simulation_run_model">Section&nbsp;<span>5.1</span></a>). Discharges through the different objects can then be visualized by clicking on each object (<a href="user_hydro_hydrau_simulation.html#sec-user_hydro_hydrau_simulation_run_model">Section&nbsp;<span>5.1</span></a>) or within the <em>Selection and Plots</em> module (<a href="user_hydro_hydrau_simulation.html#sec-user_hydro_hydrau_simulation_selection_plots">Section&nbsp;<span>5.2</span></a>).</p>
+<p>It is <strong>important</strong> to remember that discharges generated by <em>HQ</em> objects are defined by the water level in the reservoir. Below a certain level, no discharge is produced. This is not the case of the <em>TurbineDB</em> objects that withdraws from the reservoir the discharges defined in the database, without checking if water is available or not in the reservoir. This might result in a negative volume in the reservoir (a warning is generated in the <em>Simulation report</em>). In order to generate discharges only when the water is actually available, <em>Regulation</em> objects are necessary.</p>
+</section>
+</section>
+<section id="sec-user_hydraulic_infrastructures_planner" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="sec-user_hydraulic_infrastructures_planner"><span class="header-section-number">2.3</span> Implementation of a planner</h2>
+<p>The planner object represents a control system that allows the definition of a set of management rules based on conditions. This object allows regulating the operation of reservoirs, turbines and hydropower models in RS MINERVE.</p>
+<p>Each rule is defined using one or more conditions (that can be combined), temporary restrictions (specific dates, hours, days of the week, or months of the year) and an expected output. The conditions and the temporary restrictions define the rule to be applied (and corresponding output). The input values for the conditions can be defined in different ways: directly taken from the variable of some object of the full model (e.g., a specific reservoir), its own input or depending on the state of another rule defined in the same planner. The output can be generated from a predefined series of values, through the database, as one of the three possible inputs of the planner object or by setting a specific value. Furthermore, the output values can be modified by applying a multiplier and/or additive coefficient(s). A planner can be connected from all objects and to all objects except to stations, time series and sources (<a href="#fig-inputs_outputs_planner">Figure&nbsp;<span>2.8</span></a>).</p>
+<p>Once we have simulated the model, the planner shows at what times each defined rule has been applied. With all these options, the planner object is an efficient tool for managing complex systems.</p>
+<div id="fig-inputs_outputs_planner" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-inputs_outputs_planner.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2.8: Inputs and outputs for a <em>Planner object</em></figcaption><p></p>
+</figure>
+</div>
+<section id="planner" class="level3">
+<h3 class="anchored" data-anchor-id="planner">Planner</h3>
+<p>The first part of the Planner window (right frame) shows basic information about the object (<a href="#fig-planner_principal_window">Figure&nbsp;<span>2.9</span></a>).</p>
+<div id="fig-planner_principal_window" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-planner_principal_window.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2.9: <em>Planner</em> object principal window</figcaption><p></p>
+</figure>
+</div>
+<p>To know if the planner is correctly connected in the model, the exclamation mark should be green; if it is not, the exclamation mark will be orange and the object will be isolated and not calculated (<a href="#fig-planner_section">Figure&nbsp;<span>2.10</span></a>). In that case, it will indicate what part of the planner element is not correctly defined.</p>
+<div id="fig-planner_section" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-planner_section.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2.10: Planner section</figcaption><p></p>
+</figure>
+</div>
+<ul>
+<li><span style="color:blue">Click on the blue circular arrow (“Clear variable”) to reset inputs information after connections are removed.</span></li>
+</ul>
+<p><a href="#fig-planner_section_example">Figure&nbsp;<span>2.11</span></a> shows an example with one Input (<span class="math inline">\(Altitude\)</span>) and two outputs (<span class="math inline">\(Qdown1\)</span>, <span class="math inline">\(Qdown2\)</span>):</p>
+<div id="fig-planner_section_example" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-planner_section_example.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2.11: Planner section example</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="outputs" class="level3">
+<h3 class="anchored" data-anchor-id="outputs">Outputs</h3>
+<p>The second part allows the user to add or delete outputs for the object (<a href="#fig-planner_outputs_section">Figure&nbsp;<span>2.12</span></a>). The number of outputs for a planner object is not limited.</p>
+<div id="fig-planner_outputs_section" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-planner_outputs_section.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2.12: Planner <em>Outputs</em> section</figcaption><p></p>
+</figure>
+</div>
+<ul>
+<li><p><span style="color:blue">To add a new output, choose the category and then push the “Add new output” button (green cross).</span></p></li>
+<li><p><span style="color:blue">To delete an output, choose the output and push the “Delete output” button (red cross).</span></p></li>
+</ul>
+</section>
+<section id="series" class="level3">
+<h3 class="anchored" data-anchor-id="series">Series</h3>
+<p>The third part shows the series that can be used by the planner object (<a href="#fig-planner_series_section">Figure&nbsp;<span>2.13</span></a>). The user can define new series linking different variable types. It’s also possible to delete the existing series. As in the output section, the number of series for one planner object is not limited.</p>
+<div id="fig-planner_series_section" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-planner_series_section.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2.13: Planner <em>Series</em> section</figcaption><p></p>
+</figure>
+</div>
+<ul>
+<li><p><span style="color:blue">To add a new series, choose the category and select the independent variable, then push the “Add new series” button (green cross).</span></p></li>
+<li><p><span style="color:blue">To delete a series, choose it and push the “Delete series” button (red cross).</span></p></li>
+</ul>
+</section>
+<section id="rules" class="level3">
+<h3 class="anchored" data-anchor-id="rules">Rules</h3>
+<p>The fourth part shows basic information about the rules for the management of the object (<a href="#fig-planner_rules_section">Figure&nbsp;<span>2.14</span></a>). This part is divided into four sections: <em>Conditions</em>, <em>Time</em>, <em>Output generation</em> and <em>Initial rule state</em>. The rules’ listing in the table defines the order in which those rules will be applied.</p>
+<div id="fig-planner_rules_section" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-planner_rules_section.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2.14: Planner <em>Rules</em> section</figcaption><p></p>
+</figure>
+</div>
+<ul>
+<li><span style="color:blue">To move the rule in the table you can use the up and down arrows.</span></li>
+</ul>
+<p>Example is shown in <a href="#fig-planner_rules_section_example">Figure&nbsp;<span>2.15</span></a>. It shows summary information about the rules.</p>
+<div id="fig-planner_rules_section_example" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-planner_rules_section_example.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2.15: Rules section example</figcaption><p></p>
+</figure>
+</div>
+<p>In the <em>Conditions</em> section, the user can define stand-alone or combined conditions (<a href="#fig-planner_conditions_rules_section">Figure&nbsp;<span>2.16</span></a>). To define the condition, it’s possible to use the planner’s inputs, the results of any object or the states of other rules (<a href="#fig-planner_combined_conditions">Figure&nbsp;<span>2.17</span></a>). The “always satisfied” option allows defining a condition as always true.</p>
+<div id="fig-planner_conditions_rules_section" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-planner_conditions_rules_section.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2.16: Conditions (Rules) section</figcaption><p></p>
+</figure>
+</div>
+<div id="fig-planner_combined_conditions" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-planner_combined_conditions.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2.17: Example of stand-alone and combined conditions</figcaption><p></p>
+</figure>
+</div>
+<ul>
+<li><span style="color:blue">Once one or more rules are defined, the user can create combined conditions using operators between conditions (AND, OR …).</span></li>
+</ul>
+<p>&nbsp;</p>
+<ul>
+<li><span style="color:blue">The number of conditions is not limited.</span></li>
+</ul>
+<p><a href="#fig-planner_conditions_section_example">Figure&nbsp;<span>2.18</span></a> shows an example, with some stand-alone conditions and combined conditions. At the end, it shows summarize information about the combined conditions (violet, as a simplified expression with names, and blue as expanded expression with descriptions).</p>
+<div id="fig-planner_conditions_section_example" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-planner_conditions_section_example.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2.18: Conditions (Rules) section example</figcaption><p></p>
+</figure>
+</div>
+<p>In the <em>Time</em> section, the user can define a time schedule to turn on or off the rule depending on the time (<a href="#fig-planner_time_rules_section">Figure&nbsp;<span>2.19</span></a>).</p>
+<div id="fig-planner_time_rules_section" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-planner_time_rules_section.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2.19: Time (Rules) section</figcaption><p></p>
+</figure>
+</div>
+<p><a href="#fig-planner_time_rules_section_example">Figure&nbsp;<span>2.20</span></a> shows an example with a schedule to start and stop the rules.</p>
+<div id="fig-planner_time_rules_section_example" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-planner_time_rules_section_example.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2.20: Time (Rules) section example</figcaption><p></p>
+</figure>
+</div>
+<p>In the <em>Output generation</em> section, the user can define how to create the output (<a href="#fig-planner_output_generation_section">Figure&nbsp;<span>2.21</span></a>).</p>
+<div id="fig-planner_output_generation_section" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-planner_output_generation_section.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2.21: Output generation (Rules) section</figcaption><p></p>
+</figure>
+</div>
+<p>An example is shown in <a href="#fig-planner_output_generation_section_example">Figure&nbsp;<span>2.22</span></a> with a specific value (19 m<sup>3</sup>/s) for the output (Qdown1).</p>
+<div id="fig-planner_output_generation_section_example" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-planner_output_generation_section_example.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2.22: Output generation (Rules) section example</figcaption><p></p>
+</figure>
+</div>
+<p>In the last section, <em>Initial Rule State</em>, the user can define the initial rule state for the planner object at the beginning of the simulation (<a href="#fig-planner_initial_rule_state_section">Figure&nbsp;<span>2.23</span></a>).</p>
+<div id="fig-planner_initial_rule_state_section" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-planner_initial_rule_state_section.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2.23: Initial Rule State (Rules) section</figcaption><p></p>
+</figure>
+</div>
+<section id="simulation-with-the-planner-implemented" class="level4">
+<h4 class="anchored" data-anchor-id="simulation-with-the-planner-implemented">Simulation with the planner implemented</h4>
+<p>Once the planner object is properly implemented, the user can start the simulation. Results can be visualized by double-clicking on the object or by using the <em>Selection and Plots</em> module (<a href="#fig-complete_model_with_planner">Figure&nbsp;<span>2.24</span></a>).</p>
+<div id="fig-complete_model_with_planner" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/fig-complete_model_with_planner.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2.24: A complete example of a model with planner objects</figcaption><p></p>
+</figure>
+</div>
+
+
+</section>
+</section>
+</section>
+<section class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1" role="doc-endnote"><p>As outputs from the Reservoir are defined by downstream objects, output flows (Qs) are considered as an <em>Input</em> to the <em>Reservoir</em> in terms of information flow. The corresponding water is thereby withdrawn from the stored volume. This implies that at least one output flow has to be defined to validate the model.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2" role="doc-endnote"><p>Short for HydroPower Plant, which includes the <em>TurbineDB</em> and the <em>Hydropower</em> objects.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./user_rainfall_runoff_modelling.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Rainfall-runoff modelling</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./user_database.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Database</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
