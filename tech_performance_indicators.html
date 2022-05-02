@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-0.9.315">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>RS MINERVE Manuals - 9&nbsp; Performance indicators</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<link href="./tech_calibration_algorithms.html" rel="next">
+<link href="./tech_hydrological_models.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link id="quarto-text-highlighting-styles" href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Performance indicators</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title"><span id="sec-tech_performance_indicators" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Performance indicators</span></span></h1>
+                </div>
+  </div>
+    
+  
+
+
+
+  <div class="quarto-title-meta">
+
+      
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">RS MINERVE Manuals</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Introduction</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="./user_manual.html" class="sidebar-item-text sidebar-link">User Manual</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./user_rainfall_runoff_modelling.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Rainfall-runoff modelling</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./user_hydraulic_infrastructures.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Hydraulic infrastructures modelling</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./user_database.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Database</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./user_gis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">GIS</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./user_hydro_hydrau_simulation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Hydrological-hydraulic simulation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./user_expert_module.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Expert module</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./user_plugins.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Plugins</span></a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="./tech_manual.html" class="sidebar-item-text sidebar-link">Technical Manual</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_hydrological_models.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Hydrological and hydraulics models description</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_performance_indicators.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Performance indicators</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_calibration_algorithms.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Calibration algorithms</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_stochastic_equations.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Stochastic equations</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_scripts.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Visual Basic Scripts</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_file_formats.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">File formats</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_database_formats.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Database formats</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tech_gis_formats.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">GIS formats</span></a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="./examples.html" class="sidebar-item-text sidebar-link">Examples of application</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examples_ex1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Example 1 – Simple basin with only runoff</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examples_ex2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Example 2 – Combined full basin with meteorological stations</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examples_ex3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Example 3 – Equipped basin with a hydropower scheme</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examples_ex4.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Example 4 – Automatic calibration of a model</span></a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./acknowledgments.html" class="sidebar-item-text sidebar-link">Acknowledgments</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Appendices</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix_list_param_ic.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Appendix: List of parameters and initial conditions</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix_list_notifications.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">List of notifications from pre-simulation and post-simulation reports</span></a>
+  </div>
+</li>
+    </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sec-tech_performance_indicators_nash" id="toc-sec-tech_performance_indicators_nash" class="nav-link active" data-scroll-target="#sec-tech_performance_indicators_nash"> <span class="header-section-number">9.1</span> Nash coefficient</a></li>
+  <li><a href="#sec-tech_performance_indicators_nashlog" id="toc-sec-tech_performance_indicators_nashlog" class="nav-link" data-scroll-target="#sec-tech_performance_indicators_nashlog"> <span class="header-section-number">9.2</span> Nash coefficient for logarithm values</a></li>
+  <li><a href="#sec-tech_performance_indicators_pearson" id="toc-sec-tech_performance_indicators_pearson" class="nav-link" data-scroll-target="#sec-tech_performance_indicators_pearson"> <span class="header-section-number">9.3</span> Pearson Correlation Coefficient</a></li>
+  <li><a href="#sec-tech_performance_indicators_klinggupta" id="toc-sec-tech_performance_indicators_klinggupta" class="nav-link" data-scroll-target="#sec-tech_performance_indicators_klinggupta"> <span class="header-section-number">9.4</span> Kling-Gupta Efficiency</a></li>
+  <li><a href="#sec-tech_performance_indicators_biasscore" id="toc-sec-tech_performance_indicators_biasscore" class="nav-link" data-scroll-target="#sec-tech_performance_indicators_biasscore"> <span class="header-section-number">9.5</span> Bias Score</a></li>
+  <li><a href="#sec-tech_performance_indicators_rrmse" id="toc-sec-tech_performance_indicators_rrmse" class="nav-link" data-scroll-target="#sec-tech_performance_indicators_rrmse"> <span class="header-section-number">9.6</span> Relative Root Mean Square Error</a></li>
+  <li><a href="#sec-tech_performance_indicators_rvb" id="toc-sec-tech_performance_indicators_rvb" class="nav-link" data-scroll-target="#sec-tech_performance_indicators_rvb"> <span class="header-section-number">9.7</span> Relative Volume Bias</a></li>
+  <li><a href="#sec-tech_performance_indicators_npe" id="toc-sec-tech_performance_indicators_npe" class="nav-link" data-scroll-target="#sec-tech_performance_indicators_npe"> <span class="header-section-number">9.8</span> Normalized Peak Error</a></li>
+  <li><a href="#sec-tech_performance_indicators_pierce" id="toc-sec-tech_performance_indicators_pierce" class="nav-link" data-scroll-target="#sec-tech_performance_indicators_pierce"> <span class="header-section-number">9.9</span> Peirce Skill Score</a></li>
+  <li><a href="#sec-tech_performance_indicators_oa" id="toc-sec-tech_performance_indicators_oa" class="nav-link" data-scroll-target="#sec-tech_performance_indicators_oa"> <span class="header-section-number">9.10</span> Overall Accuracy</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<p>The indicators calculated by the Comparator object are based on observed and simulated values. Since the Comparator object is able to compare variables of type flow, height, altitude, power and True/False, the descriptions below only refer to these 2 variables.</p>
+<section id="sec-tech_performance_indicators_nash" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="sec-tech_performance_indicators_nash"><span class="header-section-number">9.1</span> Nash coefficient</h2>
+<p>The Nash-Sutcliffe criteria <span class="citation" data-cites="nash_river_1970">(<a href="#ref-nash_river_1970" role="doc-biblioref">Nash and Sutcliffe 1970</a>)</span> is used to assess the predictive power of hydrological models <span class="citation" data-cites="ajami_calibration_2004 schaefli_conceptual_2005 jordan_modeprevision_2007 viviroli_continuous_2009 garcia_hernandez_flood_2011">(<a href="#ref-ajami_calibration_2004" role="doc-biblioref">Ajami et al. 2004</a>; <a href="#ref-schaefli_conceptual_2005" role="doc-biblioref">Schaefli et al. 2005</a>; <a href="#ref-jordan_modeprevision_2007" role="doc-biblioref">Jordan 2007</a>; <a href="#ref-viviroli_continuous_2009" role="doc-biblioref">Viviroli et al. 2009</a>; <a href="#ref-garcia_hernandez_flood_2011" role="doc-biblioref">García Hernández 2011</a>)</span>. It is defined as presented in <a href="#eq-IND1">Equation&nbsp;<span>9.1</span></a>.</p>
+<p><span id="eq-IND1"><span class="math display">\[
+Nash = 1 - \frac{\sum_{t = t_{i}}^{t_{f}}{(X_{sim,t} - X_{ref,t})^{2}}}{\sum_{t = t_{i}}^{t_{f}}{(X_{ref,t} - {\overline{X}_{ref}})^{2}}}
+\qquad(9.1)\]</span></span></p>
+<p>with <span class="math inline">\(Nash\)</span>: Nash-Sutcliffe model efficiency coefficient [-]; <span class="math inline">\(X_{sim,t}\)</span>: simulated variable (discharge [L<sup>3</sup>/T] or height [L]) at time <span class="math inline">\(t\)</span>; <span class="math inline">\(X_{ref,t}\)</span>&nbsp;: observed variable (discharge [L<sup>3</sup>/T] or height [L]) at time <span class="math inline">\(t\)</span>; <span class="math inline">\(\overline{X}_{ref}\)</span>: average observed variable (discharge [L<sup>3</sup>/T] or height [L]) for the considered period.</p>
+<p>It varies from -∞ to 1, with 1 representing the best performance of the model and zero the same performance than assuming the average of all the observations at each time step.</p>
+</section>
+<section id="sec-tech_performance_indicators_nashlog" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="sec-tech_performance_indicators_nashlog"><span class="header-section-number">9.2</span> Nash coefficient for logarithm values</h2>
+<p>The Nash-Sutcliffe coefficient for logarithm flow values (<span class="math inline">\(Nash-ln\)</span>) is used to assess the hydrological models performance for low values <span class="citation" data-cites="krause_comparison_2005 nobrega_uncertainty_2011">(<a href="#ref-krause_comparison_2005" role="doc-biblioref">Krause, Boyle, and Bäse 2005</a>; <a href="#ref-nobrega_uncertainty_2011" role="doc-biblioref">Nóbrega et al. 2011</a>)</span>. It is defined as presented in <a href="#eq-IND2">Equation&nbsp;<span>9.2</span></a>.</p>
+<p><span id="eq-IND2"><span class="math display">\[
+\text{Nash-ln} = 1 - \frac{\sum_{t = t_{i}}^{t_{f}}{(ln(X_{sim,t}) - ln(X_{ref,t}))^{2}}}{\sum_{t = t_{i}}^{t_{f}}{(ln(X_{ref,t}) - ln({\overline{X}_{ref}}))^{2}}}
+\qquad(9.2)\]</span></span></p>
+<p>with <span class="math inline">\(Nash-ln\)</span>: Nash-Sutcliffe coefficient for log values [-].</p>
+<p>It varies from -∞ to 1, with 1 representing the best performance of the model.</p>
+</section>
+<section id="sec-tech_performance_indicators_pearson" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="sec-tech_performance_indicators_pearson"><span class="header-section-number">9.3</span> Pearson Correlation Coefficient</h2>
+<p>The Pearson correlation coefficient shows the covariability of the simulated and observed values without penalizing for bias <span class="citation" data-cites="aghakouchak_application_2010 wang_monthly_2011">(<a href="#ref-aghakouchak_application_2010" role="doc-biblioref">Aghakouchak and Habib 2010</a>; <a href="#ref-wang_monthly_2011" role="doc-biblioref">Wang et al. 2011</a>)</span>. It is defined as presented in <a href="#eq-IND3">Equation&nbsp;<span>9.3</span></a>.</p>
+<p><span id="eq-IND3"><span class="math display">\[
+Pearson = \frac{\sum_{t = t_{i}}^{t_{f}}{(X_{sim,t} - {\overline{X}_{sim}}) \cdot (X_{ref,t} - {\overline{X}_{ref}})}}{\sqrt{\sum_{t = t_{i}}^{t_{f}}{(X_{sim,t} - {\overline{X}_{sim}})^{2}} \cdot \sum_{t = t_{i}}^{t_{f}}{(X_{ref,t} - {\overline{X}_{ref}})^{2}}}}
+\qquad(9.3)\]</span></span></p>
+<p>with <span class="math inline">\(Pearson\)</span>: Pearson Correlation Coefficient [-]; <span class="math inline">\({\overline{X}_{sim}}\)</span>: average simulated variable (discharge [L<sup>3</sup>/T] or height [L]) for the considered period.</p>
+<p>It varies from -1 to 1, with 1 representing the best performance of the model.</p>
+</section>
+<section id="sec-tech_performance_indicators_klinggupta" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="sec-tech_performance_indicators_klinggupta"><span class="header-section-number">9.4</span> Kling-Gupta Efficiency</h2>
+<p>The Kling-Gupta efficiency <span class="citation" data-cites="gupta_decomposition_2009">(<a href="#ref-gupta_decomposition_2009" role="doc-biblioref">Gupta et al. 2009</a>)</span> provides an indicator which facilitates the global analysis based on different components (correlation, bias and variability) for hydrological modelling issues.</p>
+<p><span class="citation" data-cites="kling_runoff_2012">Kling, Fuchs, and Paulin (<a href="#ref-kling_runoff_2012" role="doc-biblioref">2012</a>)</span> proposed a revised version of this indicator, to ensure that the bias and variability ratios are not cross-correlated. This update is proposed as indicator in RS&nbsp;MINERVE (<a href="#eq-IND4">Equation&nbsp;<span>9.4</span></a>):</p>
+<p><span id="eq-IND4"><span class="math display">\[
+KGE' = 1 - \sqrt{(r - 1)^{2} + (\beta - 1)^{2} + (\gamma - 1)^{2}}
+\qquad(9.4)\]</span></span> <span id="eq-IND5"><span class="math display">\[
+\beta = \frac{\mu_{s}}{\mu_{o}}
+\qquad(9.5)\]</span></span> <span id="eq-IND6"><span class="math display">\[
+\gamma = \frac{{CV}_{s}}{{CV}_{o}} = \frac{\sigma_{s}/\mu_{s}}{\sigma_{o}/\mu_{o}}
+\qquad(9.6)\]</span></span></p>
+<p>with <span class="math inline">\(KGE'\)</span>: modified KGE-statistic [-]; <span class="math inline">\(r\)</span>: correlation coefficient between simulated and reference values [-]; <span class="math inline">\(\beta\)</span>: bias ratio [-]; <span class="math inline">\(\gamma\)</span>: variability ratio [-]; <span class="math inline">\(\mu\)</span>: mean discharge [L<sup>3</sup>/T]; <span class="math inline">\(CV\)</span>: coefficient of variation [-]; <span class="math inline">\(\sigma\)</span>: standard deviation of discharge [L<sup>3</sup>/T]; the indices <span class="math inline">\(s\)</span> and <span class="math inline">\(o\)</span> indicate respectively simulated and observed discharge values.</p>
+<p>It varies from 0 to 1, with 1 representing the best performance.</p>
+</section>
+<section id="sec-tech_performance_indicators_biasscore" class="level2" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="sec-tech_performance_indicators_biasscore"><span class="header-section-number">9.5</span> Bias Score</h2>
+<p>The Bias Score (<span class="math inline">\(BS\)</span>) is a symmetric estimation of the match between the average simulation and average observation <span class="citation" data-cites="wang_monthly_2011">(<a href="#ref-wang_monthly_2011" role="doc-biblioref">Wang et al. 2011</a>)</span>. It is defined as presented in <a href="#eq-IND7">Equation&nbsp;<span>9.7</span></a>.</p>
+<p><span id="eq-IND7"><span class="math display">\[
+BS = 1 - \bigg( max \Big(\frac{{\overline{X}}_{sim}}{{\overline{X}}_{ref}};\frac{{\overline{X}}_{ref}}{{\overline{X}}_{sim}} \Big) - 1 \bigg)^2
+\qquad(9.7)\]</span></span></p>
+<p>with <span class="math inline">\(BS\)</span>: Bias Score [-].</p>
+<p>It varies from -∞ to 1, with 1 representing the best performance of the model.</p>
+</section>
+<section id="sec-tech_performance_indicators_rrmse" class="level2" data-number="9.6">
+<h2 data-number="9.6" class="anchored" data-anchor-id="sec-tech_performance_indicators_rrmse"><span class="header-section-number">9.6</span> Relative Root Mean Square Error</h2>
+<p>The Relative Root Mean Square Error (<span class="math inline">\(RRMSE\)</span>) is defined as the RMSE normalized to the mean of the observed values <span class="citation" data-cites="feyen_application_2000 el_nasr_modelling_2005 heppner_adding_2006">(<a href="#ref-feyen_application_2000" role="doc-biblioref">Feyen et al. 2000</a>; <a href="#ref-el_nasr_modelling_2005" role="doc-biblioref">El-Nasr et al. 2005</a>; <a href="#ref-heppner_adding_2006" role="doc-biblioref">Heppner et al. 2006</a>)</span> and is presented in <a href="#eq-IND8">Equation&nbsp;<span>9.8</span></a>.</p>
+<p><span id="eq-IND8"><span class="math display">\[
+RRMSE = \frac{\sqrt{\frac{\sum_{t = t_{i}}^{t_{f}}{(X_{sim,t} - X_{ref,t})^{2}}}{n}}}{{\overline{X}}_{ref}}
+\qquad(9.8)\]</span></span></p>
+<p>with&nbsp;<span class="math inline">\(RRMSE\)</span>: relative <span class="math inline">\(RMSE\)</span> [-]; <span class="math inline">\(n\)</span>: number of values [-].</p>
+<p>It varies from 0 to +∞. The smaller <span class="math inline">\(RRMSE\)</span>, the better the model performance is.</p>
+</section>
+<section id="sec-tech_performance_indicators_rvb" class="level2" data-number="9.7">
+<h2 data-number="9.7" class="anchored" data-anchor-id="sec-tech_performance_indicators_rvb"><span class="header-section-number">9.7</span> Relative Volume Bias</h2>
+<p>The Relative Volume Bias (<span class="math inline">\(RVB\)</span>), sometimes called differently, corresponds in this case to the relative error between the simulated and the observed volumes during the studied period <span class="citation" data-cites="ajami_calibration_2004 schaefli_conceptual_2005 moriasi_model_2007 aghakouchak_application_2010">(<a href="#ref-ajami_calibration_2004" role="doc-biblioref">Ajami et al. 2004</a>; <a href="#ref-schaefli_conceptual_2005" role="doc-biblioref">Schaefli et al. 2005</a>; <a href="#ref-moriasi_model_2007" role="doc-biblioref">Moriasi et al. 2007</a>; <a href="#ref-aghakouchak_application_2010" role="doc-biblioref">Aghakouchak and Habib 2010</a>)</span> according to <a href="#eq-IND9">Equation&nbsp;<span>9.9</span></a>. This indicator is envisaged for the comparison between observed and simulated discharges.</p>
+<p><span id="eq-IND9"><span class="math display">\[
+RVB = \frac{\sum_{t = t_{i}}^{t_{f}}{(X_{sim,t} - X_{ref,t})}}{\sum_{t = t_{i}}^{t_{f}}{(X_{ref,t})}}
+\qquad(9.9)\]</span></span></p>
+<p>with <span class="math inline">\(RVB\)</span>: relative volume bias between forecast and observation for the considered period [-]; <span class="math inline">\(X\)</span> usually corresponding to the discharge variable.</p>
+<p>The <span class="math inline">\(RVB\)</span> varies from -1 to +∞. An index near to zero indicates a good performance of the simulation. Negative values are returned when simulated variable is, in average, smaller than the average of the observed one (deficit model), while positive values mean the opposite (overage model).</p>
+</section>
+<section id="sec-tech_performance_indicators_npe" class="level2" data-number="9.8">
+<h2 data-number="9.8" class="anchored" data-anchor-id="sec-tech_performance_indicators_npe"><span class="header-section-number">9.8</span> Normalized Peak Error</h2>
+<p>The Normalized Peak Error (<span class="math inline">\(NPE\)</span>) indicates the relative error between the simulated and the observed maximum values <span class="citation" data-cites="masmoudi_performance_1993 sun_flood_2000 ajami_calibration_2004 gabellani_propagation_2007">(<a href="#ref-masmoudi_performance_1993" role="doc-biblioref">Masmoudi and Habaieb 1993</a>; <a href="#ref-sun_flood_2000" role="doc-biblioref">Sun et al. 2000</a>; <a href="#ref-ajami_calibration_2004" role="doc-biblioref">Ajami et al. 2004</a>; <a href="#ref-gabellani_propagation_2007" role="doc-biblioref">Gabellani et al. 2007</a>)</span>. It is computed according to <a href="#eq-IND10">Equation&nbsp;<span>9.10</span></a> to <a href="#eq-IND12">Equation&nbsp;<span>9.12</span></a>.</p>
+<p><span id="eq-IND10"><span class="math display">\[
+NPE = \frac{S_{\max} - R_{\max}}{R_{\max}}
+\qquad(9.10)\]</span></span> <span id="eq-IND11"><span class="math display">\[
+S_{\max} = \overset{t_{f}}{\underset{t = t_{i}}{\vee}}Q_{sim,t}
+\qquad(9.11)\]</span></span> <span id="eq-IND12"><span class="math display">\[
+R_{\max} = \overset{t_{f}}{\underset{t = t_{i}}{\vee}}Q_{ref,t}
+\qquad(9.12)\]</span></span></p>
+<p>with <span class="math inline">\(NPE\)</span>: relative error between simulated and observed peak value [-]; <span class="math inline">\(S_{max}\)</span>: maximum simulated value (discharge [L<sup>3</sup>/T] or height [L]) for the studied period; <span class="math inline">\(R_{max}\)</span>&nbsp;: maximum observed value (discharge [L<sup>3</sup>/T] or height [L]) for the studied period.</p>
+<p>The NPE varies from -1 to +∞. Negative values are returned when maximum simulated value is below the observed one, while positive values mean the opposite. Values near to zero indicate a good performance of simulated peaks regarding observed ones.</p>
+<div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The indicator is computed over the entire simulation period and the absolute maximum of the simulated and the observed peaks are considered! This indicator should therefore be used with care when simulating over long periods of time.</p>
+</div>
+</div>
+</section>
+<section id="sec-tech_performance_indicators_pierce" class="level2" data-number="9.9">
+<h2 data-number="9.9" class="anchored" data-anchor-id="sec-tech_performance_indicators_pierce"><span class="header-section-number">9.9</span> Peirce Skill Score</h2>
+<p>The Peirce Skill Score (<span class="math inline">\(PSS\)</span>) indicates the performance of the model to reproduce the overrun of a threshold <span class="citation" data-cites="peirce_numerical_1884 manzato_note_2007">(<a href="#ref-peirce_numerical_1884" role="doc-biblioref">Peirce 1884</a>; <a href="#ref-manzato_note_2007" role="doc-biblioref">Manzato 2007</a>)</span>. Based on a contingency table definging the number of cases where the simulation and the obseration exceed or not the threshold, the <span class="math inline">\(PSS\)</span> is computed according to <a href="#eq-IND13">Equation&nbsp;<span>9.13</span></a>.</p>
+<p><span id="eq-IND13"><span class="math display">\[
+PSS = \frac{ad - bc}{(a + c)(b + d)}
+\qquad(9.13)\]</span></span></p>
+<p>with <span class="math inline">\(a\)</span>: the number of cases when both simulation and observation exceed the threshold defined in the Comparator (event); <span class="math inline">\(b\)</span>: the number of cases when the simulation exceeds the threshold but not the obseration (false); <span class="math inline">\(c\)</span>: the number of cases when the observation exceeds the threshold but not the simulation (miss); <span class="math inline">\(d\)</span>: the number of cases when both simulation and obseration are below the threshold (no event).</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If the denominerator equals 0 (division by 0), a value of 0 is returned for the PSS.</p>
+</div>
+</div>
+</section>
+<section id="sec-tech_performance_indicators_oa" class="level2" data-number="9.10">
+<h2 data-number="9.10" class="anchored" data-anchor-id="sec-tech_performance_indicators_oa"><span class="header-section-number">9.10</span> Overall Accuracy</h2>
+<p>The Overall Accurary (<span class="math inline">\(OA\)</span>) indicates the performance of the model to reproduce the overrun of a threshold <span class="citation" data-cites="parajka_spatio-temporal_2008">(<a href="#ref-parajka_spatio-temporal_2008" role="doc-biblioref">Parajka and Blöschl 2008</a>)</span>. Based on the same contingency table as the Pierce Skill Score, the <span class="math inline">\(OA\)</span> is computed according to <a href="#eq-IND14">Equation&nbsp;<span>9.14</span></a>.</p>
+<p><span id="eq-IND14"><span class="math display">\[
+OA = \frac{a + d}{a + b + \ c + d}
+\qquad(9.14)\]</span></span></p>
+</section>
+<section id="references" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="references">References</h2>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-aghakouchak_application_2010" class="csl-entry" role="doc-biblioentry">
+Aghakouchak, Amir, and Emad H. Habib. 2010. <span>“Application of a <span>Conceptual</span> <span>Hydrologic</span> <span>Model</span> in <span>Teaching</span> <span>Hydrologic</span> <span>Processes</span>.”</span> <em>International Journal of Engineering Education</em> 26: 963–73.
+</div>
+<div id="ref-ajami_calibration_2004" class="csl-entry" role="doc-biblioentry">
+Ajami, Newsha K., Hoshin Gupta, Thorsten Wagener, and Soroosh Sorooshian. 2004. <span>“Calibration of a Semi-Distributed Hydrologic Model for Streamflow Estimation Along a River System.”</span> <em>Journal of Hydrology</em> 298 (1-4): 112–35. <a href="https://doi.org/10.1016/j.jhydrol.2004.03.033">https://doi.org/10.1016/j.jhydrol.2004.03.033</a>.
+</div>
+<div id="ref-el_nasr_modelling_2005" class="csl-entry" role="doc-biblioentry">
+El-Nasr, Ahmed Abu, Jeffrey G. Arnold, Jan Feyen, and Jean Berlamont. 2005. <span>“Modelling the Hydrology of a Catchment Using a Distributed and a Semi-Distributed Model.”</span> <em>Hydrological Processes</em> 19 (3): 573–87. <a href="https://doi.org/10.1002/hyp.5610">https://doi.org/10.1002/hyp.5610</a>.
+</div>
+<div id="ref-feyen_application_2000" class="csl-entry" role="doc-biblioentry">
+Feyen, L., R. Vázquez, K. Christiaens, O. Sels, and J. Feyen. 2000. <span>“Application of a Distributed Physically-Based Hydrological Model to a Medium Size Catchment.”</span> <em>Hydrology and Earth System Sciences</em> 4 (1): 47–63. <a href="https://doi.org/10.5194/hess-4-47-2000">https://doi.org/10.5194/hess-4-47-2000</a>.
+</div>
+<div id="ref-gabellani_propagation_2007" class="csl-entry" role="doc-biblioentry">
+Gabellani, S., G. Boni, L. Ferraris, J. von Hardenberg, and A. Provenzale. 2007. <span>“Propagation of Uncertainty from Rainfall to Runoff: <span>A</span> Case Study with a Stochastic Rainfall Generator.”</span> <em>Advances in Water Resources</em> 30 (10): 2061–71. <a href="https://doi.org/10.1016/j.advwatres.2006.11.015">https://doi.org/10.1016/j.advwatres.2006.11.015</a>.
+</div>
+<div id="ref-garcia_hernandez_flood_2011" class="csl-entry" role="doc-biblioentry">
+García Hernández, Javier. 2011. <span>“Flood Management in a Complex River Basin with a Real-Time Decision Support System Based on Hydrological Forecasts.”</span> {PhD} {Thesis} {N}°5093, Lausanne, Switzerland: Ecole Polytechnique Fédérale de Lausanne, EPFL.
+</div>
+<div id="ref-gupta_decomposition_2009" class="csl-entry" role="doc-biblioentry">
+Gupta, Hoshin V., Harald Kling, Koray K. Yilmaz, and Guillermo F. Martinez. 2009. <span>“Decomposition of the Mean Squared Error and <span>NSE</span> Performance Criteria: <span>Implications</span> for Improving Hydrological Modelling.”</span> <em>Journal of Hydrology</em> 377 (1-2): 80–91. <a href="https://doi.org/10.1016/j.jhydrol.2009.08.003">https://doi.org/10.1016/j.jhydrol.2009.08.003</a>.
+</div>
+<div id="ref-heppner_adding_2006" class="csl-entry" role="doc-biblioentry">
+Heppner, Christopher S., Qihua Ran, Joel E. VanderKwaak, and Keith Loague. 2006. <span>“Adding Sediment Transport to the Integrated Hydrology Model (<span>InHM</span>): <span>Development</span> and Testing.”</span> <em>Advances in Water Resources</em> 29 (6): 930–43. <a href="https://doi.org/10.1016/j.advwatres.2005.08.003">https://doi.org/10.1016/j.advwatres.2005.08.003</a>.
+</div>
+<div id="ref-jordan_modeprevision_2007" class="csl-entry" role="doc-biblioentry">
+Jordan, F. 2007. <span>“Modèle de Prévision Et de Gestion Des Crues - Optimisation Des Opérations Des Aménagements Hydroélectriques à Accumulation Pour La Réduction Des Débits de Crue.”</span> {PhD} {Thesis} {N}°3711, Lausanne, Switzerland: Ecole Polytechnique Fédérale de Lausanne, EPFL.
+</div>
+<div id="ref-kling_runoff_2012" class="csl-entry" role="doc-biblioentry">
+Kling, Harald, Martin Fuchs, and Maria Paulin. 2012. <span>“Runoff Conditions in the Upper <span>Danube</span> Basin Under an Ensemble of Climate Change Scenarios.”</span> <em>Journal of Hydrology</em> 424-425 (March): 264–77. <a href="https://doi.org/10.1016/j.jhydrol.2012.01.011">https://doi.org/10.1016/j.jhydrol.2012.01.011</a>.
+</div>
+<div id="ref-krause_comparison_2005" class="csl-entry" role="doc-biblioentry">
+Krause, P., D. P. Boyle, and F. Bäse. 2005. <span>“Comparison of Different Efficiency Criteria for Hydrological Model Assessment.”</span> <em>Advances in Geosciences</em> 5 (December): 89–97. <a href="https://doi.org/10.5194/adgeo-5-89-2005">https://doi.org/10.5194/adgeo-5-89-2005</a>.
+</div>
+<div id="ref-manzato_note_2007" class="csl-entry" role="doc-biblioentry">
+Manzato, Agostino. 2007. <span>“A <span>Note</span> <span>On</span> the <span>Maximum</span> <span>Peirce</span> <span>Skill</span> <span>Score</span>.”</span> <em>Weather and Forecasting</em> 22 (5): 1148–54. <a href="https://doi.org/10.1175/WAF1041.1">https://doi.org/10.1175/WAF1041.1</a>.
+</div>
+<div id="ref-masmoudi_performance_1993" class="csl-entry" role="doc-biblioentry">
+Masmoudi, M., and H. Habaieb. 1993. <span>“The Performance of Some Real-Time Statistical Flood Forecasting Models Seen Through Multicriteria Analysis.”</span> <em>Water Resources Management</em> 7 (1): 57–67. <a href="https://doi.org/10.1007/BF00872242">https://doi.org/10.1007/BF00872242</a>.
+</div>
+<div id="ref-moriasi_model_2007" class="csl-entry" role="doc-biblioentry">
+Moriasi, D. N., J. G. Arnold, M. W. Van Liew, R. L. Bingner, R. D. Harmel, and T. L. Veith. 2007. <span>“Model <span>Evaluation</span> <span>Guidelines</span> for <span>Systematic</span> <span>Quantification</span> of <span>Accuracy</span> in <span>Watershed</span> <span>Simulations</span>.”</span> <em>Transactions of the ASABE</em> 50 (3): 885–900. <a href="https://doi.org/10.13031/2013.23153">https://doi.org/10.13031/2013.23153</a>.
+</div>
+<div id="ref-nash_river_1970" class="csl-entry" role="doc-biblioentry">
+Nash, J. E., and J. V. Sutcliffe. 1970. <span>“River Flow Forecasting Through Conceptual Models Part <span>I</span> — <span>A</span> Discussion of Principles.”</span> <em>Journal of Hydrology</em> 10 (3): 282–90. <a href="https://doi.org/10.1016/0022-1694(70)90255-6">https://doi.org/10.1016/0022-1694(70)90255-6</a>.
+</div>
+<div id="ref-nobrega_uncertainty_2011" class="csl-entry" role="doc-biblioentry">
+Nóbrega, M. T., W. Collischonn, C. E. M. Tucci, and A. R. Paz. 2011. <span>“Uncertainty in Climate Change Impacts on Water Resources in the <span>Rio</span> <span>Grande</span> <span>Basin</span>, <span>Brazil</span>.”</span> <em>Hydrology and Earth System Sciences</em> 15 (2): 585–95. <a href="https://doi.org/10.5194/hess-15-585-2011">https://doi.org/10.5194/hess-15-585-2011</a>.
+</div>
+<div id="ref-parajka_spatio-temporal_2008" class="csl-entry" role="doc-biblioentry">
+Parajka, J., and G. Blöschl. 2008. <span>“Spatio-Temporal Combination of <span>MODIS</span> Images - Potential for Snow Cover Mapping: <span>SPATIO</span>-<span>TEMPORAL</span> <span>COMBINATION</span> <span>OF</span> <span>MODIS</span> <span>IMAGES</span>.”</span> <em>Water Resources Research</em> 44 (3). <a href="https://doi.org/10.1029/2007WR006204">https://doi.org/10.1029/2007WR006204</a>.
+</div>
+<div id="ref-peirce_numerical_1884" class="csl-entry" role="doc-biblioentry">
+Peirce, C. S. 1884. <span>“The <span>Numerical</span> <span>Measure</span> of the <span>Success</span> of <span>Predictions</span>.”</span> <em>Science</em> ns-4 (93): 453–54. <a href="https://doi.org/10.1126/science.ns-4.93.453.b">https://doi.org/10.1126/science.ns-4.93.453.b</a>.
+</div>
+<div id="ref-schaefli_conceptual_2005" class="csl-entry" role="doc-biblioentry">
+Schaefli, B., B. Hingray, M. Niggli, and A. Musy. 2005. <span>“A Conceptual Glacio-Hydrological Model for High Mountainous Catchments.”</span> <em>Hydrology and Earth System Sciences</em> 9 (1/2): 95–109. <a href="https://doi.org/10.5194/hess-9-95-2005">https://doi.org/10.5194/hess-9-95-2005</a>.
+</div>
+<div id="ref-sun_flood_2000" class="csl-entry" role="doc-biblioentry">
+Sun, X., R. G. Mein, T. D. Keenan, and J. F. Elliott. 2000. <span>“Flood Estimation Using Radar and Raingauge Data.”</span> <em>Journal of Hydrology</em> 239 (1-4): 4–18. <a href="https://doi.org/10.1016/S0022-1694(00)00350-4">https://doi.org/10.1016/S0022-1694(00)00350-4</a>.
+</div>
+<div id="ref-viviroli_continuous_2009" class="csl-entry" role="doc-biblioentry">
+Viviroli, Daniel, Heidi Mittelbach, Joachim Gurtz, and Rolf Weingartner. 2009. <span>“Continuous Simulation for Flood Estimation in Ungauged Mesoscale Catchments of <span>Switzerland</span> – <span>Part</span> <span>II</span>: <span>Parameter</span> Regionalisation and Flood Estimation Results.”</span> <em>Journal of Hydrology</em> 377 (1-2): 208–25. <a href="https://doi.org/10.1016/j.jhydrol.2009.08.022">https://doi.org/10.1016/j.jhydrol.2009.08.022</a>.
+</div>
+<div id="ref-wang_monthly_2011" class="csl-entry" role="doc-biblioentry">
+Wang, Q. J., T. C. Pagano, S. L. Zhou, H. A. P. Hapuarachchi, L. Zhang, and D. E. Robertson. 2011. <span>“Monthly Versus Daily Water Balance Models in Simulating Monthly Runoff.”</span> <em>Journal of Hydrology</em> 404 (3-4): 166–75. <a href="https://doi.org/10.1016/j.jhydrol.2011.04.027">https://doi.org/10.1016/j.jhydrol.2011.04.027</a>.
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./tech_hydrological_models.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Hydrological and hydraulics models description</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./tech_calibration_algorithms.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Calibration algorithms</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
