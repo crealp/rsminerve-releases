@@ -7,7 +7,7 @@ book:
   author: "Bastien ROQUIER, Javier FLUIXA SANMARTIN, Tristan BRAUCHLI, Theo BARACCHINI, Javier GARCIA HERNANDEZ, Alain FOEHN, Javier PAREDES ARQUIOLA, Giovanni DE CESARE"
   cover-image: figures/fig-cover_image.png
   site-url: https://crealp.github.io/rsminerve-releases/
-  date: "04.20.2022"
+  date: "05.02.2022"
   chapters:
     - index.qmd
     - part: user_manual.qmd
