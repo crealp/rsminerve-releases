@@ -27,12 +27,12 @@ jobs:
         # Add any command line argument needed
         run: |
           quarto render --to html
-       - name: Deploy 🚀
+      - name: Deploy 🚀
       #   # only deploy when push to main
       #   # if: github.event_name != 'pull_request'
-         uses: JamesIves/github-pages-deploy-action@v4.3.3
-         with:
-           # The branch the action should deploy to.
-           branch: gh-pages
-           # The folder the action should deploy. Adapt if you changed in Quarto config
-           folder: docs
+        uses: JamesIves/github-pages-deploy-action@v4.3.3
+        with:
+          # The branch the action should deploy to.
+          branch: gh-pages
+          # The folder the action should deploy. Adapt if you changed in Quarto config
+          folder: docs
