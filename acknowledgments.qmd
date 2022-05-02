@@ -1,0 +1,21 @@
+# Acknowledgments {.unnumbered}
+
+RS MINERVE is developed by the research center **CREALP** and the
+engineering office **HydroCosmos SA**, with the collaboration of two
+universities (**Ecole Polytechnique Fédérale de Lausanne** and
+**Universitat Politècnica de València**) and the **Hydro10**
+Association.
+
+We would like to thank sincerely these organizations for their support.
+
+In addition, we would like to express our gratitude to the people who
+have personally contributed to the improvement of the program and its
+documentation, in particular: Stéphane Micheloud[^acknowledgments_1], Néstor Lerma[^acknowledgments_2],
+Alex Dionisio-Calado[^acknowledgments_1], Nicolas Rey[^acknowledgments_3], Edgar Belda[^acknowledgments_2], Samuel
+Alesina[^acknowledgments_1], Matthew Moy-de-Vitry[^acknowledgments_1] and Aurélien Claude[^acknowledgments_1].
+
+[^acknowledgments_1]: Centre de recherche sur l'environnement alpin - CREALP
+
+[^acknowledgments_2]: Universitat Politècnica de València - UPV
+
+[^acknowledgments_3]: HydroCosmos SA

@@ -1,0 +1,2379 @@
+# Hydrological and hydraulics models description {#sec-tech_hydrological_models}
+
+This chapter presents the hydrological objects existing in RS MINERVE software.
+
+## List of objects
+
+The parameters or required data (such as paired data) of all objects are presented hereafter. Not presented objects do not require data or require data from another object or from database.
+
+-   Hydrology:
+
+    -   Virtual Station (see @sec-virtual_station)
+
+    -   Snow-SD model (see @sec-model_snow)
+
+    -   Runoff (SWMM) model (see @sec-model_swmm)
+
+    -   GSM model (see @sec-model_gsm)
+
+    -   SOCONT model (see @sec-model_socont)
+
+    -   HBV model (see @sec-model_hbv)
+
+    -   GR4J model (see @sec-model_gr4j)
+
+    -   SAC (SACRAMENTO-SOIL MOISTURE ACCOUNT) model (see @sec-model_sac_sma)
+
+    -   SCS (Soil Conservation Service) Unit Hydrograph model (see @sec-model_scs)
+
+-   Rivers
+
+    -   Channel routing description (see @sec-model_channel_routing)
+
+-   Standard:
+
+    -   Junction (object without parameters or paired data)
+
+    -   Time Series (see @sec-model_timeseries)
+
+    -   Source (object without parameters or paired data, but only a link to the database)
+
+    -   Comparator (see @sec-model_comparator)
+
+    -   Sub-model (object without any parameters or paired data)
+
+    -   Group Interface (object without any parameters or paired data)
+
+-   Structures:
+
+    -   Reservoir (see @sec-model_reservoir)
+
+    -   Level-Discharge relation HQ (see @sec-model_hq)
+
+    -   Turbine (see @sec-model_turbine)
+
+    -   TurbineDB (object linked to the database; see @sec-model_turbine)
+
+    -   Hydropower (see @sec-model_hydropower)
+
+    -   Diversion (see @sec-model_diversion)
+
+    -   Consumer (see @sec-model_consumer)
+
+    -   Structure Efficiency (see @sec-model_efficiency)
+
+-   Regulation objects:
+
+    -   Planner (see @sec-model_planner)
+
+## Virtual Station {#sec-virtual_station}
+
+The object "V-Station" (which is associated with the coordinates X, Y, Z) allows the spatial distribution of the meteorological variables (precipitation, temperature, ETP) 
+from available measures or estimations of a database, with spatial reference in metric coordinates.
+
++----------------------+---------+------------------------------------------------------------------------------------------+------------------+
+| Name                 | Units   | Description                                                                              | Regular Range    |
++======================+=========+==========================================================================================+==================+
+| X, Y, Z              | \-      | Coordinates of the virtual station                                                       | \-               |
++----------------------+---------+------------------------------------------------------------------------------------------+------------------+
+| Search Radius        | m       | Search radius of the virtual stations                                                    | \>0              |
++----------------------+---------+------------------------------------------------------------------------------------------+------------------+
+| No. min. of stations | \-      | Minimal number of stations used for interpolation (higher priority than "Search Radius") | $\geq$ 1         |
++----------------------+---------+------------------------------------------------------------------------------------------+------------------+
+| Gradient P           | 1/m     | Precipitation gradient                                                                   | \-[^hydro_mod_1] |
++----------------------+---------+------------------------------------------------------------------------------------------+------------------+
+| Gradient T           | °C/m    | Temperature gradient                                                                     | -0.007 to -0.004 |
++----------------------+---------+------------------------------------------------------------------------------------------+------------------+
+| Gradient ETP         | 1/m     | Evapotranspiration gradient                                                              | \-               |
++----------------------+---------+------------------------------------------------------------------------------------------+------------------+
+| Coeff P              | \-      | Multiplying correction coefficient                                                       | 0.5 to 2         |
++----------------------+---------+------------------------------------------------------------------------------------------+------------------+
+| Coeff T              | °C      | Adding correction coefficient                                                            | -2 to 2          |
++----------------------+---------+------------------------------------------------------------------------------------------+------------------+
+| Coeff ETP            | \-      | Multiplying correction coefficient                                                       | 0.5 to 2         |
++----------------------+---------+------------------------------------------------------------------------------------------+------------------+
+
+: List of parameters and initial conditions for the **virtual station** {#tbl-param_virtual_station}
+
+[^hydro_mod_1]: The precipitation and evapotranspiration gradients are function of the local conditions. Their regular ranges have to be estimated for each studied case.
+
+The method chosen for the spatial distribution of the precipitation, the temperature and the ETP corresponds to the Thiessen and Shepard methods. The first method, Thiessen, 
+searches the nearest meteorological station for each meteorological variable. The second one, Shepard, searches i stations being in a search radius and calculates the meteorological 
+variable depending on inverse distance weighting.
+
+### Thiessen interpolation
+
+The evaluation of a variable in a virtual station s from $n$ meteorological stations is obtained by searching the nearest meteorological station $k$ of the database to the virtual 
+point $s$ (normally referring to the gravity centre of a sub-catchment).
+
+This method has been extended to take into account the evolution of certain meteorological variables as a function of the altitude. Thus, gradients and coefficients for precipitation, 
+potential evapotranspiration or temperature is also included in the method for obtaining the final value at virtual station $s$, as presented in @eq-A1 to @eq-A3.
+
+$$
+P_s=CoeffP_s \cdot \big( 1 + GradP_s \cdot (z_s-z_k) \big) \cdot P_k
+$$ {#eq-A1}
+
+$$
+T_s=CoeffT_s + GradT_s \cdot(z_s-z_k) + T_k
+$$ {#eq-A2}
+
+$$
+ETP_s=CoeffETP_s \cdot\big( 1 + GradETP_s \cdot(z_s-z_k) \big) \cdot ETP_k
+$$ {#eq-A3}
+
+with $P_s$: value of the precipitation in the virtual station $s$ \[I.U.\]; $T_s$: value of the temperature in the virtual station $s$ \[I.U.\]; $ETP_s$: value of the potential 
+evapotranspiration in the virtual station $s$ \[I.U.\]; $P_k$: value of the precipitation in the meteorological station $k$ \[I.U.\]; $T_k$: value of the temperature in the meteorological 
+station $k_i$ \[I.U.\]; $ETP_k$: value of the potential evapotranspiration in the meteorological station $k$ \[I.U.\]; $CoeffP_s$: precipitation coefficient \[-\]; $CoeffT_s$: temperature 
+coefficient \[°C\]; $CoeffETP_s$: potential evapotranspiration coefficient \[-\];$GradP_s$: precipitation gradient ($\mathrm{d}P_s/\mathrm{d}z$) \[1/m\]; $GradT_s$: temperature gradient 
+($\mathrm{d}T_s/\mathrm{d}z$) \[°C/m\]; $GradETP_s$: potential evapotranspiration gradient ($\mathrm{d}ETP_s/\mathrm{d}z$) \[1/m\]; $z_s$: altitude of the virtual station $s$ \[m a.s.l.\]; 
+$z_k$: position of the meteorological station $k$ of the database \[m a.s.l.\].
+
+In that case, the parameters $Search Radius$ and $No. min. of stations$ are not used, since only the nearest meteorological station is used.
+
+### Shepard interpolation
+
+The evaluation of a variable in a virtual station $s$ from $n$ meteorological stations localized at $i=1,2,...,n$ is obtained by weighting according to the inverse square distance $d_{i,s}$ 
+between the meteorological station $i$ of the database and the virtual station $s$.
+
+$$
+d_{i,s}=\sqrt{(x_i-x_s)^2+(y_i-y_s)^2}
+$$ {#eq-A4}
+
+with $x_i$, $y_i$: position of the meteorological station $i$ of the database \[m\]; $x_s$, $y_s$: position of the virtual station s \[m\]; $d_{i,s}$: distance between the meteorological 
+station $i$ and the virtual station $s$ \[m\].
+
+The $n$ meteorological stations for the spatial interpolation in the virtual station $s$ are determined automatically respecting @eq-A5. Hence, the number $n$ of meteorological stations 
+is variable for every pair ($s$, $r_s$). Nevertheless, a minimal number of stations used for interpolation can be fixed by the user with the corresponding parameter.
+
+$$
+d_{i,s} \leq r_s
+$$ {#eq-A5}
+
+with $r_s$: search radius of meteorological stations \[m\].
+
+The Shepard method [@shepard_two-dimensional_1968] has been also extended to take into account the evolution of the meteorological variables as a function of the altitude. Gradients and coefficients for precipitation, 
+potential evapotranspiration or temperature are also included in the method for obtaining the final value at virtual station $s$, as presented in @eq-A6 to @eq-A8.
+
+$$
+P_S=CoeffP_S \cdot \Bigg(\frac{\sum_{i=1}^{n} \Big[ \big( 1 + GradP_s \cdot (z_s-z_i) \big) \cdot P_i \cdot {\frac {1}{d_{i,s}^2}} \Big]}{\sum_{i=1}^{n} \frac{1}{{d_{i,s}}^2}} \Bigg)
+$$ {#eq-A6}
+
+$$
+T_S=CoeffT_S + \Bigg(\frac{\sum_{i=1}^{n} \Big[\big(GradT_s \cdot (z_s-z_i) + T_i\big) \cdot {\frac {1}{d_{i,s}^2}} \Big]}{\sum_{i=1}^{n} \frac{1}{{d_{i,s}}^2}} \Bigg)
+$$ {#eq-A7}
+
+$$
+ETP_S=CoeffETP_S \cdot \Bigg(\frac{\sum_{i=1}^{n} \Big[\big( 1 + GradETP_s \cdot (z_s-z_i) \big) \cdot ETP_i \cdot {\frac {1}{d_{i,s}^2}} \Big]}{\sum_{i=1}^{n} \frac{1}{{d_{i,s}}^2}} \Bigg)
+$$ {#eq-A8}
+
+with $P_s$: value of the precipitation in the virtual station $s$ \[I.U.\]; $T_s$: value of the temperature in the virtual station $s$ \[I.U.\]; $ETP_s$: value of the potential evapotranspiration 
+in the virtual station $s$ \[I.U.\]; $P_i$: value of the precipitation in the meteorological station $i$ \[I.U.\]; $T_i$: value of the temperature in the meteorological station $i$ \[I.U.\]; 
+$ETP_i$: value of the potential evapotranspiration in the meteorological station $i$ \[I.U.\]; $CoeffP_s$: precipitation coefficient \[-\]; $CoeffT_s$: temperature coefficient \[°C\]; $CoeffETP_s$: 
+potential evapotranspiration coefficient \[-\]; $GradP_s$: precipitation gradient ($\mathrm{d}P_s/\mathrm{d}z$) \[1/m\]; $GradT_s$: temperature gradient ($\mathrm{d}T_s/\mathrm{d}z$) \[°C/m\]; 
+$GradETP_s$: potential evapotranspiration gradient ($\mathrm{d}ETP_s/\mathrm{d}z$) \[1/m\]; $z_s$: altitude of the virtual station $s$ \[m a.s.l.\]; $z_i$: position of the meteorological station 
+$i$ of the database \[m a.s.l.\].
+
+### Complementary calculations for the Potential Evapotranspiration (ETP)
+
+If no ETP values are available in the database, RS MINERVE offers also the possibility of calculating the ETP from different methods directly at virtual station. These methods can be selected 
+in the RS MINERVE Settings, on the Evapotranspiration frame (@fig-selection_ETP).
+
+![Selection of the ETP calculation](figures/fig-selection_ETP.png){#fig-selection_ETP}
+
+The available methods are presented hereafter in detail.
+
+**a. Turc**
+
+The potential evapotranspiration proposed by Turc [-@turc_bilan_1955; -@turc_evaluation_1961] is presented in @eq-A9:
+
+$$
+ETP =
+  \begin{cases}
+    CoeffETP \cdot K \cdot TT + 15 \cdot (R_g+50)       & \quad \text{if } T>0\\
+    0                                                   & \quad \text{if } T \leq 0
+  \end{cases}
+$$ {#eq-A9}
+
+with $ETP$: potential evapotranspiration \[mm/month\]; $T$: air temperature \[°C\]; $R_g$: global radiation \[cal/cm^2^/day\]; $K$: constant \[-\].
+
+The constant $K$ value is:
+
+$$
+K =
+  \begin{cases}
+    0.4   & \quad \text{if Month } \neq \text{February}\\
+    0.37  & \quad \text{if Month = February}
+  \end{cases}
+$$ {#eq-A10}
+
+$R_g$ value is a location dependent (latitude and longitude) monthly average of the global radiation.
+
+The global radiation $R_g$ is obtained in \[kWh/m^2^/day\] from the *Global horizontal radiation* dataset provided by the Surface meteorological and Solar Energy (SSE) web portal, sponsored by 
+the NASA's Applied Science Program (<http://eosweb.larc.nasa.gov/sse>). This data comes as a grid (latitude and longitude) and is composed of monthly averaged values.
+
+$R_g$ data takes into account 22 year monthly average (July 1983 - June 2005). The latitude and the longitude values indicate the lower left corner of a 1x1 degree region. Negative values are 
+south and west; positive values are north and east. Boundaries of the -90/-180 region are -90 to -89 (south) and -180 to -179 (west). The last region, 89/180, is bounded by 89 to 90 (north) and 
+179 to 180 (east). The mid-point of the region is +0.5 added to the latitude/longitude value. These data are regional averages, not point data.
+
+If the user introduces decimals to the latitude/longitude values, the RS MINERVE program calculates the nearest integer value for $R_g$ calculations.
+
+**b. McGuinness**
+
+@mcguinness_comparison_1972 proposes next ETP calculation:
+
+$$
+ETP =
+  \begin{cases}
+    CoeffETP \cdot K \cdot \frac{R_g}{\lambda + \rho} \cdot \frac {T_a + 5}{68}       & \quad \text{if } T>-5\\
+    0  & \quad \text{if } T \leq -5
+  \end{cases}
+$$ {#eq-A11}
+
+with $ETP$: potential evapotranspiration \[m/d\]; $R_g$: global radiation \[MJ/m^2^/day\]; $T_a$: air temperature \[°C\]; $\rho$: water density, constant value of 1'000 \[kg/m\^3^\] ; $\lambda$: 
+latent heat of vaporization, constant value of 2.26 \[MJ/kg\].
+
+$R_g$ value is a location dependent (latitude and longitude) monthly average of the global radiation.
+
+The global radiation $R_g$ is obtained in \[kWh/m^2^/day\] from the *Global horizontal radiation* dataset provided by the Surface meteorological and Solar Energy (SSE) web portal, sponsored by 
+the NASA's Applied Science Program (<http://eosweb.larc.nasa.gov/sse>). This data comes as a grid (latitude and longitude) and is composed of monthly averaged values.
+
+$R_g$ data takes into account 22 year monthly average (July 1983 - June 2005). The latitude and the longitude values indicate the lower left corner of a 1x1 degree region. Negative values are 
+south and west; positive values are north and east. Boundaries of the -90/-180 region are -90 to -89 (south) and -180 to -179 (west). The last region, 89/180, is bounded by 89 to 90 (north) and 
+179 to 180 (east). The mid-point of the region is +0.5 added to the latitude/longitude value. These data are regional averages; not point data.
+
+If the user introduces decimals to the latitude/longitude values, the RS MINERVE program calculates the nearest integer value for $R_g$ calculations.
+
+**c. Oudin**
+
+@oudin_recherche_2004 proposes following equation for the calculation of ETP:
+
+$$
+ETP =
+  \begin{cases}
+    CoeffETP \cdot K \cdot \frac{R_e}{\lambda \cdot \rho} \cdot \frac {T + 5}{100}       & \quad \text{if } T>-5\\
+    0  & \quad \text{if } T \leq -5
+  \end{cases}
+$$ {#eq-A12}
+
+with $ETP$: potential evapotranspiration \[m/d\]; $R_e$: extra-terrestrial radiation \[MJ m^-2^ d^-1^\]; $T$: Air temperature \[°C\]; $\rho$: water density, constant value of 1'000 \[kg/m^{3}\]; 
+$\lambda$: latent heat of vaporization, constant value of 2.26 \[MJ/kg\].
+
+Oudin method coefficients (5 and 100) were optimized for the hydrological modelling, on the basis of a study realized on many worldwide watersheds [@oudin_recherche_2004].
+
+Latitude are only necessary for obtaining $R_e$ values.
+
+The extra-terrestrial radiation $R_e$ is calculated as follows:
+
+$$
+R_e=37.6 \cdot dr \cdot \big( \omega \cdot \sin(\psi) \cdot \sin(\delta) + \sin(\omega) \cdot \cos(\psi) \cdot \cos(\delta)\big)
+$$ {#eq-A13}
+
+$$
+dr=1 + 0.033 \cdot \cos \Big(\frac {2 \cdot \Pi \cdot J_d}{365} \Big)
+$$ {#eq-A14}
+
+$$
+\omega=\arccos (-\tan(\psi) \cdot \tan(\delta))
+$$ {#eq-A15}
+
+$$
+\delta=0.409 \cdot \sin \Big( \frac{2 \cdot \Pi \cdot J_d}{365} - 1.39\Big)
+$$ {#eq-A16}
+
+$$
+J_d =
+  \begin{cases}
+    275 \cdot \frac{month}{9} - 30 + Dm       & \quad \text{if month} <3\\
+    275 \cdot \frac{month}{9} - 31 + Dm       & \quad \text{if month} \geq 3 \text{ and leap year = true}\\
+    275 \cdot \frac{month}{9} - 32 + Dm       & \quad \text{if month} \geq 3 \text{ and leap year = false}
+  \end{cases}
+$$ {#eq-A17}
+
+with $dr$: relative distance Sun-Earth \[-\]; $\delta$: solar declination \[rad\]; $J_d$: Julian day \[-\]; $\psi$: latitude, negative in the south hemisphere \[rad\]; $\omega$: hour angle of the 
+sun \[rad\]; $month$: month of the year, 1 to 12 \[-\]; $Dm$:day of the month \[-\].
+
+**d. Uniform ETP**
+
+The user can also set a uniform ETP for the whole simulation period and for the entire basin.
+
+$$
+ETP=CoeffETP \cdot X
+$$ {#eq-A18}
+
+with $X$: uniform ETP \[mm/d\]
+
+## Snow-SD model description {#sec-model_snow}
+
+The Snow-SD (Snow model with a Seasonal Degree-day factor) model (@fig-model_snow), inspired by @schaefli_conceptual_2005 and @hamdi_modeprevision_2005, is composed of two sub-models. They 
+simulate the transient evolution of the snow pack (accumulation and melt) as a function of the temperature ($T$) and precipitation ($P$) and produce an equivalent precipitation ($P_{eq}$) which 
+can be used as an input variable for the SAC-SMA or GR4J model.
+
+![Snow-SD model](figures/fig-model_snow.png){#fig-model_snow}
+
++----------+-----------+-------------------------------------------------------+-------------------+
+| Name     | Units     | Decription                                            | Regular range     |
++==========+===========+=======================================================+===================+
+| S        | mm/°C/d   | Reference degree-day snowmelt coefficient             | 0.5 to 20         |
++----------+-----------+-------------------------------------------------------+-------------------+
+| SInt     | mm/°C/d   | Degree-day snowmelt interval                          | 0 to 4            |
++----------+-----------+-------------------------------------------------------+-------------------+
+| SMin     | mm/°C/d   | Minimal degree-day snowmelt coefficient               | $\geq$ 0          |
++----------+-----------+-------------------------------------------------------+-------------------+
+| SPh      | d         | Phase shift of the sinusoidal function                | 1 to 365          |
++----------+-----------+-------------------------------------------------------+-------------------+
+| ThetaCri | \-        | Critical relative water content of the snow pack      | 0.1               |
++----------+-----------+-------------------------------------------------------+-------------------+
+| bp       | d/mm      | Melt coefficient due to liquid precipitation          | 0.0125            |
++----------+-----------+-------------------------------------------------------+-------------------+
+| Tcp1     | °C        | Minimum critical temperature for liquid precipitation | 0                 |
++----------+-----------+-------------------------------------------------------+-------------------+
+| Tcp2     | °C        | Maximum critical temperature for solid precipitation  | 4                 |
++----------+-----------+-------------------------------------------------------+-------------------+
+| Tcf      | °C        | Critical snowmelt temperature                         | 0                 |
++----------+-----------+-------------------------------------------------------+-------------------+
+| CFR      | \-        | Refreezing coefficient                                | 0 to 1            |
++----------+-----------+-------------------------------------------------------+-------------------+
+| SWEIni   | m         | Initial snow water equivalent height                  | \-                |
++----------+-----------+-------------------------------------------------------+-------------------+
+| ThetaIni | \-        | Initial relative water content in the snow pack       | \-                |
++----------+-----------+-------------------------------------------------------+-------------------+
+
+: List of parameters and initial conditions for the **Snow-SD model** {#tbl-param_model_snow}
+
+In a first step, precipitation is separated into solid ($P_{sn}$) and liquid precipitation ($P_w$) as a function of the temperature (@eq-B1 to @eq-B3):
+
+$$
+P_w = \alpha \cdot P
+$$ {#eq-B1}
+
+$$
+P_{sn} = (1 - \alpha) \cdot P
+$$ {#eq-B2}
+
+$$
+\alpha =
+  \begin{cases}
+    0                                     & \quad \text{if } T \leq T_{cp1}\\
+    (T - T_{cp1})/(T_{cp2} - T_{cp1})     & \quad \text{if } T_{cp1} < T < T_{cp2}\\
+    1                                     & \quad \text{if } T \geq T_{cp2}
+  \end{cases}
+$$ {#eq-B3}
+
+with $P_w$: liquid precipitation \[L/T\]; $\alpha$: separation factor; $P$: precipitation \[L/T\]; $P_{sn}$: solid precipitation \[L/T\]; $T$: temperature \[°C\]; $T_{cp1}$: minimum critical 
+temperature for liquid precipitation \[°C\]; $T_{cp2}$: maximum critical temperature for solid precipitation \[°C\].
+
+If the observed temperature is lower than $T_{cp1}$, only solid precipitation is generated. If the temperature is higher than $T_{cp2}$, only liquid precipitation ($P_w$) is present. If the observed 
+temperature is between these two critical values, both phases (liquid and solid) are produced. Solid precipitation ($P_{sn}$) is used as input for the snow pack, varying its content as a function of 
+melt or freezing. The snowmelt calculation is performed as follows, using a time-varying degree-day snowmelt coefficient with a lower bound as presented in @fig-model_snow_degreeday 
+[@griessinger_assessing_2016; @magnusson_assimilation_2014; @slater_snow_2006]:
+
+$$
+S' = max \Big( S_{Min}\ ;\ S + \ \frac{S_{Int}}{2} \cdot \sin \big( 2\pi \cdot \frac{n - S_{Ph}}{365} \big) \Big)
+$$ {#eq-B4}
+
+$$
+M_{sn} =
+  \begin{cases}
+    S' \cdot (1 + b_p \cdot P_w) \cdot (T - T_{cf})     & \quad \text{if } T > T_{cf}\\
+    S' \cdot CFR \cdot (T - T_{cf})        & \quad \text{if } T \leq T_{cf}
+  \end{cases}
+$$ {#eq-B5}
+
+$$
+\mathrm{d}H_{snow}/\mathrm{d}t = P_{sn} - M_{sn}, \quad M_{sn} \leq P_{sn} + H_{snow}/\mathrm{d}t, \quad M_{sn} \geq - W_{snow}/\mathrm{d}t
+$$ {#eq-B6}
+
+with $S'$ ($S$ Series in RS MINERVE): time-varying degree-day snowmelt coefficient \[L/T/°C\]; $S$: reference degree-day snowmelt coefficient \[L/T/°C\]; $S_{Int}$: degree-day snowmelt coefficient 
+interval \[L/T/°C\]; $n$: day of the year \[T\]; $S_{Min}$: Minimal degree-day snowmelt coefficient \[L/T/°C\]; $S_{Ph}$: Phase shift of the sinusoidal function \[T\]; $M_{sn}$: snowmelt or freezing 
+\[L/T\]; $b_p$: melt coefficient due to liquid precipitation \[T/L\]; $T_{cf}$: critical snowmelt temperature \[°C\]; $CFR$: refreezing coefficient \[-\]; $H_{snow}$: water content of the solid 
+fraction of snow \[L\]; $dt$: time step \[T\]; $W_{snow}$: water content of the liquid fraction of snow \[L\].
+
+![Time-varying degree-day snowmelt coefficient](figures/fig-model_snow_degreeday.png){#fig-model_snow_degreeday}
+
+$S_{Min}$ allows to fix a lower limit to the $S'$ value. The $S_{Ph}$ parameter defines the (horizontal) phase shift of the sinusoidal curve with respect to the first day of the year.
+
+The equivalent precipitation ($P_{eq}$) depends on the water content of the snow (@eq-B7 to @eq-B9):
+
+$$
+\theta = \frac{W_{snow}}{H_{snow}}
+$$ {#eq-B7}
+
+$$
+P_{eq} =
+  \begin{cases}
+    P_w + W_{snow}/\mathrm{d}t                            & \quad \text{if } H_{snow} = 0\\
+    0                                            & \quad \text{if } H_{snow} > 0 \text{ and } \theta \leq \theta_{cr}\\
+    (\theta - \theta_{cr}) \cdot H_{snow}/\mathrm{d}t     & \quad \text{if } H_{snow} > 0 \text{ and } \theta > \theta_{cr}
+  \end{cases}
+$$ {#eq-B8}
+
+$$
+\mathrm{d}W_{snow}/\mathrm{d}t = P_w + M_{sn} - P_{eq}
+$$ {#eq-B9}
+
+with $\theta$ ($Theta$ in RS MINERVE): relative water content in the snow pack \[-\]; $\theta_{cr}$ ($ThetaCri$ in RS MINERVE): critical relative water content in the snow pack \[-\]; $P_{eq}$: 
+equivalent precipitation \[L/T\].
+
+The snow water equivalent is then the addition of $H_{snow}$ and $W_{snow}$ (@eq-B10):
+
+$$
+SWE = H_{snow} + W_{snow}
+$$ {#eq-B10}
+
+with $SWE$: snow water equivalent \[L\].
+
+The variables for the initial situation associated to this model are \theta ($Theta$ in RS MINERVE) and $SWE$. The parameters to adjust are $S$, $S_{Int}$ and $CFR$. The parameters $S_{Phi}$, $b_p$, 
+$\theta_{cr}$, $T_{cp1}$, $T_{cp2}$ and $T_{cf}$ can be assumed as constant ($b_p = 0.0125$, $\theta_{cr} = 0.1$, $T_{cp1} = 0 °C$, $T_{cp2} = 4 °C$, $T_{cf} = 0 °C$, $S_{Phi} = 80$ (corresponding to March 
+21^st^ for the Northern hemisphere; use 264 for Southern hemisphere corresponding to September 21)) but can be also be calibrated for some cases.
+
+The refreezing coefficient $CFR$ is similar to the one found for example in HBV (see @sec-model_hbv) and is available for the Snow-SD model in RS MINERVE program from the version 2.8.0. By default, 
+$CFR$ is set to 1, recommended values from the literature are around 0.05.
+
+The input variables of the model are precipitation ($P$) and temperature ($T$), the output value is the equivalent precipitation ($P_{eq}$).
+
+## Runoff (SWMM) model description {#sec-model_swmm}
+
+The SWMM (Storm Water Management Model) model presented hereafter was developed by @metcalf__eddy_storm_1971.
+
+![SWMM Runoff model](figures/fig-model_swmm.png){#fig-model_swmm}
+
++----------+-----------+-----------------------------------------------+-------------------+
+| Name     | Units     | Description                                   | Regular Range     |
++==========+===========+===============================================+===================+
+| A        | m^2^      | Surface of runoff                             | \>0               |
++----------+-----------+-----------------------------------------------+-------------------+
+| L        | m         | Length of the plane                           | \>0               |
++----------+-----------+-----------------------------------------------+-------------------+
+| J0       | \-        | Runoff slope                                  | \>0               |
++----------+-----------+-----------------------------------------------+-------------------+
+| K        | m^1/3^/s  | Strickler coefficient                         | 0.1 to 90         |
++----------+-----------+-----------------------------------------------+-------------------+
+| HIni     | m         | Initial water level downstream of the surface | \-                |
++----------+-----------+-----------------------------------------------+-------------------+
+
+: List of parameters and initial conditions for the **SWMM model** {#tbl-param_model_swmm}
+
+The transfer of the net intensity to an impermeable surface is carried out by the help of a non-linear transfer reservoir (@fig-model_swmm) depending on the @eq-C1 to @eq-C3:
+
+$$
+\mathrm{d}H/\mathrm{d}t = 2 \cdot (i_{Net} - i_{r}), \quad H_{r} \geq 0
+$$ {#eq-C1}
+
+$$
+i_{r} = K \cdot \sqrt{J_{o}} \cdot H^{5/3} \cdot \frac{1}{L}
+$$ {#eq-C2}
+
+
+$$
+Q = i_{r} \cdot A
+$$ {#eq-C3}
+
+with $H$: runoff water level downstream of the surface \[L\]; $i_{Net}$: net intensity \[L/T\]; $i_r$: runoff intensity \[L/T\]; $K$: Strickler coefficient \[L^1/3^/T\]; $J_o$: average slope of 
+the plane \[-\]; $L$: length of the plane \[L\]; $A$: run-off surface \[L^2^\].
+
+The variable for the initial condition associated to the model is $H_r$. The parameter to adjust is $K$. The other parameters ($J_o$, $L$, $A$) are supposed to be constant.
+
+The SWMM model, supplied by a hyetograph of net rainfall ($i_{Net}$), provides a hydrograph downstream of the surface ($Q$).
+
+## GSM model description {#sec-model_gsm}
+
+The GSM model (@fig-model_gsm) is composed of 5 sub-models, two corresponding to the Snow-SD model and the other three corresponding to the glacier model. The present model 
+allows an easy construction of this kind of composition.
+
+From the inputs of precipitation ($P$) and temperature ($T$), the snow model creates an equivalent precipitation ($P_{eq}$) which is transferred to the glacier model. The same 
+accounts for the height of the snow ($SWE$) and the temperature ($T$).
+
+In the glacier model the equivalent precipitation is transferred to the linear snow reservoir ($R_{sn}$) and finally to the outlet of the sub-catchment ($Q_{snow}$). Besides, 
+the sub-model of the glacier melt creates a flow when the height of snow is zero ($SWE=0$). This glacier flow ($P_{eqGL}$) is transferred to the linear glacier reservoir 
+($R_{gl}$) and the resulting flow ($Q_{glacier}$) to the outlet of the sub-catchment.
+
+The final flow ($Q_{tot}$) produced by the sub-catchment is the addition of the two flows ($Q_{glacier}$ and $Q_{snow}$).
+
+![GSM model](figures/fig-model_gsm.png){#fig-model_gsm}
+
++-------------+-----------+-------------------------------------------------------+-------------------+
+| Name        | Units     | Description                                           | Regular Range     |
++=============+===========+=======================================================+===================+
+| A           | m^2^      | Surface of infiltration                               | \>0               |
++-------------+-----------+-------------------------------------------------------+-------------------+
+| S           | mm/°C/d   | Reference degree-day snowmelt coefficient             | 0.5 to 20         |
++-------------+-----------+-------------------------------------------------------+-------------------+
+| SInt        | mm/°C/d   | Degree-day snowmelt interval                          | 0 to 4            |
++-------------+-----------+-------------------------------------------------------+-------------------+
+| SMin        | mm/°C/d   | Minimal degree-day snowmelt coefficient               | $\geq$ 0          |
++-------------+-----------+-------------------------------------------------------+-------------------+
+| Sph         | d         | Phase shift of the sinusoidal function                | 1 to 365          |
++-------------+-----------+-------------------------------------------------------+-------------------+
+| ThetaCri    | \-        | Critical relative water content of the snow pack      | 0.1               |
++-------------+-----------+-------------------------------------------------------+-------------------+
+| bp          | d/mm      | Melt coefficient due to liquid precipitation          | 0.0125            |
++-------------+-----------+-------------------------------------------------------+-------------------+
+| Tcp1        | °C        | Minimum critical temperature for liquid precipitation | 0                 |
++-------------+-----------+-------------------------------------------------------+-------------------+
+| Tcp2        | °C        | Maximum critical temperature for solid precipitation  | 4                 |
++-------------+-----------+-------------------------------------------------------+-------------------+
+| Tcf         | °C        | Critical snowmelt temperature                         | 0                 |
++-------------+-----------+-------------------------------------------------------+-------------------+
+| G           | mm/°C/d   | Reference degree-day glacier melt coefficient         | 0.5 to 20         |
++-------------+-----------+-------------------------------------------------------+-------------------+
+| GInt        | mm/°C/d   | Degree-day glacier melt interval                      | 0 to 4            |
++-------------+-----------+-------------------------------------------------------+-------------------+
+| GMin        | mm/°C/d   | Minimal degree-day glacier melt coefficient           | $\geq$ 0          |
++-------------+-----------+-------------------------------------------------------+-------------------+
+| Tcg         | °C        | Critical glacier melt temperature                     | 0                 |
++-------------+-----------+-------------------------------------------------------+-------------------+
+| Kgl         | 1/d       | Release coefficient of glacier melt reservoir         | 0.1 to 5          |
++-------------+-----------+-------------------------------------------------------+-------------------+
+| Ksn         | 1/d       | Release coefficient of snowmelt reservoir             | 0.1 to 5          |
++-------------+-----------+-------------------------------------------------------+-------------------+
+| CFR         | \-        | Refreezing coefficient                                | 0 to 1            |
++-------------+-----------+-------------------------------------------------------+-------------------+
+| SWEIni      | m         | Initial snow water equivalent height                  | \-                |
++-------------+-----------+-------------------------------------------------------+-------------------+
+| ThetaIni    | \-        | Initial relative water content in the snow pack       | \-                |
++-------------+-----------+-------------------------------------------------------+-------------------+
+| QsnowIni    | m^3^/s    | Initial outflow of linear snow reservoir              | \-                |
++-------------+-----------+-------------------------------------------------------+-------------------+
+| QglacierIni | m^3^/s    | Initial outflow of linear glacier reservoir           | \-                |
++-------------+-----------+-------------------------------------------------------+-------------------+
+
+: List of parameters and initial conditions for the **GSM model** {#tbl-param_model_gsm}
+
+In a first step, the precipitation is divided into a solid precipitation ($P_{sn}$) and into a liquid precipitation ($P_w$) as a function of the temperature (@eq-D1 to @eq-D3):
+
+$$
+P_{w} = \alpha \cdot P
+$$ {#eq-D1}
+
+$$
+P_{sn} = (1 - \alpha) \cdot P
+$$ {#eq-D2}
+
+$$
+\alpha =
+  \begin{cases}
+    0                                     & \quad \text{if } T \leq T_{cp1}\\
+    (T - T_{cp1})/(T_{cp2} - T_{cp1})     & \quad \text{if } T_{cp1} < T < T_{cp2}\\
+    1                                     & \quad \text{if } T \geq T_{cp2}
+  \end{cases}
+$$ {#eq-D3}
+
+with $P_w$: liquid precipitation \[L/T\]; $\alpha$: separation factor; $P$: precipitation \[L/T\]; $P_{sn}$: solid precipitation \[L/T\]; $T$: temperature \[°C\]; $T_{cp1}$: 
+minimum critical temperature for liquid precipitation \[°C\]; $T_{cp2}$: maximum critical temperature for solid precipitation \[°C\].
+
+If the observed temperature is lower than $T_{cp1}$ only solid precipitation is produced. If the temperature is higher than $T_{cp2}$ only liquid precipitation ($P_w$) is 
+produced. If the temperature observed is found between these two critical values liquid and solid precipitation are produced. The solid precipitation ($P_{sn}$) is used as 
+input for the snow pack, varying its content as a function of melt or freezing. The snowmelt calculation is performed as follows, using a time-varying degree-day snowmelt 
+coefficient (@fig-model_snow_degreeday) [@magnusson_assimilation_2014; @slater_snow_2006].
+
+$$
+S^{'} = max \bigg( S_{Min}\ ;\ S + \frac{S_{Int}}{2} \cdot \sin \Big( 2 \pi \cdot \frac{n - S_{Ph}}{365} \Big) \bigg)\ 
+$$ {#eq-D4}
+
+$$
+M_{sn} =
+  \begin{cases}
+    S' \cdot (1 + b_p \cdot P_w) \cdot (T - T_{cf})    & \quad \text{if } T > T_{cf} \\
+    S' \cdot CFR \cdot (T - T_{cf})                    & \quad \text{if } T \leq T_{cf}
+  \end{cases}
+$$ {#eq-D5}
+
+$$
+\mathrm{d}H_{snow}/\mathrm{d}t = P_{sn} - M_{sn} , \quad M_{sn} \leq P_{sn} + H_{snow}/\mathrm{d}t , \quad M_{sn} \geq - W_{snow}/\mathrm{d}t
+$$ {#eq-D6}
+
+with $S'$ ($S$ series in RS MINERVE): time-varying degree-day snowmelt coefficient \[L/T/°C\]; $S$: reference degree-day snowmelt coefficient \[L/T/°C\]; 
+$S_{Int}$: degree-day snowmelt coefficient interval \[L/T/°C\]; $n$: day of the year \[T\]; $S_{Min}$: Minimal degree-day snowmelt coefficient \[L/T/°C\]; 
+$S_{Ph}$: Phase shift of the sinusoidal function \[T\]; $M_{sn}$: snowmelt or freezing \[L/T\]; $b_p$: melt coefficient due to liquid precipitation \[T/L\]; 
+$T_{cf}$: critical snowmelt temperature \[°C\]; $CFR$: refreezing coefficient \[-\]; $H_{snow}$: water content of the solid fraction of snow \[L\]; dt: time 
+step \[T\]; $W_{snow}$: water content of the liquid fraction of snow \[L\].
+
+The $S_{Ph}$ parameter defines the phase shift of the sinusoidal curve with respect to the first day of the year.
+
+The equivalent precipitation ($P_{eq}$) is produced by the water content of the snow (@eq-D7 to @eq-D9):
+
+$$
+\theta = \frac{W_{snow}}{H_{snow}}
+$$ {#eq-D7}       
+
+$$
+P_{eq} =
+  \begin{cases}
+    P_{w} + W_{snow}/\mathrm{d}t                          & \quad \text{if } H_{snow} = 0 \\
+    0                                                     & \quad \text{if } H_{snow} > 0 \text{ and } \theta \leq \theta_{cr} \\
+    (\theta - \theta_{cr}) \cdot H_{snow}/\mathrm{d}t     & \quad \text{if } H_{snow} > 0 \text{ and } \theta > \theta_{cr}
+  \end{cases}
+$$ {#eq-D8}
+
+$$
+\mathrm{d}W_{snow}/\mathrm{d}t = P_w + M_{sn} - P_{eq}
+$$ {#eq-D9}
+
+with $\theta$ ($Theta$ in RS MINERVE): relative water content in the snow pack \[-\]; $\theta_{cr}$ ($ThetaCri$ in RS MINERVE): critical relative water content in 
+the snow pack \[-\]; $P_{eq}$: equivalent precipitation \[L/T\].
+
+The equivalent precipitation $P_{eq}$ is then transferred to the linear snow reservoir ($R_{sn}$), generating an outflow according to @eq-D10 and @eq-D11.
+
+$$
+\mathrm{d}H_{Rsn}/\mathrm{d}t = P_{eq} - K_{sn} \cdot H_{Rsn}
+$$ {#eq-D10}
+
+$$
+Q_{snow} = K_{sn} \cdot H_{Rsn} \cdot A
+$$ {#eq-D11}
+
+with $P_{eq}$: equivalent precipitation \[L/T\]; $H_{Rsn}$: level in linear snow reservoir \[L\]; $K_{sn}$: release coefficient of linear snow reservoir \[1/T\]; 
+$Q_{snow}$: outflow of linear snow reservoir \[L^3^/T\]; $A$: glacier surface \[L^2^\].
+
+The snow water equivalent is then the addition of $H_{snow}$ and $W_{snow}$ (@eq-D12):
+
+$$
+SWE = H_{snow} + W_{snow}
+$$ {#eq-D12}
+
+with $SWE$: snow water equivalent \[L\].
+
+The glacier melt sub-model only provides a discharge when the snow level is zero ($H_{snow} = 0$). The water intensity produced by the glacier melt ($P_{eqGL}$) is 
+transferred to the linear glacier reservoir ($R_{gl}$) and the resulting discharge ($Q_{glacier}$) at the outlet of the sub-catchment.
+
+The glacier melt $Q_{glacier}$ is defined according to @eq-D13 to @eq-D16:
+
+$$
+G' = max \bigg( G_{Min}\ ;\ G + \frac{G_{Int}}{2} \cdot \sin \Big( 2\pi \cdot \frac{n - S_{Ph}}{365} \Big) \bigg)
+$$ {#eq-D13}
+
+$$
+P_{eqGL} =
+  \begin{cases}
+    0                          & \quad \text{if } T \leq T_{cg} \text{ or }  H_{snow} > 0 \\
+    G \cdot (T - T_{cr})       & \quad \text{if } T > T_{cg}    \text{ and } H_{snow} = 0
+  \end{cases}
+$$ {#eq-D14}
+
+$$
+\mathrm{d}H_{Rgl}/\mathrm{d}t = P_{eqGL} - K_{gl} \cdot H_{Rgl}
+$$ {#eq-D15}
+
+$$
+Q_{glacier} = K_{gl} \cdot H_{Rgl} \cdot A
+$$ {#eq-D16}
+
+with $P_{eqGL}$: glacier melt \[L/T\]; \]; $T_{cg}$: critical glacier melt temperature \[°C\]; $G$: degree-day glacier melt coefficient \[L/T/°C\]; $G_{Min}$: Minimal 
+degree-day glacier melt coefficient \[L/T/°C\]; $H_{Rgl}$:level of glacier melt reservoir \[L\]; $K_{gl}$: coefficient of linear glacier reservoir \[1/T\]; $Q_{glacier}$: 
+outflow of linear glacier reservoir \[L^3^/T\].
+
+And the total discharge is the addition of $Q_{glacier}$ and $Q_{snow}$:
+
+$$
+Q = Q_{snow} + Q_{glacier}
+$$ {#eq-D17}
+
+with $Q$: total outflow \[L^3^/T\];
+
+The variables for the initial situation associated to this model are \theta ($Theta$ in RS MINERVE), $SWE$, $H_{Rsn}$, and $H_{Rgl}$.
+
+The parameters to adjust are $S$, $S_{Int}$, $CFR$, $\theta_{cr}$, $G$, $G_{Int}$, $K_{gl}$ and $K_{sn}$. The parameters $S_{Ph}$, $b_p$, $\theta_{cr}$, $T_{cp1}$, $T_{cp2}$, 
+$T_{cf}$ and $T_{cg}$ can be assumed as constant ($b_p = 0.0125$, $\theta_{cr} = 0.1$, $T_{cp1} = 0 °C$, $T_{cp2} = 4 °C$, $T_{cf} = 0 °C$, $T_{cg} = 0 °C$, $S_{Ph} = 80$ 
+(corresponding to March 21^st^ for the Northern hemisphere; use 264 for Southern hemisphere corresponding to September 21)). The parameter $A$ is supposed to be constant.
+
+The refreezing coefficient $CFR$ is similar to the one found for example in HBV (see @sec-model_hbv) and is available for the GSM model in the RS MINERVE program from 
+its version 2.8.0. By default, $CFR$ is set to 1, recommended values from the literature are around 0.05.
+
+The input variables of the model are the precipitation ($P$) and the temperature ($T$). The output is the total discharge ($Q_{tot}$) at the model outlet.
+
+## SOCONT model description {#sec-model_socont}
+
+In the SOCONT model (@fig-model_socont), the Snow-SD model simulates the transient evolution of the snow pack (melt and accumulation) as a function of the temperature 
+($T$) and the precipitation ($P$), thus providing an equivalent precipitation ($P_{eq}$) that is used as input by the GR3 model. The GR3 model also takes into account the 
+potential evapotranspiration ($ETP$) and provides the net intensity to the SWMM model.
+
+![SOCONT Model](figures/fig-model_socont.png){#fig-model_socont}
+
++----------+-----------+-------------------------------------------------------+-------------------+
+| Name     | Units     | Description                                           | Regular Range     |
++==========+===========+=======================================================+===================+
+| A        | m^2^      | Surface                                               | \>0               |
++----------+-----------+-------------------------------------------------------+-------------------+
+| S        | mm/°C/d   | Reference degree-day snowmelt coefficient             | 0.5 to 20         |
++----------+-----------+-------------------------------------------------------+-------------------+
+| SInt     | mm/°C/d   | Degree-day snowmelt interval                          | 0 to 4            |
++----------+-----------+-------------------------------------------------------+-------------------+
+| SMin     | mm/°C/d   | Minimal degree-day snowmelt coefficient               | $\geq$ 0          |
++----------+-----------+-------------------------------------------------------+-------------------+
+| SPh      | d         | Phase shift of the sinusoidal function                | 1 to 365          |
++----------+-----------+-------------------------------------------------------+-------------------+
+| ThetaCri | \-        | Critical relative water content of the snow pack      | 0.1               |
++----------+-----------+-------------------------------------------------------+-------------------+
+| bp       | d/mm      | Melt coefficient due to liquid precipitation          | 0.0125            |
++----------+-----------+-------------------------------------------------------+-------------------+
+| Tcp1     | °C        | Minimum critical temperature for liquid precipitation | 0                 |
++----------+-----------+-------------------------------------------------------+-------------------+
+| Tcp2     | °C        | Maximum critical temperature for solid precipitation  | 4                 |
++----------+-----------+-------------------------------------------------------+-------------------+
+| Tcf      | °C        | Critical snowmelt temperature                         | 0                 |
++----------+-----------+-------------------------------------------------------+-------------------+
+| HGR3Max  | m         | Maximum height of infiltration reservoir              | 0 to 2            |
++----------+-----------+-------------------------------------------------------+-------------------+
+| KGR3     | 1/s       | Release coefficient of infiltration reservoir         | 0.00025 to 0.1    |
++----------+-----------+-------------------------------------------------------+-------------------+
+| L        | m         | Length of the plane                                   | \>0               |
++----------+-----------+-------------------------------------------------------+-------------------+
+| J0       | \-        | Runoff slope                                          | \>0               |
++----------+-----------+-------------------------------------------------------+-------------------+
+| Kr       | m^1/3^/s  | Strickler coefficient                                 | 0.1 to 90         |
++----------+-----------+-------------------------------------------------------+-------------------+
+| CFR      | \-        | Refreezing coefficient                                | 0 to 1            |
++----------+-----------+-------------------------------------------------------+-------------------+
+| SWEIni   | m         | Initial snow water equivalent height                  | \-                |
++----------+-----------+-------------------------------------------------------+-------------------+
+| HGR3Ini  | m         | Initial level in infiltration reservoir               | \-                |
++----------+-----------+-------------------------------------------------------+-------------------+
+| HrIni    | m         | Initial runoff water level downstream of the surface  | \-                |
++----------+-----------+-------------------------------------------------------+-------------------+
+| ThetaIni | \-        | Initial relative water content in the snow pack       | \-                |
++----------+-----------+-------------------------------------------------------+-------------------+
+
+: List of parameters and initial conditions for the **SOCONT model** {#tbl-param_model_socont}
+
+In a first step, the precipitation is divided into a solid precipitation ($P_{sn}$) and into a liquid precipitation ($P_w$) as a function of 
+the temperature (@eq-E1 to @eq-E3):
+
+$$
+P_w = \alpha \cdot P
+$$ {#eq-E1}
+
+$$
+P_{sn} = (1 - \alpha) \cdot P
+$$ {#eq-E2}
+
+$$
+\alpha =
+  \begin{cases}
+    0                                     & \quad \text{if }  T \leq T_{cp1} \\
+    (T - T_{cp1})/(T_{cp2} - T_{cp1})     & \quad \text{if }  T_{cp1} < T < T_{cp2} \\
+    1                                     & \quad \text{if }  T \geq T_{cp2}
+  \end{cases}
+$$ {#eq-E3}
+
+with $P_w$: liquid precipitation \[L/T\]; $\alpha$: separation factor; $P$: precipitation \[L/T\]; $P_{sn}$: solid precipitation \[L/T\]; $T$: 
+temperature \[°C\]; $T_{cp1}$: minimum critical temperature for liquid precipitation \[°C\]; $T_{cp2}$: maximum critical temperature for solid 
+precipitation \[°C\].
+
+If the observed temperature is lower than $T_{cp1}$ only solid precipitation is produced. If the temperature is higher than $T_{cp2}$ only liquid 
+precipitation ($P_w$) is produced. If the temperature observed is found between these two critical values liquid and solid precipitation are produced. 
+The solid precipitation ($P_{sn}$) is used as input for the snow pack, varying its content as a function of melt or freezing. The snowmelt calculation 
+is performed as follows, using a time-varying degree-day snowmelt coefficient (@fig-model_snow_degreeday) [@magnusson_assimilation_2014; @slater_snow_2006]:
+
+$$
+S' = max\left( S_{Min}\ ;\ S + \ \frac{S_{Int}}{2}\sin\left( 2\pi\frac{n - S_{Ph}}{365} \right) \right)
+$$ {#eq-E4}
+
+$$
+M_{sn} =
+  \begin{cases}
+    S' \cdot (1 + b_{p} \cdot P_{w}) \cdot (T - T_{cf})      & \quad \text{if }  T > T_{cf} \\
+    S' \cdot CFR \cdot (T - T_{cf})                          & \quad \text{if }  T \leq T_{cf}
+  \end{cases}
+$$ {#eq-E5}
+
+$$
+\mathrm{d}H_{snow}/\mathrm{d}t = P_{sn} - M_{sn}, \quad M_{sn} \leq P_{sn} + H_{snow}/\mathrm{d}t, \quad M_{sn} \geq - W_{snow}/\mathrm{d}t
+$$ {#eq-E6}
+
+with $S'$ ($S$ series in RS MINERVE): time-varying degree-day snowmelt coefficient \[L/T/°C\]; $S$: reference degree-day snowmelt coefficient \[L/T/°C\]; 
+$S_{Int}$: degree-day snowmelt coefficient interval \[L/T/°C\]; $n$: day of the year \[T\]; $S_{Min}$: Minimal degree-day snowmelt coefficient \[L/T/°C\]; 
+$S_{Ph}$: Phase shift of the sinusoidal function \[T\]; $M_{sn}$: snowmelt or freezing \[L/T\]; $b_p$: melt coefficient due to liquid precipitation \[T/L\]; 
+$T_{cf}$: critical snowmelt temperature \[°C\]; $CFR$: refreezing coefficient \[-\]; $H_{snow}$: water content of the solid fraction of snow \[L\]; $dt$: 
+time step \[T\]; $W_{snow}$: water content of the liquid fraction of snow \[L\].
+
+The $S_{Ph}$ parameter defines the phase shift of the sinusoidal curve with respect to the first day of the year.
+
+The equivalent precipitation ($P_{eq}$) is produced by the water content of the snow (@eq-E7 to @eq-E9):
+
+$$
+\theta = W_{snow}/H_{snow}
+$$ {#eq-E7}
+
+$$
+P_{eq} =
+  \begin{cases}
+    P_{w} + W_{snow}/\mathrm{d}t                            & \quad \text{if }  H_{snow} = 0 \\
+    0                                                       & \quad \text{if }  H_{snow} > 0 \text{ and } \theta \leq \theta_{cr} \\
+    (\theta - \theta_{cr}) \cdot H_{snow}/\mathrm{d}t       & \quad \text{if }  H_{snow} > 0 \text{ and } \theta > \theta_{cr}
+  \end{cases}
+$$ {#eq-E8}
+
+$$
+\mathrm{d}W_{snow}/\mathrm{d}t = P_w + M_{sn} - P_{eq}
+$$ {#eq-E9}
+
+with $\theta$ ($Theta$ in RS MINERVE): relative water content in the snow pack \[-\]; $\theta_{cr}$ ($ThetaCri$ in RS MINERVE): critical relative water content 
+in the snow pack \[-\]; $P_{eq}$: equivalent precipitation \[L/T\].
+
+The snow water equivalent is then the addition of $H_{snow}$ and $W_{snow}$ (@eq-E10):
+
+$$
+SWE = H_{snow} + W_{snow}
+$$ {#eq-E10}
+
+with $SWE$: snow water equivalent \[L\].
+
+Next, the infiltration reservoir is computed as follows:
+
+$$
+i_{Inf} =
+  \begin{cases}
+    P_{eq} \cdot \big(1 - (H_{GR3}/H_{GR3Max})^{2} \big)     & \quad \text{if }  H_{GR3} \leq H_{GR3Max} \\
+    0                                                        & \quad \text{if }  H_{GR3} > H_{GR3Max}
+  \end{cases}
+$$ {#eq-E11}
+
+$$
+ETR =
+  \begin{cases}
+  ETP \cdot \sqrt{ \frac{H_{GR3}}{H_{GR3Max}}}     & \quad \text{if }  H_{GR3} \leq H_{GR3Max} \\
+  ETP                                              & \quad \text{if }  H_{GR3} > H_{GR3Max}
+  \end{cases}
+$$ {#eq-E12}
+
+$$
+i_{Net} = P_{eq} - i_{Inf}
+$$ {#eq-E13}
+
+$$
+Q =
+  \begin{cases}
+    Q = K_{GR3} \cdot H_{GR3} \cdot A           & \quad \text{if }  H_{GR3} \leq H_{GR3Max} \\
+    Q = K_{GR3} \cdot H_{GR3Max} \cdot A        & \quad \text{if }  H_{GR3} > H_{GR3Max}
+  \end{cases}
+$$ {#eq-E14}
+
+$$
+\mathrm{d}H_{GR3}/\mathrm{d}t = i_{Inf} - ETR - \frac{Q}{A}
+$$ {#eq-E15}
+
+with $ETP$: potential evapotranspiration \[L/T\]; $i_{Inf}$: infiltration intensity \[L/T\]; $P_{eq}$: equivalent precipitation \[L/T\]; $H$: 
+level in infiltration reservoir \[L\]; $H_{GR3Max}$: capacity of infiltration reservoir \[L\]; $ETR$: real evapotranspiration \[L/T\]; $Q$: 
+base discharge \[L^3^/T\]; $K_{GR3}$: release coefficient of infiltration reservoir \[1/T\]; $A$: surface \[L^2^\]; $i_{Net}$: net intensity \[L/T\].
+
+The transfer of the net intensity to an impermeable surface is carried out by the help of a non-linear transfer reservoir depending on @eq-E16 to @eq-E18:
+
+$$
+\mathrm{d}H_{r}/\mathrm{d}t = 2 \cdot (i_{Net} - i_{r}), \quad H_{r} \geq 0
+$$ {#eq-E16}
+
+$$
+i_{r} = K_{r} \cdot \sqrt{J_{o}} \cdot {H_{r}}^{\frac{5}{3}} \cdot \frac{1}{L}
+$$ {#eq-E17}
+
+$$
+Q = i_{r} \cdot A
+$$ {#eq-E18}
+
+with $H_r$: runoff water level downstream of the surface \[L\]; $i_{Net}$: net intensity \[L/T\]; $i_r$: runoff intensity \[L/T\]; $K_r$: Strickler 
+coefficient \[L^1/3^/T\]; $J_o$: average slope of the plane \[-\]; $L$: length of the plane \[L\].
+
+The variables for the initial situation associated to this model are $\theta$ ($Theta$ in RS MINERVE), $SWE$, $H_{GR3}$ and $H_r$. The parameters to 
+adjust are $S$, $S_{Int}$, $b_p$, $CFR$, $\theta_{cr}$, $K_{GR3}$, $H_{GR3Max}$ and $K_r$. The parameters $S_{Phi}$, $b_p$, $\theta_{cr}$, $T_{cp1}$, $T_{cp2}$ 
+and $T_{cf}$ can be assumed as constant ($b_p = 0.0125$, $\theta_{cr} = 0.1$, $T:{cp1} = 0 °C$, $T_{cp2} = 4 °C$, $T_{cf} = 0 °C$, $S_{Phi} = 80$ (corresponding 
+to March 21^st^ for the Northern hemisphere; use 264 for Southern hemisphere corresponding to September 21)). The other parameters ($J_o$, $L$, $A$) are 
+supposed to be constant.
+
+The refreezing coefficient $CFR$ is similar to the one found for example in HBV (see @sec-model_hbv) and is available for the SOCONT model in the RS 
+MINERVE program from its version 2.8.0. By default, $CFR$ is set to 1; recommended values from the literature are around 0.05.
+
+The input variables of the model are the precipitation ($P$), the temperature ($T$) and the potential evapotranspiration ($ETP$). The output value is 
+the equivalent precipitation ($P_{eq}$).
+
+The outflow discharge $Q_{tot}$, composed by the base discharge ($Q_{GR3}$) and the run-off discharge ($Q_r$), is finally transferred to the outlet of 
+the sub-catchment.
+
+## HBV model description {#sec-model_hbv}
+
+The integrated rainfall-runoff model HBV [@bergstrom_development_1976; @bergstrom_hbv_1992] is composed of a snow function, a humidity reservoir and two (upper and lower) soil 
+storage reservoirs. The structure of the implemented model is presented in @fig-model_hbv.
+
+![HBV Model](figures/fig-model_hbv.png){#fig-model_hbv}
+
++----------+-----------+--------------------------------------------------+-------------------+
+| Name     | Units     | Description                                      | Regular Range     |
++==========+===========+==================================================+===================+
+| A        | m^2^      | Surface of the basin                             | \>0               |
++----------+-----------+--------------------------------------------------+-------------------+
+| CFMax    | mm/°C/d   | Melting factor                                   | 0.5 to 20         |
++----------+-----------+--------------------------------------------------+-------------------+
+| CFR      | \-        | Refreezing factor                                | 0.05              |
++----------+-----------+--------------------------------------------------+-------------------+
+| CWH      | \-        | Critical relative water content of the snow pack | 0.1               |
++----------+-----------+--------------------------------------------------+-------------------+
+| TT       | °C        | Threshold temperature of rain/snow               | 0 to 3            |
++----------+-----------+--------------------------------------------------+-------------------+
+| TTInt    | °C        | Temperature interval for rain/snow mixing        | 0 to 3            |
++----------+-----------+--------------------------------------------------+-------------------+
+| TTSM     | °C        | Threshold temperature for snow melt              | 0                 |
++----------+-----------+--------------------------------------------------+-------------------+
+| Beta     | \-        | Model parameter (shape coefficient)              | 1 to 5            |
++----------+-----------+--------------------------------------------------+-------------------+
+| FC       | m         | Maximum soil storage capacity                    | 0.050 to 0.65     |
++----------+-----------+--------------------------------------------------+-------------------+
+| PWP      | \-        | Soil permanent wilting point threshold           | 0.030 to 1        |
++----------+-----------+--------------------------------------------------+-------------------+
+| SUMax    | m         | Upper reservoir water level threshold            |  0 to 0.10        |
++----------+-----------+--------------------------------------------------+-------------------+
+| Kr       | 1/d       | Near surface flow storage coefficient            | 0.05 to 0.5       |
++----------+-----------+--------------------------------------------------+-------------------+
+| Ku       | 1/d       | Interflow storage coefficient                    | 0.01 to 0.4       |
++----------+-----------+--------------------------------------------------+-------------------+
+| Kl       | 1/d       | Baseflow storage coefficient                     | 0 to 0.15         |
++----------+-----------+--------------------------------------------------+-------------------+
+| Kperc    | 1/d       | Percolation storage coefficient                  | 0 to 0.8          |
++----------+-----------+--------------------------------------------------+-------------------+
+| SWEIni   | m         | Initial snow water equivalent height             | \-                |
++----------+-----------+--------------------------------------------------+-------------------+
+| WHIni    | \-        | Initial relative water content in the snow pack  | \-                |
++----------+-----------+--------------------------------------------------+-------------------+
+| HumIni   | m         | Initial humidity                                 | \-                |
++----------+-----------+--------------------------------------------------+-------------------+
+| SUIni    | m         | Initial upper reservoir water level              | \-                |
++----------+-----------+--------------------------------------------------+-------------------+
+| SLIni    | m         | Initial lower reservoir water level              | \-                |
++----------+-----------+--------------------------------------------------+-------------------+
+
+: List of parameters and initial conditions for the **HBV model** {#tbl-param_model_hbv}
+
+The precipitation is first divided into snowfall ($SF$) and rainfall ($RF$) as a function of the temperature (@eq-H1 to @eq-H3). If the observed 
+temperature is lower than $TT-TTInt/2$, only solid snowfall is produced. If the temperature is higher than $TT+TTInt/2$, only rainfall is produced. 
+If the observed temperature is found between these values, both rainfall and snowfall are produced.
+
+$$
+RF = \alpha \cdot P
+$$ {#eq-F1}
+
+$$
+SF = (1 - \alpha) \cdot P
+$$ {#eq-F2}
+
+$$
+\alpha =
+  \begin{cases}
+    0                                    & \quad \text{if } T < TT - TTInt/2 \\
+    \frac{T - (TT - TTInt/2)}{TTInt}     & \quad \text{if } TT - TTInt/2 < T < TT + TTInt/2 \\
+    1                                    & \quad \text{if } T > TT + TTInt/2
+  \end{cases}
+$$ {#eq-F3}
+
+with $RF$: rainfall \[L/T\]; $\alpha$: separation factor; $P$: precipitation \[L/T\]; $SF$: snowfall \[L/T\]; $T$: temperature \[°C\]; $TT$: 
+threshold temperature for rain/snow \[°C\]; $TTInt$: temperature interval for rain/snow mixing \[°C\].
+
+The snowfall ($SF$) is used as input for the snow pack, varying its content as a function of melt or freezing. The snowmelt calculation is performed as follows:
+
+$$
+M_{sn} =
+  \begin{cases}
+    CFMax \cdot (T - TTSM)               & \quad \text{if } T > TTSM \\
+    CFR \cdot CFMax \cdot (T - TTSM)     & \quad \text{if } T \leq TTSM
+  \end{cases}
+$$ {#eq-F4}
+
+$$
+\mathrm{d}H_{snow}/\mathrm{d}t = SF - M_{sn} , \quad M_{sn} \leq SF + H_{snow}/\mathrm{d}t, \quad M_{sn} \geq - W_{snow}/\mathrm{d}t
+$$ {#eq-F5}
+
+with $M_{sn}$: snowmelt or freezing \[L/T\]; $CFMax$: degree-day melting factor \[L/T/°C\]; $CFR$: refreezing factor \[-\]; $TTSM$: critical snowmelt 
+temperature \[°C\]; $H_{snow}$: snow height \[L\]; $W_{snow}$: water content \[L\]; $dt$: time step \[T\].
+
+The equivalent precipitation ($P_{eq}$) is produced by the water content of the snow (@eq-F6 to @eq-F8):
+
+$$
+WH = W_{snow}/H_{snow}
+$$ {#eq-F6}
+
+$$
+P_{eq} =
+  \begin{cases}
+    RF + W_{snow}/\mathrm{d}t                      & \quad \text{if } H_{snow} = 0 \\
+    0                                     & \quad \text{if } H_{snow} > 0 \text { and } WH \leq CWH \\
+    (\ WH - \ CWH) \cdot H_{snow}/\mathrm{d}t      & \quad \text{if } H_{snow} > 0 \text { and } WH > CWH
+  \end{cases}
+$$ {#eq-F7}
+
+$$
+\mathrm{d}W_{snow}/\mathrm{d}t = RF + M_{sn} - P_{eq}
+$$ {#eq-F8}
+
+with $WH$: relative water content in the snow pack \[-\]; $CWH$: critical relative water content in the snow pack \[-\]; $P_{eq}$: equivalent precipitation \[L/T\].
+
+The snow water equivalent is then the addition of $H_{snow}$ and $W_{snow}$ (@eq-F9):
+
+$$
+SWE = H_{snow} + W_{snow}
+$$ {#eq-F9}
+
+with $SWE$: snow water equivalent \[L\].
+
+The calculation of the recharge is carried out depending on a model parameter $Beta$, as presented in @eq-H10. $ETR$ is calculated as shown in @eq-H11. 
+Finally, the humidity of the soil ($Hum$) is performed taking into account the input (Equivalent precipitation, $P_{eq}$) and outputs (Recharge intensity and $ETR$) 
+as presented in @eq-H12. Additionally, and based on @seibert_estimation_1997, parameter $PWP$ is a rate related to parameter $FC$. Thus, the height of the soil permanent 
+wilting point threshold is calculated multiplying $PWP$ by $FC$.
+
+$$
+i_{Recharge} = \Bigg( \frac{Hum}{FC} \Bigg)^{Beta} \cdot P_{eq}
+$$ {#eq-F10}
+
+$$
+ETR =
+  \begin{cases}
+    ETP \cdot \frac{Hum}{(PWP \cdot FC)}      & \quad \text{if } Hum < (PWP \cdot FC) \\
+    ETP                                       & \quad \text{if } Hum \geq (PWP \cdot FC)
+  \end{cases}
+$$ {#eq-F11}
+
+$$
+\frac{dHum}{dt} = (P_{eq} - i_{Recharge}) - ETR, \quad Hum \geq 0
+$$ {#eq-F12}
+
+with $i_{Recharge}$: Reservoir recharge intensity \[L/T\]; $Hum$: Humidity \[L\]; $FC$: Maximum soil storage capacity \[L\]; $Beta$: Model parameter 
+(shape coefficient) \[-\]; $P_{eq}$: Equivalent precipitation \[L/T\]; $ETR$: Evapotranspiration \[L/T\]; $ETP$: Potential evapotranspiration \[L/T\]; 
+$PWP$: Soil permanent wilting point threshold \[-\].
+
+Then, near surface (or run-off) flow is calculated depending on the water level in the *Upper reservoir* ($SU$) and its threshold, as well as on a flow 
+storage coefficient $K_r$.
+
+$$
+Q_r =
+  \begin{cases}
+    K_{r} \cdot (SU - SU_{Max}) \cdot A       & \quad \text{if } SU > SU_{Max} \\
+    0                                         & \quad \text{if } SU \leq SU_{Max}
+  \end{cases}
+$$ {#eq-F13}
+
+with $Q_r$: Near surface flow (or run-off flow) \[L^3^/T\]; $K_r$: Near surface flow storage coefficient \[1/T\]; $SU$: Upper reservoir water level \[L\]; 
+$SU_{Max}$: Upper reservoir water level threshold \[L\]; $A$: Basin surface \[L^2^\].
+
+The *Upper reservoir* (or interflow reservoir), corresponding to the upper soil storage and producing the interflow, is computed as follows:
+
+$$
+\frac{dSU}{dt} = i_{Recharge} - (K_{perc} + K_{u}) \cdot SU - \frac {Q_{r}}{A} , \quad SU \geq 0 \\
+$$ {#eq-F14}
+
+$$
+i_{Perc} = K_{perc} \cdot SU
+$$ {#eq-F15}
+
+$$
+Q_{u} = K_{u} \cdot SU \cdot A
+$$ {#eq-F16}
+
+with $K_{perc}$: Percolation storage coefficient \[1/T\]; $K_u$: Interflow storage coefficient \[1/T\]; $i_{Perc}$: Percolation intensity \[L/T\]; $Q_u$: Interflow \[L^3^/T\].
+
+Afterwards, the lower reservoir (or baseflow reservoir), corresponding to the lower soil storage, is calculated as presented in @eq-F17 and @eq-F18.
+
+$$
+\mathrm{d}SL/\mathrm{d}t = i_{Perc} - K_{l} \cdot SL , \quad SL \geq 0
+$$ {#eq-F17}
+
+
+$$
+Q_{l} = K_{l} \cdot SL \cdot A
+$$ {#eq-F18}
+
+with $SL$: Lower reservoir water level \[L\]; $K_l$: Baseflow storage coefficient \[1/T\]; $Q_l$: Baseflow \[L^3^/T\].
+
+And finally the total outflow is:
+
+$$
+Q_{tot} = Q_{r} + Q_{u} + Q_{l}
+$$ {#eq-F19}
+
+with $Q_{tot}$: Total outflow \[L^3^/T\].
+
+The initial conditions associated to this model are $SWE_{Ini}$, $WH_{Ini}$, $Hum_{Ini}$, $SU_{Ini}$ and $SL_{Ini}$. The parameters to adjust are $CFMax$, $CFR$, 
+$CWH$, $TT$, $TTInt$, $TTSM$, $Beta$, $FC$, $PWP$, $SU_{Max}$, $K_r$, $K_u$, $Kl$ and $K_{perc}$. The parameter $A$ is supposed to be constant.
+
+The model inputs are the precipitation ($P$), the temperature ($T$) and the potential evapotranspiration ($ETP$). The output is the total discharge at the model 
+outlet ($Q_{tot}$).
+
+## GR4J model description {#sec-model_gr4j}
+
+The GR4J model is a global hydrological model with four parameters developed by @perrin_improvement_2003. It is an empirical model (@fig-model_gr4j), but its structure 
+is similar to the conceptual models. It takes into account the humidity and contains two reservoirs (production and routing). Unit hydrographs are also associated 
+for the hydrological behaviour of the basin.
+
+![GR4J Model](figures/fig-model_gr4j.png){#fig-model_gr4j}
+
++----------+-----------+---------------------------------------------------+-------------------+
+| Name     | Units     | Description                                       | Regular Range     |
++==========+===========+===================================================+===================+
+| A        | m^2^      | Surface of the basin                              | \>0               |
++----------+-----------+---------------------------------------------------+-------------------+
+| X1       | m         | Capacity of production store                      | 0.01 to 1.2       |
++----------+-----------+---------------------------------------------------+-------------------+
+| X2       | m         | Water exchange coefficient                        | -0.005 to 0.003   |
++----------+-----------+---------------------------------------------------+-------------------+
+| X3       | m         | Capacity of routing store                         | 0.01 to 0.5       |
++----------+-----------+---------------------------------------------------+-------------------+
+| X4       | d         | UH time base                                      | -0.5 to 1         |
++----------+-----------+---------------------------------------------------+-------------------+
+| SIni     | m         | Initial water content in the production reservoir | \-                |
++----------+-----------+---------------------------------------------------+-------------------+
+| RIni     | m         | Initial water level in the routing reservoir      | \-                |
++----------+-----------+---------------------------------------------------+-------------------+
+
+: List of parameters and initial conditions for the **GR4J model** {#tbl-param_model_gr4j}
+
+The first calculation is the neutralization of $P_{eq}$ by $ETP$ for determining a net intensity ($P_n$) and a net evapotranspiration ($E_n$) according to @eq-G1 and @eq-G2.
+
+$$
+P_n =
+  \begin{cases}
+    P_{eq} - ETP       & \quad \text{if } P \geq ETP \\
+    0                  & \quad \text{if } P < ETP
+  \end{cases}
+$$ {#eq-G1}
+
+$$
+E_n =
+  \begin{cases}
+    0                  & \quad \text{if } P \geq ETP \\
+    ETP - P_{eq}       & \quad \text{if } P < ETP
+  \end{cases}
+$$ {#eq-G2}
+
+with $P_n$: net rain intensity \[L/T\]; $P_{eq}$: Equivalent precipitation \[L/T\]; ETP: potential evapotranspiration \[L/T\]; $E_n$: net evapotranspiration \[L/T\].
+
+When $P_n$ is not zero, a part ($P_s$) of $P_n$ feed the production reservoir ($S$) as presented in @eq-G3. Similarly, when $E_n$ is not zero, 
+an evapotranspiration ($E_s$) from the production reservoir is calculated depending on the water level in the production reservoir as described in @eq-G4.
+
+$$
+P_s = \frac{\mathrm{d}}{\mathrm{d} t} \frac {X1 \cdot \bigg( 1-{( \frac{S}{X1})}^{2} \bigg) \cdot tanh \Big( \frac{P_n \cdot dt}{X1} \Big)}{1 + \frac{S}{X1} \cdot tanh\Big( \frac{P_n \cdot dt}{X1} \Big)}
+$$ {#eq-G3}
+
+$$
+E_s = \frac{\mathrm{d}}{\mathrm{d} t} \frac {S \cdot  \bigg( 2- \frac{S}{X1} \bigg) \cdot tanh \Big( \frac{E_n \cdot dt}{X1} \Big)}{1 + \Big( 1 - \frac{S}{X1} \Big) \cdot tanh\Big( \frac{E_n \cdot dt}{X1} \Big)}
+$$ {#eq-G4}
+
+with $P_s$: rain intensity feeding the production reservoir \[L/T\]; $X1$: maximum capacity of production reservoir $S$ \[L\]; $S$: water content in the 
+production reservoir \[L\]; $E_s$: evapotranspiration from the production reservoir \[L/T\].
+
+The percolation ($i_{Perc}$) flowing from the production reservoir is then calculated as follows:
+
+$$
+i_{Perc} = \frac {\mathrm{d}}{\mathrm{d} t} \big( S + (P_s - E_s) \cdot dt \big) \cdot \Bigg( 1 - \bigg( 1 + \Big( \frac{4}{9} \cdot \frac{ S + (P_s - E_s) \cdot dt}{X1} \Big)^{4} \bigg)^{- \frac{1}{4}} \Bigg)
+$$ {#eq-G5}
+
+with $i_{Perc}$: percolation intensity \[L/T\].
+
+Finally, the variation in the production reservoir $S$ is obtained according to @eq-G6:
+
+$$
+\frac {\mathrm{d} S}{\mathrm{d} t} = P_s - E_s - i_{Perc} , \quad S \geq 0
+$$ {#eq-G6}
+
+The quantity of water ($i_{Pr}$) which goes to the routing reservoir is provided by:
+
+$$
+i_{Pr} = i_{Perc} + (P_n - P_s)
+$$ {#eq-G7}
+
+with $i_{Pr}$: intensity flowing to the routing reservoir \[L/T\].
+
+Afterwards, for the calculation of unit hydrographs, $i_{Pr}$ is divided in two flow components: 90\% are routed by a unit hydrograph UH1 and a routing reservoir 
+and 10\% by a symmetrical unit hydrograph UH2. UH1 and UH2 depend on parameter $X4$, which is the base time.
+
+The ordinates of the hydrographs are calculated from curves SH1 and SH2, which correspond to the cumulated hydrograph. SH1 and SH2 are defined depending on the 
+time step $t$ as presented in @eq-G8 and @eq-G9. The ordinates of UH1 and UH2 are then calculated.
+
+$$
+SH1_{t} =
+  \begin{cases}
+    0                                              & \quad \text{if } t \leq 0 \\
+    \bigg( \frac{t}{X4} \bigg)^{\frac{5}{2}}       & \quad \text{if } 0 < t < X4 \\
+    1                                              & \quad \text{if } t \geq X4
+  \end{cases}
+$${#eq-G8}
+
+$$
+SH2_{t} =
+  \begin{cases}
+    0                                                                      & \quad \text{if } t \leq 0 \\
+    \frac{1}{2} \cdot \bigg( \frac{t}{X4} \bigg)^{\frac{5}{2}}             & \quad \text{if } 0 < t < X4 \\
+    1 - \frac{1}{2} \cdot \bigg( 2 - \frac{t}{X4} \bigg)^{\frac{5}{2}}     & \quad \text{if } X4 < t < 2 \cdot X4 \\
+    1                                                                      & \quad \text{if } t \geq 2 \cdot X4 \\
+  \end{cases}
+$$ {#eq-G9}
+
+$$
+UH1_{j} = SH1_{j} - SH1_{j - 1}
+$$ {#eq-G10}
+
+$$
+UH2_{j} = SH2_{j} - SH2_{j - 1}
+$$ {#eq-G11}
+
+with $SH1$: hydrograph 1 from $S$ \[-\]; $SH2$: hydrograph 2 from $S$ \[-\]; $t$: time step \[T\]; $X4$: base time \[T\]; $UH1$: hydrograph from SH1 \[-\]; 
+$UH2$: hydrograph from $SH2$ \[-\].
+
+Then, at each time step $k$, outflows $Q9$ and $Q1$ from the two hydrographs correspond to the convolution of previous intensities according to the repartition 
+provided by the discretized hydrograph and calculated as presented in @eq-G12 and @eq-G13.
+
+$$
+Q9 = 0.9 \cdot \sum_{j = 1}^{l} ( UH1_{j} \cdot {i_{Pr}}_{k - j - l})
+$$ {#eq-G12}
+
+$$
+Q1 = 0.1 \cdot \sum_{j = 1}^{m} ( UH2_{j} \cdot {i_{Pr}}_{k - j - l})
+$$ {#eq-G13}
+
+with $Q9$: Unitary flow from the UH1 hydrograph; \[L/T\]; $Q1$: Unitary flow from the UH2 hydrograph \[L/T\]; $j$: day (integer) \[T\]; $l$: integer value of 
+$X4 + 1$ \[T\]; $m$: integer value of $2 \cdot X4+1$ \[T\].
+
+Then, an exchange function ($i_F$) with the non-atmospheric outside produces an underground water exchange according to @eq-G14 (physical interpretation of 
+this function is not direct). Then, the routing reservoir ($R$) is emptied by a routing discharge ($Q_{r'}$) as described in @eq-G15.
+
+$$
+i_F = \frac{\mathrm{d}}{\mathrm{d} t}X2 \cdot \bigg( \frac{R}{X3} \bigg)^{\frac{7}{2}}
+$$ {#eq-G14}
+
+$$
+Q_{r'} = \frac{\mathrm{d}}{\mathrm{d} t} \big( R + (Q9 + iF) \cdot dt \big) \cdot \Bigg( 1 - \bigg( 1 + \Big( \frac{R + (Q9 + iF) \cdot dt}{X3} \Big)^{4} \bigg)^{- \frac{1}{4}} \Bigg)
+$$ {#eq-G15}
+
+with $i_F$: exchange function \[L/T\]; $X2$: water exchange coefficient, positive for contributions, negative for losses due to infiltration or zero when no 
+exchange is produced \[L\]; $R$: water level in the routing reservoir \[L\]; $X3$: one day capacity of routing reservoir \[L\]; $Q_{r'}$: unitary routing reservoir outflow \[L/T\].
+
+The variation of the water level in the routing reservoir is:
+
+$$
+\mathrm{d}R/\mathrm{d}t = Q9 - i_F - Q_{r'} , \quad R \geq 0
+$$ {#eq-G16}
+
+The outflow $Q1$ from hydrograph UH2 has also the same exchange for providing the complementary flow $Q_{d'}$:
+
+$$
+Q_{d'} = Q1 + i_F
+$$ {#eq-G17}
+
+with $Q_{d'}$: unitary complementary outflow \[L/T\].
+
+Finally, the model outflows are calculated as presented in @eq-G18 and @eq-G19 and the total flow at the outlet, $Q_{tot}$, as presented in @eq-G20:
+
+$$
+Q_r = Q_{r'} \cdot A
+$$ {#eq-G18}
+
+$$
+Q_d = Q_{d'} \cdot A
+$$ {#eq-G19}
+
+$$
+Q_{tot} = Q_r + Q_d
+$$ {#eq-G20}
+
+with $Q_r$: outflow from the routing reservoir \[L^3^/T\]; $A$: Basin surface \[L^2^\]; $Q_d$: complementary outflow \[L^3^/T\]; $Q_{tot}$: total outflow \[L^3^/T\].
+
+The variables associated to this model are $S_{Ini}$ and $R_{Ini}$. The parameters to adjust are $X1$, $X2$, $X3$ and $X4$. The parameter $A$ is supposed to be constant.
+
+The model inputs are the equivalent precipitation ($P_{eq}$) and the potential evapotranspiration ($ETP$). The output is the total discharge at the model outlet ($Q_{tot}$).
+
+## SAC-SMA model description {#sec-model_sac_sma}
+
+The SAC-SMA (@fig-model_sac_sma) or SACRAMENTO hydrological model was developed in the 70's [@burnash_generalized_1973; @burnash_nws_1995] to optimize humidity characteristics 
+into the soil, distributed into different level, with rational percolation characteristics, for an efficient simulation of discharges. This model calculates the total 
+discharge from the precipitation ($P$) and the potential evapotranspiration ($ETP$) depending on the parameters and initial conditions presented in @tbl-param_model_sac_sma.
+
+![SAC-SMA Model](figures/fig-model_sac_sma.png){#fig-model_sac_sma}
+
++---------+-----------+--------------------------------------------------------------------------------+-------------------+
+| Name    | Units     | Description                                                                    | Regular Range     |
++=========+===========+================================================================================+===================+
+| A       | m^2^      | Surface of the basin                                                           | \>0               |
++---------+-----------+--------------------------------------------------------------------------------+-------------------+
+| Adimp   | \-        | Maximum fraction of an additional impervious area due to saturation            | 0 to 0.2          |
++---------+-----------+--------------------------------------------------------------------------------+-------------------+
+| Pctim   | \-        | Permanent impervious area fraction                                             | 0 to 0.05         |
++---------+-----------+--------------------------------------------------------------------------------+-------------------+
+| Riva    | \-        | Riparian vegetarian area fraction                                              | 0 to 0.2          |
++---------+-----------+--------------------------------------------------------------------------------+-------------------+
+| UztwMax | m         | Upper Zone Tension Water capacity                                              | 0.01 to 0.15      |
++---------+-----------+--------------------------------------------------------------------------------+-------------------+
+| UzfwMax | m         | Upper Zone Free Water capacity                                                 | 0.005 to 0.10     |
++---------+-----------+--------------------------------------------------------------------------------+-------------------+
+| Uzk     | 1/d       | Interflow depletion rate from the Upper Zone Free Water storage                | 0.10 to 0.75      |
++---------+-----------+--------------------------------------------------------------------------------+-------------------+
+| Zperc   | \-        | Ratio of maximum and minimum percolation rates                                 | 10 to 350         |
++---------+-----------+--------------------------------------------------------------------------------+-------------------+
+| Rexp    | \-        | Shape parameter of the percolation curve                                       | 1 to 4            |
++---------+-----------+--------------------------------------------------------------------------------+-------------------+
+| Pfree   | \-        | Percolation fraction that goes directly to the Lower Zone Free Water storages  | 0 to0.6           |
++---------+-----------+--------------------------------------------------------------------------------+-------------------+
+| LztwMax | m         | The Lower Zone Tension Water capacity                                          | 0.05 to 0.40      |
++---------+-----------+--------------------------------------------------------------------------------+-------------------+
+| LzfpMax | m         | The Lower Zone primary Free Water capacity                                     | 0.03 to 0.80      |
++---------+-----------+--------------------------------------------------------------------------------+-------------------+
+| LzfsMax | m         | The Lower Zone supplementary Free Water capacity                               | 0.01 to 0.40      |
++---------+-----------+--------------------------------------------------------------------------------+-------------------+
+| Rserv   | \-        | Fraction of Lower Zone Free Water not transferable to Lower Zone Tension Water | 0 to 1            |
++---------+-----------+--------------------------------------------------------------------------------+-------------------+
+| Lzpk    | 1/d       | Depletion rate of the Lower Zone primary Free Water storage                    | 0.001 to 0.03     |
++---------+-----------+--------------------------------------------------------------------------------+-------------------+
+| Lzsk    | 1/d       | Depletion rate of the Lower Zone supplemental Free Water storage               | 0.02 to 0.3       |
++---------+-----------+--------------------------------------------------------------------------------+-------------------+
+| Side    | \-        | Ratio of deep percolation from Lower Zone Free Water storages                  | 0 to 0.5          |
++---------+-----------+--------------------------------------------------------------------------------+-------------------+
+| AdimIni | m         | Initial Tension Water content of the Adimp area                                | \-                |
++---------+-----------+--------------------------------------------------------------------------------+-------------------+
+| UztwIni | m         | Initial Upper Zone Tension Water content                                       | \-                |
++---------+-----------+--------------------------------------------------------------------------------+-------------------+
+| UzfwIni | m         | Initial Upper Zone Free Water content                                          | \-                |
++---------+-----------+--------------------------------------------------------------------------------+-------------------+
+| LztwIni | m         | Initial Lower Zone Tension Water content                                       | \-                |
++---------+-----------+--------------------------------------------------------------------------------+-------------------+
+| LzfpIni | m         | Initial Lower Zone Free supplementary content                                  | \-                |
++---------+-----------+--------------------------------------------------------------------------------+-------------------+
+| LzfsIni | m         | Initial Lower Zone Free primary content                                        | \-                |
++---------+-----------+--------------------------------------------------------------------------------+-------------------+
+
+: List of parameters and initial conditions for the **SAC-SMA model** {#tbl-param_model_sac_sma}
+
+When considering rainfall over a basin, two basic basin areas are taken into account:
+
+-   An impervious portion of the soil mantle covered by streams, lake surfaces, marshes and other impervious material directly linked to the streamflow network. 
+    This area produces impervious and direct runoff $Q_{DirectRunoff}$ from any rainfall.
+
+-   A pervious portion of the soil mantle which distributes rainwater to the next storages. In addition, the pervious area can produce runoff when rainfall rates are sufficiently heavy.
+
+The basin may present permanent or temporarily impervious areas, determined by:
+
+-   The permanent impervious area fraction ($P_{ctim}$).
+
+-   The maximum fraction of an additional impervious area due to saturation ($A_{dimp}$). It represents the maximum portion of reservoirs and temporary watersheds contained in the basin.
+
+Thus, the permanent pervious area fraction of the basin is calculated following @eq-H1.
+
+$$
+P_{area} = 1 - (P_{ctim} + A_{dimp})
+$$ {#eq-H1}
+
+with $P_{area}$: permanent pervious area fraction of the basin \[-\]; $P_{ctim}$: permanent impervious area fraction \[-\]; $A_{dimp}$: maximum fraction of an additional 
+impervious area due to saturation \[-\].
+
+It is worth mentioning that the behaviour of the additional impervious area might be purely pervious, purely impervious or mixed, depending on the storage of the permanent 
+pervious and impervious areas. The pervious capacity (or fraction) of this area will decrease as the rainfall grows.
+
+As shown in @fig-model_sac_sma, the SAC model divides the soil in 2 zones:
+
+-   An **Upper Zone**, sub-divided in two areas that receive the infiltrated water from rainfall.
+
+-   A **Lower Zone**, sub-divided in 3 reservoirs, where the input is the percolation from the Upper Zone.
+
+The main components of the model and their flow transfers are described below.
+
+**Upper Zone Tension Water storage**
+
+This storage represents the water bound by adhesion and cohesion in between the soil pores as well as the water intercepted by vegetation. The water can be only consumed 
+by evapotranspiration.
+
+The water that reaches this reservoir comes from the rain felt into the pervious area of the basin, but also from transfers from the Upper Zone Free Water storage.
+
+The following concepts are defined for this reservoir:
+
+-   The Upper Zone *Tension Water Maximum* capacity ($Uztw_{Max}$) is the maximum Tension Water storage admissible in the Upper Zone.
+
+-   The Upper Zone *Tension Water Content* ($UztwC$) is the Tension Water stored in this Upper Zone at any given time.
+
+If the relative content of Tension Water (ratio between its content and its maximum storage) is smaller than the relative content of Free Water, a transfer is produced 
+from the Free Water storage to the Tension Water storage. The expressions of these ratios and the infiltration transfer are shown in @eq-H2 to @eq-H4:
+
+$$
+T = \frac{UztwC}{Uztw_{Max}}
+$$ {#eq-H2}
+
+$$
+F = \frac{UzfwC}{Uzfw_{Max}}
+$$ {#eq-H3}
+
+$$
+Uztr =
+  \begin{cases}
+    \mathrm{d} \bigg( \frac{UzfwC \cdot Uztw_{Max} - UztwC \cdot Uzfw_{Max}}{Uzfw_{Max} + Uztw_{Max}} \bigg) / \mathrm{d}t      & \quad \text{if } T < F \\
+	0                                                                                                                           & \quad \text{if } T \geq F
+  \end{cases}
+$$ {#eq-H4}
+
+with $T$: relative content of Upper Zone Tension Water \[-\]; $F$: relative content of Upper Zone Free Water \[-\]; $Uztr$: infiltration transfer from the Free Water 
+storage to the Tension Water storage \[L/T\]; $UztwC$: the Upper Zone Tension Water storage \[L\]; $Uztw_{Max}$: the Upper Zone Tension Water capacity \[L\]; $UzfwC$: 
+the Upper Zone Free Water storage \[L\]; $Uzfw_{Max}$: the Upper Zone Free Water capacity \[L\].
+
+Although free water is present during filling of Upper Zone Tension Water (by infiltration), this free water is rapidly transformed into Upper Zone Tension Water until 
+tension water relative content requirements are satisfied.[^hydro_mod_2]
+
+[^hydro_mod_2]: The precipitation and evapotranspiration gradients are function of the local conditions. Their regular ranges have to be estimated for each studied case.
+
+In addition, when the Upper Zone Tension Water volume has been filled, excess moisture above the Upper Zone Tension Water capacity is accumulated in the Upper Zone Free Water.
+
+**Upper Zone Free Water storage**
+
+This storage represents the water not attached to the soil particles and free to move under gravitational forces. The water that reaches this reservoir comes from the 
+infiltration of the Upper Zone Tension Water storage
+
+The following concepts are defined:
+
+-   The Upper Zone *Free Water Maximum* capacity ($Uzfw_{Max}$) is the maximum Free Water storage admissible in the Upper Zone.
+
+-   The Upper Zone *Free Water Content* ($UzfwC$) is the Free Water stored in the Upper Zone at any given time.
+
+-   The *Interflow depletion rate* ($Uzk$) represents the portion of the Upper Zone Free Water that is transferred outside as interflow.
+
+The water may be depleted by evapotranspiration, percolation to the Lower Zone or horizontal flow (surface runoff and interflow).
+
+On the one hand, the percolation to the Lower Zone is computed prior to the interflow computation as it is its preferred path. It depends on the deficiency of the Lower 
+Zone moisture volumes, on the soil properties, and on the water relative storage in this reservoir. The first 2 factors define the percolation demand from the Lower Zone 
+($DDA$). This demand represents the percolation in case of total percolation availability on the Upper Zone Free Water storage.
+
+$$
+P_{Base} = Lzfp_{Max} \cdot Lzpk + Lzfs_{Max} \cdot Lzsk
+$$ {#eq-H5}
+
+$$
+DEFR = \frac{(Lztw_{Max} - LztwC) + (Lzfp_{Max} - LzfpC) + (Lzfs_{Max} - LzfsC)}{Lztw_{Max} + Lzfp_{Max} + Lzfs_{Max}}
+$$ {#eq-H6}
+
+$$
+DDA = P_{Base} \cdot (1 + Zperc \cdot {DEFR}^{Rexp})
+$$ {#eq-H7}
+
+with $P_{Base}$: the continuing percolation rate under saturated condition (maximal percolation) \[L/T\]; $DDA$: Lower Zone maximum percolation demand \[L/T\]; $Zperc$: 
+ratio of maximum and minimum percolation rates \[-\]; $DEFR$: relative Lower Zone water deficiency \[-\]; $Rexp$: shape parameter of the percolation curve \[-\].
+
+The effective percolation depends on the percolation demand and the ratio between the Upper Zone Free Water content and the Upper Zone Free Water capacity as shown in @eq-H8. 
+In addition, the effective percolation is limited by the humidity content in the Upper Zone and also by the deficiency in the Lower Zone (@eq-H9 and @eq-H10 respectively):
+
+$$
+PERC = DDA \cdot \frac{UzfwC}{Uzfw_{Max}}
+$$ {#eq-H8}
+
+$$
+PERC \leq \mathrm{d}(UzfwC)/\mathrm{d}t
+$$ {#eq-H9}
+
+$$
+PERC \leq \mathrm{d} \Big( (Lztw_{Max} - LztwC) + (Lzfp_{Max} - LzfpC) + (Lzfs_{Max} - LzfsC) \Big) / \mathrm{d}t
+$$ {#eq-H10}
+
+with $PERC$: real percolation \[L/T\]; $DDA$: Lower Zone maximum percolation demand \[L/T\]; $UzfwC$: Upper Zone Free Water content \[L\]; $Uzfw_{Max}$: Upper Zone Free 
+Water capacity \[L\].
+
+On the other hand, the interflow occurs only when the rate of precipitation exceed the rate at which downward motion can occur from the Upper Zone Free Water. It depends 
+on the water content and on its interflow depletion rate $Uzk$, as shown in @eq-H11:
+
+$$
+Q_{interflow} = Uzk \cdot UzfwC \cdot P_{area} \cdot A
+$$ {#eq-H11}
+
+with $Q_{interflow}$: interflow \[L^3^/T\]; $Uzk$: interflow depletion rate from the Upper Zone Free water storage \[T^-1^\]; $UzfwC$: Upper Zone Free Water content \[L\]; 
+$P_{area}$: pervious area fraction of the basin \[-\]; $A$: surface of the basin \[L^2^\].
+
+Moreover, when the Upper Zone Free Water storage is completely full and the precipitation intensity exceeds both the percolation rate and the maximum interflow drainage 
+capacity, the excess precipitation results in surface runoff $Q_{SurfRunoff}$.
+
+**Lower Zone Tension Water storage**
+
+This storage represents the semi-saturated zone. It characterizes the volume of moisture in the lower soils which will be claimed by dry soil particles when moisture from 
+a wetting front reaches that depth. The water is consumed through evapotranspiration, proportionally to the remaining ETP of the Upper Zone Tension Water storage.
+
+The water reaching this reservoir comes from the Upper Zone percolation. One fraction ($Pfree$) of this percolation goes directly to the Free Water storages, even if the 
+Tension Water storage is not yet full, and the other fraction ($1-Pfree$) goes to the Tension Water storage of the Lower Zone [^hydro_mod_3]. The water also reaches this storage from 
+transfers between the other Lower Zone Free Water storages.
+
+[^hydro_mod_3]: If the Tension Water storage of the Lower Zone is completely full, then percolation goes entirely to the 2 Free Water storages.
+
+The following concepts are defined:
+
+-   The Lower Zone *Tension Water Maximum* capacity ($Lztw_{Max}$) is the maximum Tension Water storage admissible in the Lower Zone.
+
+-   The Lower Zone *Tension Water Content* ($LztwC$) is the Tension Water stored in the Lower Zone at any given time.
+
+If the relative content of Tension Water (ratio between its content and its maximum storage) is smaller than the relative content of Free Water, the incoming excess is 
+transferred from Free Water to Tension Water. The expressions of both ratios are shown in @eq-H12 to @eq-H14:
+
+$$
+RFW = Rserv \cdot (LzfpMax + Lzfs_{Max})
+$$ {#eq-H12}
+
+$$
+T = \frac{LztwC}{Lztw_{Max}}
+$$ {#eq-H13}
+
+$$
+F = \frac{LzfpC + LzfsC - RFW}{Lzfp_{Max} + Lzfs_{Max} - RFW}
+$$ {#eq-H14}
+
+with $T$: relative content of Lower Zone Tension Water \[-\]; $F$: relative content of Lower Zone Free Water \[-\]; $RFW$: Lower Zone Free Water not transferable to Lower Zone 
+Tension Water, susceptible to become baseflow \[L\]; $Rserv$: fraction of Lower Zone Free Water not transferable to Lower Zone Tension Water\[-\].
+
+If the relative content of the Lower Zone Tension Water is smaller than the relative fullness of the global Lower Zone, a water transfer DEL occurs from the Lower Zone Free 
+Supplementary reservoir to the Lower Zone Tension Water reservoir, as described by the following equations:
+
+$$
+R = \frac{LzfpC + LzfsC + LztwC - RFW}{Lzfp_{Max} + Lzfs_{Max} + Lztw_{Max} - RFW}
+$$ {#eq-H15}
+
+$$
+DEL = Lztw_{Max} \cdot \mathrm{d}(R - T)/\mathrm{d}t
+$$ {#eq-H16}
+
+with $DEL$: the Free-Tension Water transfer in the Lower Zone \[L/T\]; $R$: ratio between the available water for evapotranspiration and the total water content, in the 
+whole Lower Zone \[-\]; $RFW$: Lower Zone Free Water not transferable to Lower Zone Tension Water, susceptible to become baseflow \[L\].
+
+**Lower Zone Primary and Supplementary Free Water storages**
+
+This storage represents the saturated zone of the subsoil, i.e. the aquifer. There are two types of Lower Zone Free Water: a primary type with a very slow draining providing 
+baseflow over long periods of time, and a supplementary type which supplements the baseflow after a period of relatively recent rainfall.
+
+The water that reaches these storages comes from the $Pfree$ fraction of the percolation of the Upper Zone Free Water. This fraction is distributed into the primary and supplementary 
+storages according to their deficiency of water.
+
+The following concepts are defined:
+
+-   The Lower Zone *primary Free Water Maximum* capacity ($Lzfp_{Max}$) is the maximum primary water storage admissible in the Lower Zone.
+
+-   The Lower Zone *primary Free Water Content* ($LzfpC$) is the primary Free Water stored in the Lower Zone at any given time.
+
+-   The *Depletion rate of the Lower Zone primary Free Water storage* ($Lzpk$) is the portion of primary Free Water that drains as baseflow per day.
+
+-   The Lower Zone *supplementary Free Water Maximum* capacity ($LzfsMax$) is the maximum supplementary water storage admissible in the Lower Zone.
+
+-   The Lower Zone *supplementary Free Water Content* ($LzfsC$) is the supplementary Free Water stored in the Lower Zone at any given time.
+
+-   The *Depletion rate of the Lower Zone supplementary Free Water storage* ($Lzsk$) is the portion of supplementary Free Water that drains as baseflow per day.
+
+The drained water leaving these two storages (primary flow $Q_{primary}$ and supplementary flow $Q_{supplementary}$) follows the Darcy's law and forms the baseflow of the 
+Lower Zone $Q_{Lower\ Zone}$ as shown in @eq-H17 to @eq-H19:
+
+$$
+Q_{primary} = Lzpk \cdot LzfpC \cdot P_{area} \cdot A
+$$ {#eq-H17}
+
+$$
+Q_{supplementary} = Lzsk \cdot LzfsC \cdot P_{area} \cdot A
+$$  {#eq-H18}
+
+$$
+Q_{Lower\ Zone} = Q_{primary} + Q_{supplementary}
+$$ {#eq-H19}
+
+with $Q_{primary}$: primary baseflow \[L^3^/T\]; $Q_{supplementary}$: supplementary baseflow \[L^3^/T\]; $Q_{Lower\ Zone}$: total baseflow produced in the Lower Zone \[L^3^/T\]; 
+$Lzpk$: depletion rate of the Lower Zone primary Free Water storage \[T^-1^\]; $LzfpC$: Lower Zone primary Free Water Content \[L\]; $Lzsk$: depletion rate of the Lower Zone 
+supplementary Free Water storage \[T^-1^\]; $LzfsC$: Lower Zone supplementary Free Water Content \[L\]; $P_{area}$: pervious area fraction of the basin \[-\]; $A$: surface of the basin \[L^2^\].
+
+The model allows including baseflow losses, called subsurface flow $Q_{SubSurf}$, due to the existence of geological faults, fractured rocks, etc. that lead to filtrations throughout 
+the aquifer. The $Side$ parameter captures these losses as shown in @eq-H20:
+
+$$
+Q_{SubSurf} = Side \cdot Q_{baseflow}
+$$ {#eq-H20}
+
+with $Side$: ratio of deep percolation from Lower Zone Free Water storages \[-\], $Q_{baseflow}$: Lower Zone Free Water volume actually integrated to the channel outflow hydrographs 
+\[L^3^/T\]; $Q_{SubSurf}$: discharge lost into the aquifer \[L^3^/T\].
+
+And so this $Side$ parameter is used to correct the baseflow as follows:
+
+$$
+Q_{baseflow} = \frac{Q_{Lower\ Zone}}{1 + Side}
+$$ {#eq-H21}
+
+$$
+Q_{SubSurf} = Side \cdot \frac{Q_{Lower\ Zone}}{1 + Side}
+$$ {#eq-H22}
+
+**Evapotranspiration**
+
+The real evapotranspirations are obtained from each Tension Water storage, from the transfers between Free Water and Tension Water storages, from riverside vegetation and from 
+impervious areas. They are described hereafter.
+
+-   $ETR1$: evapotranspiration from the Upper Zone Tension Water reservoir. If this reservoir is not full, the evapotranspiration is proportional to its content (@eq-H23):
+
+$$
+ETR1 = ETP \cdot \frac{UztwC}{Uztw_{Max}} \leq UztwC
+$$ {#eq-H23}
+
+with $ETP$: potential evapotranspiration \[L/T\].
+
+The remaining evapotranspiration demand $RED$ and the updated content of water in the Upper Zone Tension Water reservoir $UztwC$ are then calculated:
+
+$$
+RED = ETP - ETR1
+$$ {#eq-H24}
+
+$$
+\mathrm{d}(UztwC)/\mathrm{d}t = - ETR1
+$$ {#eq-H25}
+
+-   $ETR2$: evapotranspiration from the Upper Zone Free Water reservoir. This evapotranspiration is equal to the remaining $RED$ left by the Tension Water reservoir, but it is limited 
+    by the Upper Zone Free Water content $UzfwC$:
+
+$$
+ETR2 = min \big( RED ; \mathrm{d}(UzfwC)/\mathrm{d}t \big)
+$$ {#eq-H26}
+
+Then, the remaining evapotranspiration $REDLz$ from the Lower Zone is:
+
+$$
+REDLz = RED - ETR2
+$$ {#eq-H27}
+
+The variation of the water content $UzfwC$ in the Upper Zone Free Water reservoir is defined as follows:
+
+$$
+\mathrm{d}(UzfwC)/\mathrm{d}t = - ETR2
+$$ {#eq-H28}
+
+-   $ETR3$: evapotranspiration from the Lower Zone Tension Water reservoir. The evapotranspiration availability corresponds to the remaining evapotranspiration demand in the Lower Zone. 
+    Evapotranspiration in this reservoir is proportional to the remaining evapotranspiration and to the Lower Zone Tension Water content, and inversely proportional to the Tension Water 
+	reservoirs' capacity of the Upper Zone and the Lower Zone:
+
+$$
+ETR3 = REDLz \cdot \frac{LztwC}{Uztw_{Max} + Lztw_{Max}} \leq \mathrm{d}(LztwC)/\mathrm{d}t
+$$ {#eq-H29}
+
+-   $ETR4$: evapotranspiration from the basin covered by riverside vegetation. Riverside vegetation absorbs the deficiency of potential evapotranspiration from the Upper Zone and the Lower Zone:
+
+$$
+ETR4 = ETP - ETR1 - ETR2 - ETR3
+$$ {#eq-H30}
+
+-   $ETR5$: evapotranspiration from the impervious fraction of the basin.
+
+$$
+ETR5 = ETR1 + (RED + ETR2) \cdot \frac{A_{dimp}C - UztwC - V_{ETR1}}{Uztw_{Max} + Lztw_{Max}}
+$$ {#eq-H31}
+
+$$
+V_{ETR1} = \int_{t1}^{t2}{ETR1 \cdot \mathrm{d}t}
+$$ {#eq-H32}
+
+with $A_{dimp}C$: sum of the Upper Zone and Lower Zone Tension Water Content in the $A_{dimp}$ area \[-\]; $V_{ETR1}$: evapotranspirated water from the Upper Zone Tension Water reservoir in a time step \[L\].
+
+Each evapotranspiration value is weighted based on the portion of the basin area in which it is produced. The total evapotranspiration is finally:
+
+$$
+ETRtotal = \Big( (ETR1 + ETR2 + ETR3) \cdot P_{area} + ETR4 \cdot Riva + ETR5 \cdot A_{dimp} \Big) \cdot A
+$$ {#eq-H33}
+
+with $ETRtotal$: total evapotranspiration \[L^3^/T\]; $P_{area}$: pervious area fraction of the basin \[-\]; $Riva$: riparian vegetarian area fraction \[-\]; $Pctim$: permanent impervious 
+area fraction of the basin \[-\]; $A_{dimp}$: maximum fraction of an additional impervious area due to saturation \[-\]; $A$: surface of the basin \[L^2^\].
+
+A more detailed guide about the SAC-SMA equations can be found on the following National Weather Service link: <http://www.nws.noaa.gov/iao/iao_SAC_SMA.php>
+
+## SCS (Soil Conservation Service) model description {#sec-model_scs}
+
+The Soil Conservation Service (SCS) model is a popular method developed in the early 70's [@soil_conservation_service_scs_national_1972] for assessing an event runoff volume and 
+peak rate of discharge using limited input data (precipitation). It is especially applicable for small watersheds.
+
+The SCS model only requires precipitation as input, which provides the effective precipitation considered after the initial abstraction. The hydrograph computation is by default based on the 
+dimensionless unit hydrograph (@fig-model_scs) resulting from a 1 cm of excess rainfall. This unit hydrograph (UH) has 37.5\% of the total runoff volume before the peak discharge ($T/T_p=1$) 
+and the remaining 62.5\% volume after. The shape of the default UH can be tailored in RS MINERVE.
+
+To use the SCS UH, one needs to determine only two things: time to peak $T_p$; and peak discharge $Q_p$.
+
+The total hydrograph from the rainfall event will be the addition of each hydrograph resulting from each excess rainfall, scaled by the rainfall magnitude.
+
+![Curvilinear and triangular dimensionless unit hydrographs](figures/fig-model_scs.png){#fig-model_scs}
+
++----------+-----------+----------------------+-------------------+
+| Name     | Units     | Description          | Regular Range     |
++==========+===========+======================+===================+
+| A        | m^2^      | Surface of the basin | \>0               |
++----------+-----------+----------------------+-------------------+
+| CN       | \-        | Curve Number         | 30 to 100         |
++----------+-----------+----------------------+-------------------+
+| L        | m         | Width of the plane   | $\geq$ 0          |
++----------+-----------+----------------------+-------------------+
+| J0       | \-        | Runoff slope         | \geq 0            |
++----------+-----------+----------------------+-------------------+
+| Ia       | mm        | Initial abstraction  | 0 to 100000       |
++----------+-----------+----------------------+-------------------+
+| TI       | s         | Lag time             | $\geq$ 0          |
++----------+-----------+----------------------+-------------------+
+
+: List of parameters and initial conditions for the **SCS model** {#tbl-param_model_scs}
+
+First, according to the SCS-CN method, we define the rainfall excess ($Q_e$, in m) as:
+
+$$
+Q_{e} = \frac{(P - Ia)^{2}}{P - Ia + \lambda} \text{ for } P > 0.2 \lambda , \text{ else } Q_{e} = 0
+$$ {#eq-I1}
+
+Initial abstraction ($I_a$, in m) is all losses before runoff begins. It includes water retained in surface depressions, water intercepted by vegetation, evaporation, and 
+infiltration. If not specified, $I_a$ will be derived from the Curve Number following @eq-I2.
+
+$$
+I_{a} = 0.2 \cdot \lambda
+$$ {#eq-I2}
+
+with $\lambda$: potential maximum retention after runoff begins \[m\], given by @eq-I3:
+
+$$
+\lambda = \bigg( \frac{25400}{CN} - 254 \bigg) \cdot \frac{1}{1000}
+$$ {#eq-I3}
+
+with $CN$: curve number \[-\].
+
+The UH can be solved using a simplified form of 'triangular' unit hydrograph. Assuming that this triangular unit hydrograph has the same 37.5\% of volume on the rising side 
+as the dimensionless UH of @fig-model_scs, we can solve for the $T_b$, which contains entire 100\% volume of runoff:
+
+$$
+T_{b} = \frac{1}{0.375} \cdot T_{p} = 2.67 \cdot T_{p}
+$$ {#eq-I4}
+
+$T_p$ (in h) and $Q_p$ (in m^3^/s per unit excess rainfall) can then be derived from the triangular UH. By considering two triangles, we can write the total volume ($Q$) under the hydrograph:
+
+$$
+Q = \frac{Q_{p} \cdot T_{p}}{2} + \frac{Q_{p} \cdot (T_{b} - T_{p})}{2} = \frac{Q_{p}}{2} \cdot 2.67 \cdot T_{p}
+$$ {#eq-I5}
+
+Since the area under the UH is equivalent to 1 cm, we have (for 1 cm rainfall depth, with A in m^2^):
+
+$$
+\frac{q_{p}}{2} \cdot 2.67T_{p} \cdot 3600 = \frac{A}{100}
+$$ {#eq-I6}
+
+$$
+q_{p} = \frac{2A}{100 \cdot 3600 \cdot 2.67T_{p}} = \frac{2A}{3600 \cdot 2.67 \cdot T_{p}} \text { per m excess rainfall}
+$$ {#eq-I7}
+
+From the scheme in @fig-model_scs, we have the time-of-peak:
+
+$$
+T_{p} = \frac{T_{r}}{2} + T_{l}
+$$ {#eq-I8}
+
+with $T_r$ (in h) being the duration of the unit excess rainfall and $T_l$ (in h) the time between the center of mass of excess rainfall and the peak of the UH. RS MINERVE 
+numerically applies the UH to each precipitation time interval, therefore $T_r$ is equal to the computation time-step $dT$ in the code. If the lag time parameter ($T_l$) is not provided, SCS defines it as:
+
+$$
+T_{l} = 0.6 \cdot T_{c}
+$$ {#eq-I9}
+
+with $T_c$: the time of concentration defined in SI (in h), as:
+
+$$
+T_{c} = \frac{227 \cdot L^{0.8}(\lambda + 1)^{0.7}}{10^{5} \sqrt{J0}}
+$$ {#eq-I10}
+
+with $L$: the width of plane parameter; $J0$: the runoff slope parameter. 
+
+If $T_l$ is provided, $T_c$ is simply computed from @eq-I9. We can thus compute $T_p$ as:
+
+$$
+T_{p} = \frac{dT}{2} + 0.6 \cdot T_{c}
+$$ {#eq-I11}
+
+And the resulting flow $Q_p$ becomes (with $Q_e$ the excess rainfall during the time interval $dT$):
+
+$$
+Q_p = q_p \cdot Q_e = \frac {2.08 \cdot 10^{-4} \cdot A}{T_p} \cdot Q_e
+$$ {#eq-I12}
+
+## Channel routing description {#sec-model_channel_routing}
+
+The channel routing can be solved by the St-Venant, Muskingum-Cunge or Kinematic wave. The three possibilities are presented hereafter and their parameters in @tbl-param_model_channel_routing.
+
++----------+----------+----------------------------------------+-------------------+
+| Name     | Units    | Description                            | Regular Range     |
++==========+==========+========================================+===================+
+| L        | m        | Length                                 | \>0               |
++----------+----------+----------------------------------------+-------------------+
+| B0       | m        | Width of the channel base              | \>0               |
++----------+----------+----------------------------------------+-------------------+
+| m        | \-       | Side bank relation coefficient (1H/mV) | 0.1 to 1          |
++----------+----------+----------------------------------------+-------------------+
+| J0       | \-       | Slope                                  | \>0               |
++----------+----------+----------------------------------------+-------------------+
+| K        | m^1/3^/s | Strickler coefficient                  | 10 to 90          |
++----------+----------+----------------------------------------+-------------------+
+| N        | \-       | Number of sections (not for Lag-Time)  | \>0               |
++----------+----------+----------------------------------------+-------------------+
+| Lag      | min      | Lag time (only for Lag-Time)           | $\geq$ 0          |
++----------+----------+----------------------------------------+-------------------+
+| QIni     | m^3^/s   | Initial discharge                      | \-                |
++----------+----------+----------------------------------------+-------------------+
+
+: List of parameters and initial conditions for the **channel routing model** {#tbl-param_model_channel_routing}
+
+### St. Venant routing {#sec-model_channel_routing_st_venant}
+
+The St. Venant equations solving the 1D unsteady flow are:
+
+$$
+\frac{\partial A}{\partial t} + \frac{\partial Q}{\partial x} = 0
+$$ {#eq-J1}
+
+$$
+\frac{\partial Q}{\partial t} + \frac{\partial}{\partial x} \bigg( \frac{Q^{2}}{A} + g \cdot I_{1} \bigg) = g \cdot A \cdot \big( J_{0} - J_{f} \big) + g \cdot I_{2}
+$$ {#eq-J2}
+
+with $A$: cross sectional flow area \[L^2^\]; $Q$: discharge \[L^3^/T\]; $J_0$: bottom slope; $J_f$: friction slope \[-\]; $I_1$: profile coefficient \[L^3^\]; $I_2$: coefficient for cross sectional variation \[L^2^\].
+
+@eq-J1 expresses the mass conservation while @eq-J2 ensures the conservation of momentum. The term $I_1$ takes into account the shape of the transversal profile and is calculated as follows:
+
+$$
+I_{1} = \int_{0}^{h}{(h - \eta) \cdot b(\eta})\ \mathrm{d}\eta
+$$ {#eq-J3}
+
+The term $b$ represents the cross-sectional variation for the level \eta and constitutes an integration variable according to @fig-model_channel_routing_st_venant_1. 
+St. Venant equations can be solved in RS MINERVE for a trapezoidal profile (@fig-model_channel_routing_st_venant_2).
+
+::: {#fig-channel_routing_st_venant layout-ncol=2}
+
+![Descriptive sketch for parameters used in the calculation of $I_1$](figures/fig-model_channel_routing_st_venant_1.png){#fig-model_channel_routing_st_venant_1}
+
+![Transversal profile available for the computation of channel routing](figures/fig-model_channel_routing_st_venant_2.png){#fig-model_channel_routing_st_venant_2}
+
+Sections of the Channel routing model
+
+:::
+
+For this trapezoidal section, the equation defining $I_1$ is reduced to:
+
+$$
+I_1 = \frac {B \cdot h^2}{2} + \frac {m \cdot h^3}{3}
+$$ {#eq-J4}
+
+with $B$: width of the base of the transversal profile \[L\]; $h$: water level \[L\]; $m$: side bank relation coefficient (1 vertical / $m$ horizontal) \[-\].
+
+The friction slope $J_f$ is calculated according to Manning-Strickler:
+
+$$
+J_f = \frac{Q \cdot |Q|}{A^{2} \cdot K^{2} \cdot {R_{h}}^{\frac{4}{3}}}
+$$ {#eq-J5}
+
+$$
+R_h = \frac{A}{L_p}
+$$ {#eq-J6}
+
+with $J_f$: friction slope \[-\]; $K$: Strickler coefficient \[L^1/3^/T\]; $R_h$: hydraulic radius \[L\]; $A$: flow area \[L^2^\]; $L_p$: wetted perimeter \[L\].
+
+The term $I_2$ takes into account the variation of the section along the channel. In the case of a prismatic channel $I_2$ is equal to zero. In general, $I_2$ is:
+
+$$
+I_2 = \int_{0}^{h}{(h - \eta) \ {\frac{\partial b}{\partial x}} |_{h = \eta}}
+$$ {#eq-J7}
+
+For a prismatic channel, @eq-J1 and @eq-J2 are solved by the Euler method (first order) as follows:
+
+$$
+{A_{j + 1}}^{n + 1} = {A_{j + 1}}^{n} - \frac{\Delta t}{\Delta x}({Q_{j + 1}}^{n} - {Q_{j}}^{n})
+$$ {#eq-J8}
+
+$$
+  {Q_{j + 1}}^{n + 1} = {Q_{j + 1}}^{n} - \frac{\Delta t}{\Delta x}(\frac{({Q_{j + 1}}^{n})^{2}}{{A_{j + 1}}^{n}} - \frac{({Q_{j}}^{n})^{2}}{{A_{j}}^{n}} + g \cdot {I_{1,j + 1}}^{n} - g \cdot {I_{1,j}}^{n}) + \Delta t \cdot g \cdot \frac{({A_{j}}^{n} + {A_{j + 1}}^{n})}{2} \cdot J_{0} - \Delta t \cdot g \cdot {A_{j + 1}}^{n} \cdot {{J_{f}}_{j + 1}}^{n}
+$$ {#eq-J9}
+
+with $j$ and $j+1$ representing the spatial position; $n$ and $n+1$ representing the time increment; $g$: gravity constant \[L^2^/T\]; $\Delta x$: longitudinal increment \[L\].
+
+The downstream boundary condition used by RS MINERVE is the normal flow depth.
+
+In practice, according to the physical situation to be simulated, some terms of the complete dynamic equations can be eliminated in order to get simplified 
+expressions without losing precision. Applicable solutions are the diffusive and kinematic waves which are presented in the following.
+
+### Muskingum-Cunge routing {#sec-model_channel_routing_muskingum}
+
+Ruling out the first two terms of @eq-J2 yields:
+
+$$
+\frac{\partial I_{1}}{\partial x} = A \cdot \left( J_{0} - J_{f} \right) + I_{2}
+$$ {#eq-J10}
+
+This new equation corresponds to the approximation of the diffusive wave. With the supplementary hypothesis of a prismatic channel [@cunge_polycopie_1991] it is possible to express @eq-J2 as follows:
+
+$$
+\frac{\partial Q}{\partial t} + \bigg( \frac{Q}{BD}\frac{\mathrm{d}D}{\mathrm{d}h} \bigg) \cdot \frac{\partial Q}{\partial x} - \frac{D^{2}}{2 \cdot B \cdot |Q|} \cdot \frac{\partial^{2}Q}{\partial x^{2}} = 0
+$$ {#eq-J11}
+
+with $B$: width of the bottom of the transversal profile \[L\]; $D$: discharge rate \[L^3^/T\].
+
+The discharge rate is the capacity of a cross section of a channel to transport a certain flow and is defined as:
+
+$$
+Q = D \cdot {J_{0}}^{\frac{1}{2}}
+$$ {#eq-J12}
+
+@eq-J11 is an equation with partial derivatives of parabolic type which represents the convection and the diffusion of the variable $Q$. Hence, the flow transported with a velocity 
+$c$ (@eq-J13) and diffused with a diffusion coefficient \delta (@eq-J14):
+
+$$
+c = \frac{Q}{B \cdot D} \cdot \frac{\mathrm{d}D}{\mathrm{d}h}
+$$ {#eq-J13}
+
+$$
+\delta = \frac{D^{2}}{2B \cdot |Q|}
+$$ {#eq-J14}
+
+Based on the hypothesis of a clearly defined relation between the flow $Q$ and the water level $h$, @eq-J11 is reduced to:
+
+$$
+\frac{\partial Q}{\partial t} + \bigg( \frac{\mathrm{d}Q}{\mathrm{d}A} \bigg)_{x_{0}} \cdot \frac{\partial Q}{\partial x} = 0
+$$ {#eq-J15}
+
+This equation is called "equation of the kinematic wave" and describes the simple convection of the flow with a velocity $c$ according to @eq-J13. It can be solved by the following numerical finite difference scheme:
+
+$$
+\frac{\partial Q}{\partial t} \approx \frac{X \cdot \big( {Q_{j}}^{n + 1} - {Q_{j}}^{n} \big) + (1 + X) \cdot \big( {Q_{j + 1}}^{n + 1} - {Q_{j + 1}}^{n} \big)}{\Delta t}
+$$ {#eq-J16}
+
+$$
+\frac{\partial Q}{\partial x} \approx \frac{\frac{1}{2} \cdot \big( {Q_{j + 1}}^{n + 1} - {Q_{j}}^{n + 1} \big) + \frac{1}{2} \cdot \big( {Q_{j + 1}}^{n} - {Q_{j}}^{n} \big)}{\Delta x}
+$$ {#eq-J17}
+
+Applying this scheme to @eq-J15 yields:
+
+$$
+\frac{X \cdot \big( {Q_{j}}^{n + 1} - {Q_{j}}^{n} \big) + (1 + X) \cdot \big( {Q_{j + 1}}^{n + 1} - {Q_{j + 1}}^{n} \big)}{c \cdot \Delta t} + \frac{\frac{1}{2} \cdot \big( {Q_{j + 1}}^{n + 1} - {Q_{j}}^{n + 1} \big) + \frac{1}{2} \cdot \big( {Q_{j + 1}}^{n} - {Q_{j}}^{n} \big)}{\Delta x} = 0
+$$ {#eq-J18}
+
+We can express the solution of this equation as a function of the unknown variable ${Q_{j+1}}^{n+1}$ namely:
+
+$$
+{Q_{j + 1}}^{n + 1} = C_1 \cdot {Q_{j}}^{n + 1} + C_2 \cdot {Q_{j}}^{n} + C_3 \cdot {Q_{j + 1}}^{n}
+$$ {#eq-J19}
+
+with:
+
+$$
+\begin{matrix}
+  C_1 = - \frac{K \cdot X - \frac{\Delta t}{2}}{K \cdot (1 - X) + \frac{\Delta t}{2}} \\
+  C_2 = \frac{K \cdot X + \frac{\Delta t}{2}}{K \cdot (1 - X) + \frac{\Delta t}{2}} \\
+  C_3 = \frac{K \cdot (1 - X) - \frac{\Delta t}{2}}{K \cdot (1 - X) + \frac{\Delta t}{2}} \\
+\end{matrix}
+$$ {#eq-J20}
+
+$$
+K = \frac{\Delta x}{c}
+$$ {#eq-J21}
+
+$$
+c = \frac{{Q_{j + 1}}^{n} - {Q_{j}}^{n}}{{A_{j + 1}}^{n} - {A_{j}}^{n}}
+$$ {#eq-J22}
+
+Here, hydraulic engineers might recognize the equation of Muskingum [@boillat_polycopie_1980] corresponding to the name of the river localized in the United States where the method was employed 
+for the first time. The Muskingum method represents an approximation by finite differences of the equation for the kinematic wave. This is not only an appearance since developing the 
+terms of @eq-J18 in terms of a Taylor series around the point ($j$, $n$) assuming $\Delta x/\Delta t = c$ and neglecting the quadratic terms ($\Delta x^2$) the equation can be written as follows:
+
+$$
+\frac{\partial Q}{\partial t} + c \cdot \frac{\partial Q}{\partial x} - c \cdot B\frac{\partial^{2}Q}{\partial x^{2}} = 0
+$$ {#eq-J23}
+
+$$
+B = \Delta x \cdot \bigg( \frac{1}{2} - X \bigg)
+$$ {#eq-J24}
+
+According to this analysis proposed by @cunge_subject_1969 it can be recognized that the Muskingum equation is a solution in terms of finite differences of the equation of the diffusive 
+wave (@eq-J11) under the condition of correctly introducing the value of the parameters $K$ and $X$. $K$ is defined by @eq-J21 and according to the celerity $c$ (@eq-J24), $X$ corresponds to:
+
+$$
+X = \frac{1}{2} - \frac{D^3}{2 \cdot \Delta x \cdot |Q| \cdot Q \cdot \frac{\mathrm{d}D}{\mathrm{d}h}}
+$$ {#eq-J25}
+
+This function of the diffusive wave implemented at present in RS MINERVE is capable of solving the Muskingum-Cunge equation for the trapezoidal geometry of a transversal profile 
+according to @fig-model_channel_routing_st_venant_2.
+
+### Kinematic Wave routing {#sec-model_channel_routing_kinematic}
+
+In the kinematic wave model the terms of inertia and pressure of the St. Venant equations are supposed to be negligible. As a consequence, the cinematic hypothesis supposes that the 
+gravity forces are identical, though with an opposite sign, to the friction forces. This implies that there is an explicit relationship between the flow and the water level (measured normal water depth).
+
+The equation of the cinematic wave as presented in the previous chapter is presented as follows:
+
+$$
+\frac{\partial Q}{\partial t} + \left( \frac{dQ}{dA} \right)_{x_{0}} \cdot \frac{\partial Q}{\partial x} = 0
+$$ {#eq-J26}
+
+This is a simple equation of convection which indicates that the flow $Q$ is transported downstream with a celerity $c$ which is defined as:
+
+$$
+c = \frac{\partial Q}{\partial A}
+$$ {#eq-J27}
+
+This rather simple model transports each point of the hydrograph from upstream to downstream with a velocity $c$. Since no diffusive term appears in the equation the peak discharge 
+remains constant and is not reduced. On the contrary, the general behaviour of a flood is modified, since high discharges are transferred downstream more rapidly than small ones.
+
+The initial parameters are identical to those of the model of the diffusive wave. The geometry for the transversal profiles also corresponds to the same than for the Muskingum-Cunge 
+method (trapezoidal channels, @fig-model_channel_routing_st_venant_2). Opposite to the model of the diffusive wave, no reduction of the flood is produced as mentioned previously. 
+The solution is performed according to the following equations:
+
+$$
+c = \frac{{Q_{j + 1}}^{n} - {Q_{j}}^{n}}{{A_{j + 1}}^{n} - {A_{j}}^{n}}
+$$ {#eq-J28}
+
+$$
+\alpha = c \cdot \frac{\Delta t}{\Delta L}
+$$ {#eq-J29}
+
+$$
+{Q_{j + 1}}^{n + 1}=
+  \begin{cases}
+    \alpha \cdot {Q_{j}}^{n} + (1 - \alpha) \cdot {Q_{j + 1}}^{n}                                   & \quad \text{if } \alpha \leq 1 \\
+    1/\alpha \cdot {Q_{j}}^{n} + (1 - \frac{1}{\alpha}) \cdot {Q_{j}}^{n + 1}               & \quad \text{if } \alpha > 1
+  \end{cases}
+$$ {#eq-J30}
+
+### Lag-time {#sec-model_channel_routing_lagtime}
+
+The lag-time model is the simpler routing model where upstream and downstream flows are delayed by a fixed lag time called $Lag$ (in minutes).
+
+## Time series {#sec-model_timeseries}
+
+In this object, temporary series of flow, precipitation, temperature or ETP can be directly introduced. The time is incorporated in seconds and the associated values in their corresponding 
+units, in tabular form "t \[s\] - value \[depending on the series\]".
+
++---------------+-------------------------------+----------------------+
+| Name          | Units                         | Description          |
++===============+===============================+======================+
+| Series        | s (depending on the series)   | Time - Value series  |
+| (paired data) |                               |                      |
++---------------+-------------------------------+----------------------+
+
+: **Time series** required data {#tbl-param_model_timeseries}
+
+## Reservoir {#sec-model_reservoir}
+
+The transient evolution of a water volume $V$ in a reservoir is described by the following retention equation:
+
+$$
+\frac{\mathrm{d}V}{\mathrm{d}t} = Q_{e} - Q_{s}
+$$ {#eq-K1}
+
+with $V$: volume in the reservoir \[L^3^\]; $Q_e$: inflow in the reservoir \[L^3^/T\]; $Q_s$: outflow \[L^3^/T\].
+
+Usually, reservoirs are equipped with turbines, pumps and spillways depending on the water level in the reservoir. To solve @eq-K1, it is necessary to know the outflow as a 
+function of the water volume $V$ in the reservoir. This operation is possible if relation between the water level and the water volume is known (@tbl-param_model_reservoir).
+
++---------------+--------------+--------------------------------+
+| Name          | Units        | Description                    |
++===============+==============+================================+
+| H-V           | masl - m^3^  | Level - Volume relation        |
+| (paired data) |              |                                |
++---------------+--------------+--------------------------------+
+| Hini          | masl         | Initial level in the reservoir |
++---------------+--------------+--------------------------------+
+
+: **Reservoir** paired data and initial condition required {#tbl-param_model_reservoir}
+
+## Level-Discharge Relation (HQ) {#sec-model_hq}
+
+The HQ object provides an outflow depending on a level in a reservoir. The outflow is calculated by the help of a "Level - Discharge" relation (@tbl-param_model_hq). Hence, 
+the discharge in then calculated as follows:
+
+$$
+  {Q_{outflow}}^{n} =
+  \begin{cases}
+    0                                                                                               & \quad \text{if } H^n < H_{1} \\
+    Q_{dev,i} + (H_{i + 1} - H^{n}) \cdot \frac{Q_{outflow,i+1} - Q_{outflow,i}}{H_{i+1} - H_i}     & \quad \text{if } H_i < H^n < H_{i+1} \\
+  \end{cases}
+$$ {#eq-L1}
+
+with ${Q_{outflow}}^n$: discharge at instant $n$ \[L^3^/T\]; $H^n$: water level at instant $n$ \[L\]; $Q_{outflow,i}$: discharge flow for a water level $H_i$ \[L^3^/T\]; $H_i$: 
+reservoir water level \[L\].
+
++---------------+---------------+----------------------------+
+| Name          | Units         | Description                |
++===============+===============+============================+
+| H-Q           | masl - m^3^/s | Level - Discharge relation |
+| (paired data) |               |                            |
++---------------+---------------+----------------------------+
+
+: **HQ** paired data required {#tbl-param_model_hq}
+
+## Turbine {#sec-model_turbine}
+
+In this object, temporary series of flow can be directly introduced to provide an outflow in a reservoir. The time is incorporated in seconds and the associated values in 
+their corresponding units, in tabular form "t \[s\] - discharge". The final discharge also depends on the level reservoir as presented in next equations:
+
+$$
+{Q_{turbine}}^n =
+  \begin{cases}
+    {Q_{wanted}}^{n}    & \quad \text{if } \left( H^{n} > H_{on}  \right) \text{ or } (H_{off} \leq  H^{n} \leq H_{on} \text{ and } IsOperating = 1)  \\
+    0                   & \quad \text{if } \left( H^{n} < H_{off} \right) \text{ or } (H_{off} \leq  H^{n} \leq H_{on} \text{ and } IsOperating = 0) \\
+  \end{cases}
+$$ {#eq-M1}
+
+with ${Q_{turbine}}^n$: discharge at instant $n$ \[L^3^/T\]; $H^n$: water level at instant $n$ \[L\]; ${Q_{wanted}}^n$: discharge flow wanted at instant $n$ \[L^3^/T\]; $Hon$: 
+Threshold in the level of the reservoir to start the turbine cycle \[L\]; $Hoff$: Threshold in the level of the reservoir to stop the turbine cycle \[L\]; $IsOperating$: 
+Planned turbine cycle at instant $t$ \[0/1\].
+
++-----------------+---------------+-------------------------------------------------------------------------------+
+| Name            | Units         | Description                                                                   |
++=================+===============+===============================================================================+
+| H-Q             | masl - m^3^/s | Level - Discharge relation                                                    |
+| (paired data)   |               |                                                                               |
++-----------------+---------------+-------------------------------------------------------------------------------+
+| Hon             | masl          | Threshold in the level of the reservoir to start the turbine cycle            |
+|                 |               | (turbine starts when the threshold is exceeded)                               |
++-----------------+---------------+-------------------------------------------------------------------------------+
+| Hoff            | masl          | Threshold in the level of the reservoir to stop the turbine cycle             |
+|                 |               | (turbine stops when level go below the threshold)                             |
++-----------------+---------------+-------------------------------------------------------------------------------+
+| IsOperatingIni  | 0/1           | First suggested value for the turbine cycle                                   |
+|                 |               | (0 = not turbine; 1 = turbine). Only taken into account if *Hoff \> H \> Hon* |
++-----------------+---------------+-------------------------------------------------------------------------------+
+
+: **Time-Q** paired data, parameters and initial conditions required {#tbl-param_model_turbine}
+
+![Time-H, tubine start and stop operation](figures/fig-model_turbine.png){#fig-model_turbine}
+
+## Hydropower {#sec-model_hydropower}
+
+The inputs of this object are a reservoir level and a discharge. It also needs the paired data relation "Discharge ($Q$) - Performance ($\eta$)" for the turbine, the altitude 
+($Z_{central}$) of the hydropower plant, the length ($L$), the diameter ($D$) and the roughness ($K$) of the pipe as well as the kinematic viscosity of the fluid ($\nu$).
+
+As outputs, the object calculates not only the power and the revenue for each time step, as presented in @eq-N1 to @eq-N3, but also the total energy produced and the total 
+obtained revenue. For this calculation, it takes into account the head loss in terms of volumetric flow rate in a full-flowing circular pipe from the Darcy-Weisbach equation 
+[@darcy_recherches_1857; @simmons_henry_2008].
+
+$$
+{Z_{net}}^{n} = ({Z_{water}}^{n} - Z_{central}) - f \cdot \frac{8 \cdot L \cdot {Q^{n}}^{2}}{g \cdot \pi^{2} \cdot D^{5}}
+$$ {#eq-N1}
+
+$$
+Power^{n} = \eta^{n} \cdot 1000 \cdot Q^{n} \cdot g \cdot {Z_{net}}^{n}
+$$ {#eq-N2}
+
+$$
+Revenue^{n} = Power^{n} \cdot Price^{n}
+$$ {#eq-N3}
+
+with ${H_{net}}^n$: net height at instant $n$ \[L\]; ${Z_{water}}^n$: water height in the reservoir at instant $n$ \[L\]; $Z_{central}$: hydropower plant altitude \[L\]; $f$: 
+friction factor \[-\]; $L$: length of the pipe \[L\]; $Q^n$: discharge at instant $n$ \[L^3^/T\]; $g$: gravity, 9.81 \[L^2^/T\]; $D$: diameter \[L\]; $Power^n$: power at instant 
+$n$ \[Watt\]; $\eta$: performance of the turbine at instant $n$ \[\%\]; $Revenue^n$: Revenue of the turbine at instant $n$ \[\euro{}/Kwh\]; $Price^n$: Price of the energy at instant 
+$n$ \[\euro{}/Kwh\].
+
+If the discharge actually provided to the object Hydropower is higher than the range proposed in the relation $Q-\eta$ of this object, the maximum discharge of the paired data 
+$Q-\eta$ is taken for the energy production calculations.
+
++---------------+-----------------+------------------------------------------------------------+
+| Name          | Units           | Description                                                |
++===============+=================+============================================================+
+| Q-\eta        | m\^ 3\^/s - \%  | Discharge-Performance relation                             |
+| (paired data) |                 |                                                            |
++---------------+-----------------+------------------------------------------------------------+
+| Zplant        | masl            | Hydropower plant altitude                                  |
++---------------+-----------------+------------------------------------------------------------+
+| L             | m               | Length of the pipe                                         |
++---------------+-----------------+------------------------------------------------------------+
+| D             | m               | Diameter of the pipe                                       |
++---------------+-----------------+------------------------------------------------------------+
+| K             | m               | Roughness                                                  |
++---------------+-----------------+------------------------------------------------------------+
+| \nu           | m^2^/s          | Kinematic viscosity                                        |
++---------------+-----------------+------------------------------------------------------------+
+| Default Price | €/Kwh           | Default price, only used if no data exists in the database |
++---------------+-----------------+------------------------------------------------------------+
+
+: **Hydropower** paired data and parameters required {#tbl-param_model_hydropower}
+
+A default price can be introduced for first approximation of the revenue. It is used only if the object does not have a price series in the database.
+
+For the calculation of the friction factor $f$ of the Darcy-Weisbach equation, the equation of Colebrook-White [@colebrook_experiments_1937; @colebrook_turbulent_1939] is used. 
+It is presented in @eq-N4, where $\lambda$ represents $f$. In addition, the Reynolds number, $Re$, is presented in @eq-N5.
+ 
+$$
+\frac{1}{\sqrt{\lambda}} = - 2 \cdot log_{10}\left( \frac{k/D}{3.7} + \frac{2.51}{Re \cdot \sqrt{\lambda}} \right)
+$$ {#eq-N4}
+
+$$
+Re = v \cdot \frac{D}{\upsilon}
+$$ {#eq-N5}
+
+with $\lambda$: friction factor \[-\]; $k$: roughness \[L\]; $Re$: Reynolds number \[-\]; $v$: velocity \[L/T\]; $\upsilon$: kinematic viscosity \[L^2^/T\]
+
+@eq-N4 is solved for the range of discharges of the paired data $Q-\eta$, providing the paired data relation "Discharge (Q) - Friction factor ($\lambda$)" for user information.
+
+## Diversion {#sec-model_diversion}
+
+This object needs the paired data relation "Inflow - Diverted flow" as information as well as the incoming hydrograph. The relation describes the behaviour of the diversion and is 
+generated by the user, who performs a calculation for the behaviour of the diversion and then creates the relation "Inflow - Diverted flow".
+
+With this information, the Diversion calculates the diverted hydrograph and the downstream hydrograph, as presented in @eq-O1:
+
+$$
+{Q_{up}}^{n} = {Q_{down}}^{n} + {Q_{diverted}}^{n}
+$$ {#eq-O1}
+
+with ${Q_{up}}^n$: total flow upstream at instant $n$ \[L^3^/T\]; ${Q_{diverted}}^n$: diverted flow at instant $n$ \[L^3^/T\]; ${Q_{down}}^n$: downstream flow at instant $n$ \[L^3^/T\].
+
++----------------------+-----------------+----------------------------------------+
+| Name                 | Units           | Description                            |
++======================+=================+========================================+
+| Q~up~-Q~diverted~    | m^3^/s - m^3^/s | Upstream flow - Diverted flow relation |
+| (paired data)        |                 |                                        |
++----------------------+-----------------+----------------------------------------+
+
+: **Diversion** paired data required {#tbl-param_model_diversion}
+
+## Consumer {#sec-model_consumer}
+
+The Consumer object is used to take into account a consumption site (agriculture, cities, etc.). A series in the database is used as the demand of the Consumer object. If no information 
+about consummation exists in the database, the parameter $Default QDemand$ is used for the whole period of the simulation as uniform demand.
+
+The LossRate parameter provides the distribution losses of a demand site (physical leaks, clandestine connections, etc.). If the input discharge ($Qup$) is sufficient, the delivered flow 
+($Qdelivered$) is equal to the Qdemand and the supply requirement ($Qsupplied$) is equal to the Qdemand divided by ($1-LossRate$), otherwise the supply requirement is equal to the input 
+discharge ($Qup$). Then, the ConsumptionRate parameter is used to determine the discharge consumed by the demand site and which is lost (evaporation, embodied products, etc). The discharge 
+remainder ($Qreturn$) is returned to the main system. The output flow is equal to the input flow minus the losses and the effective consumption ($Qconsumed$).
+
+The Consumer object calculates the losses, the consumed discharge as well as the downstream hydrograph, as presented in next equations. At the same time, the object also calculates the unmet 
+demand and the demand coverage (\%) series during the simulation period.
+
+$$
+{Q_{supplied}}^{n} = min \bigg( \frac{{Q_{demand}}^{n}}{1 - LossRate};{Q_{up}}^{n} \bigg)
+$$ {#eq-P1}
+
+$$
+{Q_{stream}}^{n} = {Q_{up}}^{n} - {Q_{supplied}}^{n}
+$$ {#eq-P2}
+
+$$
+{Q_{losses}}^{n} = {Q_{supplied}}^{n} \cdot LossRate
+$$ {#eq-P3}
+
+$$
+{Q_{delivered}}^{n} = {Q_{supplied}}^{n} \cdot (1 - LossRate)
+$$ {#eq-P4}
+
+$$
+{Q_{UnmetDemand}}^{n} = {Q_{demand}}^{n} - {Q_{delivered}}^{n}
+$$ {#eq-P5}
+
+$$
+{DemandCoverage}^{n} = \frac{{Q_{demand}}^{n} - {Q_{delivered}}^{n}}{{Q_{demand}}^{n}} \cdot 100
+$$ {#eq-P6}
+
+$$
+{Q_{consumed}}^{n} = {Q_{delivered}}^{n} \cdot ConsumptionRate
+$$ {#eq-P7}
+
+$$
+{Q_{return}}^{n} = {Q_{delivered}}^{n} \cdot (1 - ConsumptionRate)
+$$ {#eq-P8}
+
+$$
+{Q_{down}}^{n} = {Q_{up}}^ {n} - {Q_{losses}}^{n} - {Q_{consumed}}^{n}
+$$ {#eq-P9}
+
+with ${Q_{demand}}^n$: demanded consumption at instant $n$ \[L^3^/T\]; ${Q_{up}}^n$: total flow upstream at instant $n$ \[L^3^/T\]; $LossRate$: fraction of the $Q_{supplied}$ lost at the 
+demand site \[-\]; ${Q_{supplied}}^n$: supplied discharge at instant $n$ \[L^3^/T\]; ${Q_{stream}}^n$: discharge that flows downstream after the initial supply at instant $n$ \[L^3^/T\]; 
+${Q_{losses}}^n$: part of the $Q_{supplied}$ discharge that is lost at instant $n$ \[L^3^/T\]; $LossRate$: fraction of the $Q_{supplied}$ discharge that will be lost before its delivery 
+\[-\]; ${Q_{delivered}}^n$: part of the $Q_{supplied}$ discharge that is not lost at instant $n$ \[L^3^/T\]; ${Q_{UnmetDemand}}^n$: discharge shortfall at the consumption site at instant 
+$n$ \[L^3^/T\]; $DemandCoverage$: percentage of the demand covered by the delivered discharge at instant $n$ \[\%\]; $ConsumptionRate$: fraction of the $Q_{delivered}$ ultimately consumed 
+\[-\]; ${Q_{consumed}}^n$: discharge consumed at the consumption site at instant $n$ \[L^3^/T\]; ${Q_{return}}^n$: discharge returning downstream from the consumption site at instant $n$ 
+\[L^3^/T\]; ${Q_{down}}^n$: downstream flow at instant $n$ \[L^3^/T\].
+
++-----------------+-----------+-----------------------------------------------------------------------------+
+| Name            | Units     | Description                                                                 |
++=================+===========+=============================================================================+
+| LossRate        | \-        | Fraction of the $Q_{supplied}$ lost at the demand site                      |
++-----------------+-----------+-----------------------------------------------------------------------------+
+| ConsumptionRate | \-        | Fraction of the $Q_{delivered}$ ultimately consumed                         |
++-----------------+-----------+-----------------------------------------------------------------------------+
+| Default QDemand | m^3^/s    | Default demand of consummation, only used if no data exists in the database |
++-----------------+-----------+-----------------------------------------------------------------------------+
+
+: **Consumer** parameters required {#tbl-param_model_consumer}
+
+![Distribution of discharges in the Consumer object](figures/fig-model_consumer.png){#fig-model_consumer}
+
+## Structure efficiency {#sec-model_efficiency}
+
+This object needs an efficiency coefficient as information to describe the efficiency of a structure such a canal or a pipe, as well as the incoming hydrograph.
+
+An efficiency of 1 provides an output flow equivalent to the input hydrograph. An efficiency of 0 generates a complete loss of the input.
+
+The downstream hydrograph is calculated as presented in @eq-Q1 and @eq-Q2:
+
+$$
+{Q_{down}}^{n} = {Q_{up}}^{n} \cdot \text{Efficiency}
+$$ {#eq-Q1}
+
+$$
+{Q_{lost}}^{n} = {Q_{up}}^{n} \cdot (1 - \text{Efficiency})
+$$ {#eq-Q2}
+
+with ${Q_{up}}^n$: total flow upstream at instant $n$ \[L^3^/T\]; ${Q_{lost}}^n$: lost flow at instant $n$ \[L^3^/T\]; ${Q_{down}}^n$: downstream flow at instant $n$ \[L^3^/T\].
+
++-------------+-------------+-----------------------------+
+| Name        | Units       | Description                 |
++=============+=============+=============================+
+| Efficiency  | \-          | Efficiency of the structure |
++-------------+-------------+-----------------------------+
+
+: **Structure efficiency** parameters required {#tbl-param_model_efficiency}
+
+## Planner {#sec-model_planner}
+
+When a planner object is selected, a manage system is generated. Inside this object, several Rules can be created. All the rules will be computed, from first one to last one. In each 
+rule define several Conditions is possible and also create combinations between them (with $AND$ or $OR$ operators). The rule will be applied if the combined condition (or an individual 
+condition) is satisfied.
+
++--------------+--------------------------------------------------+
+| Operator     | Combined condition is satisfied when             |
++==============+==================================================+
+| OR           | Left condition OR Right condition are satisfied  |
++--------------+--------------------------------------------------+
+| AND          | Left condition AND Right condition are satisfied |
++--------------+--------------------------------------------------+
+
+: Operators to combine rule conditions {#tbl-operators_combin_model_planner}
+
+A typical example of planner is the implementation of a turbine/pump law as a function of the water level in the reservoir. Thus, some Rules should be created with different conditions 
+regarding to reservoir levels or, in some cases, to results from other objects.
+
++-------------+-----------+-----------+-----------------------------------------------------------------------------------+
+| Object      | Name      | Units     | Description                                                                       |
++=============+===========+===========+===================================================================================+
+| Planner     | Rule      | \-        | Rule to be applied regarding at least one condition                               |
++-------------+-----------+-----------+-----------------------------------------------------------------------------------+
+| Rules       | Condition | \-        | Expression to be evaluated and if it is satisfied the parent rule will be applied |
++-------------+-----------+-----------+-----------------------------------------------------------------------------------+
+
+: **Planner** data required {#tbl-param_model_planner}
+
+The possible operators to use inside the conditions are presented in @tbl-param_model_planner.
+
++--------------+--------------------------+
+| Operator     | Definition               |
++==============+==========================+
+| \>           | Bigger than              |
++--------------+--------------------------+
+| $\geq$       | Bigger than or equal to  |
++--------------+--------------------------+
+| =            | Equal to                 |
++--------------+--------------------------+
+| $\leq$       | Smaller than or equal to |
++--------------+--------------------------+
+| \<           | Smaller than             |
++--------------+--------------------------+
+
+: Operators for rule conditions {#tbl-operators_model_planner}
+
+## Comparator {#sec-model_comparator}
+
+The Comparator object calculates ten performance indicators by comparing a simulated and a reference (observed) timeseries. The warm up period parameter (in days) is used for the 
+initialization of the model state variables. Note that this time period starts at the beginning of and must be shorter than the simulation period and is not used to compute the 
+performance indicators. The description of each indicator is presented in @sec-tech_performance_indicators.
+
+Moreover, for the calculation of threshold-based indicators (Peirce Skill Score and Overall Accuracy), the definition of both the reference and the simulation thresholds is required 
+(@tbl-param_model_comparator).
+
++----------------------+---------------------------+----------------------------------------------------------------------------------------------+
+| Name                 | Units                     | Description                                                                                  |
++======================+===========================+==============================================================================================+
+| Reference threshold  | (depends on the variable) | Threshold used by threshold-based indicators (returns TRUE if reference value \> threshold)  |
++----------------------+---------------------------+----------------------------------------------------------------------------------------------+
+| Simulation threshold | (depends on the variable) | Threshold used by threshold-based indicators (returns TRUE if simulation value \> threshold) |
++----------------------+---------------------------+----------------------------------------------------------------------------------------------+
+| Warm up period       | Days                      | Warm up period, not used for indicators computation                                          |
++----------------------+---------------------------+----------------------------------------------------------------------------------------------+
+
+: **Comparator** parameters required {#tbl-param_model_comparator}
+
+## References {.unnumbered}

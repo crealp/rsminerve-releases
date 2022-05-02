@@ -1,0 +1,3205 @@
+# Visual Basic Scripts {#sec-tech_scripts}
+
+VBScript (Visual Basic Scripting Edition) is an Active Scripting
+language developed by Microsoft that is modelled on Visual Basic. It is
+designed as a "lightweight" language with a fast interpreter and can
+be effectively used for automating day to day office tasks as well as
+monitoring in the Windows-based environment. It has been installed by
+default in every desktop release of Microsoft Windows since Windows 98.
+
+This chapter describes the methodology to run tasks using Visual Basic
+scripts when working with RS MINERVE models (running a model, extracting
+information from dataset, etc.).
+
+## Introduction to Visual Basic Scripts
+
+A VBScript script must be executed within a host environment, of which
+there are several provided with Microsoft Windows, including: Windows
+Script Host (WSH), Internet Explorer (IE), and Internet Information
+Services (IIS).
+
+VBScript can also be used to create applications that run directly on a
+workstation running Microsoft Windows. The simplest example is a script
+that makes use of the Windows Script Host (WSH) environment. Such a
+script is usually in a stand-alone file with the file extension .vbs.
+
+VBScript can be used for managing RS MINERVE without the graphical
+interface. The VBScript can be invoked in two ways: from the command
+line with Cscript, or directly by double-clicking on the script.
+
+In VBScript, *Properties* are attributes or values of an object that can
+be read and set. As long as the value returned by the property is not an
+object, setting and retrieving property values requires a simple
+assignment statement. Many properties return either individual objects
+or collections (a collection is an object that serves as a container for
+other data items or objects). These also require assignment statements
+that use the Set statement. For example, you can retrieve a reference to
+the root folder of the *C:* drive on a local system with a code fragment
+like the following:
+
+`Set oFS = CreateObject("Scripting.FileSystemObject")`
+
+When running RS MINERVE with VBScripts, the following code line has to
+be used before executing the specific RS MINERVE tasks:
+
+`Set rsm = CreateObject("RSMinerve.RS.Task")`
+
+Also, it is worth mentioning the difference between:
+
+-   Procedures (or Sub Procedures): does not return any value.
+
+-   Functions (or Function Procedures): return a value.
+
+## Available VBS procedures and functions in RS MINERVE
+
++-----------------------+-------------------------------------------------------------------------------------------------+
+| Type                  | Name of procedure/ function                                                                     |
++=======================+=================================================================================================+
+| **Application start** | [Start](#Script_Start)                                                                          |
++-----------------------+-------------------------------------------------------------------------------------------------+
+| **Model preparation** | [LoadDataset](#Script_LoadDataset)                                                              |
++-----------------------+-------------------------------------------------------------------------------------------------+
+|                       | [LoadDatasetAndSetDates](#Script_LoadDatasetAndSetDates)                                        |
++-----------------------+-------------------------------------------------------------------------------------------------+
+|                       | [MergeLoadedDataset](#Script_MergeLoadedDataset)                                                |
++-----------------------+-------------------------------------------------------------------------------------------------+
+|                       | [LoadInitialConditionsFromFile](#Script_LoadInitialConditionsFromFile)                          |
++-----------------------+-------------------------------------------------------------------------------------------------+
+|                       | [LoadInitialConditionsFromDataset](#Script_LoadInitialConditionsFromDataset)                    |
++-----------------------+-------------------------------------------------------------------------------------------------+
+|                       | [LoadInitialConditionsFromFileAndCopyFile](#Script_LoadInitialConditionsFromFileAndCopy)        |
++-----------------------+-------------------------------------------------------------------------------------------------+
+|                       | [LoadInitialConditionsFromFileAndMoveFile](#Script_LoadInitialConditionsFromFileAndMove)        |
++-----------------------+-------------------------------------------------------------------------------------------------+
+|                       | [LoadParametersFromFile](#Script_LoadParametersFromFile)                                        |
++-----------------------+-------------------------------------------------------------------------------------------------+
+|                       | [GetStartDateFromDataset](#Script_GetStartDateFromDataset)                                      |
++-----------------------+-------------------------------------------------------------------------------------------------+
+|                       | [GetEndDateFromDataset](#Script_GetEndDateFromDataset)                                          |
++-----------------------+-------------------------------------------------------------------------------------------------+
+|                       | [GetStartDateFromModel](#Script_GetStartDateFromModel)                                          |
++-----------------------+-------------------------------------------------------------------------------------------------+
+|                       | [GetEndDateFromModel](#Script_GetEndDateFromModel)                                              |
++-----------------------+-------------------------------------------------------------------------------------------------+
+|                       | [GetICDateFromICFile](#Script_GetICDateFromICFile)                                              |
++-----------------------+-------------------------------------------------------------------------------------------------+
+|                       | [SetDates](#Script_SetDates)                                                                    |
++-----------------------+-------------------------------------------------------------------------------------------------+
+|                       | [SetStartDate](#Script_SetStartDate)                                                            |
++-----------------------+-------------------------------------------------------------------------------------------------+
+|                       | [SetEndDate](#Script_SetEndDate)                                                                |
++-----------------------+-------------------------------------------------------------------------------------------------+
+|                       | [SetSimulationTimeStep](#Script_SetSimulationTimeStep)                                          |
++-----------------------+-------------------------------------------------------------------------------------------------+
+|                       | [SetRecordingTimeStep](#Script_SetRecordingTimeStep)                                            |
++-----------------------+-------------------------------------------------------------------------------------------------+
+|                       | [SetETPMethod](#Script_SetETPMethod)                                                            |
++-----------------------+-------------------------------------------------------------------------------------------------+
+|                       | [SetLongitudeAndLatitude](#Script_SetLongitudeAndLatitude)                                      |
++-----------------------+-------------------------------------------------------------------------------------------------+
+|                       | [SetUniformETPValue](#Script_SetUniformETPValue)                                                |
++-----------------------+-------------------------------------------------------------------------------------------------+
+|                       | [SetSpatialInterpolationMethod](#Script_SetSpatialInterpolationMethod)                          |
++-----------------------+-------------------------------------------------------------------------------------------------+
+|                       | [DefineModelProperties](#Script_DefineModelProperties)                                          |
++-----------------------+-------------------------------------------------------------------------------------------------+
+|                       | [UpdateModelProperties](#Script_UpdateModelProperties)                                          |
++-----------------------+-------------------------------------------------------------------------------------------------+
+|                       | [SetOutputRatioCoeffsInPlanner](#Script_SetOutputRatioCoeffsInPlanner)                          |
++-----------------------+-------------------------------------------------------------------------------------------------+
+|                       | [SetConditionThresholdInPlanner](#Script_SetConditionThresholdInPlanner)                        |
++-----------------------+-------------------------------------------------------------------------------------------------+
+|                       | [SetDaysInPlanner](#Script_SetDaysInPlanner)                                                    |
++-----------------------+-------------------------------------------------------------------------------------------------+
+|                       | [SetHoursInPlanner](#Script_SetHoursInPlanner)                                                  |
++-----------------------+-------------------------------------------------------------------------------------------------+
+| **Simulation and**    | [SavePreSimulationReportAs](#Script_SavePreSimulationReportAs)                                  |
+| **reports**           |                                                                                                 |
++-----------------------+-------------------------------------------------------------------------------------------------+
+|                       | [SavePreSimulationReport](#Script_SavePreSimulationReport)                                      |
++-----------------------+-------------------------------------------------------------------------------------------------+
+|                       | [Simulate](#Script_Simulate)                                                                    |
++-----------------------+-------------------------------------------------------------------------------------------------+
+|                       | [SavePostSimulationReportAs](#Script_SavePostSimulationReportAs)                                |
++-----------------------+-------------------------------------------------------------------------------------------------+
+|                       | [SavePostSimulationReport](#Script_SavePostSimulationReport)                                    |
++-----------------------+-------------------------------------------------------------------------------------------------+
+| **Save model and**    | [SaveModelAs](#Script_SaveModelAs)                                                              |
+| **properties**        |                                                                                                 |
++-----------------------+-------------------------------------------------------------------------------------------------+
+|                       | [SaveModel](#Script_SaveModel)                                                                  |
++-----------------------+-------------------------------------------------------------------------------------------------+
+|                       | [SaveInitialConditionsAs](#Script_SaveInitialConditionsAs)                                      |
++-----------------------+-------------------------------------------------------------------------------------------------+
+|                       | [SaveInitialConditions](#Script_SaveInitialConditions)                                          |
++-----------------------+-------------------------------------------------------------------------------------------------+
+|                       | [SaveFinalConditionsAs](#Script_SaveFinalConditionsAs)                                          |
++-----------------------+-------------------------------------------------------------------------------------------------+
+|                       | [SaveFinalConditions](#Script_SaveFinalConditions)                                              |
++-----------------------+-------------------------------------------------------------------------------------------------+
+|                       | [SaveParametersAs](#Script_SaveParametersAs)                                                    |
++-----------------------+-------------------------------------------------------------------------------------------------+
+|                       | [SaveParameters](#Script_SaveParameters)                                                        |
++-----------------------+-------------------------------------------------------------------------------------------------+
+| **Model results**     | [SaveFullResultsAs](#Script_SaveFullResultsAs)                                                  |
++-----------------------+-------------------------------------------------------------------------------------------------+
+|                       | [SaveFullResults](#Script_SaveFullResults)                                                      |
++-----------------------+-------------------------------------------------------------------------------------------------+
+|                       | [SaveSelectionResultsAs](#Script_SaveSelectionResultsAs)                                        |
++-----------------------+-------------------------------------------------------------------------------------------------+
+|                       | [SaveSelectionResults](#Script_SaveSelectionResults)                                            |
++-----------------------+-------------------------------------------------------------------------------------------------+
+|                       | [SaveInitializationDatasetAs](#Script_SaveInitializationDatasetAs)                              |
++-----------------------+-------------------------------------------------------------------------------------------------+
+|                       | [SaveInitializationDataset](#Script_SaveInitializationDataset)                                  |
++-----------------------+-------------------------------------------------------------------------------------------------+
+|                       | [ExportResultsTo](#Script_ExportResultsTo)                                                      |
++-----------------------+-------------------------------------------------------------------------------------------------+
+|                       | [MergeFullResults](#Script_MergeFullResults)                                                    |
++-----------------------+-------------------------------------------------------------------------------------------------+
+|                       | [MergeSelectionResults](#Script_MergeSelectionResults)                                          |
++-----------------------+-------------------------------------------------------------------------------------------------+
+|                       | [MergeDatasetsAs](#Script_MergeDatasetsAs)                                                      |
++-----------------------+-------------------------------------------------------------------------------------------------+
+|                       | [MergeDatasets](#Script_MergeDatasets)                                                          |
++-----------------------+-------------------------------------------------------------------------------------------------+
+|                       | [GetPropertyValue](#Script_GetPropertyValue)                                                    |
++-----------------------+-------------------------------------------------------------------------------------------------+
+|                       | [GetIndicatorValue](#Script_GetIndicatorValue)                                                  |
++-----------------------+-------------------------------------------------------------------------------------------------+
+| **Calibration**       | [LoadCalibrationsInModel](#Script_LoadCalibrationsInModel)                                      |
++-----------------------+-------------------------------------------------------------------------------------------------+
+|                       | [LoadCalibrationsByFile](#Script_LoadCalibrationsByFile)                                        |
++-----------------------+-------------------------------------------------------------------------------------------------+
+|                       | [SaveAllCalibrationsInModel](#Script_SaveAllCalibrationsInModel)                                |
++-----------------------+-------------------------------------------------------------------------------------------------+
+|                       | [RunCalibration](#Script_RunCalibration)                                                        |
++-----------------------+-------------------------------------------------------------------------------------------------+
+|                       | [RunAllCalibrations](#Script_RunAllCalibrations)                                                |
++-----------------------+-------------------------------------------------------------------------------------------------+
+|                       | [ExportCalibrationResults](#Script_ExportCalibrationResults)                                    |
++-----------------------+-------------------------------------------------------------------------------------------------+
+|                       | [ExportAllCalibrationsResults](#Script_ExportAllCalibrationsResults)                            |
++-----------------------+-------------------------------------------------------------------------------------------------+
+|                       | [SetCalibrationDates](#Script_SetCalibrationDates)                                              |
++-----------------------+-------------------------------------------------------------------------------------------------+
+| **Application stop**  | [Stop](#Script_Stop)                                                                            |
++-----------------------+-------------------------------------------------------------------------------------------------+
+| **Other procedures**  | [RemoveFile](#Script_RemoveFile)                                                                |
+| **/functions**        |                                                                                                 |
++-----------------------+-------------------------------------------------------------------------------------------------+
+|                       | [GetAppVersion](#Script_GetAppVersion)                                                          |
++-----------------------+-------------------------------------------------------------------------------------------------+
+|                       | [GetReaderVersion](#Script_GetReaderVersion)                                                    |
++-----------------------+-------------------------------------------------------------------------------------------------+
+
+: Summary of the VBS procedures and functions available in RS MINERVE {#tbl-tech_scripts_proced_funct}
+
+## Application Start {#sec-tech_scripts_start}
+
++---------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_Start"> Start </a>          | *Opening of the model*                                                     |
++---------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This procedure opens the indicated model to be used.
+
+**Syntax**
+
+`Start (modelFullPath, debug=false)`
+
+**Parameters**
+
++------------------------+------------------------------------------------+
+| modelFullPath          | String. Full path of the hydrological model.   |
+|                        | The file extension of the model has to be      |
+|                        | *\*.rsm*; otherwise, the script reports an     |
+|                        | error.                                         |
++------------------------+------------------------------------------------+
+| Debug                  | Boolean (optional). If TRUE, the script writes |
+|                        | a text file with the error logs.               |
++------------------------+------------------------------------------------+
+
+**Errors**
+
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "Model file not defined"                       |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Model file not found"                         |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Model file not valid"                         |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+
+## Model preparation
+
++-----------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_LoadDataset"> LoadDataset </a>                              | *Loading of the input dataset*                                             |
++-----------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This procedure loads the indicated input dataset in the model. The model
+has to have been previously open.
+
+**Syntax**
+
+`LoadDataset (inputDatasetFullPath)`
+
+**Parameters**
+
++-------------------------+------------------------------------------------+
+| inputDatasetFullPath    | String. Full path of the input dataset         |
++-------------------------+------------------------------------------------+
+
+**Errors**
+
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Model not loaded"                             |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "Input dataset not defined"                    |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Input dataset not found"                      |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Input dataset not valid"                      |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Failed to apply datasources"                  |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+
+\
+
+\
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_LoadDatasetAndSetDates"> LoadDatasetAndSetDates </a>                                   | *Loading of the input dataset and set dates*                               |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+The input dataset is loaded, and the datasource and the simulation
+period are defined based on the dataset. Depending on the parameters and
+whether each time series have a different period, the simulation period
+is defined.
+
+**Syntax**
+
+`LoadDatasetAndSetDates (inputDatasetFullPath, canBeginWithMissingData,
+canEndWithMissingData)`
+
+**Parameters**
+
++-------------------------+------------------------------------------------+
+| inputDatasetFullPath    | String. Full path of the input dataset         |
++-------------------------+------------------------------------------------+
+| canBeginWithMissingData | Boolean. If false, the last start date of the  |
+|                         | time series is used as simulation date start.  |
++-------------------------+------------------------------------------------+
+| canEndWithMissingData   | Boolean. If false, the first last date of the  |
+|                         | time series is used as simulation date end.    |
++-------------------------+------------------------------------------------+
+
+**Errors**
+
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Model not loaded"                             |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "Input dataset not defined"                    |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Input dataset not found"                      |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Input dataset not valid"                      |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Failed to apply datasources"                  |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Input dataset is empty"                       |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+
+\
+
+\
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_MergeLoadedDataset"> MergeLoadedDataset </a>                                           | *Merging of the input dataset to base dataset*                             |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This procedure merges a loaded dataset to a base dataset. It can be
+useful when new data is available and the user would like to merge to
+historical data. The result is an updated base dataset containing the
+loaded dataset, saved in a text or binary format file.
+
+**Syntax**
+
+`MergeLoadedDataset (baseDatasetFullPath, saveDataInDstFile)`
+
+**Parameters**
+
++-------------------------+------------------------------------------------+
+| baseDatasetFullPath     | String. Full path of the base dataset.         |
++-------------------------+------------------------------------------------+
+| saveDataInDstFile       | Boolean. If true the dataset values are saved  |
+|                         | in text format (*\*.dst*), if false in binary  |
+|                         | format (*\*.dsb*).                             |
++-------------------------+------------------------------------------------+
+
+**Errors**
+
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Input dataset not loaded, failed to merge with|
+| Exception               | base dataset"                                  |
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "Input dataset not defined"                    |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Fullpath of base dataset not valid"           |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Failed to create new base dataset"            |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Base dataset not valid"                       |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Failed to merge input dataset with base       |
+| Exception               | dataset"                                       |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Failed to save changes in base dataset"       |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+
+\
+
+\
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_LoadInitialConditionsFromFile"> LoadInitialConditionsFromFile </a>                     | *Setting of the initial conditions*                                        |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This procedure sets the initial conditions of the model from a text or
+an Excel file (please refer to @sec-tech_file_formats_param_ic_files to
+learn more about Initial Conditions files).
+
+**Syntax**
+
+`LoadInitialConditionsFromFile (icFileFullPath)`
+
+**Parameters**
+
++-------------------------+------------------------------------------------+
+| icFileFullPath          | String. Full path of the IC file. Accepted     |
+|                         | file extensions are *\*.txt* and *\*.xlsx*.    |
++-------------------------+------------------------------------------------+
+
+**Errors**
+
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Model not loaded"                             |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "IC file not defined"                          |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "IC file not found"                            |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Failed to import initial conditions from IC   |
+| Exception               | file"                                          |
++-------------------------+------------------------------------------------+
+
+\
+
+\
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_LoadInitialConditionsFromDataset"> LoadInitialConditionsFromDataset </a>               | *Setting of the initial conditions from a dataset*                         |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+The initial conditions are set from a dataset file (please refer to 
+@sec-tech_database_formats_dataset_csv of this manual to learn more 
+about dataset formats).
+
+**Syntax**
+
+`LoadInitialConditionsFromDataset (icDatasetFullPath)`
+
+**Parameters**
+
++-------------------------+------------------------------------------------+
+| icDatasetFullPath       | String. Full path of the dataset from where to |
+|                         | extract the initial conditions.                |
++-------------------------+------------------------------------------------+
+
+**Errors**
+
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Model not loaded"                             |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "IC dataset not defined"                       |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "IC dataset not found"                         |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "IC dataset not valid"                         |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Failed to load results from IC dataset"       |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Failed to initialize the model with IC        |
+| Exception               | dataset"                                       |
++-------------------------+------------------------------------------------+
+
+\
+
+\
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_LoadInitialConditionsFromFileAndCopy"> LoadInitialConditionsFromFileAndCopyFile </a>   | *Setting of the initial conditions from a file and copy the file*          |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This procedure sets the initial conditions of the model from a text or
+an Excel file, and copies them in a newly created text file (which name
+is based on the original IC filename but includes the start date of the
+simulation). If the indicated folder where to create the new IC file
+does not exist it will be created.
+
+**Syntax**
+
+`LoadInitialConditionsFromFileAndCopyFile (icFileFullPath, saveFolder)`
+
+**Parameters**
+
++-------------------------+------------------------------------------------+
+| icFileFullPath          | String. Full path of the IC file. Accepted     |
+|                         | file extensions are *\*.txt* and *\*.xlsx*.    |
++-------------------------+------------------------------------------------+
+| saveFolder              | String. Folder where results have to be stored.|
++-------------------------+------------------------------------------------+
+
+**Errors**
+
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Model not loaded"                             |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "IC file not defined"                          |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "IC file not found"                            |
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "Save folder not defined"                      |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Save folder '*saveFolder*' not valid"         |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Failed to import initial conditions from IC   |
+| Exception               | file"                                          |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Failed to copy the IC file"                   |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+
+\
+
+\
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_LoadInitialConditionsFromFileAndMove"> LoadInitialConditionsFromFileAndMoveFile </a>   | *Loading of the initial conditions and moving of the text file*            |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This procedure sets the initial conditions of the model from a text or
+an Excel file, and moves the file to the specified folder (the filename
+is based on the original IC filename but includes the start date of the
+simulation). The target file must not exist before; otherwise an error
+occurs.
+
+**Syntax**
+
+`LoadInitialConditionsFromFileAndMoveFile (icFileFullPath, saveFolder)`
+
+**Parameters**
+
++-------------------------+------------------------------------------------+
+| icFileFullPath          | String. Full path of the IC file. Accepted     |
+|                         | file extensions are *\*.txt* and *\*.xlsx*.    |
++-------------------------+------------------------------------------------+
+| saveFolder              | String. Folder where results are stored.       |
++-------------------------+------------------------------------------------+
+
+**Errors**
+
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Model not loaded"                             |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "IC file not defined"                          |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "IC file not found"                            |
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "Save folder not defined"                      |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Save folder '*saveFolder*' not valid"         |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Failed to import initial conditions from IC   |
+| Exception               | file"                                          |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Failed to move the IC file"                   |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+
+\
+
+\
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_LoadParametersFromFile"> LoadParametersFromFile </a>                                   | *Setting of the parameters*                                                |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This procedure sets the parameters of the model from a text or an Excel
+file (please refer to @sec-tech_file_formats_param_ic_files of this manual to learn more
+about Parameters files).
+
+**Syntax**
+
+`LoadParametersFromFile (paramFileFullPath)`
+
+**Parameters**
+
++-------------------------+------------------------------------------------+
+| icFileFullPath          | String. Full path of the Parameters file.      |
+|                         | Accepted file extensions are *\*.txt* and      |
+|                         | *\*.xlsx*.                                     |
++-------------------------+------------------------------------------------+
+
+**Errors**
+
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Model not loaded"                             |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "Parameters file not defined"                  |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Parameters file not found"                    |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Failed to import parameters from Parameters   |
+| Exception               | file"                                          |
++-------------------------+------------------------------------------------+
+
+\
+
+\
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_GetStartDateFromDataset"> GetStartDateFromDataset </a>                                 | *Getting the start date from a dataset*                                    |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This function extracts the start date of a specified dataset file. If
+the dataset contains different start dates (data series with initial
+lacking data), the user can choose whether to get the first common date
+of the complete dataset.
+
+**Syntax**
+
+`GetStartDateFromDataset (DatasetFullPath, canBeginWithMissingData)`
+
+**Parameters**
+
++-------------------------+------------------------------------------------+
+| DatasetFullPath         | String. Full path of the dataset file.         |
++-------------------------+------------------------------------------------+
+| canBeginWithMissingData | Boolean. If true the last start date of the    |
+|                         | time series is used as simulation date start.  |
++-------------------------+------------------------------------------------+
+
+**Returned value**
+
++-------------------------+------------------------------------------------+
+| Start date              | It returns the value of the start date of a    |
+|                         | dataset. The format of the date is: *dd.MM.yyyy|
+|                         | HH:mm:ss*.                                     |
++-------------------------+------------------------------------------------+
+
+**Errors**
+
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Model not loaded"                             |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "Dataset not defined"                          |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Dataset not found"                            |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Dataset not valid"                            |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+
+\
+
+\
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_GetEndDateFromDataset"> GetEndDateFromDataset </a>                                     | *Getting the end date from a dataset*                                      |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This function extracts the end date of a specified dataset file. If the
+dataset contains different end dates (data series with final lacking
+data), the user can choose whether to get the last common date of the
+complete dataset.
+
+**Syntax**
+
+`GetEndDateFromDataset (DatasetFullPath, canEndWithMissingData)`
+
+**Parameters**
+
++-------------------------+------------------------------------------------+
+| DatasetFullPath         | String. Full path of the dataset file.         |
++-------------------------+------------------------------------------------+
+| canEndWithMissingData   | Boolean. If true the first last date of the    |
+|                         | time series is used as simulation date end.    |
++-------------------------+------------------------------------------------+
+
+**Outputs**
+
++-------------------------+------------------------------------------------+
+| End date                | It returns the value of the end date of a      |
+|                         | dataset. The format of the date is: *dd.MM.yyyy|
+|                         | HH:mm:ss*.                                     |
++-------------------------+------------------------------------------------+
+
+**Errors**
+
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Model not loaded"                             |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "Dataset not defined"                          |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Dataset not found"                            |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Dataset not valid"                            |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+
+\
+
+\
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_GetStartDateFromModel"> GetStartDateFromModel </a>                                     | *Getting the start date from model*                                        |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This function extracts the start date from the loaded model.
+
+**Syntax**
+
+`GetStartDateFromModel ()`
+
+**Returned value**
+
++-------------------------+------------------------------------------------+
+| Start date              | It returns the value of the start date of the  |
+|                         | model. The format of the date is: *dd.MM.yyyy  |
+|                         | HH:mm:ss*.                                     |
++-------------------------+------------------------------------------------+
+
+**Errors**
+
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Model not loaded"                             |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+
+
+\
+
+\
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_GetEndDateFromModel"> GetEndDateFromModel </a>                                         | *Getting the end date from model*                                          |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This function extracts the end date from the loaded model.
+
+**Syntax**
+
+`GetEndDateFromModel ()`
+
+**Returned value**
+
++-------------------------+------------------------------------------------+
+| End date                | It returns the value of the end date of the    |
+|                         | model. The format of the date is: *dd.MM.yyyy  |
+|                         | HH:mm:ss*.                                     |
++-------------------------+------------------------------------------------+
+
+**Errors**
+
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Model not loaded"                             |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+
+\
+
+\
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_GetICDateFromICFile"> GetICDateFromICFile </a>                                         | *Getting the date from an Initial Conditions file*                         |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This function extracts the date corresponding to a specified Initial
+Conditions file.
+
+**Syntax**
+
+`GetICDateFromICFile (icFileFullPath)`
+
+**Parameters**
+
++-------------------------+------------------------------------------------+
+| icFileFullPath          | String. Full path of the IC file. Accepted     |
+|                         | file extension is *\*.txt*.                    |
++-------------------------+------------------------------------------------+
+
+**Returned value**
+
++-------------------------+------------------------------------------------+
+| Date                    | It returns the date of the Initial Conditions  |
+|                         | file. The format of the date is: *dd.MM.yyyy   |
+|                         | HH:mm:ss*.                                     |
++-------------------------+------------------------------------------------+
+
+**Errors**
+
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Model not loaded"                             |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "IC file not defined"                          |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "IC file not found"                            |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Failed to get IC Date from IC file"           |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+
+\
+
+\
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_SetDates"> SetDates </a>                                                               | *Setting of the dates*                                                     |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This procedure sets the simulation period based on specified start and
+end dates.
+
+**Syntax**
+
+`SetDates (startDate, endDate)`
+
+**Parameters**
+
++-------------------------+-------------------------------------------------+
+| startdate               | Date. Start date for the simulation period. The |
+|                         | format of the date has to be: *dd.MM.yyyy       |
+|                         | HH:mm:ss*.                                      |
++-------------------------+-------------------------------------------------+
+| enddate                 | Date. End date for the simulation period. The   |
+|                         | format of the date has to be: *dd.MM.yyyy       |
+|                         | HH:mm:ss*.                                      |
++-------------------------+-------------------------------------------------+
+
+**Errors**
+
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Model not loaded"                             |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Start Date not valid, unable to convert       |
+|                         | '*startdate*' to a Date"                       |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "End Date not valid, unable to convert         |
+|                         | '*enddate*' to a Date"                         |
++-------------------------+------------------------------------------------+
+
+\
+
+\
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_SetStartDate"> SetStartDate </a>                                                       | *Setting of the start date*                                                |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This procedure sets the simulation period start date.
+
+**Syntax**
+
+`SetStartDate (startDate)`
+
+**Parameters**
+
++-------------------------+-------------------------------------------------+
+| startdate               | Date. Start date for the simulation period. The |
+|                         | format of the date has to be: *dd.MM.yyyy       |
+|                         | HH:mm:ss*.                                      |
++-------------------------+-------------------------------------------------+
+
+**Errors**
+
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Model not loaded"                             |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Start Date not valid, unable to convert       |
+|                         | '*startdate*' to a Date"                       |
++-------------------------+------------------------------------------------+
+
+\
+
+\
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_SetEndDate"> SetEndDate </a>                                                           | *Setting of the end date*                                                  |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This procedure sets the simulation period end date.
+
+**Syntax**
+
+`SetEndtDate (endDate)`
+
+**Parameters**
+
++-------------------------+------------------------------------------------+
+| enddate                 | Date. End date for the simulation period. The  |
+|                         | format of the date has to be: *dd.MM.yyyy      |
+|                         | HH:mm:ss*.                                     |
++-------------------------+------------------------------------------------+
+
+**Errors**
+
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Model not loaded"                             |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "End Date not valid, unable to convert         |
+|                         | '*enddate*' to a Date"                         |
++-------------------------+------------------------------------------------+
+
+\
+
+\
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_SetSimulationTimeStep"> SetSimulationTimeStep </a>                                     | *Setting of the simulation timestep*                                       |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This procedure sets the simulation timestep and its unit for the
+simulation.
+
+**Syntax**
+
+`SetSimulationTimeStep (value, unit)`
+
+**Parameters**
+
++-------------------------+------------------------------------------------+
+| value                   | Double. Simulation time step as double (value  |
+|                         | has to be \>0).                                |
++-------------------------+------------------------------------------------+
+| unit                    | String. Unit: Seconds, Minutes, Hours or Days. |
++-------------------------+------------------------------------------------+
+
+**Errors**
+
++-------------------------+-------------------------------------------------+
+| Invalid Operation       | "Model not loaded"                              |
+| Exception               |                                                 |
++-------------------------+-------------------------------------------------+
+| Argument Exception      | "Simulation time step not valid, unable to      |
+|                         | convert '*value*' to a Double"                  |
++-------------------------+-------------------------------------------------+
+| Argument Exception      | "Simulation time step not valid, '*value*' is   |
+|                         | outside the range of a Double"                  |
++-------------------------+-------------------------------------------------+
+| Argument Exception      | "Simulation time step not valid, unit           |
+|                         | '*unit*' not recognized"                        |
++-------------------------+-------------------------------------------------+
+
+\
+
+\
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_SetRecordingTimeStep"> SetRecordingTimeStep </a>                                       | *Setting of the recording timestep*                                        |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This procedure sets the recording timestep and its unit for the
+simulation.
+
+**Syntax**
+
+`SetRecordingTimeStep (value, unit)`
+
+**Parameters**
+
++-------------------------+------------------------------------------------+
+| value                   | Double. Recording time step as double (value   |
+|                         | has to be \>0).                                |
++-------------------------+------------------------------------------------+
+| unit                    | String. Unit: Seconds, Minutes, Hours, Days or |
+|                         | Months.                                        |
++-------------------------+------------------------------------------------+
+
+**Errors**
+
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Model not loaded"                             |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Recording time step not valid, unable to      |
+|                         | convert '*value*' to a Double"                 |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Recording time step not valid, '*value*' is   |
+|                         | outside the range of a Double"                 |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Recording time step not valid, unit '*unit*'  |
+|                         | not recognized"                                |
++-------------------------+------------------------------------------------+
+
+\
+
+\
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_SetETPMethod"> SetETPMethod </a>                                                       | *Setting of the ETP method*                                                |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This procedure sets the ETP (Potential EvapoTranspiration) method in the
+model (please refer to @sec-tech_file_formats_param_ic_files of the User's Manual to learn
+more about the model Settings).
+
+**Syntax**
+
+`SetETPMethod (etpMethod)`
+
+**Parameters**
+
++-------------------------+------------------------------------------------+
+| selectedETPMethod       | String. Selected ETP Method: Turc, McGuinness, |
+|                         | Oudin or Uniform ETP.                          |
++-------------------------+------------------------------------------------+
+
+**Errors**
+
++-------------------------+------------------------------------------------+
+| Invalid Operation       |"Model not loaded"                              |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Selected ETP Method is not implemented in RS  |
+|                         | MINERVE"                                       |
++-------------------------+------------------------------------------------+
+
+\
+
+\
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_SetLongitudeAndLatitude"> SetLongitudeAndLatitude </a>                                 | *Setting of the Longitude and Latitude*                                    |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This procedure sets the Longitude and Latitude used when applying ETP
+methods.
+
+**Syntax**
+
+`SetLongitudeAndLatitude (longitude, latitude)`
+
+**Parameters**
+
++-------------------------+------------------------------------------------+
+| longitude               | Integer. Selected Longitude.                   |
++-------------------------+------------------------------------------------+
+| latitude                | Integer. Selected Latitude.                    |
++-------------------------+------------------------------------------------+
+
+**Errors**
+
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Model not loaded"                             |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Longitude not valid"                          |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Latitude not valid"                           |
++-------------------------+------------------------------------------------+
+
+\
+
+\
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_SetUniformETPValue"> SetUniformETPValue </a>                                           | *Setting of the Uniform ETP*                                               |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This procedure sets the Uniform ETP value when Uniform ETP Method has
+been set.
+
+**Syntax**
+
+`SetUniformETPValue (value)`
+
+**Parameters**
+
++-------------------------+------------------------------------------------+
+| value                   | String. Uniform ETP value.                     |
++-------------------------+------------------------------------------------+
+
+**Errors**
+
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Model not loaded"                             |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Uniform ETP value not valid"                  |
++-------------------------+------------------------------------------------+
+
+\
+
+\
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_SetSpatialInterpolationMethod"> SetSpatialInterpolationMethod </a>                     | *Setting of the Spatial Interpolation method*                              |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This procedure sets the Spatial Interpolation method to be used.
+
+**Syntax**
+
+`SetSpatialInterpolationMethod (spatialInterpolationMethod)`
+
+**Parameters**
+
++-------------------------+------------------------------------------------+
+| selectedETPMethod       | String. Selected ETP Method.                   |
++-------------------------+------------------------------------------------+
+
+**Errors**
+
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Model not loaded"                             |  
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Selected Spatial Interpolation Method         |        
+|                         | does not exist in RS MINERVE"                  |
++-------------------------+------------------------------------------------+
+
+\
+
+\
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_DefineModelProperties"> DefineModelProperties </a>                                     | *Defining property of an object*                                           |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This procedure defines a parameter or an initial condition in all
+objects included in the specified zone.
+
+**Syntax**
+
+`DefineModelProperties (objectType, propertyName, value, zone = null)`
+
+**Parameters**
+
++-------------------------+------------------------------------------------+
+| objectType              | String. Object type (e.g. SOCONT, GSM,         |
+|                         | Reservoir, etc.). See                          |
+|                         | @tbl-scriptsobjects_nomeclature.               |
++-------------------------+------------------------------------------------+
+| propertyName            | String. Property name (e.g. HGR3Max). See      |
+|                         | @tbl-scriptsobjects_nomeclature.               |
++-------------------------+------------------------------------------------+
+| value                   | Double. Value of the property.                 |
++-------------------------+------------------------------------------------+
+| zone = null             | String (optional). Zone where the objects are. |
++-------------------------+------------------------------------------------+
+
+**Errors**
+
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Model not loaded"                             |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Object type 'objectType' not valid"           |
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "Property name not defined"                    |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Zone 'zone' not found in                      |
+|                         | 'hydrologicalmodel'"                           |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Value is not valid, unable to convert 'value' |
+|                         | to a Double"                                   |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Failed to define model properties"            |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+
+\
+
+\
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_UpdateModelProperties"> UpdateModelProperties </a>                                     | *Updating of model properties*                                             |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This procedure updates a parameter or an initial condition in all
+objects included in the specified zone.
+
+**Syntax**
+
+`UpdateModelProperties (objectType, propertyName, scale, shift,
+linkedPropertyName=null, zone = null, objectName=null)`
+
+**Parameters**
+
++-------------------------+------------------------------------------------+
+| objectType              | String. Object type (e.g. SOCONT, GSM,         |
+|                         | Reservoir, etc.). See                          |
+|                         | @tbl-scriptsobjects_nomeclature.               |
++-------------------------+------------------------------------------------+
+| propertyName            | String. Property name (e.g. HGR3Ini). See      |
+|                         | @tbl-scriptsobjects_nomeclature.               |
++-------------------------+------------------------------------------------+
+| scale                   | String. Scale to multiply the current property.|
++-------------------------+------------------------------------------------+
+| shift                   | String. Shift to add to the current property.  |
++-------------------------+------------------------------------------------+
+| linkedPropertyName =    | String (optional). Name of the property that   |
+| null                    | restricts the maximum value of the updated     |
+|                         | property (e.g. the HGR3Max when updating the   |
+|                         | HGR3Ini).                                      |
++-------------------------+------------------------------------------------+
+| zone = null             | String (optional). Zone where the objects to   |
+|                         | which the procedure will be applied are.       |
++-------------------------+------------------------------------------------+
+| objectName = null       | String (optional). Name of the object to which |
+|                         | the procedure will be applied. The object must |
+|                         | be within the zone if this one has been        |
+|                         | specified.                                     |
++-------------------------+------------------------------------------------+
+
+**Errors**
+
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Model not loaded"                             |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Object type 'objectType' not valid"           |
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "Property name not defined"                    |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Zone 'zone' not found in                      |
+|                         | 'hydrologicalmodel'"                           |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Scale is not valid, unable to convert 'scale' |
+|                         | to a Double"                                   |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Shift is not valid, unable to convert 'shift' |
+|                         | to a Double"                                   |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Failed to update model properties"            |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+
+\
+
+\
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_SetOutputRatioCoeffsInPlanner"> SetOutputRatioCoeffsInPlanner </a>                     | *Setting of the coefficients of the expression defining a rule's output*   |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This procedure sets the coefficients A and B in the expression:
+$Q=A \cdot Output+B$ for the definition of a particular Rule output at a
+specified Planner.
+
+**Syntax**
+
+`SetOutputRatioCoeffsInPlanner (plannerName, ruleName, coefA, coefB)`
+
+**Parameters**
+
++-------------------------+------------------------------------------------+
+| plannerName             | String. Name of the Planner object concerned.  |
++-------------------------+------------------------------------------------+
+| ruleName                | String. Name of the Rule (defined within the   |
+|                         | above Planner) for which the output            |
+|                         | expression's coefficients are to be defined.   |
++-------------------------+------------------------------------------------+
+| coefA                   | Double. Value of the coefficient A in the      |
+|                         | output expression $Q=A \cdot Output+B$         |
++-------------------------+------------------------------------------------+
+| coefB                   | Double. Value of the coefficient B in the      |
+|                         | output expression *$Q=A \cdot Output+B$        |
++-------------------------+------------------------------------------------+
+
+**Errors**
+
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "Planner name not defined"                     |
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "Rule name not defined"                        |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Ratio Coeff. A is not valid, unable to convert|
+|                         | to a Double"                                   |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Ratio Coeff. B is not valid, unable to convert|
+|                         | to a Double"                                   |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "No Planner with this name"                    |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "No Rule with this name"                       |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Failed to define Ratio Coefficient in         |
+| Exception               | Planner"                                       |
++-------------------------+------------------------------------------------+
+
+\
+
+\
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_SetConditionThresholdInPlanner"> SetConditionThresholdInPlanner </a>                   | *Setting of the threshold value of a condition in a specific Planner*      |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This procedure sets the Threshold value of a condition in a Rule of a
+specific Planner.
+
+**Syntax**
+
+`SetConditionThresholdInPlanner (plannerName, ruleName, conditionName,
+value)`
+
+**Parameters**
+
++-------------------------+------------------------------------------------+
+| regulationName          | String. Name of the Planner object concerned.  |
++-------------------------+------------------------------------------------+
+| ruleName                | String. Name of the Rule, defined within the   |
+|                         | above Planner.                                 |
++-------------------------+------------------------------------------------+
+| conditionName           | String. Name of the Condition, defined within  |
+|                         | the above Rule, for which the threshold is to  |
+|                         | be defined.                                    |
++-------------------------+------------------------------------------------+
+| value                   | Double. Value of the threshold of the specified|
+|                         | condition.                                     |
++-------------------------+------------------------------------------------+
+
+**Errors**
+
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "Planner name not defined"                     |
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "Rule name not defined"                        |
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "Condition name not defined"                   |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Value is not valid, unable to convert to a    |
+|                         | Double"                                        |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "No Planner with this name"                    |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "No Rule with this name"                       |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "No condition with this name"                  |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Failed to define Threshold value in Planner"  |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+
+\
+
+\
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_SetDaysInPlanner"> SetDaysInPlanner </a>                                               | *Setting of the days of a rule in a specific Planner*                      |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This procedure sets the week days of a Rule of a specific Planner.
+
+**Syntax**
+
+`SetDaysInPlanner (plannerName, ruleName, day1, day2, day3, day4, day5,
+day6, day7)`
+
+**Parameters**
+
++-------------------------+------------------------------------------------+
+| plannerName             | String. Name of the Planner object concerned.  |
++-------------------------+------------------------------------------------+
+| ruleName                | String. Name of the Rule, defined within the   |
+|                         | above Planner.                                 |
++-------------------------+------------------------------------------------+
+| day1,..., day7          | Boolean. Whether the rule is active for the    |
+|                         | n^th^ day of the week (day1=Monday,            |
+|                         | day2=Tuesday...).                              |
++-------------------------+------------------------------------------------+
+
+**Errors**
+
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "Planner name not defined"                     |
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "Rule name not defined"                        |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "No Planner with name plannerName"             |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "No Rule with name ruleName"                   |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Failed to define rule days in Planner"        |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+
+\
+
+\
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_SetHoursInPlanner"> SetHoursInPlanner </a>                                             | *Setting of the hours of a rule in a specific Planner*                     |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This procedure sets the hours of a Rule of a specific Planner.
+
+**Syntax**
+
+`SetHoursInPlanner (plannerName, ruleName, startHour, endHour)`
+
+**Parameters**
+
++-------------------------+------------------------------------------------+
+| plannerName             | String. Name of the Planner object concerned.  |
++-------------------------+------------------------------------------------+
+| ruleName                | String. Name of the Rule, defined within the   |
+|                         | above Planner.                                 |
++-------------------------+------------------------------------------------+
+| startHour               | String. Initial hour of the period for which   |
+|                         | the rule is active.                            |
++-------------------------+------------------------------------------------+
+| endHour                 | String. Final hour of the period for which the |
+|                         | rule is active.                                |
++-------------------------+------------------------------------------------+
+
+**Errors**
+
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "Planner name not defined"                     |
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "Rule name not defined"                        |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "No Planner with name plannerName"             |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "No Rule with name ruleName"                   |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Failed to define hours in Planner"            |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+
+## Simulation and reports
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_SavePreSimulationReportAs"> SavePreSimulationReportAs </a>                             | *Writing of the pre-simulation report*                                     |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This procedure writes the pre-simulation report in a text file, at the
+specified location with the name: *preSimulationReportFullPath.txt*.
+
+**Syntax**
+
+`SavePreSimulationReportAs (preSimulationReportFullPath)`
+
+**Parameters**
+
++------------------------------+------------------------------------------------+
+| preSimulationReportFullPath  | String. Full path of the text file where to    |
+|                              | save the pre-simulation report. The file       |
+|                              | extension has to be *\*.txt*.                  |
++------------------------------+------------------------------------------------+
+
+**Errors**
+
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Model not loaded"                             |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "Fullpath not defined"                         |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Fullpath contains invalid characters"         |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Filename extension not valid"                 |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Fullpath not rooted"                          |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Failed to save pre-simulation report"         |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+
+\
+
+\
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_SavePreSimulationReport"> SavePreSimulationReport </a>                                 | *Writing of the pre-simulation report*                                     |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This procedure writes the pre-simulation report in a text file, at the
+specified location with the specified reference name.
+
+**Syntax**
+
+`SavePreSimulationReport (saveFolder, referenceName,
+showInitialDateInFileName = true)`
+
+**Parameters**
+
++---------------------------+------------------------------------------------+
+| saveFolder                | String. Folder path where to save the text     |
+|                           | file.                                          |
++---------------------------+------------------------------------------------+
+| referenceName             | String. Reference name for the file.           |
++---------------------------+------------------------------------------------+
+| showInitialDateInFileName | Boolean (optional). Adds the StartDate of the  |
+|                           | simulation to the filename if True (e.g.       |
+|                           | *yyyyMMddHH_referenceName.txt*).               |
++---------------------------+------------------------------------------------+
+
+**Errors**
+
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Model not loaded"                             |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "Reference name not defined"                   |
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "Save folder not defined"                      |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Save folder 'savefolder' not valid"           |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Failed to save pre-simulation report"         |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+
+\
+
+\
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_Simulate"> Simulate </a>                                                               | *Running of the model*                                                     |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This procedure executes the simulation of the model with the loaded
+parameters and hydrometeorological datasets.
+
+**Syntax**
+
+`Simulate()`
+
+**Errors**
+
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Model not loaded"                             |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Simulation failed, see /log_RSM/errlog.txt"   |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+
+\
+
+\
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_SavePostSimulationReportAs"> SavePostSimulationReportAs </a>                           | *Writing of the post-simulation report*                                    |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This procedure writes the post-simulation report in a text file, at the
+specified location with the name: *postSimulationReportFullPath*.
+
+**Syntax**
+
+`SavePostSimulationReportAs (postSimulationReportFullPath)`
+
+**Parameters**
+
++------------------------------+------------------------------------------------+
+| postSimulationReportFullPath | String. Full path of the text file where to    |
+|                              | save the post-simulation report. The file      |
+|                              | extension has to be *\*.txt*.                  |
++------------------------------+------------------------------------------------+
+
+**Errors**
+
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Model not loaded"                             |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "Fullpath not defined"                         |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Fullpath contains invalid characters"         |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Filename extension not valid"                 |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Fullpath not rooted"                          |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Failed to save post-simulation report"        |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+
+\
+
+\
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_SavePostSimulationReport"> SavePostSimulationReport </a>                               | *Writing of the post-simulation report*                                    |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This procedure writes the post-simulation report in a text file, at the
+specified location with the specified reference name.
+
+**Syntax**
+
+`SavePostSimulationReport (saveFolder, referenceName,
+showInitialDateInFileName = true)`
+
+**Parameters**
+
++---------------------------+------------------------------------------------+
+| saveFolder                | String. Folder path where to save the text     |
+|                           | file.                                          |
++---------------------------+------------------------------------------------+
+| referenceName             | String. Reference name for the file.           |
++---------------------------+------------------------------------------------+
+| showInitialDateInFileName | Boolean (optional). Adds the StartDate of the  |
+|                           | simulation to the filename if True (e.g.       |
+|                           | *yyyyMMddHH_referenceName.txt*).               |
++---------------------------+------------------------------------------------+
+
+**Errors**
+
++---------------------------+------------------------------------------------+
+| Invalid Operation         | "Model not loaded"                             |
+| Exception                 |                                                |
++---------------------------+------------------------------------------------+
+| Argument Null Exception   | "Reference name not defined"                   |
++---------------------------+------------------------------------------------+
+| Argument Null Exception   | "Save folder not defined"                      |
++---------------------------+------------------------------------------------+
+| Argument Exception        | "Save folder 'saveFolder' not valid"           |
++---------------------------+------------------------------------------------+
+| Invalid Operation         | "Failed to save post-simulation report"        |
+| Exception                 |                                                |
++---------------------------+------------------------------------------------+
+
+## Save model and properties
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_SaveModelAs"> SaveModelAs </a>                                                         | *Saving of the model*                                                      |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This procedure saves the loaded model, at a defined location with a
+specified name: *modelNameFullPath*.
+
+**Syntax**
+
+`SaveModelAs (modelNameFullPath)`
+
+**Parameters**
+
++-------------------------+------------------------------------------------+
+| modelNameFullPath       | String. Full path of the model to save. The    |
+|                         | file extension has to be *\*.rsm*.             |
++-------------------------+------------------------------------------------+
+
+**Errors**
+
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Model not loaded"                             |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "Fullpath not defined"                         |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Fullpath contains invalid characters"         |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Filename extension not valid"                 |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Fullpath not rooted"                          |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Failed to save model"                         |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+  
+\
+
+\
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_SaveModel"> SaveModel </a>                                                             | *Saving of the model*                                                      |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This procedure saves the loaded model at its current location.
+
+**Syntax**
+
+`SaveModel ()`
+
+**Errors**
+
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Model not loaded"                             |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Failed to save model"                         |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+
+\
+
+\
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_SaveInitialConditionsAs"> SaveInitialConditionsAs </a>                                 | *Saving of the initial conditions*                                         |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This procedure saves the initial conditions at starting date of the
+simulation (in a text or an Excel format), at the specified location
+with the name: *initialConditionsFullPath*.
+
+**Syntax**
+
+`SaveInitialConditionsAs (initialConditionsFullPath)`
+
+**Parameters**
+
++---------------------------+------------------------------------------------+
+| initialConditionsFullPath | String. Full path of the text or Excel file    |
+|                           | where to save the Initial Conditions. The file |
+|                           | extension has to be *\*.txt*. or *\*.xlsx*.    |
++---------------------------+------------------------------------------------+
+
+**Errors**
+
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Model not loaded"                             |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "Fullpath not defined"                         |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Fullpath contains invalid characters"         |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Fullpath not rooted"                          |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Failed to create and save initial conditions  |
+| Exception               | file"                                          |
++-------------------------+------------------------------------------------+
+
+\
+
+\
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_SaveInitialConditions"> SaveInitialConditions </a>                                     | *Saving of the initial conditions*                                         |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This procedure saves the initial conditions at starting date of the
+simulation as a text file, at the specified location with the specified
+reference name.
+
+**Syntax**
+
+`SaveInitialConditions (saveFolder, referenceName,
+showInitialDateInFileName = true)`
+
+**Parameters**
+
++---------------------------+------------------------------------------------+
+| saveFolder                | String. Folder path where to save the file.    |
++---------------------------+------------------------------------------------+
+| referenceName             | String. Reference name for the file.           |
++---------------------------+------------------------------------------------+
+| showInitialDateInFileName | Boolean (optional). Add the StartDate of the   |
+|                           | simulation to the filename if True (e.g.       |
+|                           | *yyyyMMddHH_referenceName.txt*).               |
++---------------------------+------------------------------------------------+
+
+**Errors**
+
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Model not loaded"                             |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "Reference name not defined"                   |
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "Save folder not defined"                      |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Save folder 'saveFolder' not valid"           |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Failed to save initial conditions file"       |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+
+\
+
+\
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_SaveFinalConditionsAs"> SaveFinalConditionsAs </a>                                     | *Saving of the final conditions*                                           |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This procedure saves the conditions at the end of the simulation (in a
+text or an Excel format), at the specified location with the name:
+*finalConditionsFullPath*.
+
+**Syntax**
+
+`SaveFinalConditionsAs (finalConditionsFullPath)`
+
+**Parameters**
+
++-----------------------------+------------------------------------------------+
+| finalConditionsFileFullPath | String. Full path of the text or Excel file    |
+|                             | where to save the Final Conditions. The file   |
+|                             | extension has to be *\*.txt*. or *\*.xlsx*.    |
++-----------------------------+------------------------------------------------+
+
+**Errors**
+
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Model not loaded"                             |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Model 'hydrologicalmodel' has no results"     |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "Fullpath not defined"                         |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Fullpath contains invalid characters"         |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Fullpath not rooted"                          |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Failed to generate final conditions"          |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Failed to create and save final conditions    |
+| Exception               | file"                                          |
++-------------------------+------------------------------------------------+
+
+\
+
+\
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_SaveFinalConditions"> SaveFinalConditions </a>                                         | *Saving of the final conditions*                                           |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This procedure saves the initial conditions at the end of the simulation
+as a text file, at the specified location with the specified reference
+name.
+
+**Syntax**
+
+`SaveFinalConditions (saveFolder, referenceName,
+showInitialDateInFileName = true)`
+
+**Parameters**
+
++---------------------------+------------------------------------------------+
+| saveFolder                | String. Folder path where to save the file.    |
++---------------------------+------------------------------------------------+
+| referenceName             | String. Reference Name for the file.           |
++---------------------------+------------------------------------------------+
+| showInitialDateInFileName | Boolean (optional). Add the EndDate of the     |
+|                           | simulation to the filename if True (e.g.       |
+|                           | *yyyyMMddHH_referenceName.txt*).               |
++---------------------------+------------------------------------------------+
+
+**Errors**
+
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Model not loaded"                             |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Model 'hydrologicalmodel' has no results"     |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "Reference name not defined"                   |
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "Save folder not defined"                      |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Save folder 'saveFolder' not valid"           |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Failed to generate final conditions"          |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Failed to save final conditions file"         |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+
+\
+
+\
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_SaveParametersAs"> SaveParametersAs </a>                                               | *Saving of the parameters*                                                 |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This procedure saves the parameters of the model (in a text or an Excel
+format), at the specified location with the name: *parametersFullPath*.
+
+**Syntax**
+
+`SaveParametersAs (parametersFullPath)`
+
+**Parameters**
+
++-------------------------+------------------------------------------------+
+| parametersFullPath      | Full path of the text or Excel file where to   |
+|                         | save the parameters. The file extension has to |
+|                         | be *\*.txt*. or *\*.xlsx*.                     |
++-------------------------+------------------------------------------------+
+
+**Errors**
+
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Model not loaded"                             |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "Fullpath not defined"                         |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Fullpath contains invalid characters"         |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Fullpath not rooted"                          |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Failed to create and save parameters file"    |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+
+\
+
+\
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_SaveParameters"> SaveParameters </a>                                                   | *Saving of the parameters*                                                 |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This procedure saves the parameters of the model as a text file, at the
+specified location with the specified reference name.
+
+**Syntax**
+
+`SaveParameters (saveFolder, referenceName)`
+
+**Parameters**
+
++-------------------------+------------------------------------------------+
+| saveFolder              | String. Folder path where to save the file.    |
++-------------------------+------------------------------------------------+
+| referenceName           | String. Reference Name for the file.           |
++-------------------------+------------------------------------------------+
+
+**Errors**
+
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Model not loaded"                             |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "Reference name not defined"                   |
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "Save folder not defined"                      |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Save folder 'saveFolder' not valid"           |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Failed to save parameters file"               |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+
+## Model results
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_SaveFullResultsAs"> SaveFullResultsAs </a>                                             | *Saving of all the results*                                                |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This procedure saves the full results dataset of the simulation in a
+binary or a text format, at the specified location with the name:
+*resultsDatasetFullPath*.
+
+**Syntax**
+
+`SaveFullResultsAs (resultsDatasetFullPath, saveDataInDstFile)`
+
+**Parameters**
+
++-------------------------+------------------------------------------------+
+| resultsDatasetFullPath  | String. Full path of the file where to save the|
+|                         | full results dataset. The file extension has to|
+|                         | be *\*.dsx*.                                   |
++-------------------------+------------------------------------------------+
+| saveDataInDstFile       | Boolean. If true the dataset values are saved  |
+|                         | in text format (*\*.dst*), if false in binary  |
+|                         | format (*\*.dsb*).                             |
++-------------------------+------------------------------------------------+
+
+**Errors**
+
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Model not loaded"                             |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Model 'hydrologicalmodel' has no results"     |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "Fullpath of full results dataset not defined" |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Fullpath of full results dataset contains     |
+|                         | invalid characters"                            |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Filename extension of full results dataset not|
+|                         | valid"                                         |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Fullpath of full results dataset not rooted"  |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Failed to create and save full results        |
+| Exception               | dataset"                                       |
++-------------------------+------------------------------------------------+
+
+\
+
+\
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_SaveFullResults"> SaveFullResults </a>                                                 | *Saving of all the results*                                                |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This procedure saves the full results dataset of the simulation in a
+binary or a text format, at the specified location with the specified
+reference name and with or without the simulation length (in hours) in
+the name.
+
+**Syntax**
+
+`SaveFullResults (saveFolder, referenceName, saveDataInDstFile,
+showDurationInFileName, showInitialDateInFileName = true)`
+
+**Parameters**
+
++---------------------------+------------------------------------------------+
+| saveFolder                | String. Folder path where to save the file.    |
++---------------------------+------------------------------------------------+
+| referenceName             | String. Reference Name for the file.           |
++---------------------------+------------------------------------------------+
+| saveDataInDstFile         | Boolean. If true the dataset values are saved  |
+|                           | in text format (*\*.dst*), if false in binary  |
+|                           | format (*\*.dsb*).                             |
++---------------------------+------------------------------------------------+
+| showDurationInFileName    | Boolean. If true it adds the duration in hours |
+|                           | of the simulation in the filename (e.g.        |
+|                           | *referencename_nbHoursH.txt*).                 |
++---------------------------+------------------------------------------------+
+| showInitialDateInFileName | Boolean (optional). If true it adds the        |
+|                           | StartDate of the simulation to the filename    |
+|                           | (e.g. *yyyyMMddHH_referencename.txt*).         |
++---------------------------+------------------------------------------------+
+
+**Errors**
+
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Model not loaded"                             |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Model 'hydrologicalmodel' has no results"     |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "Reference name not defined"                   |
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "Save folder not defined"                      |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Save folder 'saveFolder' not valid"           |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Failed to save full result"                   |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+
+\
+
+\
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_SaveSelectionResultsAs"> SaveSelectionResultsAs </a>                                   | *Saving of selection results*                                              |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This procedure saves the results dataset of the selection in a binary or
+a text format, at the specified location with the name:
+*selectionResultsDatasetFullPath*.
+
+**Syntax**
+
+`SaveSelectionResultsAs (selectionResultsDatasetFullPath,
+saveDataInDstFile, selectionName)`
+
+**Parameters**
+
++---------------------------------+------------------------------------------------+
+| selectionResultsDatasetFullPath | String. Full path of the file where to save the|
+|                                 | selection results dataset. The file extension  |
+|                                 | has to be *\*.dsx*.                            |
++---------------------------------+------------------------------------------------+
+| saveDataInDstFile               | Boolean. If true the dataset values are saved  |
+|                                 | in text format (*\*.dst*), if false in binary  |
+|                                 | format (*\*.dsb*).                             |
++---------------------------------+------------------------------------------------+
+| selectionName                   | String. Name of the selection of results.      |
++---------------------------------+------------------------------------------------+
+
+**Errors**
+
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Model not loaded"                             |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Model 'hydrologicalmodel' has no results"     |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "Fullpath of selection results dataset not     |
+|                         | defined"                                       |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Fullpath of selection results dataset contains|
+|                         | invalid characters"                            |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Filename extension of selection results       |
+|                         | dataset not valid"                             |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Fullpath of selection results dataset not     |
+|                         | rooted"                                        |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Selection 'selectionname' not valid"          |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Failed to create and save selection results   |
+| Exception               | dataset                                        |
++-------------------------+------------------------------------------------+
+
+\
+
+\
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_SaveSelectionResults"> SaveSelectionResults </a>                                       | *Saving of selection results*                                              |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This procedure saves the results dataset of the selection in a binary or
+a text format, at the specified location with the specified reference
+name and with or without the simulation length (in hours) in the name.
+
+**Syntax**
+
+`SaveSelectionResults (saveFolder, referenceName, saveDataInDstFile,
+selectionName, showDurationInFileName, showInitialDateInFileName = true)`
+
+**Parameters**
+
++---------------------------+--------------------------------------------------+
+| saveFolder                | String. Folder path where to save the file.      |
++---------------------------+--------------------------------------------------+
+| referenceName             | String. Reference Name for the file.             |
++---------------------------+--------------------------------------------------+
+| saveDataInDstFile         | Boolean. If true the dataset values are saved in |
+|                           | text format (*\*.dst*), if false in binary       |
+|                           | format (*\*.dsb*).                               |
++---------------------------+--------------------------------------------------+
+| selectionName             | String. Name of the selection of results. This   |
+|                           | selection name will be included in the filename. |
++---------------------------+--------------------------------------------------+
+| showDurationInFileName    | Boolean. If true it adds the duration in hours   |
+|                           | of the simulation in the filename (e.g.          |
+|                           | *referencename_nbHoursH_selectionname.txt*).     |
++---------------------------+--------------------------------------------------+
+| showInitialDateInFileName | Boolean (optional). If true it adds the          |
+|                           | StartDate of the simulation to the filename      |
+|                           | (e.g.                                            |
+|                           | *yyyyMMddHH_referencename_selectionname.txt*).   |
++---------------------------+--------------------------------------------------+
+
+**Errors**
+
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Model not loaded"                             |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Model 'hydrologicalmodel' has no results"     |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "Reference name not defined"                   |
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "Save folder not defined"                      |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Save folder 'saveFolder' not valid"           |
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "Selection not defined"                        |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Selection 'selectionName' not valid"          |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Failed to save selection results"             |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+
+\
+
+\
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_SaveInitializationDatasetAs"> SaveInitializationDatasetAs </a>                         | *Saving of series of state variables*                                      |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This procedure saves a dataset containing only the necessary state
+variables to initialize the model (i.e. the initial conditions of all
+the objects), at the specified location with the specified reference
+name and with or without the simulation length (in hours) or the initial
+date in the name.
+
+**Syntax**
+
+`SaveInitializationDatasetAs (saveFolder, referenceName,
+saveDataInDstFile, showDurationInFileName, showInitialDateInFileName =
+true)`
+
+**Parameters**
+
++---------------------------+------------------------------------------------+
+| saveFolder                | String. Folder path where to save the file.    |
++---------------------------+------------------------------------------------+
+| referenceName             | String. Reference Name for the file.           |
++---------------------------+------------------------------------------------+
+| saveDataInDstFile         | Boolean. If true the dataset values are saved  |
+|                           | in text format (*\*.dst*), if false in binary  |
+|                           | format (*\*.dsb*).                             |
++---------------------------+------------------------------------------------+
+| showDurationInFileName    | Boolean. If true it adds the duration in hours |
+|                           | of the simulation in the filename (e.g.        |
+|                           | *referencename_nbHoursH.dsx*).                 |
++---------------------------+------------------------------------------------+
+| showInitialDateInFileName | Boolean (optional). If true it adds the        |
+|                           | StartDate of the simulation to the filename    |
+|                           | (e.g. *yyyyMMddHH_referencename.dsx*).         |
++---------------------------+------------------------------------------------+
+
+**Errors**
+
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Model not loaded"                             |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Model has no results"                         |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "Reference name not defined"                   |
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "Save folder not defined"                      |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Save folder not valid"                        |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Failed to save full results"                  |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+
+\
+
+\
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_SaveInitializationDataset"> SaveInitializationDataset </a>                             | *Saving of series of state variables*                                      |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This procedure saves a dataset containing only the necessary state
+variables to initialize the model (i.e. the initial conditions of all
+the objects).
+
+**Syntax**
+
+`SaveInitializationDataset (resultsDatasetFullPath, saveDataInDstFile)`
+
+**Parameters**
+
++-------------------------+------------------------------------------------+
+| resultsDatasetFullPath  | String. Full path of the file where is the     |
+|                         | full results dataset. The file extension has   |
+|                         | to be *\*.dsx*.                                |
++-------------------------+------------------------------------------------+
+| saveDataInDstFile       | Boolean. If true the dataset values are saved  |
+|                         | in text format (*\*.dst*), if false in binary  |
+|                         | format (*\*.dsb*).                             |
++-------------------------+------------------------------------------------+
+
+**Errors**
+
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Model not loaded"                             |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Model has no results"                         |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "Fullpath of full results dataset not defined" |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Fullpath of full results dataset contains     |
+|                         | invalid characters"                            |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Filename extension of full results dataset not|
+|                         | valid"                                         |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Fullpath of full results dataset not rooted"  |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Failed to create and save full results        |
+| Exception               | dataset"                                       |
++-------------------------+------------------------------------------------+
+
+\
+
+\
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_ExportResultsTo"> ExportResultsTo </a>                                                 | *Exporting of the selection results*                                       |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This procedure exports the selection results to an Excel or CSV file at
+the specified location with the name: *selectionFileFullPath*.
+
+**Syntax**
+
+`ExportResultsTo (selectionFileFullPath, selectionName)`
+
+**Parameters**
+
++------------------------------+------------------------------------------------+
+| selectionResultsFileFullPath | String. Full path of the selection results     |
+|                              | file. Accepted file extensions are *\*.csv*    |
+|                              | and *\*.xlsx*.                                 |
++------------------------------+------------------------------------------------+
+| selectionName                | String. Name of the selection of results.      |
++------------------------------+------------------------------------------------+
+
+**Errors**
+
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Model not loaded"                             |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Model 'hydrologicalmodel' has no results"     |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "Fullpath not defined"                         |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Fullpath of selection results contains invalid|
+|                         | characters"                                    |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Fullpath of selection results dataset not     |
+|                         | rooted"                                        |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Selection 'selectionName' not valid"          |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Fullpath extension not valid"                 |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Failed to create and save selection results"  |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+
+\
+
+\
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_MergeFullResults"> MergeFullResults </a>                                               | *Merging of full results dataset with the base full dataset*               |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This procedure merges full results from the current simulation with the
+specified full results dataset (containing the same structure).
+
+**Syntax**
+
+`MergeFullResults (resultsDatasetFullPath, saveDataInDstFile)`
+
+**Parameters**
+
++-------------------------+--------------------------------------------------+
+| resultsDatasetFullPath  | String. Full path of full results dataset. The   |
+|                         | file extension has to be *\*.dsx*.               |
++-------------------------+--------------------------------------------------+
+| saveDataInDstFile       | Boolean. If true the dataset values are saved in |
+|                         | text format (*\*.dst*), if false in binary       |
+|                         | format (*\*.dsb*).                               |
++-------------------------+--------------------------------------------------+
+
+**Errors**
+
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Model not loaded"                             |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Model 'hydrologicalmodel' has no results"     |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "Fullpath of full results dataset not defined" |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Fullpath of full results dataset contains     |
+|                         | invalid characters"                            |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Filename extension of full results dataset not|
+|                         | valid"                                         |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Fullpath of full results dataset not rooted"  |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Failed to create new full results dataset"    |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Full results dataset not valid"               |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Failed to retrieve results to update full     |
+| Exception               | results dataset"                               |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Failed to merge results with full results     |
+| Exception               | dataset"                                       |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Failed to save changes in full results        |
+| Exception               | dataset"                                       |
++-------------------------+------------------------------------------------+
+
+\
+
+\
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_MergeSelectionResults"> MergeSelectionResults </a>                                     | *Merging of selection results dataset with the base selection dataset*     |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This procedure merges the selection results from the current simulation
+with the specified selection results dataset (containing the same
+structure).
+
+**Syntax**
+
+`MergeSelectionResults (selectionResultsDatasetFullPath,
+saveDataInDstFile, selectionName)`
+
+**Parameters**
+
++---------------------------------+------------------------------------------------+
+| selectionResultsDatasetFullPath | String. Full path of the selection results     |
+|                                 | file. The file extension has to be *\*.dsx*.   |
++---------------------------------+------------------------------------------------+
+| saveDataInDstFile               | Boolean. If true the dataset values are saved  |
+|                                 | in text format (*\*.dst*), if false in binary  |
+|                                 | format (*\*.dsb*).                             |
++---------------------------------+------------------------------------------------+
+| selectionName                   | String. Name of the selection of results       |
++---------------------------------+------------------------------------------------+
+
+**Errors**
+
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Model not loaded"                             |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Model 'hydrologicalmodel' has no results"     |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "Fullpath of selection results dataset not     |
+|                         | defined"                                       |
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "Selection not defined"                        |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Selection 'selectionName' not valid"          |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Fullpath of selection results dataset contains|
+|                         | invalid characters"                            |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Filename extension of selection results       |
+|                         | dataset not valid"                             |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Fullpath of selection results dataset not     |
+|                         | rooted"                                        |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Failed to create new selection results        |
+| Exception               | dataset"                                       |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Selection results dataset not valid"          |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Failed to retrieve results to update selection|
+| Exception               | results dataset"                               |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Failed to merge results with selection results|
+| Exception               | dataset"                                       |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Failed to save changes in selection results   |
+| Exception               | dataset"                                       |
++-------------------------+------------------------------------------------+
+
+\
+
+\
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_MergeDatasetsAs"> MergeDatasetsAs </a>                                                 | *Merging of a source dataset with another dataset*                         |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This procedure merges a source dataset with a specified dataset
+(containing the same structure) at a specific location. If two stations
+have the same name, it can merge the data of both stations; the second
+dataset is prioritized for the merge of common dates in common stations.
+
+**Syntax**
+
+`MergeDatasetsAs (nDataset1, nDataset2, MergedDatasetFullPath,
+merge=true, saveDataInDstFile=true)`
+
+**Parameters**
+
++-------------------------+------------------------------------------------+
+| nDataset1               | String. Full path of the first dataset to be   |
+|                         | merged. The file extension has to be *\*.dsx*. |
++-------------------------+------------------------------------------------+
+| nDataset2               | String. Full path of the second dataset to be  |
+|                         | merged. The file extension has to be *\*.dsx*. |
++-------------------------+------------------------------------------------+
+| MergedDatasetFullPath   | String. Full path of the dataset where the 2   |
+|                         | datasets will be merged. The file extension has|
+|                         | to be *\*.dsx*.                                |
++-------------------------+------------------------------------------------+
+| merge                   | Boolean. If true, the resulting dataset merge  |
+|                         | the data of stations with the same name. If    |
+|                         | false, it duplicates one of the stations with a|
+|                         | "\_(0)" suffix.                                |
++-------------------------+------------------------------------------------+
+| saveDataInDstFile       | Boolean. If true, the dataset values are saved |
+|                         | in text format (*\*.dst*), if false in binary  |
+|                         | format (*\*.dsb*).                             |
++-------------------------+------------------------------------------------+
+
+**Errors**
+
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "First dataset not defined"                    |
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "Second dataset not defined"                   |
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "Fullpath of merged dataset not defined"       |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Fullpath of full merged dataset contains      |
+|                         | invalid characters"                            |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Filename extension of merged dataset not      |
+|                         | valid"                                         |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Fullpath of full merged dataset not rooted"   |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "First dataset not valid"                      |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Second dataset not valid"                     |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Failed to create merged dataset"              |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+
+\
+
+\
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_MergeDatasets"> MergeDatasets </a>                                                     | *Merging of a source dataset with another dataset*                         |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This procedure merges a source dataset with a specified dataset
+(containing the same structure) and saves the resulting dataset in the
+source dataset. If two stations have the same name, it can merge the
+data of both stations; the second dataset (update dataset) is
+prioritized for the merge of common dates in common stations.
+
+**Syntax**
+
+`MergeDatasets (sourceDatasetFullPath, updateDatasetFullPath, merge=true)`
+
+**Parameters**
+
++-------------------------+------------------------------------------------+
+| sourceDatasetFullPath   | String. Full path of the source dataset where  |
+|                         | the new dataset is added. The file extension   |
+|                         | has to be *\*.dsx*.                            |
++-------------------------+------------------------------------------------+
+| updateDatasetFullPath   | String. Full path of the update dataset to be  |
+|                         | added to the source dataset. The file extension|
+|                         | has to be *\*.dsx*.                            |
++-------------------------+------------------------------------------------+
+| merge                   | Boolean. If true, the resulting dataset merge  |
+|                         | the data of stations with the same name. If    |
+|                         | false, it duplicates one of the stations with a|
+|                         | "\_(0)" suffix.                                |
++-------------------------+------------------------------------------------+
+
+**Errors**
+
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "First dataset not defined"                    |
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "Second dataset not defined"                   |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "First dataset not valid"                      |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Second dataset not valid"                     |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Failed to merge datasets"                     |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+
+\
+
+\
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_GetPropertyValue"> GetPropertyValue </a>                                               | *Getting property value from an object*                                    |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This function gets the value of a parameter or an initial condition of
+an object.
+
+**Syntax**
+
+`GetPropertyValue (objectType, propertyName, zone = null)`
+
+**Parameters**
+
++-------------------------+------------------------------------------------+
+| objectType              | String. Object type (e.g. SOCONT, GSM,         |
+|                         | Reservoir, etc.). See                          |
+|                         | @tbl-scriptsobjects_nomeclature.               |
++-------------------------+------------------------------------------------+
+| propertyName            | String. Property name (e.g. HGR3Max). See      |
+|                         | @tbl-scriptsobjects_nomeclature.               |
++-------------------------+------------------------------------------------+
+| zone                    | String (optional). Zone where the objects are. |
++-------------------------+------------------------------------------------+
+
+**Returned value**
+
++-------------------------+------------------------------------------------+
+|  property value         | It returns the property value (parameter or    |
+|                         | initial condition) of the object.              |
++-------------------------+------------------------------------------------+
+
+**Errors**
+
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Model not loaded"                             |
+| Exception                                                                |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Object type 'objectType' not valid"           |
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "Property name not defined"                    |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Zone 'zone' not found in                      |
+|                         | hydrological model"                            |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Failed to provide model property"             |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Model property not found"                     |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+
+\
+
+\
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_GetIndicatorValue"> GetIndicatorValue </a>                                             | *Getting the value of an indicator from a comparator*                      |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This function gets the specified indicator value from a Comparator
+object.
+
+**Syntax**
+
+`GetIndicatorValue (indicatorName, objectName)`
+
+**Parameters**
+
++-------------------------+------------------------------------------------+
+| indicatorName           | String. Indicator name. Indicators: Nash,      |
+|                         | Nash-ln, Pearson Correlation Coeff, Kling-Gupta|
+|                         | Efficiency, Bias Score, RRMSE, Relative Volume |
+|                         | Bias, Normalized Peak Error                    |
++-------------------------+------------------------------------------------+
+| objectName              | String. User-defined object name.              |
++-------------------------+------------------------------------------------+
+
+**Returned value**
+
++-------------------------+------------------------------------------------+
+| indicator value         | It returns the value of the indicator.         |
++-------------------------+------------------------------------------------+
+
+**Errors**
+
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Model not loaded"                             |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Comparator 'objectName' not found"            |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Indicator name 'indicatorName' not valid"     |
++-------------------------+------------------------------------------------+
+
+## Calibration
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_LoadCalibrationsInModel"> LoadCalibrationsInModel </a>                                 | *Loading of all the calibrations defined in a model*                       |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This procedure loads all the calibration configurations defined in the
+opened model.
+
+**Syntax**
+
+`LoadCalibrationsInModel ()`
+
+**Errors**
+
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Model not loaded"                             |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+
+\
+
+\
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| <a name="Script_LoadCalibrationsByFile"> LoadCalibrationsByFile </a>                                   | *Loading of all the calibration configurations defined in a configuration file*  |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+
+**Description**
+
+This procedure loads all the calibration configurations defined in a
+specified configuration file.
+
+**Syntax**
+
+`LoadCalibrationsByFile (filePath)`
+
+**Parameters**
+
++-------------------------+-------------------------------------------------+
+|  filePath               | String. Full path of the calibration            |
+|                         | configuration file defined in the Calibrator    |
+|                         | module of RS MINERVE. The file extension has to |
+|                         | be *\*.cbt*.                                    |
++-------------------------+-------------------------------------------------+
+
+**Errors**
+
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "File path is not defined"                     |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Selected file is not a XML file"              |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "No Calibration configuration is loaded"       |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+
+\
+
+\
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_SaveAllCalibrationsInModel"> SaveAllCalibrationsInModel </a>                           | *Saving all calibration configurations in the RSM model*                   |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This procedure saves all the calibration configurations in the loaded
+RSM model. Configurations will then be saved in the *.rsm* file).
+
+**Syntax**
+
+`SaveAllCalibrationsInModel ()`
+
+**Errors**
+
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Model not loaded"                             |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+
+\
+
+\
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_RunCalibration"> RunCalibration </a>                                                   | *Running a specified calibration*                                          |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This procedure runs a specified calibration available among the loaded
+configuration(s).
+
+**Syntax**
+
+`RunCalibration (configName, logFilePath, deleteLogAfter=false)`
+
+**Parameters**
+
++-------------------------+------------------------------------------------+
+| configName              | String. Name given in the Calibrator module of |
+|                         | RS MINERVE to the calibration configuration to |
+|                         | be executed.                                   |
++-------------------------+------------------------------------------------+
+| logFilePath             | String. Full path of the log file where the    |
+|                         | logs are written.                              |
++-------------------------+------------------------------------------------+
+| deleteLogAfter          | Boolean. If true, the log file is deleted after|
+|                         | the calibration process is ended.              |
++-------------------------+------------------------------------------------+
+
+**Errors**
+
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "The name of the calibration configuration is  |
+|                         | not defined"                                   |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "No calibration configuration called           |
+|                         | configName"                                    |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "The model has fatal errors and cannot         |
+| Exception               | continue"                                      |
++-------------------------+------------------------------------------------+
+
+\
+
+\
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_RunAllCalibrations"> RunAllCalibrations </a>                                           | *Running all the calibrations*                                             |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This procedure runs all the calibration configurations previously
+loaded.
+
+**Syntax**
+
+`RunAllCalibrations (logFilePath, deleteLogAfter=false)`
+
+**Parameters**
+
++-------------------------+------------------------------------------------+
+| logFilePath             | String. Full path of the log file where the    |
+|                         | logs are written.                              |
++-------------------------+------------------------------------------------+
+| deleteLogAfter          | Boolean. If true, the log file is deleted after|
+|                         | the calibration process is ended.              |
++-------------------------+------------------------------------------------+
+
+**Errors**
+
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "The model has fatal errors and cannot         |
+| Exception               | continue"                                      |
++-------------------------+------------------------------------------------+
+
+\
+
+\
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_ExportCalibrationResults"> ExportCalibrationResults </a>                               | *Exporting of the calibration's results*                                   |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This procedure exports the results of a specified calibration, to a
+*.txt* file.
+
+**Syntax**
+
+`ExportCalibrationResults (configName, resultFilePath)`
+
+**Parameters**
+
++-------------------------+------------------------------------------------+
+| configName              | String. Name given in the Calibrator module of |
+|                         | RS MINERVE to the calibration configuration to |
+|                         | be executed.                                   |
++-------------------------+------------------------------------------------+
+| resultFilePath          | String. Full path of the file where to save the|
+|                         | calibration results. The file extension has to |
+|                         | be *\*.txt*.                                   |
++-------------------------+------------------------------------------------+
+
+**Errors**
+
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "The name of the calibration configuration is  |
+|                         | not defined"                                   |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "The file path for the results is not defined" |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "No calibration configuration called           |
+|                         | configName"                                    |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "There are no results to export in calibration |
+| Exception               | configName"                                    |
++-------------------------+------------------------------------------------+
+
+\
+
+\
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_ExportAllCalibrationsResults"> ExportAllCalibrationsResults </a>                       | *Exporting of all the calibrations' results*                               |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This procedure exports the results of all the calibration configurations
+loaded, to a *.txt* file.
+
+**Syntax**
+
+`ExportAllCalibrationsResults (resultFolderPath)`
+
+**Parameters**
+
++-------------------------+------------------------------------------------+
+| resultFolderPath        | String. Folder path to export the results of   |
+|                         | all the calibration configurations. The        |
+|                         | exported results file is named as              |
+|                         | *ConfigName.txt*, where ConfigName is the name |
+|                         | of each calibration configuration executed.    |
++-------------------------+------------------------------------------------+
+
+**Errors**
+
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "The folder path for the results is not        |
+|                         | defined"                                       |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "Selected folder does not exist"               |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "There are no results to export for some       |
+| Exception               | calibrations"                                  |
++-------------------------+------------------------------------------------+
+
+\
+
+\
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_SetCalibrationDates"> SetCalibrationDates </a>                                         | *Setting of the start and end dates of the calibration period*             |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This procedure defines the start and end dates of the period used by the
+Calibrator module to execute the calibration.
+
+**Syntax**
+
+`SetCalibrationDates (configName, startDate, endDate)`
+
+**Parameters**
+
++-------------------------+------------------------------------------------+
+| configName              | String. Name given in the Calibrator module of |
+|                         | RS MINERVE to the calibration configuration for|
+|                         | which the start and end dates are to be set.   |
++-------------------------+------------------------------------------------+
+| startDate               | Date. Start date for the calibration period.   |
+|                         | The format of the date has to be: *dd.MM.yyyy  |
+|                         | HH:mm:ss*.                                     |
++-------------------------+------------------------------------------------+
+| endDate                 | Date. End date for the calibration period. The |
+|                         | format of the date has to be: *dd.MM.yyyy      |
+|                         | HH:mm:ss*.                                     |
++-------------------------+------------------------------------------------+
+
+**Errors**
+
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Model not loaded"                             |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "The name of the calibration configuration is  |
+|                         | not defined"                                   |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "No calibration configuration called           |
+|                         | configName"                                    |
++-------------------------+------------------------------------------------+
+
+## Application Stop
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_Stop"> Stop </a>                                                                       | *Stop of the execution*                                                    |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This procedure stops the execution of the model.
+
+**Syntax**
+
+`Stop ()`
+
+## Other procedures/functions
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_RemoveFile"> RemoveFile </a>                                                           | *Removing any type of files*                                               |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This procedure remove for the computer any file given by its full path.
+
+**Syntax**
+
+`RemoveFile (fileFullPath)`
+
+**Parameters**
+
++-------------------------+------------------------------------------------+
+| fileFullPath            | String. Full path of the file to be removed.   |
+|                         | The file extension of the file must be         |
+|                         | specified.                                     |
++-------------------------+------------------------------------------------+
+
+**Errors**
+
++-------------------------+------------------------------------------------+
+| Argument Null Exception | "File not defined"                             |
++-------------------------+------------------------------------------------+
+| Argument Exception      | "File not found"                               |
++-------------------------+------------------------------------------------+
+| Invalid Operation       | "Failed to remove the file"                    |
+| Exception               |                                                |
++-------------------------+------------------------------------------------+
+
+\
+
+\
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_GetAppVersion"> GetAppVersion </a>                                                     | *Getting the installed RS MINERVE software version*                        |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This function gets the version number of the installed RS MINERVE
+software.
+
+**Syntax**
+
+`GetAppVersion ()`
+
+**Returned value**
+
++-------------------------+------------------------------------------------+
+| Software version        | It returns the version number of the installed |
+|                         | RS MINERVE software (e.g., ***2.6.2.0***).     |
++-------------------------+------------------------------------------------+
+
+\
+
+\
+
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| <a name="Script_GetReaderVersion"> GetReaderVersion </a>                                               | *Getting the installed model reader (xml) version*                         |
++--------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+**Description**
+
+This function gets the number of the installed model reader (xml)
+version.
+
+**Syntax**
+
+`GetReaderVersion ()`
+
+**Returned value**
+
++-------------------------+------------------------------------------------+
+| Reader version          | It returns the number of the installed model   |
+|                         | reader (xml) version (e.g., ***4.001***).      |
++-------------------------+------------------------------------------------+
+
+## Objects nomenclature in VBScript
+
+When using VBScripts to perform tasks within RS MINERVE, it is necessary
+to indicate the type of the object or the name of a property as
+arguments for some functions (**DefineModelProperties**,
+**UpdateModelProperties** and **GetPropertyValue**). @tbl-scriptsobjects_nomeclature gathers
+the proper nomenclatures of these arguments to be used in the
+corresponding VBScripts functions.
+
++---------------------+----------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+
+| ObjectType          | Parameters                                                                                                           | Initial conditions                                   |
++=====================+======================================================================================================================+======================================================+
+| Station             | X, Y, Z, Search Radius, No. min. of stations, Gradient P, Gradient T, Gradient ETP, Coeff P, Coeff T, Coeff ETP      | \-                                                   |
++---------------------+----------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+
+| SnowSD              | S, SInt, SMin, SPh, ThetaCri, bp, Tcp1, Tcp2, Tcf                                                                    | SWEIni, ThetaIni                                     |
++---------------------+----------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+
+| SWMM                | A, L, J0, K                                                                                                          | HIni                                                 |
++---------------------+----------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+
+| GSM                 | A, S, SInt, SMin, SPh, ThetaCri, bp, Tcp1, Tcp2, Tcf, G, GInt, GMin, Tcg, Kgl, Ksn                                   | SWEIni, ThetaIni, QsnowIni, QglacierIni, HglacierIni |
++---------------------+----------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+
+| SOCONT              | A, S, SInt, SMin, SPh, ThetaCri, bp, Tcp1, Tcp2, Tcf, HGR3Max, KGR3, L, J0, Kr                                       | SWEIni, ThetaIni, HGR3Ini, HrIni                     |
++---------------------+----------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+
+| HBV                 | A, CFMax, CFR, CWH, TT, TTInt, TTSM, Beta, FC, PWP, SUMax, Kr, Ku, Kl, Kperc                                         | SWEIni, WHIni, HumIni, SUIni, SLIni                  |
++---------------------+----------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+
+| GR4J                | A, X1, X2, X3, X4                                                                                                    | Sini, RIni                                           |
++---------------------+----------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+
+| SAC                 | A, Adimp, Pctim, Riva, UztwMax, UzfwMax, Uzk, Zperc, Rexp, Pfree, LztwMax, LzfpMax, LzfsMax, Rserv, Lzpk, Lzsk, Side | AdimIni, UztwIni, UzfwIni, LztwIni, LzfpIni, LzfsIni |
++---------------------+----------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+
+| LagTime             | L, B0, m, J0, K, lag                                                                                                 | Qini                                                 |
++---------------------+----------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+
+| Kinematic           | L, B0, m, J0, K, N                                                                                                   | Qini                                                 |
++---------------------+----------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+
+| MuskingumCunge      | L, B0, m, J0, K, N                                                                                                   | Qini                                                 |
++---------------------+----------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+
+| StVenant            | L, B0, m, J0, K, N                                                                                                   | Qini                                                 |
++---------------------+----------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+
+| Reservoir           | \-                                                                                                                   | Hini, HvarIni                                        |
++---------------------+----------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+
+| Hydropower          | Zplant, L, D, K, ν, Default Price                                                                                    | \-                                                   |
++---------------------+----------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+
+| Consumer            | Default QDemand, LossRate, ConsumptionRate                                                                           | \-                                                   |
++---------------------+----------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+
+| StructureEfficiency | Efficiency                                                                                                           | \-                                                   |
++---------------------+----------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+
+
+: Nomenclature of objects, parameters and initial condition to be used in the **GetPropertyValue** function {#tbl-scriptsobjects_nomeclature}

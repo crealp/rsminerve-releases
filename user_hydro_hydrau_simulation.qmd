@@ -1,0 +1,105 @@
+# Hydrological-hydraulic simulation {#sec-user_hydro_hydrau_simulation}
+
+## Run a model {#sec-user_hydro_hydrau_simulation_run_model}
+
+Before solving a model, its validity has to be verified.
+
+- <span style="color:blue">Click on the ![](figures/fig-icon_check.png){width="0.159in" height="0.159in"} *Validation* button. A *Pre-Simulation* report is generated (right-frame)</span>.
+
+> In case of **Fatal error(s)**: Correct your model consequently. [^14]
+>
+> In case of **Warning(s)**: Proceed to adequate modifications if required.
+>
+> In case of **Note(s)**: Consider the message(s) and go ahead.
+
+[^14]: During the *Validation* process, the model is verified. In particular, a *Fatal error* is 
+generated for each missing required object’s input (absence of interconnection from upstream).
+
+- <span style="color:blue">In the *Solver* window, define the simulation period, simulation time step and recording time step (@fig-solver_window)</span>.
+
+![The *Solver* window](figures/fig-solver_window.png){#fig-solver_window}
+
+The time interval for the simulation time step and recording time step can be modified accordingly to @tbl-solver_time_intervals.
+
++-----------------------------------+-----------------------------------+
+| Simulation time step              | Recording time step               |
++===================================+===================================+
+| -   Seconds                       | -   Seconds                       |
+| -   Minutes                       | -   Minutes                       |
+| -   Hour                          | -   Hour                          |
+| -   Day                           | -   Day                           |
+|                                   | -   Month                         |
++-----------------------------------+-----------------------------------+
+
+: Possible time intervals for simulation and recording time steps {#tbl-solver_time_intervals}
+
+- <span style="color:blue">Click on *Start*. At the end of the computation, a *Post-Simulation report* (right frame) provides a summary of the simulation with potential warning(s)</span>.
+
+- <span style="color:blue">Visualize the obtained results by selecting each object in the *Interface* and using the *Graphs* tool in the *Object* frame (@fig-rsm_interface). Select the variable(s) of interest in the list (use *Ctrl* to select more than one series)</span>.
+
+##  Results visualization with the *Selection and Plots* {#sec-user_hydro_hydrau_simulation_selection_plots}
+
+A combination of results can be visualized in the *Selection and Plots* module.
+
+- <span style="color:blue">Click on *Selection and plots* in the *Toolbox* frame (@fig-rsm_interface)</span>. A new tab is opened.
+
+In the *Objects and variables* frame (@fig-selection_plots_interface), all the variables are listed by objects.
+
+- <span style="color:blue">Check in the *Objects and variables* frame the variable(s) to draw.[^user_15]</span>
+
+- <span style="color:blue">Click on *Plot* to plot the listed series.[^user_16]</span>
+
+- <span style="color:blue">Give a name to the active selection in the *Selections list*.</span>
+
+- <span style="color:blue">Export the selection using *Selections* frame $\rightarrow$ *Export*.[^user_17]</span>
+
+- <span style="color:blue">Import a selection using *Selections* frame $\rightarrow$ *Import*.</span>
+
+[^user_15]: Variables of two different units can be drawn simultaneously (second axis).
+
+[^user_16]: Use the mouse to visualize data values (press left button), move (press right button), zoom (press scroll-wheel) or fit to view (double-click on scroll-wheel). Zoom and fit to view can be also realised onto the axes.
+
+[^user_17]: Selections are saved in a text file with the \*.chk format.
+
+A second selection appears in the *Selections list*. Different
+selections can be defined and saved for the exploitation and analysis of
+the results.
+
+![The *Selection and Plots* interface](figures/fig-selection_plots_interface.png){#fig-selection_plots_interface}
+
+##  Export / Import of results to a database
+
+Results of a simulation can be saved to the *database* as a dataset of
+time series.
+
+- <span style="color:blue">Select *Export* in the *Database* frame (@fig-rsm_interface) in the RS MINERVE main window.</span>
+
+- <span style="color:blue">Define the name of the dataset and choose between:</span>
+
+    - <span style="color:blue">Add the dataset to an existing Group.</span>
+
+    - <span style="color:blue">Create a new Group.</span>
+
+- <span style="color:blue">Export with *OK*. [^user_18]</span>
+
+[^user_18]: By activating *Only selected series*, only the series corresponding to the last active Selection in the *Selection and Plots* are exported.
+
+You can now visualize your results in the database (cf. @sec-user_database). Once
+exported, results can be imported into the model. Importing a dataset of
+series replaces the current time series (results of a simulation) of all
+concerned objects.
+
+- <span style="color:blue">Select *Import* in the *Database* frame.</span>
+
+- <span style="color:blue">Select the *Group* and the *Dataset* of time series to import and click *Ok*.</span>
+
+Exported results can also be visualized in the *Selection and Plots*
+module.
+
+- <span style="color:blue">Open *Selection and Plots* module (*Module* frame $\rightarrow$ *Selection and plots*).</span>
+
+- <span style="color:blue">In the Source of data, check the *Database* source (@fig-selection_plots_interface), then select in the combo the Group containing the dataset of time series.</span>
+
+- <span style="color:blue">Select the dataset of time series to be drawn.</span>
+
+- <span style="color:blue">Click on *Plot* in the *Series* frame.</span>
