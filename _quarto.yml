@@ -5,6 +5,7 @@ project:
 book:
   title: "RS MINERVE Manuals"
   author: "Bastien ROQUIER, Javier FLUIXA SANMARTIN, Tristan BRAUCHLI, Theo BARACCHINI, Javier GARCIA HERNANDEZ, Alain FOEHN, Javier PAREDES ARQUIOLA, Giovanni DE CESARE"
+  editor: CREALP
   cover-image: figures/fig-cover_image.png
   site-url: https://crealp.github.io/rsminerve-releases/
   date: "05.02.2022"
@@ -60,4 +61,3 @@ format:
   pdf:
     documentclass: scrreprt
     
-editor: CREALP
