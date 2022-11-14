@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.342">
+<meta name="generator" content="quarto-1.1.251">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -11,19 +11,25 @@
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 </style>
+
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
-<meta name="quarto:offset" content="./">
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
 <link href="./examples_ex3.html" rel="next">
 <link href="./examples_ex1.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
@@ -31,10 +37,10 @@ ul.task-list{list-style: none;}
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link id="quarto-text-highlighting-styles" href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -76,13 +82,10 @@ ul.task-list{list-style: none;}
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <h1 class="title"><span id="sec-examples_ex2" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Example 2 – Combined full basin with meteorological stations</span></span></h1>
-                </div>
+                      </div>
   </div>
     
   
-
-
-
   <div class="quarto-title-meta">
 
       
@@ -111,129 +114,129 @@ ul.task-list{list-style: none;}
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a href="./user_manual.html" class="sidebar-item-text sidebar-link">User Manual</a>
-      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-        <li class="sidebar-item">
+      <div class="sidebar-item-container"> 
+            <a href="./user_manual.html" class="sidebar-item-text sidebar-link">User Manual</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_rainfall_runoff_modelling.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Rainfall-runoff modelling</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_hydraulic_infrastructures.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Hydraulic infrastructures modelling</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_database.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Database</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_gis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">GIS</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_hydro_hydrau_simulation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Hydrological-hydraulic simulation</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_expert_module.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Expert module</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_plugins.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Plugins</span></a>
   </div>
 </li>
-    </ul>
+      </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a href="./tech_manual.html" class="sidebar-item-text sidebar-link">Technical Manual</a>
-      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-        <li class="sidebar-item">
+      <div class="sidebar-item-container"> 
+            <a href="./tech_manual.html" class="sidebar-item-text sidebar-link">Technical Manual</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_hydrological_models.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Hydrological and hydraulics models description</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_performance_indicators.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Performance indicators</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_calibration_algorithms.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Calibration algorithms</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_stochastic_equations.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Stochastic equations</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_scripts.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Visual Basic Scripts</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_file_formats.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">File formats</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_database_formats.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Database formats</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_gis_formats.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">GIS formats</span></a>
   </div>
 </li>
-    </ul>
+      </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a href="./examples.html" class="sidebar-item-text sidebar-link">Examples of application</a>
-      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-        <li class="sidebar-item">
+      <div class="sidebar-item-container"> 
+            <a href="./examples.html" class="sidebar-item-text sidebar-link">Examples of application</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./examples_ex1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Example 1 – Simple basin with only runoff</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./examples_ex2.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Example 2 – Combined full basin with meteorological stations</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./examples_ex3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Example 3 – Equipped basin with a hydropower scheme</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./examples_ex4.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Example 4 – Automatic calibration of a model</span></a>
   </div>
 </li>
-    </ul>
+      </ul>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
@@ -241,37 +244,37 @@ ul.task-list{list-style: none;}
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Appendices</a>
-      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
-        <li class="sidebar-item">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Appendices</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendix_list_param_ic.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Appendix: List of parameters and initial conditions</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendix_list_notifications.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">List of notifications from pre-simulation and post-simulation reports</span></a>
   </div>
 </li>
-    </ul>
+      </ul>
   </li>
     </ul>
     </div>
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#objective-of-example-2" id="toc-objective-of-example-2" class="nav-link active" data-scroll-target="#objective-of-example-2"> <span class="header-section-number">17.1</span> Objective of Example 2</a></li>
-  <li><a href="#resolution-of-example-2" id="toc-resolution-of-example-2" class="nav-link" data-scroll-target="#resolution-of-example-2"> <span class="header-section-number">17.2</span> Resolution of Example 2</a></li>
-  <li><a href="#results-of-example-2" id="toc-results-of-example-2" class="nav-link" data-scroll-target="#results-of-example-2"> <span class="header-section-number">17.3</span> Results of Example 2</a></li>
+  <li><a href="#objective-of-example-2" id="toc-objective-of-example-2" class="nav-link active" data-scroll-target="#objective-of-example-2"><span class="toc-section-number">17.1</span>  Objective of Example 2</a></li>
+  <li><a href="#resolution-of-example-2" id="toc-resolution-of-example-2" class="nav-link" data-scroll-target="#resolution-of-example-2"><span class="toc-section-number">17.2</span>  Resolution of Example 2</a></li>
+  <li><a href="#results-of-example-2" id="toc-results-of-example-2" class="nav-link" data-scroll-target="#results-of-example-2"><span class="toc-section-number">17.3</span>  Results of Example 2</a></li>
   </ul>
 </nav>
     </div>
@@ -286,7 +289,7 @@ ul.task-list{list-style: none;}
 <div id="fig-examples_model_scheme_ex2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-examples_model_scheme_ex2.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 17.1: Model scheme</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.1: Model scheme</figcaption><p></p>
 </figure>
 </div>
 <p>The parameters of the objects are provided in <a href="#fig-examples_characteristics_ex2_1">Figure&nbsp;<span>17.2</span></a> to <a href="#fig-examples_characteristics_ex2_3">Figure&nbsp;<span>17.4</span></a> and the precipitation and temperature data are in the database “Database manual”.</p>
@@ -302,28 +305,28 @@ ul.task-list{list-style: none;}
 <div id="fig-examples_characteristics_ex2_1" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-examples_characteristics_ex2_1.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 17.2: Characteristics of the objects (1/3)</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.2: Characteristics of the objects (1/3)</figcaption><p></p>
 </figure>
 </div>
 <p>&nbsp;</p>
 <div id="fig-examples_characteristics_ex2_2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-examples_characteristics_ex2_2.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 17.3: Characteristics of the objects (2/3)</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.3: Characteristics of the objects (2/3)</figcaption><p></p>
 </figure>
 </div>
 <p>&nbsp;</p>
 <div id="fig-examples_characteristics_ex2_3" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-examples_characteristics_ex2_3.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 17.4: Characteristics of the objects (3/3)</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.4: Characteristics of the objects (3/3)</figcaption><p></p>
 </figure>
 </div>
 <p>Besides, two meteorological real stations are included in the data base:</p>
 <div id="fig-examples_characteristics_meteo_ex2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-examples_characteristics_meteo_ex2.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 17.5: Characteristics of the meteorological real stations</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.5: Characteristics of the meteorological real stations</figcaption><p></p>
 </figure>
 </div>
 </section>
@@ -333,56 +336,56 @@ ul.task-list{list-style: none;}
 <div id="fig-examples_unlinked_objects_ex2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-examples_unlinked_objects_ex2.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 17.6: Unlinked objects of the model</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.6: Unlinked objects of the model</figcaption><p></p>
 </figure>
 </div>
 <p>After that, the models are linked from upstream to downstream (<a href="#fig-examples_topologic_links_between_objects_ex2">Figure&nbsp;<span>17.7</span></a>) and the relations created can be visualized by double clicking on each blue arrow (<a href="#fig-examples_possible_outputs_transfer_ex2">Figure&nbsp;<span>17.8</span></a>, <a href="#fig-examples_connection_between_objects_ex2">Figure&nbsp;<span>17.9</span></a>).</p>
 <div id="fig-examples_topologic_links_between_objects_ex2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-examples_topologic_links_between_objects_ex2.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 17.7: Relations between the objects</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.7: Relations between the objects</figcaption><p></p>
 </figure>
 </div>
 <p>&nbsp;</p>
 <div id="fig-examples_possible_outputs_transfer_ex2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-examples_possible_outputs_transfer_ex2.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 17.8: Possible outputs transfers between objects</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.8: Possible outputs transfers between objects</figcaption><p></p>
 </figure>
 </div>
 <p>&nbsp;</p>
 <div id="fig-examples_connection_between_objects_ex2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-examples_connection_between_objects_ex2.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 17.9: Connections between objects</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.9: Connections between objects</figcaption><p></p>
 </figure>
 </div>
 <p>The parameters associated to each object are then introduced (values available in previous tables). The result is presented for both HBV 1 and GSM 1 models in <a href="#fig-examples_param_ic_hbv_gsm_ex2">Figure&nbsp;<span>17.10</span></a>.</p>
 <div id="fig-examples_param_ic_hbv_gsm_ex2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-examples_param_ic_hbv_gsm_ex2.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 17.10: Parameters of the HBV 1 model (left) and the GSM 1 model (right)</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.10: Parameters of the HBV 1 model (left) and the GSM 1 model (right)</figcaption><p></p>
 </figure>
 </div>
 <p>Secondly, virtual weather stations are inserted. For its accomplishment, 4 Virtual Weather Stations <img src="figures/fig-icon_object_station.png" style="height:0.24in"> are created and connected according to <a href="#fig-examples_model_with_stations_ex2">Figure&nbsp;<span>17.11</span></a>. The topology of the relations created in this case is detailed in <a href="#fig-examples_topologic_links_between_stations_ex2">Figure&nbsp;<span>17.12</span></a>. Then the parameters are introduced (<a href="#fig-examples_param_station_ex2">Figure&nbsp;<span>17.13</span></a>) with the available values presented previously.</p>
 <div id="fig-examples_model_with_stations_ex2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-examples_model_with_stations_ex2.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 17.11: Topology of the full model: production, transfer then transport</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.11: Topology of the full model: production, transfer then transport</figcaption><p></p>
 </figure>
 </div>
 <p>&nbsp;</p>
 <div id="fig-examples_topologic_links_between_stations_ex2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-examples_topologic_links_between_stations_ex2.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 17.12: Topologic links between the different objects</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.12: Topologic links between the different objects</figcaption><p></p>
 </figure>
 </div>
 <p>&nbsp;</p>
 <div id="fig-examples_param_station_ex2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-examples_param_station_ex2.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 17.13: Parameters of the Virtual Weather Station H1 (for HBV 1)</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.13: Parameters of the Virtual Weather Station H1 (for HBV 1)</figcaption><p></p>
 </figure>
 </div>
 <p>Constructed model can be now saved clicking in the button <img src="figures/fig-icon_save_button.png" style="height:0.24in"> and giving a name to the .rsm file (e.g. “Example2.rsm”).</p>
@@ -390,28 +393,28 @@ ul.task-list{list-style: none;}
 <div id="fig-examples_database_frame_ex2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-examples_database_frame_ex2.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 17.14: Database frame</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.14: Database frame</figcaption><p></p>
 </figure>
 </div>
 <p>The user can click on the Database tab to visualize or modify the series of the database (<a href="#fig-examples_database_model_ex2">Figure&nbsp;<span>17.15</span></a>).</p>
 <div id="fig-examples_database_model_ex2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-examples_database_model_ex2.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 17.15: Database of the model</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.15: Database of the model</figcaption><p></p>
 </figure>
 </div>
 <p>Once the database loaded, the user can connect the database to the hydrological model. For achieving this purpose, the user has to choose the correct data source in the corresponding frame (<a href="#fig-examples_datasource_connection_ex2">Figure&nbsp;<span>17.16</span></a>): the group “Measure” and the dataset “DataSet Example 2and3” for the current example. Since no source, <em>TurbineDB</em>, reservoir or consumer objects exist in the model, it is not necessary to fill up their data sources.</p>
 <div id="fig-examples_datasource_connection_ex2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-examples_datasource_connection_ex2.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 17.16: Data source used for connecting the model to the database</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.16: Data source used for connecting the model to the database</figcaption><p></p>
 </figure>
 </div>
 <p>Finally, and after achieve a simulation, the weight of each meteorological real station can be checked by clicking at one Virtual Weather station of the hydrological model (<a href="#fig-examples_weight_station_ex2">Figure&nbsp;<span>17.17</span></a>).</p>
 <div id="fig-examples_weight_station_ex2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-examples_weight_station_ex2.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 17.17: Weight of each meteorological station for the Virtual Weather Station H1</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.17: Weight of each meteorological station for the Virtual Weather Station H1</figcaption><p></p>
 </figure>
 </div>
 <p>The pre-simulation validation (<img src="figures/fig-icon_validation.png" style="height:0.24in">) allows to valid the model. If the message: “Model ‘Example 2’ is valid” appears, the simulation can be started by clicking in the button Start.</p>
@@ -422,28 +425,28 @@ ul.task-list{list-style: none;}
 <div id="fig-examples_outlet_hydrograph_ex2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-examples_outlet_hydrograph_ex2.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 17.18: Hydrograph in the outlet of the system</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.18: Hydrograph in the outlet of the system</figcaption><p></p>
 </figure>
 </div>
 <p>If we check the values (<a href="#fig-examples_discharge_values_ex2">Figure&nbsp;<span>17.19</span></a>), we can found that the maximal discharge arrives on May the 9<sup>th</sup>, 2013 at 07:00 and the discharge value is 8.154 m<sup>3</sup>/s.</p>
 <div id="fig-examples_discharge_values_ex2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-examples_discharge_values_ex2.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 17.19: Discharge values at outlet</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.19: Discharge values at outlet</figcaption><p></p>
 </figure>
 </div>
-<p>All the simulated variables of the model (including the discharge in each sub-basin outlet) can be visualized (<a href="#fig-examples_selection_plots_subbasins_ex2">Figure&nbsp;<span>17.20</span></a> and <a href="#fig-examples_hydrographs_subbasins_ex2">Figure&nbsp;<span>17.21</span></a>) clicking on the “Selection and plots” frame and in selecting the series to draw as presented in <a href="user_hydro_hydrau_simulation.html#sec-user_hydro_hydrau_simulation_selection_plots">Section&nbsp;<span>5.2</span></a>. Finally you can export the selection results in excel format clicking in “Export results to…” in the series frame.</p>
+<p>All the simulated variables of the model (including the discharge in each sub-basin outlet) can be visualized (<a href="#fig-examples_selection_plots_subbasins_ex2">Figure&nbsp;<span>17.20</span></a> and <a href="#fig-examples_hydrographs_subbasins_ex2">Figure&nbsp;<span>17.21</span></a>) clicking on the “Selection and plots” frame and in selecting the series to draw as presented in <a href="user_hydro_hydrau_simulation.html#sec-user_hydro_hydrau_simulation_selection_plots"><span>Section&nbsp;5.2</span></a>. Finally you can export the selection results in excel format clicking in “Export results to…” in the series frame.</p>
 <div id="fig-examples_selection_plots_subbasins_ex2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-examples_selection_plots_subbasins_ex2.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 17.20: <em>Selection and Plots</em> with the hydrographs at the outlet for each sub-basin of the system</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.20: <em>Selection and Plots</em> with the hydrographs at the outlet for each sub-basin of the system</figcaption><p></p>
 </figure>
 </div>
 <p>&nbsp;</p>
 <div id="fig-examples_hydrographs_subbasins_ex2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-examples_hydrographs_subbasins_ex2.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 17.21: Hydrographs at the outlet for each sub-basin of the system</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.21: Hydrographs at the outlet for each sub-basin of the system</figcaption><p></p>
 </figure>
 </div>
 
@@ -453,6 +456,24 @@ ul.task-list{list-style: none;}
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -502,7 +523,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);

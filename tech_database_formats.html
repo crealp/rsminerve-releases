@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.342">
+<meta name="generator" content="quarto-1.1.251">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -11,19 +11,25 @@
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 </style>
+
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
-<meta name="quarto:offset" content="./">
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
 <link href="./tech_gis_formats.html" rel="next">
 <link href="./tech_file_formats.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
@@ -31,10 +37,10 @@ ul.task-list{list-style: none;}
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link id="quarto-text-highlighting-styles" href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -76,13 +82,10 @@ ul.task-list{list-style: none;}
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <h1 class="title"><span id="sec-tech_database_formats" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Database formats</span></span></h1>
-                </div>
+                      </div>
   </div>
     
   
-
-
-
   <div class="quarto-title-meta">
 
       
@@ -111,129 +114,129 @@ ul.task-list{list-style: none;}
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a href="./user_manual.html" class="sidebar-item-text sidebar-link">User Manual</a>
-      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-        <li class="sidebar-item">
+      <div class="sidebar-item-container"> 
+            <a href="./user_manual.html" class="sidebar-item-text sidebar-link">User Manual</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_rainfall_runoff_modelling.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Rainfall-runoff modelling</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_hydraulic_infrastructures.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Hydraulic infrastructures modelling</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_database.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Database</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_gis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">GIS</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_hydro_hydrau_simulation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Hydrological-hydraulic simulation</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_expert_module.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Expert module</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_plugins.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Plugins</span></a>
   </div>
 </li>
-    </ul>
+      </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a href="./tech_manual.html" class="sidebar-item-text sidebar-link">Technical Manual</a>
-      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-        <li class="sidebar-item">
+      <div class="sidebar-item-container"> 
+            <a href="./tech_manual.html" class="sidebar-item-text sidebar-link">Technical Manual</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_hydrological_models.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Hydrological and hydraulics models description</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_performance_indicators.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Performance indicators</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_calibration_algorithms.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Calibration algorithms</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_stochastic_equations.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Stochastic equations</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_scripts.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Visual Basic Scripts</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_file_formats.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">File formats</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_database_formats.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Database formats</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_gis_formats.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">GIS formats</span></a>
   </div>
 </li>
-    </ul>
+      </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a href="./examples.html" class="sidebar-item-text sidebar-link">Examples of application</a>
-      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-        <li class="sidebar-item">
+      <div class="sidebar-item-container"> 
+            <a href="./examples.html" class="sidebar-item-text sidebar-link">Examples of application</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./examples_ex1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Example 1 – Simple basin with only runoff</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./examples_ex2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Example 2 – Combined full basin with meteorological stations</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./examples_ex3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Example 3 – Equipped basin with a hydropower scheme</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./examples_ex4.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Example 4 – Automatic calibration of a model</span></a>
   </div>
 </li>
-    </ul>
+      </ul>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
@@ -241,42 +244,42 @@ ul.task-list{list-style: none;}
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Appendices</a>
-      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
-        <li class="sidebar-item">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Appendices</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendix_list_param_ic.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Appendix: List of parameters and initial conditions</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendix_list_notifications.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">List of notifications from pre-simulation and post-simulation reports</span></a>
   </div>
 </li>
-    </ul>
+      </ul>
   </li>
     </ul>
     </div>
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#the-database-viewer" id="toc-the-database-viewer" class="nav-link active" data-scroll-target="#the-database-viewer"> <span class="header-section-number">14.1</span> The Database Viewer</a></li>
-  <li><a href="#sec-tech_database_formats_dataset_csv" id="toc-sec-tech_database_formats_dataset_csv" class="nav-link" data-scroll-target="#sec-tech_database_formats_dataset_csv"> <span class="header-section-number">14.2</span> Database, dataset and CSV formats</a>
-  <ul class="collapse">
+  <li><a href="#the-database-viewer" id="toc-the-database-viewer" class="nav-link active" data-scroll-target="#the-database-viewer"><span class="toc-section-number">14.1</span>  The Database Viewer</a></li>
+  <li><a href="#sec-tech_database_formats_dataset_csv" id="toc-sec-tech_database_formats_dataset_csv" class="nav-link" data-scroll-target="#sec-tech_database_formats_dataset_csv"><span class="toc-section-number">14.2</span>  Database, dataset and CSV formats</a>
+  <ul>
   <li><a href="#database-files" id="toc-database-files" class="nav-link" data-scroll-target="#database-files">Database files</a></li>
   <li><a href="#dataset-files" id="toc-dataset-files" class="nav-link" data-scroll-target="#dataset-files">Dataset files</a></li>
   <li><a href="#csv-files" id="toc-csv-files" class="nav-link" data-scroll-target="#csv-files">CSV files</a></li>
   </ul></li>
-  <li><a href="#automatic-creation-of-databases-or-datasets" id="toc-automatic-creation-of-databases-or-datasets" class="nav-link" data-scroll-target="#automatic-creation-of-databases-or-datasets"> <span class="header-section-number">14.3</span> Automatic creation of databases or datasets</a></li>
+  <li><a href="#automatic-creation-of-databases-or-datasets" id="toc-automatic-creation-of-databases-or-datasets" class="nav-link" data-scroll-target="#automatic-creation-of-databases-or-datasets"><span class="toc-section-number">14.3</span>  Automatic creation of databases or datasets</a></li>
   </ul>
 </nav>
     </div>
@@ -321,12 +324,12 @@ ul.task-list{list-style: none;}
 <p>The user can create a complete database or different datasets to add to an existing database.</p>
 <div id="tbl-structure_database_interface" class="anchored">
 <table class="table">
-<caption>Table 14.1: Structure of the database interface</caption>
+<caption>Table&nbsp;14.1: Structure of the database interface</caption>
 <colgroup>
 <col style="width: 17%">
+<col style="width: 24%">
+<col style="width: 29%">
 <col style="width: 25%">
-<col style="width: 30%">
-<col style="width: 26%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -371,7 +374,7 @@ ul.task-list{list-style: none;}
 <td></td>
 <td>Filename</td>
 <td>File name and path</td>
-<td>(Full path of file)&nbsp;</td>
+<td>(Full path of file)</td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -407,7 +410,7 @@ ul.task-list{list-style: none;}
 <td></td>
 <td>Date capture</td>
 <td>Date of last dataset capture date in the group</td>
-<td>18/12/2012 10:54&nbsp;</td>
+<td>18/12/2012 10:54</td>
 </tr>
 <tr class="odd">
 <td><strong>Dataset</strong></td>
@@ -455,7 +458,7 @@ ul.task-list{list-style: none;}
 <td></td>
 <td>Filename</td>
 <td>File name and path</td>
-<td>(Full path of file)&nbsp;</td>
+<td>(Full path of file)</td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -586,20 +589,20 @@ ul.task-list{list-style: none;}
 <div id="fig-format_2_database_files" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-format_2_database_files.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 14.1: Format of the two database files (in text format for the data file)</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;14.1: Format of the two database files (in text format for the data file)</figcaption><p></p>
 </figure>
 </div>
 <p>An example of the XML file and of the text file is showed respectively in <a href="#fig-example_database_xml_file">Figure&nbsp;<span>14.2</span></a> and <a href="#fig-example_database_text_format">Figure&nbsp;<span>14.3</span></a>.</p>
 <div id="fig-example_database_xml_file" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-example_database_xml_file.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 14.2: Example of the database XML file</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;14.2: Example of the database XML file</figcaption><p></p>
 </figure>
 </div>
 <div id="fig-example_database_text_format" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-example_database_text_format.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 14.3: Example of the database data file in text format</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;14.3: Example of the database data file in text format</figcaption><p></p>
 </figure>
 </div>
 </section>
@@ -618,21 +621,21 @@ ul.task-list{list-style: none;}
 <div id="fig-format_2_dataset_files" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-format_2_dataset_files.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 14.4: Format of the two dataset files (in text format for the data file)</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;14.4: Format of the two dataset files (in text format for the data file)</figcaption><p></p>
 </figure>
 </div>
 <p>An example of the XML and text files is showed respectively in <a href="#fig-example_dataset_xml_file">Figure&nbsp;<span>14.5</span></a> and <a href="#fig-example_dataset_text_format">Figure&nbsp;<span>14.6</span></a>.</p>
 <div id="fig-example_dataset_xml_file" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-example_dataset_xml_file.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 14.5: Example of the dataset XML file</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;14.5: Example of the dataset XML file</figcaption><p></p>
 </figure>
 </div>
 <p>&nbsp;</p>
 <div id="fig-example_dataset_text_format" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-example_dataset_text_format.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 14.6: Example of the dataset data file in text format</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;14.6: Example of the dataset data file in text format</figcaption><p></p>
 </figure>
 </div>
 </section>
@@ -655,53 +658,71 @@ Important
 <div id="fig-structure_csv_file_database" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-structure_csv_file_database.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 14.7: Structure of CSV file in RS MINERVE</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;14.7: Structure of CSV file in RS MINERVE</figcaption><p></p>
 </figure>
 </div>
 <p>And <a href="#fig-example_csv_file_database">Figure&nbsp;<span>14.8</span></a> shows an example of CSV file.</p>
 <div id="fig-example_csv_file_database" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-example_csv_file_database.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 14.8: Example of CSV file in text format</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;14.8: Example of CSV file in text format</figcaption><p></p>
 </figure>
 </div>
 </section>
 </section>
 <section id="automatic-creation-of-databases-or-datasets" class="level2" data-number="14.3">
 <h2 data-number="14.3" class="anchored" data-anchor-id="automatic-creation-of-databases-or-datasets"><span class="header-section-number">14.3</span> Automatic creation of databases or datasets</h2>
-<p>An automatic creation of a database or a dataset is possible. Concerning the text file (respectively *.dbt, *.dst or *.csv), it can be easily created based on information provided in <a href="#sec-tech_database_formats_dataset_csv">Section&nbsp;<span>14.2</span></a>. Regarding the .xml file (*.dbx or *.dsx) or plain file (*.csv), additional information for the automatic creation is presented hereafter.</p>
+<p>An automatic creation of a database or a dataset is possible. Concerning the text file (respectively *.dbt, *.dst or *.csv), it can be easily created based on information provided in <a href="#sec-tech_database_formats_dataset_csv"><span>Section&nbsp;14.2</span></a>. Regarding the .xml file (*.dbx or *.dsx) or plain file (*.csv), additional information for the automatic creation is presented hereafter.</p>
 <p><a href="#fig-database_nodes_xml_file">Figure&nbsp;<span>14.9</span></a> and <a href="#fig-dataset_nodes_xml_file">Figure&nbsp;<span>14.10</span></a> describe all the possible nodes respectively represented in a database (*.dbx) and a dataset XML file (*.dsx). The presented tables takes into account an example with a dataset “Measure” with a station “Aigle” and a sensor of observed precipitation “P”. The information visible in Database is also presented in last three columns.</p>
 <p>To create an XML file, all the possible nodes are very useful but not all required, since some of them are also necessary for operational hydro-meteorological systems.</p>
 <p>“Key” node generally allows distinguishing different databases (or datasets) with different name and structure. “ID” node is only useful for operational system, since it can be used when datasets with same “Key” (as well as same filename and structure) are overwritten at each new forecast. Then, “ID” node allows to Database knowing if the dataset has been updated or not.</p>
 <div id="fig-database_nodes_xml_file" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-database_nodes_xml_file.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 14.9: Description of all the possible nodes in a database XML file</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;14.9: Description of all the possible nodes in a database XML file</figcaption><p></p>
 </figure>
 </div>
 <p>&nbsp;</p>
 <div id="fig-dataset_nodes_xml_file" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-dataset_nodes_xml_file.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 14.10: Description of all the possible nodes in a dataset XML file</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;14.10: Description of all the possible nodes in a dataset XML file</figcaption><p></p>
 </figure>
 </div>
 
 
 </section>
-<section class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1" role="doc-endnote"><p>Definition and use of Groups and Datasets can also be done in a different way by the user.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2" role="doc-endnote"><p>Data can be interpolated in three different ways: <em>linear</em>, <em>constant before</em> and <em>constant after</em>. With <em>constant before</em>, the value for a given time is used as a constant for the preceding time interval, whereas the <em>constant after</em> method applies the value for the following time interval.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3" role="doc-endnote"><p>If the database is not containing sensor, the data file (*.dbt or *.dbb) will be empty.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4" role="doc-endnote"><p>If the dataset is not containing sensor, the data file (<em>.dst or </em>.dsb) will be empty.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Definition and use of Groups and Datasets can also be done in a different way by the user.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Data can be interpolated in three different ways: <em>linear</em>, <em>constant before</em> and <em>constant after</em>. With <em>constant before</em>, the value for a given time is used as a constant for the preceding time interval, whereas the <em>constant after</em> method applies the value for the following time interval.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>If the database is not containing sensor, the data file (*.dbt or *.dbb) will be empty.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>If the dataset is not containing sensor, the data file (<em>.dst or </em>.dsb) will be empty.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -751,7 +772,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);

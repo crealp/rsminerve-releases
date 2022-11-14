@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.342">
+<meta name="generator" content="quarto-1.1.251">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -11,19 +11,25 @@
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 </style>
+
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
-<meta name="quarto:offset" content="./">
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
 <link href="./user_gis.html" rel="next">
 <link href="./user_hydraulic_infrastructures.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
@@ -31,10 +37,10 @@ ul.task-list{list-style: none;}
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link id="quarto-text-highlighting-styles" href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -77,13 +83,10 @@ ul.task-list{list-style: none;}
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <h1 class="title"><span id="sec-user_database" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Database</span></span></h1>
-                </div>
+                      </div>
   </div>
     
   
-
-
-
   <div class="quarto-title-meta">
 
       
@@ -112,129 +115,129 @@ ul.task-list{list-style: none;}
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a href="./user_manual.html" class="sidebar-item-text sidebar-link">User Manual</a>
-      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-        <li class="sidebar-item">
+      <div class="sidebar-item-container"> 
+            <a href="./user_manual.html" class="sidebar-item-text sidebar-link">User Manual</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_rainfall_runoff_modelling.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Rainfall-runoff modelling</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_hydraulic_infrastructures.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Hydraulic infrastructures modelling</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_database.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Database</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_gis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">GIS</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_hydro_hydrau_simulation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Hydrological-hydraulic simulation</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_expert_module.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Expert module</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_plugins.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Plugins</span></a>
   </div>
 </li>
-    </ul>
+      </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a href="./tech_manual.html" class="sidebar-item-text sidebar-link">Technical Manual</a>
-      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-        <li class="sidebar-item">
+      <div class="sidebar-item-container"> 
+            <a href="./tech_manual.html" class="sidebar-item-text sidebar-link">Technical Manual</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_hydrological_models.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Hydrological and hydraulics models description</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_performance_indicators.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Performance indicators</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_calibration_algorithms.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Calibration algorithms</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_stochastic_equations.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Stochastic equations</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_scripts.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Visual Basic Scripts</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_file_formats.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">File formats</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_database_formats.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Database formats</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_gis_formats.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">GIS formats</span></a>
   </div>
 </li>
-    </ul>
+      </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a href="./examples.html" class="sidebar-item-text sidebar-link">Examples of application</a>
-      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-        <li class="sidebar-item">
+      <div class="sidebar-item-container"> 
+            <a href="./examples.html" class="sidebar-item-text sidebar-link">Examples of application</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./examples_ex1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Example 1 – Simple basin with only runoff</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./examples_ex2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Example 2 – Combined full basin with meteorological stations</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./examples_ex3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Example 3 – Equipped basin with a hydropower scheme</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./examples_ex4.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Example 4 – Automatic calibration of a model</span></a>
   </div>
 </li>
-    </ul>
+      </ul>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
@@ -242,39 +245,39 @@ ul.task-list{list-style: none;}
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Appendices</a>
-      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
-        <li class="sidebar-item">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Appendices</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendix_list_param_ic.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Appendix: List of parameters and initial conditions</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendix_list_notifications.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">List of notifications from pre-simulation and post-simulation reports</span></a>
   </div>
 </li>
-    </ul>
+      </ul>
   </li>
     </ul>
     </div>
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#the-database-tab" id="toc-the-database-tab" class="nav-link active" data-scroll-target="#the-database-tab"> <span class="header-section-number">3.1</span> The Database tab</a></li>
-  <li><a href="#creation-of-a-database" id="toc-creation-of-a-database" class="nav-link" data-scroll-target="#creation-of-a-database"> <span class="header-section-number">3.2</span> Creation of a database</a></li>
-  <li><a href="#data-format" id="toc-data-format" class="nav-link" data-scroll-target="#data-format"> <span class="header-section-number">3.3</span> Data format</a></li>
-  <li><a href="#connection-of-a-database-to-a-model" id="toc-connection-of-a-database-to-a-model" class="nav-link" data-scroll-target="#connection-of-a-database-to-a-model"> <span class="header-section-number">3.4</span> Connection of a database to a model</a>
-  <ul class="collapse">
+  <li><a href="#the-database-tab" id="toc-the-database-tab" class="nav-link active" data-scroll-target="#the-database-tab"><span class="toc-section-number">3.1</span>  The Database tab</a></li>
+  <li><a href="#creation-of-a-database" id="toc-creation-of-a-database" class="nav-link" data-scroll-target="#creation-of-a-database"><span class="toc-section-number">3.2</span>  Creation of a database</a></li>
+  <li><a href="#data-format" id="toc-data-format" class="nav-link" data-scroll-target="#data-format"><span class="toc-section-number">3.3</span>  Data format</a></li>
+  <li><a href="#connection-of-a-database-to-a-model" id="toc-connection-of-a-database-to-a-model" class="nav-link" data-scroll-target="#connection-of-a-database-to-a-model"><span class="toc-section-number">3.4</span>  Connection of a database to a model</a>
+  <ul>
   <li><a href="#interaction-between-the-database-and-the-active-model" id="toc-interaction-between-the-database-and-the-active-model" class="nav-link" data-scroll-target="#interaction-between-the-database-and-the-active-model">Interaction between the database and the active model</a></li>
   </ul></li>
   </ul>
@@ -293,7 +296,7 @@ ul.task-list{list-style: none;}
 <div id="fig-database_tab" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-database_tab.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3.1: The <em>Database</em> tab</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;3.1: The <em>Database</em> tab</figcaption><p></p>
 </figure>
 </div>
 <p>The database structure is organized in five hierarchical levels, listed hereafter.</p>
@@ -352,7 +355,7 @@ ul.task-list{list-style: none;}
 <div id="fig-example_data_format_sensors" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-example_data_format_sensors.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3.2: Example of data format to use in the sensors</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;3.2: Example of data format to use in the sensors</figcaption><p></p>
 </figure>
 </div>
 </section>
@@ -367,7 +370,7 @@ ul.task-list{list-style: none;}
 <div id="fig-data_source_frame" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-data_source_frame.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3.3: Left: The Data Source frame; Right: Definition of the station for objects Source</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;3.3: Left: The Data Source frame; Right: Definition of the station for objects Source</figcaption><p></p>
 </figure>
 </div>
 <section id="interaction-between-the-database-and-the-active-model" class="level3">
@@ -377,17 +380,35 @@ ul.task-list{list-style: none;}
 
 </section>
 </section>
-<section class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1" role="doc-endnote"><p>Definition and use of <em>Groups</em> and <em>Datasets</em> can also be done in a different way by the user.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2" role="doc-endnote"><p>Source objects have to be linked to another object to define the type of output (and corresponding units) before the link to the station can be defined.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Definition and use of <em>Groups</em> and <em>Datasets</em> can also be done in a different way by the user.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Source objects have to be linked to another object to define the type of output (and corresponding units) before the link to the station can be defined.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -437,7 +458,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);

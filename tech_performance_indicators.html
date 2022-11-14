@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.342">
+<meta name="generator" content="quarto-1.1.251">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -11,10 +11,15 @@
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
@@ -36,13 +41,14 @@ div.csl-indent {
 }
 </style>
 
+
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
-<meta name="quarto:offset" content="./">
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
 <link href="./tech_calibration_algorithms.html" rel="next">
 <link href="./tech_hydrological_models.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
@@ -50,10 +56,10 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link id="quarto-text-highlighting-styles" href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -96,13 +102,10 @@ div.csl-indent {
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <h1 class="title"><span id="sec-tech_performance_indicators" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Performance indicators</span></span></h1>
-                </div>
+                      </div>
   </div>
     
   
-
-
-
   <div class="quarto-title-meta">
 
       
@@ -131,129 +134,129 @@ div.csl-indent {
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a href="./user_manual.html" class="sidebar-item-text sidebar-link">User Manual</a>
-      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-        <li class="sidebar-item">
+      <div class="sidebar-item-container"> 
+            <a href="./user_manual.html" class="sidebar-item-text sidebar-link">User Manual</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_rainfall_runoff_modelling.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Rainfall-runoff modelling</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_hydraulic_infrastructures.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Hydraulic infrastructures modelling</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_database.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Database</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_gis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">GIS</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_hydro_hydrau_simulation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Hydrological-hydraulic simulation</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_expert_module.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Expert module</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_plugins.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Plugins</span></a>
   </div>
 </li>
-    </ul>
+      </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a href="./tech_manual.html" class="sidebar-item-text sidebar-link">Technical Manual</a>
-      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-        <li class="sidebar-item">
+      <div class="sidebar-item-container"> 
+            <a href="./tech_manual.html" class="sidebar-item-text sidebar-link">Technical Manual</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_hydrological_models.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Hydrological and hydraulics models description</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_performance_indicators.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Performance indicators</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_calibration_algorithms.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Calibration algorithms</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_stochastic_equations.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Stochastic equations</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_scripts.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Visual Basic Scripts</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_file_formats.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">File formats</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_database_formats.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Database formats</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_gis_formats.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">GIS formats</span></a>
   </div>
 </li>
-    </ul>
+      </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a href="./examples.html" class="sidebar-item-text sidebar-link">Examples of application</a>
-      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-        <li class="sidebar-item">
+      <div class="sidebar-item-container"> 
+            <a href="./examples.html" class="sidebar-item-text sidebar-link">Examples of application</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./examples_ex1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Example 1 – Simple basin with only runoff</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./examples_ex2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Example 2 – Combined full basin with meteorological stations</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./examples_ex3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Example 3 – Equipped basin with a hydropower scheme</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./examples_ex4.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Example 4 – Automatic calibration of a model</span></a>
   </div>
 </li>
-    </ul>
+      </ul>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
@@ -261,44 +264,44 @@ div.csl-indent {
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Appendices</a>
-      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
-        <li class="sidebar-item">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Appendices</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendix_list_param_ic.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Appendix: List of parameters and initial conditions</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendix_list_notifications.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">List of notifications from pre-simulation and post-simulation reports</span></a>
   </div>
 </li>
-    </ul>
+      </ul>
   </li>
     </ul>
     </div>
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sec-tech_performance_indicators_nash" id="toc-sec-tech_performance_indicators_nash" class="nav-link active" data-scroll-target="#sec-tech_performance_indicators_nash"> <span class="header-section-number">9.1</span> Nash coefficient</a></li>
-  <li><a href="#sec-tech_performance_indicators_nashlog" id="toc-sec-tech_performance_indicators_nashlog" class="nav-link" data-scroll-target="#sec-tech_performance_indicators_nashlog"> <span class="header-section-number">9.2</span> Nash coefficient for logarithm values</a></li>
-  <li><a href="#sec-tech_performance_indicators_pearson" id="toc-sec-tech_performance_indicators_pearson" class="nav-link" data-scroll-target="#sec-tech_performance_indicators_pearson"> <span class="header-section-number">9.3</span> Pearson Correlation Coefficient</a></li>
-  <li><a href="#sec-tech_performance_indicators_klinggupta" id="toc-sec-tech_performance_indicators_klinggupta" class="nav-link" data-scroll-target="#sec-tech_performance_indicators_klinggupta"> <span class="header-section-number">9.4</span> Kling-Gupta Efficiency</a></li>
-  <li><a href="#sec-tech_performance_indicators_biasscore" id="toc-sec-tech_performance_indicators_biasscore" class="nav-link" data-scroll-target="#sec-tech_performance_indicators_biasscore"> <span class="header-section-number">9.5</span> Bias Score</a></li>
-  <li><a href="#sec-tech_performance_indicators_rrmse" id="toc-sec-tech_performance_indicators_rrmse" class="nav-link" data-scroll-target="#sec-tech_performance_indicators_rrmse"> <span class="header-section-number">9.6</span> Relative Root Mean Square Error</a></li>
-  <li><a href="#sec-tech_performance_indicators_rvb" id="toc-sec-tech_performance_indicators_rvb" class="nav-link" data-scroll-target="#sec-tech_performance_indicators_rvb"> <span class="header-section-number">9.7</span> Relative Volume Bias</a></li>
-  <li><a href="#sec-tech_performance_indicators_npe" id="toc-sec-tech_performance_indicators_npe" class="nav-link" data-scroll-target="#sec-tech_performance_indicators_npe"> <span class="header-section-number">9.8</span> Normalized Peak Error</a></li>
-  <li><a href="#sec-tech_performance_indicators_pierce" id="toc-sec-tech_performance_indicators_pierce" class="nav-link" data-scroll-target="#sec-tech_performance_indicators_pierce"> <span class="header-section-number">9.9</span> Peirce Skill Score</a></li>
-  <li><a href="#sec-tech_performance_indicators_oa" id="toc-sec-tech_performance_indicators_oa" class="nav-link" data-scroll-target="#sec-tech_performance_indicators_oa"> <span class="header-section-number">9.10</span> Overall Accuracy</a></li>
+  <li><a href="#sec-tech_performance_indicators_nash" id="toc-sec-tech_performance_indicators_nash" class="nav-link active" data-scroll-target="#sec-tech_performance_indicators_nash"><span class="toc-section-number">9.1</span>  Nash coefficient</a></li>
+  <li><a href="#sec-tech_performance_indicators_nashlog" id="toc-sec-tech_performance_indicators_nashlog" class="nav-link" data-scroll-target="#sec-tech_performance_indicators_nashlog"><span class="toc-section-number">9.2</span>  Nash coefficient for logarithm values</a></li>
+  <li><a href="#sec-tech_performance_indicators_pearson" id="toc-sec-tech_performance_indicators_pearson" class="nav-link" data-scroll-target="#sec-tech_performance_indicators_pearson"><span class="toc-section-number">9.3</span>  Pearson Correlation Coefficient</a></li>
+  <li><a href="#sec-tech_performance_indicators_klinggupta" id="toc-sec-tech_performance_indicators_klinggupta" class="nav-link" data-scroll-target="#sec-tech_performance_indicators_klinggupta"><span class="toc-section-number">9.4</span>  Kling-Gupta Efficiency</a></li>
+  <li><a href="#sec-tech_performance_indicators_biasscore" id="toc-sec-tech_performance_indicators_biasscore" class="nav-link" data-scroll-target="#sec-tech_performance_indicators_biasscore"><span class="toc-section-number">9.5</span>  Bias Score</a></li>
+  <li><a href="#sec-tech_performance_indicators_rrmse" id="toc-sec-tech_performance_indicators_rrmse" class="nav-link" data-scroll-target="#sec-tech_performance_indicators_rrmse"><span class="toc-section-number">9.6</span>  Relative Root Mean Square Error</a></li>
+  <li><a href="#sec-tech_performance_indicators_rvb" id="toc-sec-tech_performance_indicators_rvb" class="nav-link" data-scroll-target="#sec-tech_performance_indicators_rvb"><span class="toc-section-number">9.7</span>  Relative Volume Bias</a></li>
+  <li><a href="#sec-tech_performance_indicators_npe" id="toc-sec-tech_performance_indicators_npe" class="nav-link" data-scroll-target="#sec-tech_performance_indicators_npe"><span class="toc-section-number">9.8</span>  Normalized Peak Error</a></li>
+  <li><a href="#sec-tech_performance_indicators_pierce" id="toc-sec-tech_performance_indicators_pierce" class="nav-link" data-scroll-target="#sec-tech_performance_indicators_pierce"><span class="toc-section-number">9.9</span>  Peirce Skill Score</a></li>
+  <li><a href="#sec-tech_performance_indicators_oa" id="toc-sec-tech_performance_indicators_oa" class="nav-link" data-scroll-target="#sec-tech_performance_indicators_oa"><span class="toc-section-number">9.10</span>  Overall Accuracy</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
@@ -315,7 +318,7 @@ div.csl-indent {
 <p>The Nash-Sutcliffe criteria <span class="citation" data-cites="nash_river_1970">(<a href="#ref-nash_river_1970" role="doc-biblioref">Nash and Sutcliffe 1970</a>)</span> is used to assess the predictive power of hydrological models <span class="citation" data-cites="ajami_calibration_2004 schaefli_conceptual_2005 jordan_modeprevision_2007 viviroli_continuous_2009 garcia_hernandez_flood_2011">(<a href="#ref-ajami_calibration_2004" role="doc-biblioref">Ajami et al. 2004</a>; <a href="#ref-schaefli_conceptual_2005" role="doc-biblioref">Schaefli et al. 2005</a>; <a href="#ref-jordan_modeprevision_2007" role="doc-biblioref">Jordan 2007</a>; <a href="#ref-viviroli_continuous_2009" role="doc-biblioref">Viviroli et al. 2009</a>; <a href="#ref-garcia_hernandez_flood_2011" role="doc-biblioref">García Hernández 2011</a>)</span>. It is defined as presented in <a href="#eq-IND1">Equation&nbsp;<span>9.1</span></a>.</p>
 <p><span id="eq-IND1"><span class="math display">\[
 Nash = 1 - \frac{\sum_{t = t_{i}}^{t_{f}}{(X_{sim,t} - X_{ref,t})^{2}}}{\sum_{t = t_{i}}^{t_{f}}{(X_{ref,t} - {\overline{X}_{ref}})^{2}}}
-\qquad(9.1)\]</span></span></p>
+\tag{9.1}\]</span></span></p>
 <p>with <span class="math inline">\(Nash\)</span>: Nash-Sutcliffe model efficiency coefficient [-]; <span class="math inline">\(X_{sim,t}\)</span>: simulated variable (discharge [L<sup>3</sup>/T] or height [L]) at time <span class="math inline">\(t\)</span>; <span class="math inline">\(X_{ref,t}\)</span>&nbsp;: observed variable (discharge [L<sup>3</sup>/T] or height [L]) at time <span class="math inline">\(t\)</span>; <span class="math inline">\(\overline{X}_{ref}\)</span>: average observed variable (discharge [L<sup>3</sup>/T] or height [L]) for the considered period.</p>
 <p>It varies from -∞ to 1, with 1 representing the best performance of the model and zero the same performance than assuming the average of all the observations at each time step.</p>
 </section>
@@ -324,7 +327,7 @@ Nash = 1 - \frac{\sum_{t = t_{i}}^{t_{f}}{(X_{sim,t} - X_{ref,t})^{2}}}{\sum_{t 
 <p>The Nash-Sutcliffe coefficient for logarithm flow values (<span class="math inline">\(Nash-ln\)</span>) is used to assess the hydrological models performance for low values <span class="citation" data-cites="krause_comparison_2005 nobrega_uncertainty_2011">(<a href="#ref-krause_comparison_2005" role="doc-biblioref">Krause, Boyle, and Bäse 2005</a>; <a href="#ref-nobrega_uncertainty_2011" role="doc-biblioref">Nóbrega et al. 2011</a>)</span>. It is defined as presented in <a href="#eq-IND2">Equation&nbsp;<span>9.2</span></a>.</p>
 <p><span id="eq-IND2"><span class="math display">\[
 \text{Nash-ln} = 1 - \frac{\sum_{t = t_{i}}^{t_{f}}{(ln(X_{sim,t}) - ln(X_{ref,t}))^{2}}}{\sum_{t = t_{i}}^{t_{f}}{(ln(X_{ref,t}) - ln({\overline{X}_{ref}}))^{2}}}
-\qquad(9.2)\]</span></span></p>
+\tag{9.2}\]</span></span></p>
 <p>with <span class="math inline">\(Nash-ln\)</span>: Nash-Sutcliffe coefficient for log values [-].</p>
 <p>It varies from -∞ to 1, with 1 representing the best performance of the model.</p>
 </section>
@@ -333,7 +336,7 @@ Nash = 1 - \frac{\sum_{t = t_{i}}^{t_{f}}{(X_{sim,t} - X_{ref,t})^{2}}}{\sum_{t 
 <p>The Pearson correlation coefficient shows the covariability of the simulated and observed values without penalizing for bias <span class="citation" data-cites="aghakouchak_application_2010 wang_monthly_2011">(<a href="#ref-aghakouchak_application_2010" role="doc-biblioref">Aghakouchak and Habib 2010</a>; <a href="#ref-wang_monthly_2011" role="doc-biblioref">Wang et al. 2011</a>)</span>. It is defined as presented in <a href="#eq-IND3">Equation&nbsp;<span>9.3</span></a>.</p>
 <p><span id="eq-IND3"><span class="math display">\[
 Pearson = \frac{\sum_{t = t_{i}}^{t_{f}}{(X_{sim,t} - {\overline{X}_{sim}}) \cdot (X_{ref,t} - {\overline{X}_{ref}})}}{\sqrt{\sum_{t = t_{i}}^{t_{f}}{(X_{sim,t} - {\overline{X}_{sim}})^{2}} \cdot \sum_{t = t_{i}}^{t_{f}}{(X_{ref,t} - {\overline{X}_{ref}})^{2}}}}
-\qquad(9.3)\]</span></span></p>
+\tag{9.3}\]</span></span></p>
 <p>with <span class="math inline">\(Pearson\)</span>: Pearson Correlation Coefficient [-]; <span class="math inline">\({\overline{X}_{sim}}\)</span>: average simulated variable (discharge [L<sup>3</sup>/T] or height [L]) for the considered period.</p>
 <p>It varies from -1 to 1, with 1 representing the best performance of the model.</p>
 </section>
@@ -343,11 +346,13 @@ Pearson = \frac{\sum_{t = t_{i}}^{t_{f}}{(X_{sim,t} - {\overline{X}_{sim}}) \cdo
 <p><span class="citation" data-cites="kling_runoff_2012">Kling, Fuchs, and Paulin (<a href="#ref-kling_runoff_2012" role="doc-biblioref">2012</a>)</span> proposed a revised version of this indicator, to ensure that the bias and variability ratios are not cross-correlated. This update is proposed as indicator in RS&nbsp;MINERVE (<a href="#eq-IND4">Equation&nbsp;<span>9.4</span></a>):</p>
 <p><span id="eq-IND4"><span class="math display">\[
 KGE' = 1 - \sqrt{(r - 1)^{2} + (\beta - 1)^{2} + (\gamma - 1)^{2}}
-\qquad(9.4)\]</span></span> <span id="eq-IND5"><span class="math display">\[
+\tag{9.4}\]</span></span></p>
+<p><span id="eq-IND5"><span class="math display">\[
 \beta = \frac{\mu_{s}}{\mu_{o}}
-\qquad(9.5)\]</span></span> <span id="eq-IND6"><span class="math display">\[
+\tag{9.5}\]</span></span></p>
+<p><span id="eq-IND6"><span class="math display">\[
 \gamma = \frac{{CV}_{s}}{{CV}_{o}} = \frac{\sigma_{s}/\mu_{s}}{\sigma_{o}/\mu_{o}}
-\qquad(9.6)\]</span></span></p>
+\tag{9.6}\]</span></span></p>
 <p>with <span class="math inline">\(KGE'\)</span>: modified KGE-statistic [-]; <span class="math inline">\(r\)</span>: correlation coefficient between simulated and reference values [-]; <span class="math inline">\(\beta\)</span>: bias ratio [-]; <span class="math inline">\(\gamma\)</span>: variability ratio [-]; <span class="math inline">\(\mu\)</span>: mean discharge [L<sup>3</sup>/T]; <span class="math inline">\(CV\)</span>: coefficient of variation [-]; <span class="math inline">\(\sigma\)</span>: standard deviation of discharge [L<sup>3</sup>/T]; the indices <span class="math inline">\(s\)</span> and <span class="math inline">\(o\)</span> indicate respectively simulated and observed discharge values.</p>
 <p>It varies from 0 to 1, with 1 representing the best performance.</p>
 </section>
@@ -356,7 +361,7 @@ KGE' = 1 - \sqrt{(r - 1)^{2} + (\beta - 1)^{2} + (\gamma - 1)^{2}}
 <p>The Bias Score (<span class="math inline">\(BS\)</span>) is a symmetric estimation of the match between the average simulation and average observation <span class="citation" data-cites="wang_monthly_2011">(<a href="#ref-wang_monthly_2011" role="doc-biblioref">Wang et al. 2011</a>)</span>. It is defined as presented in <a href="#eq-IND7">Equation&nbsp;<span>9.7</span></a>.</p>
 <p><span id="eq-IND7"><span class="math display">\[
 BS = 1 - \bigg( max \Big(\frac{{\overline{X}}_{sim}}{{\overline{X}}_{ref}};\frac{{\overline{X}}_{ref}}{{\overline{X}}_{sim}} \Big) - 1 \bigg)^2
-\qquad(9.7)\]</span></span></p>
+\tag{9.7}\]</span></span></p>
 <p>with <span class="math inline">\(BS\)</span>: Bias Score [-].</p>
 <p>It varies from -∞ to 1, with 1 representing the best performance of the model.</p>
 </section>
@@ -365,7 +370,7 @@ BS = 1 - \bigg( max \Big(\frac{{\overline{X}}_{sim}}{{\overline{X}}_{ref}};\frac
 <p>The Relative Root Mean Square Error (<span class="math inline">\(RRMSE\)</span>) is defined as the RMSE normalized to the mean of the observed values <span class="citation" data-cites="feyen_application_2000 el_nasr_modelling_2005 heppner_adding_2006">(<a href="#ref-feyen_application_2000" role="doc-biblioref">Feyen et al. 2000</a>; <a href="#ref-el_nasr_modelling_2005" role="doc-biblioref">El-Nasr et al. 2005</a>; <a href="#ref-heppner_adding_2006" role="doc-biblioref">Heppner et al. 2006</a>)</span> and is presented in <a href="#eq-IND8">Equation&nbsp;<span>9.8</span></a>.</p>
 <p><span id="eq-IND8"><span class="math display">\[
 RRMSE = \frac{\sqrt{\frac{\sum_{t = t_{i}}^{t_{f}}{(X_{sim,t} - X_{ref,t})^{2}}}{n}}}{{\overline{X}}_{ref}}
-\qquad(9.8)\]</span></span></p>
+\tag{9.8}\]</span></span></p>
 <p>with&nbsp;<span class="math inline">\(RRMSE\)</span>: relative <span class="math inline">\(RMSE\)</span> [-]; <span class="math inline">\(n\)</span>: number of values [-].</p>
 <p>It varies from 0 to +∞. The smaller <span class="math inline">\(RRMSE\)</span>, the better the model performance is.</p>
 </section>
@@ -374,7 +379,7 @@ RRMSE = \frac{\sqrt{\frac{\sum_{t = t_{i}}^{t_{f}}{(X_{sim,t} - X_{ref,t})^{2}}}
 <p>The Relative Volume Bias (<span class="math inline">\(RVB\)</span>), sometimes called differently, corresponds in this case to the relative error between the simulated and the observed volumes during the studied period <span class="citation" data-cites="ajami_calibration_2004 schaefli_conceptual_2005 moriasi_model_2007 aghakouchak_application_2010">(<a href="#ref-ajami_calibration_2004" role="doc-biblioref">Ajami et al. 2004</a>; <a href="#ref-schaefli_conceptual_2005" role="doc-biblioref">Schaefli et al. 2005</a>; <a href="#ref-moriasi_model_2007" role="doc-biblioref">Moriasi et al. 2007</a>; <a href="#ref-aghakouchak_application_2010" role="doc-biblioref">Aghakouchak and Habib 2010</a>)</span> according to <a href="#eq-IND9">Equation&nbsp;<span>9.9</span></a>. This indicator is envisaged for the comparison between observed and simulated discharges.</p>
 <p><span id="eq-IND9"><span class="math display">\[
 RVB = \frac{\sum_{t = t_{i}}^{t_{f}}{(X_{sim,t} - X_{ref,t})}}{\sum_{t = t_{i}}^{t_{f}}{(X_{ref,t})}}
-\qquad(9.9)\]</span></span></p>
+\tag{9.9}\]</span></span></p>
 <p>with <span class="math inline">\(RVB\)</span>: relative volume bias between forecast and observation for the considered period [-]; <span class="math inline">\(X\)</span> usually corresponding to the discharge variable.</p>
 <p>The <span class="math inline">\(RVB\)</span> varies from -1 to +∞. An index near to zero indicates a good performance of the simulation. Negative values are returned when simulated variable is, in average, smaller than the average of the observed one (deficit model), while positive values mean the opposite (overage model).</p>
 </section>
@@ -383,11 +388,13 @@ RVB = \frac{\sum_{t = t_{i}}^{t_{f}}{(X_{sim,t} - X_{ref,t})}}{\sum_{t = t_{i}}^
 <p>The Normalized Peak Error (<span class="math inline">\(NPE\)</span>) indicates the relative error between the simulated and the observed maximum values <span class="citation" data-cites="masmoudi_performance_1993 sun_flood_2000 ajami_calibration_2004 gabellani_propagation_2007">(<a href="#ref-masmoudi_performance_1993" role="doc-biblioref">Masmoudi and Habaieb 1993</a>; <a href="#ref-sun_flood_2000" role="doc-biblioref">Sun et al. 2000</a>; <a href="#ref-ajami_calibration_2004" role="doc-biblioref">Ajami et al. 2004</a>; <a href="#ref-gabellani_propagation_2007" role="doc-biblioref">Gabellani et al. 2007</a>)</span>. It is computed according to <a href="#eq-IND10">Equation&nbsp;<span>9.10</span></a> to <a href="#eq-IND12">Equation&nbsp;<span>9.12</span></a>.</p>
 <p><span id="eq-IND10"><span class="math display">\[
 NPE = \frac{S_{\max} - R_{\max}}{R_{\max}}
-\qquad(9.10)\]</span></span> <span id="eq-IND11"><span class="math display">\[
+\tag{9.10}\]</span></span></p>
+<p><span id="eq-IND11"><span class="math display">\[
 S_{\max} = \overset{t_{f}}{\underset{t = t_{i}}{\vee}}Q_{sim,t}
-\qquad(9.11)\]</span></span> <span id="eq-IND12"><span class="math display">\[
+\tag{9.11}\]</span></span></p>
+<p><span id="eq-IND12"><span class="math display">\[
 R_{\max} = \overset{t_{f}}{\underset{t = t_{i}}{\vee}}Q_{ref,t}
-\qquad(9.12)\]</span></span></p>
+\tag{9.12}\]</span></span></p>
 <p>with <span class="math inline">\(NPE\)</span>: relative error between simulated and observed peak value [-]; <span class="math inline">\(S_{max}\)</span>: maximum simulated value (discharge [L<sup>3</sup>/T] or height [L]) for the studied period; <span class="math inline">\(R_{max}\)</span>&nbsp;: maximum observed value (discharge [L<sup>3</sup>/T] or height [L]) for the studied period.</p>
 <p>The NPE varies from -1 to +∞. Negative values are returned when maximum simulated value is below the observed one, while positive values mean the opposite. Values near to zero indicate a good performance of simulated peaks regarding observed ones.</p>
 <div class="callout-warning callout callout-style-default callout-captioned">
@@ -409,7 +416,7 @@ Warning
 <p>The Peirce Skill Score (<span class="math inline">\(PSS\)</span>) indicates the performance of the model to reproduce the overrun of a threshold <span class="citation" data-cites="peirce_numerical_1884 manzato_note_2007">(<a href="#ref-peirce_numerical_1884" role="doc-biblioref">Peirce 1884</a>; <a href="#ref-manzato_note_2007" role="doc-biblioref">Manzato 2007</a>)</span>. Based on a contingency table definging the number of cases where the simulation and the obseration exceed or not the threshold, the <span class="math inline">\(PSS\)</span> is computed according to <a href="#eq-IND13">Equation&nbsp;<span>9.13</span></a>.</p>
 <p><span id="eq-IND13"><span class="math display">\[
 PSS = \frac{ad - bc}{(a + c)(b + d)}
-\qquad(9.13)\]</span></span></p>
+\tag{9.13}\]</span></span></p>
 <p>with <span class="math inline">\(a\)</span>: the number of cases when both simulation and observation exceed the threshold defined in the Comparator (event); <span class="math inline">\(b\)</span>: the number of cases when the simulation exceeds the threshold but not the obseration (false); <span class="math inline">\(c\)</span>: the number of cases when the observation exceeds the threshold but not the simulation (miss); <span class="math inline">\(d\)</span>: the number of cases when both simulation and obseration are below the threshold (no event).</p>
 <div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
@@ -430,7 +437,7 @@ Note
 <p>The Overall Accurary (<span class="math inline">\(OA\)</span>) indicates the performance of the model to reproduce the overrun of a threshold <span class="citation" data-cites="parajka_spatio-temporal_2008">(<a href="#ref-parajka_spatio-temporal_2008" role="doc-biblioref">Parajka and Blöschl 2008</a>)</span>. Based on the same contingency table as the Pierce Skill Score, the <span class="math inline">\(OA\)</span> is computed according to <a href="#eq-IND14">Equation&nbsp;<span>9.14</span></a>.</p>
 <p><span id="eq-IND14"><span class="math display">\[
 OA = \frac{a + d}{a + b + \ c + d}
-\qquad(9.14)\]</span></span></p>
+\tag{9.14}\]</span></span></p>
 </section>
 <section id="references" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="references">References</h2>
@@ -509,6 +516,24 @@ Wang, Q. J., T. C. Pagano, S. L. Zhou, H. A. P. Hapuarachchi, L. Zhang, and D. E
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -558,7 +583,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);

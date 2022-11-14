@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.342">
+<meta name="generator" content="quarto-1.1.251">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -11,10 +11,15 @@
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
@@ -36,13 +41,14 @@ div.csl-indent {
 }
 </style>
 
+
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
-<meta name="quarto:offset" content="./">
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
 <link href="./user_hydraulic_infrastructures.html" rel="next">
 <link href="./user_manual.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
@@ -50,10 +56,10 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link id="quarto-text-highlighting-styles" href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -96,13 +102,10 @@ div.csl-indent {
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <h1 class="title"><span id="sec-user_rainfall_runoff" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Rainfall-runoff modelling</span></span></h1>
-                </div>
+                      </div>
   </div>
     
   
-
-
-
   <div class="quarto-title-meta">
 
       
@@ -131,129 +134,129 @@ div.csl-indent {
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a href="./user_manual.html" class="sidebar-item-text sidebar-link">User Manual</a>
-      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-        <li class="sidebar-item">
+      <div class="sidebar-item-container"> 
+            <a href="./user_manual.html" class="sidebar-item-text sidebar-link">User Manual</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_rainfall_runoff_modelling.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Rainfall-runoff modelling</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_hydraulic_infrastructures.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Hydraulic infrastructures modelling</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_database.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Database</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_gis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">GIS</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_hydro_hydrau_simulation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Hydrological-hydraulic simulation</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_expert_module.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Expert module</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_plugins.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Plugins</span></a>
   </div>
 </li>
-    </ul>
+      </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a href="./tech_manual.html" class="sidebar-item-text sidebar-link">Technical Manual</a>
-      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-        <li class="sidebar-item">
+      <div class="sidebar-item-container"> 
+            <a href="./tech_manual.html" class="sidebar-item-text sidebar-link">Technical Manual</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_hydrological_models.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Hydrological and hydraulics models description</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_performance_indicators.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Performance indicators</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_calibration_algorithms.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Calibration algorithms</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_stochastic_equations.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Stochastic equations</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_scripts.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Visual Basic Scripts</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_file_formats.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">File formats</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_database_formats.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Database formats</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_gis_formats.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">GIS formats</span></a>
   </div>
 </li>
-    </ul>
+      </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a href="./examples.html" class="sidebar-item-text sidebar-link">Examples of application</a>
-      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-        <li class="sidebar-item">
+      <div class="sidebar-item-container"> 
+            <a href="./examples.html" class="sidebar-item-text sidebar-link">Examples of application</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./examples_ex1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Example 1 – Simple basin with only runoff</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./examples_ex2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Example 2 – Combined full basin with meteorological stations</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./examples_ex3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Example 3 – Equipped basin with a hydropower scheme</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./examples_ex4.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Example 4 – Automatic calibration of a model</span></a>
   </div>
 </li>
-    </ul>
+      </ul>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
@@ -261,47 +264,47 @@ div.csl-indent {
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Appendices</a>
-      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
-        <li class="sidebar-item">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Appendices</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendix_list_param_ic.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Appendix: List of parameters and initial conditions</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendix_list_notifications.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">List of notifications from pre-simulation and post-simulation reports</span></a>
   </div>
 </li>
-    </ul>
+      </ul>
   </li>
     </ul>
     </div>
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sec-user_rainfall_runoff_hydrology" id="toc-sec-user_rainfall_runoff_hydrology" class="nav-link active" data-scroll-target="#sec-user_rainfall_runoff_hydrology"> <span class="header-section-number">1.1</span> Hydrology</a></li>
-  <li><a href="#sec-user_rainfall_runoff_rivers" id="toc-sec-user_rainfall_runoff_rivers" class="nav-link" data-scroll-target="#sec-user_rainfall_runoff_rivers"> <span class="header-section-number">1.2</span> Rivers</a></li>
-  <li><a href="#sec-user_rainfall_runoff_standard" id="toc-sec-user_rainfall_runoff_standard" class="nav-link" data-scroll-target="#sec-user_rainfall_runoff_standard"> <span class="header-section-number">1.3</span> Standard</a></li>
-  <li><a href="#sec-user_rainfall_runoff_creation_model" id="toc-sec-user_rainfall_runoff_creation_model" class="nav-link" data-scroll-target="#sec-user_rainfall_runoff_creation_model"> <span class="header-section-number">1.4</span> Creation of a hydrological model</a></li>
-  <li><a href="#sec-user_rainfall_runoff_export_submodel" id="toc-sec-user_rainfall_runoff_export_submodel" class="nav-link" data-scroll-target="#sec-user_rainfall_runoff_export_submodel"> <span class="header-section-number">1.5</span> Exportation of a submodel</a></li>
-  <li><a href="#sec-user_rainfall_runoff_model_conversion" id="toc-sec-user_rainfall_runoff_model_conversion" class="nav-link" data-scroll-target="#sec-user_rainfall_runoff_model_conversion"> <span class="header-section-number">1.6</span> Model conversion</a></li>
-  <li><a href="#sec-user_rainfall_runoff_subbasin_param" id="toc-sec-user_rainfall_runoff_subbasin_param" class="nav-link" data-scroll-target="#sec-user_rainfall_runoff_subbasin_param"> <span class="header-section-number">1.7</span> Single sub-basin parametrization</a>
-  <ul class="collapse">
+  <li><a href="#sec-user_rainfall_runoff_hydrology" id="toc-sec-user_rainfall_runoff_hydrology" class="nav-link active" data-scroll-target="#sec-user_rainfall_runoff_hydrology"><span class="toc-section-number">1.1</span>  Hydrology</a></li>
+  <li><a href="#sec-user_rainfall_runoff_rivers" id="toc-sec-user_rainfall_runoff_rivers" class="nav-link" data-scroll-target="#sec-user_rainfall_runoff_rivers"><span class="toc-section-number">1.2</span>  Rivers</a></li>
+  <li><a href="#sec-user_rainfall_runoff_standard" id="toc-sec-user_rainfall_runoff_standard" class="nav-link" data-scroll-target="#sec-user_rainfall_runoff_standard"><span class="toc-section-number">1.3</span>  Standard</a></li>
+  <li><a href="#sec-user_rainfall_runoff_creation_model" id="toc-sec-user_rainfall_runoff_creation_model" class="nav-link" data-scroll-target="#sec-user_rainfall_runoff_creation_model"><span class="toc-section-number">1.4</span>  Creation of a hydrological model</a></li>
+  <li><a href="#sec-user_rainfall_runoff_export_submodel" id="toc-sec-user_rainfall_runoff_export_submodel" class="nav-link" data-scroll-target="#sec-user_rainfall_runoff_export_submodel"><span class="toc-section-number">1.5</span>  Exportation of a submodel</a></li>
+  <li><a href="#sec-user_rainfall_runoff_model_conversion" id="toc-sec-user_rainfall_runoff_model_conversion" class="nav-link" data-scroll-target="#sec-user_rainfall_runoff_model_conversion"><span class="toc-section-number">1.6</span>  Model conversion</a></li>
+  <li><a href="#sec-user_rainfall_runoff_subbasin_param" id="toc-sec-user_rainfall_runoff_subbasin_param" class="nav-link" data-scroll-target="#sec-user_rainfall_runoff_subbasin_param"><span class="toc-section-number">1.7</span>  Single sub-basin parametrization</a>
+  <ul>
   <li><a href="#sec-user_rainfall_runoff_model_performance" id="toc-sec-user_rainfall_runoff_model_performance" class="nav-link" data-scroll-target="#sec-user_rainfall_runoff_model_performance">Model’s performance evaluation</a></li>
   <li><a href="#sec-user_rainfall_runoff_param_adjustment" id="toc-sec-user_rainfall_runoff_param_adjustment" class="nav-link" data-scroll-target="#sec-user_rainfall_runoff_param_adjustment">Manual parameters adjustment</a></li>
   <li><a href="#sec-user_rainfall_runoff_auto_param_adjustment" id="toc-sec-user_rainfall_runoff_auto_param_adjustment" class="nav-link" data-scroll-target="#sec-user_rainfall_runoff_auto_param_adjustment">Automatic parameters adjustment</a></li>
   </ul></li>
-  <li><a href="#sec-user_rainfall_runoff_basin_param" id="toc-sec-user_rainfall_runoff_basin_param" class="nav-link" data-scroll-target="#sec-user_rainfall_runoff_basin_param"> <span class="header-section-number">1.8</span> Complete basin parametrization</a></li>
+  <li><a href="#sec-user_rainfall_runoff_basin_param" id="toc-sec-user_rainfall_runoff_basin_param" class="nav-link" data-scroll-target="#sec-user_rainfall_runoff_basin_param"><span class="toc-section-number">1.8</span>  Complete basin parametrization</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
@@ -312,7 +315,7 @@ div.csl-indent {
 
 
 
-<p>RS MINERVE is an object-oriented modeling software. The different processes are modeled with equation-based objects, presented hereafter in <a href="#sec-user_rainfall_runoff_hydrology">Section&nbsp;<span>1.1</span></a> (<em>Hydrology</em>) and <a href="#sec-user_rainfall_runoff_standard">Section&nbsp;<span>1.3</span></a> (<em>Standard objects</em>). <em>Hydraulic infrastructures</em> and <em>Regulation</em> objects are presented in <a href="user_hydraulic_infrastructures.html">Section&nbsp;<span>2</span></a>.</p>
+<p>RS MINERVE is an object-oriented modeling software. The different processes are modeled with equation-based objects, presented hereafter in <a href="#sec-user_rainfall_runoff_hydrology"><span>Section&nbsp;1.1</span></a> (<em>Hydrology</em>) and <a href="#sec-user_rainfall_runoff_standard"><span>Section&nbsp;1.3</span></a> (<em>Standard objects</em>). <em>Hydraulic infrastructures</em> and <em>Regulation</em> objects are presented in <a href="user_hydraulic_infrastructures.html"><span>Chapter&nbsp;2</span></a>.</p>
 <p>The implemented hydrological models (Snow-SD, SWMM and GSM-SOCONT) have been developed within the framework of different research projects, namely CRUEX <span class="citation" data-cites="berod_contribution_1994">(<a href="#ref-berod_contribution_1994" role="doc-biblioref">Bérod 1994</a>)</span>, SWURVE <span class="citation" data-cites="schaefli_conceptual_2005">(<a href="#ref-schaefli_conceptual_2005" role="doc-biblioref">Schaefli et al. 2005</a>)</span> and MINERVE<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> <span class="citation" data-cites="hamdi_projet_2003 hamdi_modeprevision_2005">(<a href="#ref-hamdi_projet_2003" role="doc-biblioref">Y. Hamdi, Hingray, and Musy 2003</a>; <a href="#ref-hamdi_modeprevision_2005" role="doc-biblioref">Y. Hamdi, Hingray, and Musy 2005</a>)</span>.</p>
 <p>The hydrological models HBV <span class="citation" data-cites="bergstrom_development_1976 bergstrom_hbv_1992">(<a href="#ref-bergstrom_development_1976" role="doc-biblioref">Bergström 1976</a>, <a href="#ref-bergstrom_hbv_1992" role="doc-biblioref">1992</a>)</span>, GR4J <span class="citation" data-cites="perrin_improvement_2003">(<a href="#ref-perrin_improvement_2003" role="doc-biblioref">Perrin, Michel, and Andréassian 2003</a>)</span>, SAC <span class="citation" data-cites="burnash_nws_1995">(<a href="#ref-burnash_nws_1995" role="doc-biblioref">Burnash 1995</a>)</span> and SCS <span class="citation" data-cites="mcguinness_comparison_1972">(<a href="#ref-mcguinness_comparison_1972" role="doc-biblioref">McGuinness and Bordne 1972</a>)</span> are also included in the software RS MINERVE for extending the hydrological modeling possibilities.</p>
 <section id="sec-user_rainfall_runoff_hydrology" class="level2" data-number="1.1">
@@ -326,7 +329,7 @@ div.csl-indent {
 <tbody>
 <tr class="odd">
 <td><img src="figures/fig-icon_object_station.png" style="width:0.44in;height:0.44in"></td>
-<td><strong>Virtual weather station</strong> - It calculates the local meteorological conditions (precipitation (<span class="math inline">\(P\)</span>), temperature (<span class="math inline">\(T\)</span>) and potential evapotranspiration (<span class="math inline">\(ETP\)</span>)) based on observed or forecasted data from the database and based on Thiessen or Shepard interpolations. In addition, the <span class="math inline">\(ETP\)</span> can also be calculated either with a constant value or from one of the different equations proposed by Turc <span class="citation" data-cites="turc_bilan_1955 turc_evaluation_1961">(<a href="#ref-turc_bilan_1955" role="doc-biblioref">1955</a>, <a href="#ref-turc_evaluation_1961" role="doc-biblioref">1961</a>)</span>, <span class="citation" data-cites="mcguinness_comparison_1972">McGuinness and Bordne (<a href="#ref-mcguinness_comparison_1972" role="doc-biblioref">1972</a>)</span> or <span class="citation" data-cites="oudin_recherche_2004">Oudin (<a href="#ref-oudin_recherche_2004" role="doc-biblioref">2004</a>)</span>. The method can be selected in the Settings (see <a href="user_manual.html#sec-user_intro_settings">Section&nbsp;<span>7</span></a>). For more details, please refer to the Technical Manual of RS MINERVE.</td>
+<td><strong>Virtual weather station</strong> - It calculates the local meteorological conditions (precipitation (<span class="math inline">\(P\)</span>), temperature (<span class="math inline">\(T\)</span>) and potential evapotranspiration (<span class="math inline">\(ETP\)</span>)) based on observed or forecasted data from the database and based on Thiessen or Shepard interpolations. In addition, the <span class="math inline">\(ETP\)</span> can also be calculated either with a constant value or from one of the different equations proposed by Turc <span class="citation" data-cites="turc_bilan_1955 turc_evaluation_1961">(<a href="#ref-turc_bilan_1955" role="doc-biblioref">1955</a>, <a href="#ref-turc_evaluation_1961" role="doc-biblioref">1961</a>)</span>, <span class="citation" data-cites="mcguinness_comparison_1972">McGuinness and Bordne (<a href="#ref-mcguinness_comparison_1972" role="doc-biblioref">1972</a>)</span> or <span class="citation" data-cites="oudin_recherche_2004">Oudin (<a href="#ref-oudin_recherche_2004" role="doc-biblioref">2004</a>)</span>. The method can be selected in the Settings (see <a href="user_manual.html#sec-user_intro_settings"><span>Section&nbsp;7</span></a>). For more details, please refer to the Technical Manual of RS MINERVE.</td>
 </tr>
 <tr class="even">
 <td><img src="figures/fig-icon_object_snow.png" style="width:0.44in;height:0.44in"></td>
@@ -426,7 +429,7 @@ div.csl-indent {
 </tr>
 </tbody>
 </table>
-<p>For hydraulic infrastructures objects and regulation objects, please refer to <a href="user_hydraulic_infrastructures.html">Section&nbsp;<span>2</span></a>.</p>
+<p>For hydraulic infrastructures objects and regulation objects, please refer to <a href="user_hydraulic_infrastructures.html"><span>Chapter&nbsp;2</span></a>.</p>
 </section>
 <section id="sec-user_rainfall_runoff_creation_model" class="level2" data-number="1.4">
 <h2 data-number="1.4" class="anchored" data-anchor-id="sec-user_rainfall_runoff_creation_model"><span class="header-section-number">1.4</span> Creation of a hydrological model</h2>
@@ -440,14 +443,14 @@ div.csl-indent {
 <li><p><span style="color:blue">By clicking on each object separately,</span></p>
 <ul>
 <li><p><span style="color:blue">Rename the objects.</span></p></li>
-<li><p><span style="color:blue">Modify their fixed parameters (such as coordinates for the Station and surface for main hydrological objects) in the <em>Parameters</em> frame (<a href="user_manual.html#fig-rsm_interface">Figure&nbsp;<span>1</span></a>). See <a href="appendix_list_param_ic.html">Section&nbsp;<span>A</span></a> for a complete list of parameters and initial conditions.</span></p></li>
+<li><p><span style="color:blue">Modify their fixed parameters (such as coordinates for the Station and surface for main hydrological objects) in the <em>Parameters</em> frame (<a href="user_manual.html#fig-rsm_interface">Figure&nbsp;<span>1</span></a>). See <a href="appendix_list_param_ic.html"><span>Appendix&nbsp;A</span></a> for a complete list of parameters and initial conditions.</span></p></li>
 <li><p><span style="color:blue">Define the <em>Zone</em> of each object in the <em>Object</em> frame (<a href="user_manual.html#fig-rsm_interface">Figure&nbsp;<span>1</span></a>)<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></span> <span style="color:blue">Use “Tab” to validate the <em>Zone</em> number.</span></p></li>
 </ul></li>
 </ul>
 <div id="fig-simple_model_example" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-simple_model_example.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 1.1: Example of a simple model</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1.1: Example of a simple model</figcaption><p></p>
 </figure>
 </div>
 <p>To define the <em>Parameters</em> of the model objects:</p>
@@ -462,13 +465,13 @@ div.csl-indent {
 <div id="fig-selection_frame" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-selection_frame.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 1.2: Selection frame</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1.2: Selection frame</figcaption><p></p>
 </figure>
 </div>
 <div id="fig-param_management_frame" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-param_management_frame.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 1.3: Left: Parameters management frame; Right: Objects of the selected zone(s) and their parameters</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1.3: Left: Parameters management frame; Right: Objects of the selected zone(s) and their parameters</figcaption><p></p>
 </figure>
 </div>
 <p>To define the <em>Initial Conditions</em>:</p>
@@ -499,13 +502,13 @@ div.csl-indent {
 <div id="fig-addition_group_interface" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-addition_group_interface.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 1.4: Addition of a <em>Group Interface</em> to the combination of objects to be exported as submodel</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1.4: Addition of a <em>Group Interface</em> to the combination of objects to be exported as submodel</figcaption><p></p>
 </figure>
 </div>
 <div id="fig-link_submodel_junction" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-link_submodel_junction.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 1.5: Link the <em>Submodel</em> to a <em>Junction</em></figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1.5: Link the <em>Submodel</em> to a <em>Junction</em></figcaption><p></p>
 </figure>
 </div>
 <p>At the same time, if a <em>Submodel</em> receives also an input from upstream, a second <em>Group Interface</em> has to be added in the <em>Submodel</em> and linked to the object receiving the incoming variables. <em>Group Interfaces</em> can support more than one variable as input and/or as output.</p>
@@ -518,7 +521,7 @@ div.csl-indent {
 <div id="fig-model_properties_frame" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-model_properties_frame.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 1.6: Model properties frame</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1.6: Model properties frame</figcaption><p></p>
 </figure>
 </div>
 <p>The model conversion is direct for all hydrological model as presented in <a href="#fig-conversion_between_objects">Figure&nbsp;<span>1.10</span></a>. For achieving the conversion, initial and final hydrological model types are selected. Then, the zone(s) and the object(s) to convert are chosen (<a href="#fig-example_conversion_hbv_socont">Figure&nbsp;<span>1.7</span></a>).</p>
@@ -526,21 +529,21 @@ div.csl-indent {
 <div id="fig-example_conversion_hbv_socont" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-example_conversion_hbv_socont.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 1.7: Example of a conversion between HBV and SOCONT</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1.7: Example of a conversion between HBV and SOCONT</figcaption><p></p>
 </figure>
 </div>
 <p>If the converted model does not need all inputs, a message informs that one of the inputs is deleted, as presented in <a href="#fig-example_conversion_hbv_sac">Figure&nbsp;<span>1.8</span></a> for the input <em>Temperature</em>.</p>
 <div id="fig-example_conversion_hbv_sac" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-example_conversion_hbv_sac.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 1.8: Example of a conversion between a model HBV and SAC, where the input Temperature is deleted</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1.8: Example of a conversion between a model HBV and SAC, where the input Temperature is deleted</figcaption><p></p>
 </figure>
 </div>
 <p>Finally, if the converted model needs more inputs than the original one, a message informs that one or several inputs need to be added, as presented in <a href="#fig-example_conversion_sac_hbv">Figure&nbsp;<span>1.9</span></a> for the input <em>Temperature</em>. In that case, this/these input(s) is/are added between the station and the model (If the data comes from several <em>Stations</em> or <em>Time Series</em>, the user needs to link himself and to select the correct inputs among all possibilities).</p>
 <div id="fig-example_conversion_sac_hbv" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-example_conversion_sac_hbv.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 1.9: Example of a conversion between a model SAC and HBV, where the input Temperature has to be implemented by the user</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1.9: Example of a conversion between a model SAC and HBV, where the input Temperature has to be implemented by the user</figcaption><p></p>
 </figure>
 </div>
 <p>Regarding the outputs, the total discharge (<span class="math inline">\(Qtot\)</span> or <span class="math inline">\(Q\)</span> depending on the model) is directly linked to the downstream object after the conversion.</p>
@@ -548,7 +551,7 @@ div.csl-indent {
 <div id="fig-conversion_between_objects" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-conversion_between_objects.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 1.10: Conversions between objects</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1.10: Conversions between objects</figcaption><p></p>
 </figure>
 </div>
 </section>
@@ -595,7 +598,7 @@ div.csl-indent {
 <div id="fig-frames_parametrization" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-frames_parametrization.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 1.11: Frames used for the parametrization</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1.11: Frames used for the parametrization</figcaption><p></p>
 </figure>
 </div>
 <p>The procedure is iterative until the simulation results are considered sufficiently satisfying for a specified zone.</p>
@@ -603,12 +606,12 @@ div.csl-indent {
 </section>
 <section id="sec-user_rainfall_runoff_auto_param_adjustment" class="level3">
 <h3 class="anchored" data-anchor-id="sec-user_rainfall_runoff_auto_param_adjustment">Automatic parameters adjustment</h3>
-<p>An automatic calibration can be also achieved thanks to a specific tool developed in the Expert module. Please the <a href="user_expert_module.html#sec-user_expert_module_calibrator">Section&nbsp;<span>6.1</span></a> for more information.</p>
+<p>An automatic calibration can be also achieved thanks to a specific tool developed in the Expert module. Please the <a href="user_expert_module.html#sec-user_expert_module_calibrator"><span>Section&nbsp;6.1</span></a> for more information.</p>
 </section>
 </section>
 <section id="sec-user_rainfall_runoff_basin_param" class="level2" data-number="1.8">
 <h2 data-number="1.8" class="anchored" data-anchor-id="sec-user_rainfall_runoff_basin_param"><span class="header-section-number">1.8</span> Complete basin parametrization</h2>
-<p>When a basin is composed of many sub-basins, the parametrization has to be progressively achieved from upstream to downstream in the basin. By proceeding as such, contributions from the upstream calibrated sub-basin(s) are considered as input(s) to the downstream sub-basin on which the parametrization is performed. Parameters are modified for the concerned sub-basin to obtain the best possible results at the outlet of the sub-basin. The calibration module (<a href="user_expert_module.html#sec-user_expert_module_calibrator">Section&nbsp;<span>6.1</span></a>) can realize multiple parametrizations for calibrating these complex basins from upstream to downstream.</p>
+<p>When a basin is composed of many sub-basins, the parametrization has to be progressively achieved from upstream to downstream in the basin. By proceeding as such, contributions from the upstream calibrated sub-basin(s) are considered as input(s) to the downstream sub-basin on which the parametrization is performed. Parameters are modified for the concerned sub-basin to obtain the best possible results at the outlet of the sub-basin. The calibration module (<a href="user_expert_module.html#sec-user_expert_module_calibrator"><span>Section&nbsp;6.1</span></a>) can realize multiple parametrizations for calibrating these complex basins from upstream to downstream.</p>
 <p>Depending on the quality of the simulation results, inputs from upstream sub-basins can be replaced in the parametrization process by observed data at the entrance of the sub-basin being calibrated.</p>
 </section>
 <section id="references" class="level2 unnumbered">
@@ -660,24 +663,42 @@ Turc, L. 1955. <span>“Le Bilan d’eau Des Sols : Relations Entre Les Précipi
 </div>
 </div>
 </section>
-<section class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1" role="doc-endnote"><p>MINERVE: Modélisation des Intempéries de Nature Extrême du Rhône Valaisan et de leurs Effets (Modeling of Rhone extreme floods in Valais and their consequences).<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2" role="doc-endnote"><p>In the absence of water flow, connect arrows in the sense of information transfer.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3" role="doc-endnote"><p>The concept of <em>Zones</em> allows the modification of a parameter or initial condition to all the objects contained in the selected zone(s) by attributing a unique value.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4" role="doc-endnote"><p>Group Interfaces are required to assemble a submodel with the upper hierarchical level. It allows transferring the input and/or output variables.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn5" role="doc-endnote"><p>If only one link can be created, it is selected by default. If more than one link is possible, none is selected.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn6" role="doc-endnote"><p>During the exportation, only the elements contained in the active hierarchical level, including all the submodels and objects, are considered. Hierarchically higher elements are not exported.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn7" role="doc-endnote"><p>Or, alternatively, open a project with Project <span class="math inline">\(\rightarrow\)</span> Open.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn8" role="doc-endnote"><p>By selecting <em>Submodel</em> in the Standard objects frame and adding the object in the <em>Interface</em>.<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn9" role="doc-endnote"><p>Other factors are also considered during the basin division such as reservoir locations or river junctions.<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>MINERVE: Modélisation des Intempéries de Nature Extrême du Rhône Valaisan et de leurs Effets (Modeling of Rhone extreme floods in Valais and their consequences).<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>In the absence of water flow, connect arrows in the sense of information transfer.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>The concept of <em>Zones</em> allows the modification of a parameter or initial condition to all the objects contained in the selected zone(s) by attributing a unique value.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Group Interfaces are required to assemble a submodel with the upper hierarchical level. It allows transferring the input and/or output variables.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>If only one link can be created, it is selected by default. If more than one link is possible, none is selected.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>During the exportation, only the elements contained in the active hierarchical level, including all the submodels and objects, are considered. Hierarchically higher elements are not exported.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>Or, alternatively, open a project with Project <span class="math inline">\(\rightarrow\)</span> Open.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8"><p>By selecting <em>Submodel</em> in the Standard objects frame and adding the object in the <em>Interface</em>.<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn9"><p>Other factors are also considered during the basin division such as reservoir locations or river junctions.<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -727,7 +748,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);

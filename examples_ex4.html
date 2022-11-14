@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.342">
+<meta name="generator" content="quarto-1.1.251">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -11,19 +11,25 @@
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 </style>
+
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
-<meta name="quarto:offset" content="./">
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
 <link href="./acknowledgments.html" rel="next">
 <link href="./examples_ex3.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
@@ -31,10 +37,10 @@ ul.task-list{list-style: none;}
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link id="quarto-text-highlighting-styles" href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -77,13 +83,10 @@ ul.task-list{list-style: none;}
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <h1 class="title"><span id="sec-examples_ex4" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Example 4 – Automatic calibration of a model</span></span></h1>
-                </div>
+                      </div>
   </div>
     
   
-
-
-
   <div class="quarto-title-meta">
 
       
@@ -112,129 +115,129 @@ ul.task-list{list-style: none;}
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a href="./user_manual.html" class="sidebar-item-text sidebar-link">User Manual</a>
-      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-        <li class="sidebar-item">
+      <div class="sidebar-item-container"> 
+            <a href="./user_manual.html" class="sidebar-item-text sidebar-link">User Manual</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_rainfall_runoff_modelling.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Rainfall-runoff modelling</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_hydraulic_infrastructures.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Hydraulic infrastructures modelling</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_database.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Database</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_gis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">GIS</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_hydro_hydrau_simulation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Hydrological-hydraulic simulation</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_expert_module.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Expert module</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_plugins.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Plugins</span></a>
   </div>
 </li>
-    </ul>
+      </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a href="./tech_manual.html" class="sidebar-item-text sidebar-link">Technical Manual</a>
-      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-        <li class="sidebar-item">
+      <div class="sidebar-item-container"> 
+            <a href="./tech_manual.html" class="sidebar-item-text sidebar-link">Technical Manual</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_hydrological_models.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Hydrological and hydraulics models description</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_performance_indicators.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Performance indicators</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_calibration_algorithms.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Calibration algorithms</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_stochastic_equations.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Stochastic equations</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_scripts.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Visual Basic Scripts</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_file_formats.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">File formats</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_database_formats.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Database formats</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_gis_formats.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">GIS formats</span></a>
   </div>
 </li>
-    </ul>
+      </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a href="./examples.html" class="sidebar-item-text sidebar-link">Examples of application</a>
-      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-        <li class="sidebar-item">
+      <div class="sidebar-item-container"> 
+            <a href="./examples.html" class="sidebar-item-text sidebar-link">Examples of application</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./examples_ex1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Example 1 – Simple basin with only runoff</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./examples_ex2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Example 2 – Combined full basin with meteorological stations</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./examples_ex3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Example 3 – Equipped basin with a hydropower scheme</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./examples_ex4.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Example 4 – Automatic calibration of a model</span></a>
   </div>
 </li>
-    </ul>
+      </ul>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
@@ -242,37 +245,37 @@ ul.task-list{list-style: none;}
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Appendices</a>
-      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
-        <li class="sidebar-item">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Appendices</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendix_list_param_ic.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Appendix: List of parameters and initial conditions</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendix_list_notifications.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">List of notifications from pre-simulation and post-simulation reports</span></a>
   </div>
 </li>
-    </ul>
+      </ul>
   </li>
     </ul>
     </div>
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#objective-of-example-4" id="toc-objective-of-example-4" class="nav-link active" data-scroll-target="#objective-of-example-4"> <span class="header-section-number">19.1</span> Objective of Example 4</a></li>
-  <li><a href="#resolution-of-example-4" id="toc-resolution-of-example-4" class="nav-link" data-scroll-target="#resolution-of-example-4"> <span class="header-section-number">19.2</span> Resolution of Example 4</a></li>
-  <li><a href="#results-of-example-4" id="toc-results-of-example-4" class="nav-link" data-scroll-target="#results-of-example-4"> <span class="header-section-number">19.3</span> Results of Example 4</a></li>
+  <li><a href="#objective-of-example-4" id="toc-objective-of-example-4" class="nav-link active" data-scroll-target="#objective-of-example-4"><span class="toc-section-number">19.1</span>  Objective of Example 4</a></li>
+  <li><a href="#resolution-of-example-4" id="toc-resolution-of-example-4" class="nav-link" data-scroll-target="#resolution-of-example-4"><span class="toc-section-number">19.2</span>  Resolution of Example 4</a></li>
+  <li><a href="#results-of-example-4" id="toc-results-of-example-4" class="nav-link" data-scroll-target="#results-of-example-4"><span class="toc-section-number">19.3</span>  Results of Example 4</a></li>
   </ul>
 </nav>
     </div>
@@ -290,11 +293,11 @@ ul.task-list{list-style: none;}
 <li><p>HBV-SUMax, the upper reservoir water level threshold</p></li>
 <li><p>HBV-Kr, the near surface flow storage coefficient</p></li>
 </ul>
-<p>The range of values for the calibration can be defined based on the values given as regular range in <a href="appendix_list_param_ic.html">Section&nbsp;<span>A</span></a>. The temperatures, the precipitations and the outflow observed are in the database “Database manual”. A uniform and null ETP is assumed for this example (the user can check the selected ETP method in the RS MINERVE Settings).</p>
+<p>The range of values for the calibration can be defined based on the values given as regular range in <a href="appendix_list_param_ic.html"><span>Appendix&nbsp;A</span></a>. The temperatures, the precipitations and the outflow observed are in the database “Database manual”. A uniform and null ETP is assumed for this example (the user can check the selected ETP method in the RS MINERVE Settings).</p>
 <div id="fig-examples_model_scheme_ex4" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-examples_model_scheme_ex4.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 19.1: Model scheme</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;19.1: Model scheme</figcaption><p></p>
 </figure>
 </div>
 <section id="objective-of-example-4" class="level2" data-number="19.1">
@@ -308,21 +311,21 @@ ul.task-list{list-style: none;}
 <div id="fig-examples_topologic_links_between_objects_ex4" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-examples_topologic_links_between_objects_ex4.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 19.2: Topologic links between the different objects</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;19.2: Topologic links between the different objects</figcaption><p></p>
 </figure>
 </div>
 <p>&nbsp;</p>
 <div id="fig-examples_possible_outputs_transfer_ex4" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-examples_possible_outputs_transfer_ex4.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 19.3: Possible outputs transfers between objects</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;19.3: Possible outputs transfers between objects</figcaption><p></p>
 </figure>
 </div>
 <p>&nbsp;</p>
 <div id="fig-examples_connection_between_objects_ex4" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-examples_connection_between_objects_ex4.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 19.4: Connections between objects</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;19.4: Connections between objects</figcaption><p></p>
 </figure>
 </div>
 <p>Constructed model can be now saved clicking in the button <img src="figures/fig-icon_save_button.png" style="height:0.24in"> and giving a name to the .rsm file (e.g.&nbsp;“Example4.rsm”).</p>
@@ -330,28 +333,28 @@ ul.task-list{list-style: none;}
 <div id="fig-examples_database_frame_ex4" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-examples_database_frame_ex2.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 19.5: Database frame</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;19.5: Database frame</figcaption><p></p>
 </figure>
 </div>
 <p>The user can visualize or modify the database (<a href="#fig-examples_database_model_ex4">Figure&nbsp;<span>19.6</span></a>).</p>
 <div id="fig-examples_database_model_ex4" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-examples_database_model_ex4.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 19.6: Database of the model</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;19.6: Database of the model</figcaption><p></p>
 </figure>
 </div>
 <p>Once the database is loaded, the user can connect the database to the hydrological model. For achieving this purpose, the user has to choose the correct data source in the corresponding frame (<a href="#fig-examples_datasource_connection_ex4">Figure&nbsp;<span>19.7</span></a>): the group “Measure” and the dataset “DataSet Example 4” for the current example.</p>
 <div id="fig-examples_datasource_connection_ex4" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-examples_datasource_connection_ex4.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 19.7: Data source used for connecting the model to the database</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;19.7: Data source used for connecting the model to the database</figcaption><p></p>
 </figure>
 </div>
 <p>Then, the user has to choose the series identifier for each Source object (the series of the database which contains the observed discharges) as shown in <a href="#fig-examples_series_identifier_source_ex4">Figure&nbsp;<span>19.8</span></a>.</p>
 <div id="fig-examples_series_identifier_source_ex4" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-examples_series_identifier_source_ex4.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 19.8: Series identifier for the “Source 2” object</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;19.8: Series identifier for the “Source 2” object</figcaption><p></p>
 </figure>
 </div>
 <p>In order to clarify the use of the Calibrator tool, the different objects of the model will be aggregated in 2 zones:</p>
@@ -363,28 +366,28 @@ ul.task-list{list-style: none;}
 <div id="fig-examples_change_zone_ex4" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-examples_change_zone_ex4.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 19.9: Change of the Zone of the “Station G1” object</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;19.9: Change of the Zone of the “Station G1” object</figcaption><p></p>
 </figure>
 </div>
 <p>Finally, the module of hydrologic calibration can be launched by clicking on Expert <span class="math inline">\(\rightarrow\)</span> Calibrator in the <em>Modules</em> frame (<a href="#fig-examples_interface_calibrator">Figure&nbsp;<span>19.10</span></a>).</p>
 <div id="fig-examples_interface_calibrator" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-examples_interface_calibrator.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 19.10: Interface of the Calibrator tool</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;19.10: Interface of the Calibrator tool</figcaption><p></p>
 </figure>
 </div>
 <p>Two calibration configurations can be created, one for each zone of the model (<a href="#fig-examples_creation_calibration_config">Figure&nbsp;<span>19.11</span></a>). Give the order 1 to the calibration of Zone 1 (this one will be executed first) and order 2 to the calibration of Zone 2 (this one will be executed next).</p>
 <div id="fig-examples_creation_calibration_config" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-examples_creation_calibration_config.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 19.11: Creation of the calibration configurations</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;19.11: Creation of the calibration configurations</figcaption><p></p>
 </figure>
 </div>
 <p><u>For each calibration configuration</u>, in the Selection frame the HBV and GSM objects types are selected with the corresponding zone (<a href="#fig-examples_selection_objects_calibration">Figure&nbsp;<span>19.12</span></a>).</p>
 <div id="fig-examples_selection_objects_calibration" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-examples_selection_objects_calibration.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 19.12: Selection of objects and zones to calibrate, for the “Confluence” calibration configuration</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;19.12: Selection of objects and zones to calibrate, for the “Confluence” calibration configuration</figcaption><p></p>
 </figure>
 </div>
 <p>The parameters to calibrate are checked in the Parameters frame (<a href="#fig-examples_param_calibration">Figure&nbsp;<span>19.13</span></a>). For each of them, the minimum and maximum values are:</p>
@@ -399,21 +402,21 @@ ul.task-list{list-style: none;}
 <div id="fig-examples_param_calibration" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-examples_param_calibration.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 19.13: Definition of the parameters to calibrate</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;19.13: Definition of the parameters to calibrate</figcaption><p></p>
 </figure>
 </div>
 <p>In the Comparators frame, select alternatively the comparator whose the observed discharges will be used for the calibration of the corresponding zone (Comparator 1 for the first calibration configuration, and Comparator 2 for the second one).</p>
 <div id="fig-examples_selection_comparators" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-examples_selection_comparators.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 19.14: Selection of comparators</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;19.14: Selection of comparators</figcaption><p></p>
 </figure>
 </div>
 <p>In the Objective Function (OF) frame the weight of the Nash and Relative Volume Bias coefficient are settled to 4 and the weight of the Pearson relative coefficient is 2. The other coefficients are all settled to zero (<a href="#fig-examples_weight_indicators_ex4">Figure&nbsp;<span>19.15</span></a>). The default algorithm parameters are used.</p>
 <div id="fig-examples_weight_indicators_ex4" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-examples_weight_indicators_ex4.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 19.15: Weight of each indicator to determine the objective function</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;19.15: Weight of each indicator to determine the objective function</figcaption><p></p>
 </figure>
 </div>
 <p>After specifying the calibration period in the Solver tab of the Hydrologic parameters optimization frame, the calibration configuration can be saved and then started.</p>
@@ -425,13 +428,13 @@ ul.task-list{list-style: none;}
 <p>Hereafter (<a href="#tbl-examples_calibrated_params">Table&nbsp;<span>19.1</span></a> and <a href="#tbl-examples_performance_indicators">Table&nbsp;<span>19.2</span></a>) the results of the calibration (since the algorithm contains the random calculations, it is possible to obtain a similar but not exactly the same result).</p>
 <div id="tbl-examples_calibrated_params" class="anchored">
 <table class="table">
-<caption>Table 19.1: Calibrated parameters</caption>
+<caption>Table&nbsp;19.1: Calibrated parameters</caption>
 <colgroup>
-<col style="width: 20%">
-<col style="width: 22%">
-<col style="width: 17%">
-<col style="width: 22%">
-<col style="width: 17%">
+<col style="width: 19%">
+<col style="width: 21%">
+<col style="width: 16%">
+<col style="width: 21%">
+<col style="width: 16%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -491,9 +494,9 @@ ul.task-list{list-style: none;}
 <p>&nbsp;</p>
 <div id="tbl-examples_performance_indicators" class="anchored">
 <table class="table">
-<caption>Table 19.2: Performance indicators</caption>
+<caption>Table&nbsp;19.2: Performance indicators</caption>
 <colgroup>
-<col style="width: 17%">
+<col style="width: 16%">
 <col style="width: 20%">
 <col style="width: 20%">
 <col style="width: 20%">
@@ -586,7 +589,7 @@ ul.task-list{list-style: none;}
 <div id="fig-examples_results_calibration_ex4" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-examples_results_calibration_ex4.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 19.16: Graphic results of the calibration. Hydrograph of both observed and current simulated discharge</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;19.16: Graphic results of the calibration. Hydrograph of both observed and current simulated discharge</figcaption><p></p>
 </figure>
 </div>
 
@@ -596,6 +599,24 @@ ul.task-list{list-style: none;}
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -645,7 +666,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);

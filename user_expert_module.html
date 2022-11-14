@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.342">
+<meta name="generator" content="quarto-1.1.251">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -11,19 +11,25 @@
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 </style>
+
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
-<meta name="quarto:offset" content="./">
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
 <link href="./user_plugins.html" rel="next">
 <link href="./user_hydro_hydrau_simulation.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
@@ -31,10 +37,10 @@ ul.task-list{list-style: none;}
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link id="quarto-text-highlighting-styles" href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -76,13 +82,10 @@ ul.task-list{list-style: none;}
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <h1 class="title"><span id="sec-user_expert_module" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Expert module</span></span></h1>
-                </div>
+                      </div>
   </div>
     
   
-
-
-
   <div class="quarto-title-meta">
 
       
@@ -111,129 +114,129 @@ ul.task-list{list-style: none;}
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a href="./user_manual.html" class="sidebar-item-text sidebar-link">User Manual</a>
-      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-        <li class="sidebar-item">
+      <div class="sidebar-item-container"> 
+            <a href="./user_manual.html" class="sidebar-item-text sidebar-link">User Manual</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_rainfall_runoff_modelling.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Rainfall-runoff modelling</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_hydraulic_infrastructures.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Hydraulic infrastructures modelling</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_database.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Database</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_gis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">GIS</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_hydro_hydrau_simulation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Hydrological-hydraulic simulation</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_expert_module.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Expert module</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_plugins.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Plugins</span></a>
   </div>
 </li>
-    </ul>
+      </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a href="./tech_manual.html" class="sidebar-item-text sidebar-link">Technical Manual</a>
-      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-        <li class="sidebar-item">
+      <div class="sidebar-item-container"> 
+            <a href="./tech_manual.html" class="sidebar-item-text sidebar-link">Technical Manual</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_hydrological_models.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Hydrological and hydraulics models description</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_performance_indicators.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Performance indicators</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_calibration_algorithms.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Calibration algorithms</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_stochastic_equations.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Stochastic equations</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_scripts.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Visual Basic Scripts</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_file_formats.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">File formats</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_database_formats.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Database formats</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_gis_formats.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">GIS formats</span></a>
   </div>
 </li>
-    </ul>
+      </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a href="./examples.html" class="sidebar-item-text sidebar-link">Examples of application</a>
-      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-        <li class="sidebar-item">
+      <div class="sidebar-item-container"> 
+            <a href="./examples.html" class="sidebar-item-text sidebar-link">Examples of application</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./examples_ex1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Example 1 – Simple basin with only runoff</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./examples_ex2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Example 2 – Combined full basin with meteorological stations</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./examples_ex3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Example 3 – Equipped basin with a hydropower scheme</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./examples_ex4.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Example 4 – Automatic calibration of a model</span></a>
   </div>
 </li>
-    </ul>
+      </ul>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
@@ -241,61 +244,61 @@ ul.task-list{list-style: none;}
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Appendices</a>
-      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
-        <li class="sidebar-item">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Appendices</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendix_list_param_ic.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Appendix: List of parameters and initial conditions</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendix_list_notifications.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">List of notifications from pre-simulation and post-simulation reports</span></a>
   </div>
 </li>
-    </ul>
+      </ul>
   </li>
     </ul>
     </div>
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sec-user_expert_module_calibrator" id="toc-sec-user_expert_module_calibrator" class="nav-link active" data-scroll-target="#sec-user_expert_module_calibrator"> <span class="header-section-number">6.1</span> Calibrator</a>
-  <ul class="collapse">
+  <li><a href="#sec-user_expert_module_calibrator" id="toc-sec-user_expert_module_calibrator" class="nav-link active" data-scroll-target="#sec-user_expert_module_calibrator"><span class="toc-section-number">6.1</span>  Calibrator</a>
+  <ul>
   <li><a href="#calibration-configuration" id="toc-calibration-configuration" class="nav-link" data-scroll-target="#calibration-configuration">Calibration configuration</a></li>
   <li><a href="#calibration-startstop" id="toc-calibration-startstop" class="nav-link" data-scroll-target="#calibration-startstop">Calibration start/stop</a></li>
   <li><a href="#calibration-results" id="toc-calibration-results" class="nav-link" data-scroll-target="#calibration-results">Calibration results</a></li>
   <li><a href="#multiple-calibration" id="toc-multiple-calibration" class="nav-link" data-scroll-target="#multiple-calibration">Multiple calibration</a></li>
   </ul></li>
-  <li><a href="#scenario-simulation" id="toc-scenario-simulation" class="nav-link" data-scroll-target="#scenario-simulation"> <span class="header-section-number">6.2</span> Scenario simulation</a>
-  <ul class="collapse">
+  <li><a href="#scenario-simulation" id="toc-scenario-simulation" class="nav-link" data-scroll-target="#scenario-simulation"><span class="toc-section-number">6.2</span>  Scenario simulation</a>
+  <ul>
   <li><a href="#scenarios-configuration" id="toc-scenarios-configuration" class="nav-link" data-scroll-target="#scenarios-configuration">Scenarios configuration</a></li>
   <li><a href="#scenario-simulation-startstop" id="toc-scenario-simulation-startstop" class="nav-link" data-scroll-target="#scenario-simulation-startstop">Scenario simulation start/stop</a></li>
   <li><a href="#scenarios-results" id="toc-scenarios-results" class="nav-link" data-scroll-target="#scenarios-results">Scenarios results</a></li>
   </ul></li>
-  <li><a href="#stochastic-simulation" id="toc-stochastic-simulation" class="nav-link" data-scroll-target="#stochastic-simulation"> <span class="header-section-number">6.3</span> Stochastic simulation</a>
-  <ul class="collapse">
+  <li><a href="#stochastic-simulation" id="toc-stochastic-simulation" class="nav-link" data-scroll-target="#stochastic-simulation"><span class="toc-section-number">6.3</span>  Stochastic simulation</a>
+  <ul>
   <li><a href="#stochastic-configuration" id="toc-stochastic-configuration" class="nav-link" data-scroll-target="#stochastic-configuration">Stochastic configuration</a></li>
   <li><a href="#stochastic-startstop" id="toc-stochastic-startstop" class="nav-link" data-scroll-target="#stochastic-startstop">Stochastic start/stop</a></li>
   <li><a href="#stochastic-results" id="toc-stochastic-results" class="nav-link" data-scroll-target="#stochastic-results">Stochastic results</a></li>
   </ul></li>
-  <li><a href="#time-slice-simulation" id="toc-time-slice-simulation" class="nav-link" data-scroll-target="#time-slice-simulation"> <span class="header-section-number">6.4</span> Time-slice simulation</a>
-  <ul class="collapse">
+  <li><a href="#time-slice-simulation" id="toc-time-slice-simulation" class="nav-link" data-scroll-target="#time-slice-simulation"><span class="toc-section-number">6.4</span>  Time-slice simulation</a>
+  <ul>
   <li><a href="#time-slice-configuration" id="toc-time-slice-configuration" class="nav-link" data-scroll-target="#time-slice-configuration">Time-slice configuration</a></li>
   <li><a href="#time-slice-simulation-startstop" id="toc-time-slice-simulation-startstop" class="nav-link" data-scroll-target="#time-slice-simulation-startstop">Time-slice simulation start/stop</a></li>
   <li><a href="#time-slice-results" id="toc-time-slice-results" class="nav-link" data-scroll-target="#time-slice-results">Time-slice results</a></li>
   </ul></li>
-  <li><a href="#optimizator" id="toc-optimizator" class="nav-link" data-scroll-target="#optimizator"> <span class="header-section-number">6.5</span> Optimizator</a>
-  <ul class="collapse">
+  <li><a href="#optimizator" id="toc-optimizator" class="nav-link" data-scroll-target="#optimizator"><span class="toc-section-number">6.5</span>  Optimizator</a>
+  <ul>
   <li><a href="#optimization-configuration" id="toc-optimization-configuration" class="nav-link" data-scroll-target="#optimization-configuration">Optimization configuration</a></li>
   <li><a href="#optimization-startstop" id="toc-optimization-startstop" class="nav-link" data-scroll-target="#optimization-startstop">Optimization start/stop</a></li>
   <li><a href="#optimization-results" id="toc-optimization-results" class="nav-link" data-scroll-target="#optimization-results">Optimization results</a></li>
@@ -349,7 +352,7 @@ ul.task-list{list-style: none;}
 <div id="fig-calibrator_interface" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-calibrator_interface.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 6.1: Interface of the Hydrological calibration module (in black: configuration; in green: results)</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;6.1: Interface of the Hydrological calibration module (in black: configuration; in green: results)</figcaption><p></p>
 </figure>
 </div>
 <ul>
@@ -359,7 +362,7 @@ ul.task-list{list-style: none;}
 <div id="fig-calibrator_solver_runtime_algorithms" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-calibrator_solver_runtime_algorithms.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 6.2: Calibration solver: both runtime (left) and algorithm properties (right)</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;6.2: Calibration solver: both runtime (left) and algorithm properties (right)</figcaption><p></p>
 </figure>
 </div>
 <blockquote class="blockquote">
@@ -397,7 +400,7 @@ ul.task-list{list-style: none;}
 <div id="fig-calibrator_textual_results" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-calibrator_textual_results.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 6.3: Textual results of the calibration in progress</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;6.3: Textual results of the calibration in progress</figcaption><p></p>
 </figure>
 </div>
 <p>If more than one comparator has been selected in the <em>Comparators</em> frame, the Objective Function is equal to the sum of the objective functions obtained at each compactor.</p>
@@ -409,7 +412,7 @@ ul.task-list{list-style: none;}
 <div id="fig-calibrator_graphic_results" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-calibrator_graphic_results.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 6.4: Graphic results of the calibration in progress. Evolution of the Objective function (left) and hydrograph of both observed and current simulated discharge (right).</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;6.4: Graphic results of the calibration in progress. Evolution of the Objective function (left) and hydrograph of both observed and current simulated discharge (right).</figcaption><p></p>
 </figure>
 </div>
 <p>At the end of the calibration:</p>
@@ -429,7 +432,7 @@ ul.task-list{list-style: none;}
 <div id="fig-calibrator_example_with_basins" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-calibrator_example_with_basins.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 6.5: Example of a calibration with two unconnected basins and two basins upstream</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;6.5: Example of a calibration with two unconnected basins and two basins upstream</figcaption><p></p>
 </figure>
 </div>
 </section>
@@ -444,7 +447,7 @@ ul.task-list{list-style: none;}
 <div id="fig-scenario_simulation_interface" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-scenario_simulation_interface.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 6.6: Interface of the Scenario simulation module (in black: configuration; in green: results)</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;6.6: Interface of the Scenario simulation module (in black: configuration; in green: results)</figcaption><p></p>
 </figure>
 </div>
 <section id="scenarios-configuration" class="level3">
@@ -458,7 +461,7 @@ ul.task-list{list-style: none;}
 <div id="fig-scenario_simulation_inputs" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-scenario_simulation_inputs.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 6.7: <em>Inputs</em> frame in the Scenario simulation tool</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;6.7: <em>Inputs</em> frame in the Scenario simulation tool</figcaption><p></p>
 </figure>
 </div>
 <ul>
@@ -494,7 +497,7 @@ ul.task-list{list-style: none;}
 <div id="fig-scenario_simulation_progress_simulation" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-scenario_simulation_progress_simulation.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 6.8: Progress state after succes (left) and failure (right) of the simulation</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;6.8: Progress state after succes (left) and failure (right) of the simulation</figcaption><p></p>
 </figure>
 </div>
 <ul>
@@ -523,7 +526,7 @@ ul.task-list{list-style: none;}
 <div id="fig-stochastic_simulation_interface" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-stochastic_simulation_interface.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 6.9: Interface of the Stochastic simulation module (in black: configuration; in green: results)</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;6.9: Interface of the Stochastic simulation module (in black: configuration; in green: results)</figcaption><p></p>
 </figure>
 </div>
 <section id="stochastic-configuration" class="level3">
@@ -570,7 +573,7 @@ ul.task-list{list-style: none;}
 <div id="fig-stochastic_simulation_textual_results" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-stochastic_simulation_textual_results.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 6.10: Textual results of the stochastic simulation</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;6.10: Textual results of the stochastic simulation</figcaption><p></p>
 </figure>
 </div>
 <p>These results can be exported at all times by saving with the Save button <img src="figures/fig-icon_save_button.png" style="width:0.16in;height:0.16in">.</p>
@@ -583,21 +586,21 @@ ul.task-list{list-style: none;}
 <div id="fig-stochastic_simulation_numerical_results" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-stochastic_simulation_numerical_results.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 6.11: Numerical results for the stochastic simulation. All the simulation iterations (left). Statistical results (right).</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;6.11: Numerical results for the stochastic simulation. All the simulation iterations (left). Statistical results (right).</figcaption><p></p>
 </figure>
 </div>
 <p>&nbsp;</p>
 <div id="fig-stochastic_simulation_probability_distribution" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-stochastic_simulation_probability_distribution.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 6.12: Parameters values with a defined probability distribution</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;6.12: Parameters values with a defined probability distribution</figcaption><p></p>
 </figure>
 </div>
 <p>Finally, <a href="#fig-stochastic_simulation_graphical_results">Figure&nbsp;<span>6.13</span></a> shows the statistical graphical results for the defined period of time.</p>
 <div id="fig-stochastic_simulation_graphical_results" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-stochastic_simulation_graphical_results.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 6.13: Graphic results of the stochastic simulation, statistical series plots</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;6.13: Graphic results of the stochastic simulation, statistical series plots</figcaption><p></p>
 </figure>
 </div>
 </section>
@@ -612,7 +615,7 @@ ul.task-list{list-style: none;}
 <div id="fig-time_slice_simulation_interface" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-time_slice_simulation_interface.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 6.14: Interface of the Time-slice simulation tool (in black: configuration; in green: results</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;6.14: Interface of the Time-slice simulation tool (in black: configuration; in green: results</figcaption><p></p>
 </figure>
 </div>
 <section id="time-slice-configuration" class="level3">
@@ -662,7 +665,7 @@ ul.task-list{list-style: none;}
 <div id="fig-time_slice_simulation_progress_simulation" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-time_slice_simulation_progress_simulation.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 6.15: Progress state after success (left) and failure (right) of the simulation</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;6.15: Progress state after success (left) and failure (right) of the simulation</figcaption><p></p>
 </figure>
 </div>
 <ul>
@@ -680,7 +683,7 @@ ul.task-list{list-style: none;}
 <div id="fig-time_slice_simulation_visualization_indicators" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-time_slice_simulation_visualization_indicators.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 6.16: Visualization of indicators at the different comparators</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;6.16: Visualization of indicators at the different comparators</figcaption><p></p>
 </figure>
 </div>
 <p>Objects selection in the <em>Selection</em> frame as well as indicators and comparators to consider in the <em>Comparators</em> frame can be modified during the Time-slice simulation.</p>
@@ -709,7 +712,7 @@ ul.task-list{list-style: none;}
 <div id="fig-planner_optimizator_interface" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-planner_optimizator_interface.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 6.17: Interface of the Planner optimization module (in black: configuration; in green: results)</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;6.17: Interface of the Planner optimization module (in black: configuration; in green: results)</figcaption><p></p>
 </figure>
 </div>
 <ul>
@@ -749,7 +752,7 @@ ul.task-list{list-style: none;}
 <div id="fig-planner_optimizator_text_results" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-planner_optimizator_text_results.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 6.18: Textual results of the optimization in progress</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;6.18: Textual results of the optimization in progress</figcaption><p></p>
 </figure>
 </div>
 <p>The results of the optimization in progress are also displayed graphically in the <em>Graphic</em> <em>Results</em> frame (<a href="#fig-planner_optimizator_interface">Figure&nbsp;<span>6.17</span></a>):</p>
@@ -768,6 +771,24 @@ ul.task-list{list-style: none;}
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -817,7 +838,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);

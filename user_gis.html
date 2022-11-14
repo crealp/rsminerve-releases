@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.342">
+<meta name="generator" content="quarto-1.1.251">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -11,19 +11,25 @@
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 </style>
+
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
-<meta name="quarto:offset" content="./">
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
 <link href="./user_hydro_hydrau_simulation.html" rel="next">
 <link href="./user_database.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
@@ -31,10 +37,10 @@ ul.task-list{list-style: none;}
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link id="quarto-text-highlighting-styles" href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -77,13 +83,10 @@ ul.task-list{list-style: none;}
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <h1 class="title"><span id="sec-user_gis" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">GIS</span></span></h1>
-                </div>
+                      </div>
   </div>
     
   
-
-
-
   <div class="quarto-title-meta">
 
       
@@ -112,129 +115,129 @@ ul.task-list{list-style: none;}
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a href="./user_manual.html" class="sidebar-item-text sidebar-link">User Manual</a>
-      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-        <li class="sidebar-item">
+      <div class="sidebar-item-container"> 
+            <a href="./user_manual.html" class="sidebar-item-text sidebar-link">User Manual</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_rainfall_runoff_modelling.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Rainfall-runoff modelling</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_hydraulic_infrastructures.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Hydraulic infrastructures modelling</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_database.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Database</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_gis.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">GIS</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_hydro_hydrau_simulation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Hydrological-hydraulic simulation</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_expert_module.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Expert module</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_plugins.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Plugins</span></a>
   </div>
 </li>
-    </ul>
+      </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a href="./tech_manual.html" class="sidebar-item-text sidebar-link">Technical Manual</a>
-      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-        <li class="sidebar-item">
+      <div class="sidebar-item-container"> 
+            <a href="./tech_manual.html" class="sidebar-item-text sidebar-link">Technical Manual</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_hydrological_models.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Hydrological and hydraulics models description</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_performance_indicators.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Performance indicators</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_calibration_algorithms.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Calibration algorithms</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_stochastic_equations.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Stochastic equations</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_scripts.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Visual Basic Scripts</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_file_formats.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">File formats</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_database_formats.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Database formats</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_gis_formats.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">GIS formats</span></a>
   </div>
 </li>
-    </ul>
+      </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a href="./examples.html" class="sidebar-item-text sidebar-link">Examples of application</a>
-      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-        <li class="sidebar-item">
+      <div class="sidebar-item-container"> 
+            <a href="./examples.html" class="sidebar-item-text sidebar-link">Examples of application</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./examples_ex1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Example 1 – Simple basin with only runoff</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./examples_ex2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Example 2 – Combined full basin with meteorological stations</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./examples_ex3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Example 3 – Equipped basin with a hydropower scheme</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./examples_ex4.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Example 4 – Automatic calibration of a model</span></a>
   </div>
 </li>
-    </ul>
+      </ul>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
@@ -242,43 +245,43 @@ ul.task-list{list-style: none;}
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Appendices</a>
-      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
-        <li class="sidebar-item">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Appendices</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendix_list_param_ic.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Appendix: List of parameters and initial conditions</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendix_list_notifications.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">List of notifications from pre-simulation and post-simulation reports</span></a>
   </div>
 </li>
-    </ul>
+      </ul>
   </li>
     </ul>
     </div>
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#gis-interface" id="toc-gis-interface" class="nav-link active" data-scroll-target="#gis-interface"> <span class="header-section-number">4.1</span> GIS interface</a></li>
-  <li><a href="#gis-commands" id="toc-gis-commands" class="nav-link" data-scroll-target="#gis-commands"> <span class="header-section-number">4.2</span> GIS Commands</a>
-  <ul class="collapse">
+  <li><a href="#gis-interface" id="toc-gis-interface" class="nav-link active" data-scroll-target="#gis-interface"><span class="toc-section-number">4.1</span>  GIS interface</a></li>
+  <li><a href="#gis-commands" id="toc-gis-commands" class="nav-link" data-scroll-target="#gis-commands"><span class="toc-section-number">4.2</span>  GIS Commands</a>
+  <ul>
   <li><a href="#importation-of-new-layers" id="toc-importation-of-new-layers" class="nav-link" data-scroll-target="#importation-of-new-layers">Importation of new layers</a></li>
   <li><a href="#tools-for-interaction-in-the-interface" id="toc-tools-for-interaction-in-the-interface" class="nav-link" data-scroll-target="#tools-for-interaction-in-the-interface">Tools for interaction in the interface</a></li>
   </ul></li>
-  <li><a href="#automatic-model-creation" id="toc-automatic-model-creation" class="nav-link" data-scroll-target="#automatic-model-creation"> <span class="header-section-number">4.3</span> Automatic Model <em>Creation</em></a></li>
-  <li><a href="#model-edition" id="toc-model-edition" class="nav-link" data-scroll-target="#model-edition"> <span class="header-section-number">4.4</span> Model <em>Edition</em></a>
-  <ul class="collapse">
+  <li><a href="#automatic-model-creation" id="toc-automatic-model-creation" class="nav-link" data-scroll-target="#automatic-model-creation"><span class="toc-section-number">4.3</span>  Automatic Model <em>Creation</em></a></li>
+  <li><a href="#model-edition" id="toc-model-edition" class="nav-link" data-scroll-target="#model-edition"><span class="toc-section-number">4.4</span>  Model <em>Edition</em></a>
+  <ul>
   <li><a href="#create-objects" id="toc-create-objects" class="nav-link" data-scroll-target="#create-objects">Create Objects</a></li>
   <li><a href="#model-gis-links" id="toc-model-gis-links" class="nav-link" data-scroll-target="#model-gis-links">Model-GIS Links</a>
   <ul class="collapse">
@@ -292,12 +295,12 @@ ul.task-list{list-style: none;}
   <li><a href="#compute-properties-from-the-shapefile" id="toc-compute-properties-from-the-shapefile" class="nav-link" data-scroll-target="#compute-properties-from-the-shapefile">Compute properties from the shapefile</a></li>
   </ul></li>
   </ul></li>
-  <li><a href="#hydro-model-visualization" id="toc-hydro-model-visualization" class="nav-link" data-scroll-target="#hydro-model-visualization"> <span class="header-section-number">4.5</span> Hydro Model Visualization</a>
-  <ul class="collapse">
+  <li><a href="#hydro-model-visualization" id="toc-hydro-model-visualization" class="nav-link" data-scroll-target="#hydro-model-visualization"><span class="toc-section-number">4.5</span>  Hydro Model Visualization</a>
+  <ul>
   <li><a href="#spatial-view" id="toc-spatial-view" class="nav-link" data-scroll-target="#spatial-view">Spatial View</a></li>
   </ul></li>
-  <li><a href="#db-stations-visualization" id="toc-db-stations-visualization" class="nav-link" data-scroll-target="#db-stations-visualization"> <span class="header-section-number">4.6</span> DB Stations Visualization</a>
-  <ul class="collapse">
+  <li><a href="#db-stations-visualization" id="toc-db-stations-visualization" class="nav-link" data-scroll-target="#db-stations-visualization"><span class="toc-section-number">4.6</span>  DB Stations Visualization</a>
+  <ul>
   <li><a href="#data-requirements" id="toc-data-requirements" class="nav-link" data-scroll-target="#data-requirements">Data requirements</a></li>
   <li><a href="#procedure" id="toc-procedure" class="nav-link" data-scroll-target="#procedure">Procedure</a></li>
   </ul></li>
@@ -320,7 +323,7 @@ ul.task-list{list-style: none;}
 <div id="fig-gis_tool_interface" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-gis_tool_interface.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 4.1: Interface of the GIS tool</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;4.1: Interface of the GIS tool</figcaption><p></p>
 </figure>
 </div>
 </section>
@@ -416,7 +419,7 @@ Important
 <div id="fig-gis_creation_interface" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-gis_creation_interface.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 4.2: Model Creation interface in the GIS</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;4.2: Model Creation interface in the GIS</figcaption><p></p>
 </figure>
 </div>
 <div class="callout-important callout callout-style-default callout-captioned">
@@ -436,7 +439,7 @@ Important
 <div id="fig-gis_default_layers_names" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-gis_default_layers_names.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 4.3: Default layers names to autofill fields</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;4.3: Default layers names to autofill fields</figcaption><p></p>
 </figure>
 </div>
 </section>
@@ -456,7 +459,7 @@ Important
 <div id="fig-gis_model_edition_interface" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-gis_model_edition_interface.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 4.4: Model Edition interface in the GIS and its workflow</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;4.4: Model Edition interface in the GIS and its workflow</figcaption><p></p>
 </figure>
 </div>
 <p>The three tabs offer you the possibility of the following actions:</p>
@@ -482,7 +485,7 @@ Important
 <div id="fig-gis_object_creation_process" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-gis_object_creation_process.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 4.5: Object creation process completed</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;4.5: Object creation process completed</figcaption><p></p>
 </figure>
 </div>
 <p>We then create the glacial objects:</p>
@@ -499,7 +502,7 @@ Important
 <div id="fig-gis_automatic_generated_objects" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-gis_automatic_generated_objects.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 4.6: Automatically generated objects</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;4.6: Automatically generated objects</figcaption><p></p>
 </figure>
 </div>
 <p>It is still necessary to link the junctions to a group interface and define certain properties of the basins (area) and virtual stations (coordinates) in order for the submodel to be complete. In <em>Export Properties</em>, we see how these properties can be exported by bulk from the linked shapefile features.</p>
@@ -527,7 +530,7 @@ Important
 <div id="fig-gis_linking_unlinking_elements" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-gis_linking_unlinking_elements.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 4.7: Linking and unlinking elements. Here, the two unlinked elements are ready to be linked</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;4.7: Linking and unlinking elements. Here, the two unlinked elements are ready to be linked</figcaption><p></p>
 </figure>
 </div>
 </section>
@@ -542,7 +545,7 @@ Important
 <div id="fig-gis_exporting_feature_attributes" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-gis_exporting_feature_attributes.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 4.8: Exporting feature attributes to model objects</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;4.8: Exporting feature attributes to model objects</figcaption><p></p>
 </figure>
 </div>
 <section id="export-pre-calculated-feature-attributes" class="level4">
@@ -592,7 +595,7 @@ Important
 <div id="fig-gis_hydro_model_visualization" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-gis_hydro_model_visualization.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 4.9: Hydro Model Visualization: interface workflow in the Spatial View</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;4.9: Hydro Model Visualization: interface workflow in the Spatial View</figcaption><p></p>
 </figure>
 </div>
 <p>In order to perform a visualization,</p>
@@ -627,7 +630,7 @@ Important
 <div id="fig-gis_visualization_stations_location" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-gis_visualization_stations_location.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 4.10: Visualization of stations location in GIS</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;4.10: Visualization of stations location in GIS</figcaption><p></p>
 </figure>
 </div>
 
@@ -638,6 +641,24 @@ Important
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -687,7 +708,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.342">
+<meta name="generator" content="quarto-1.1.251">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -11,10 +11,15 @@
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
@@ -36,13 +41,14 @@ div.csl-indent {
 }
 </style>
 
+
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
-<meta name="quarto:offset" content="./">
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
 <link href="./tech_stochastic_equations.html" rel="next">
 <link href="./tech_performance_indicators.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
@@ -50,10 +56,10 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link id="quarto-text-highlighting-styles" href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -96,13 +102,10 @@ div.csl-indent {
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <h1 class="title"><span id="sec-tech_calibration_algorithms" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Calibration algorithms</span></span></h1>
-                </div>
+                      </div>
   </div>
     
   
-
-
-
   <div class="quarto-title-meta">
 
       
@@ -131,129 +134,129 @@ div.csl-indent {
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a href="./user_manual.html" class="sidebar-item-text sidebar-link">User Manual</a>
-      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-        <li class="sidebar-item">
+      <div class="sidebar-item-container"> 
+            <a href="./user_manual.html" class="sidebar-item-text sidebar-link">User Manual</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_rainfall_runoff_modelling.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Rainfall-runoff modelling</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_hydraulic_infrastructures.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Hydraulic infrastructures modelling</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_database.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Database</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_gis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">GIS</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_hydro_hydrau_simulation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Hydrological-hydraulic simulation</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_expert_module.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Expert module</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_plugins.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Plugins</span></a>
   </div>
 </li>
-    </ul>
+      </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a href="./tech_manual.html" class="sidebar-item-text sidebar-link">Technical Manual</a>
-      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-        <li class="sidebar-item">
+      <div class="sidebar-item-container"> 
+            <a href="./tech_manual.html" class="sidebar-item-text sidebar-link">Technical Manual</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_hydrological_models.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Hydrological and hydraulics models description</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_performance_indicators.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Performance indicators</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_calibration_algorithms.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Calibration algorithms</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_stochastic_equations.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Stochastic equations</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_scripts.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Visual Basic Scripts</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_file_formats.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">File formats</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_database_formats.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Database formats</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_gis_formats.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">GIS formats</span></a>
   </div>
 </li>
-    </ul>
+      </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a href="./examples.html" class="sidebar-item-text sidebar-link">Examples of application</a>
-      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-        <li class="sidebar-item">
+      <div class="sidebar-item-container"> 
+            <a href="./examples.html" class="sidebar-item-text sidebar-link">Examples of application</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./examples_ex1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Example 1 – Simple basin with only runoff</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./examples_ex2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Example 2 – Combined full basin with meteorological stations</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./examples_ex3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Example 3 – Equipped basin with a hydropower scheme</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./examples_ex4.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Example 4 – Automatic calibration of a model</span></a>
   </div>
 </li>
-    </ul>
+      </ul>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
@@ -261,48 +264,48 @@ div.csl-indent {
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Appendices</a>
-      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
-        <li class="sidebar-item">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Appendices</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendix_list_param_ic.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Appendix: List of parameters and initial conditions</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendix_list_notifications.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">List of notifications from pre-simulation and post-simulation reports</span></a>
   </div>
 </li>
-    </ul>
+      </ul>
   </li>
     </ul>
     </div>
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sec-tech_calibration_algorithms_intro" id="toc-sec-tech_calibration_algorithms_intro" class="nav-link active" data-scroll-target="#sec-tech_calibration_algorithms_intro"> <span class="header-section-number">10.1</span> Introduction to the calibration module</a></li>
-  <li><a href="#sec-tech_calibration_algorithms_of" id="toc-sec-tech_calibration_algorithms_of" class="nav-link" data-scroll-target="#sec-tech_calibration_algorithms_of"> <span class="header-section-number">10.2</span> Objective function</a></li>
-  <li><a href="#sec-tech_calibration_algorithms_sce_ua" id="toc-sec-tech_calibration_algorithms_sce_ua" class="nav-link" data-scroll-target="#sec-tech_calibration_algorithms_sce_ua"> <span class="header-section-number">10.3</span> Shuffled Complex Evoluation – University of Arizona</a>
-  <ul class="collapse">
+  <li><a href="#sec-tech_calibration_algorithms_intro" id="toc-sec-tech_calibration_algorithms_intro" class="nav-link active" data-scroll-target="#sec-tech_calibration_algorithms_intro"><span class="toc-section-number">10.1</span>  Introduction to the calibration module</a></li>
+  <li><a href="#sec-tech_calibration_algorithms_of" id="toc-sec-tech_calibration_algorithms_of" class="nav-link" data-scroll-target="#sec-tech_calibration_algorithms_of"><span class="toc-section-number">10.2</span>  Objective function</a></li>
+  <li><a href="#sec-tech_calibration_algorithms_sce_ua" id="toc-sec-tech_calibration_algorithms_sce_ua" class="nav-link" data-scroll-target="#sec-tech_calibration_algorithms_sce_ua"><span class="toc-section-number">10.3</span>  Shuffled Complex Evoluation – University of Arizona</a>
+  <ul>
   <li><a href="#model-architecture" id="toc-model-architecture" class="nav-link" data-scroll-target="#model-architecture">Model architecture</a></li>
   <li><a href="#algorithm-parameters" id="toc-algorithm-parameters" class="nav-link" data-scroll-target="#algorithm-parameters">Algorithm parameters</a></li>
   </ul></li>
-  <li><a href="#sec-tech_calibration_algorithms_uamc" id="toc-sec-tech_calibration_algorithms_uamc" class="nav-link" data-scroll-target="#sec-tech_calibration_algorithms_uamc"> <span class="header-section-number">10.4</span> Uniform Adaptive Monte Carlo</a>
-  <ul class="collapse">
+  <li><a href="#sec-tech_calibration_algorithms_uamc" id="toc-sec-tech_calibration_algorithms_uamc" class="nav-link" data-scroll-target="#sec-tech_calibration_algorithms_uamc"><span class="toc-section-number">10.4</span>  Uniform Adaptive Monte Carlo</a>
+  <ul>
   <li><a href="#model-architecture-1" id="toc-model-architecture-1" class="nav-link" data-scroll-target="#model-architecture-1">Model architecture</a></li>
   <li><a href="#algorithm-parameters-1" id="toc-algorithm-parameters-1" class="nav-link" data-scroll-target="#algorithm-parameters-1">Algorithm parameters</a></li>
   </ul></li>
-  <li><a href="#sec-tech_calibration_algorithms_rosenb" id="toc-sec-tech_calibration_algorithms_rosenb" class="nav-link" data-scroll-target="#sec-tech_calibration_algorithms_rosenb"> <span class="header-section-number">10.5</span> Coupled Latin Hypercube and Rosenbrock</a>
-  <ul class="collapse">
+  <li><a href="#sec-tech_calibration_algorithms_rosenb" id="toc-sec-tech_calibration_algorithms_rosenb" class="nav-link" data-scroll-target="#sec-tech_calibration_algorithms_rosenb"><span class="toc-section-number">10.5</span>  Coupled Latin Hypercube and Rosenbrock</a>
+  <ul>
   <li><a href="#model-architecture-2" id="toc-model-architecture-2" class="nav-link" data-scroll-target="#model-architecture-2">Model architecture</a></li>
   <li><a href="#algorithm-parameters-2" id="toc-algorithm-parameters-2" class="nav-link" data-scroll-target="#algorithm-parameters-2">Algorithm parameters</a></li>
   </ul></li>
@@ -325,12 +328,12 @@ div.csl-indent {
 </section>
 <section id="sec-tech_calibration_algorithms_of" class="level2" data-number="10.2">
 <h2 data-number="10.2" class="anchored" data-anchor-id="sec-tech_calibration_algorithms_of"><span class="header-section-number">10.2</span> Objective function</h2>
-<p>A flexible objective function (<span class="math inline">\(OF\)</span>) has been developed for the module of calibration aiming to be adapted to the user’s requirements. The indicators presented in <a href="tech_performance_indicators.html">Section&nbsp;<span>9</span></a> are used in this OF, each one weighted with a value defined by the user (<a href="#tbl-weights_indicators_of">Table&nbsp;<span>10.1</span></a>).</p>
+<p>A flexible objective function (<span class="math inline">\(OF\)</span>) has been developed for the module of calibration aiming to be adapted to the user’s requirements. The indicators presented in <a href="tech_performance_indicators.html"><span>Chapter&nbsp;9</span></a> are used in this OF, each one weighted with a value defined by the user (<a href="#tbl-weights_indicators_of">Table&nbsp;<span>10.1</span></a>).</p>
 <div id="tbl-weights_indicators_of" class="anchored">
 <table class="table">
-<caption>Table 10.1: Weights of the indicators for the objective function</caption>
+<caption>Table&nbsp;10.1: Weights of the indicators for the objective function</caption>
 <colgroup>
-<col style="width: 47%">
+<col style="width: 46%">
 <col style="width: 10%">
 <col style="width: 22%">
 <col style="width: 18%">
@@ -410,7 +413,7 @@ div.csl-indent {
 <p>The <span class="math inline">\(OF\)</span> is presented in <a href="#eq-CAL1">Equation&nbsp;<span>10.1</span></a> and takes into account the ideal values of each indicator. Thus, the <span class="math inline">\(OF\)</span> searches to maximize the first five and last two indicators (<span class="math inline">\(Nash\)</span>, <span class="math inline">\(Nash-ln\)</span>, <span class="math inline">\(Pearson\)</span>, <span class="math inline">\(Kling-Gupta\)</span>, <span class="math inline">\(BS\)</span>, <span class="math inline">\(PSS\)</span> and <span class="math inline">\(OA\)</span>) since their ideal value is equal to the maximum possible value and, at the same time, to minimize the value or the absolute value for the three other indicators (<span class="math inline">\(RRMSE\)</span>, <span class="math inline">\(RVB\)</span>, <span class="math inline">\(NPE\)</span>) since their ideal value corresponds to zero.</p>
 <p><span id="eq-CAL1"><span class="math display">\[
 OF = max(Nash \cdot w_{1} + Nashln \cdot w_{2} + Pearson \cdot w_{3} + KGE \cdot w_{4} + BS \cdot w_{5} - RRMSE \cdot w_{6} - \left| RVB \cdot w_{7} \right| - \left| NPE \cdot w_{8} \right| + PSS \cdot w_{9} + OA \cdot w_{10})
-\qquad(10.1)\]</span></span></p>
+\tag{10.1}\]</span></span></p>
 </section>
 <section id="sec-tech_calibration_algorithms_sce_ua" class="level2" data-number="10.3">
 <h2 data-number="10.3" class="anchored" data-anchor-id="sec-tech_calibration_algorithms_sce_ua"><span class="header-section-number">10.3</span> Shuffled Complex Evoluation – University of Arizona</h2>
@@ -435,7 +438,7 @@ OF = max(Nash \cdot w_{1} + Nashln \cdot w_{2} + Pearson \cdot w_{3} + KGE \cdot
 <div id="fig-flowchart_sce" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-flowchart_sce.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 10.1: Flow chart of the shuffled complex evolution method (from <span class="citation" data-cites="duan_shuffled_1993">Q. Y. Duan, Gupta, and Sorooshian (<a href="#ref-duan_shuffled_1993" role="doc-biblioref">1993</a>)</span>), with <span class="math inline">\(V=n\)</span>, <span class="math inline">\(NGS=p\)</span>, <span class="math inline">\(NPG=m\)</span> and <span class="math inline">\(NPT=s\)</span></figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;10.1: Flow chart of the shuffled complex evolution method (from <span class="citation" data-cites="duan_shuffled_1993">Q. Y. Duan, Gupta, and Sorooshian (<a href="#ref-duan_shuffled_1993" role="doc-biblioref">1993</a>)</span>), with <span class="math inline">\(V=n\)</span>, <span class="math inline">\(NGS=p\)</span>, <span class="math inline">\(NPG=m\)</span> and <span class="math inline">\(NPT=s\)</span></figcaption><p></p>
 </figure>
 </div>
 <p>The SCE-UA method is explained in <a href="#fig-sce_ua_method">Figure&nbsp;<span>10.2</span></a> and <a href="#fig-sce_ua_steps">Figure&nbsp;<span>10.3</span></a> for a two dimensional case <span class="citation" data-cites="duan_optimal_1994">(<a href="#ref-duan_optimal_1994" role="doc-biblioref">Q. Duan, Sorooshian, and Gupta 1994</a>)</span>. The contour lines in <a href="#fig-sce_ua_method">Figure&nbsp;<span>10.2</span></a> and <a href="#fig-sce_ua_steps">Figure&nbsp;<span>10.3</span></a> represent a function surface having a global optimum located at (4,2) and a local optimum located at (1,2). <a href="#fig-sce_ua_method">Figure&nbsp;<span>10.2</span></a> (a) shows that a sample population containing <span class="math inline">\(NPT\)</span> (=10) points is divided into <span class="math inline">\(NGS\)</span> (=2) complexes. Each complex contains <span class="math inline">\(NPG\)</span> (=5) points which are marked by <strong>•</strong> and * respectively. <a href="#fig-sce_ua_method">Figure&nbsp;<span>10.2</span></a> (b) shows the locations of the points in the two independently evolved complexes at the end of the first cycle of evolution. It can be seen that one complex (marked by *) is converging towards the local optimum, while the other (marked by <strong>•</strong>) is converging toward the global optimum. The two evolved complexes are shuffled according to <em>Step 5</em>. <a href="#fig-sce_ua_method">Figure&nbsp;<span>10.2</span></a> (c) displays the new membership of the two evolved complexes after shuffling.</p>
@@ -443,7 +446,7 @@ OF = max(Nash \cdot w_{1} + Nashln \cdot w_{2} + Pearson \cdot w_{3} + KGE \cdot
 <div id="fig-sce_ua_method" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-sce_ua_method.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 10.2: Illustration of the shuffled complex evolution (SCE-UA) method (from <span class="citation" data-cites="duan_optimal_1994">Q. Duan, Sorooshian, and Gupta (<a href="#ref-duan_optimal_1994" role="doc-biblioref">1994</a>)</span>)</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;10.2: Illustration of the shuffled complex evolution (SCE-UA) method (from <span class="citation" data-cites="duan_optimal_1994">Q. Duan, Sorooshian, and Gupta (<a href="#ref-duan_optimal_1994" role="doc-biblioref">1994</a>)</span>)</figcaption><p></p>
 </figure>
 </div>
 <p>The CCE algorithm is graphically illustrated in <a href="#fig-sce_ua_steps">Figure&nbsp;<span>10.3</span></a>. The black dots (<strong>•</strong>) indicate the locations of the points in a complex before the evolution step is taken. A sub-complex containing <span class="math inline">\(NPS\)</span> (=3, i.e.&nbsp;forms a triangle in this case) points is selected according to a pre-specified probability distribution to initiate an evolution step.</p>
@@ -455,7 +458,7 @@ OF = max(Nash \cdot w_{1} + Nashln \cdot w_{2} + Pearson \cdot w_{3} + KGE \cdot
 <div id="fig-sce_ua_steps" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-sce_ua_steps.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 10.3: Illustration of the evolution steps taken by each complex (from <span class="citation" data-cites="duan_optimal_1994">Q. Duan, Sorooshian, and Gupta (<a href="#ref-duan_optimal_1994" role="doc-biblioref">1994</a>)</span>).</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;10.3: Illustration of the evolution steps taken by each complex (from <span class="citation" data-cites="duan_optimal_1994">Q. Duan, Sorooshian, and Gupta (<a href="#ref-duan_optimal_1994" role="doc-biblioref">1994</a>)</span>).</figcaption><p></p>
 </figure>
 </div>
 </section>
@@ -471,12 +474,12 @@ OF = max(Nash \cdot w_{1} + Nashln \cdot w_{2} + Pearson \cdot w_{3} + KGE \cdot
 </ul>
 <div id="tbl-param_sce_ua_algorithm" class="anchored">
 <table class="table">
-<caption>Table 10.2: Parameters of the SCE-UA algorithm</caption>
+<caption>Table&nbsp;10.2: Parameters of the SCE-UA algorithm</caption>
 <colgroup>
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 45%">
-<col style="width: 22%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 44%">
+<col style="width: 21%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -542,12 +545,12 @@ OF = max(Nash \cdot w_{1} + Nashln \cdot w_{2} + Pearson \cdot w_{3} + KGE \cdot
 <p>Finally, the optimization finishes when the convergence criterion (defined as <span class="math inline">\(ERR\)</span>) is achieved, or when the maximum number of iterations <span class="math inline">\(MAXN\)</span> is attained.</p>
 <div id="tbl-param_sce_uamc_algorithm" class="anchored">
 <table class="table">
-<caption>Table 10.3: Parameters of the UAMC algorithm</caption>
+<caption>Table&nbsp;10.3: Parameters of the UAMC algorithm</caption>
 <colgroup>
 <col style="width: 10%">
 <col style="width: 10%">
-<col style="width: 63%">
-<col style="width: 15%">
+<col style="width: 61%">
+<col style="width: 14%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -600,7 +603,7 @@ OF = max(Nash \cdot w_{1} + Nashln \cdot w_{2} + Pearson \cdot w_{3} + KGE \cdot
 <div id="fig-flowchart_uamc" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-flowchart_uamc.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 10.4: Flow chart of the UAMC algorithm</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;10.4: Flow chart of the UAMC algorithm</figcaption><p></p>
 </figure>
 </div>
 </section>
@@ -614,7 +617,7 @@ OF = max(Nash \cdot w_{1} + Nashln \cdot w_{2} + Pearson \cdot w_{3} + KGE \cdot
 <div id="fig-operation_clhr" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-operation_clhr.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 10.5: Illustration of the operation of the CLHR algorithm</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;10.5: Illustration of the operation of the CLHR algorithm</figcaption><p></p>
 </figure>
 </div>
 <p>A general description of the steps of the CLHR method is given below:</p>
@@ -625,7 +628,7 @@ OF = max(Nash \cdot w_{1} + Nashln \cdot w_{2} + Pearson \cdot w_{3} + KGE \cdot
 <div id="fig-operation_hypercube" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-operation_hypercube.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 10.6: Illustration of the operation of the Latin Hypercube algorithm</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;10.6: Illustration of the operation of the Latin Hypercube algorithm</figcaption><p></p>
 </figure>
 </div>
 <p><em>Step 3</em></p>
@@ -637,7 +640,7 @@ OF = max(Nash \cdot w_{1} + Nashln \cdot w_{2} + Pearson \cdot w_{3} + KGE \cdot
 <div id="fig-operation_rosenbrock" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-operation_rosenbrock.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 10.7: Illustration of the operation of the Rosenbrock algorithm</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;10.7: Illustration of the operation of the Rosenbrock algorithm</figcaption><p></p>
 </figure>
 </div>
 </section>
@@ -649,16 +652,16 @@ OF = max(Nash \cdot w_{1} + Nashln \cdot w_{2} + Pearson \cdot w_{3} + KGE \cdot
 <p>The <span class="math inline">\(STEPROS\)</span> parameter indicates the subdivisions for each parameter’s range. It is used to calculate value variations in each of the parameters (<span class="math inline">\(∆_i\)</span>) to be studied, as presented in <a href="#eq-CAL2">Equation&nbsp;<span>10.2</span></a>.</p>
 <p><span id="eq-CAL2"><span class="math display">\[
 \frac{MaxP{arameterValue}_{i} - Min{ParameterValue}_{i}}{STEPROS} = Delta_i
-\qquad(10.2)\]</span></span></p>
+\tag{10.2}\]</span></span></p>
 <p>The optimization finishes when the convergence criterion (defined as <span class="math inline">\(ERR\)</span>) is achieved, or when the maximum number of iterations <span class="math inline">\(MAXN\)</span> is attained.</p>
 <div id="tbl-param_sce_clhr_algorithm" class="anchored">
 <table class="table">
-<caption>Table 10.4: Parameters of the CLHR algorithm</caption>
+<caption>Table&nbsp;10.4: Parameters of the CLHR algorithm</caption>
 <colgroup>
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 45%">
-<col style="width: 22%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 43%">
+<col style="width: 21%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -799,6 +802,24 @@ Zhu, Xiaobin, Jichun Wu, and Jianfeng Wu. 2006. <span>“Application of <span>SC
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -848,7 +869,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);

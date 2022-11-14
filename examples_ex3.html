@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.342">
+<meta name="generator" content="quarto-1.1.251">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -11,19 +11,25 @@
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 </style>
+
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
-<meta name="quarto:offset" content="./">
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
 <link href="./examples_ex4.html" rel="next">
 <link href="./examples_ex2.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
@@ -31,10 +37,10 @@ ul.task-list{list-style: none;}
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link id="quarto-text-highlighting-styles" href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -77,13 +83,10 @@ ul.task-list{list-style: none;}
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <h1 class="title"><span id="sec-examples_ex3" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Example 3 – Equipped basin with a hydropower scheme</span></span></h1>
-                </div>
+                      </div>
   </div>
     
   
-
-
-
   <div class="quarto-title-meta">
 
       
@@ -112,129 +115,129 @@ ul.task-list{list-style: none;}
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a href="./user_manual.html" class="sidebar-item-text sidebar-link">User Manual</a>
-      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-        <li class="sidebar-item">
+      <div class="sidebar-item-container"> 
+            <a href="./user_manual.html" class="sidebar-item-text sidebar-link">User Manual</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_rainfall_runoff_modelling.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Rainfall-runoff modelling</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_hydraulic_infrastructures.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Hydraulic infrastructures modelling</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_database.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Database</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_gis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">GIS</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_hydro_hydrau_simulation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Hydrological-hydraulic simulation</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_expert_module.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Expert module</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./user_plugins.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Plugins</span></a>
   </div>
 </li>
-    </ul>
+      </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a href="./tech_manual.html" class="sidebar-item-text sidebar-link">Technical Manual</a>
-      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-        <li class="sidebar-item">
+      <div class="sidebar-item-container"> 
+            <a href="./tech_manual.html" class="sidebar-item-text sidebar-link">Technical Manual</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_hydrological_models.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Hydrological and hydraulics models description</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_performance_indicators.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Performance indicators</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_calibration_algorithms.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Calibration algorithms</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_stochastic_equations.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Stochastic equations</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_scripts.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Visual Basic Scripts</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_file_formats.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">File formats</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_database_formats.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Database formats</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tech_gis_formats.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">GIS formats</span></a>
   </div>
 </li>
-    </ul>
+      </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a href="./examples.html" class="sidebar-item-text sidebar-link">Examples of application</a>
-      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-        <li class="sidebar-item">
+      <div class="sidebar-item-container"> 
+            <a href="./examples.html" class="sidebar-item-text sidebar-link">Examples of application</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./examples_ex1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Example 1 – Simple basin with only runoff</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./examples_ex2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Example 2 – Combined full basin with meteorological stations</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./examples_ex3.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Example 3 – Equipped basin with a hydropower scheme</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./examples_ex4.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Example 4 – Automatic calibration of a model</span></a>
   </div>
 </li>
-    </ul>
+      </ul>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
@@ -242,39 +245,39 @@ ul.task-list{list-style: none;}
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Appendices</a>
-      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
-        <li class="sidebar-item">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Appendices</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendix_list_param_ic.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Appendix: List of parameters and initial conditions</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendix_list_notifications.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">List of notifications from pre-simulation and post-simulation reports</span></a>
   </div>
 </li>
-    </ul>
+      </ul>
   </li>
     </ul>
     </div>
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#objective-of-example-3" id="toc-objective-of-example-3" class="nav-link active" data-scroll-target="#objective-of-example-3"> <span class="header-section-number">18.1</span> Objective of Example 3</a></li>
-  <li><a href="#resolution-of-example-3-part-a" id="toc-resolution-of-example-3-part-a" class="nav-link" data-scroll-target="#resolution-of-example-3-part-a"> <span class="header-section-number">18.2</span> Resolution of Example 3 – Part A</a></li>
-  <li><a href="#results-of-example-3-part-a" id="toc-results-of-example-3-part-a" class="nav-link" data-scroll-target="#results-of-example-3-part-a"> <span class="header-section-number">18.3</span> Results of Example 3 – Part A</a></li>
-  <li><a href="#resolution-of-example-3-part-b" id="toc-resolution-of-example-3-part-b" class="nav-link" data-scroll-target="#resolution-of-example-3-part-b"> <span class="header-section-number">18.4</span> Resolution of Example 3 – Part B</a></li>
-  <li><a href="#results-of-example-3-part-b" id="toc-results-of-example-3-part-b" class="nav-link" data-scroll-target="#results-of-example-3-part-b"> <span class="header-section-number">18.5</span> Results of Example 3 – Part B</a></li>
+  <li><a href="#objective-of-example-3" id="toc-objective-of-example-3" class="nav-link active" data-scroll-target="#objective-of-example-3"><span class="toc-section-number">18.1</span>  Objective of Example 3</a></li>
+  <li><a href="#resolution-of-example-3-part-a" id="toc-resolution-of-example-3-part-a" class="nav-link" data-scroll-target="#resolution-of-example-3-part-a"><span class="toc-section-number">18.2</span>  Resolution of Example 3 – Part A</a></li>
+  <li><a href="#results-of-example-3-part-a" id="toc-results-of-example-3-part-a" class="nav-link" data-scroll-target="#results-of-example-3-part-a"><span class="toc-section-number">18.3</span>  Results of Example 3 – Part A</a></li>
+  <li><a href="#resolution-of-example-3-part-b" id="toc-resolution-of-example-3-part-b" class="nav-link" data-scroll-target="#resolution-of-example-3-part-b"><span class="toc-section-number">18.4</span>  Resolution of Example 3 – Part B</a></li>
+  <li><a href="#results-of-example-3-part-b" id="toc-results-of-example-3-part-b" class="nav-link" data-scroll-target="#results-of-example-3-part-b"><span class="toc-section-number">18.5</span>  Results of Example 3 – Part B</a></li>
   </ul>
 </nav>
     </div>
@@ -288,7 +291,7 @@ ul.task-list{list-style: none;}
 <div id="fig-examples_model_scheme_ex3" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-examples_model_scheme_ex3.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 18.1: Model scheme</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;18.1: Model scheme</figcaption><p></p>
 </figure>
 </div>
 <p>HBV 1, HBV 2 and GSM 1 basins flow through the Reservoir 1. Intake located downstream of a SOCONT model provides supplementary discharge up to 2 m<sup>3</sup>/s. It is assumed that the propagation in the channel is insignificant and thus it is not necessary to include it in the model (in other case, we could built it with the Reach Kinematic object).</p>
@@ -302,14 +305,14 @@ ul.task-list{list-style: none;}
 <div id="fig-examples_characteristics_ex3_1" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-examples_characteristics_ex3_1.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 18.2: Characteristics of the objects (1/2)</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;18.2: Characteristics of the objects (1/2)</figcaption><p></p>
 </figure>
 </div>
 <p>&nbsp;</p>
 <div id="fig-examples_characteristics_ex3_2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-examples_characteristics_ex3_2.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 18.3: Characteristics of the objects (2/2)</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;18.3: Characteristics of the objects (2/2)</figcaption><p></p>
 </figure>
 </div>
 <p>Additionally, initial discharge (<span class="math inline">\(Qini\)</span>) of River C is in this case 1 m<sup>3</sup>/s.</p>
@@ -320,70 +323,70 @@ ul.task-list{list-style: none;}
 <div id="fig-examples_model_construction_ex3" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-examples_model_construction_ex3.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 18.4: Construction of the Example 3 model on the basis of Example 2</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;18.4: Construction of the Example 3 model on the basis of Example 2</figcaption><p></p>
 </figure>
 </div>
 <p>New objects are always linked from upstream to downstream (e.g.: SOCONT 1 to Diversion 1, Diversion 1 to Confluence (<span class="math inline">\(Qdiverted\)</span>) and to Outside of the Basin (<span class="math inline">\(Qdown\)</span>), Reservoir 1 to HQ 1, Reservoir 1 to Turbine 1, Turbine 1 to River C, etc). After creating the links (<a href="#fig-examples_topologic_links_between_objects_ex3">Figure&nbsp;<span>18.5</span></a>), the news relations can be visualized by double clicking on each blue arrow (<a href="#fig-examples_relations_station_ex3">Figure&nbsp;<span>18.6</span></a> to <a href="#fig-examples_relations_intake_ex3">Figure&nbsp;<span>18.9</span></a>).</p>
 <div id="fig-examples_topologic_links_between_objects_ex3" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-examples_topologic_links_between_objects_ex3.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 18.5: Topology of the new model</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;18.5: Topology of the new model</figcaption><p></p>
 </figure>
 </div>
 <p>&nbsp;</p>
 <div id="fig-examples_relations_station_ex3" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-examples_relations_station_ex3.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 18.6: Relations for Virtual Weather Station S1 and SOCONT 1 objects</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;18.6: Relations for Virtual Weather Station S1 and SOCONT 1 objects</figcaption><p></p>
 </figure>
 </div>
 <p>&nbsp;</p>
 <div id="fig-examples_relations_reservoir_ex3" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-examples_relations_reservoir_ex3.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 18.7: Relations for the Reservoir object</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;18.7: Relations for the Reservoir object</figcaption><p></p>
 </figure>
 </div>
 <p>&nbsp;</p>
 <div id="fig-examples_relations_turbine_ex3" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-examples_relations_turbine_ex3.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 18.8: Relations for the Turbine object</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;18.8: Relations for the Turbine object</figcaption><p></p>
 </figure>
 </div>
 <p>&nbsp;</p>
 <div id="fig-examples_relations_intake_ex3" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-examples_relations_intake_ex3.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 18.9: Relations for the Diversion object</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;18.9: Relations for the Diversion object</figcaption><p></p>
 </figure>
 </div>
 <p>The introduced parameters of new objects Diversion 1, Reservoir 1, HQ 1 and Turbine 1 are presented in <a href="#fig-examples_relations_qup_qdiverted_diversion_ex3">Figure&nbsp;<span>18.10</span></a> to <a href="#fig-examples_discharge_turbine_ex3">Figure&nbsp;<span>18.13</span></a>.</p>
 <div id="fig-examples_relations_qup_qdiverted_diversion_ex3" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-examples_relations_qup_qdiverted_diversion_ex3.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 18.10: Relation Qup-Qdiverted introduced in the Diversion 1</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;18.10: Relation Qup-Qdiverted introduced in the Diversion 1</figcaption><p></p>
 </figure>
 </div>
 <p>&nbsp;</p>
 <div id="fig-examples_relations_hv_reservoir_ex3" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-examples_relations_hv_reservoir_ex3.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 18.11: Relation H-V of the Reservoir 1</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;18.11: Relation H-V of the Reservoir 1</figcaption><p></p>
 </figure>
 </div>
 <p>&nbsp;</p>
 <div id="fig-examples_relations_hq_hq_ex3" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-examples_relations_hq_hq_ex3.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 18.12: Relation H-Q of the HQ 1</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;18.12: Relation H-Q of the HQ 1</figcaption><p></p>
 </figure>
 </div>
 <p>&nbsp;</p>
 <div id="fig-examples_discharge_turbine_ex3" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-examples_discharge_turbine_ex3.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 18.13: Discharge of the Turbine 1</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;18.13: Discharge of the Turbine 1</figcaption><p></p>
 </figure>
 </div>
 <p>As shown in <a href="#fig-examples_discharge_turbine_ex3">Figure&nbsp;<span>18.13</span></a>, the thresholds in the level of the reservoir to start (2127 masl) and to stop (2110 masl) the turbine cycle, as well as the first suggested value for the turbine cycle (1 = turbine) have to be introduced.</p>
@@ -393,7 +396,7 @@ ul.task-list{list-style: none;}
 <div id="fig-examples_datasource_connection_ex3" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-examples_datasource_connection_ex3.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 18.14: Data source used for connecting the model to the database</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;18.14: Data source used for connecting the model to the database</figcaption><p></p>
 </figure>
 </div>
 <p>Finally, the necessary parameters of the simulation are chosen in the menu Solver frame according to the propose dates in the wording. The other values (time intervals) stay as indicate in the program, being 600 s in both cases.</p>
@@ -405,7 +408,7 @@ ul.task-list{list-style: none;}
 <div id="fig-examples_outlet_hydrograph_ex3_A" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-examples_outlet_hydrograph_ex3_A.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 18.15: Outlet hydrograph</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;18.15: Outlet hydrograph</figcaption><p></p>
 </figure>
 </div>
 <p>The peak discharge arrives on May the 9<sup>th</sup>, 2013 at 21:40 and the peak discharge is equal to 8.482 m<sup>3</sup>/s.</p>
@@ -413,7 +416,7 @@ ul.task-list{list-style: none;}
 <div id="fig-examples_flows_balance_reservoir_ex3" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-examples_flows_balance_reservoir_ex3.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 18.16: Flows balance of the reservoir</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;18.16: Flows balance of the reservoir</figcaption><p></p>
 </figure>
 </div>
 </section>
@@ -423,7 +426,7 @@ ul.task-list{list-style: none;}
 <div id="fig-examples_topologic_links_between_objects_ex3_B" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-examples_topologic_links_between_objects_ex3_B.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 18.17: Topology of the model including the new release</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;18.17: Topology of the model including the new release</figcaption><p></p>
 </figure>
 </div>
 <p>Notice that actually the new turbine is representing a sluice of the reservoir.</p>
@@ -433,14 +436,14 @@ ul.task-list{list-style: none;}
 <div id="fig-examples_release_turbine_ex3_B" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-examples_release_turbine_ex3_B.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 18.18: Proposed release from the Turbine 2</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;18.18: Proposed release from the Turbine 2</figcaption><p></p>
 </figure>
 </div>
 <p>New objects are linked as before, from upstream to downstream, obtaining same relations, as presented in <a href="#fig-examples_connection_between_objects_ex3_B">Figure&nbsp;<span>18.19</span></a>.</p>
 <div id="fig-examples_connection_between_objects_ex3_B" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-examples_connection_between_objects_ex3_B.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 18.19: Connections between objects</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;18.19: Connections between objects</figcaption><p></p>
 </figure>
 </div>
 </section>
@@ -450,7 +453,7 @@ ul.task-list{list-style: none;}
 <div id="fig-examples_outlet_hydrograph_ex3_B" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-examples_outlet_hydrograph_ex3_B.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 18.20: Outlet hydrograph after the addition of the new release. Peak discharge of 7.552 m<sup>3</sup>/s arrives now on May the 10<sup>th</sup>, 2013 at 02:10.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;18.20: Outlet hydrograph after the addition of the new release. Peak discharge of 7.552 m<sup>3</sup>/s arrives now on May the 10<sup>th</sup>, 2013 at 02:10.</figcaption><p></p>
 </figure>
 </div>
 <p>Maximum water level on the reservoir, 2128.473 m a.s.l., is at this case smaller than without the extra release of Part A (maximum water level of the part A was 2128.467 m a.s.l.).</p>
@@ -458,7 +461,7 @@ ul.task-list{list-style: none;}
 <div id="fig-examples_flows_balance_reservoir_ex3_B" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/fig-examples_flows_balance_reservoir_ex3_B.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 18.21: Flows balance of the reservoir and hydrographs at main control points</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;18.21: Flows balance of the reservoir and hydrographs at main control points</figcaption><p></p>
 </figure>
 </div>
 <p>Although the objective has achieved, many issues emerge from the management of the reservoir. How much water do we have to release? Are we aggravating the situation downstream? How much energy will we lose if the flood is not as important as expected? And so on.</p>
@@ -469,6 +472,24 @@ ul.task-list{list-style: none;}
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -518,7 +539,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
