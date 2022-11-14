@@ -37,3 +37,27 @@ jobs:
           # The folder the action should deploy. Adapt if you changed in Quarto config
           folder: docs
           
+       # - name: Exports docs folder
+       #   uses: datalbry/copy_folder_to_another_repo_action@1.0.0
+       #   env:
+        #    API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        #  with:
+         #   source_folder: 'docs'
+        #    destination_repo: 'crealp/rsminerve'
+         #   destination_folder: 'RSMinerve/bin/Release/Help'
+         #   user_email: 'theo.baracchini@crealp.vs.ch'
+          #  user_name: 'theoCREALP'
+          #  commit_msg: '[GHA] Update of the manual files.'    
+          
+      - name: Pushes to another repository
+        uses: cpina/github-action-push-to-another-repository@main
+        env:
+          SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        with:
+          source-directory: 'docs'
+          destination-github-username: 'crealp'
+          destination-repository-name: 'rsminerve'
+          user-email: theo.baracchini@crealp.vs.ch
+          target-branch: master
+          target-directory: RSMinerve/bin/Release/Help
