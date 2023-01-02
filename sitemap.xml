@@ -2,106 +2,106 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://crealp.github.io/rsminerve-releases/index.html</loc>
-    <lastmod>2023-01-02T16:24:38.470Z</lastmod>
+    <lastmod>2023-01-02T16:36:38.159Z</lastmod>
   </url>
   <url>
     <loc>https://crealp.github.io/rsminerve-releases/user_manual.html</loc>
-    <lastmod>2023-01-02T16:24:38.470Z</lastmod>
+    <lastmod>2023-01-02T16:36:38.163Z</lastmod>
   </url>
   <url>
     <loc>https://crealp.github.io/rsminerve-releases/user_rainfall_runoff_modelling.html</loc>
-    <lastmod>2023-01-02T16:24:38.474Z</lastmod>
+    <lastmod>2023-01-02T16:36:38.163Z</lastmod>
   </url>
   <url>
     <loc>https://crealp.github.io/rsminerve-releases/user_hydraulic_infrastructures.html</loc>
-    <lastmod>2023-01-02T16:24:38.474Z</lastmod>
+    <lastmod>2023-01-02T16:36:38.167Z</lastmod>
   </url>
   <url>
     <loc>https://crealp.github.io/rsminerve-releases/user_database.html</loc>
-    <lastmod>2023-01-02T16:24:38.478Z</lastmod>
+    <lastmod>2023-01-02T16:36:38.167Z</lastmod>
   </url>
   <url>
     <loc>https://crealp.github.io/rsminerve-releases/user_gis.html</loc>
-    <lastmod>2023-01-02T16:24:38.478Z</lastmod>
+    <lastmod>2023-01-02T16:36:38.171Z</lastmod>
   </url>
   <url>
     <loc>https://crealp.github.io/rsminerve-releases/user_hydro_hydrau_simulation.html</loc>
-    <lastmod>2023-01-02T16:24:38.478Z</lastmod>
+    <lastmod>2023-01-02T16:36:38.171Z</lastmod>
   </url>
   <url>
     <loc>https://crealp.github.io/rsminerve-releases/user_expert_module.html</loc>
-    <lastmod>2023-01-02T16:24:38.482Z</lastmod>
+    <lastmod>2023-01-02T16:36:38.175Z</lastmod>
   </url>
   <url>
     <loc>https://crealp.github.io/rsminerve-releases/user_plugins.html</loc>
-    <lastmod>2023-01-02T16:24:38.482Z</lastmod>
+    <lastmod>2023-01-02T16:36:38.175Z</lastmod>
   </url>
   <url>
     <loc>https://crealp.github.io/rsminerve-releases/tech_manual.html</loc>
-    <lastmod>2023-01-02T16:24:38.486Z</lastmod>
+    <lastmod>2023-01-02T16:36:38.175Z</lastmod>
   </url>
   <url>
     <loc>https://crealp.github.io/rsminerve-releases/tech_hydrological_models.html</loc>
-    <lastmod>2023-01-02T16:24:38.494Z</lastmod>
+    <lastmod>2023-01-02T16:36:38.187Z</lastmod>
   </url>
   <url>
     <loc>https://crealp.github.io/rsminerve-releases/tech_performance_indicators.html</loc>
-    <lastmod>2023-01-02T16:24:38.494Z</lastmod>
+    <lastmod>2023-01-02T16:36:38.187Z</lastmod>
   </url>
   <url>
     <loc>https://crealp.github.io/rsminerve-releases/tech_calibration_algorithms.html</loc>
-    <lastmod>2023-01-02T16:24:38.498Z</lastmod>
+    <lastmod>2023-01-02T16:36:38.191Z</lastmod>
   </url>
   <url>
     <loc>https://crealp.github.io/rsminerve-releases/tech_stochastic_equations.html</loc>
-    <lastmod>2023-01-02T16:24:38.498Z</lastmod>
+    <lastmod>2023-01-02T16:36:38.191Z</lastmod>
   </url>
   <url>
     <loc>https://crealp.github.io/rsminerve-releases/tech_scripts.html</loc>
-    <lastmod>2023-01-02T16:24:38.510Z</lastmod>
+    <lastmod>2023-01-02T16:36:38.203Z</lastmod>
   </url>
   <url>
     <loc>https://crealp.github.io/rsminerve-releases/tech_file_formats.html</loc>
-    <lastmod>2023-01-02T16:24:38.514Z</lastmod>
+    <lastmod>2023-01-02T16:36:38.207Z</lastmod>
   </url>
   <url>
     <loc>https://crealp.github.io/rsminerve-releases/tech_database_formats.html</loc>
-    <lastmod>2023-01-02T16:24:38.514Z</lastmod>
+    <lastmod>2023-01-02T16:36:38.207Z</lastmod>
   </url>
   <url>
     <loc>https://crealp.github.io/rsminerve-releases/tech_gis_formats.html</loc>
-    <lastmod>2023-01-02T16:24:38.514Z</lastmod>
+    <lastmod>2023-01-02T16:36:38.207Z</lastmod>
   </url>
   <url>
     <loc>https://crealp.github.io/rsminerve-releases/examples.html</loc>
-    <lastmod>2023-01-02T16:24:38.514Z</lastmod>
+    <lastmod>2023-01-02T16:36:38.207Z</lastmod>
   </url>
   <url>
     <loc>https://crealp.github.io/rsminerve-releases/examples_ex1.html</loc>
-    <lastmod>2023-01-02T16:24:38.518Z</lastmod>
+    <lastmod>2023-01-02T16:36:38.211Z</lastmod>
   </url>
   <url>
     <loc>https://crealp.github.io/rsminerve-releases/examples_ex2.html</loc>
-    <lastmod>2023-01-02T16:24:38.518Z</lastmod>
+    <lastmod>2023-01-02T16:36:38.211Z</lastmod>
   </url>
   <url>
     <loc>https://crealp.github.io/rsminerve-releases/examples_ex3.html</loc>
-    <lastmod>2023-01-02T16:24:38.518Z</lastmod>
+    <lastmod>2023-01-02T16:36:38.211Z</lastmod>
   </url>
   <url>
     <loc>https://crealp.github.io/rsminerve-releases/examples_ex4.html</loc>
-    <lastmod>2023-01-02T16:24:38.522Z</lastmod>
+    <lastmod>2023-01-02T16:36:38.215Z</lastmod>
   </url>
   <url>
     <loc>https://crealp.github.io/rsminerve-releases/acknowledgments.html</loc>
-    <lastmod>2023-01-02T16:24:38.522Z</lastmod>
+    <lastmod>2023-01-02T16:36:38.215Z</lastmod>
   </url>
   <url>
     <loc>https://crealp.github.io/rsminerve-releases/appendix_list_param_ic.html</loc>
-    <lastmod>2023-01-02T16:24:38.526Z</lastmod>
+    <lastmod>2023-01-02T16:36:38.219Z</lastmod>
   </url>
   <url>
     <loc>https://crealp.github.io/rsminerve-releases/appendix_list_notifications.html</loc>
-    <lastmod>2023-01-02T16:24:38.526Z</lastmod>
+    <lastmod>2023-01-02T16:36:38.219Z</lastmod>
   </url>
 </urlset>
