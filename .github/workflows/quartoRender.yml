@@ -54,9 +54,9 @@ jobs:
         env:
           SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
         with:
-          source-directory: 'docs'
+          source-directory: 'docs/'
           destination-github-username: 'crealp'
           destination-repository-name: 'rsminerve'
           user-email: theo.baracchini@crealp.vs.ch
           target-branch: master
-          target-directory: RSMinerve/bin/Release/Help
+          target-directory: RSMinerve/bin/Release/Help/
