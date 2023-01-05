@@ -46,5 +46,5 @@ jobs:
           destination-github-username: 'crealp'
           destination-repository-name: 'rsminerve'
           user-email: theo.baracchini@crealp.vs.ch
-          target-branch: master
-          target-directory: RSMinerve/bin/Release/Help/
+          target-branch: develop
+          target-directory: Help/
